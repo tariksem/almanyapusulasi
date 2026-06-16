@@ -36,12 +36,16 @@
   <loc>https://almanyapusulasi.de/privacy/</loc>
   <priority>0.6</priority>
 </url>
-  <url>
+<url>
   <loc>https://almanyapusulasi.de/schufa-kaydi-silme/</loc>
   <priority>0.9</priority>
 </url>
-  <url>
+<url>
   <loc>https://almanyapusulasi.de/schufa-skoru-yukseltme/</loc>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>https://almanyapusulasi.de/schufa-datenkopie/</loc>
   <priority>0.9</priority>
 </url>
 </urlset>
