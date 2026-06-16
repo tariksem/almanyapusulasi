@@ -28,4 +28,12 @@
     <loc>https://almanyapusulasi.de/about/</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+  <loc>https://almanyapusulasi.de/contact/</loc>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://almanyapusulasi.de/privacy/</loc>
+  <priority>0.6</priority>
+</url>
 </urlset>
