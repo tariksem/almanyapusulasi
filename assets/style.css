@@ -108,9 +108,9 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.13);
-  color: #fff4d6;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: #fff3cd;
+  color: #8a5a00;
+  border: 1px solid #f1d28a;
   padding: 8px 13px;
   border-radius: 999px;
   font-size: 14px;
@@ -272,25 +272,25 @@ a.card:hover {
 }
 
 .article-wrap {
-  padding: 42px 0 70px;
+  padding: 32px 0 64px;
 }
 
 .article {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 24px;
-  padding: clamp(26px, 5vw, 48px);
+  padding: clamp(28px, 5vw, 54px);
   box-shadow: var(--shadow);
 }
 
 .article h1 {
   color: var(--primary);
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(34px, 4vw, 52px);
   line-height: 1.12;
-  letter-spacing: -0.03em;
-  margin: 10px 0 18px;
+  letter-spacing: -0.035em;
+  margin: 18px 0 20px;
 }
 
 .article h2 {
