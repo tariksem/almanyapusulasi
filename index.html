@@ -1,54 +1,219 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almanya Pusulası</title>
-    <meta name="description" content="Almanya'da yaşayan Türkler için SCHUFA, kredi, emeklilik, Kindergeld ve günlük yaşam rehberleri.">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        h1 {
-            color: #003366;
-        }
+  <title>Almanya Pusulası | Almanya'da Yaşayan Türkler İçin Rehber</title>
+  <meta name="description" content="Almanya'da yaşayan Türkler için SCHUFA, kredi, Blue Card, Kindergeld, emeklilik ve günlük yaşam rehberleri." />
 
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            display: inline-block;
-            width: 220px;
-        }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
+      background: #f8fafc;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .brand {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 70px 0;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 720px;
+    }
+
+    .section {
+      padding: 50px 0;
+    }
+
+    .section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .notice {
+      background: #fff7ed;
+      border-left: 5px solid #f59e0b;
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Almanya Pusulası</h1>
+<header>
+  <div class="container">
+    <div class="brand">Almanya Pusulası</div>
+  </div>
+</header>
 
-<p>
-Almanya'da yaşayan Türkler için hazırlanmış bağımsız bilgi platformu.
-</p>
+<section class="hero">
+  <div class="container">
+    <span class="badge">Bağımsız bilgi rehberi</span>
+    <h1>Almanya'da yaşayan Türkler için pratik ve anlaşılır rehber.</h1>
+    <p>
+      SCHUFA, kredi, Blue Card, Kindergeld, emeklilik ve Almanya'daki günlük yaşam konularında sade, uygulanabilir ve güncel bilgiler.
+    </p>
+  </div>
+</section>
 
-<h2>Yakında Yayında</h2>
+<section class="section">
+  <div class="container">
+    <h2>Başlıca Rehberler</h2>
 
-<div class="card">SCHUFA Rehberi</div>
-<div class="card">Ev Kredisi</div>
-<div class="card">Blue Card</div>
-<div class="card">Kindergeld</div>
-<div class="card">Emeklilik</div>
-<div class="card">Türkiye Seyahat Rehberi</div>
+    <div class="grid">
+      <div class="card">
+        <h3>SCHUFA</h3>
+        <p>Kredi notu, kayıt silme, itiraz süreci ve Almanya'da finansal güvenilirlik.</p>
+      </div>
 
-<p>
-İlk içerikler çok yakında yayınlanacaktır.
-</p>
+      <div class="card">
+        <h3>Konut Kredisi</h3>
+        <p>Ev alma süreci, kredi başvurusu, peşinat, faiz ve banka değerlendirmesi.</p>
+      </div>
+
+      <div class="card">
+        <h3>Blue Card</h3>
+        <p>Oturum, seyahat hakkı, aile durumu ve uzun vadeli Almanya planı.</p>
+      </div>
+
+      <div class="card">
+        <h3>Kindergeld</h3>
+        <p>Çocuk yardımı, başvuru süreci ve aileler için önemli bilgiler.</p>
+      </div>
+
+      <div class="card">
+        <h3>Emeklilik</h3>
+        <p>Türkiye'den emekli olup Almanya'da yaşamak, vergi ve bildirim konuları.</p>
+      </div>
+
+      <div class="card">
+        <h3>Türkiye Seyahati</h3>
+        <p>Almanya'dan Türkiye'ye arabayla yolculuk, rota, maliyet ve sınır geçişleri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Yakında</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Kredi Hesaplayıcı</h3>
+        <p>Aylık ödeme, faiz, vade ve toplam maliyet hesaplama aracı.</p>
+      </div>
+
+      <div class="card">
+        <h3>Türkiye Yol Maliyeti Hesaplayıcı</h3>
+        <p>Yakıt, otoyol, vinyet ve konaklama maliyetlerini tahmin etme aracı.</p>
+      </div>
+
+      <div class="card">
+        <h3>Net Maaş Rehberi</h3>
+        <p>Vergi sınıfı, çocuk sayısı ve sigorta durumuna göre Almanya maaş bilgileri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notice">
+      <strong>Not:</strong> Almanya Pusulası hukuki, mali veya vergi danışmanlığı vermez. İçerikler genel bilgilendirme amaçlıdır. Önemli kararlar için yetkili kurumlara veya uzman danışmanlara başvurulmalıdır.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Almanya Pusulası — Almanya'da yaşayan Türkler için bağımsız bilgi platformu.
+  </div>
+</footer>
 
 </body>
 </html>
