@@ -1,0 +1,29 @@
+{
+  "name": "Almanya Pusulası",
+  "short_name": "Almanya Pusulası",
+  "icons": [
+    {
+      "src": "/assets/brand/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/almanya-pusulasi-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0b2e59",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
