@@ -1,44 +1,42 @@
-# Almanya Pusulası - Final Polish Pack
+# Almanya Pusulası
 
-Bu paket siteyi son yayına hazır hale getirmek için hazırlanmıştır.
+Almanya Pusulası, Almanya'da yaşayan Türkler için SCHUFA, konut kredisi, Blue Card,
+Kindergeld, emeklilik ve Türkiye seyahati konularında sade ve bağımsız bilgi rehberleri
+sunan bir bilgi sitesidir.
 
-## Paket ne yapar?
+## Mimari
 
-- Header'daki zayıf `⌖` ikonunu yeni logo görseliyle değiştirir.
-- Favicon ve Apple touch icon ekler.
-- Mobil menüyü görünür ve daha kullanışlı hale getirir.
-- Google Analytics'i doğrudan yüklemek yerine kullanıcı onayından sonra yükler.
-- `/impressum/` sayfası ekler.
-- `/privacy/` sayfasını Google Analytics ve çerez onayı mantığına göre günceller.
-- Footer'a `Impressum` linki ekler.
+Statik bir web sitesidir. Framework, derleme adımı veya çalışma zamanı bağımlılığı yoktur:
 
-## Uygulama
+- El ile yazılmış HTML sayfaları
+- Tek bir paylaşılan stil dosyası: `assets/style.css`
+- Tek bir istemci betiği: `assets/js/analytics-consent.js`
+- Görseller ve ikonlar: `assets/`
 
-1. ZIP dosyasını açın.
-2. İçindeki tüm dosya ve klasörleri GitHub repository kök dizinine kopyalayın.
-3. `impressum/index.html` içindeki şu placeholder alanlarını gerçek bilgilerle değiştirin:
+## Yönlendirme
 
-   - `[Sokak ve kapı numarası buraya yazılacak]`
-   - `[Posta kodu ve şehir buraya yazılacak]`
+Her sayfa kendi klasöründeki bir `index.html` dosyasıdır (`schufa/index.html`,
+`blue-card/index.html`, ...). URL'ler klasör diziniyle temiz kalır (`/schufa/`).
+Kök sayfa `index.html` dosyasıdır. Tüm bağlantı ve varlık yolları köke göredir (`/assets/...`),
+bu yüzden site bir statik sunucu üzerinden servis edilmelidir.
 
-4. Repository kök dizininde PowerShell açın ve çalıştırın:
+## Yerel önizleme
 
-```powershell
-Set-ExecutionPolicy -Scope Process Bypass
-.\apply-final-polish.ps1
+Yol yapısı gereği dosyalar doğrudan `file://` ile açılamaz. Kök dizinde yerel bir statik
+sunucu çalıştırın, örneğin:
+
+```bash
+python -m http.server 8000
 ```
 
-5. `sitemap.xml` içine `sitemap-final-snippet.xml` içindeki iki URL bloğunu ekleyin.
-6. Commit ve push yapın.
+Ardından `http://localhost:8000/` adresini açın.
 
-## Commit mesajı önerisi
+## Analiz
 
-```text
-Finalize branding, privacy, impressum and mobile navigation
-```
+Google Analytics yalnızca kullanıcı çerez onayından sonra yüklenir. Onay akışı ve GA
+yükleme mantığı tamamen `assets/js/analytics-consent.js` içindedir; hiçbir sayfada satır
+içi GA kodu yoktur. Seçim `localStorage` içinde saklanır.
 
-## Önemli not
+## Yayın
 
-`Impressum` sayfasını placeholder adresle canlıya almayın. Yayına almadan önce gerçek ve eksiksiz adres bilgisi girilmelidir.
-
-Google Analytics için mevcut inline GA kodlarının kaldırılması önemlidir. Aksi halde cookie banner görünse bile Analytics onaydan önce çalışabilir.
+Üretim alan adı: `almanyapusulasi.de`
