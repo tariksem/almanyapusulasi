@@ -33,9 +33,18 @@ Ardından `http://localhost:8000/` adresini açın.
 
 ## Analiz
 
-Google Analytics yalnızca kullanıcı çerez onayından sonra yüklenir. Onay akışı ve GA
-yükleme mantığı tamamen `assets/js/analytics-consent.js` içindedir; hiçbir sayfada satır
-içi GA kodu yoktur. Seçim `localStorage` içinde saklanır.
+Google Analytics yalnızca kullanıcı analiz onayı verdikten sonra yüklenir. Kurulum Google
+Consent Mode'un temel yaklaşımını kullanır; onay öncesinde Google etiketi yüklenmez ve
+Google'a ölçüm isteği gönderilmez. Onay akışı ve GA yükleme mantığı tamamen
+`assets/js/analytics-consent.js` içindedir; hiçbir sayfada satır içi GA kodu yoktur.
+Seçim `localStorage` içinde saklanır ve her sayfanın altındaki **Çerez tercihleri** düğmesiyle
+yeniden açılabilir.
+
+## Reklam
+
+Google AdSense henüz etkin değildir. Gerçek `ca-pub-...` yayıncı kimliği ve Google
+sertifikalı TCF CMP kurulmadan reklam kodu ya da örnek `ads.txt` satırı eklenmemelidir.
+Sahte veya yer tutucu yayıncı kimliği üretimde kullanılmamalıdır.
 
 ## Yayın
 

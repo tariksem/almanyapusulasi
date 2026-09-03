@@ -461,10 +461,31 @@ a.card:hover {
   line-height: 1.55;
 }
 
+.cookie-banner a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
 .cookie-actions {
   display: flex;
   gap: 10px;
   flex-shrink: 0;
+}
+
+.privacy-settings-button {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.privacy-settings-button:hover,
+.privacy-settings-button:focus-visible {
+  color: var(--primary);
 }
 
 @media (max-width: 760px) {
