@@ -30,6 +30,22 @@
       label: "Para transferi teklifini incele",
       note: "Ticari bağlantı — ücret ve kur işlem anında yeniden kontrol edilmelidir.",
       target: "transfer-affiliate"
+    },
+    "electricity-comparison": {
+      enabled: false,
+      provider: "",
+      url: "",
+      label: "Elektrik tarifelerini karşılaştır",
+      note: "Ticari bağlantı — fiyat, bonus, sözleşme süresi ve toplam yıllık maliyeti partner sitesinde yeniden kontrol edin.",
+      target: "electricity-affiliate"
+    },
+    "kfz-insurance": {
+      enabled: false,
+      provider: "",
+      url: "",
+      label: "Kfz sigorta tekliflerini karşılaştır",
+      note: "Ticari bağlantı — prim kişisel ve araç bilgilerine göre değişir; kapsam ve Selbstbeteiligung'u ayrıca kontrol edin.",
+      target: "kfz-affiliate"
     }
   };
 
