@@ -13,6 +13,7 @@
 
   const SECTIONS = [
     { key: "goc-kariyer", href: "/goc-kariyer/", label: "Göç & Kariyer", icon: "🧭", paths: ["/goc-kariyer", "/chancenkarte-firsat-karti", "/almanyada-ausbildung", "/almanya-is-arama-siteleri", "/diploma-denkligi-anabin-zab", "/turk-ehliyeti-almanyada-degistirme"] },
+    { key: "is-gelir", href: "/is-gelir/", label: "İş & Gelir", icon: "💼", paths: ["/is-gelir", "/minijob-2026", "/almanyada-is-sozlesmesi-arbeitsvertrag", "/almanyada-isten-ayrilma-kundigung-kundigungsfrist", "/arbeitszeugnis-nedir", "/arbeitslosengeld-basvuru", "/grundsicherungsgeld-2026"] },
     { key: "vatandaslik", href: "/vatandaslik/", label: "Vatandaşlık", icon: "🇩🇪", paths: ["/vatandaslik", "/almanya-vatandaslik-sartlari", "/vatandaslik-basvurusu-belgeler", "/vatandaslik-basvuru-sureci-adim-adim", "/vatandaslik-dil-sarti-b1", "/einbuergerungstest-hazirlik", "/cifte-vatandaslik-turkiye-almanya", "/almanyada-dogan-cocuk-vatandaslik"] },
     { key: "yerlesim", href: "/yerlesim/", label: "Yerleşim", icon: "🏡", paths: ["/yerlesim", "/almanya-adres-kaydi-anmeldung", "/rundfunkbeitrag-nedir-nasil-odenir", "/almanya-kiralik-ev-siteleri", "/almanyada-ev-kiralama-rehberi", "/kira-sozlesmesi-mietvertrag-nelere-dikkat", "/kaution-depozito-geri-alma", "/nebenkosten-yan-giderler-hesabi", "/almanyada-araba-satin-alma"] },
     { key: "finans", href: "/finans/", label: "Finans", icon: "💳", paths: ["/finans", "/almanyadan-turkiyeye-para-transferi", "/almanyada-banka-hesabi", "/haftpflichtversicherung", "/almanyada-elektrik-aboneligi", "/sperrkonto"] },
@@ -26,7 +27,7 @@
     { key: "turkiye", href: "/turkiye-seyahati/", label: "Türkiye Seyahati", icon: "🚗", paths: ["/turkiye-seyahati", "/almanyadan-turkiyeye-arabayla", "/turkiye-yolu-"] }
   ];
 
-  const PRIMARY_KEYS = ["goc-kariyer", "yerlesim", "finans", "schufa", "kredi"];
+  const PRIMARY_KEYS = ["goc-kariyer", "is-gelir", "yerlesim", "finans", "schufa"];
 
   function currentPath() { return window.location.pathname.toLowerCase(); }
 
@@ -109,7 +110,7 @@
 
   function renderFooter() {
     const footer = document.querySelector(".footer"); if (!footer) return;
-    footer.innerHTML = '<div class="container footer-grid"><div class="footer-brand"><a href="/" class="footer-brand-name">Almanya Pusulası</a><p>Almanya’da yaşayan ve Almanya’ya gelmek isteyen Türkler için pratik, bağlantılı ve düzenli güncellenen rehberler.</p></div><div><strong class="footer-title">Popüler Rehberler</strong><a href="/goc-kariyer/">Göç & Kariyer</a><a href="/vatandaslik/">Vatandaşlık</a><a href="/yerlesim/">Yerleşim</a><a href="/finans/">Finans</a><a href="/saglik-sigortasi/">Sağlık Sigortası</a><a href="/schufa/">SCHUFA</a></div><div><strong class="footer-title">Diğer Konular</strong><a href="/kredi/">Ev & Kredi</a><a href="/blue-card/">Blue Card</a><a href="/kindergeld/">Kindergeld</a><a href="/vergi/">Vergi</a><a href="/emeklilik/">Emeklilik</a><a href="/turkiye-seyahati/">Türkiye Seyahati</a></div><div class="footer-legal"><strong class="footer-title">Site</strong><a href="/about/">Hakkımızda</a><a href="/contact/">İletişim</a><a href="/privacy/">Gizlilik</a><a href="/impressum/">Impressum</a></div></div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>Bağımsız Türkçe Almanya rehberi</span></div>';
+    footer.innerHTML = '<div class="container footer-grid"><div class="footer-brand"><a href="/" class="footer-brand-name">Almanya Pusulası</a><p>Almanya’da yaşayan ve Almanya’ya gelmek isteyen Türkler için pratik, bağlantılı ve düzenli güncellenen rehberler.</p></div><div><strong class="footer-title">Popüler Rehberler</strong><a href="/goc-kariyer/">Göç & Kariyer</a><a href="/is-gelir/">İş & Gelir</a><a href="/vatandaslik/">Vatandaşlık</a><a href="/yerlesim/">Yerleşim</a><a href="/finans/">Finans</a><a href="/saglik-sigortasi/">Sağlık Sigortası</a><a href="/schufa/">SCHUFA</a></div><div><strong class="footer-title">Diğer Konular</strong><a href="/kredi/">Ev & Kredi</a><a href="/blue-card/">Blue Card</a><a href="/kindergeld/">Kindergeld</a><a href="/vergi/">Vergi</a><a href="/emeklilik/">Emeklilik</a><a href="/turkiye-seyahati/">Türkiye Seyahati</a></div><div class="footer-legal"><strong class="footer-title">Site</strong><a href="/about/">Hakkımızda</a><a href="/contact/">İletişim</a><a href="/privacy/">Gizlilik</a><a href="/impressum/">Impressum</a></div></div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>Bağımsız Türkçe Almanya rehberi</span></div>';
   }
 
   function ensureGtagQueue() { window.dataLayer = window.dataLayer || []; if (!window.gtag) window.gtag = function () { window.dataLayer.push(arguments); }; }
