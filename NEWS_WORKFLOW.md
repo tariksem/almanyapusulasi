@@ -5,6 +5,9 @@ News hub: `/haberler/`.
 ## Editorial rule
 Publish only developments that materially affect Turks living in Germany or people planning to move from Turkey to Germany. Prefer official primary sources. Never copy source articles. Explain: what changed, who is affected, effective date, what to do, and which evergreen guide should be updated.
 
+## Scheduled monitoring
+The daily editorial monitor should identify meaningful new developments and flag them for publication. A monitoring run must not manufacture news when nothing material changed. Publishing to the repository requires an authenticated repository update; after publication, update the hub, homepage highlights and sitemap together.
+
 ## Homepage
 Keep the newest/highest-impact 2–3 stories in the homepage `Gündem` block. Every story needs a date, category, concise impact summary and link to its full article.
 
