@@ -13,7 +13,7 @@
 
   const SECTIONS = [
     { key: "goc-kariyer", href: "/goc-kariyer/", label: "Göç & Kariyer", icon: "🧭", paths: ["/goc-kariyer", "/cifte-vatandaslik-turkiye-almanya", "/chancenkarte-firsat-karti", "/almanyada-ausbildung", "/almanya-is-arama-siteleri", "/diploma-denkligi-anabin-zab", "/turk-ehliyeti-almanyada-degistirme"] },
-    { key: "yerlesim", href: "/yerlesim/", label: "Yerleşim", icon: "🏡", paths: ["/yerlesim", "/almanya-adres-kaydi-anmeldung", "/rundfunkbeitrag-nedir-nasil-odenir", "/almanya-kiralik-ev-siteleri", "/almanyada-araba-satin-alma"] },
+    { key: "yerlesim", href: "/yerlesim/", label: "Yerleşim", icon: "🏡", paths: ["/yerlesim", "/almanya-adres-kaydi-anmeldung", "/rundfunkbeitrag-nedir-nasil-odenir", "/almanya-kiralik-ev-siteleri", "/almanyada-ev-kiralama-rehberi", "/kira-sozlesmesi-mietvertrag-nelere-dikkat", "/kaution-depozito-geri-alma", "/nebenkosten-yan-giderler-hesabi", "/almanyada-araba-satin-alma"] },
     { key: "finans", href: "/finans/", label: "Finans", icon: "💳", paths: ["/finans", "/almanyadan-turkiyeye-para-transferi", "/almanyada-banka-hesabi", "/haftpflichtversicherung", "/almanya-saglik-sigortasi-gkv-pkv", "/almanyada-elektrik-aboneligi", "/sperrkonto"] },
     { key: "schufa", href: "/schufa/", label: "SCHUFA", icon: "📄", paths: ["/schufa"] },
     { key: "kredi", href: "/kredi/", label: "Ev & Kredi", icon: "🏠", paths: ["/kredi", "/almanyada-ev-kredisi", "/ev-kredisi-", "/ev-alirken-ek-masraflar", "/muenster-ev-satin-alma"] },
