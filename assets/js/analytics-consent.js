@@ -6,6 +6,83 @@
   const ACCEPTED = "accepted";
   const REJECTED = "rejected";
 
+  const SITE_NAV = [
+    { href: "/finans/", label: "Finans", section: "finans" },
+    { href: "/schufa/", label: "SCHUFA", section: "schufa" },
+    { href: "/kredi/", label: "Kredi", section: "kredi" },
+    { href: "/blue-card/", label: "Blue Card", section: "blue-card" },
+    { href: "/kindergeld/", label: "Kindergeld", section: "kindergeld" },
+    { href: "/vergi/", label: "Vergi", section: "vergi" },
+    { href: "/emeklilik/", label: "Emeklilik", section: "emeklilik" }
+  ];
+
+  function currentSection() {
+    const path = window.location.pathname.toLowerCase();
+
+    if (
+      path.startsWith("/finans") ||
+      path.startsWith("/almanyadan-turkiyeye-para-transferi") ||
+      path.startsWith("/almanyada-banka-hesabi") ||
+      path.startsWith("/haftpflichtversicherung") ||
+      path.startsWith("/almanya-saglik-sigortasi-gkv-pkv") ||
+      path.startsWith("/almanyada-elektrik-aboneligi") ||
+      path.startsWith("/sperrkonto")
+    ) return "finans";
+
+    if (path.startsWith("/schufa")) return "schufa";
+
+    if (
+      path.startsWith("/kredi") ||
+      path.startsWith("/almanyada-ev-kredisi") ||
+      path.startsWith("/ev-kredisi-") ||
+      path.startsWith("/ev-alirken-ek-masraflar") ||
+      path.startsWith("/muenster-ev-satin-alma")
+    ) return "kredi";
+
+    if (path.startsWith("/blue-card")) return "blue-card";
+
+    if (path.startsWith("/kindergeld") || path.startsWith("/kinderzuschlag")) {
+      return "kindergeld";
+    }
+
+    if (
+      path.startsWith("/vergi") ||
+      path.startsWith("/almanya-vergi-siniflari") ||
+      path.startsWith("/almanyada-vergi-beyannamesi") ||
+      path.startsWith("/almanyada-vergiden-dusulen-masraflar") ||
+      path.startsWith("/steuererklaerung") ||
+      path.startsWith("/elster-vergi-beyannamesi")
+    ) return "vergi";
+
+    if (
+      path.startsWith("/emeklilik") ||
+      path.startsWith("/almanya-emeklilik-sistemi") ||
+      path.startsWith("/turkiye-emeklisi-almanyada") ||
+      path.startsWith("/eyt-emekliligi-almanyada-bildirim") ||
+      path.startsWith("/turkiye-almanya-emeklilik")
+    ) return "emeklilik";
+
+    return "";
+  }
+
+  function normalizeSiteNavigation() {
+    const activeSection = currentSection();
+
+    document.querySelectorAll(".site-header .nav").forEach(function (nav) {
+      nav.replaceChildren();
+
+      SITE_NAV.forEach(function (item) {
+        const link = document.createElement("a");
+        link.href = item.href;
+        link.textContent = item.label;
+        if (item.section === activeSection) {
+          link.setAttribute("aria-current", "page");
+        }
+        nav.appendChild(link);
+      });
+    });
+  }
+
   function ensureGtagQueue() {
     window.dataLayer = window.dataLayer || [];
     if (!window.gtag) {
@@ -162,6 +239,7 @@
   };
 
   document.addEventListener("DOMContentLoaded", function () {
+    normalizeSiteNavigation();
     addPrivacySettingsButton();
 
     const choice = readChoice();
