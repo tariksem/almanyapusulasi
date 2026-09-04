@@ -10,6 +10,7 @@
     { href: "/finans/", label: "Finans", section: "finans" },
     { href: "/schufa/", label: "SCHUFA", section: "schufa" },
     { href: "/kredi/", label: "Kredi", section: "kredi" },
+    { href: "/goc-kariyer/", label: "Göç & Kariyer", section: "goc-kariyer" },
     { href: "/blue-card/", label: "Blue Card", section: "blue-card" },
     { href: "/kindergeld/", label: "Kindergeld", section: "kindergeld" },
     { href: "/vergi/", label: "Vergi", section: "vergi" },
@@ -38,6 +39,16 @@
       path.startsWith("/ev-alirken-ek-masraflar") ||
       path.startsWith("/muenster-ev-satin-alma")
     ) return "kredi";
+
+    if (
+      path.startsWith("/goc-kariyer") ||
+      path.startsWith("/cifte-vatandaslik-turkiye-almanya") ||
+      path.startsWith("/chancenkarte-firsat-karti") ||
+      path.startsWith("/almanyada-ausbildung") ||
+      path.startsWith("/almanya-is-arama-siteleri") ||
+      path.startsWith("/diploma-denkligi-anabin-zab") ||
+      path.startsWith("/turk-ehliyeti-almanyada-degistirme")
+    ) return "goc-kariyer";
 
     if (path.startsWith("/blue-card")) return "blue-card";
 
