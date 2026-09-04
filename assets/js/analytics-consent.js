@@ -11,6 +11,7 @@
     { href: "/schufa/", label: "SCHUFA", section: "schufa" },
     { href: "/kredi/", label: "Kredi", section: "kredi" },
     { href: "/goc-kariyer/", label: "Göç & Kariyer", section: "goc-kariyer" },
+    { href: "/yerlesim/", label: "Yerleşim", section: "yerlesim" },
     { href: "/blue-card/", label: "Blue Card", section: "blue-card" },
     { href: "/kindergeld/", label: "Kindergeld", section: "kindergeld" },
     { href: "/vergi/", label: "Vergi", section: "vergi" },
@@ -49,6 +50,14 @@
       path.startsWith("/diploma-denkligi-anabin-zab") ||
       path.startsWith("/turk-ehliyeti-almanyada-degistirme")
     ) return "goc-kariyer";
+
+    if (
+      path.startsWith("/yerlesim") ||
+      path.startsWith("/almanya-adres-kaydi-anmeldung") ||
+      path.startsWith("/rundfunkbeitrag-nedir-nasil-odenir") ||
+      path.startsWith("/almanya-kiralik-ev-siteleri") ||
+      path.startsWith("/almanyada-araba-satin-alma")
+    ) return "yerlesim";
 
     if (path.startsWith("/blue-card")) return "blue-card";
 
