@@ -21,7 +21,7 @@
     { key: "kredi", href: "/kredi/", label: "Ev & Kredi", icon: "🏠", paths: ["/kredi", "/almanyada-ev-kredisi", "/ev-kredisi-", "/ev-alirken-ek-masraflar", "/muenster-ev-satin-alma"] },
     { key: "blue-card", href: "/blue-card/", label: "Blue Card", icon: "🪪", paths: ["/blue-card"] },
     { key: "kindergeld", href: "/kindergeld/", label: "Kindergeld", icon: "👨‍👩‍👧‍👦", paths: ["/kindergeld", "/kinderzuschlag"] },
-    { key: "vergi", href: "/vergi/", label: "Vergi", icon: "🧾", paths: ["/vergi", "/almanya-vergi-siniflari", "/almanyada-vergi-beyannamesi", "/almanyada-vergiden-dusulen-masraflar", "/steuererklaerung", "/elster-vergi-beyannamesi"] },
+    { key: "vergi", href: "/vergi/", label: "Vergi", icon: "🧾", paths: ["/vergi", "/almanya-vergi-siniflari", "/evli-ciftler-vergi-sinifi-secimi", "/steuer-id-vergi-kimlik-numarasi", "/kirchensteuer-kilise-vergisi-cikma", "/almanyada-vergi-beyannamesi", "/almanyada-vergiden-dusulen-masraflar", "/steuererklaerung", "/elster-vergi-beyannamesi"] },
     { key: "emeklilik", href: "/emeklilik/", label: "Emeklilik", icon: "💶", paths: ["/emeklilik", "/almanya-emeklilik-sistemi", "/turkiye-emeklisi-almanyada", "/eyt-emekliligi-almanyada-bildirim", "/turkiye-almanya-emeklilik"] },
     { key: "turkiye", href: "/turkiye-seyahati/", label: "Türkiye Seyahati", icon: "🚗", paths: ["/turkiye-seyahati", "/almanyadan-turkiyeye-arabayla", "/turkiye-yolu-"] }
   ];
