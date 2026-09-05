@@ -31,6 +31,14 @@
       note: "Ticari bağlantı — fiyat, kapsam, veri işleme ve uygunluk koşullarını sağlayıcı sitesinde yeniden kontrol edin.",
       target: "tax-software-affiliate"
     },
+    "internet-comparison": {
+      enabled: false,
+      provider: "",
+      url: "",
+      label: "İnternet tarifelerini karşılaştır",
+      note: "Ticari bağlantı — adres uygunluğu, hız, aktivasyon, router, indirim dönemi ve toplam sözleşme maliyetini partner sitesinde yeniden kontrol edin.",
+      target: "internet-affiliate"
+    },
     "money-transfer": {
       enabled: false,
       provider: "",
