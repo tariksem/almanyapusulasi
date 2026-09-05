@@ -68,7 +68,7 @@ Official programme page:
 
 ## Priority 4 — financeAds
 
-Why: specialist DACH finance/insurance affiliate network with many partner programmes and comparison tools. Relevant categories match the strongest site clusters: Girokonto, Kredit, Versicherung and related financial products.
+Why: specialist DACH finance/insurance affiliate network with partner programmes and comparison tools relevant to Girokonto, Kredit, Versicherung and related financial products.
 
 Current publisher requirements include:
 - ownership of a website/app/social channel with a legally valid Impressum;
