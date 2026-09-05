@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://almanyapusulasi.de/sitemap.xml
 Sitemap: https://almanyapusulasi.de/sitemap-career.xml
+Sitemap: https://almanyapusulasi.de/sitemap-finance-housing.xml
