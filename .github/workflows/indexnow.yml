@@ -20,20 +20,20 @@ jobs:
           ref: ${{ github.event.workflow_run.head_sha }}
           fetch-depth: 2
 
-      - name: Collect changed public HTML URLs
+      - name: Collect changed public URLs
         id: urls
         shell: bash
         run: |
           python3 - <<'PY'
-          import json, subprocess
+          import json, subprocess, xml.etree.ElementTree as ET
           host='almanyapusulasi.de'
           base='https://'+host
           try:
-              paths=subprocess.check_output(['git','diff','--name-only','HEAD^','HEAD','--','*.html'], text=True).splitlines()
+              changed=subprocess.check_output(['git','diff','--name-only','HEAD^','HEAD'], text=True).splitlines()
           except subprocess.CalledProcessError:
-              paths=[]
+              changed=[]
           urls=[]
-          for path in paths:
+          for path in changed:
               if path == 'index.html':
                   url=base+'/'
               elif path.endswith('/index.html'):
@@ -44,6 +44,20 @@ jobs:
                   continue
               if url not in urls:
                   urls.append(url)
+
+          # One-time seed when this integration itself is introduced/changed and
+          # the commit does not contain page HTML changes.
+          if not urls and '.github/workflows/indexnow.yml' in changed:
+              ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+              for sitemap in ('sitemap-commercial.xml','sitemap-tools.xml'):
+                  try:
+                      root=ET.parse(sitemap).getroot()
+                      for loc in root.findall('.//sm:loc',ns):
+                          if loc.text and loc.text.startswith(base) and loc.text not in urls:
+                              urls.append(loc.text)
+                  except Exception as exc:
+                      print('Could not seed from', sitemap, exc)
+
           with open('/tmp/indexnow.json','w',encoding='utf-8') as f:
               json.dump({
                   'host': host,
