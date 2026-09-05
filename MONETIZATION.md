@@ -17,9 +17,9 @@ The site has commercial decision pages, affiliate disclosure language, consent-a
 
 Website ownership for the N26/Impact application was verified on 2026-09-05 with the temporary `impact-site-verification` meta tag on the homepage. Keep it in place while the application is under review; remove it later only if Impact/N26 no longer requires it.
 
-## Priority 1 — CHECK24 Affiliate
+## CHECK24
 
-Application status: registration completed on 2026-09-05 as a private individual. Do not publish ordinary CHECK24 links as affiliate CTAs; wait for the exact attributable partner link or approved integration.
+Registration completed on 2026-09-05 as a private individual. Do not publish ordinary CHECK24 links as affiliate CTAs; wait for the exact attributable partner link or approved integration.
 
 Best first placements:
 - `/kfz-versicherung/`
@@ -29,9 +29,9 @@ Best first placements:
 Official page:
 - https://www.check24.de/partner/partnerprogramm/
 
-## Priority 2 — Wise Website / SEO Partnership
+## Wise
 
-Application status: Partnerize publisher account created and the Wise EUR payout campaign was requested on 2026-09-05. Current state: pending Wise review. No Wise affiliate URL is active on the site.
+Partnerize publisher account created and the Wise EUR payout campaign was requested on 2026-09-05. Current state: pending Wise review. No Wise affiliate URL is active on the site.
 
 Best placement:
 - `/almanyadan-turkiyeye-para-transferi/`
@@ -46,9 +46,9 @@ Official programme information:
 - https://wise.com/de/help/articles/2978038/was-ist-das-wise-affiliate-programm
 - https://wise.com/partner/guidelines
 
-## Priority 3 — N26 Affiliate
+## N26
 
-Application status: Impact publisher profile created as `publisher` / `individual` / `editorial content`; `almanyapusulasi.de` ownership verified successfully on 2026-09-05. N26 AG application is currently `In Review`. No N26 affiliate URL is active on the site.
+Impact publisher profile created as `publisher` / `individual` / `editorial content`; `almanyapusulasi.de` ownership verified successfully on 2026-09-05. N26 AG application is currently `In Review`. No N26 affiliate URL is active on the site.
 
 Best placements after approval:
 - `/almanyada-banka-hesabi-karsilastirma/`
@@ -60,7 +60,7 @@ Do not turn the bank comparison into an N26 advert. Keep comparison criteria ind
 Official programme page:
 - https://n26.com/de-de/affiliate
 
-## Priority 4 — financeAds
+## financeAds
 
 Potential long-term finance/insurance network. Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check the publisher requirements at application time.
 
@@ -98,10 +98,6 @@ Official pages:
 
 All slots are disabled by default. Missing/disabled slots render nothing and therefore never show a fake or dead commercial CTA.
 
-## Application pack
-
-Use `AFFILIATE-APPLICATIONS.md` for ready-to-paste German/English site descriptions, review URLs and programme-specific compliance reminders. `CHECK24_APPLICATION.md` contains the CHECK24-specific integration notes.
-
 ## Editorial rules
 
 - No “best bank” or “best insurance” ranking based only on commission.
@@ -112,4 +108,4 @@ Use `AFFILIATE-APPLICATIONS.md` for ready-to-paste German/English site descripti
 
 ## Immediate state
 
-CHECK24, Wise and N26 are now external-review/account-access dependencies. Until one of them becomes active, do not add speculative commercial links or partner claims to public pages. The next implementation event is an approval or usable attributable partner URL.
+CHECK24, Wise and N26 are now external-review/account-access dependencies. Until one becomes active, do not add speculative commercial links or partner claims to public pages. The next implementation event is an approval or usable attributable partner URL.
