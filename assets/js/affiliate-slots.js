@@ -23,6 +23,14 @@
       note: "Ticari bağlantı — karşılaştırma kapsamı partner sitesine göre değişebilir.",
       target: "insurance-affiliate"
     },
+    "tax-software": {
+      enabled: false,
+      provider: "",
+      url: "",
+      label: "Vergi yazılımı seçeneklerini incele",
+      note: "Ticari bağlantı — fiyat, kapsam, veri işleme ve uygunluk koşullarını sağlayıcı sitesinde yeniden kontrol edin.",
+      target: "tax-software-affiliate"
+    },
     "money-transfer": {
       enabled: false,
       provider: "",
