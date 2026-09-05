@@ -1,0 +1,67 @@
+name: Notify IndexNow
+
+on:
+  workflow_run:
+    workflows: ["Deploy Almanya Pusulasi"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout deployed commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 2
+
+      - name: Collect changed public HTML URLs
+        id: urls
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          host='almanyapusulasi.de'
+          base='https://'+host
+          try:
+              paths=subprocess.check_output(['git','diff','--name-only','HEAD^','HEAD','--','*.html'], text=True).splitlines()
+          except subprocess.CalledProcessError:
+              paths=[]
+          urls=[]
+          for path in paths:
+              if path == 'index.html':
+                  url=base+'/'
+              elif path.endswith('/index.html'):
+                  url=base+'/'+path[:-10]
+              elif path.endswith('.html'):
+                  url=base+'/'+path
+              else:
+                  continue
+              if url not in urls:
+                  urls.append(url)
+          with open('/tmp/indexnow.json','w',encoding='utf-8') as f:
+              json.dump({
+                  'host': host,
+                  'key': '06b8677fba3848c1b6b24edb18d8d7cd',
+                  'keyLocation': base+'/06b8677fba3848c1b6b24edb18d8d7cd.txt',
+                  'urlList': urls
+              }, f, ensure_ascii=False)
+          print('URLs to notify:', len(urls))
+          for u in urls: print(u)
+          with open('/tmp/url_count','w') as f: f.write(str(len(urls)))
+          PY
+          echo "count=$(cat /tmp/url_count)" >> "$GITHUB_OUTPUT"
+
+      - name: Notify IndexNow
+        if: steps.urls.outputs.count != '0'
+        continue-on-error: true
+        run: |
+          curl --fail-with-body --retry 2 --retry-delay 5 \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data-binary @/tmp/indexnow.json \
+            https://api.indexnow.org/indexnow
