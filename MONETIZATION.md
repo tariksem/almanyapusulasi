@@ -6,14 +6,30 @@ Last reviewed: 2026-09-05
 
 Commercial decision pages, disclosure language, consent-aware click tracking and disabled affiliate slots are implemented. No partner link is activated until its campaign is approved and the exact attributable URL is available.
 
+The static site now deploys automatically from `main` through GitHub Pages. The global navigation surfaces `/araclar/`, the homepage surfaces high-intent tools, and GA4 tracks consent-aware tool and commercial engagement.
+
 | Partner | Platform | Current state | Next implementation trigger |
 | --- | --- | --- | --- |
 | CHECK24 | CHECK24 Partnerprogramm | Registered as private individual | Partner access plus exact tracking/deeplink or approved widget |
 | Wise | Partnerize | EUR campaign pending review | Wise approval plus exact tracking/deeplink |
 | N26 | impact.com | N26 AG application In Review; site verified | N26 approval plus exact Impact tracking link |
 | financeAds | financeAds | Not applied | Reassess after business/Gewerbe setup |
+| Google AdSense | Google | Publisher ID and `ads.txt` present; ad script intentionally not active | Publish a Google-certified TCF CMP / European regulations message, then activate AdSense code and Auto Ads |
 
 The N26/Impact website verification meta tag is intentionally retained on the homepage while the application is under review.
+
+## Tracking state
+
+Consent-aware GA4 tracking is active only when `ap_cookie_consent=accepted`.
+
+Tracked events:
+- `tool_open` — entry to `/araclar/` or a calculator/checker page;
+- `tool_calculate` — interaction with calculator/checker buttons;
+- `outbound_click` — outbound links;
+- commercial `data-track` events via `assets/js/commercial-tracking.js`;
+- `affiliate_click` — once an affiliate slot is enabled, including `commercial_area`, `commercial_target`, `partner`, `link_url`, and `page_path`.
+
+`commercial-tracking.js` is the single source for affiliate click events to avoid duplicate conversions.
 
 ## Planned placements
 
@@ -32,18 +48,35 @@ N26:
 
 For N26, use `bank-comparison` only if the rendered wording accurately represents the destination. Otherwise create a dedicated bank-offer slot rather than presenting a single bank as a comparison service.
 
-## Activation procedure
+## Affiliate activation procedure
 
 1. Confirm the campaign is approved/active.
 2. Copy the exact tracking/deeplink from the partner dashboard.
 3. Update only the relevant configuration in `assets/js/affiliate-slots.js` (or add a dedicated slot if the existing slot semantics do not match).
-4. Keep all unrelated slots disabled.
-5. Render commercial links with `rel="sponsored noopener"` and a visible affiliate/commercial disclosure.
-6. Keep editorial and official-source links independent from the commercial CTA.
-7. Verify `/ticari-seffaflik/` and `/privacy/` remain accurate.
-8. Test outbound destination and partner attribution before production deployment.
-9. GA4 `affiliate_click` remains consent-aware.
-10. Record the approval date, campaign and active destination here.
+4. Set `enabled: true`, the exact `provider`, and exact attributable `url` only for that approved campaign.
+5. Keep all unrelated slots disabled.
+6. Render commercial links with `rel="sponsored noopener"` and a visible affiliate/commercial disclosure.
+7. Keep editorial and official-source links independent from the commercial CTA.
+8. Verify `/ticari-seffaflik/` and `/privacy/` remain accurate.
+9. Test outbound destination and partner attribution before production deployment.
+10. Verify a single GA4 `affiliate_click` is emitted after analytics consent.
+11. Record the approval date, campaign and active destination here.
+
+## AdSense activation gate
+
+Do not add the AdSense JavaScript merely because the publisher meta tag and `ads.txt` exist.
+
+For EEA/UK/Switzerland traffic, use a Google-certified CMP integrated with IAB TCF. The shortest route for this site is Google Privacy & messaging / European regulations.
+
+Activation sequence:
+1. In AdSense, open **Privacy & messaging**.
+2. Create/publish an **European regulations** message for `almanyapusulasi.de` using the Google CMP.
+3. Set the privacy policy URL to `https://almanyapusulasi.de/privacy/`.
+4. Choose the user-choice configuration appropriate for the site and publish the message.
+5. Confirm the message works using Google's documented test parameter (`?fc=alwaysshow&fctype=gdpr`).
+6. Only after the CMP is published, add the AdSense site code / Auto Ads loader using publisher ID `ca-pub-6014752203462020`.
+7. Re-check consent revocation / privacy settings behavior and update `/privacy/` if necessary.
+8. Verify Auto Ads and policy status in AdSense before increasing placements.
 
 ## Partner-specific restrictions
 
@@ -72,4 +105,8 @@ CHECK24:
 
 ## Immediate state
 
-CHECK24 registration, Wise EUR campaign request and N26 application have been submitted. These are now external-review/account-access dependencies. Until one becomes active, no speculative partner links or public approval claims should be added. The next monetization implementation event is an approval or usable attributable partner URL.
+CHECK24 registration, Wise EUR campaign request and N26 application have been submitted. These remain external-review/account-access dependencies.
+
+The site itself is now ready for affiliate activation without structural changes: approved campaign + exact attributable URL is sufficient to enable the matching slot.
+
+AdSense is blocked by one account-side step: publish the European regulations message / certified CMP. After that, the AdSense loader and Auto Ads can be activated safely.
