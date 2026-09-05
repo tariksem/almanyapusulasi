@@ -14,8 +14,8 @@
   const SECTIONS=[
     {key:"haberler",href:"/haberler/",label:"Haberler",icon:"📰",paths:["/haberler"]},
     {key:"tools",href:"/araclar/",label:"Araçlar",icon:"🧮",paths:[
-      "/araclar","/meslek-almanya-yolu-karar-araci","/almanyaya-gelis-yolu-secim-araci",
-      "/is-teklifi-degerlendirme-araci","/ilk-90-gun-almanya-planlayici","/vergi-yontemi-secim-araci",
+      "/araclar","/almanya-kontrol-paneli","/almanya-hazirlik-blokaj-motoru","/meslek-almanya-yolu-karar-araci","/almanyaya-gelis-yolu-secim-araci",
+      "/is-piyasasi-gucu-motoru","/sehir-butce-karsilastirma-araci","/is-teklifi-degerlendirme-araci","/ilk-90-gun-almanya-planlayici","/vergi-yontemi-secim-araci",
       "/sigorta-secim-araci","/internet-secim-araci","/banka-secim-araci","/para-transferi-maliyet-hesaplayici",
       "/brutto-netto","/netto-brutto","/elterngeld-hesaplayici","/kindergeld-hesaplayici",
       "/blue-card-uygunluk","/chancenkarte-puan","/warmmiete-kira-butcesi","/nebenkosten-abrechnung",
@@ -43,7 +43,7 @@
     {key:"fin",href:"/finans/",label:"Finans",icon:"💳",paths:[
       "/finans","/almanyadan-turkiyeye-para","/almanya-turkiye-para-gonderme-maliyeti-2026",
       "/almanyada-banka","/ucretsiz-girokonto-2026","/girokonto-karsilastirma-2026",
-      "/banka-hesabi-schufa-gerekli-mi","/basiskonto-kim-acabilir","/almanyada-elektrik","/sperrkonto"
+      "/banka-hesabi-schufa-gerekli-mi","/basiskonto-kim-acabilir","/almanyada-elektrik","/stromtarif-karsilastirma-2026","/sperrkonto"
     ]},
     {key:"sig",href:"/sigorta/",label:"Sigorta",icon:"🛡️",paths:["/sigorta","/haftpflicht","/rechtsschutz","/hausrat","/berufsunfaehigkeits","/seyahat-saglik"]},
     {key:"internet",href:"/telefon-internet/",label:"Telefon & İnternet",icon:"🌐",paths:["/telefon-internet","/almanyada-internet","/dsl-kabel-glasfaser","/internet-yavas","/internet-tarife-karsilastirma-2026"]},
