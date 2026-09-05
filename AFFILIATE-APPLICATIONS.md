@@ -13,8 +13,6 @@ This file contains the current application status, site descriptions and placeme
 
 ## 1. CHECK24 Affiliate
 
-Reason: low practical entry barrier for the current project and strong fit with existing finance, insurance, energy and mobility content.
-
 Best existing placements:
 - `/kfz-versicherung/`
 - `/almanyada-elektrik-aboneligi/`
@@ -23,9 +21,6 @@ Best existing placements:
 Publisher description used/prepared (German):
 
 > Almanya Pusulası (almanyapusulasi.de) ist ein türkischsprachiges Informationsportal für Menschen, die in Deutschland leben oder nach Deutschland ziehen möchten. Die Website veröffentlicht aktuelle, praxisorientierte Ratgeber zu Finanzen, Versicherungen, Mobilität, Arbeit, Familie, Wohnen, Steuern und Behördenprozessen. Unsere Inhalte verlinken auf offizielle Quellen und führen Nutzer von Informationsartikeln zu thematischen Entscheidungs- und Vergleichsseiten. Für das CHECK24 Partnerprogramm sind insbesondere Kfz-Versicherung, Strom und weitere Tarifvergleiche relevant. Werbung und Affiliate-Links werden transparent als kommerziell gekennzeichnet und redaktionelle Inhalte bleiben davon getrennt.
-
-Site URL:
-- https://almanyapusulasi.de/
 
 Useful review URLs:
 - https://almanyapusulasi.de/sigorta-secim-rehberi/
@@ -40,11 +35,8 @@ Official programme page:
 
 ## 2. Wise Website / SEO Partnership
 
-Reason: very strong semantic fit for the Germany-to-Turkey money transfer guide. Website/SEO partners use Partnerize for tracking after approval.
-
 Application completed on 2026-09-05:
 - Partnerize publisher account created.
-- Wise campaign found under campaigns.
 - Only `Wise - Commission payout currency EUR` requested for the Germany-based site.
 - Terms accepted and request submitted.
 - Current state: `1 Pending request` / pending Wise review.
@@ -55,11 +47,6 @@ Best placement after approval:
 Publisher description (English):
 
 > Almanya Pusulası is a Turkish-language Germany information website for Turkish-speaking residents and newcomers. We publish practical, search-driven guides about finance, banking, insurance, relocation, work and cross-border topics. Our Germany-to-Turkey money transfer guide explains total transfer cost, exchange-rate margin, recipient amount and transfer time without claiming that one provider is always the cheapest. We would like to use Wise as a clearly disclosed commercial option within this educational context. Affiliate links will be labelled and separated from official/independent sources.
-
-Useful review URLs:
-- https://almanyapusulasi.de/almanyadan-turkiyeye-para-transferi/
-- https://almanyapusulasi.de/finans/
-- https://almanyapusulasi.de/ticari-seffaflik/
 
 Promotion restrictions to remember:
 - Do not use paid search or paid social to drive traffic to Wise without explicit written permission.
@@ -78,8 +65,6 @@ Official pages:
 - https://wise.com/partner/guidelines
 
 ## 3. N26 Affiliate
-
-Reason: strong fit for the bank account decision cluster and a direct-bank monetization path.
 
 Application completed on 2026-09-05 through Impact:
 - profile type: `a publisher`;
@@ -113,7 +98,7 @@ Official programme page:
 
 ## 4. financeAds
 
-Reason: strong long-term finance/insurance network fit. Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check the current publisher requirements at application time rather than relying on a stored assumption.
+Potential long-term finance/insurance network. Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check current publisher requirements at application time.
 
 Best placements after approval:
 - `/almanyada-banka-hesabi-karsilastirma/`
