@@ -11,12 +11,14 @@ The static site now deploys automatically from `main` through GitHub Pages. The 
 | Partner | Platform | Current state | Next implementation trigger |
 | --- | --- | --- | --- |
 | CHECK24 | CHECK24 Partnerprogramm | Registration completed 2026-09-05; account review / activation preparation in progress; Partner-ID not received yet | Partner-ID plus exact tracking/deeplink or approved widget |
-| Wise | Partnerize | EUR campaign pending review | Wise approval plus exact tracking/deeplink |
+| Wise | Partnerize | Account created; email verification still required before normal platform use; EUR campaign approval not confirmed | Verify Partnerize email, then confirm Wise campaign approval and exact tracking/deeplink |
 | N26 | impact.com | N26 AG application In Review; site verified | N26 approval plus exact Impact tracking link |
 | financeAds | financeAds | Not applied | Reassess after business/Gewerbe setup |
 | Google AdSense | Google | Publisher ID and `ads.txt` present; ad script intentionally not active | Publish a Google-certified TCF CMP / European regulations message, then activate AdSense code and Auto Ads |
 
 CHECK24's post-registration confirmation states that the submitted data are being reviewed and account activation is being prepared; the Partner-ID email is expected within up to 72 hours. Do not treat registration completion as partner approval and do not enable CHECK24 links until the Partner-ID / attributable destination is received and verified.
+
+Partnerize sent a verification email on 2026-09-05 stating that email verification is required before normal platform use. Wise must therefore remain disabled until that account step is completed and campaign approval plus the exact attributable destination are confirmed.
 
 The N26/Impact website verification meta tag is intentionally retained on the homepage while the application is under review.
 
@@ -109,7 +111,7 @@ CHECK24:
 
 ## Immediate state
 
-CHECK24 registration is completed and is now awaiting account activation / Partner-ID. Wise EUR campaign and N26 application remain under external review.
+CHECK24 registration is completed and is now awaiting account activation / Partner-ID. Partnerize requires email verification before Wise can progress normally. N26 remains in review.
 
 The site itself is ready for affiliate activation without structural changes: approved campaign + exact attributable URL is sufficient to enable the matching slot.
 
