@@ -1,0 +1,84 @@
+name: Site Quality Audit
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit internal links and SEO basics
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlsplit, unquote
+          import sys
+
+          root=Path('.')
+          html_files=list(root.rglob('*.html'))
+          missing=[]
+          seo=[]
+
+          class Parser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.hrefs=[]
+                  self.canonical=False
+                  self.viewport=False
+              def handle_starttag(self,tag,attrs):
+                  a=dict(attrs)
+                  if tag=='a' and a.get('href'):
+                      self.hrefs.append(a['href'])
+                  if tag=='link' and a.get('rel')=='canonical' and a.get('href'):
+                      self.canonical=True
+                  if tag=='meta' and a.get('name','').lower()=='viewport':
+                      self.viewport=True
+
+          def target_exists(href):
+              if not href.startswith('/') or href.startswith('//'):
+                  return True
+              path=unquote(urlsplit(href).path)
+              if path.startswith('/assets/') or path in ('/favicon.ico','/ads.txt','/robots.txt'):
+                  return True
+              rel=path.lstrip('/')
+              if not rel:
+                  return (root/'index.html').exists()
+              p=root/rel
+              if path.endswith('/'):
+                  return (p/'index.html').exists()
+              if p.exists():
+                  return True
+              return (p/'index.html').exists()
+
+          for file in html_files:
+              text=file.read_text(encoding='utf-8',errors='replace')
+              parser=Parser()
+              try: parser.feed(text)
+              except Exception as e:
+                  seo.append(f'{file}: HTML parse warning: {e}')
+              if file.name=='index.html':
+                  if not parser.viewport:
+                      seo.append(f'{file}: missing viewport meta')
+                  if not parser.canonical:
+                      seo.append(f'{file}: missing canonical link')
+              for href in parser.hrefs:
+                  if href.startswith(('#','mailto:','tel:','javascript:')):
+                      continue
+                  if not target_exists(href):
+                      missing.append(f'{file}: {href}')
+
+          print(f'HTML files scanned: {len(html_files)}')
+          print(f'Missing internal targets: {len(missing)}')
+          for x in missing[:200]: print('BROKEN',x)
+          print(f'SEO basic issues: {len(seo)}')
+          for x in seo[:200]: print('SEO',x)
+          if missing or seo:
+              sys.exit(1)
+          PY
