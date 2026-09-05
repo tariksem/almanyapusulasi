@@ -13,7 +13,7 @@ This file contains the current application status, site descriptions and placeme
 
 ## 1. CHECK24 Affiliate
 
-Reason: low practical entry barrier for the current project. CHECK24 states that both private individuals and businesses can participate. Its affiliate programme offers comparison calculators and advertising materials in categories already covered by Almanya Pusulası, including Kfz insurance, electricity, internet and other tariff products.
+Reason: low practical entry barrier for the current project and strong fit with existing finance, insurance, energy and mobility content.
 
 Best existing placements:
 - `/kfz-versicherung/`
