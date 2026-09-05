@@ -10,7 +10,7 @@ Current next step: wait for partner account activation/access and obtain the exa
 
 ## Why CHECK24 first
 
-CHECK24 states that both private individuals and businesses can join its affiliate programme. Registration is free. The programme promotes comparison products relevant to the site's existing finance, insurance, energy and mobility content.
+CHECK24 accepts private-individual registrations and its comparison model fits the site's existing finance, insurance, energy and mobility content.
 
 Official pages:
 - https://www.check24.de/partner/partnerprogramm/
