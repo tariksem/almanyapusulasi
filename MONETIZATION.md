@@ -109,3 +109,7 @@ Use `AFFILIATE-APPLICATIONS.md` for ready-to-paste German/English site descripti
 - Commercial links must be labelled as commercial/affiliate links.
 - Product prices, bonuses, interest rates and eligibility conditions must be verified close to publication because they change frequently.
 - AdSense/CMP compliance is a separate workstream; affiliate activation does not solve EEA ad-consent requirements.
+
+## Immediate state
+
+CHECK24, Wise and N26 are now external-review/account-access dependencies. Until one of them becomes active, do not add speculative commercial links or partner claims to public pages. The next implementation event is an approval or usable attributable partner URL.
