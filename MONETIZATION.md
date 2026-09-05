@@ -72,4 +72,4 @@ CHECK24:
 
 ## Immediate state
 
-CHECK24, Wise and N26 are external-review/account-access dependencies. Until one becomes active, no speculative partner links or public approval claims should be added. The next monetization implementation event is an approval or usable attributable partner URL.
+CHECK24 registration, Wise EUR campaign request and N26 application have been submitted. These are now external-review/account-access dependencies. Until one becomes active, no speculative partner links or public approval claims should be added. The next monetization implementation event is an approval or usable attributable partner URL.
