@@ -4,24 +4,51 @@ Last reviewed: 2026-09-05
 
 ## Pipeline
 
-- CHECK24 — registered 2026-09-05 as a private individual. Await partner access and attributable integration.
-- Wise — Partnerize account created; `Wise - Commission payout currency EUR` requested 2026-09-05. Pending review.
-- N26 — Impact profile: publisher / individual / editorial content. `almanyapusulasi.de` ownership verified. N26 AG application: In Review.
+- TARIFCHECK — registration completed successfully 2026-09-05. Account review / activation preparation in progress; Partner-ID not received yet. Initial product fit: Girokonto, Kfz-Versicherung and context-appropriate Private Krankenversicherung.
+- CHECK24 — separate programme. Gmail still contains “Jetzt Registrierung abschließen” reminders; registration completion and approval are not confirmed.
+- Wise — Partnerize account created; email verification is still required. EUR campaign approval is not confirmed.
+- N26 — Impact profile: publisher / individual / editorial content. `almanyapusulasi.de` ownership verified. Application received / under review.
 - financeAds — deferred until business/Gewerbe setup is available; re-check current requirements at application time.
 
-Do not activate any commercial slot before approval and receipt of the exact tracking URL.
+Do not activate any commercial slot before approval and receipt of the exact attributable tracking URL/deeplink.
 
-## CHECK24 application copy
+## TARIFCHECK
 
-> Almanya Pusulası (almanyapusulasi.de) ist ein türkischsprachiges Informationsportal für Menschen, die in Deutschland leben oder nach Deutschland ziehen möchten. Die Website veröffentlicht aktuelle, praxisorientierte Ratgeber zu Finanzen, Versicherungen, Mobilität, Arbeit, Familie, Wohnen, Steuern und Behördenprozessen. Unsere Inhalte verlinken auf offizielle Quellen und führen Nutzer von Informationsartikeln zu thematischen Entscheidungs- und Vergleichsseiten. Für das CHECK24 Partnerprogramm sind insbesondere Kfz-Versicherung, Strom und weitere Tarifvergleiche relevant. Werbung und Affiliate-Links werden transparent als kommerziell gekennzeichnet und redaktionelle Inhalte bleiben davon getrennt.
+Registration status:
+- registration successful;
+- submitted data under review;
+- account activation being prepared;
+- Partner-ID expected by email after review;
+- no attributable link is active yet.
 
-Planned pages:
-- `/kfz-versicherung/`
-- `/almanyada-elektrik-aboneligi/`
-- `/sigorta-secim-rehberi/`
+Initial site fit:
+- Girokonto → bank cluster and bank decision tool;
+- Kfz-Versicherung → car/Kfz cluster and car-cost calculator;
+- Private Krankenversicherung → only pages where PKV is contextually appropriate.
 
-Official programme:
-- https://www.check24.de/partner/partnerprogramm/
+After Partner-ID / activation:
+1. Open the TARIFCHECK partner dashboard.
+2. Copy the exact attributable product/deeplink for each approved product.
+3. Verify partner terms and whether deep linking/widget use is allowed.
+4. Configure only the matching offer/slot in `assets/js/commercial-offers.js` or `assets/js/affiliate-slots.js`.
+5. Keep visible commercial disclosure and `rel="sponsored noopener"`.
+6. Test destination, attribution and a single consent-aware `affiliate_click` event.
+7. Do not publish commission values from the partner UI as durable public claims.
+
+## CHECK24
+
+CHECK24 is a different affiliate programme and must not be confused with TARIFCHECK.
+
+Current status:
+- registration completion not confirmed;
+- Gmail contains “Jetzt Registrierung abschließen” reminders;
+- no approval, Partner-ID or attributable URL is recorded.
+
+Existing application copy can be reused only if we deliberately complete a separate CHECK24 application:
+
+> Almanya Pusulası (almanyapusulasi.de) ist ein türkischsprachiges Informationsportal für Menschen, die in Deutschland leben oder nach Deutschland ziehen möchten. Die Website veröffentlicht aktuelle, praxisorientierte Ratgeber zu Finanzen, Versicherungen, Mobilität, Arbeit, Familie, Wohnen, Steuern und Behördenprozessen. Unsere Inhalte verlinken auf offizielle Quellen und führen Nutzer von Informationsartikeln zu thematischen Entscheidungs- und Vergleichsseiten. Werbung und Affiliate-Links werden transparent als kommerziell gekennzeichnet und redaktionelle Inhalte bleiben davon getrennt.
+
+Do not reuse TARIFCHECK Partner-ID, links or status for CHECK24.
 
 ## Wise application
 
@@ -32,7 +59,10 @@ Application copy:
 
 > Almanya Pusulası is a Turkish-language Germany information website for Turkish-speaking residents and newcomers. We publish practical, search-driven guides about finance, banking, insurance, relocation, work and cross-border topics. Our Germany-to-Turkey money transfer guide explains total transfer cost, exchange-rate margin, recipient amount and transfer time without claiming that one provider is always the cheapest. We would like to use Wise as a clearly disclosed commercial option within this educational context. Affiliate links will be labelled and separated from official/independent sources.
 
-After approval:
+Current blocker:
+- Partnerize email verification must be completed before normal platform use.
+
+After verification and campaign approval:
 1. Create/copy the exact Wise tracking/deeplink in Partnerize.
 2. Enable `money-transfer` only.
 3. Test destination and attribution.
@@ -55,10 +85,9 @@ Application details:
 - content type: `editorial content`
 - channel: `https://almanyapusulasi.de`
 - website ownership: verified
-- status: `In Review`
+- status: application received / under review
 
-Impact verification tag currently retained on the homepage:
-`<meta name="impact-site-verification" value="045efa89-f970-457d-a093-cc960aefc83b">`
+Impact verification tag is intentionally retained on the homepage while the application is under review.
 
 Planned pages:
 - `/almanyada-banka-hesabi-karsilastirma/`
@@ -91,7 +120,7 @@ Official page:
 
 1. Campaign approved/active.
 2. Exact tracking URL copied from partner dashboard.
-3. Only matching `assets/js/affiliate-slots.js` slot enabled.
+3. Only matching commercial slot enabled.
 4. `rel="sponsored noopener"` retained.
 5. Visible commercial/affiliate disclosure present.
 6. Editorial and official-source links remain independent.
@@ -99,4 +128,4 @@ Official page:
 8. Outbound attribution tested.
 9. GA4 `affiliate_click` remains consent-aware.
 
-CHECK24 registration, Wise EUR campaign request and N26 application have been submitted. The next implementation step is triggered by a partner approval or usable attributable URL; do not publish speculative partner claims while applications are pending.
+TARIFCHECK is the nearest activation opportunity and is being monitored for Partner-ID. Wise is blocked on Partnerize email verification. N26 is under review. CHECK24 remains a separate, not-yet-confirmed registration path.
