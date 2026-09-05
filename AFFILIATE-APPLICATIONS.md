@@ -113,9 +113,7 @@ Official programme page:
 
 ## 4. financeAds
 
-Reason: strong long-term finance/insurance network fit. Current published requirements include a live, current finance-relevant website, valid Impressum and proof of registered business (Gewerbe).
-
-Apply once Gewerbe proof is available.
+Reason: strong long-term finance/insurance network fit. Apply once the required Gewerbe/business proof is available.
 
 Best placements after approval:
 - `/almanyada-banka-hesabi-karsilastirma/`
