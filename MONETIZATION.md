@@ -13,13 +13,11 @@ The site has commercial decision pages, affiliate disclosure language, consent-a
 | CHECK24 | CHECK24 Partnerprogramm | Registered | Private individual | Wait for account/partner access; obtain exact tracking/deeplink or approved widget |
 | Wise | Partnerize | Pending review | EUR campaign | Wait for Wise decision; after approval create exact tracking/deeplink |
 | N26 | impact.com | In Review | Publisher / individual / editorial content | Wait for N26 decision; after approval obtain exact campaign tracking link |
-| financeAds | financeAds | Not applied | Business setup pending | Reassess application requirements when business/Gewerbe setup is available |
+| financeAds | financeAds | Not applied | Business setup pending | Reassess application when business/Gewerbe setup is available |
 
 Website ownership for the N26/Impact application was verified on 2026-09-05 with the temporary `impact-site-verification` meta tag on the homepage. Keep it in place while the application is under review; remove it later only if Impact/N26 no longer requires it.
 
 ## Priority 1 — CHECK24 Affiliate
-
-Why first: CHECK24 accepts private-individual registrations and its comparison model fits categories already covered by the site, especially Kfz insurance, electricity and other tariff/decision content.
 
 Application status: registration completed on 2026-09-05 as a private individual. Do not publish ordinary CHECK24 links as affiliate CTAs; wait for the exact attributable partner link or approved integration.
 
@@ -32,8 +30,6 @@ Official page:
 - https://www.check24.de/partner/partnerprogramm/
 
 ## Priority 2 — Wise Website / SEO Partnership
-
-Why: strong fit for the existing Germany–Turkey money transfer intent. Website/SEO publishers use Partnerize for tracking after approval.
 
 Application status: Partnerize publisher account created and the Wise EUR payout campaign was requested on 2026-09-05. Current state: pending Wise review. No Wise affiliate URL is active on the site.
 
@@ -52,8 +48,6 @@ Official programme information:
 
 ## Priority 3 — N26 Affiliate
 
-Why: direct fit for the bank-account cluster and a useful second monetization path alongside a broader comparison partner.
-
 Application status: Impact publisher profile created as `publisher` / `individual` / `editorial content`; `almanyapusulasi.de` ownership verified successfully on 2026-09-05. N26 AG application is currently `In Review`. No N26 affiliate URL is active on the site.
 
 Best placements after approval:
@@ -68,9 +62,7 @@ Official programme page:
 
 ## Priority 4 — financeAds
 
-Why: specialist DACH finance/insurance affiliate network with partner programmes and comparison tools relevant to Girokonto, Kredit, Versicherung and related financial products.
-
-Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check the publisher requirements at application time rather than relying on a stored assumption.
+Potential long-term finance/insurance network. Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check the publisher requirements at application time.
 
 Candidate placements after approval:
 - `/almanyada-banka-hesabi-karsilastirma/`
