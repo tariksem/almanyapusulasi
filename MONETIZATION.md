@@ -19,7 +19,7 @@ Website ownership for the N26/Impact application was verified on 2026-09-05 with
 
 ## Priority 1 — CHECK24 Affiliate
 
-Why first: CHECK24 states that both private individuals and businesses can participate. The programme offers comparison calculators and advertising materials in categories already covered by the site, including Kfz insurance, electricity, internet and other tariff products.
+Why first: CHECK24 accepts private-individual registrations and its comparison model fits categories already covered by the site, especially Kfz insurance, electricity and other tariff/decision content.
 
 Application status: registration completed on 2026-09-05 as a private individual. Do not publish ordinary CHECK24 links as affiliate CTAs; wait for the exact attributable partner link or approved integration.
 
@@ -70,13 +70,13 @@ Official programme page:
 
 Why: specialist DACH finance/insurance affiliate network with many partner programmes and comparison tools. Relevant categories match the strongest site clusters: Girokonto, Kredit, Versicherung and related financial products.
 
-Current publisher requirements stated by financeAds include:
+Current publisher requirements include:
 - ownership of a website/app/social channel with a legally valid Impressum;
 - finance-relevant audience/content;
 - current, live content;
 - proof of registered business (Gewerbe).
 
-Registration is free. Apply once Gewerbe proof is available.
+Apply once the required Gewerbe/business proof is available.
 
 Candidate placements after approval:
 - `/almanyada-banka-hesabi-karsilastirma/`
