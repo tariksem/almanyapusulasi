@@ -4,13 +4,19 @@ Last reviewed: 2026-09-05
 
 ## Status
 
-Registration completed on 2026-09-05 as a private individual (`Nein, Privatperson`) for `https://almanyapusulasi.de`. The site was submitted as `Blogs & Content` with a contextual editorial promotion description. Bank/payment details were supplied directly in the CHECK24 form and must not be stored in this repository.
+CHECK24 is a separate affiliate programme from TARIFCHECK.
 
-Current next step: wait for partner account activation/access and obtain the exact attributable tracking/deeplink or approved widget/code before publishing any CHECK24 commercial CTA.
+Current verified state:
+- Gmail still contains CHECK24 messages with the subject `Jetzt Registrierung abschließen`;
+- CHECK24 registration completion is therefore **not confirmed**;
+- no CHECK24 approval, Partner-ID, tracking URL or approved widget is recorded;
+- the successful registration / 72-hour Partner-ID screen belongs to **TARIFCHECK**, not CHECK24.
 
-## Why CHECK24 first
+Do not enable any CHECK24 commercial CTA until the CHECK24 registration is deliberately completed, approved and an exact attributable destination is available.
 
-CHECK24 accepts private-individual registrations and its comparison model fits the site's existing finance, insurance, energy and mobility content.
+## Why CHECK24 may still be useful later
+
+Its comparison model could fit the site's finance, insurance, energy and mobility content if the programme is separately completed and approved.
 
 Official pages:
 - https://www.check24.de/partner/partnerprogramm/
@@ -36,65 +42,50 @@ Official pages:
 
 > Türkischsprachiges Deutschland-Ratgeberportal mit Fokus auf Finanzen, Versicherungen, Mobilität, Wohnen und praktische Alltagsentscheidungen.
 
-## Planned CHECK24 placements after approval
+## Candidate CHECK24 placements after separate approval
 
-### 1. Bank / account products
-Primary editorial page:
+### Bank / account products
 - https://almanyapusulasi.de/almanyada-banka-hesabi-karsilastirma/
-
-Secondary:
-- https://almanyapusulasi.de/almanyada-banka-hesabi/
+- https://almanyapusulasi.de/girokonto-karsilastirma-2026/
 - https://almanyapusulasi.de/finans/
 
-Potential slot:
-- `bank-comparison`
+Potential slot: `bank-comparison`, only if the destination is actually a bank/comparison experience.
 
-Only use this slot if the approved CHECK24 destination actually represents the advertised bank/comparison experience.
-
-### 2. Electricity / energy
-Primary editorial page:
+### Electricity / energy
 - https://almanyapusulasi.de/almanyada-elektrik-aboneligi/
+- https://almanyapusulasi.de/stromtarif-karsilastirma-2026/
 
-Slot:
-- `electricity-comparison`
+Potential slot: `electricity-comparison`.
 
-### 3. Kfz insurance
-Primary editorial page:
+### Kfz insurance
 - https://almanyapusulasi.de/kfz-versicherung/
+- https://almanyapusulasi.de/kfz-versicherung-karsilastirma-2026/
 
-Secondary:
-- https://almanyapusulasi.de/mobilite-arac/
+Potential slot: `kfz-insurance`.
 
-Slot:
-- `kfz-insurance`
-
-### 4. Insurance comparison
-Primary editorial page:
+### Insurance comparison
 - https://almanyapusulasi.de/sigorta-secim-rehberi/
 
-Slot:
-- `insurance-comparison`
+Potential slot: `insurance-comparison`.
 
 ## Integration rules
 
-- Never publish a CHECK24/Tarifcheck tracking link before the relevant account/campaign access is available.
-- Use only the exact tracking/deeplink supplied in the partner account.
-- Commercial CTAs must say that the link is commercial/affiliate.
-- Every affiliate link uses `rel="sponsored noopener"`.
+- Never publish a CHECK24 tracking link before the relevant account/campaign access is available.
+- Never reuse TARIFCHECK Partner-ID or tracking links for CHECK24.
+- Use only the exact tracking/deeplink supplied in the CHECK24 partner account.
+- Commercial CTAs must be visibly identified as commercial/affiliate.
+- Affiliate links use `rel="sponsored noopener"`.
 - Keep independent and official source links visible.
 - Do not claim CHECK24 is the “best” comparison service.
 - Do not hard-code commission values or temporary customer bonuses into evergreen editorial text.
 - Measure `affiliate_click` only when the visitor has accepted Analytics.
 - Do not store personal registration data, bank details, tax data or passwords in repository documentation.
 
-## After account access / approval
+## If CHECK24 is completed later
 
-1. Copy the exact approved tracking/deeplink from CHECK24.
-2. Identify which CHECK24 product/campaign that link represents.
-3. Edit `assets/js/affiliate-slots.js`.
-4. Enable only the slot whose visible copy matches that destination.
-5. Set `provider: "CHECK24"` or the exact programme/brand name required by the account.
-6. Set the exact tracking URL.
-7. If CHECK24 supplies HTML/widget code rather than a deeplink, review privacy/CMP requirements before embedding third-party scripts or iframes.
-8. Test the outbound URL and attribution.
-9. Deploy to `main` and fast-forward `cloudflare/workers-autoconfig` to the same commit.
+1. Finish the separate CHECK24 registration.
+2. Confirm account/campaign approval.
+3. Obtain the exact attributable tracking/deeplink or approved widget.
+4. Identify the exact product/campaign represented by the destination.
+5. Enable only the matching slot in `assets/js/affiliate-slots.js` or `assets/js/commercial-offers.js`.
+6. Test destination, attribution, disclosure and consent-aware analytics before production deployment.
