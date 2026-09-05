@@ -133,3 +133,7 @@ Official page:
 ## Editorial rule
 
 No commercial partner should be described as “best”, “cheapest” or “recommended” unless that statement is independently supportable with explicit, current comparison criteria. Commission level must never be the sole ranking criterion.
+
+## Immediate state
+
+CHECK24, Wise and N26 are now external-review/account-access dependencies. Do not add speculative public partner claims or ordinary outbound links while they are pending. The next implementation step is triggered by an approval or a usable attributable partner URL.
