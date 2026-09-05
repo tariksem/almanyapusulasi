@@ -4,7 +4,7 @@ Last reviewed: 2026-09-05
 
 ## Current status
 
-Commercial decision pages, disclosure language, consent-aware click tracking and disabled affiliate slots are already implemented. No partner link is activated until its campaign is approved and the exact attributable URL is available.
+Commercial decision pages, disclosure language, consent-aware click tracking and disabled affiliate slots are implemented. No partner link is activated until its campaign is approved and the exact attributable URL is available.
 
 | Partner | Platform | Current state | Next implementation trigger |
 | --- | --- | --- | --- |
