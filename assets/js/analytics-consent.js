@@ -38,12 +38,12 @@
     {key:"is",href:"/is-gelir/",label:"İş & Gelir",icon:"💼",paths:["/is-gelir","/minijob","/almanyada-is-sozlesmesi","/almanyada-isten-ayrilma","/arbeitszeugnis","/arbeitslosengeld","/grundsicherungsgeld"]},
     {key:"vat",href:"/vatandaslik/",label:"Vatandaşlık",icon:"🇩🇪",paths:["/vatandaslik","/almanya-vatandaslik","/einbuergerungstest","/cifte-vatandaslik","/almanyada-dogan-cocuk"]},
     {key:"yer",href:"/yerlesim/",label:"Yerleşim",icon:"🏡",paths:["/yerlesim","/almanya-adres","/rundfunkbeitrag","/almanya-kiralik","/almanyada-ev-kiralama","/kira-sozlesmesi","/kaution","/nebenkosten","/warmmiete-kaltmiete"]},
-    {key:"mob",href:"/mobilite-arac/",label:"Mobilite & Araç",icon:"🚘",paths:["/mobilite-arac","/almanyada-araba","/turk-ehliyeti","/kfz-","/arac-tescili","/tuv-hu","/deutschlandticket"]},
+    {key:"mob",href:"/mobilite-arac/",label:"Mobilite & Araç",icon:"🚘",paths:["/mobilite-arac","/almanyada-araba","/turk-ehliyeti","/kfz-","/teilkasko-","/arac-tescili","/tuv-hu","/deutschlandticket"]},
     {key:"aile",href:"/aile-cocuk/",label:"Aile & Çocuk",icon:"👨‍👩‍👧‍👦",paths:["/aile-cocuk","/elterngeld","/elternzeit","/mutterschutz","/kinderkrankengeld","/kita-platz"]},
     {key:"fin",href:"/finans/",label:"Finans",icon:"💳",paths:[
       "/finans","/almanyadan-turkiyeye-para","/almanya-turkiye-para-gonderme-maliyeti-2026",
       "/almanyada-banka","/ucretsiz-girokonto-2026","/girokonto-karsilastirma-2026",
-      "/banka-hesabi-schufa-gerekli-mi","/basiskonto-kim-acabilir","/almanyada-elektrik","/stromtarif-karsilastirma-2026","/sperrkonto"
+      "/banka-hesabi-schufa-gerekli-mi","/basiskonto-kim-acabilir","/almanyada-elektrik","/grundversorgung","/stromanbieter-wechseln","/stromtarif-karsilastirma-2026","/sperrkonto"
     ]},
     {key:"sig",href:"/sigorta/",label:"Sigorta",icon:"🛡️",paths:["/sigorta","/haftpflicht","/rechtsschutz","/hausrat","/berufsunfaehigkeits","/seyahat-saglik"]},
     {key:"internet",href:"/telefon-internet/",label:"Telefon & İnternet",icon:"🌐",paths:["/telefon-internet","/almanyada-internet","/dsl-kabel-glasfaser","/internet-yavas","/internet-tarife-karsilastirma-2026"]},
