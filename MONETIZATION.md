@@ -6,17 +6,22 @@ Last reviewed: 2026-09-05
 
 Commercial decision pages, disclosure language, consent-aware click tracking and disabled affiliate slots are implemented. No partner link is activated until its campaign is approved and the exact attributable URL is available.
 
-The static site now deploys automatically from `main` through GitHub Pages. The global navigation surfaces `/araclar/`, the homepage surfaces high-intent tools, and GA4 tracks consent-aware tool and commercial engagement.
+The static site deploys automatically from `main` through GitHub Pages. The global navigation surfaces `/araclar/`, the homepage surfaces high-intent tools, and GA4 tracks consent-aware tool and commercial engagement.
 
 | Partner | Platform | Current state | Next implementation trigger |
 | --- | --- | --- | --- |
-| CHECK24 | CHECK24 Partnerprogramm | Registration completed 2026-09-05; account review / activation preparation in progress; Partner-ID not received yet | Partner-ID plus exact tracking/deeplink or approved widget |
+| TARIFCHECK | TARIFCHECK Partnerprogramm | Registration completed successfully on 2026-09-05; account review / activation preparation in progress; Partner-ID not received yet | Partner-ID plus exact product tracking/deeplink or approved widget |
+| CHECK24 | CHECK24 Partnerprogramm | Registration not confirmed complete. Gmail still contains “Jetzt Registrierung abschließen” messages | Complete registration only if we decide to add CHECK24 as a separate partner; then wait for approval and exact attributable destination |
 | Wise | Partnerize | Account created; email verification still required before normal platform use; EUR campaign approval not confirmed | Verify Partnerize email, then confirm Wise campaign approval and exact tracking/deeplink |
-| N26 | impact.com | N26 AG application In Review; site verified | N26 approval plus exact Impact tracking link |
+| N26 | impact.com | Application received / under review; site verification completed | N26 approval plus exact Impact tracking link |
 | financeAds | financeAds | Not applied | Reassess after business/Gewerbe setup |
 | Google AdSense | Google | Publisher ID and `ads.txt` present; ad script intentionally not active | Publish a Google-certified TCF CMP / European regulations message, then activate AdSense code and Auto Ads |
 
-CHECK24's post-registration confirmation states that the submitted data are being reviewed and account activation is being prepared; the Partner-ID email is expected within up to 72 hours. Do not treat registration completion as partner approval and do not enable CHECK24 links until the Partner-ID / attributable destination is received and verified.
+TARIFCHECK's post-registration confirmation states that the submitted data are being reviewed and account activation is being prepared; the Partner-ID email is expected within up to 72 hours. Do not treat registration completion as partner approval and do not enable TARIFCHECK links until the Partner-ID / attributable product destination is received and verified.
+
+The registration confirmation currently surfaces product categories that match our commercial clusters, including Girokonto, Kfz-Versicherung and Private Krankenversicherung. Commission values shown in the partner UI are not to be hard-coded into public editorial content because partner rates can change.
+
+CHECK24 is a separate program and must not be conflated with TARIFCHECK. Current Gmail evidence only confirms “complete registration” reminders; no CHECK24 approval or Partner-ID is recorded.
 
 Partnerize sent a verification email on 2026-09-05 stating that email verification is required before normal platform use. Wise must therefore remain disabled until that account step is completed and campaign approval plus the exact attributable destination are confirmed.
 
@@ -39,10 +44,13 @@ Tracked events:
 
 ## Planned placements
 
-CHECK24:
-- `/kfz-versicherung/` → `kfz-insurance`
-- `/almanyada-elektrik-aboneligi/` → `electricity-comparison`
-- `/sigorta-secim-rehberi/` → `insurance-comparison`
+TARIFCHECK:
+- Girokonto → `/girokonto-karsilastirma-2026/`, `/almanyada-banka-hesabi-karsilastirma/`, relevant bank decision pages
+- Kfz-Versicherung → `/kfz-versicherung/`, `/kfz-versicherung-karsilastirma-2026/`, relevant car-cost pages
+- Private Krankenversicherung → only health-insurance pages where PKV is contextually appropriate; never present PKV as universally preferable
+
+CHECK24 (only if separately completed and approved later):
+- keep as a distinct partner configuration; do not reuse TARIFCHECK attribution or status
 
 Wise:
 - `/almanyadan-turkiyeye-para-transferi/` → `money-transfer`
@@ -52,13 +60,13 @@ N26:
 - `/almanyada-banka-hesabi/`
 - `/finans/`
 
-For N26, use `bank-comparison` only if the rendered wording accurately represents the destination. Otherwise create a dedicated bank-offer slot rather than presenting a single bank as a comparison service.
+For single-provider destinations, do not render wording that implies a neutral comparison service. Use a dedicated provider-offer slot when necessary.
 
 ## Affiliate activation procedure
 
 1. Confirm the campaign is approved/active.
 2. Copy the exact tracking/deeplink from the partner dashboard.
-3. Update only the relevant configuration in `assets/js/affiliate-slots.js` (or add a dedicated slot if the existing slot semantics do not match).
+3. Update only the relevant configuration in `assets/js/affiliate-slots.js` or `assets/js/commercial-offers.js`.
 4. Set `enabled: true`, the exact `provider`, and exact attributable `url` only for that approved campaign.
 5. Keep all unrelated slots disabled.
 6. Render commercial links with `rel="sponsored noopener"` and a visible affiliate/commercial disclosure.
@@ -86,6 +94,12 @@ Activation sequence:
 
 ## Partner-specific restrictions
 
+TARIFCHECK:
+- use only exact approved attributable product destinations after Partner-ID activation;
+- keep Girokonto, Kfz and PKV placements context-specific;
+- do not publish partner UI commission figures as durable editorial claims;
+- do not rank a TARIFCHECK product first merely because it pays commission.
+
 Wise:
 - disclose the affiliate relationship;
 - no paid search or paid social traffic to Wise without explicit written permission;
@@ -97,9 +111,8 @@ N26:
 - preserve criteria-based comparison and editorial independence.
 
 CHECK24:
-- do not publish a normal non-attributable CHECK24 link as if it were an affiliate CTA;
-- use only the exact approved product/campaign destination;
-- do not hard-code temporary commissions, bonuses or unverifiable superiority claims.
+- treat as a separate uncompleted/undocumented application until separately verified;
+- never reuse TARIFCHECK tracking or Partner-ID data.
 
 ## Editorial rules
 
@@ -111,8 +124,8 @@ CHECK24:
 
 ## Immediate state
 
-CHECK24 registration is completed and is now awaiting account activation / Partner-ID. Partnerize requires email verification before Wise can progress normally. N26 remains in review.
+TARIFCHECK registration is completed and awaiting account activation / Partner-ID. CHECK24 registration is not confirmed complete and is tracked separately. Partnerize requires email verification before Wise can progress normally. N26 remains under review.
 
-The site itself is ready for affiliate activation without structural changes: approved campaign + exact attributable URL is sufficient to enable the matching slot.
+The site itself is structurally ready for affiliate activation: approved campaign + exact attributable URL is sufficient to enable the matching slot.
 
 AdSense is blocked by one account-side step: publish the European regulations message / certified CMP. After that, the AdSense loader and Auto Ads can be activated safely.
