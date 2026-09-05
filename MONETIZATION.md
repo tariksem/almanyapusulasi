@@ -1,14 +1,27 @@
 # Almanya Pusulası — Monetization Plan
 
-Last reviewed: 2026-09-04
+Last reviewed: 2026-09-05
 
 ## Current status
 
-The site has commercial decision pages, affiliate disclosure language, consent-aware commercial click tracking and disabled affiliate slots. No partner link should be activated until a publisher account is approved and the exact tracking URL is available.
+The site has commercial decision pages, affiliate disclosure language, consent-aware commercial click tracking and disabled affiliate slots. No partner link should be activated until the relevant programme is approved and the exact tracking URL is available.
+
+### Application pipeline
+
+| Partner | Platform | Status | Currency / profile | Next action |
+| --- | --- | --- | --- | --- |
+| CHECK24 | CHECK24 Partnerprogramm | Registered | Private individual | Wait for account/partner access; obtain exact tracking/deeplink or approved widget |
+| Wise | Partnerize | Pending review | EUR campaign | Wait for Wise decision; after approval create exact tracking/deeplink |
+| N26 | impact.com | In Review | Publisher / individual / editorial content | Wait for N26 decision; after approval obtain exact campaign tracking link |
+| financeAds | financeAds | Not applied | Requires business/Gewerbe proof | Apply only when the required business proof is available |
+
+Website ownership for the N26/Impact application was verified on 2026-09-05 with the temporary `impact-site-verification` meta tag on the homepage. Keep it in place while the application is under review; remove it later only if Impact/N26 no longer requires it.
 
 ## Priority 1 — CHECK24 Affiliate
 
-Why first: CHECK24 currently states that both private individuals and businesses can participate. The programme offers comparison calculators and advertising materials in categories already covered by the site, including Kfz insurance, electricity, internet and other tariff products. This makes it the lowest-friction first application for the current project.
+Why first: CHECK24 states that both private individuals and businesses can participate. The programme offers comparison calculators and advertising materials in categories already covered by the site, including Kfz insurance, electricity, internet and other tariff products.
+
+Application status: registration completed on 2026-09-05 as a private individual. Do not publish ordinary CHECK24 links as affiliate CTAs; wait for the exact attributable partner link or approved integration.
 
 Best first placements:
 - `/kfz-versicherung/`
@@ -20,7 +33,9 @@ Official page:
 
 ## Priority 2 — Wise Website / SEO Partnership
 
-Why: strong fit for the existing Germany–Turkey money transfer intent. Wise currently accepts applications from individuals or businesses with an online presence; website/SEO publishers use Partnerize for tracking after approval.
+Why: strong fit for the existing Germany–Turkey money transfer intent. Wise accepts applications from individuals or businesses with an online presence; website/SEO publishers use Partnerize for tracking after approval.
+
+Application status: Partnerize publisher account created and the Wise EUR payout campaign was requested on 2026-09-05. Current state: pending Wise review. No Wise affiliate URL is active on the site.
 
 Best placement:
 - `/almanyadan-turkiyeye-para-transferi/`
@@ -35,9 +50,25 @@ Official programme information:
 - https://wise.com/de/help/articles/2978038/was-ist-das-wise-affiliate-programm
 - https://wise.com/partner/guidelines
 
-## Priority 3 — financeAds
+## Priority 3 — N26 Affiliate
 
-Why: specialist DACH finance/insurance affiliate network with 500+ partner programmes and comparison tools. Relevant categories match the strongest site clusters: Girokonto, Kredit, Versicherung and related financial products.
+Why: direct fit for the bank-account cluster and a useful second monetization path alongside a broader comparison partner.
+
+Application status: Impact publisher profile created as `publisher` / `individual` / `editorial content`; `almanyapusulasi.de` ownership verified successfully on 2026-09-05. N26 AG application is currently `In Review`. No N26 affiliate URL is active on the site.
+
+Best placements after approval:
+- `/almanyada-banka-hesabi-karsilastirma/`
+- `/almanyada-banka-hesabi/`
+- `/finans/`
+
+Do not turn the bank comparison into an N26 advert. Keep comparison criteria independent and present N26 as a clearly disclosed commercial option only where relevant.
+
+Official programme page:
+- https://n26.com/de-de/affiliate
+
+## Priority 4 — financeAds
+
+Why: specialist DACH finance/insurance affiliate network with many partner programmes and comparison tools. Relevant categories match the strongest site clusters: Girokonto, Kredit, Versicherung and related financial products.
 
 Current publisher requirements stated by financeAds include:
 - ownership of a website/app/social channel with a legally valid Impressum;
@@ -58,29 +89,32 @@ Official pages:
 
 ## Activation procedure
 
-1. Apply to one programme at a time, starting with CHECK24; Wise is the next logical application. Use financeAds once Gewerbe proof is available.
-2. After approval, obtain the exact publisher tracking URL from the partner dashboard.
+1. Do not activate a programme merely because an account exists; wait until the relevant campaign is approved/active.
+2. Obtain the exact publisher tracking URL/deeplink from the partner dashboard.
 3. Edit `assets/js/affiliate-slots.js` only:
-   - set the matching slot `enabled: true`
-   - set `provider`
-   - paste the exact approved tracking `url`
+   - set the matching slot `enabled: true`;
+   - set `provider`;
+   - paste the exact approved tracking `url`.
 4. Keep `rel="sponsored noopener"` on all affiliate links.
 5. Never replace an editorial/official-source link with an affiliate link. Commercial CTAs remain additive.
-6. Confirm that `/ticari-seffaflik/` and `/privacy/` still accurately describe the active commercial relationship and tracking.
+6. Confirm that `/ticari-seffaflik/` and `/privacy/` accurately describe the active commercial relationship and tracking.
 7. Test the outbound link and partner attribution before deployment.
 8. After deployment, monitor GA4 `affiliate_click` events only for users who consented to Analytics.
+9. Record approval date, campaign name and active destination in this file so commercial integrations remain auditable.
 
 ## Slot map
 
-- `bank-comparison` — intended for an approved Girokonto/comparison partner.
-- `insurance-comparison` — intended for an approved insurance comparison partner.
-- `money-transfer` — intended for Wise or another approved transfer partner.
+- `bank-comparison` — approved Girokonto/comparison/bank partner, with N26 as a possible provider after approval.
+- `insurance-comparison` — approved insurance comparison partner.
+- `money-transfer` — Wise or another approved transfer partner.
+- `electricity-comparison` — approved electricity/tariff partner such as an eligible CHECK24 integration.
+- `kfz-insurance` — approved Kfz comparison/insurance partner such as an eligible CHECK24 integration.
 
 All slots are disabled by default. Missing/disabled slots render nothing and therefore never show a fake or dead commercial CTA.
 
 ## Application pack
 
-Use `AFFILIATE-APPLICATIONS.md` for ready-to-paste German/English site descriptions, review URLs and programme-specific compliance reminders.
+Use `AFFILIATE-APPLICATIONS.md` for ready-to-paste German/English site descriptions, review URLs and programme-specific compliance reminders. `CHECK24_APPLICATION.md` contains the CHECK24-specific integration notes.
 
 ## Editorial rules
 
