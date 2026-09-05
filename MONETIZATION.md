@@ -70,12 +70,6 @@ Official programme page:
 
 Why: specialist DACH finance/insurance affiliate network with partner programmes and comparison tools relevant to Girokonto, Kredit, Versicherung and related financial products.
 
-Current publisher requirements include:
-- ownership of a website/app/social channel with a legally valid Impressum;
-- finance-relevant audience/content;
-- current, live content;
-- proof of registered business (Gewerbe).
-
 Apply once the required Gewerbe/business proof is available.
 
 Candidate placements after approval:
