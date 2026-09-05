@@ -45,8 +45,6 @@ jobs:
               if url not in urls:
                   urls.append(url)
 
-          # One-time seed when this integration itself is introduced/changed and
-          # the commit does not contain page HTML changes.
           if not urls and '.github/workflows/indexnow.yml' in changed:
               ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
               for sitemap in ('sitemap-commercial.xml','sitemap-tools.xml'):
@@ -73,7 +71,6 @@ jobs:
 
       - name: Notify IndexNow
         if: steps.urls.outputs.count != '0'
-        continue-on-error: true
         run: |
           curl --fail-with-body --retry 2 --retry-delay 5 \
             -H 'Content-Type: application/json; charset=utf-8' \
