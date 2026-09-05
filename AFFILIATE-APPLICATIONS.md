@@ -1,21 +1,26 @@
 # Almanya Pusulası — Affiliate Application Pack
 
-Last reviewed: 2026-09-04
+Last reviewed: 2026-09-05
 
-This file contains the current application order, site description and placement plan for affiliate programme applications. Do not activate any commercial slot until the programme is approved and the exact tracking URL is available.
+This file contains the current application status, site descriptions and placement plan for affiliate programmes. Do not activate any commercial slot until the programme/campaign is approved and the exact tracking URL is available.
 
-## Recommended application order
+## Current application status
 
-### 1. CHECK24 Affiliate
+- CHECK24 — registration completed 2026-09-05 as a private individual. Await attributable partner links/integration access.
+- Wise — Partnerize account created; EUR payout campaign requested 2026-09-05. Status: pending review.
+- N26 — Impact publisher profile created as publisher / individual / editorial content; website ownership verified. N26 AG application status: In Review.
+- financeAds — not applied; defer until required Gewerbe/business proof is available.
 
-Reason: lowest practical entry barrier for the current project. CHECK24 states that both private individuals and businesses can participate. Its affiliate programme offers comparison calculators and advertising materials in categories already covered by Almanya Pusulası, including Kfz insurance, electricity, internet and other tariff products.
+## 1. CHECK24 Affiliate
+
+Reason: low practical entry barrier for the current project. CHECK24 states that both private individuals and businesses can participate. Its affiliate programme offers comparison calculators and advertising materials in categories already covered by Almanya Pusulası, including Kfz insurance, electricity, internet and other tariff products.
 
 Best existing placements:
 - `/kfz-versicherung/`
 - `/almanyada-elektrik-aboneligi/`
 - `/sigorta-secim-rehberi/`
 
-Suggested publisher description (German):
+Publisher description used/prepared (German):
 
 > Almanya Pusulası (almanyapusulasi.de) ist ein türkischsprachiges Informationsportal für Menschen, die in Deutschland leben oder nach Deutschland ziehen möchten. Die Website veröffentlicht aktuelle, praxisorientierte Ratgeber zu Finanzen, Versicherungen, Mobilität, Arbeit, Familie, Wohnen, Steuern und Behördenprozessen. Unsere Inhalte verlinken auf offizielle Quellen und führen Nutzer von Informationsartikeln zu thematischen Entscheidungs- und Vergleichsseiten. Für das CHECK24 Partnerprogramm sind insbesondere Kfz-Versicherung, Strom und weitere Tarifvergleiche relevant. Werbung und Affiliate-Links werden transparent als kommerziell gekennzeichnet und redaktionelle Inhalte bleiben davon getrennt.
 
@@ -33,14 +38,21 @@ Useful review URLs:
 Official programme page:
 - https://www.check24.de/partner/partnerprogramm/
 
-### 2. Wise Website / SEO Partnership
+## 2. Wise Website / SEO Partnership
 
-Reason: very strong semantic fit for the Germany-to-Turkey money transfer guide. Wise states that individuals or businesses with an online presence can apply. Website/SEO partners use Partnerize for tracking after approval.
+Reason: very strong semantic fit for the Germany-to-Turkey money transfer guide. Website/SEO partners use Partnerize for tracking after approval.
 
-Best placement:
+Application completed on 2026-09-05:
+- Partnerize publisher account created.
+- Wise campaign found under campaigns.
+- Only `Wise - Commission payout currency EUR` requested for the Germany-based site.
+- Terms accepted and request submitted.
+- Current state: `1 Pending request` / pending Wise review.
+
+Best placement after approval:
 - `/almanyadan-turkiyeye-para-transferi/`
 
-Suggested publisher description (English):
+Publisher description (English):
 
 > Almanya Pusulası is a Turkish-language Germany information website for Turkish-speaking residents and newcomers. We publish practical, search-driven guides about finance, banking, insurance, relocation, work and cross-border topics. Our Germany-to-Turkey money transfer guide explains total transfer cost, exchange-rate margin, recipient amount and transfer time without claiming that one provider is always the cheapest. We would like to use Wise as a clearly disclosed commercial option within this educational context. Affiliate links will be labelled and separated from official/independent sources.
 
@@ -55,13 +67,53 @@ Promotion restrictions to remember:
 - Do not advertise unsupported services or fake/free-transfer coupons.
 - Affiliate relationship must be disclosed.
 
+After approval:
+1. Create/copy the exact Wise tracking or deeplink in Partnerize.
+2. Enable only `money-transfer` in `assets/js/affiliate-slots.js`.
+3. Set provider to the approved Wise programme/brand name and use the exact URL.
+4. Test attribution before deployment.
+
 Official pages:
 - https://wise.com/de/help/articles/2978038/was-ist-das-wise-affiliate-programm
 - https://wise.com/partner/guidelines
 
-### 3. financeAds
+## 3. N26 Affiliate
 
-Reason: strongest long-term finance/insurance network fit, with 500+ finance partner programmes and comparison tools. Current published requirements include a live, current finance-relevant website, valid Impressum and proof of registered business (Gewerbe).
+Reason: strong fit for the bank account decision cluster and a direct-bank monetization path.
+
+Application completed on 2026-09-05 through Impact:
+- profile type: `a publisher`;
+- operating as: `an individual`;
+- promotion/content type: `editorial content`;
+- channel: `https://almanyapusulasi.de`;
+- website ownership: verified successfully;
+- N26 AG application: `In Review`.
+
+The homepage currently contains the verification tag supplied by Impact:
+`<meta name="impact-site-verification" value="045efa89-f970-457d-a093-cc960aefc83b">`
+
+Keep this verification tag while the application is under review. Remove it later only after confirming Impact/N26 no longer needs it for channel verification.
+
+Best placements after approval:
+- `/almanyada-banka-hesabi-karsilastirma/`
+- `/almanyada-banka-hesabi/`
+- `/finans/`
+
+Editorial constraint: N26 must not automatically become the top-ranked account because it pays commission. Any comparison remains criteria-based and independent.
+
+After approval:
+1. Obtain the exact Impact/N26 tracking URL or approved deeplink.
+2. Review the N26 campaign terms and permitted promotional methods before activation.
+3. Enable `bank-comparison` only if the slot copy accurately describes the destination; otherwise add a dedicated N26 commercial slot rather than misrepresenting it as a broad comparison tool.
+4. Label the CTA as commercial/affiliate and retain `rel="sponsored noopener"`.
+5. Test attribution before deployment.
+
+Official programme page:
+- https://n26.com/de-de/affiliate
+
+## 4. financeAds
+
+Reason: strong long-term finance/insurance network fit. Current published requirements include a live, current finance-relevant website, valid Impressum and proof of registered business (Gewerbe).
 
 Apply once Gewerbe proof is available.
 
@@ -70,7 +122,7 @@ Best placements after approval:
 - `/sigorta-secim-rehberi/`
 - `/kredi/`
 
-Suggested publisher description (German):
+Publisher description (German):
 
 > Almanya Pusulası ist ein türkischsprachiges Informations- und Ratgeberportal für Menschen in Deutschland. Ein Schwerpunkt liegt auf finanziell relevanten Entscheidungen wie Girokonto, SCHUFA, Versicherungen, Baufinanzierung, Geldtransfer und laufenden Haushaltskosten. Die Website ist live, verfügt über Impressum, Datenschutz- und Transparenzseiten und nutzt thematische Vergleichs- und Entscheidungsseiten. Partnerprogramme sollen nur dort integriert werden, wo sie zum Such- und Nutzerintent passen; kommerzielle Links werden klar gekennzeichnet und redaktionelle Kriterien nicht von der Provision abhängig gemacht.
 
@@ -85,6 +137,8 @@ Official page:
    - `bank-comparison`
    - `insurance-comparison`
    - `money-transfer`
+   - `electricity-comparison`
+   - `kfz-insurance`
 4. Set the approved provider name and tracking URL.
 5. Leave all other slots disabled.
 6. Confirm rendered affiliate links use `rel="sponsored noopener"`.
