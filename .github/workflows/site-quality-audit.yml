@@ -13,33 +13,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Audit internal links and SEO basics
+      - name: Audit internal links, canonicals and SEO basics
         run: |
           python3 - <<'PY'
           from pathlib import Path
           from html.parser import HTMLParser
           from urllib.parse import urlsplit, unquote
+          from collections import defaultdict
           import sys
 
           root=Path('.')
           html_files=list(root.rglob('*.html'))
           missing=[]
           seo=[]
+          warnings=[]
+          canonicals=defaultdict(list)
+          SITE='https://almanyapusulasi.de'
 
           class Parser(HTMLParser):
               def __init__(self):
                   super().__init__()
                   self.hrefs=[]
-                  self.canonical=False
+                  self.canonical=None
                   self.viewport=False
+                  self.description=None
+                  self.title_text=''
+                  self.in_title=False
+                  self.h1_count=0
               def handle_starttag(self,tag,attrs):
                   a=dict(attrs)
                   if tag=='a' and a.get('href'):
                       self.hrefs.append(a['href'])
-                  if tag=='link' and a.get('rel')=='canonical' and a.get('href'):
-                      self.canonical=True
+                  if tag=='link' and 'canonical' in (a.get('rel') or '').split() and a.get('href'):
+                      self.canonical=a['href'].strip()
                   if tag=='meta' and a.get('name','').lower()=='viewport':
                       self.viewport=True
+                  if tag=='meta' and a.get('name','').lower()=='description':
+                      self.description=(a.get('content') or '').strip()
+                  if tag=='title':
+                      self.in_title=True
+                  if tag=='h1':
+                      self.h1_count+=1
+              def handle_endtag(self,tag):
+                  if tag=='title': self.in_title=False
+              def handle_data(self,data):
+                  if self.in_title: self.title_text+=data
 
           def target_exists(href):
               if not href.startswith('/') or href.startswith('//'):
@@ -57,28 +75,53 @@ jobs:
                   return True
               return (p/'index.html').exists()
 
+          def expected_url(file):
+              rel=file.relative_to(root).as_posix()
+              if rel=='index.html': return SITE+'/'
+              if rel.endswith('/index.html'):
+                  return SITE+'/'+rel[:-10]
+              return SITE+'/'+rel
+
           for file in html_files:
               text=file.read_text(encoding='utf-8',errors='replace')
               parser=Parser()
               try: parser.feed(text)
               except Exception as e:
                   seo.append(f'{file}: HTML parse warning: {e}')
+
               if file.name=='index.html':
-                  if not parser.viewport:
-                      seo.append(f'{file}: missing viewport meta')
-                  if not parser.canonical:
-                      seo.append(f'{file}: missing canonical link')
+                  if not parser.viewport: seo.append(f'{file}: missing viewport meta')
+                  if not parser.canonical: seo.append(f'{file}: missing canonical link')
+                  if not parser.title_text.strip(): seo.append(f'{file}: missing/empty title')
+                  if not parser.description: seo.append(f'{file}: missing/empty meta description')
+                  if parser.h1_count!=1: seo.append(f'{file}: expected exactly one h1, found {parser.h1_count}')
+
+                  if parser.canonical:
+                      canonicals[parser.canonical].append(str(file))
+                      parts=urlsplit(parser.canonical)
+                      if parts.scheme!='https' or parts.netloc!='almanyapusulasi.de':
+                          seo.append(f'{file}: canonical outside preferred origin: {parser.canonical}')
+                      expected=expected_url(file)
+                      if parser.canonical!=expected:
+                          warnings.append(f'{file}: non-self canonical {parser.canonical} (expected {expected})')
+
               for href in parser.hrefs:
                   if href.startswith(('#','mailto:','tel:','javascript:')):
                       continue
                   if not target_exists(href):
                       missing.append(f'{file}: {href}')
 
+          for canonical,files in canonicals.items():
+              if len(files)>1:
+                  warnings.append(f'duplicate canonical {canonical}: '+', '.join(files))
+
           print(f'HTML files scanned: {len(html_files)}')
           print(f'Missing internal targets: {len(missing)}')
-          for x in missing[:200]: print('BROKEN',x)
-          print(f'SEO basic issues: {len(seo)}')
-          for x in seo[:200]: print('SEO',x)
+          for x in missing[:200]: print(f'::error::{x}')
+          print(f'SEO critical issues: {len(seo)}')
+          for x in seo[:200]: print(f'::error::{x}')
+          print(f'Canonical diagnostics: {len(warnings)}')
+          for x in warnings[:300]: print(f'::warning::{x}')
           if missing or seo:
               sys.exit(1)
           PY
