@@ -9,7 +9,7 @@ This file contains the current application status, site descriptions and placeme
 - CHECK24 — registration completed 2026-09-05 as a private individual. Await attributable partner links/integration access.
 - Wise — Partnerize account created; EUR payout campaign requested 2026-09-05. Status: pending review.
 - N26 — Impact publisher profile created as publisher / individual / editorial content; website ownership verified. N26 AG application status: In Review.
-- financeAds — not applied; defer until the planned business/Gewerbe documentation is available.
+- financeAds — not applied; defer until the site's business/Gewerbe setup is available and re-check current application requirements then.
 
 ## 1. CHECK24 Affiliate
 
@@ -113,7 +113,7 @@ Official programme page:
 
 ## 4. financeAds
 
-Reason: strong long-term finance/insurance network fit. Application is intentionally deferred until the planned business/Gewerbe documentation is available.
+Reason: strong long-term finance/insurance network fit. Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check the current publisher requirements at application time rather than relying on a stored assumption.
 
 Best placements after approval:
 - `/almanyada-banka-hesabi-karsilastirma/`
