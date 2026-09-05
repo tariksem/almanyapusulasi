@@ -13,7 +13,7 @@ The site has commercial decision pages, affiliate disclosure language, consent-a
 | CHECK24 | CHECK24 Partnerprogramm | Registered | Private individual | Wait for account/partner access; obtain exact tracking/deeplink or approved widget |
 | Wise | Partnerize | Pending review | EUR campaign | Wait for Wise decision; after approval create exact tracking/deeplink |
 | N26 | impact.com | In Review | Publisher / individual / editorial content | Wait for N26 decision; after approval obtain exact campaign tracking link |
-| financeAds | financeAds | Not applied | Business/Gewerbe proof planned before application | Apply after business setup/proof is available |
+| financeAds | financeAds | Not applied | Business setup pending | Reassess application requirements when business/Gewerbe setup is available |
 
 Website ownership for the N26/Impact application was verified on 2026-09-05 with the temporary `impact-site-verification` meta tag on the homepage. Keep it in place while the application is under review; remove it later only if Impact/N26 no longer requires it.
 
@@ -70,7 +70,7 @@ Official programme page:
 
 Why: specialist DACH finance/insurance affiliate network with partner programmes and comparison tools relevant to Girokonto, Kredit, Versicherung and related financial products.
 
-Application is intentionally deferred until the site has the business/Gewerbe documentation intended for that publisher account.
+Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check the publisher requirements at application time rather than relying on a stored assumption.
 
 Candidate placements after approval:
 - `/almanyada-banka-hesabi-karsilastirma/`
