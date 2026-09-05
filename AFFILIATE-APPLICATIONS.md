@@ -99,4 +99,4 @@ Official page:
 8. Outbound attribution tested.
 9. GA4 `affiliate_click` remains consent-aware.
 
-The next implementation step is triggered by a partner approval or usable attributable URL; do not publish speculative partner claims while applications are pending.
+CHECK24 registration, Wise EUR campaign request and N26 application have been submitted. The next implementation step is triggered by a partner approval or usable attributable URL; do not publish speculative partner claims while applications are pending.
