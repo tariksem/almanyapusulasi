@@ -2,7 +2,7 @@
 
 Last reviewed: 2026-09-05
 
-This file contains the current application status, site descriptions and placement plan for affiliate programmes. Do not activate any commercial slot until the programme/campaign is approved and the exact tracking URL is available.
+This file records the current application state and activation plan. Do not activate a commercial slot until the programme/campaign is approved and the exact tracking URL is available.
 
 ## Current application status
 
@@ -11,7 +11,7 @@ This file contains the current application status, site descriptions and placeme
 - N26 — Impact publisher profile created as publisher / individual / editorial content; website ownership verified. N26 AG application status: In Review.
 - financeAds — not applied; defer until the site's business/Gewerbe setup is available and re-check current application requirements then.
 
-## 1. CHECK24 Affiliate
+## CHECK24
 
 Best existing placements:
 - `/kfz-versicherung/`
@@ -22,18 +22,10 @@ Publisher description used/prepared (German):
 
 > Almanya Pusulası (almanyapusulasi.de) ist ein türkischsprachiges Informationsportal für Menschen, die in Deutschland leben oder nach Deutschland ziehen möchten. Die Website veröffentlicht aktuelle, praxisorientierte Ratgeber zu Finanzen, Versicherungen, Mobilität, Arbeit, Familie, Wohnen, Steuern und Behördenprozessen. Unsere Inhalte verlinken auf offizielle Quellen und führen Nutzer von Informationsartikeln zu thematischen Entscheidungs- und Vergleichsseiten. Für das CHECK24 Partnerprogramm sind insbesondere Kfz-Versicherung, Strom und weitere Tarifvergleiche relevant. Werbung und Affiliate-Links werden transparent als kommerziell gekennzeichnet und redaktionelle Inhalte bleiben davon getrennt.
 
-Useful review URLs:
-- https://almanyapusulasi.de/sigorta-secim-rehberi/
-- https://almanyapusulasi.de/kfz-versicherung/
-- https://almanyapusulasi.de/almanyada-elektrik-aboneligi/
-- https://almanyapusulasi.de/ticari-seffaflik/
-- https://almanyapusulasi.de/privacy/
-- https://almanyapusulasi.de/impressum/
-
 Official programme page:
 - https://www.check24.de/partner/partnerprogramm/
 
-## 2. Wise Website / SEO Partnership
+## Wise
 
 Application completed on 2026-09-05:
 - Partnerize publisher account created.
@@ -64,7 +56,7 @@ Official pages:
 - https://wise.com/de/help/articles/2978038/was-ist-das-wise-affiliate-programm
 - https://wise.com/partner/guidelines
 
-## 3. N26 Affiliate
+## N26
 
 Application completed on 2026-09-05 through Impact:
 - profile type: `a publisher`;
@@ -96,7 +88,7 @@ After approval:
 Official programme page:
 - https://n26.com/de-de/affiliate
 
-## 4. financeAds
+## financeAds
 
 Potential long-term finance/insurance network. Application is intentionally deferred until the site's business/Gewerbe setup is available. Re-check current publisher requirements at application time.
 
@@ -105,10 +97,6 @@ Best placements after approval:
 - `/sigorta-secim-rehberi/`
 - `/kredi/`
 
-Publisher description (German):
-
-> Almanya Pusulası ist ein türkischsprachiges Informations- und Ratgeberportal für Menschen in Deutschland. Ein Schwerpunkt liegt auf finanziell relevanten Entscheidungen wie Girokonto, SCHUFA, Versicherungen, Baufinanzierung, Geldtransfer und laufenden Haushaltskosten. Die Website ist live, verfügt über Impressum, Datenschutz- und Transparenzseiten und nutzt thematische Vergleichs- und Entscheidungsseiten. Partnerprogramme sollen nur dort integriert werden, wo sie zum Such- und Nutzerintent passen; kommerzielle Links werden klar gekennzeichnet und redaktionelle Kriterien nicht von der Provision abhängig gemacht.
-
 Official page:
 - https://www.financeads.net/affiliates/
 
@@ -116,23 +104,13 @@ Official page:
 
 1. Copy only the exact approved tracking URL from the partner dashboard.
 2. Open `assets/js/affiliate-slots.js`.
-3. Enable only the matching slot:
-   - `bank-comparison`
-   - `insurance-comparison`
-   - `money-transfer`
-   - `electricity-comparison`
-   - `kfz-insurance`
+3. Enable only the matching slot: `bank-comparison`, `insurance-comparison`, `money-transfer`, `electricity-comparison`, or `kfz-insurance`.
 4. Set the approved provider name and tracking URL.
 5. Leave all other slots disabled.
-6. Confirm rendered affiliate links use `rel="sponsored noopener"`.
-7. Confirm the visible CTA is labelled as commercial/affiliate.
-8. Verify `/ticari-seffaflik/` and `/privacy/` still describe the active setup accurately.
-9. Test outbound attribution without changing editorial official-source links.
-10. After deployment, verify GA4 `affiliate_click` only appears for users who accepted analytics.
-
-## Editorial rule
-
-No commercial partner should be described as “best”, “cheapest” or “recommended” unless that statement is independently supportable with explicit, current comparison criteria. Commission level must never be the sole ranking criterion.
+6. Confirm rendered affiliate links use `rel="sponsored noopener"` and the visible CTA is labelled as commercial/affiliate.
+7. Verify `/ticari-seffaflik/` and `/privacy/` still describe the active setup accurately.
+8. Test outbound attribution without changing editorial official-source links.
+9. After deployment, verify GA4 `affiliate_click` only appears for users who accepted analytics.
 
 ## Immediate state
 
