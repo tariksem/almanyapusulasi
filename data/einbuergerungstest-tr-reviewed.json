@@ -59,6 +59,31 @@
     ],
     "explanation": "%5 barajının amacı parlamentonun çok fazla küçük partiye bölünmesini sınırlamak ve istikrarlı bir hükümet kurulmasını kolaylaştırmaktır."
   },
+  "NW-1": {
+    "question": "Aşağıdaki armalardan hangisi Nordrhein-Westfalen eyaletine aittir?",
+    "answers": ["Görsel 1", "Görsel 2", "Görsel 3", "Görsel 4"],
+    "explanation": "Nordrhein-Westfalen arması üç unsuru birleştirir: Rheinland'ı simgeleyen Ren Nehri, Westfalen'i simgeleyen beyaz at ve Lippe'yi simgeleyen gül. Bu unsurları taşıyan görsel doğru cevaptır."
+  },
+  "NW-2": {
+    "question": "Aşağıdakilerden hangisi Nordrhein-Westfalen'de bulunan bir Landkreis'tir?",
+    "answers": ["Ammerland", "Rhein-Sieg-Kreis", "Nordfriesland", "Vogtlandkreis"],
+    "explanation": "Rhein-Sieg-Kreis Nordrhein-Westfalen eyaletindedir. Ammerland Niedersachsen'da, Nordfriesland Schleswig-Holstein'da, Vogtlandkreis ise Sachsen eyaletindedir."
+  },
+  "NW-3": {
+    "question": "Nordrhein-Westfalen Eyalet Meclisi (Landtag) kaç yıllığına seçilir?",
+    "answers": ["3 yıl", "4 yıl", "5 yıl", "6 yıl"],
+    "explanation": "Nordrhein-Westfalen Landtag'ı beş yıllık bir yasama dönemi için seçilir."
+  },
+  "NW-4": {
+    "question": "Nordrhein-Westfalen'de belediye seçimlerinde kaç yaşından itibaren oy kullanılabilir?",
+    "answers": ["14", "16", "18", "20"],
+    "explanation": "Nordrhein-Westfalen'de Kommunalwahl yani belediye seçimlerinde oy kullanma yaşı 16'dır."
+  },
+  "NW-5": {
+    "question": "Nordrhein-Westfalen eyalet bayrağının renkleri hangileridir?",
+    "answers": ["Kırmızı-beyaz", "Yeşil-beyaz-kırmızı", "Siyah-altın", "Mavi-beyaz-kırmızı"],
+    "explanation": "Nordrhein-Westfalen eyalet bayrağı yatay olarak yeşil, beyaz ve kırmızı renklerden oluşur."
+  },
   "NW-9": {
     "question": "Nordrhein-Westfalen eyaletinde hükümet başkanına ne denir?",
     "answers": [
