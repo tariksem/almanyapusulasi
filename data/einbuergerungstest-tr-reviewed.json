@@ -1,107 +1,98 @@
 {
   "1": {
+    "germanQuestion": "Was war am 8. Mai 1945?",
     "question": "8 Mayıs 1945'te ne oldu?",
-    "answers": [
-      "İkinci Dünya Savaşı Avrupa'da sona erdi.",
-      "Adolf Hitler öldü.",
-      "Konrad Adenauer Federal Şansölye seçildi.",
-      "Berlin Duvarı'nın inşasına başlandı."
-    ],
+    "answers": ["İkinci Dünya Savaşı Avrupa'da sona erdi.", "Adolf Hitler öldü.", "Konrad Adenauer Federal Şansölye seçildi.", "Berlin Duvarı'nın inşasına başlandı."],
     "explanation": "8 Mayıs 1945, Almanya'nın koşulsuz teslimiyetinin yürürlüğe girdiği ve İkinci Dünya Savaşı'nın Avrupa'da sona erdiği tarihtir. Adolf Hitler 30 Nisan 1945'te öldü; Konrad Adenauer 1949'da şansölye oldu; Berlin Duvarı'nın yapımı ise 1961'de başladı."
   },
   "2": {
+    "germanQuestion": "Was gab es während der Zeit des Nationalsozialismus in Deutschland?",
     "question": "Nasyonal Sosyalizm döneminde Almanya'da hangisi vardı?",
-    "answers": [
-      "Kişiliğini özgürce geliştirme hakkı",
-      "İnsan onurunun korunması",
-      "Siyasi partilerin yasaklanması",
-      "Basın özgürlüğü"
-    ],
+    "answers": ["Kişiliğini özgürce geliştirme hakkı", "İnsan onurunun korunması", "Siyasi partilerin yasaklanması", "Basın özgürlüğü"],
     "explanation": "Nasyonal Sosyalist diktatörlük döneminde siyasi çoğulculuk ortadan kaldırıldı ve siyasi partiler yasaklandı. Basın özgürlüğü ve temel haklar da ağır biçimde kısıtlandı."
   },
   "3": {
+    "germanQuestion": "Wie hieß der erste Bundeskanzler der Bundesrepublik Deutschland?",
     "question": "Federal Almanya Cumhuriyeti'nin ilk Federal Şansölyesi kimdi?",
-    "answers": [
-      "Willy Brandt",
-      "Konrad Adenauer",
-      "Kurt Georg Kiesinger",
-      "Helmut Schmidt"
-    ],
+    "answers": ["Willy Brandt", "Konrad Adenauer", "Kurt Georg Kiesinger", "Helmut Schmidt"],
     "explanation": "Konrad Adenauer, 1949'da Federal Almanya Cumhuriyeti'nin ilk Federal Şansölyesi oldu ve 1963'e kadar görev yaptı."
   },
   "125": {
+    "germanQuestion": "In einer Demokratie ist eine Funktion von regelmäßigen Wahlen, ...",
     "question": "Bir demokraside düzenli seçimlerin görevlerinden biri nedir?",
-    "answers": [
-      "Vatandaşları oy kullanmaya zorlamak",
-      "Seçmen çoğunluğunun iradesine göre hükümet değişikliğini mümkün kılmak",
-      "Ülkedeki mevcut yasaları değiştirmeden korumak",
-      "Yoksullara daha fazla siyasi güç vermek"
-    ],
+    "answers": ["Vatandaşları oy kullanmaya zorlamak", "Seçmen çoğunluğunun iradesine göre hükümet değişikliğini mümkün kılmak", "Ülkedeki mevcut yasaları değiştirmeden korumak", "Yoksullara daha fazla siyasi güç vermek"],
     "explanation": "Demokratik seçimler, seçmen çoğunluğunun iradesinin yönetime yansımasını ve gerektiğinde hükümetin barışçıl biçimde değişmesini sağlar."
   },
   "126": {
+    "germanQuestion": "Was bekommen wahlberechtigte Bürgerinnen und Bürger in Deutschland vor einer Wahl?",
     "question": "Almanya'da oy kullanma hakkı olan vatandaşlar seçimden önce ne alır?",
-    "answers": [
-      "Belediyeden seçim bildirimi (Wahlbenachrichtigung)",
-      "Federal Cumhurbaşkanından oy kullanma izni",
-      "Federal Meclis Kurulundan bir bildirim",
-      "Kilise makamından bir bildirim"
-    ],
+    "answers": ["Belediyeden seçim bildirimi (Wahlbenachrichtigung)", "Federal Cumhurbaşkanından oy kullanma izni", "Federal Meclis Kurulundan bir bildirim", "Kilise makamından bir bildirim"],
     "explanation": "Seçmen kütüğüne kayıtlı kişiler, seçimden önce belediyelerinden Wahlbenachrichtigung adı verilen seçim bildirimini alırlar. Bu belge seçim yeri ve oy verme hakkında bilgi içerir."
   },
   "127": {
+    "germanQuestion": "Warum gibt es die 5%-Hürde im Wahlgesetz der Bundesrepublik Deutschland? Es gibt sie, weil ...",
     "question": "Federal Almanya Cumhuriyeti seçim hukukunda neden %5 barajı vardır?",
-    "answers": [
-      "Çok sayıdaki küçük partinin programları birbirine çok benzediği için",
-      "Vatandaşlar çok sayıda küçük parti arasında yönlerini kaybedebileceği için",
-      "Çok sayıda küçük parti hükümet kurulmasını zorlaştırabileceği için",
-      "Küçük partilerin siyasetçilerine ödeme yapacak kadar parası olmadığı için"
-    ],
+    "answers": ["Çok sayıdaki küçük partinin programları birbirine çok benzediği için", "Vatandaşlar çok sayıda küçük parti arasında yönlerini kaybedebileceği için", "Çok sayıda küçük parti hükümet kurulmasını zorlaştırabileceği için", "Küçük partilerin siyasetçilerine ödeme yapacak kadar parası olmadığı için"],
     "explanation": "%5 barajının amacı parlamentonun çok fazla küçük partiye bölünmesini sınırlamak ve istikrarlı bir hükümet kurulmasını kolaylaştırmaktır."
   },
   "NW-1": {
+    "germanQuestion": "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
     "question": "Aşağıdaki armalardan hangisi Nordrhein-Westfalen eyaletine aittir?",
     "answers": ["Görsel 1", "Görsel 2", "Görsel 3", "Görsel 4"],
     "explanation": "Nordrhein-Westfalen arması üç unsuru birleştirir: Rheinland'ı simgeleyen Ren Nehri, Westfalen'i simgeleyen beyaz at ve Lippe'yi simgeleyen gül. Bu unsurları taşıyan görsel doğru cevaptır."
   },
   "NW-2": {
+    "germanQuestion": "Welches ist ein Landkreis in Nordrhein-Westfalen?",
     "question": "Aşağıdakilerden hangisi Nordrhein-Westfalen'de bulunan bir Landkreis'tir?",
     "answers": ["Ammerland", "Rhein-Sieg-Kreis", "Nordfriesland", "Vogtlandkreis"],
     "explanation": "Rhein-Sieg-Kreis Nordrhein-Westfalen eyaletindedir. Ammerland Niedersachsen'da, Nordfriesland Schleswig-Holstein'da, Vogtlandkreis ise Sachsen eyaletindedir."
   },
   "NW-3": {
+    "germanQuestion": "Für wie viele Jahre wird der Landtag in Nordrhein-Westfalen gewählt?",
     "question": "Nordrhein-Westfalen Eyalet Meclisi (Landtag) kaç yıllığına seçilir?",
     "answers": ["3 yıl", "4 yıl", "5 yıl", "6 yıl"],
     "explanation": "Nordrhein-Westfalen Landtag'ı beş yıllık bir yasama dönemi için seçilir."
   },
   "NW-4": {
+    "germanQuestion": "Ab welchem Alter darf man in Nordrhein-Westfalen bei Kommunalwahlen wählen?",
     "question": "Nordrhein-Westfalen'de belediye seçimlerinde kaç yaşından itibaren oy kullanılabilir?",
     "answers": ["14", "16", "18", "20"],
     "explanation": "Nordrhein-Westfalen'de Kommunalwahl yani belediye seçimlerinde oy kullanma yaşı 16'dır."
   },
   "NW-5": {
+    "germanQuestion": "Welche Farben hat die Landesflagge von Nordrhein-Westfalen?",
     "question": "Nordrhein-Westfalen eyalet bayrağının renkleri hangileridir?",
     "answers": ["Kırmızı-beyaz", "Yeşil-beyaz-kırmızı", "Siyah-altın", "Mavi-beyaz-kırmızı"],
     "explanation": "Nordrhein-Westfalen eyalet bayrağı yatay olarak yeşil, beyaz ve kırmızı renklerden oluşur."
   },
+  "NW-6": {
+    "germanQuestion": "Wo können Sie sich in Nordrhein-Westfalen über politische Themen informieren?",
+    "question": "Nordrhein-Westfalen'de siyasi konular hakkında nereden bilgi edinebilirsiniz?",
+    "answers": ["Kiliselerden", "Belediyenin asayiş/düzen dairesinden (Ordnungsamt)", "Tüketici danışma merkezinden (Verbraucherzentrale)", "Eyalet Siyasi Eğitim Merkezinden (Landeszentrale für politische Bildung)"],
+    "explanation": "Siyasi konularda tarafsız ve eğitsel bilgi sunmak için görevli kurum Landeszentrale für politische Bildung'dur. Nordrhein-Westfalen'de de doğru başvuru noktası budur."
+  },
+  "NW-7": {
+    "germanQuestion": "Die Landeshauptstadt von Nordrhein-Westfalen heißt …",
+    "question": "Nordrhein-Westfalen eyaletinin başkenti hangisidir?",
+    "answers": ["Köln", "Bonn", "Düsseldorf", "Dortmund"],
+    "explanation": "Nordrhein-Westfalen'in eyalet başkenti Düsseldorf'tur. Eyalet hükümeti ve Landtag burada bulunur."
+  },
+  "NW-8": {
+    "germanQuestion": "Welches Bundesland ist Nordrhein-Westfalen?",
+    "question": "Haritadaki numaralardan hangisi Nordrhein-Westfalen eyaletini gösteriyor?",
+    "answers": ["1", "2", "3", "4"],
+    "explanation": "Nordrhein-Westfalen Almanya'nın batısında, Hollanda ve Belçika sınırına yakın konumdadır. Resmî soru görselinde doğru seçenek 1 numaralı bölgedir."
+  },
   "NW-9": {
+    "germanQuestion": "Wie nennt man die Regierungschefin/den Regierungschef in Nordrhein-Westfalen?",
     "question": "Nordrhein-Westfalen eyaletinde hükümet başkanına ne denir?",
-    "answers": [
-      "Birinci Bakan",
-      "Başbakan (Premierminister)",
-      "Belediye Başkanı",
-      "Eyalet Başbakanı (Ministerpräsident/Ministerpräsidentin)"
-    ],
+    "answers": ["Birinci Bakan", "Başbakan (Premierminister)", "Belediye Başkanı", "Eyalet Başbakanı (Ministerpräsident/Ministerpräsidentin)"],
     "explanation": "Alman eyaletlerinin çoğunda eyalet hükümetinin başındaki kişiye Ministerpräsident veya Ministerpräsidentin denir. Nordrhein-Westfalen'de de bu unvan kullanılır."
   },
   "NW-10": {
+    "germanQuestion": "Welche Ministerin/welchen Minister hat Nordrhein-Westfalen nicht?",
     "question": "Nordrhein-Westfalen eyalet hükümetinde aşağıdaki bakanlıklardan hangisi yoktur?",
-    "answers": [
-      "Adalet Bakanlığı",
-      "Dışişleri Bakanlığı",
-      "Maliye Bakanlığı",
-      "İçişleri Bakanlığı"
-    ],
+    "answers": ["Adalet Bakanlığı", "Dışişleri Bakanlığı", "Maliye Bakanlığı", "İçişleri Bakanlığı"],
     "explanation": "Dış politika federal devletin yetki alanındadır. Bu nedenle Nordrhein-Westfalen'in kendi Dışişleri Bakanı yoktur; adalet, maliye ve içişleri ise eyalet düzeyinde bakanlık alanlarıdır."
   }
 }
