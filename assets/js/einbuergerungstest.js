@@ -5,26 +5,16 @@
   const FALLBACK_DATA='https://raw.githubusercontent.com/leben-in-deutschland/leben-in-deutschland-scrapper/main/data/question.json';
   const STORE='ap_einbuergerungstest_v1';
   const LETTERS=['a','b','c','d'];
-  const STATES={
-    bw:'Baden-Württemberg',by:'Bayern',be:'Berlin',bb:'Brandenburg',hb:'Bremen',hh:'Hamburg',he:'Hessen',mv:'Mecklenburg-Vorpommern',ni:'Niedersachsen',nw:'Nordrhein-Westfalen',rp:'Rheinland-Pfalz',sl:'Saarland',sn:'Sachsen',st:'Sachsen-Anhalt',sh:'Schleswig-Holstein',th:'Thüringen'
-  };
+  const STATES={bw:'Baden-Württemberg',by:'Bayern',be:'Berlin',bb:'Brandenburg',hb:'Bremen',hh:'Hamburg',he:'Hessen',mv:'Mecklenburg-Vorpommern',ni:'Niedersachsen',nw:'Nordrhein-Westfalen',rp:'Rheinland-Pfalz',sl:'Saarland',sn:'Sachsen',st:'Sachsen-Anhalt',sh:'Schleswig-Holstein',th:'Thüringen'};
 
-  let data=[];
-  let general=[];
-  let state=[];
-  let pool=[];
-  let index=0;
-  let mode='study';
-  let exam=null;
-  let timerId=null;
+  let data=[],general=[],state=[],pool=[];
+  let index=0,mode='study',exam=null,timerId=null;
 
   const el=id=>document.getElementById(id);
-  const safe=(v)=>String(v==null?'':v);
-  const escapeHtml=(s)=>safe(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const safe=v=>String(v==null?'':v);
+  const escapeHtml=s=>safe(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-  function loadStore(){
-    try{return JSON.parse(localStorage.getItem(STORE)||'{}');}catch(_){return {};}
-  }
+  function loadStore(){try{return JSON.parse(localStorage.getItem(STORE)||'{}');}catch(_){return {};}}
   function saveStore(s){try{localStorage.setItem(STORE,JSON.stringify(s));}catch(_){}}
   function storePatch(fn){const s=loadStore();fn(s);saveStore(s);return s;}
 
@@ -33,7 +23,7 @@
     return list.map(q=>{
       if(Array.isArray(q.answers))return q;
       const tr=(q.translation||{}).tr||{};
-      return {num:safe(q.num).trim(),id:q.id||'',question:q.question||'',answers:[q.a||'',q.b||'',q.c||'',q.d||''],solution:safe(q.solution).trim().toLowerCase(),image:q.image||'',context:q.context||'',category:q.category||'General',tr:{question:tr.question||'',answers:[tr.a||'',tr.b||'',tr.c||'',tr.d||''],context:tr.context||''}};
+      return {num:safe(q.num).trim(),id:q.id||'',question:q.question||'',answers:[q.a||'',q.b||'',q.c||'',q.d||''],solution:safe(q.solution).trim().toLowerCase(),image:q.image||'',context:q.context||'',category:q.category||'General',tr:{question:tr.question||'',answers:[tr.a||'',tr.b||'',tr.c||'',tr.d||''],context:tr.context||'',reviewed:false,source:''}};
     }).filter(q=>q.question&&q.answers&&q.answers.length===4);
   }
 
@@ -67,7 +57,6 @@
 
   function choosePool(){
     splitData();
-    const s=loadStore();
     if(mode==='wrong')pool=[...general,...state].filter(isWrong);
     else if(mode==='favorites')pool=[...general,...state].filter(isFav);
     else if(mode==='state')pool=[...state];
@@ -112,15 +101,29 @@
     return '<button type="button" class="'+cls+'" data-answer="'+i+'" '+(rec?'disabled':'')+'><span class="citizen-answer-letter">'+LETTERS[i].toUpperCase()+'</span><span><span class="citizen-answer-de">'+escapeHtml(q.answers[i])+'</span>'+(tr?'<span class="citizen-answer-tr">'+escapeHtml(tr)+'</span>':'')+'</span></button>';
   }
 
+  function richExplanation(text){
+    const value=safe(text).trim();
+    if(!value)return '';
+    const marker='Sınav ipucu:';
+    const at=value.indexOf(marker);
+    if(at<0)return '<p class="citizen-explanation-text">'+escapeHtml(value)+'</p>';
+    const main=value.slice(0,at).trim();
+    const tip=value.slice(at+marker.length).trim();
+    return (main?'<p class="citizen-explanation-text">'+escapeHtml(main)+'</p>':'')+(tip?'<div class="citizen-study-tip"><strong>Sınav ipucu</strong><span>'+escapeHtml(tip)+'</span></div>':'');
+  }
+
   function explanation(q,rec){
     if(!rec)return '';
     const correct=solutionIndex(q);
+    const tr=((q.tr||{}).answers||[])[correct]||'';
     const trContext=((q.tr||{}).context||'').trim();
     const deContext=(q.context||'').trim();
-    return '<div class="citizen-explanation"><strong>'+(rec.correct?'Doğru cevap.':'Doğru cevap: '+LETTERS[correct].toUpperCase()+') '+escapeHtml(q.answers[correct]))+'</strong>'+
-      (trContext?'<p><b>Türkçe açıklama:</b> '+escapeHtml(trContext)+'</p>':'')+
-      (deContext?'<details><summary>Almanca açıklamayı göster</summary><p>'+escapeHtml(deContext)+'</p></details>':'')+
-      '<small>Türkçe çeviri ve açıklamalar çalışma desteğidir; resmî BAMF çevirisi değildir.</small></div>';
+    const reviewed=!!((q.tr||{}).reviewed);
+    return '<div class="citizen-explanation">'+
+      '<div class="citizen-correct-head"><span class="citizen-correct-icon">✓</span><div><strong>'+(rec.correct?'Doğru cevap':'Doğru seçenek: '+LETTERS[correct].toUpperCase())+'</strong><div class="citizen-correct-answer" lang="de">'+escapeHtml(q.answers[correct])+'</div>'+(tr?'<div class="citizen-correct-tr" lang="tr">'+escapeHtml(tr)+'</div>':'')+'</div></div>'+
+      (trContext?'<div class="citizen-learning"><h3>Neden doğru?</h3>'+richExplanation(trContext)+'</div>':'')+
+      (deContext?'<details><summary>Almanca kaynak açıklamasını göster</summary><p>'+escapeHtml(deContext)+'</p></details>':'')+
+      '<div class="citizen-explanation-meta">'+(reviewed?'<span class="citizen-reviewed">Editör kontrollü Türkçe</span>':'<span>Türkçe çalışma desteği</span>')+'<small>Resmî BAMF çevirisi değildir.</small></div></div>';
   }
 
   function questionLabel(q){return /^\d+$/.test(q.num)?'Genel soru':'Eyalet · '+STATES[stateCode()];}
@@ -131,7 +134,7 @@
     if(mode==='exam'){renderExam();return;}
     if(!pool.length){host.innerHTML='<div class="citizen-empty"><strong>Bu görünümde soru yok.</strong><p>Filtreyi değiştirin veya diğer sorulara dönün.</p></div>';return;}
     const q=pool[index],rec=answerRecord(q),trq=((q.tr||{}).question||'').trim();
-    host.innerHTML='<section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+escapeHtml(q.num)+'</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span>'+(q.category?'<span class="citizen-pill">'+escapeHtml(q.category)+'</span>':'')+'</div><button class="citizen-fav" id="citizenFav" type="button" aria-label="Favoriye ekle">'+(isFav(q)?'★':'☆')+'</button></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(trq?'<p class="citizen-tr" lang="tr">'+escapeHtml(trq)+'</p>':'')+'<div class="citizen-answers">'+q.answers.map((_,i)=>answerButton(q,i,rec)).join('')+'</div>'+explanation(q,rec)+'<div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" type="button" id="citizenPrev" '+(index===0?'disabled':'')+'>← Önceki</button><button class="btn btn-primary" type="button" id="citizenNext" '+(index===pool.length-1?'disabled':'')+'>Sonraki →</button></div><div class="citizen-jump"><span>'+ (index+1)+' / '+pool.length+'</span><input id="citizenJumpInput" type="number" min="1" max="'+pool.length+'" placeholder="Soru"><button class="btn btn-secondary" id="citizenJump" type="button">Git</button></div></div></section>';
+    host.innerHTML='<section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+escapeHtml(q.num)+'</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span>'+(q.category?'<span class="citizen-pill">'+escapeHtml(q.category)+'</span>':'')+'</div><button class="citizen-fav" id="citizenFav" type="button" aria-label="Favoriye ekle">'+(isFav(q)?'★':'☆')+'</button></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(trq?'<p class="citizen-tr" lang="tr">'+escapeHtml(trq)+'</p>':'')+'<div class="citizen-answers">'+q.answers.map((_,i)=>answerButton(q,i,rec)).join('')+'</div>'+explanation(q,rec)+'<div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" type="button" id="citizenPrev" '+(index===0?'disabled':'')+'>← Önceki</button><button class="btn btn-primary" type="button" id="citizenNext" '+(index===pool.length-1?'disabled':'')+'>Sonraki →</button></div><div class="citizen-jump"><span>'+(index+1)+' / '+pool.length+'</span><input id="citizenJumpInput" type="number" min="1" max="'+pool.length+'" placeholder="Soru"><button class="btn btn-secondary" id="citizenJump" type="button">Git</button></div></div></section>';
     host.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>submitAnswer(q,Number(b.dataset.answer)));
     el('citizenFav').onclick=()=>toggleFav(q);
     el('citizenPrev').onclick=()=>{if(index>0){index--;renderQuestion();scrollCard();}};
@@ -162,18 +165,32 @@
   function renderExam(){
     const host=el('citizenQuestionHost');if(!exam){startExam();return;}if(exam.finished){renderExamResult();return;}
     const q=exam.questions[exam.index],selected=exam.answers[exam.index];
-    host.innerHTML='<div class="citizen-exam-banner"><div><strong>Gerçek sınav provası</strong><div>33 soru · 30 genel + 3 '+escapeHtml(STATES[stateCode()])+' · Geçme: 17 doğru</div></div><div class="citizen-timer" id="citizenTimer">'+formatTime(exam.ends-Date.now())+'</div></div><section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+(exam.index+1)+' / 33</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span></div></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(((q.tr||{}).question)?'<p class="citizen-tr" lang="tr">'+escapeHtml(q.tr.question)+'</p>':'')+'<div class="citizen-answers">'+q.answers.map((a,i)=>'<button type="button" class="citizen-answer '+(selected===i?'is-selected':'')+'" data-exam-answer="'+i+'"><span class="citizen-answer-letter">'+LETTERS[i].toUpperCase()+'</span><span><span class="citizen-answer-de">'+escapeHtml(a)+'</span>'+((((q.tr||{}).answers||[])[i])?'<span class="citizen-answer-tr">'+escapeHtml(q.tr.answers[i])+'</span>':'')+'</span></button>').join('')+'</div><div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" id="examPrev" type="button" '+(exam.index===0?'disabled':'')+'>← Önceki</button>'+(exam.index===32?'<button class="btn btn-primary" id="examFinish" type="button">Sınavı bitir</button>':'<button class="btn btn-primary" id="examNext" type="button">Sonraki →</button>')+'</div><span>'+(Object.keys(exam.answers).length)+' / 33 cevaplandı</span></div></section>';
+    host.innerHTML='<div class="citizen-exam-banner"><div><strong>Gerçek sınav provası</strong><div>33 soru · 30 genel + 3 '+escapeHtml(STATES[stateCode()])+' · Geçme: 17 doğru</div></div><div class="citizen-timer" id="citizenTimer">'+formatTime(exam.ends-Date.now())+'</div></div><section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+(exam.index+1)+' / 33</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span></div></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(((q.tr||{}).question)?'<p class="citizen-tr" lang="tr">'+escapeHtml(q.tr.question)+'</p>':'')+'<div class="citizen-answers">'+q.answers.map((a,i)=>'<button type="button" class="citizen-answer '+(selected===i?'is-selected':'')+'" data-exam-answer="'+i+'"><span class="citizen-answer-letter">'+LETTERS[i].toUpperCase()+'</span><span><span class="citizen-answer-de">'+escapeHtml(a)+'</span>'+((((q.tr||{}).answers||[])[i])?'<span class="citizen-answer-tr">'+escapeHtml(q.tr.answers[i])+'</span>':'')+'</span></button>').join('')+'</div><div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" id="examPrev" type="button" '+(exam.index===0?'disabled':'')+'>← Önceki</button>'+(exam.index===32?'<button class="btn btn-primary" id="examFinish" type="button">Sınavı bitir</button>':'<button class="btn btn-primary" id="examNext" type="button">Sonraki →</button>')+'</div><span>'+Object.keys(exam.answers).length+' / 33 cevaplandı</span></div></section>';
     host.querySelectorAll('[data-exam-answer]').forEach(b=>b.onclick=()=>{exam.answers[exam.index]=Number(b.dataset.examAnswer);renderExam();});
     if(el('examPrev'))el('examPrev').onclick=()=>{exam.index--;renderExam();};
     if(el('examNext'))el('examNext').onclick=()=>{exam.index++;renderExam();};
     if(el('examFinish'))el('examFinish').onclick=finishExam;
   }
-  function finishExam(){if(!exam||exam.finished)return;exam.finished=true;clearInterval(timerId);let correct=0;exam.questions.forEach((q,i)=>{if(exam.answers[i]===solutionIndex(q))correct++;});exam.correct=correct;exam.passed=correct>=17;if(typeof window.gtag==='function')window.gtag('event','citizenship_exam_finish',{state:stateCode(),correct:correct,passed:exam.passed});renderExamResult();}
+  function finishExam(){if(!exam||exam.finished)return;exam.finished=true;clearInterval(timerId);let correct=0;exam.questions.forEach((q,i)=>{if(exam.answers[i]===solutionIndex(q))correct++;});exam.correct=correct;exam.passed=correct>=17;if(typeof window.gtag==='function')window.gtag('event','citizenship_exam_finish',{state:stateCode(),correct,passed:exam.passed});renderExamResult();}
   function renderExamResult(){
     const missed=exam.questions.map((q,i)=>({q,i,ok:exam.answers[i]===solutionIndex(q)})).filter(x=>!x.ok);
     el('citizenQuestionHost').innerHTML='<div class="citizen-result '+(exam.passed?'pass':'fail')+'"><h2>'+(exam.passed?'Deneme sınavını geçtiniz':'Biraz daha çalışma gerekiyor')+'</h2><strong>'+exam.correct+' / 33</strong><p>Resmî Einbürgerungstest için geçme eşiği 17 doğru cevaptır.</p><button class="btn btn-primary" id="examAgain" type="button">Yeni deneme başlat</button><button class="btn btn-secondary" id="examReview" type="button">Yanlışları çalış</button></div>';
     el('examAgain').onclick=startExam;
     el('examReview').onclick=()=>{missed.forEach(x=>storePatch(s=>{s.answers=s.answers||{};s.answers[key(x.q)]={selected:exam.answers[x.i]??-1,correct:false,at:Date.now()};}));mode='wrong';setActiveTab('wrong');choosePool();};
+  }
+
+  function resetProgress(){
+    const s=loadStore();
+    const answered=Object.keys(s.answers||{}).length;
+    if(!answered){alert('Henüz sıfırlanacak bir cevap geçmişi yok.');return;}
+    if(!confirm('Cevap geçmişiniz, doğru/yanlış sayıları ve “Yanlışlarım” listesi sıfırlanacak. Favorileriniz ve eyalet seçiminiz korunacak. Devam edilsin mi?'))return;
+    const keep={};
+    if(s.state)keep.state=s.state;
+    if(s.favorites&&Object.keys(s.favorites).length)keep.favorites=s.favorites;
+    saveStore(keep);
+    clearInterval(timerId);exam=null;mode='study';index=0;setActiveTab('study');choosePool();
+    if(typeof window.gtag==='function')window.gtag('event','citizenship_progress_reset',{state:stateCode(),answered_before_reset:answered});
+    alert('Çalışma ilerlemeniz sıfırlandı. Favorileriniz ve eyalet seçiminiz korundu.');
   }
 
   function setActiveTab(name){document.querySelectorAll('.citizen-tab').forEach(b=>b.classList.toggle('is-active',b.dataset.mode===name));}
@@ -182,7 +199,7 @@
     el('citizenFilter').onchange=()=>{index=0;choosePool();};
     el('citizenSearch').oninput=()=>{index=0;choosePool();};
     document.querySelectorAll('.citizen-tab').forEach(b=>b.onclick=()=>{const m=b.dataset.mode;if(m==='exam'){startExam();return;}clearInterval(timerId);exam=null;mode=m;index=0;setActiveTab(m);choosePool();});
-    el('citizenReset').onclick=()=>{if(confirm('Bu cihazdaki vatandaşlık testi ilerlemesi, yanlışlar ve favoriler silinsin mi?')){localStorage.removeItem(STORE);index=0;choosePool();}};
+    el('citizenReset').onclick=resetProgress;
   }
 
   async function init(){
