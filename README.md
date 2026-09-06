@@ -1,29 +1,24 @@
 # Almanya Pusulası
 
-Almanya Pusulası, Almanya'da yaşayan Türkler için SCHUFA, konut kredisi, Blue Card,
-Kindergeld, emeklilik ve Türkiye seyahati konularında sade ve bağımsız bilgi rehberleri
-sunan bir bilgi sitesidir.
+[Almanya Pusulası](https://almanyapusulasi.de/) Almanya'da yaşayan veya Almanya'ya gelmek isteyen Türkler için karar araçları, resmî kaynaklı rehberler ve güncel bilgi merkezi sunar.
+
+Öne çıkan açık kaynaklar:
+
+- [Brutto-Netto + yaşam bütçesi 2026](https://almanyapusulasi.de/brutto-netto-hesaplayici-2026/)
+- [Chancenkarte uygunluk ve puan motoru](https://almanyapusulasi.de/chancenkarte-puan-hesaplayici-2026/)
+- [EU Blue Card uygunluk motoru](https://almanyapusulasi.de/blue-card-uygunluk-kontrolu-2026/)
+- [Kinderzuschlag uygunluk ön kontrolü](https://almanyapusulasi.de/kinderzuschlag-uygunluk-kontrolu-2026/)
+- [Almanya 2026 resmî eşikler veri merkezi](https://almanyapusulasi.de/almanya-2026-resmi-esikler/)
+- [Makine-okunabilir 2026 JSON veri seti](https://almanyapusulasi.de/data/almanya-2026-esikler.json)
+- [Ücretsiz embed araçları](https://almanyapusulasi.de/embed-araclar/)
 
 ## Mimari
 
-Statik bir web sitesidir. Framework, derleme adımı veya çalışma zamanı bağımlılığı yoktur:
-
-- El ile yazılmış HTML sayfaları
-- Tek bir paylaşılan stil dosyası: `assets/style.css`
-- Tek bir istemci betiği: `assets/js/analytics-consent.js`
-- Görseller ve ikonlar: `assets/`
-
-## Yönlendirme
-
-Her sayfa kendi klasöründeki bir `index.html` dosyasıdır (`schufa/index.html`,
-`blue-card/index.html`, ...). URL'ler klasör diziniyle temiz kalır (`/schufa/`).
-Kök sayfa `index.html` dosyasıdır. Tüm bağlantı ve varlık yolları köke göredir (`/assets/...`),
-bu yüzden site bir statik sunucu üzerinden servis edilmelidir.
+Statik bir web sitesidir. Framework veya çalışma zamanı bağımlılığı yoktur. Her sayfa kendi klasöründeki `index.html` dosyasıdır; paylaşılan stil ve site shell dosyaları `assets/` altında tutulur.
 
 ## Yerel önizleme
 
-Yol yapısı gereği dosyalar doğrudan `file://` ile açılamaz. Kök dizinde yerel bir statik
-sunucu çalıştırın, örneğin:
+Kök dizinde bir statik sunucu çalıştırın:
 
 ```bash
 python -m http.server 8000
@@ -31,21 +26,18 @@ python -m http.server 8000
 
 Ardından `http://localhost:8000/` adresini açın.
 
+## Veri ve kaynak yaklaşımı
+
+Göç, vergi, sosyal güvenlik ve aile destekleri gibi yüksek etkili konulardaki sayısal eşikler mümkün olduğunca Bundesministerium, Bundesagentur für Arbeit ve `Make it in Germany` gibi birincil resmî kaynaklardan doğrulanır. Kamuya açık 2026 eşik veri seti `data/almanya-2026-esikler.json` altında tutulur.
+
 ## Analiz
 
-Google Analytics yalnızca kullanıcı analiz onayı verdikten sonra yüklenir. Kurulum Google
-Consent Mode'un temel yaklaşımını kullanır; onay öncesinde Google etiketi yüklenmez ve
-Google'a ölçüm isteği gönderilmez. Onay akışı ve GA yükleme mantığı tamamen
-`assets/js/analytics-consent.js` içindedir; hiçbir sayfada satır içi GA kodu yoktur.
-Seçim `localStorage` içinde saklanır ve her sayfanın altındaki **Çerez tercihleri** düğmesiyle
-yeniden açılabilir.
+Google Analytics yalnızca kullanıcı analiz onayı verdikten sonra yüklenir. Seçim `localStorage` içinde saklanır ve site içindeki gizlilik ayarları üzerinden değiştirilebilir.
 
-## Reklam
+## Reklam ve ticari bağlantılar
 
-Google AdSense henüz etkin değildir. Gerçek `ca-pub-...` yayıncı kimliği ve Google
-sertifikalı TCF CMP kurulmadan reklam kodu ya da örnek `ads.txt` satırı eklenmemelidir.
-Sahte veya yer tutucu yayıncı kimliği üretimde kullanılmamalıdır.
+Ticari teklif/affiliate alanları editoryal karar mantığından ayrı tutulur. Doğrulanmamış partner URL'leri üretime eklenmez.
 
 ## Yayın
 
-Üretim alan adı: `almanyapusulasi.de`
+Üretim alan adı: [https://almanyapusulasi.de/](https://almanyapusulasi.de/)
