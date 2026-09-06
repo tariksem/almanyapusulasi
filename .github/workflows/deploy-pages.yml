@@ -25,6 +25,8 @@ jobs:
         uses: actions/checkout@v6
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Sync citizenship test study data
+        run: python scripts/sync-einbuergerungstest.py
       - name: Install social preview dependency
         run: python -m pip install --disable-pip-version-check pillow
       - name: Generate social preview card
