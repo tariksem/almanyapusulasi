@@ -11,6 +11,11 @@
   shellCss.href="/assets/site-shell.css";
   document.head.appendChild(shellCss);
 
+  const shareScript=document.createElement("script");
+  shareScript.defer=true;
+  shareScript.src="/assets/js/share.js";
+  document.head.appendChild(shareScript);
+
   const SECTIONS=[
     {key:"haberler",href:"/haberler/",label:"Haberler",icon:"📰",paths:["/haberler"]},
     {key:"tools",href:"/araclar/",label:"Araçlar",icon:"🧮",paths:[
