@@ -1,0 +1,82 @@
+{
+  "1": {
+    "question": "8 Mayıs 1945'te ne oldu?",
+    "answers": [
+      "İkinci Dünya Savaşı Avrupa'da sona erdi.",
+      "Adolf Hitler öldü.",
+      "Konrad Adenauer Federal Şansölye seçildi.",
+      "Berlin Duvarı'nın inşasına başlandı."
+    ],
+    "explanation": "8 Mayıs 1945, Almanya'nın koşulsuz teslimiyetinin yürürlüğe girdiği ve İkinci Dünya Savaşı'nın Avrupa'da sona erdiği tarihtir. Adolf Hitler 30 Nisan 1945'te öldü; Konrad Adenauer 1949'da şansölye oldu; Berlin Duvarı'nın yapımı ise 1961'de başladı."
+  },
+  "2": {
+    "question": "Nasyonal Sosyalizm döneminde Almanya'da hangisi vardı?",
+    "answers": [
+      "Kişiliğini özgürce geliştirme hakkı",
+      "İnsan onurunun korunması",
+      "Siyasi partilerin yasaklanması",
+      "Basın özgürlüğü"
+    ],
+    "explanation": "Nasyonal Sosyalist diktatörlük döneminde siyasi çoğulculuk ortadan kaldırıldı ve siyasi partiler yasaklandı. Basın özgürlüğü ve temel haklar da ağır biçimde kısıtlandı."
+  },
+  "3": {
+    "question": "Federal Almanya Cumhuriyeti'nin ilk Federal Şansölyesi kimdi?",
+    "answers": [
+      "Willy Brandt",
+      "Konrad Adenauer",
+      "Kurt Georg Kiesinger",
+      "Helmut Schmidt"
+    ],
+    "explanation": "Konrad Adenauer, 1949'da Federal Almanya Cumhuriyeti'nin ilk Federal Şansölyesi oldu ve 1963'e kadar görev yaptı."
+  },
+  "125": {
+    "question": "Bir demokraside düzenli seçimlerin görevlerinden biri nedir?",
+    "answers": [
+      "Vatandaşları oy kullanmaya zorlamak",
+      "Seçmen çoğunluğunun iradesine göre hükümet değişikliğini mümkün kılmak",
+      "Ülkedeki mevcut yasaları değiştirmeden korumak",
+      "Yoksullara daha fazla siyasi güç vermek"
+    ],
+    "explanation": "Demokratik seçimler, seçmen çoğunluğunun iradesinin yönetime yansımasını ve gerektiğinde hükümetin barışçıl biçimde değişmesini sağlar."
+  },
+  "126": {
+    "question": "Almanya'da oy kullanma hakkı olan vatandaşlar seçimden önce ne alır?",
+    "answers": [
+      "Belediyeden seçim bildirimi (Wahlbenachrichtigung)",
+      "Federal Cumhurbaşkanından oy kullanma izni",
+      "Federal Meclis Kurulundan bir bildirim",
+      "Kilise makamından bir bildirim"
+    ],
+    "explanation": "Seçmen kütüğüne kayıtlı kişiler, seçimden önce belediyelerinden Wahlbenachrichtigung adı verilen seçim bildirimini alırlar. Bu belge seçim yeri ve oy verme hakkında bilgi içerir."
+  },
+  "127": {
+    "question": "Federal Almanya Cumhuriyeti seçim hukukunda neden %5 barajı vardır?",
+    "answers": [
+      "Çok sayıdaki küçük partinin programları birbirine çok benzediği için",
+      "Vatandaşlar çok sayıda küçük parti arasında yönlerini kaybedebileceği için",
+      "Çok sayıda küçük parti hükümet kurulmasını zorlaştırabileceği için",
+      "Küçük partilerin siyasetçilerine ödeme yapacak kadar parası olmadığı için"
+    ],
+    "explanation": "%5 barajının amacı parlamentonun çok fazla küçük partiye bölünmesini sınırlamak ve istikrarlı bir hükümet kurulmasını kolaylaştırmaktır."
+  },
+  "NW-9": {
+    "question": "Nordrhein-Westfalen eyaletinde hükümet başkanına ne denir?",
+    "answers": [
+      "Birinci Bakan",
+      "Başbakan (Premierminister)",
+      "Belediye Başkanı",
+      "Eyalet Başbakanı (Ministerpräsident/Ministerpräsidentin)"
+    ],
+    "explanation": "Alman eyaletlerinin çoğunda eyalet hükümetinin başındaki kişiye Ministerpräsident veya Ministerpräsidentin denir. Nordrhein-Westfalen'de de bu unvan kullanılır."
+  },
+  "NW-10": {
+    "question": "Nordrhein-Westfalen eyalet hükümetinde aşağıdaki bakanlıklardan hangisi yoktur?",
+    "answers": [
+      "Adalet Bakanlığı",
+      "Dışişleri Bakanlığı",
+      "Maliye Bakanlığı",
+      "İçişleri Bakanlığı"
+    ],
+    "explanation": "Dış politika federal devletin yetki alanındadır. Bu nedenle Nordrhein-Westfalen'in kendi Dışişleri Bakanı yoktur; adalet, maliye ve içişleri ise eyalet düzeyinde bakanlık alanlarıdır."
+  }
+}
