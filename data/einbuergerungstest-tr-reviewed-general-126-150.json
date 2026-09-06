@@ -1,0 +1,152 @@
+{
+  "official-126": {
+    "germanQuestion": "Was bekommen wahlberechtigte Bürger und Bürgerinnen in Deutschland vor einer Wahl?",
+    "question": "Almanya'da oy kullanma hakkı olan vatandaşlar seçimden önce ne alır?",
+    "answers": ["Belediyeden seçim bildirimi (Wahlbenachrichtigung)", "Federal Cumhurbaşkanından oy kullanma izni", "Federal Kongreden bildirim", "Kilise makamından bildirim"],
+    "explanation": "Seçimden önce belediye tarafından Wahlbenachrichtigung gönderilir. Bu belgede seçim günü, sandık yeri ve genellikle mektupla oy kullanma bilgileri bulunur."
+  },
+  "official-127": {
+    "germanQuestion": "Warum gibt es die 5 %-Hürde im Wahlgesetz der Bundesrepublik Deutschland? Es gibt sie, weil …",
+    "question": "Federal Almanya seçim hukukunda neden %5 barajı vardır?",
+    "answers": ["Küçük partilerin programları birbirine benzediği için", "Seçmenler çok sayıda küçük parti arasında yönünü kaybedebileceği için", "Çok sayıda küçük parti hükümet kurmayı zorlaştırabileceği için", "Küçük partilerin siyasetçilere ödeme yapacak kadar parası olmadığı için"],
+    "explanation": "%5 barajının amacı parlamentonun aşırı parçalanmasını sınırlamak ve istikrarlı hükümet kurulmasını kolaylaştırmaktır."
+  },
+  "official-128": {
+    "germanQuestion": "Parlamentsmitglieder, die von den Bürgern und Bürgerinnen gewählt werden, nennt man …",
+    "question": "Vatandaşlar tarafından seçilen parlamento üyelerine ne denir?",
+    "answers": ["Milletvekilleri (Abgeordnete)", "Şansölyeler", "Büyükelçiler", "Eyalet başbakanları"],
+    "explanation": "Seçilmiş parlamento üyelerinin Almanca adı Abgeordnete'dir."
+  },
+  "official-129": {
+    "germanQuestion": "Vom Volk gewählt wird in Deutschland …",
+    "question": "Almanya'da aşağıdakilerden hangisi halk tarafından seçilir?",
+    "answers": ["Federal Şansölye", "Bir eyaletin başbakanı", "Bundestag", "Federal Cumhurbaşkanı"],
+    "explanation": "Halk federal düzeyde Bundestag milletvekillerini seçer. Federal Şansölye Bundestag tarafından, Federal Cumhurbaşkanı ise Bundesversammlung tarafından seçilir."
+  },
+  "official-130": {
+    "germanQuestion": "Welcher Stimmzettel wäre bei einer Bundestagswahl gültig?",
+    "question": "Bir Bundestag seçiminde aşağıdaki oy pusulalarından hangisi geçerli olur?",
+    "answers": ["Görsel 1", "Görsel 2", "Görsel 3", "Görsel 4"],
+    "explanation": "Bundestag seçiminde seçmen normalde bir Erststimme ve bir Zweitstimme kullanır. Görselde bu kurala uygun olan 1 numaralı pusula geçerlidir."
+  },
+  "official-131": {
+    "germanQuestion": "In Deutschland ist ein Bürgermeister / eine Bürgermeisterin …",
+    "question": "Almanya'da Bürgermeister/Bürgermeisterin kimdir?",
+    "answers": ["Bir okulun yöneticisi", "Bir bankanın yöneticisi", "Bir belediyenin başındaki kişi", "Bir siyasi partinin başkanı"],
+    "explanation": "Bürgermeister, bir belediyenin siyasi ve idari başındaki kişidir; Türkçede genellikle belediye başkanı olarak karşılanır."
+  },
+  "official-132": {
+    "germanQuestion": "Viele Menschen in Deutschland arbeiten in ihrer Freizeit ehrenamtlich. Was bedeutet das?",
+    "question": "Almanya'da birçok insan boş zamanında gönüllü olarak (ehrenamtlich) çalışır. Bu ne demektir?",
+    "answers": ["Asker olarak çalışırlar", "Dernek ve kuruluşlarda gönüllü ve ücretsiz çalışırlar", "Federal hükümette çalışırlar", "Hastanede ücret karşılığı çalışırlar"],
+    "explanation": "Ehrenamt, toplum yararına gönüllü ve genellikle ücret alınmadan yapılan faaliyetleri ifade eder."
+  },
+  "official-133": {
+    "germanQuestion": "Was ist bei Bundestags- und Landtagswahlen in Deutschland erlaubt?",
+    "question": "Almanya'da Bundestag ve eyalet meclisi seçimlerinde hangisine izin verilir?",
+    "answers": ["Eşin, eşi adına da oy kullanmasına", "Mektupla oy kullanmaya (Briefwahl)", "Seçim günü telefonla oy kullanmaya", "14 yaşından itibaren çocukların oy kullanmasına"],
+    "explanation": "Briefwahl, yani mektupla oy kullanma yasal bir oy kullanma yöntemidir. Her seçmen oyunu kendisi kullanır."
+  },
+  "official-134": {
+    "germanQuestion": "Man will die Buslinie abschaffen, mit der Sie immer zur Arbeit fahren. Was können Sie machen, um die Buslinie zu erhalten?",
+    "question": "İşe giderken kullandığınız otobüs hattı kaldırılmak isteniyor. Hattın korunması için ne yapabilirsiniz?",
+    "answers": ["Otobüs hattını korumak için bir yurttaş girişimine katılmak veya girişim kurmak", "Bir spor kulübüne üye olup bisiklet çalışmak", "Vergi ödediğim için Finanzamt'a başvurmak", "Belediyenin orman dairesine mektup yazmak"],
+    "explanation": "Bürgerinitiative, vatandaşların yerel veya siyasi bir konuda ortak talep oluşturup demokratik biçimde girişimde bulunmasının yollarından biridir."
+  },
+  "official-135": {
+    "germanQuestion": "Wen vertreten die Gewerkschaften in Deutschland?",
+    "question": "Almanya'daki sendikalar kimi temsil eder?",
+    "answers": ["Büyük şirketleri", "Küçük şirketleri", "Serbest çalışanları", "Çalışanları"],
+    "explanation": "Sendikalar temel olarak Arbeitnehmer, yani çalışanların çıkarlarını temsil eder."
+  },
+  "official-136": {
+    "germanQuestion": "Sie gehen in Deutschland zum Arbeitsgericht bei …",
+    "question": "Almanya'da hangi durumda İş Mahkemesine (Arbeitsgericht) başvurursunuz?",
+    "answers": ["Yanlış yan gider hesaplamasında", "İşverenin haksız işten çıkarmasında", "Komşularla yaşanan sorunda", "Trafik kazası sonrası anlaşmazlıkta"],
+    "explanation": "Arbeitsgericht iş ilişkilerinden doğan uyuşmazlıklarla ilgilenir. Haksız fesih buna tipik bir örnektir."
+  },
+  "official-137": {
+    "germanQuestion": "Welches Gericht ist in Deutschland bei Konflikten in der Arbeitswelt zuständig?",
+    "question": "Almanya'da çalışma hayatındaki anlaşmazlıklardan hangi mahkeme sorumludur?",
+    "answers": ["Aile Mahkemesi", "Ceza Mahkemesi", "İş Mahkemesi (Arbeitsgericht)", "Sulh/yerel mahkeme (Amtsgericht)"],
+    "explanation": "İşçi-işveren ilişkilerinden doğan uyuşmazlıklar Arbeitsgericht'te görülür."
+  },
+  "official-138": {
+    "germanQuestion": "Was kann ich in Deutschland machen, wenn mir mein Arbeitgeber / meine Arbeitgeberin zu Unrecht gekündigt hat?",
+    "question": "Almanya'da işverenim beni haksız yere işten çıkardıysa ne yapabilirim?",
+    "answers": ["Çalışmaya devam edip işverene iyi davranmak", "İşverene karşı ödeme emri prosedürü başlatmak", "İşe son verme kararına karşı dava açmak (Kündigungsschutzklage)", "İşvereni polise şikâyet etmek"],
+    "explanation": "Haksız feshe karşı tipik hukuki yol Kündigungsschutzklage'dir. Bu dava iş mahkemesinde açılır ve kısa yasal süreler geçerli olabilir."
+  },
+  "official-139": {
+    "germanQuestion": "Wann kommt es in Deutschland zu einem Prozess vor Gericht? Wenn jemand …",
+    "question": "Almanya'da aşağıdaki durumlardan hangisinde mahkemede bir ceza yargılaması yapılabilir?",
+    "answers": ["Başka bir dine geçtiğinde", "Bir suç işleyip hakkında dava açıldığında", "Hükümetten farklı bir görüş savunduğunda", "Aracını yanlış park edip çekildiğinde"],
+    "explanation": "Bir kişi suç işlemekle itham edilip hakkında dava açıldığında mahkeme önünde bir Prozess, yani yargılama yapılabilir."
+  },
+  "official-140": {
+    "germanQuestion": "Was macht ein Schöffe / eine Schöffin in Deutschland? Er / Sie …",
+    "question": "Almanya'da bir Schöffe/Schöffin ne yapar?",
+    "answers": ["Hâkimlerle birlikte suç ve ceza hakkında karar verir", "Vatandaşlara hukuki danışmanlık verir", "Resmî belgeler düzenler", "Sanığı savunur"],
+    "explanation": "Schöffe, ceza yargılamalarında profesyonel hâkimlerle birlikte karar veren gönüllü/lay hâkimdir."
+  },
+  "official-141": {
+    "germanQuestion": "Wer berät in Deutschland Personen bei Rechtsfragen und vertritt sie vor Gericht?",
+    "question": "Almanya'da kişilere hukuki konularda danışmanlık yapan ve onları mahkemede temsil eden kimdir?",
+    "answers": ["Avukat (Rechtsanwalt/Rechtsanwältin)", "Hâkim", "Schöffe", "Savcı"],
+    "explanation": "Bir Rechtsanwalt veya Rechtsanwältin müvekkiline hukuki danışmanlık verir ve onu mahkemede temsil edebilir."
+  },
+  "official-142": {
+    "germanQuestion": "Was ist die Hauptaufgabe eines Richters / einer Richterin in Deutschland? Ein Richter / eine Richterin …",
+    "question": "Almanya'da bir hâkimin temel görevi nedir?",
+    "answers": ["Vatandaşları mahkemede temsil etmek", "Mahkemede çalışıp karar vermek", "Yasaları değiştirmek", "Gençleri mahkemede gözetmek"],
+    "explanation": "Hâkim yargılama yapar ve bağımsız biçimde karar verir; vatandaşların avukatı değildir ve yasa koymaz."
+  },
+  "official-143": {
+    "germanQuestion": "Ein Richter / eine Richterin in Deutschland gehört zur …",
+    "question": "Almanya'da bir hâkim hangi devlet erkine aittir?",
+    "answers": ["Yargı (Judikative)", "Yürütme (Exekutive)", "Operatif erk", "Yasama (Legislative)"],
+    "explanation": "Hâkimler Judikative, yani yargı erkine aittir."
+  },
+  "official-144": {
+    "germanQuestion": "Ein Richter / eine Richterin gehört in Deutschland zur …",
+    "question": "Almanya'da bir hâkim hangi güç alanına aittir?",
+    "answers": ["Yürütme gücü", "Yargı gücü", "Planlama gücü", "Yasama gücü"],
+    "explanation": "Richter, rechtsprechende Gewalt yani yargı gücü içinde görev yapar."
+  },
+  "official-145": {
+    "germanQuestion": "In Deutschland wird die Staatsgewalt geteilt. Für welche Staatsgewalt arbeitet ein Richter / eine Richterin? Für die …",
+    "question": "Almanya'da devlet gücü farklı erkler arasında bölünmüştür. Bir hâkim hangi erk için çalışır?",
+    "answers": ["Yargı (Judikative)", "Yürütme (Exekutive)", "Basın", "Yasama (Legislative)"],
+    "explanation": "Kuvvetler ayrılığında hâkimler Judikative, yani yargı erki içinde yer alır."
+  },
+  "official-146": {
+    "germanQuestion": "Wie nennt man in Deutschland ein Verfahren vor einem Gericht?",
+    "question": "Almanya'da mahkeme önündeki bir yargılama sürecine ne denir?",
+    "answers": ["Program", "Prosedür", "Protokol", "Dava/yargılama (Prozess)"],
+    "explanation": "Mahkeme önünde yürütülen yargılama Almancada Prozess olarak adlandırılır."
+  },
+  "official-147": {
+    "germanQuestion": "Was ist die Arbeit eines Richters / einer Richterin in Deutschland?",
+    "question": "Almanya'da bir hâkimin işi nedir?",
+    "answers": ["Almanya'yı yönetmek", "Hukuka göre karar vermek / adaleti uygulamak", "Plan hazırlamak", "Yasa çıkarmak"],
+    "explanation": "Hâkimlerin görevi Recht sprechen, yani hukuku uygulayarak yargısal karar vermektir."
+  },
+  "official-148": {
+    "germanQuestion": "Was ist eine Aufgabe der Polizei in Deutschland?",
+    "question": "Almanya'da polisin görevlerinden biri nedir?",
+    "answers": ["Ülkeyi askerî olarak savunmak", "Vatandaşları dinlemek", "Yasaları kabul etmek", "Yasalara uyulmasını denetlemek"],
+    "explanation": "Polis kamu düzeni ve güvenliği kapsamında yasaların uygulanmasını ve yasalara uyulmasını gözetir. Yasaları çıkaran organ polis değildir."
+  },
+  "official-149": {
+    "germanQuestion": "Was ist ein Beispiel für antisemitisches Verhalten?",
+    "question": "Aşağıdakilerden hangisi antisemitik davranışa örnektir?",
+    "answers": ["Yahudi bir bayrama katılmak", "İsrail hükümetini eleştirmek", "Holokost'u inkâr etmek", "Yahudilere karşı futbol oynamak"],
+    "explanation": "Holokost'u inkâr etmek antisemitik bir davranıştır ve Almanya'da ayrıca cezai sonuçlar doğurabilir. İsrail hükümetinin politikalarını eleştirmek tek başına antisemitizm değildir."
+  },
+  "official-150": {
+    "germanQuestion": "Ein Gerichtsschöffe / eine Gerichtsschöffin in Deutschland ist …",
+    "question": "Almanya'da Gerichtsschöffe/Schöffin kimdir?",
+    "answers": ["Belediye başkanının vekili", "Gönüllü/lay hâkim", "Belediye meclisi üyesi", "Hukuk eğitimi almış herhangi bir kişi"],
+    "explanation": "Schöffe, belirli ceza davalarında profesyonel hâkimlerle birlikte karar veren gönüllü hâkimdir; hukuk diploması sahibi olması şart değildir."
+  }
+}
