@@ -1,0 +1,152 @@
+{
+  "official-101": {
+    "germanQuestion": "Gewerkschaften sind Interessenverbände der …",
+    "question": "Sendikalar hangi grubun çıkarlarını temsil eden kuruluşlardır?",
+    "answers": ["Gençlerin", "Çalışanların", "Emeklilerin", "İşverenlerin"],
+    "explanation": "Gewerkschaft yani sendikalar, çalışanların ücret, çalışma süresi ve çalışma koşulları gibi konulardaki çıkarlarını temsil eder."
+  },
+  "official-102": {
+    "germanQuestion": "Womit kann man in der Bundesrepublik Deutschland geehrt werden, wenn man auf politischem, wirtschaftlichem, kulturellem, geistigem oder sozialem Gebiet eine besondere Leistung erbracht hat? Mit dem …",
+    "question": "Almanya'da siyasi, ekonomik, kültürel, düşünsel veya sosyal alanda özel bir başarı gösteren bir kişi hangi nişanla onurlandırılabilir?",
+    "answers": ["Federal Liyakat Nişanı (Bundesverdienstkreuz)", "Federal Kartal", "Vatansever Liyakat Nişanı", "'DDR Kahramanı' onursal unvanı"],
+    "explanation": "Bundesverdienstkreuz, Federal Almanya Cumhuriyeti'nin önemli devlet nişanıdır ve topluma özel katkı sağlayan kişilere verilebilir."
+  },
+  "official-103": {
+    "germanQuestion": "Was wird in Deutschland als „Ampelkoalition“ bezeichnet? Die Zusammenarbeit …",
+    "question": "Almanya'da 'trafik lambası koalisyonu' (Ampelkoalition) neyi ifade eder?",
+    "answers": ["CDU ve CSU'nun Bundestag gruplarının iş birliğini", "SPD, FDP ve Bündnis 90/Die Grünen'in bir hükümette birlikte çalışmasını", "CSU, Die Linke ve Bündnis 90/Die Grünen'in bir hükümette birlikte çalışmasını", "CDU ve SPD'nin Bundestag gruplarının iş birliğini"],
+    "explanation": "Ampelkoalition adı, SPD'nin kırmızı, FDP'nin sarı ve Yeşillerin yeşil renklerinden gelir. Bu ifade belirli bir koalisyon türünü anlatır; güncel hükümet yapısıyla karıştırılmamalıdır."
+  },
+  "official-104": {
+    "germanQuestion": "Eine Frau in Deutschland verliert ihre Arbeit. Was darf nicht der Grund für diese Entlassung sein?",
+    "question": "Almanya'da bir kadın işini kaybediyor. Aşağıdakilerden hangisi işten çıkarma nedeni olamaz?",
+    "answers": ["Uzun süre hasta ve çalışamaz durumda olması", "Sık sık işe geç gelmesi", "Çalışma saatinde özel işlerini yapması", "Hamile olması / çocuk beklemesi ve işverenin bunu bilmesi"],
+    "explanation": "Hamilelik nedeniyle işten çıkarma Almanya'da özel iş güvencesi kurallarıyla sınırlandırılmıştır. Hamilelik tek başına geçerli bir fesih nedeni değildir."
+  },
+  "official-105": {
+    "germanQuestion": "Was ist eine Aufgabe von Wahlhelfern / Wahlhelferinnen in Deutschland?",
+    "question": "Almanya'da seçim görevlilerinin (Wahlhelfer) görevlerinden biri nedir?",
+    "answers": ["Yaşlılara oy kabininde nasıl oy vereceklerini söylemek", "Seçimden önce seçmen bildirimlerini yazmak", "Ara sonuçları medyaya vermek", "Seçim bittikten sonra oyları saymak"],
+    "explanation": "Wahlhelfer seçim sürecinin düzgün yürütülmesine yardımcı olur ve sandık kapandıktan sonra oyların sayımına katılır."
+  },
+  "official-106": {
+    "germanQuestion": "In Deutschland helfen ehrenamtliche Wahlhelfer und Wahlhelferinnen bei den Wahlen. Was ist eine Aufgabe von Wahlhelfern / Wahlhelferinnen?",
+    "question": "Almanya'da gönüllü seçim görevlileri seçimlerde yardımcı olur. Görevlerinden biri nedir?",
+    "answers": ["Çocuklara ve yaşlılara oy vermelerinde yardım etmek", "Sandık yerini bildiren kart ve mektupları yazmak", "Ara sonuçları gazetecilere vermek", "Seçim bittikten sonra oyları saymak"],
+    "explanation": "Seçim görevlileri oy verme işlemini denetler ve oy verme süresi bittikten sonra oyları sayar."
+  },
+  "official-107": {
+    "germanQuestion": "Für wie viele Jahre wird der Bundestag in Deutschland gewählt?",
+    "question": "Almanya'da Bundestag kaç yıllığına seçilir?",
+    "answers": ["2 yıl", "4 yıl", "6 yıl", "8 yıl"],
+    "explanation": "Bundestag'ın olağan yasama dönemi dört yıldır."
+  },
+  "official-108": {
+    "germanQuestion": "Bei einer Bundestagswahl in Deutschland darf jeder wählen, der …",
+    "question": "Almanya'daki Bundestag seçimlerinde kim oy kullanabilir?",
+    "answers": ["Almanya'da yaşayan ve oy vermek isteyen herkes", "Federal Almanya vatandaşı olan ve en az 18 yaşında olan kişi", "Almanya'da en az 3 yıldır yaşayan herkes", "Federal Almanya vatandaşı olan ve en az 21 yaşında olan kişi"],
+    "explanation": "Bundestag seçimlerinde temel koşullardan biri Alman vatandaşlığı ve en az 18 yaşında olmaktır; ayrıca seçim hukukundaki diğer koşullar da uygulanır."
+  },
+  "official-109": {
+    "germanQuestion": "Wie oft gibt es normalerweise Bundestagswahlen in Deutschland?",
+    "question": "Almanya'da Bundestag seçimleri normalde ne sıklıkla yapılır?",
+    "answers": ["Her 3 yılda bir", "Her 4 yılda bir", "Her 5 yılda bir", "Her 6 yılda bir"],
+    "explanation": "Bundestag'ın olağan seçim dönemi dört yıldır."
+  },
+  "official-110": {
+    "germanQuestion": "Für wie viele Jahre wird der Bundestag in Deutschland gewählt?",
+    "question": "Bundestag üyeleri kaç yıllık dönem için seçilir?",
+    "answers": ["2 yıl", "3 yıl", "4 yıl", "5 yıl"],
+    "explanation": "Bundestag'ın normal yasama dönemi dört yıldır."
+  },
+  "official-111": {
+    "germanQuestion": "Welche Handlung mit Bezug auf den Staat Israel ist in Deutschland verboten?",
+    "question": "İsrail Devleti ile ilgili aşağıdaki eylemlerden hangisi Almanya'da yasaktır?",
+    "answers": ["İsrail politikasını kamuya açık biçimde eleştirmek", "Özel mülkte İsrail bayrağı asmak", "İsrail politikası hakkında tartışmak", "İsrail'in yok edilmesi için kamuya açık çağrıda bulunmak"],
+    "explanation": "Bir devletin politikasını eleştirmek ile o devletin ve insanlarının yok edilmesini istemek aynı şey değildir. Kamuya açık yok etme çağrıları cezai sonuç doğurabilir."
+  },
+  "official-112": {
+    "germanQuestion": "Die Wahlen in Deutschland sind …",
+    "question": "Almanya'daki seçimler nasıldır?",
+    "answers": ["Özel", "Gizli", "Mesleğe bağlı", "Cinsiyete bağlı"],
+    "explanation": "Seçimlerin gizli olması, kimin hangi tercihi yaptığının başkaları tarafından bilinmemesini güvence altına alır."
+  },
+  "official-113": {
+    "germanQuestion": "Wahlen in Deutschland gewinnt die Partei, die …",
+    "question": "Almanya'da bir seçimde hangi parti kazanır?",
+    "answers": ["En çok oyu alan parti", "Erkek seçmenlerin çoğunun seçtiği parti", "İşçilerden en çok oy alan parti", "Şansölye adayına en çok birinci oy verilen parti"],
+    "explanation": "Demokratik seçimlerde siyasi güç seçmenlerin oylarına dayanır. Bu soruda doğru ilke, en çok oyu alan partidir."
+  },
+  "official-114": {
+    "germanQuestion": "An demokratischen Wahlen in Deutschland teilzunehmen ist …",
+    "question": "Almanya'da demokratik seçimlere katılmak nedir?",
+    "answers": ["Bir yükümlülük", "Bir hak", "Bir zorlama", "Bir yük"],
+    "explanation": "Almanya'da oy kullanmak bir haktır; genel bir oy kullanma zorunluluğu yoktur."
+  },
+  "official-115": {
+    "germanQuestion": "Was bedeutet „aktives Wahlrecht“ in Deutschland?",
+    "question": "Almanya'da 'aktif seçme hakkı' (aktives Wahlrecht) ne demektir?",
+    "answers": ["Seçilebilmek", "Oy vermek zorunda olmak", "Oy kullanabilmek", "Oy sayımına katılmak zorunda olmak"],
+    "explanation": "Aktives Wahlrecht, seçimde oy kullanma hakkıdır. Seçilme hakkına ise passives Wahlrecht denir."
+  },
+  "official-116": {
+    "germanQuestion": "Wenn Sie bei einer Bundestagswahl in Deutschland wählen dürfen, heißt das …",
+    "question": "Almanya'da bir Bundestag seçiminde oy kullanma hakkınız varsa buna ne denir?",
+    "answers": ["Aktif seçim kampanyası", "Aktif seçim prosedürü", "Aktif seçim mücadelesi", "Aktif seçme hakkı (aktives Wahlrecht)"],
+    "explanation": "Oy kullanabilme hakkının Almanca adı aktives Wahlrecht'tir."
+  },
+  "official-117": {
+    "germanQuestion": "Wie viel Prozent der Zweitstimmen müssen Parteien mindestens bekommen, um in den Deutschen Bundestag gewählt zu werden?",
+    "question": "Partilerin Bundestag'a girebilmesi için ikinci oylardan (Zweitstimmen) en az yüzde kaç alması gerekir?",
+    "answers": ["%3", "%4", "%5", "%6"],
+    "explanation": "Genel kural olarak yüzde 5 barajı (5%-Hürde) uygulanır. Seçim hukukunda ayrıca özel istisnalar bulunabilir."
+  },
+  "official-118": {
+    "germanQuestion": "Wer darf bei den rund 40 jüdischen Makkabi-Sportvereinen Mitglied werden?",
+    "question": "Almanya'daki yaklaşık 40 Yahudi Makkabi spor kulübüne kimler üye olabilir?",
+    "answers": ["Yalnız Almanlar", "Yalnız İsrailliler", "Yalnız dindar kişiler", "Herkes"],
+    "explanation": "Makkabi spor kulüpleri yalnız Yahudilere veya İsraillilere kapalı bir yapı değildir; herkes üye olabilir."
+  },
+  "official-119": {
+    "germanQuestion": "Wahlen in Deutschland sind frei. Was bedeutet das?",
+    "question": "Almanya'da seçimlerin 'özgür' olması ne anlama gelir?",
+    "answers": ["Mahkûm olmuş hiç kimse oy kullanamaz", "Oy vermek isteyen herkes işverenden otomatik izin alır", "Her kişi baskı olmadan oy kullanıp kullanmayacağına ve kime oy vereceğine karar verebilir", "Herkes istediği sandıkta oy kullanabilir"],
+    "explanation": "Özgür seçim, seçmenin baskı ve zorlamaya maruz kalmadan kendi siyasi tercihini yapabilmesi anlamına gelir."
+  },
+  "official-120": {
+    "germanQuestion": "Das Wahlsystem in Deutschland ist ein …",
+    "question": "Almanya'daki seçim sistemi nasıl bir sistemdir?",
+    "answers": ["Servete dayalı oy sistemi", "Üç sınıflı oy sistemi", "Çoğunluk ve nispi temsil unsurlarını birleştiren sistem", "Yalnız erkeklere açık genel oy sistemi"],
+    "explanation": "Bundestag seçim sistemi kişiselleştirilmiş nispi temsil esasına dayanır ve çoğunluk ile nispi temsil unsurlarını bir araya getirir."
+  },
+  "official-121": {
+    "germanQuestion": "Eine Partei möchte in den Deutschen Bundestag. Sie muss aber einen Mindestanteil an Wählerstimmen haben. Das heißt …",
+    "question": "Bir parti Bundestag'a girmek istiyor ve bunun için asgari bir oy oranına ulaşması gerekiyor. Buna ne denir?",
+    "answers": ["%5 barajı (5%-Hürde)", "Kabul sınırı", "Temel değer", "Yönerge"],
+    "explanation": "Bu kavram 5%-Hürde olarak adlandırılır ve küçük partilerin parlamentoya girişinde uygulanan seçim barajını ifade eder."
+  },
+  "official-122": {
+    "germanQuestion": "Welchem Grundsatz unterliegen Wahlen in Deutschland? Wahlen in Deutschland sind …",
+    "question": "Almanya'daki seçimler hangi temel ilkelere tabidir?",
+    "answers": ["Özgür, eşit ve gizli", "Açık, güvenli ve özgür", "Kapalı, eşit ve güvenli", "Güvenli, açık ve gönüllü"],
+    "explanation": "Almanya'da seçimlerin temel ilkeleri arasında özgürlük, eşitlik ve gizlilik bulunur."
+  },
+  "official-123": {
+    "germanQuestion": "Was ist in Deutschland die „5 %-Hürde“?",
+    "question": "Almanya'daki '%5 barajı' (5%-Hürde) nedir?",
+    "answers": ["Küçük partiler için Bundestag içi oylama kuralı", "Bundestag oylamalarında yoklama kuralı", "Parlamentoya girmek için gereken asgari oy oranı", "Bundesrat oylamalarında yoklama kuralı"],
+    "explanation": "5%-Hürde, bir partinin parlamentoya girebilmesi için genel olarak ulaşması gereken asgari ikinci oy oranını ifade eder."
+  },
+  "official-124": {
+    "germanQuestion": "Die Bundestagswahl in Deutschland ist die Wahl …",
+    "question": "Almanya'daki Bundestag seçimi neyin seçimidir?",
+    "answers": ["Federal Şansölyenin", "Eyalet parlamentolarının", "Almanya'nın federal parlamentosunun", "Federal Cumhurbaşkanının"],
+    "explanation": "Bundestagswahl, Federal Meclis yani Bundestag üyelerinin seçildiği seçimdir. Şansölye halk tarafından doğrudan seçilmez."
+  },
+  "official-125": {
+    "germanQuestion": "In einer Demokratie ist eine Funktion von regelmäßigen Wahlen, …",
+    "question": "Bir demokraside düzenli seçimlerin temel işlevlerinden biri nedir?",
+    "answers": ["Vatandaşları oy vermeye zorlamak", "Seçmen çoğunluğunun iradesine göre hükümet değişikliğini mümkün kılmak", "Mevcut yasaları değişmeden tutmak", "Yoksullara daha fazla siyasi güç vermek"],
+    "explanation": "Düzenli seçimler, halk çoğunluğunun farklı bir tercih yapması durumunda yönetimin barışçıl biçimde değişebilmesini sağlar."
+  }
+}
