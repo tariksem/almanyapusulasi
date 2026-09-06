@@ -1,0 +1,177 @@
+{
+  "official-151": {
+    "germanQuestion": "Wer baute die Mauer in Berlin?",
+    "germanAnswers": ["Großbritannien", "die DDR", "die Bundesrepublik Deutschland", "die USA"],
+    "question": "Berlin Duvarı'nı kim inşa etti?",
+    "answers": ["Büyük Britanya", "DDR (Doğu Almanya)", "Federal Almanya Cumhuriyeti (Batı Almanya)", "ABD"],
+    "explanation": "Berlin Duvarı, DDR yönetimi tarafından 13 Ağustos 1961'den itibaren inşa edildi. Amaç, Doğu Almanya'dan özellikle Batı Berlin üzerinden Batı'ya kaçışları durdurmaktı. Duvar 9 Kasım 1989'da geçişlere açıldı. Sınav ipucu: Berlin Duvarı = DDR = 1961–1989."
+  },
+  "official-152": {
+    "germanQuestion": "Wann waren die Nationalsozialisten mit Adolf Hitler in Deutschland an der Macht?",
+    "germanAnswers": ["1918 bis 1923", "1932 bis 1950", "1933 bis 1945", "1945 bis 1989"],
+    "question": "Adolf Hitler liderliğindeki Nasyonal Sosyalistler Almanya'da hangi yıllar arasında iktidardaydı?",
+    "answers": ["1918–1923", "1932–1950", "1933–1945", "1945–1989"],
+    "explanation": "Adolf Hitler 30 Ocak 1933'te Reichskanzler oldu ve Nasyonal Sosyalist diktatörlük 1945'te Almanya'nın yenilgisine kadar sürdü. Bu dönemde demokratik kurumlar ortadan kaldırıldı, siyasi muhalefet bastırıldı ve milyonlarca insan sistematik olarak zulme uğradı ve öldürüldü. Sınav ipucu: NS dönemi = 1933–1945."
+  },
+  "official-153": {
+    "germanQuestion": "Was war am 8. Mai 1945?",
+    "germanAnswers": ["Tod Adolf Hitlers", "Beginn des Berliner Mauerbaus", "Wahl von Konrad Adenauer zum Bundeskanzler", "Ende des Zweiten Weltkriegs in Europa"],
+    "question": "8 Mayıs 1945'te ne oldu?",
+    "answers": ["Adolf Hitler öldü", "Berlin Duvarı'nın inşası başladı", "Konrad Adenauer Federal Şansölye seçildi", "İkinci Dünya Savaşı Avrupa'da sona erdi"],
+    "explanation": "Almanya'nın koşulsuz teslimiyetinin yürürlüğe girmesiyle İkinci Dünya Savaşı Avrupa'da 8 Mayıs 1945'te sona erdi. Almanya'da bu tarih aynı zamanda Nasyonal Sosyalist diktatörlükten kurtuluşun dönüm noktası olarak anılır. Hitler ise 30 Nisan 1945'te ölmüştü. Sınav ipucu: 8 Mayıs 1945 = Avrupa'da savaşın sonu."
+  },
+  "official-154": {
+    "germanQuestion": "Wann war der Zweite Weltkrieg zu Ende?",
+    "germanAnswers": ["1933", "1945", "1949", "1961"],
+    "question": "İkinci Dünya Savaşı hangi yıl sona erdi?",
+    "answers": ["1933", "1945", "1949", "1961"],
+    "explanation": "İkinci Dünya Savaşı 1945 yılında sona erdi. Avrupa'da savaş Almanya'nın teslimiyetiyle Mayıs 1945'te, Pasifik'te ise Japonya'nın teslimiyetiyle Eylül 1945'te bitti. Sınav ipucu: 1939 başlangıç, 1945 bitiş."
+  },
+  "official-155": {
+    "germanQuestion": "Wann waren die Nationalsozialisten in Deutschland an der Macht?",
+    "germanAnswers": ["1888 bis 1918", "1921 bis 1934", "1933 bis 1945", "1949 bis 1963"],
+    "question": "Nasyonal Sosyalistler Almanya'da hangi yıllar arasında iktidardaydı?",
+    "answers": ["1888–1918", "1921–1934", "1933–1945", "1949–1963"],
+    "explanation": "Nasyonal Sosyalist iktidar 1933'te Hitler'in şansölye olmasıyla başladı ve 1945'te savaşın sona ermesiyle çöktü. Dönem, tek parti diktatörlüğü, devlet terörü, ırkçı zulüm ve Holokost ile karakterizedir. Sınav ipucu: NS iktidarı = 1933–1945."
+  },
+  "official-156": {
+    "germanQuestion": "In welchem Jahr wurde Hitler Reichskanzler?",
+    "germanAnswers": ["1923", "1927", "1933", "1936"],
+    "question": "Hitler hangi yıl Reichskanzler (Alman Şansölyesi) oldu?",
+    "answers": ["1923", "1927", "1933", "1936"],
+    "explanation": "Adolf Hitler, Reichspräsident Paul von Hindenburg tarafından 30 Ocak 1933'te Reichskanzler olarak atandı. Ardından Nasyonal Sosyalistler demokratik kurumları hızla etkisizleştirerek diktatörlük kurdu. Sınav ipucu: 30 Ocak 1933 = Hitler'in şansölye oluşu."
+  },
+  "official-157": {
+    "germanQuestion": "Die Nationalsozialisten mit Adolf Hitler errichteten 1933 in Deutschland …",
+    "germanAnswers": ["eine Diktatur.", "einen demokratischen Staat.", "eine Monarchie.", "ein Fürstentum."],
+    "question": "Adolf Hitler liderliğindeki Nasyonal Sosyalistler 1933'te Almanya'da nasıl bir yönetim kurdu?",
+    "answers": ["Bir diktatörlük", "Demokratik bir devlet", "Bir monarşi", "Bir prenslik"],
+    "explanation": "1933'ten itibaren Nasyonal Sosyalistler parlamenter demokrasiyi ortadan kaldırarak diktatörlük kurdu. Muhalefet partileri yasaklandı, basın ve toplum denetim altına alındı, temel haklar ağır biçimde ihlal edildi. Sınav ipucu: 1933 sonrası yönetim biçimi = diktatörlük."
+  },
+  "official-158": {
+    "germanQuestion": "Das „Dritte Reich“ war eine …",
+    "germanAnswers": ["Diktatur.", "Demokratie.", "Monarchie.", "Räterepublik."],
+    "question": "“Drittes Reich” (Üçüncü Reich) nasıl bir yönetimdi?",
+    "answers": ["Diktatörlük", "Demokrasi", "Monarşi", "Konsey cumhuriyeti"],
+    "explanation": "“Drittes Reich” terimi Nasyonal Sosyalist Almanya için kullanılan tarihsel bir adlandırmadır; yönetim biçimi diktatörlüktü. Siyasi çoğulculuk, özgür seçimler ve bağımsız basın ortadan kaldırılmıştı. Sınav ipucu: Drittes Reich = NS diktatörlüğü."
+  },
+  "official-159": {
+    "germanQuestion": "Was gab es in Deutschland nicht während der Zeit des Nationalsozialismus?",
+    "germanAnswers": ["freie Wahlen", "Pressezensur", "willkürliche Verhaftungen", "Verfolgung der Juden"],
+    "question": "Nasyonal Sosyalizm döneminde Almanya'da aşağıdakilerden hangisi yoktu?",
+    "answers": ["Özgür seçimler", "Basın sansürü", "Keyfî tutuklamalar", "Yahudilere yönelik zulüm"],
+    "explanation": "Nasyonal Sosyalist diktatörlükte özgür ve demokratik seçimler yoktu. Buna karşılık basın sansürü, keyfî tutuklamalar ve Yahudilere yönelik sistematik zulüm rejimin temel özelliklerindendi. Sınav ipucu: Diktatörlükte “olmayan” seçenek = özgür seçimler."
+  },
+  "official-160": {
+    "germanQuestion": "Welcher Krieg dauerte von 1939 bis 1945?",
+    "germanAnswers": ["der Erste Weltkrieg", "der Zweite Weltkrieg", "der Vietnamkrieg", "der Golfkrieg"],
+    "question": "1939'dan 1945'e kadar süren savaş hangisidir?",
+    "answers": ["Birinci Dünya Savaşı", "İkinci Dünya Savaşı", "Vietnam Savaşı", "Körfez Savaşı"],
+    "explanation": "İkinci Dünya Savaşı, Almanya'nın 1 Eylül 1939'da Polonya'ya saldırmasıyla Avrupa'da başladı ve 1945'te sona erdi. Birinci Dünya Savaşı ise 1914–1918 arasında yaşandı. Sınav ipucu: 1939–1945 = İkinci Dünya Savaşı."
+  },
+  "official-161": {
+    "germanQuestion": "Was kennzeichnete den NS-Staat? Eine Politik …",
+    "germanAnswers": ["des staatlichen Rassismus", "der Meinungsfreiheit", "der allgemeinen Religionsfreiheit", "der Entwicklung der Demokratie"],
+    "question": "Nasyonal Sosyalist devleti hangi politika karakterize ediyordu?",
+    "answers": ["Devlet tarafından uygulanan ırkçılık", "Düşünce ve ifade özgürlüğü", "Genel din özgürlüğü", "Demokrasinin geliştirilmesi"],
+    "explanation": "NS devleti ırkçı bir ideolojiye dayanıyordu ve ırkçılığı hukuk, bürokrasi ve devlet şiddeti aracılığıyla uyguladı. Özellikle Yahudiler ile başka birçok grup ayrımcılığa, sürgüne ve kitlesel imhaya maruz bırakıldı. Sınav ipucu: NS-Staat = staatlicher Rassismus."
+  },
+  "official-162": {
+    "germanQuestion": "Claus Schenk Graf von Stauffenberg wurde bekannt durch …",
+    "germanAnswers": ["eine Goldmedaille bei den Olympischen Spielen 1936.", "den Bau des Reichstagsgebäudes.", "den Aufbau der Wehrmacht.", "das Attentat auf Hitler am 20. Juli 1944."],
+    "question": "Claus Schenk Graf von Stauffenberg neyle tanınır?",
+    "answers": ["1936 Olimpiyatları'nda altın madalya kazanmasıyla", "Reichstag binasını inşa etmesiyle", "Wehrmacht'ı kurmasıyla", "20 Temmuz 1944'te Hitler'e yönelik suikast girişimiyle"],
+    "explanation": "Stauffenberg, 20 Temmuz 1944'te Hitler'e karşı düzenlenen bombalı suikast ve darbe girişiminin merkezi isimlerinden biriydi. Girişim başarısız oldu ve Stauffenberg aynı gece idam edildi. Sınav ipucu: Stauffenberg = 20 Temmuz 1944 direnişi."
+  },
+  "official-163": {
+    "germanQuestion": "In welchem Jahr zerstörten die Nationalsozialisten Synagogen und jüdische Geschäfte in Deutschland?",
+    "germanAnswers": ["1925", "1930", "1938", "1945"],
+    "question": "Nasyonal Sosyalistler Almanya'da sinagogları ve Yahudilere ait işyerlerini hangi yıl tahrip etti?",
+    "answers": ["1925", "1930", "1938", "1945"],
+    "explanation": "9–10 Kasım 1938 pogromlarında Almanya ve ilhak edilmiş bölgelerde sinagoglar yakıldı, Yahudilere ait dükkânlar tahrip edildi ve binlerce Yahudi tutuklandı. Bu olaylar Yahudilere yönelik devlet destekli zulmün önemli bir tırmanış noktasıydı. Sınav ipucu: Kasım pogromları = 1938."
+  },
+  "official-164": {
+    "germanQuestion": "Was passierte am 9. November 1938 in Deutschland?",
+    "germanAnswers": ["Mit dem Angriff auf Polen beginnt der Zweite Weltkrieg.", "Die Nationalsozialisten verlieren eine Wahl und lösen den Reichstag auf.", "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.", "Hitler wird Reichspräsident und lässt alle Parteien verbieten."],
+    "question": "9 Kasım 1938'de Almanya'da ne oldu?",
+    "answers": ["Polonya'ya saldırıyla İkinci Dünya Savaşı başladı", "Nasyonal Sosyalistler seçimi kaybedip Reichstag'ı feshetti", "Yahudilere ait işyerleri ve sinagoglar Nasyonal Sosyalistler ve destekçileri tarafından tahrip edildi", "Hitler Reichspräsident oldu ve tüm partileri yasakladı"],
+    "explanation": "9 Kasım 1938 gecesi ve ertesi gün, Nasyonal Sosyalist rejim tarafından organize edilen Yahudi karşıtı pogromlar gerçekleşti. Sinagoglar yakıldı, işyerleri yağmalandı ve Yahudiler öldürüldü veya toplama kamplarına gönderildi. Sınav ipucu: 9 Kasım 1938 = Kasım pogromları."
+  },
+  "official-165": {
+    "germanQuestion": "Wie hieß der erste Bundeskanzler der Bundesrepublik Deutschland?",
+    "germanAnswers": ["Konrad Adenauer", "Kurt Georg Kiesinger", "Helmut Schmidt", "Willy Brandt"],
+    "question": "Federal Almanya Cumhuriyeti'nin ilk Federal Şansölyesi kimdi?",
+    "answers": ["Konrad Adenauer", "Kurt Georg Kiesinger", "Helmut Schmidt", "Willy Brandt"],
+    "explanation": "Konrad Adenauer 1949'da Federal Almanya Cumhuriyeti'nin ilk Bundeskanzler'i oldu ve 1963'e kadar görev yaptı. Batı ile entegrasyon ve savaş sonrası demokratik kurumların kurulması döneminin önemli siyasetçilerindendir. Sınav ipucu: ilk Bundeskanzler = Konrad Adenauer."
+  },
+  "official-166": {
+    "germanQuestion": "Bei welchen Demonstrationen in Deutschland riefen die Menschen „Wir sind das Volk“?",
+    "germanAnswers": ["beim Arbeiteraufstand 1953 in der DDR", "bei den Demonstrationen 1968 in der Bundesrepublik Deutschland", "bei den Anti-Atomkraft-Demonstrationen 1985 in der Bundesrepublik Deutschland", "bei den Montagsdemonstrationen 1989 in der DDR"],
+    "question": "Almanya'da insanlar hangi gösterilerde “Wir sind das Volk” (Biz halkız) sloganını attı?",
+    "answers": ["DDR'deki 1953 işçi ayaklanmasında", "Federal Almanya'daki 1968 gösterilerinde", "Federal Almanya'daki 1985 nükleer karşıtı gösterilerde", "DDR'deki 1989 Pazartesi gösterilerinde"],
+    "explanation": "“Wir sind das Volk” sloganı 1989'da DDR'deki barışçıl Pazartesi gösterilerinin sembollerinden biri oldu. Gösteriler demokratik haklar ve siyasi değişim talebini güçlendirdi ve DDR rejiminin çözülmesine katkıda bulundu. Sınav ipucu: Wir sind das Volk = Montagsdemonstrationen 1989."
+  },
+  "official-167": {
+    "germanQuestion": "Welche Länder wurden nach dem Zweiten Weltkrieg in Deutschland als „Alliierte Besatzungsmächte“ bezeichnet?",
+    "germanAnswers": ["Sowjetunion, Großbritannien, Polen, Schweden", "Frankreich, Sowjetunion, Italien, Japan", "USA, Sowjetunion, Spanien, Portugal", "USA, Sowjetunion, Großbritannien, Frankreich"],
+    "question": "İkinci Dünya Savaşı'ndan sonra Almanya'daki “Müttefik işgal güçleri” hangi ülkelerdi?",
+    "answers": ["Sovyetler Birliği, Büyük Britanya, Polonya, İsveç", "Fransa, Sovyetler Birliği, İtalya, Japonya", "ABD, Sovyetler Birliği, İspanya, Portekiz", "ABD, Sovyetler Birliği, Büyük Britanya, Fransa"],
+    "explanation": "1945'ten sonra Almanya dört işgal bölgesine ayrıldı: ABD, Sovyetler Birliği, Büyük Britanya ve Fransa. Berlin de dört sektör halinde bu güçler arasında bölündü. Sınav ipucu: dört Müttefik = USA + UdSSR + Großbritannien + Frankreich."
+  },
+  "official-168": {
+    "germanQuestion": "Welches Land war keine „Alliierte Besatzungsmacht“ in Deutschland?",
+    "germanAnswers": ["USA", "Sowjetunion", "Frankreich", "Japan"],
+    "question": "Aşağıdaki ülkelerden hangisi Almanya'da Müttefik işgal gücü değildi?",
+    "answers": ["ABD", "Sovyetler Birliği", "Fransa", "Japonya"],
+    "explanation": "Almanya'daki dört Müttefik işgal gücü ABD, Sovyetler Birliği, Büyük Britanya ve Fransa idi. Japonya bu dört güç arasında değildi. Sınav ipucu: Japonya = Almanya'da işgal bölgesi yok."
+  },
+  "official-169": {
+    "germanQuestion": "Wann wurde die Bundesrepublik Deutschland gegründet?",
+    "germanAnswers": ["1939", "1945", "1949", "1951"],
+    "question": "Federal Almanya Cumhuriyeti (Bundesrepublik Deutschland) hangi yıl kuruldu?",
+    "answers": ["1939", "1945", "1949", "1951"],
+    "explanation": "Federal Almanya Cumhuriyeti 1949'da, Grundgesetz'in 23 Mayıs 1949'da yürürlüğe girmesiyle kuruldu. Aynı yıl Sovyet işgal bölgesinde DDR kuruldu. Sınav ipucu: BRD ve DDR'nin kuruluş yılı = 1949."
+  },
+  "official-170": {
+    "germanQuestion": "Was gab es während der Zeit des Nationalsozialismus in Deutschland?",
+    "germanAnswers": ["das Verbot von Parteien", "das Recht zur freien Entfaltung der Persönlichkeit", "Pressefreiheit", "den Schutz der Menschenwürde"],
+    "question": "Nasyonal Sosyalizm döneminde Almanya'da aşağıdakilerden hangisi vardı?",
+    "answers": ["Siyasi partilerin yasaklanması", "Kişiliği özgürce geliştirme hakkı", "Basın özgürlüğü", "İnsan onurunun korunması"],
+    "explanation": "NS diktatörlüğünde diğer siyasi partiler yasaklandı ve tek parti egemenliği kuruldu. Basın özgürlüğü ile temel haklar korunmadı; bugün Grundgesetz'in merkezinde bulunan insan onurunun korunması ilkesi de bu tarihsel deneyime güçlü bir tepki olarak şekillendi. Sınav ipucu: NS dönemi = Parteienverbot, sansür ve baskı."
+  },
+  "official-171": {
+    "germanQuestion": "Soziale Marktwirtschaft bedeutet, die Wirtschaft …",
+    "germanAnswers": ["steuert sich allein nach Angebot und Nachfrage.", "wird vom Staat geplant und gesteuert, Angebot und Nachfrage werden nicht berücksichtigt.", "richtet sich nach der Nachfrage im Ausland.", "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich."],
+    "question": "Soziale Marktwirtschaft (sosyal piyasa ekonomisi) ne anlama gelir? Ekonomi...",
+    "answers": ["Yalnızca arz ve talebe göre işler", "Devlet tarafından tamamen planlanır; arz ve talep dikkate alınmaz", "Yalnızca yurtdışındaki talebe göre şekillenir", "Arz ve talebe göre işler, ancak devlet sosyal dengeyi gözetir"],
+    "explanation": "Almanya'nın sosyal piyasa ekonomisi piyasa rekabetini sosyal güvenlik ve sosyal denge ilkeleriyle birleştirir. Fiyatlar ve üretim büyük ölçüde piyasada oluşurken devlet sosyal sigortalar, hukuk ve düzenlemelerle çerçeveyi oluşturur. Sınav ipucu: Marktwirtschaft + sozialer Ausgleich."
+  },
+  "official-172": {
+    "germanQuestion": "In welcher Besatzungszone wurde die DDR gegründet? In der …",
+    "germanAnswers": ["amerikanischen Besatzungszone", "französischen Besatzungszone", "britischen Besatzungszone", "sowjetischen Besatzungszone"],
+    "question": "DDR hangi işgal bölgesinde kuruldu?",
+    "answers": ["Amerikan işgal bölgesinde", "Fransız işgal bölgesinde", "Britanya işgal bölgesinde", "Sovyet işgal bölgesinde"],
+    "explanation": "DDR (Deutsche Demokratische Republik) 1949'da Sovyet işgal bölgesinde kuruldu. Batıdaki ABD, Britanya ve Fransa bölgelerinde ise Federal Almanya Cumhuriyeti oluştu. Sınav ipucu: DDR = sowjetische Besatzungszone."
+  },
+  "official-173": {
+    "germanQuestion": "Die Bundesrepublik Deutschland ist ein Gründungsmitglied …",
+    "germanAnswers": ["des Nordatlantikpakts (NATO).", "der Vereinten Nationen (VN).", "der Europäischen Union (EU).", "des Warschauer Pakts."],
+    "question": "Federal Almanya Cumhuriyeti aşağıdakilerden hangisinin kurucu üyelerindendir?",
+    "answers": ["NATO", "Birleşmiş Milletler (BM)", "Avrupa Birliği (AB)", "Varşova Paktı"],
+    "explanation": "Sınav kataloğunda doğru cevap Avrupa Birliği'dir. Almanya, Avrupa bütünleşmesinin öncül kuruluşları olan Avrupa Kömür ve Çelik Topluluğu ile Avrupa Ekonomik Topluluğu'nun kurucu üyelerindendi; bu süreç daha sonra Avrupa Birliği'ne dönüştü. Almanya NATO'ya 1955'te, BM'ye ise 1973'te katıldı. Sınav ipucu: Avrupa bütünleşmesinde Almanya = kurucu üye."
+  },
+  "official-174": {
+    "germanQuestion": "Wann wurde die DDR gegründet?",
+    "germanAnswers": ["1947", "1949", "1953", "1956"],
+    "question": "DDR (Doğu Almanya) hangi yıl kuruldu?",
+    "answers": ["1947", "1949", "1953", "1956"],
+    "explanation": "Deutsche Demokratische Republik (DDR) 7 Ekim 1949'da Sovyet işgal bölgesinde kuruldu. Federal Almanya Cumhuriyeti de aynı yıl, 23 Mayıs 1949'da kurulmuştu. Sınav ipucu: 1949 = iki Alman devletinin kuruluş yılı."
+  },
+  "official-175": {
+    "germanQuestion": "Wie viele Besatzungszonen gab es in Deutschland nach dem Zweiten Weltkrieg?",
+    "germanAnswers": ["3", "4", "5", "6"],
+    "question": "İkinci Dünya Savaşı'ndan sonra Almanya'da kaç işgal bölgesi vardı?",
+    "answers": ["3", "4", "5", "6"],
+    "explanation": "Almanya 1945'ten sonra dört işgal bölgesine ayrıldı: Amerikan, Sovyet, Britanya ve Fransız bölgeleri. Berlin de benzer biçimde dört sektöre bölündü. Sınav ipucu: savaş sonrası Almanya = 4 Besatzungszonen."
+  }
+}
