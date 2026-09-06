@@ -1,0 +1,53 @@
+{
+  "name": "Almanya 2026 Resmi Esikler",
+  "publisher": "Almanya Pusulasi",
+  "url": "https://almanyapusulasi.de/almanya-2026-resmi-esikler/",
+  "last_verified": "2026-09-06",
+  "currency": "EUR",
+  "data": {
+    "tax": {
+      "grundfreibetrag_annual": 12348,
+      "source": "Bundesministerium der Finanzen, EStG §32a 2026"
+    },
+    "family": {
+      "kindergeld_monthly_per_child": 259,
+      "kinderzuschlag_max_monthly_per_child": 297,
+      "kinderzuschlag_min_gross_income_couple_monthly": 900,
+      "kinderzuschlag_min_gross_income_single_parent_monthly": 600,
+      "source": "Bundesagentur fuer Arbeit / Bundesfinanzministerium"
+    },
+    "eu_blue_card": {
+      "general_salary_annual": 50700,
+      "reduced_salary_annual": 45934.2,
+      "source": "Make it in Germany"
+    },
+    "opportunity_card": {
+      "points_required": 6,
+      "finance_net_monthly": 1091,
+      "part_time_hours_per_week_max": 20,
+      "source": "Make it in Germany"
+    },
+    "social_insurance": {
+      "health_and_care_bbg_monthly": 5812.5,
+      "health_and_care_bbg_annual": 69750,
+      "pension_and_unemployment_bbg_monthly": 8450,
+      "pension_and_unemployment_bbg_annual": 101400,
+      "gkv_general_rate_percent": 14.6,
+      "gkv_average_additional_rate_percent": 2.9,
+      "care_employee_share_childless_percent": 2.4,
+      "care_employee_share_one_child_percent": 1.8,
+      "source": "BMAS / Bundesgesundheitsministerium"
+    }
+  },
+  "sources": [
+    "https://ao.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/IV-Tarif-31-34b/Paragraf-32a/inhalt.html",
+    "https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/das-aendert-sich-2026.html",
+    "https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer",
+    "https://www.make-it-in-germany.com/en/visa-residence/types/eu-blue-card",
+    "https://www.make-it-in-germany.com/en/visa-residence/opportunity-card/job-search",
+    "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2026.html",
+    "https://www.bundesgesundheitsministerium.de/beitraege/seite",
+    "https://www.bundesgesundheitsministerium.de/themen/pflege/online-ratgeber-pflege/die-pflegeversicherung/finanzierung"
+  ],
+  "license_note": "Values are factual public information. Cite the original official source for legal or financial decisions."
+}
