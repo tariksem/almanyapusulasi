@@ -1,0 +1,16 @@
+{
+  "official-26-fingerprint": {
+    "germanQuestion": "Deutschland ist …",
+    "germanAnswers": ["eine kommunistische Republik.", "ein demokratischer und sozialer Bundesstaat.", "eine kapitalistische und soziale Monarchie.", "ein sozialer und sozialistischer Bundesstaat."],
+    "question": "Almanya nasıl bir devlettir?",
+    "answers": ["Komünist bir cumhuriyet", "Demokratik ve sosyal bir federal devlet", "Kapitalist ve sosyal bir monarşi", "Sosyal ve sosyalist bir federal devlet"],
+    "explanation": "Grundgesetz'in 20. maddesine göre Federal Almanya Cumhuriyeti demokratik ve sosyal bir federal devlettir."
+  },
+  "official-27-fingerprint": {
+    "germanQuestion": "Deutschland ist …",
+    "germanAnswers": ["ein sozialistischer Staat.", "ein Bundesstaat.", "eine Diktatur.", "eine Monarchie."],
+    "question": "Almanya'nın devlet yapısı aşağıdakilerden hangisidir?",
+    "answers": ["Sosyalist devlet", "Federal devlet (Bundesstaat)", "Diktatörlük", "Monarşi"],
+    "explanation": "Almanya bir Bundesstaat, yani federal devlettir. Devlet yetkileri federal düzey ile 16 eyalet arasında paylaşılır."
+  }
+}
