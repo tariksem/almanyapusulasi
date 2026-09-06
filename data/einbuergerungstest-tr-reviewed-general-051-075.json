@@ -1,0 +1,181 @@
+{
+  "official-51": {
+    "germanQuestion": "Zu einem demokratischen Rechtsstaat gehört es nicht, dass …",
+    "germanAnswers": ["Menschen sich kritisch über die Regierung äußern können.", "Bürger friedlich demonstrieren gehen dürfen.", "Menschen von einer Privatpolizei ohne Grund verhaftet werden.", "jemand ein Verbrechen begeht und deshalb verhaftet wird."],
+    "question": "Aşağıdakilerden hangisi demokratik bir hukuk devletinin özelliği değildir?",
+    "answers": ["İnsanların hükümeti eleştirebilmesi", "Vatandaşların barışçıl gösteri yapabilmesi", "İnsanların özel bir polis tarafından hiçbir gerekçe olmadan tutuklanması", "Suç işleyen bir kişinin bu nedenle tutuklanması"],
+    "explanation": "Demokratik bir hukuk devletinde temel haklar korunur ve özgürlüğün kısıtlanması keyfî olamaz. Bir kişinin gerekçe olmadan özel bir polis tarafından tutuklanması hukuk devleti ilkesiyle bağdaşmaz."
+  },
+  "official-52": {
+    "germanQuestion": "Was bedeutet „Volkssouveränität“? Alle Staatsgewalt geht vom …",
+    "germanAnswers": ["Volke aus.", "Bundestag aus.", "preußischen König aus.", "Bundesverfassungsgericht aus."],
+    "question": "“Halk egemenliği” (Volkssouveränität) ne demektir? Devlet iktidarının kaynağı ...",
+    "answers": ["halktır.", "Federal Meclis'tir (Bundestag).", "Prusya kralıdır.", "Federal Anayasa Mahkemesi'dir."],
+    "explanation": "Grundgesetz'in temel ilkelerinden biri halk egemenliğidir: Devlet iktidarı halktan kaynaklanır ve seçimler ile anayasal kurumlar aracılığıyla kullanılır."
+  },
+  "official-53": {
+    "germanQuestion": "Was bedeutet „Rechtsstaat“ in Deutschland?",
+    "germanAnswers": ["Der Staat hat Recht.", "Es gibt nur rechte Parteien.", "Die Bürger und Bürgerinnen entscheiden über Gesetze.", "Der Staat muss die Gesetze einhalten."],
+    "question": "Almanya'da “hukuk devleti” (Rechtsstaat) ne demektir?",
+    "answers": ["Devlet her zaman haklıdır.", "Yalnızca sağ partiler vardır.", "Yasaları doğrudan vatandaşlar belirler.", "Devlet de yasalara uymak zorundadır."],
+    "explanation": "Hukuk devletinde yalnız vatandaşlar değil, devlet organları da hukuk ve yasalarla bağlıdır. Devlet keyfî davranamaz."
+  },
+  "official-54": {
+    "germanQuestion": "Was ist keine staatliche Gewalt in Deutschland?",
+    "germanAnswers": ["Legislative", "Judikative", "Exekutive", "Direktive"],
+    "question": "Aşağıdakilerden hangisi Almanya'daki devlet erklerinden biri değildir?",
+    "answers": ["Yasama (Legislative)", "Yargı (Judikative)", "Yürütme (Exekutive)", "Direktif erki (Direktive)"],
+    "explanation": "Kuvvetler ayrılığında üç devlet erki vardır: yasama, yürütme ve yargı. “Direktive” ayrı bir devlet erki değildir."
+  },
+  "official-55": {
+    "germanQuestion": "Was zeigt dieses Bild?",
+    "germanAnswers": ["den Bundestagssitz in Berlin", "das Bundesverfassungsgericht in Karlsruhe", "das Bundesratsgebäude in Berlin", "das Bundeskanzleramt in Berlin"],
+    "question": "Bu görselde hangi kurumun binası gösteriliyor?",
+    "answers": ["Berlin'deki Federal Meclis (Bundestag) binası", "Karlsruhe'deki Federal Anayasa Mahkemesi", "Berlin'deki Bundesrat binası", "Berlin'deki Federal Başbakanlık binası"],
+    "explanation": "Görsel, cam kubbesiyle tanınan Berlin'deki Reichstag binasını gösterir. Burası Alman Federal Meclisi'nin (Bundestag) merkezidir."
+  },
+  "official-56": {
+    "germanQuestion": "Welches Amt gehört in Deutschland zur Gemeindeverwaltung?",
+    "germanAnswers": ["Pfarramt", "Ordnungsamt", "Finanzamt", "Auswärtiges Amt"],
+    "question": "Almanya'da aşağıdaki kurumlardan hangisi belediye idaresine bağlıdır?",
+    "answers": ["Kilise idaresi (Pfarramt)", "Düzen ve kamu güvenliği dairesi (Ordnungsamt)", "Vergi dairesi (Finanzamt)", "Dışişleri Bakanlığı (Auswärtiges Amt)"],
+    "explanation": "Ordnungsamt belediye veya şehir idaresinin yerel kamu düzeniyle ilgilenen birimidir. Finanzamt ve Auswärtiges Amt farklı yönetim düzeylerine aittir."
+  },
+  "official-57": {
+    "germanQuestion": "Wer wird meistens zum Präsidenten/zur Präsidentin des Deutschen Bundestages gewählt?",
+    "germanAnswers": ["der/die älteste Abgeordnete im Parlament", "der Ministerpräsident/die Ministerpräsidentin des größten Bundeslandes", "ein ehemaliger Bundeskanzler/eine ehemalige Bundeskanzlerin", "ein Abgeordneter/eine Abgeordnete der stärksten Fraktion"],
+    "question": "Alman Federal Meclisi (Bundestag) başkanlığına genellikle kim seçilir?",
+    "answers": ["Parlamentodaki en yaşlı milletvekili", "En büyük eyaletin başbakanı", "Eski bir Federal Şansölye", "En güçlü meclis grubundan bir milletvekili"],
+    "explanation": "Bundestag başkanlığı için geleneksel olarak parlamentodaki en güçlü Fraktion'un adayı seçilir."
+  },
+  "official-58": {
+    "germanQuestion": "Wer ernennt in Deutschland die Minister / die Ministerinnen der Bundesregierung?",
+    "germanAnswers": ["der Präsident / die Präsidentin des Bundesverfassungsgerichtes", "der Bundespräsident / die Bundespräsidentin", "der Bundesratspräsident / die Bundesratspräsidentin", "der Bundestagspräsident / die Bundestagspräsidentin"],
+    "question": "Almanya'da federal hükümetin bakanlarını resmen kim atar?",
+    "answers": ["Federal Anayasa Mahkemesi Başkanı", "Federal Cumhurbaşkanı", "Bundesrat Başkanı", "Bundestag Başkanı"],
+    "explanation": "Federal bakanlar, Federal Şansölye'nin önerisi üzerine Federal Cumhurbaşkanı tarafından resmen atanır."
+  },
+  "official-59": {
+    "germanQuestion": "Vor wie vielen Jahren gab es erstmals eine jüdische Gemeinde auf dem Gebiet des heutigen Deutschlands?",
+    "germanAnswers": ["vor etwa 300 Jahren", "vor etwa 700 Jahren", "vor etwa 1150 Jahren", "vor etwa 1700 Jahren"],
+    "question": "Bugünkü Almanya topraklarında ilk Yahudi cemaati yaklaşık kaç yıl önce vardı?",
+    "answers": ["Yaklaşık 300 yıl önce", "Yaklaşık 700 yıl önce", "Yaklaşık 1150 yıl önce", "Yaklaşık 1700 yıl önce"],
+    "explanation": "Köln'deki Yahudi yaşamına ilişkin en eski yazılı kanıt MS 321 yılına uzanır. Bu nedenle doğru cevap yaklaşık 1700 yıldır."
+  },
+  "official-60": {
+    "germanQuestion": "In Deutschland gehören der Bundestag und der Bundesrat zur …",
+    "germanAnswers": ["Exekutive.", "Legislative.", "Direktive.", "Judikative."],
+    "question": "Almanya'da Bundestag ve Bundesrat hangi devlet erkine aittir?",
+    "answers": ["Yürütme (Exekutive)", "Yasama (Legislative)", "Direktif erki (Direktive)", "Yargı (Judikative)"],
+    "explanation": "Bundestag ve Bundesrat federal yasama sürecinin kurumlarıdır; bu nedenle yasama erkine (Legislative) aittirler."
+  },
+  "official-61": {
+    "germanQuestion": "Was bedeutet „Volkssouveränität“?",
+    "germanAnswers": ["Der König / die Königin herrscht über das Volk.", "Das Bundesverfassungsgericht steht über der Verfassung.", "Die Interessenverbände üben die Souveränität zusammen mit der Regierung aus.", "Die Staatsgewalt geht vom Volke aus."],
+    "question": "“Halk egemenliği” (Volkssouveränität) ne demektir?",
+    "answers": ["Kral veya kraliçe halka hükmeder.", "Federal Anayasa Mahkemesi anayasanın üzerindedir.", "Çıkar grupları egemenliği hükümetle birlikte kullanır.", "Devlet iktidarı halktan kaynaklanır."],
+    "explanation": "Halk egemenliği, devlet gücünün kaynağının halk olması anlamına gelir. Demokratik meşruiyet seçimler ve anayasal kurumlar üzerinden oluşur."
+  },
+  "official-62": {
+    "germanQuestion": "Wenn das Parlament eines deutschen Bundeslandes gewählt wird, nennt man das …",
+    "germanAnswers": ["Kommunalwahl.", "Landtagswahl.", "Europawahl.", "Bundestagswahl."],
+    "question": "Bir Alman eyaletinin parlamentosu seçildiğinde bu seçime ne denir?",
+    "answers": ["Belediye seçimi (Kommunalwahl)", "Eyalet meclisi seçimi (Landtagswahl)", "Avrupa Parlamentosu seçimi", "Federal Meclis seçimi (Bundestagswahl)"],
+    "explanation": "Bundesland parlamentosuna Landtag denir. Bu parlamentonun seçimi Landtagswahl olarak adlandırılır."
+  },
+  "official-63": {
+    "germanQuestion": "Was gehört in Deutschland nicht zur Exekutive?",
+    "germanAnswers": ["die Polizei", "die Gerichte", "das Finanzamt", "die Ministerien"],
+    "question": "Almanya'da aşağıdakilerden hangisi yürütme erkine (Exekutive) ait değildir?",
+    "answers": ["Polis", "Mahkemeler", "Vergi dairesi", "Bakanlıklar"],
+    "explanation": "Mahkemeler yargı erkine (Judikative) aittir. Polis, idari daireler ve bakanlıklar ise yürütmenin parçalarıdır."
+  },
+  "official-64": {
+    "germanQuestion": "Die Bundesrepublik Deutschland ist heute gegliedert in …",
+    "germanAnswers": ["vier Besatzungszonen.", "einen Oststaat und einen Weststaat.", "16 Kantone.", "Bund, Länder und Kommunen."],
+    "question": "Federal Almanya Cumhuriyeti bugün idari olarak nasıl yapılandırılmıştır?",
+    "answers": ["Dört işgal bölgesi", "Bir doğu ve bir batı devleti", "16 kanton", "Federal devlet, eyaletler ve belediyeler (Bund, Länder und Kommunen)"],
+    "explanation": "Almanya'nın federal yapısında yönetim federal düzey (Bund), 16 eyalet (Länder) ve yerel yönetimler (Kommunen) olarak örgütlenir."
+  },
+  "official-65": {
+    "germanQuestion": "Es gehört nicht zu den Aufgaben des Deutschen Bundestages, …",
+    "germanAnswers": ["Gesetze zu entwerfen.", "die Bundesregierung zu kontrollieren.", "den Bundeskanzler / die Bundeskanzlerin zu wählen.", "das Bundeskabinett zu bilden."],
+    "question": "Aşağıdakilerden hangisi Alman Federal Meclisi'nin (Bundestag) görevlerinden biri değildir?",
+    "answers": ["Yasa tasarıları hazırlamak", "Federal hükümeti denetlemek", "Federal Şansölyeyi seçmek", "Federal kabineyi oluşturmak"],
+    "explanation": "Bundestag yasama yapar, hükümeti denetler ve Federal Şansölyeyi seçer. Federal kabineyi doğrudan Bundestag oluşturmaz."
+  },
+  "official-66": {
+    "germanQuestion": "Welche Städte haben die größten jüdischen Gemeinden in Deutschland?",
+    "germanAnswers": ["Berlin und München", "Hamburg und Essen", "Nürnberg und Stuttgart", "Worms und Speyer"],
+    "question": "Almanya'daki en büyük Yahudi cemaatleri hangi şehirlerdedir?",
+    "answers": ["Berlin ve Münih", "Hamburg ve Essen", "Nürnberg ve Stuttgart", "Worms ve Speyer"],
+    "explanation": "Resmî soru kataloğuna göre Almanya'daki en büyük Yahudi cemaatleri Berlin ve Münih'tedir."
+  },
+  "official-67": {
+    "germanQuestion": "Was ist in Deutschland vor allem eine Aufgabe der Bundesländer?",
+    "germanAnswers": ["Verteidigungspolitik", "Außenpolitik", "Wirtschaftspolitik", "Schulpolitik"],
+    "question": "Almanya'da aşağıdaki alanlardan hangisi özellikle eyaletlerin (Bundesländer) sorumluluğundadır?",
+    "answers": ["Savunma politikası", "Dış politika", "Ekonomi politikası", "Okul ve eğitim politikası"],
+    "explanation": "Eğitim ve okul sistemi Almanya'nın federal yapısında ağırlıklı olarak eyaletlerin yetkisindedir. Bu yüzden eyaletler arasında okul sistemi farklılıkları olabilir."
+  },
+  "official-68": {
+    "germanQuestion": "Warum kontrolliert der Staat in Deutschland das Schulwesen?",
+    "germanAnswers": ["weil es in Deutschland nur staatliche Schulen gibt", "weil alle Schüler und Schülerinnen einen Schulabschluss haben müssen", "weil es in den Bundesländern verschiedene Schulen gibt", "weil es nach dem Grundgesetz seine Aufgabe ist"],
+    "question": "Almanya'da devlet neden okul sistemini denetler?",
+    "answers": ["Almanya'da yalnız devlet okulları olduğu için", "Bütün öğrencilerin diploma almak zorunda olduğu için", "Eyaletlerde farklı okul türleri olduğu için", "Grundgesetz'e göre bu devletin görevi olduğu için"],
+    "explanation": "Grundgesetz, okul sistemini devletin gözetimi altında tutar. Bu nedenle devlet eğitim alanında denetim sorumluluğuna sahiptir."
+  },
+  "official-69": {
+    "germanQuestion": "Die Bundesrepublik Deutschland hat einen dreistufigen Verwaltungsaufbau. Wie heißt die unterste politische Stufe?",
+    "germanAnswers": ["Stadträte", "Landräte", "Gemeinden", "Bezirksämter"],
+    "question": "Federal Almanya Cumhuriyeti'nin üç kademeli yönetim yapısında en alt siyasi düzey hangisidir?",
+    "answers": ["Şehir meclisleri", "İlçe yöneticileri", "Belediyeler (Gemeinden)", "Bölge daireleri"],
+    "explanation": "Yönetim yapısının en yerel siyasi düzeyi Gemeinden, yani belediyeler/yerel yönetimlerdir."
+  },
+  "official-70": {
+    "germanQuestion": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben des deutschen Bundespräsidenten / der deutschen Bundespräsidentin?",
+    "germanAnswers": ["Er / Sie führt die Regierungsgeschäfte.", "Er / Sie kontrolliert die Regierungspartei.", "Er / Sie wählt die Minister / Ministerinnen aus.", "Er / Sie schlägt den Kanzler / die Kanzlerin zur Wahl vor."],
+    "question": "Federal Cumhurbaşkanının görevlerinden biri hangisidir?",
+    "answers": ["Hükümet işlerini yürütmek", "İktidar partisini denetlemek", "Bakanları seçmek", "Federal Şansölye adayını seçim için önermek"],
+    "explanation": "Federal Cumhurbaşkanı, Federal Şansölye adayını Bundestag'ın seçimine sunar. Hükümet işlerini ise Federal Şansölye ve kabine yürütür."
+  },
+  "official-71": {
+    "germanQuestion": "Wo hält sich die deutsche Bundeskanzlerin/der deutsche Bundeskanzler am häufigsten auf? Am häufigsten ist sie/er ...",
+    "germanAnswers": ["in Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.", "auf Schloss Meseberg, dem Gästehaus der Bundesregierung, um Staatsgäste zu empfangen.", "auf Schloss Bellevue, dem Amtssitz der Bundespräsidentin/des Bundespräsidenten, um Staatsgäste zu empfangen.", "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden."],
+    "question": "Almanya Federal Şansölyesi görev nedeniyle en çok nerede bulunur?",
+    "answers": ["Bonn'da; çünkü Başbakanlık ve Bundestag oradadır.", "Schloss Meseberg'de; çünkü devlet konukları orada ağırlanır.", "Schloss Bellevue'de; çünkü burası Federal Cumhurbaşkanının resmî makamıdır.", "Berlin'de; çünkü Federal Başbakanlık ve Bundestag oradadır."],
+    "explanation": "Federal Başbakanlık (Bundeskanzleramt) ve Bundestag Berlin'dedir. Bu nedenle Federal Şansölye görevini ağırlıklı olarak Berlin'de yürütür."
+  },
+  "official-72": {
+    "germanQuestion": "Wie heißt die jetzige Bundeskanzlerin/der jetzige Bundeskanzler von Deutschland?",
+    "germanAnswers": ["Gerhard Schröder", "Angela Merkel", "Ursula von der Leyen", "Friedrich Merz"],
+    "solution": "d",
+    "officialOverride": true,
+    "question": "Almanya'nın şu anki Federal Şansölyesi kimdir?",
+    "answers": ["Gerhard Schröder", "Angela Merkel", "Ursula von der Leyen", "Friedrich Merz"],
+    "explanation": "Güncel BAMF soru kataloğunda doğru cevap Friedrich Merz'dir. Merz, 6 Mayıs 2025'te Federal Şansölye seçildi. Bu soru siyasi değişikliklere bağlı olarak güncellenebildiği için BAMF'nin güncel kataloğu esas alınır."
+  },
+  "official-73": {
+    "germanQuestion": "Die beiden größten Fraktionen im Deutschen Bundestag heißen zurzeit …",
+    "germanAnswers": ["CDU/CSU und AfD.", "Die Linke und Bündnis 90/Die Grünen.", "Bündnis 90/Die Grünen und SPD.", "Die Linke und CDU/CSU."],
+    "solution": "a",
+    "officialOverride": true,
+    "question": "Alman Federal Meclisi'ndeki (Bundestag) şu anki en büyük iki meclis grubu hangileridir?",
+    "answers": ["CDU/CSU ve AfD", "Die Linke ve Bündnis 90/Die Grünen", "Bündnis 90/Die Grünen ve SPD", "Die Linke ve CDU/CSU"],
+    "explanation": "BAMF'nin 07.05.2025 tarihli güncel kataloğunda doğru cevap CDU/CSU ve AfD'dir. Bu soru parlamentodaki güncel dağılıma bağlı olduğu için eski soru veri kopyaları güncelliğini yitirebilir."
+  },
+  "official-74": {
+    "germanQuestion": "Wie heißt das Parlament für ganz Deutschland?",
+    "germanAnswers": ["Bundesversammlung", "Volkskammer", "Bundestag", "Bundesgerichtshof"],
+    "question": "Tüm Almanya'yı temsil eden federal parlamentonun adı nedir?",
+    "answers": ["Bundesversammlung", "Volkskammer", "Bundestag", "Bundesgerichtshof"],
+    "explanation": "Federal düzeyde halk tarafından seçilen parlamento Deutscher Bundestag'dır. Bundesversammlung ise yalnız Federal Cumhurbaşkanını seçmek için toplanan özel organdır."
+  },
+  "official-75": {
+    "germanQuestion": "Wie heißt Deutschlands heutiges Staatsoberhaupt?",
+    "germanAnswers": ["Frank-Walter Steinmeier", "Bärbel Bas", "Bodo Ramelow", "Joachim Gauck"],
+    "question": "Almanya'nın mevcut devlet başkanı kimdir?",
+    "answers": ["Frank-Walter Steinmeier", "Bärbel Bas", "Bodo Ramelow", "Joachim Gauck"],
+    "explanation": "Almanya'nın devlet başkanı Federal Cumhurbaşkanıdır (Bundespräsident). Mevcut Federal Cumhurbaşkanı Frank-Walter Steinmeier'dir."
+  }
+}
