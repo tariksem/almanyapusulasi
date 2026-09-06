@@ -2,7 +2,7 @@
   "use strict";
 
   const style=document.createElement('style');
-  style.textContent='.share-row,.share-strip{display:none!important}.ap-share{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0 18px}.ap-share-label{font-size:.86rem;font-weight:700;color:#52606d;margin-right:2px}.ap-share-btn{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:8px 12px;border:1px solid #dbe3ec;border-radius:999px;background:#fff;color:#17202a;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(15,23,42,.05);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}.ap-share-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(15,23,42,.09)}.ap-share-btn svg{width:20px;height:20px;flex:0 0 20px}.ap-wa{color:#128c7e;border-color:#bfe9df}.ap-tg{color:#229ed9;border-color:#c7e7f6}.ap-native{color:#334155}.ap-share-result{margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0}.ap-share-result .ap-share-label{width:100%;color:#334155}@media(max-width:520px){.ap-share{gap:7px}.ap-share-label{width:100%;margin-bottom:1px}.ap-share-btn{flex:1 1 auto;justify-content:center;padding:9px 10px}.ap-share-btn span{font-size:.84rem}}';
+  style.textContent='.share-row,.share-strip{display:none!important}.ap-share{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:18px 0}.ap-share-label{font-size:.82rem;font-weight:700;color:#64748b;margin-right:2px}.ap-share-btn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:7px 10px;border:1px solid #dbe3ec;border-radius:999px;background:#fff;color:#17202a;font:inherit;font-size:.84rem;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s ease,box-shadow .15s ease}.ap-share-btn:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(15,23,42,.08)}.ap-share-btn svg{width:18px;height:18px;flex:0 0 18px}.ap-wa{color:#128c7e;border-color:#cdebe4}.ap-tg{color:#229ed9;border-color:#d3eaf5}.ap-native{color:#475569}.ap-share-result{margin-top:16px;padding:14px;border-top:1px solid #e2e8f0;background:rgba(248,250,252,.72);border-radius:12px}.ap-share-result .ap-share-label{width:100%;font-size:.9rem;color:#334155}.ap-share-result .ap-share-btn{min-height:40px;padding:8px 12px}.ap-share-page.ap-home-share{margin:22px 0 8px;padding-top:14px;border-top:1px solid rgba(148,163,184,.25)}@media(max-width:520px){.ap-share{gap:6px}.ap-share-label{width:100%;margin-bottom:1px}.ap-share-page .ap-share-btn{min-height:34px;padding:6px 9px}.ap-share-page .ap-share-btn svg{width:17px;height:17px}.ap-share-page .ap-share-btn span{font-size:.78rem}.ap-share-result .ap-share-btn{flex:1 1 auto;justify-content:center}.ap-share-result .ap-share-btn span{font-size:.82rem}}';
   document.head.appendChild(style);
 
   const ICONS={
@@ -18,7 +18,7 @@
 
   function textFor(kind,box){
     if(kind==='result'&&box){
-      const copy=box.cloneNode(true); copy.querySelectorAll('.ap-share').forEach(n=>n.remove());
+      const copy=box.cloneNode(true);copy.querySelectorAll('.ap-share').forEach(n=>n.remove());
       const raw=(copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim();
       return (title()+' — '+raw.slice(0,420)+'\n'+cleanUrl()).trim();
     }
@@ -26,55 +26,45 @@
   }
 
   function bar(kind,box){
-    const el=document.createElement('div');
-    el.className='ap-share ap-share-'+kind;
-    el.setAttribute('data-ap-share','1');
-    const label=kind==='result'?'Sonucu paylaş':'Paylaş';
-    el.innerHTML='<span class="ap-share-label">'+label+'</span>'+
-      '<button type="button" class="ap-share-btn ap-wa" aria-label="WhatsApp ile paylaş">'+ICONS.whatsapp+'<span>WhatsApp</span></button>'+
-      '<button type="button" class="ap-share-btn ap-tg" aria-label="Telegram ile paylaş">'+ICONS.telegram+'<span>Telegram</span></button>'+
-      '<button type="button" class="ap-share-btn ap-native" aria-label="Diğer uygulamalarla paylaş">'+ICONS.share+'<span>Paylaş</span></button>';
+    const el=document.createElement('div');el.className='ap-share ap-share-'+kind;el.setAttribute('data-ap-share','1');
+    const label=kind==='result'?'Sonucunu paylaş':'Paylaş';
+    el.innerHTML='<span class="ap-share-label">'+label+'</span><button type="button" class="ap-share-btn ap-wa" aria-label="WhatsApp ile paylaş">'+ICONS.whatsapp+'<span>WhatsApp</span></button><button type="button" class="ap-share-btn ap-tg" aria-label="Telegram ile paylaş">'+ICONS.telegram+'<span>Telegram</span></button><button type="button" class="ap-share-btn ap-native" aria-label="Diğer uygulamalarla paylaş">'+ICONS.share+'<span>Paylaş</span></button>';
     const get=()=>textFor(kind,box);
     el.querySelector('.ap-wa').onclick=()=>{track('whatsapp',kind);popup('https://wa.me/?text='+encodeURIComponent(get()));};
     el.querySelector('.ap-tg').onclick=()=>{track('telegram',kind);popup('https://t.me/share/url?url='+encodeURIComponent(cleanUrl())+'&text='+encodeURIComponent(get().replace(cleanUrl(),'')));};
-    el.querySelector('.ap-native').onclick=async()=>{
-      track('native',kind); const text=get();
-      if(navigator.share){try{await navigator.share({title:title(),text:text.replace(cleanUrl(),''),url:cleanUrl()});return;}catch(e){if(e&&e.name==='AbortError')return;}}
-      try{await navigator.clipboard.writeText(text);const span=el.querySelector('.ap-native span');const old=span.textContent;span.textContent='Kopyalandı';setTimeout(()=>span.textContent=old,1600);}catch(_){popup('mailto:?subject='+encodeURIComponent(title())+'&body='+encodeURIComponent(text));}
-    };
+    el.querySelector('.ap-native').onclick=async()=>{track('native',kind);const text=get();if(navigator.share){try{await navigator.share({title:title(),text:text.replace(cleanUrl(),''),url:cleanUrl()});return;}catch(e){if(e&&e.name==='AbortError')return;}}try{await navigator.clipboard.writeText(text);const span=el.querySelector('.ap-native span');const old=span.textContent;span.textContent='Kopyalandı';setTimeout(()=>span.textContent=old,1600);}catch(_){popup('mailto:?subject='+encodeURIComponent(title())+'&body='+encodeURIComponent(text));}};
     return el;
+  }
+
+  function firstIntro(root,h1){
+    if(!root)return null;
+    const candidates=Array.from(root.querySelectorAll('p,.lead,.hero-subtitle,.subtitle,.article-meta,.info-box'));
+    return candidates.find(el=>!h1||el.compareDocumentPosition(h1)&Node.DOCUMENT_POSITION_PRECEDING)||candidates[0]||null;
   }
 
   function injectPageShare(){
     if(document.querySelector('.ap-share-page'))return;
-    const root=document.querySelector('main article, main .article, .article-wrap article, .hero .container, main');
-    if(!root)return;
-    const h1=root.querySelector('h1')||document.querySelector('h1');
-    const el=bar('page');
-    if(h1)h1.insertAdjacentElement('afterend',el); else root.prepend(el);
+    const root=document.querySelector('main article,main .article,.article-wrap article,.hero .container,main');if(!root)return;
+    const h1=root.querySelector('h1')||document.querySelector('h1');const el=bar('page');
+    const isHome=location.pathname==='/'||location.pathname==='/index.html';
+    if(isHome){
+      el.classList.add('ap-home-share');
+      const hero=document.querySelector('.hero');
+      const target=(hero&&hero.nextElementSibling)||document.querySelector('main > section:nth-of-type(2)')||root;
+      if(target&&target!==root)target.insertAdjacentElement('afterend',el);else root.appendChild(el);
+      return;
+    }
+    const intro=firstIntro(root,h1);
+    if(intro)intro.insertAdjacentElement('afterend',el);else if(h1)h1.insertAdjacentElement('afterend',el);else root.prepend(el);
   }
 
   function resultBoxes(){return Array.from(document.querySelectorAll('.result,#out,[id*="result" i],[class*="result-box" i]')).filter(el=>el instanceof HTMLElement);}
   function ensureResultShare(box){
-    if(!box||box.dataset.apShareObserved==='1')return;
-    box.dataset.apShareObserved='1';
-    let timer;
-    const add=()=>{
-      clearTimeout(timer);timer=setTimeout(()=>{
-        const txt=(box.innerText||box.textContent||'').trim();
-        if(txt.length<8||box.querySelector('.ap-share-result'))return;
-        box.appendChild(bar('result',box));
-      },40);
-    };
-    new MutationObserver(add).observe(box,{childList:true,subtree:true,characterData:true});
-    add();
+    if(!box||box.dataset.apShareObserved==='1')return;box.dataset.apShareObserved='1';let timer;
+    const add=()=>{clearTimeout(timer);timer=setTimeout(()=>{const txt=(box.innerText||box.textContent||'').trim();if(txt.length<8||box.querySelector('.ap-share-result'))return;box.appendChild(bar('result',box));},40);};
+    new MutationObserver(add).observe(box,{childList:true,subtree:true,characterData:true});add();
   }
   function scanResults(){resultBoxes().forEach(ensureResultShare);}
-
-  function init(){
-    if(new URLSearchParams(location.search).get('embed')==='1')return;
-    injectPageShare();scanResults();
-    new MutationObserver(scanResults).observe(document.body,{childList:true,subtree:true});
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
+  function init(){if(new URLSearchParams(location.search).get('embed')==='1')return;injectPageShare();scanResults();new MutationObserver(scanResults).observe(document.body,{childList:true,subtree:true});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
