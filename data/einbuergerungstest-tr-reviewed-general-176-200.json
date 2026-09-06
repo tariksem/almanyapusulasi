@@ -1,0 +1,177 @@
+{
+  "official-176": {
+    "germanQuestion": "Wie waren die Besatzungszonen Deutschlands nach 1945 verteilt?",
+    "germanAnswers": ["1=Großbritannien, 2=Sowjetunion, 3=Frankreich, 4=USA", "1=Sowjetunion, 2=Großbritannien, 3=USA, 4=Frankreich", "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich", "1=Großbritannien, 2=USA, 3=Sowjetunion, 4=Frankreich"],
+    "question": "1945'ten sonra Almanya'daki işgal bölgeleri haritada nasıl dağılmıştı?",
+    "answers": ["1=Büyük Britanya, 2=Sovyetler Birliği, 3=Fransa, 4=ABD", "1=Sovyetler Birliği, 2=Büyük Britanya, 3=ABD, 4=Fransa", "1=Büyük Britanya, 2=Sovyetler Birliği, 3=ABD, 4=Fransa", "1=Büyük Britanya, 2=ABD, 3=Sovyetler Birliği, 4=Fransa"],
+    "explanation": "Savaş sonrasında Almanya dört Müttefik güç arasında işgal bölgelerine ayrıldı. Haritada doğuda Sovyet bölgesi, kuzeybatıda Britanya, güneyde ABD ve güneybatıda Fransa bölgesi yer alır. Bu coğrafi dağılım daha sonra Batı Almanya ile Doğu Almanya'nın oluşumunu anlamak için önemlidir. Sınav ipucu: Doğu = Sovyet; kuzeybatı = Britanya; güney = ABD; güneybatı = Fransa."
+  },
+  "official-177": {
+    "germanQuestion": "Welche deutsche Stadt wurde nach dem Zweiten Weltkrieg in vier Sektoren aufgeteilt?",
+    "germanAnswers": ["München", "Berlin", "Dresden", "Frankfurt/Oder"],
+    "question": "İkinci Dünya Savaşı'ndan sonra hangi Alman şehri dört sektöre ayrıldı?",
+    "answers": ["Münih", "Berlin", "Dresden", "Frankfurt/Oder"],
+    "explanation": "Berlin, Sovyet işgal bölgesinin içinde bulunmasına rağmen ABD, Büyük Britanya, Fransa ve Sovyetler Birliği arasında dört sektöre ayrıldı. Batıdaki üç sektör daha sonra Batı Berlin'i oluşturdu; Sovyet sektörü ise Doğu Berlin oldu. Sınav ipucu: Dört sektör denince Berlin."
+  },
+  "official-178": {
+    "germanQuestion": "Vom Juni 1948 bis zum Mai 1949 wurden die Bürger und Bürgerinnen von West-Berlin durch eine Luftbrücke versorgt. Welcher Umstand war dafür verantwortlich?",
+    "germanAnswers": ["Für Frankreich war eine Versorgung der West-Berliner Bevölkerung mit dem Flugzeug kostengünstiger.", "Die amerikanischen Soldaten / Soldatinnen hatten beim Landtransport Angst vor Überfällen.", "Für Großbritannien war die Versorgung über die Luftbrücke schneller.", "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege."],
+    "question": "Haziran 1948 ile Mayıs 1949 arasında Batı Berlin neden hava köprüsüyle (Luftbrücke) ikmal edildi?",
+    "answers": ["Fransa için uçakla ikmal daha ucuz olduğu için", "Amerikan askerleri kara yolunda saldırıdan korktuğu için", "Büyük Britanya için hava yolu daha hızlı olduğu için", "Sovyetler Birliği kara ulaşımını kestiği için"],
+    "explanation": "Sovyetler Birliği 1948'de Batı Berlin'e giden kara ve su yollarını bloke etti. Batılı Müttefikler bunun üzerine yaklaşık bir yıl boyunca Berlin Hava Köprüsü ile gıda, kömür ve diğer temel ihtiyaçları uçaklarla taşıdı. Bu olay Soğuk Savaş'ın ilk büyük krizlerinden biridir. Sınav ipucu: Berlin Blockade → Luftbrücke 1948/49."
+  },
+  "official-179": {
+    "germanQuestion": "Wie endete der Zweite Weltkrieg in Europa offiziell?",
+    "germanAnswers": ["mit dem Tod Adolf Hitlers", "durch die bedingungslose Kapitulation Deutschlands", "mit dem Rückzug der Deutschen aus den besetzten Gebieten", "durch eine Revolution in Deutschland"],
+    "question": "İkinci Dünya Savaşı Avrupa'da resmen nasıl sona erdi?",
+    "answers": ["Adolf Hitler'in ölümüyle", "Almanya'nın koşulsuz teslim olmasıyla", "Almanların işgal ettikleri bölgelerden çekilmesiyle", "Almanya'da bir devrimle"],
+    "explanation": "Avrupa'daki savaş Almanya'nın koşulsuz teslimiyet belgesini imzalamasıyla resmen sona erdi. Teslimiyet 8 Mayıs 1945'te yürürlüğe girdi. Hitler'in ölümü birkaç gün önce gerçekleşmiş olsa da savaşın hukuki ve askerî sonunu belirleyen olay teslimiyetti. Sınav ipucu: savaşın resmî sonu = bedingungslose Kapitulation."
+  },
+  "official-180": {
+    "germanQuestion": "Der erste Bundeskanzler der Bundesrepublik Deutschland war …",
+    "germanAnswers": ["Ludwig Erhard.", "Willy Brandt.", "Konrad Adenauer.", "Gerhard Schröder."],
+    "question": "Federal Almanya Cumhuriyeti'nin ilk Federal Şansölyesi kimdi?",
+    "answers": ["Ludwig Erhard", "Willy Brandt", "Konrad Adenauer", "Gerhard Schröder"],
+    "explanation": "Konrad Adenauer 1949'da Federal Almanya'nın ilk Bundeskanzler'i seçildi ve 1963'e kadar görev yaptı. Döneminde Batı Almanya demokratik kurumlarını pekiştirdi ve Batı Avrupa ile NATO'ya yakınlaştı. Sınav ipucu: ilk Bundeskanzler = Adenauer."
+  },
+  "official-181": {
+    "germanQuestion": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken?",
+    "germanAnswers": ["Er hat sich den ehemaligen Alliierten unterworfen.", "Er bat Polen und die polnischen Juden um Vergebung.", "Er zeigte seine Demut vor dem Warschauer Pakt.", "Er sprach ein Gebet am Grab des Unbekannten Soldaten."],
+    "question": "Willy Brandt 1970'te Varşova'daki eski Yahudi gettosu anıtı önünde diz çökerek ne ifade etmek istedi?",
+    "answers": ["Eski Müttefiklere teslim olduğunu", "Polonya'dan ve Polonyalı Yahudilerden bağışlanma dilediğini", "Varşova Paktı karşısındaki boyun eğişini", "Meçhul Asker mezarında dua ettiğini"],
+    "explanation": "Federal Şansölye Willy Brandt'ın 7 Aralık 1970'te Varşova Gettosu Ayaklanması Anıtı önünde diz çökmesi, Nasyonal Sosyalist suçların kurbanları karşısında sorumluluk ve anma sembolü haline geldi. Hareket, Almanya ile Polonya arasındaki uzlaşma politikasının da güçlü bir işaretiydi. Sınav ipucu: Kniefall von Warschau = özür, anma ve uzlaşma."
+  },
+  "official-182": {
+    "germanQuestion": "Wie heißt das jüdische Gebetshaus?",
+    "germanAnswers": ["Basilika", "Moschee", "Synagoge", "Kirche"],
+    "question": "Yahudilerin ibadethanesine ne denir?",
+    "answers": ["Bazilika", "Cami", "Sinagog", "Kilise"],
+    "explanation": "Yahudi ibadethanesine Synagoge, Türkçede sinagog denir. Cami İslam, kilise ise Hristiyanlıkla ilişkilidir; bazilika belirli bir kilise türüdür. Sınav ipucu: jüdisch → Synagoge."
+  },
+  "official-183": {
+    "germanQuestion": "Wann war in der Bundesrepublik Deutschland das „Wirtschaftswunder“?",
+    "germanAnswers": ["40er Jahre", "50er Jahre", "70er Jahre", "80er Jahre"],
+    "question": "Federal Almanya'daki “Wirtschaftswunder” (ekonomik mucize) hangi dönemde yaşandı?",
+    "answers": ["1940'lı yıllar", "1950'li yıllar", "1970'li yıllar", "1980'li yıllar"],
+    "explanation": "“Wirtschaftswunder”, özellikle 1950'lerde Batı Almanya'daki hızlı ekonomik büyümeyi anlatır. Sanayi üretimi, istihdam ve yaşam standardı savaş sonrasındaki düşük seviyelerden hızla yükseldi. Sosyal piyasa ekonomisi ve Avrupa'daki yeniden yapılanma bu gelişmenin önemli unsurlarıydı. Sınav ipucu: Wirtschaftswunder = 1950'ler."
+  },
+  "official-184": {
+    "germanQuestion": "Auf welcher rechtlichen Grundlage wurde der Staat Israel gegründet?",
+    "germanAnswers": ["eine Resolution der Vereinten Nationen", "ein Beschluss des Zionistenkongresses", "ein Vorschlag der Bundesregierung", "ein Vorschlag der UdSSR"],
+    "question": "İsrail Devleti'nin kurulmasının hukuki temelini aşağıdakilerden hangisi oluşturdu?",
+    "answers": ["Birleşmiş Milletler kararı", "Siyonist Kongre kararı", "Federal Alman Hükümeti'nin önerisi", "Sovyetler Birliği'nin önerisi"],
+    "explanation": "Sınav kataloğunda doğru cevap Birleşmiş Milletler kararıdır. BM Genel Kurulu'nun 1947 tarihli 181 sayılı kararı Filistin için bir bölünme planı önerdi; İsrail Devleti 14 Mayıs 1948'de bağımsızlığını ilan etti. Sınav ipucu: Israel'in kuruluş süreci → UN-Resolution 181."
+  },
+  "official-185": {
+    "germanQuestion": "Wofür stand der Ausdruck „Eiserner Vorhang“? Für die Abschottung …",
+    "germanAnswers": ["des Warschauer Pakts gegen den Westen", "Norddeutschlands gegen Süddeutschland", "Nazi-Deutschlands gegen die Alliierten", "Europas gegen die USA"],
+    "question": "“Eiserner Vorhang” (Demir Perde) ifadesi neyi anlatıyordu?",
+    "answers": ["Varşova Paktı ülkelerinin Batı'ya karşı kapalı olmasını", "Kuzey Almanya'nın Güney Almanya'ya kapatılmasını", "Nazi Almanyası'nın Müttefiklere kapatılmasını", "Avrupa'nın ABD'ye kapatılmasını"],
+    "explanation": "“Demir Perde”, Soğuk Savaş sırasında Sovyet etkisindeki Doğu Avrupa ile Batı Avrupa arasındaki siyasi, askerî ve fiziksel ayrımı anlatan bir kavramdı. Berlin Duvarı bu bölünmenin en görünür sembollerinden biri oldu. Sınav ipucu: Eiserner Vorhang = Doğu Bloku ile Batı arasındaki ayrım."
+  },
+  "official-186": {
+    "germanQuestion": "Im Jahr 1953 gab es in der DDR einen Aufstand, an den lange Zeit in der Bundesrepublik Deutschland ein Feiertag erinnerte. Wann war das?",
+    "germanAnswers": ["1. Mai", "17. Juni", "20. Juli", "9. November"],
+    "question": "DDR'de 1953 yılında gerçekleşen ayaklanmanın tarihi hangisidir?",
+    "answers": ["1 Mayıs", "17 Haziran", "20 Temmuz", "9 Kasım"],
+    "explanation": "17 Haziran 1953'te DDR'de işçi protestoları geniş çaplı bir rejim karşıtı ayaklanmaya dönüştü ve Sovyet birlikleri tarafından bastırıldı. Bu tarih Batı Almanya'da uzun yıllar “Tag der deutschen Einheit” olarak resmî tatildi; birleşmeden sonra ulusal gün 3 Ekim oldu. Sınav ipucu: DDR ayaklanması = 17 Haziran 1953."
+  },
+  "official-187": {
+    "germanQuestion": "Welcher deutsche Staat hatte eine schwarz-rot-goldene Flagge mit Hammer, Zirkel und Ährenkranz?",
+    "germanAnswers": ["Preußen", "Bundesrepublik Deutschland", "„Drittes Reich“", "DDR"],
+    "question": "Siyah-kırmızı-altın renkli bayrağın ortasında çekiç, pergel ve başak çelengi bulunan Alman devleti hangisiydi?",
+    "answers": ["Prusya", "Federal Almanya Cumhuriyeti", "Üçüncü Reich", "DDR"],
+    "explanation": "Bu arma DDR'nin bayrağında bulunuyordu. Çekiç işçileri, pergel aydınları/teknik kesimi, başak çelengi ise çiftçileri simgeliyordu. Federal Almanya'nın siyah-kırmızı-altın bayrağında bu arma bulunmaz. Sınav ipucu: Hammer + Zirkel + Ährenkranz = DDR."
+  },
+  "official-188": {
+    "germanQuestion": "In welchem Jahr wurde die Mauer in Berlin gebaut?",
+    "germanAnswers": ["1953", "1956", "1959", "1961"],
+    "question": "Berlin Duvarı hangi yıl inşa edildi?",
+    "answers": ["1953", "1956", "1959", "1961"],
+    "explanation": "DDR yönetimi Berlin Duvarı'nı 13 Ağustos 1961'den itibaren kurmaya başladı. Duvar, Doğu Berlin ile Batı Berlin arasındaki geçişi büyük ölçüde kapattı ve Almanya'nın bölünmüşlüğünün simgesi oldu. Sınav ipucu: Mauerbau = 1961."
+  },
+  "official-189": {
+    "germanQuestion": "Wann baute die DDR die Mauer in Berlin?",
+    "germanAnswers": ["1919", "1933", "1961", "1990"],
+    "question": "DDR Berlin Duvarı'nı ne zaman inşa etti?",
+    "answers": ["1919", "1933", "1961", "1990"],
+    "explanation": "Berlin Duvarı 1961'de DDR tarafından inşa edildi. Temel amaç, DDR'den Batı'ya kitlesel göçü ve kaçışı durdurmaktı. 1989'da sınır geçişlerinin açılması, DDR'nin sona eriş sürecinin simgelerinden biri oldu. Sınav ipucu: 1961 inşa, 1989 açılış."
+  },
+  "official-190": {
+    "germanQuestion": "Was bedeutet die Abkürzung DDR?",
+    "germanAnswers": ["Dritter Deutscher Rundfunk", "Die Deutsche Republik", "Dritte Deutsche Republik", "Deutsche Demokratische Republik"],
+    "question": "DDR kısaltmasının açılımı nedir?",
+    "answers": ["Dritter Deutscher Rundfunk", "Die Deutsche Republik", "Dritte Deutsche Republik", "Deutsche Demokratische Republik"],
+    "explanation": "DDR, Deutsche Demokratische Republik'in kısaltmasıdır ve 1949–1990 arasında var olan Doğu Almanya devletini ifade eder. Başkenti Doğu Berlin'di ve siyasi olarak Sovyetler Birliği liderliğindeki Doğu Bloku'na bağlıydı. Sınav ipucu: DDR = Deutsche Demokratische Republik."
+  },
+  "official-191": {
+    "germanQuestion": "Wann wurde die Mauer in Berlin für alle geöffnet?",
+    "germanAnswers": ["1987", "1989", "1992", "1995"],
+    "question": "Berlin Duvarı ne zaman herkes için geçişe açıldı?",
+    "answers": ["1987", "1989", "1992", "1995"],
+    "explanation": "9 Kasım 1989 akşamı DDR yönetiminin seyahat düzenlemeleriyle ilgili açıklamasının ardından sınır geçişleri açıldı ve binlerce insan Berlin Duvarı'nı geçti. Bu olay Almanya'nın yeniden birleşmesine giden sürecin en önemli dönüm noktalarından biridir. Sınav ipucu: Mauerfall = 9 Kasım 1989."
+  },
+  "official-192": {
+    "germanQuestion": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
+    "germanAnswers": ["Brandenburg", "Bayern", "Saarland", "Hessen"],
+    "question": "Bugünkü Alman eyaletlerinden hangisi eskiden DDR toprakları içindeydi?",
+    "answers": ["Brandenburg", "Bayern", "Saarland", "Hessen"],
+    "explanation": "Brandenburg eski DDR toprakları içinde yer alıyordu. 1990'daki birleşmeyle Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt ve Thüringen yeniden oluşturularak Federal Almanya'ya katıldı. Sınav ipucu: Beş doğu eyaleti = BB, MV, SN, ST, TH."
+  },
+  "official-193": {
+    "germanQuestion": "Von 1961 bis 1989 war Berlin …",
+    "germanAnswers": ["ohne Bürgermeister.", "ein eigener Staat.", "durch eine Mauer geteilt.", "nur mit dem Flugzeug erreichbar."],
+    "question": "1961 ile 1989 arasında Berlin'in durumu nasıldı?",
+    "answers": ["Belediye başkanı yoktu", "Bağımsız bir devletti", "Bir duvarla bölünmüştü", "Yalnızca uçakla ulaşılabiliyordu"],
+    "explanation": "Berlin Duvarı 1961'den 1989'a kadar Doğu ve Batı Berlin arasındaki sınırın en belirgin bölümünü oluşturdu. Şehir siyasi olarak bölünmüş Almanya'nın ve Soğuk Savaş'ın simgesiydi. Sınav ipucu: Berlin 1961–1989 = durch eine Mauer geteilt."
+  },
+  "official-194": {
+    "germanQuestion": "Am 3. Oktober feiert man in Deutschland den Tag der Deutschen …",
+    "germanAnswers": ["Einheit.", "Nation.", "Bundesländer.", "Städte."],
+    "question": "Almanya'da 3 Ekim'de “Tag der Deutschen …” olarak ne kutlanır?",
+    "answers": ["Birliği (Einheit)", "Milleti", "Eyaletleri", "Şehirleri"],
+    "explanation": "3 Ekim, Tag der Deutschen Einheit yani Alman Birliği Günü'dür ve Almanya'nın ulusal bayramıdır. 3 Ekim 1990'da DDR'nin Federal Almanya'ya katılmasıyla devlet düzeyindeki yeniden birleşme yürürlüğe girdi. Sınav ipucu: 3 Oktober = Deutsche Einheit."
+  },
+  "official-195": {
+    "germanQuestion": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
+    "germanAnswers": ["Hessen", "Sachsen-Anhalt", "Nordrhein-Westfalen", "Saarland"],
+    "question": "Bugünkü Alman eyaletlerinden hangisi eskiden DDR toprakları içindeydi?",
+    "answers": ["Hessen", "Sachsen-Anhalt", "Nordrhein-Westfalen", "Saarland"],
+    "explanation": "Sachsen-Anhalt eski DDR topraklarındaki beş doğu eyaletinden biridir. Diğerleri Brandenburg, Mecklenburg-Vorpommern, Sachsen ve Thüringen'dir. Sınav ipucu: Sachsen-Anhalt = eski DDR."
+  },
+  "official-196": {
+    "germanQuestion": "Warum nennt man die Zeit im Herbst 1989 in der DDR „Die Wende“? In dieser Zeit veränderte sich die DDR politisch …",
+    "germanAnswers": ["von einer Diktatur zur Demokratie.", "von einer liberalen Marktwirtschaft zum Sozialismus.", "von einer Monarchie zur Sozialdemokratie.", "von einem religiösen Staat zu einem kommunistischen Staat."],
+    "question": "DDR'de 1989 sonbaharındaki döneme neden “Die Wende” denir? Bu dönemde DDR siyasi olarak nasıl değişti?",
+    "answers": ["Diktatörlükten demokrasiye doğru", "Liberal piyasa ekonomisinden sosyalizme", "Monarşiden sosyal demokrasiye", "Dinî devletten komünist devlete"],
+    "explanation": "“Die Wende”, 1989'daki barışçıl protestolar, sınırların açılması ve SED diktatörlüğünün sona ermesiyle başlayan siyasi dönüşümü ifade eder. 1990'da DDR'de serbest seçimler yapıldı ve aynı yıl Almanya yeniden birleşti. Sınav ipucu: Wende = diktatörlükten demokrasiye geçiş."
+  },
+  "official-197": {
+    "germanQuestion": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
+    "germanAnswers": ["Thüringen", "Hessen", "Bayern", "Bremen"],
+    "question": "Bugünkü Alman eyaletlerinden hangisi eskiden DDR toprakları içindeydi?",
+    "answers": ["Thüringen", "Hessen", "Bayern", "Bremen"],
+    "explanation": "Thüringen eski DDR topraklarının bir parçasıydı ve 1990'da yeniden oluşturulan beş doğu eyaletinden biridir. Hessen, Bayern ve Bremen ise Batı Almanya'da yer alıyordu. Sınav ipucu: Thüringen = eski DDR."
+  },
+  "official-198": {
+    "germanQuestion": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
+    "germanAnswers": ["Bayern", "Niedersachsen", "Sachsen", "Baden-Württemberg"],
+    "question": "Bugünkü Alman eyaletlerinden hangisi eskiden DDR toprakları içindeydi?",
+    "answers": ["Bayern", "Niedersachsen", "Sachsen", "Baden-Württemberg"],
+    "explanation": "Sachsen eski DDR topraklarının bir parçasıydı. 1990'daki yeniden birleşme sonrasında Federal Almanya'nın doğu eyaletlerinden biri olarak yeniden kuruldu. Sınav ipucu: Sachsen = eski DDR; Bayern ve Baden-Württemberg = güneybatı/batı."
+  },
+  "official-199": {
+    "germanQuestion": "Mit der Abkürzung „Stasi“ meinte man in der DDR …",
+    "germanAnswers": ["das Parlament.", "das Ministerium für Staatssicherheit.", "eine regierende Partei.", "das Ministerium für Volksbildung."],
+    "question": "DDR'de “Stasi” kısaltmasıyla hangi kurum kastediliyordu?",
+    "answers": ["Parlamento", "Devlet Güvenlik Bakanlığı (Ministerium für Staatssicherheit)", "İktidardaki bir siyasi parti", "Halk Eğitimi Bakanlığı"],
+    "explanation": "Stasi, DDR'nin Ministerium für Staatssicherheit adlı devlet güvenlik ve istihbarat kurumunun yaygın adıdır. Kurum geniş bir muhbir ağı kullanıyor, vatandaşları izliyor ve siyasi muhalefetin bastırılmasında önemli rol oynuyordu. Sınav ipucu: Stasi = Ministerium für Staatssicherheit."
+  },
+  "official-200": {
+    "germanQuestion": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
+    "germanAnswers": ["Hessen", "Schleswig-Holstein", "Mecklenburg-Vorpommern", "Saarland"],
+    "question": "Bugünkü Alman eyaletlerinden hangisi eskiden DDR toprakları içindeydi?",
+    "answers": ["Hessen", "Schleswig-Holstein", "Mecklenburg-Vorpommern", "Saarland"],
+    "explanation": "Mecklenburg-Vorpommern eski DDR bölgesinde yer alıyordu ve 1990'da Federal Almanya'ya katılan beş doğu eyaletinden biridir. Hessen, Schleswig-Holstein ve Saarland ise Batı Almanya'ya aitti. Sınav ipucu: Mecklenburg-Vorpommern = eski DDR."
+  }
+}
