@@ -1,6 +1,6 @@
 # Almanya Pusulası — Monetization Plan
 
-Last reviewed: 2026-09-05
+Last reviewed: 2026-09-06
 
 ## Current status
 
@@ -35,12 +35,13 @@ Tracked events:
 - `tool_open` — entry to `/araclar/` or a calculator/checker page;
 - `tool_calculate` — interaction with calculator/checker buttons;
 - `outbound_click` — outbound links;
+- `comparison_to_tool` — internal click from a comparison/commercial page to a calculator, checker or decision tool;
 - commercial `data-track` events via `assets/js/commercial-tracking.js`;
 - `affiliate_click` — once an affiliate slot is enabled, including `commercial_area`, `commercial_target`, `partner`, `link_url`, and `page_path`;
 - `dashboard_decision_complete` — first completion of a synchronized decision;
 - `dashboard_tool_result_saved` — a decision-tool result was saved/refreshed in the local dashboard state.
 
-`commercial-tracking.js` is the single source for affiliate click events to avoid duplicate conversions.
+`commercial-tracking.js` is the single source for affiliate click events to avoid duplicate conversions. It also auto-detects internal decision destinations (`-secim-araci`, `-hesaplayici`, `-uygunluk-kontrolu`, `-kontrolu`, `/araclar/`) and emits `comparison_to_tool` without requiring per-link markup.
 
 ## Planned placements
 
