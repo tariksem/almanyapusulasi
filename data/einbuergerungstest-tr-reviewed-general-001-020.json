@@ -1,0 +1,122 @@
+{
+  "official-1": {
+    "germanQuestion": "In Deutschland dürfen Menschen offen etwas gegen die Regierung sagen, weil …",
+    "question": "Almanya'da insanlar hükümete karşı düşüncelerini açıkça söyleyebilir. Bunun nedeni nedir?",
+    "answers": ["Din özgürlüğünün geçerli olması", "İnsanların vergi ödemesi", "İnsanların seçme hakkına sahip olması", "Düşünce ve ifade özgürlüğünün geçerli olması"],
+    "explanation": "Almanya'da düşünce ve ifade özgürlüğü (Meinungsfreiheit) temel haklardan biridir. İnsanlar, yasaların sınırları içinde hükümeti ve devlet politikasını açıkça eleştirebilir."
+  },
+  "official-2": {
+    "germanQuestion": "In Deutschland können Eltern bis zum 14. Lebensjahr ihres Kindes entscheiden, ob es in der Schule am …",
+    "question": "Almanya'da ebeveynler, çocukları 14 yaşına gelene kadar okulda hangi derse katılıp katılmayacağına karar verebilir?",
+    "answers": ["Tarih dersine", "Din dersine", "Siyaset dersine", "Dil dersine"],
+    "explanation": "Almanya'da çocuk 14 yaşına kadar din eğitimi konusunda ebeveynlerin karar hakkı vardır. 14 yaşından itibaren çocuk kendi dinî tercihi konusunda karar verebilir."
+  },
+  "official-3": {
+    "germanQuestion": "Deutschland ist ein Rechtsstaat. Was ist damit gemeint?",
+    "question": "Almanya bir hukuk devletidir (Rechtsstaat). Bu ne anlama gelir?",
+    "answers": ["Tüm ülkede yaşayanlar ve devlet yasalara uymak zorundadır.", "Devlet yasalara uymak zorunda değildir.", "Yalnız Alman vatandaşları yasalara uymak zorundadır.", "Yasaları mahkemeler yapar."],
+    "explanation": "Hukuk devletinde hem kişiler hem de devlet makamları yürürlükteki hukukla bağlıdır. Devlet keyfî davranamaz ve işlemleri mahkemeler tarafından denetlenebilir."
+  },
+  "official-4": {
+    "germanQuestion": "Welches Recht gehört zu den Grundrechten in Deutschland?",
+    "question": "Aşağıdaki haklardan hangisi Almanya'daki temel haklardan biridir?",
+    "answers": ["Silah sahibi olma hakkı", "Güçlünün kendi hakkını zorla alma hakkı", "Düşünce ve ifade özgürlüğü", "Kendi başına adalet uygulama hakkı"],
+    "explanation": "Meinungsfreiheit, yani düşünce ve ifade özgürlüğü, Alman Anayasası'nın (Grundgesetz) güvence altına aldığı temel haklardandır."
+  },
+  "official-5": {
+    "germanQuestion": "Wahlen in Deutschland sind frei. Was bedeutet das?",
+    "question": "Almanya'da seçimler özgürdür. Bu ne anlama gelir?",
+    "answers": ["Belirli bir adaya oy vermek karşılığında para alınabilir.", "Sadece daha önce hiç cezaevine girmemiş kişiler oy kullanabilir.", "Seçmen etkilenemez veya belirli bir oy vermeye zorlanamaz ve tercihi nedeniyle zarar görmemelidir.", "Oy kullanma hakkı olan herkes oy kullanmak zorundadır."],
+    "explanation": "Özgür seçim, seçmenin baskı, tehdit veya zorlama olmadan kendi kararını vermesi anlamına gelir. Almanya'da genel bir oy kullanma zorunluluğu yoktur."
+  },
+  "official-6": {
+    "germanQuestion": "Wie heißt die deutsche Verfassung?",
+    "question": "Alman Anayasası'nın adı nedir?",
+    "answers": ["Volksgesetz", "Bundesgesetz", "Deutsches Gesetz", "Grundgesetz"],
+    "explanation": "Almanya'nın anayasasının resmî adı Grundgesetz für die Bundesrepublik Deutschland'dır; Türkçede genellikle 'Temel Yasa' veya 'Alman Anayasası' olarak anılır."
+  },
+  "official-7": {
+    "germanQuestion": "Welches Recht gehört zu den Grundrechten, die nach der deutschen Verfassung garantiert werden? Das Recht auf …",
+    "question": "Alman Anayasası'nın güvence altına aldığı temel haklardan biri hangisidir?",
+    "answers": ["Din ve vicdan özgürlüğü", "Eğlence hakkı", "İş sahibi olma hakkı", "Konut sahibi olma hakkı"],
+    "explanation": "Glaubens- und Gewissensfreiheit, yani din ve vicdan özgürlüğü, Grundgesetz tarafından açıkça güvence altına alınan temel haklardandır."
+  },
+  "official-8": {
+    "germanQuestion": "Was steht nicht im Grundgesetz von Deutschland?",
+    "question": "Aşağıdakilerden hangisi Alman Anayasası'nda (Grundgesetz) yer almaz?",
+    "answers": ["İnsan onuru dokunulmazdır.", "Herkes aynı miktarda paraya sahip olmalıdır.", "Her insan düşüncesini söyleyebilir.", "Herkes kanun önünde eşittir."],
+    "explanation": "Grundgesetz insan onurunu, kanun önünde eşitliği ve ifade özgürlüğünü korur. Herkesin aynı miktarda paraya sahip olması gerektiğine dair bir anayasa hükmü yoktur."
+  },
+  "official-9": {
+    "germanQuestion": "Welches Grundrecht gilt in Deutschland nur für Ausländer / Ausländerinnen? Das Grundrecht auf …",
+    "question": "Almanya'da aşağıdaki temel haklardan hangisi özellikle yabancılar için söz konusudur?",
+    "answers": ["Ailenin korunması", "İnsan onuru", "Sığınma hakkı (Asyl)", "Düşünce ve ifade özgürlüğü"],
+    "explanation": "Asylrecht, siyasi zulme uğrayan yabancıların Almanya'da sığınma talep edebilmesine ilişkin temel haktır. İnsan onuru ve ifade özgürlüğü ise yalnız yabancılara özgü değildir."
+  },
+  "official-10": {
+    "germanQuestion": "Was ist mit dem deutschen Grundgesetz vereinbar?",
+    "question": "Aşağıdakilerden hangisi Alman Anayasası (Grundgesetz) ile bağdaşır?",
+    "answers": ["Dayak cezası", "İşkence", "Ölüm cezası", "Para cezası"],
+    "explanation": "İşkence, ölüm cezası ve insan onurunu ihlal eden bedensel cezalar Grundgesetz ile bağdaşmaz. Para cezası ise Alman hukukunda uygulanabilen yasal bir yaptırımdır."
+  },
+  "official-11": {
+    "germanQuestion": "Wie wird die Verfassung der Bundesrepublik Deutschland genannt?",
+    "question": "Federal Almanya Cumhuriyeti'nin anayasasına ne ad verilir?",
+    "answers": ["Grundgesetz", "Bundesverfassung", "Gesetzbuch", "Verfassungsvertrag"],
+    "explanation": "Federal Almanya Cumhuriyeti'nin anayasası Grundgesetz olarak adlandırılır."
+  },
+  "official-12": {
+    "germanQuestion": "Eine Partei im Deutschen Bundestag will die Pressefreiheit abschaffen. Ist das möglich?",
+    "question": "Alman Federal Meclisindeki bir parti basın özgürlüğünü kaldırmak istiyor. Bu mümkün müdür?",
+    "answers": ["Evet, Federal Meclis üyelerinin yarısından fazlası desteklerse mümkündür.", "Evet, Federal Meclis üyelerinin üçte ikisi desteklerse mümkündür.", "Hayır, çünkü basın özgürlüğü temel bir haktır; kaldırılamaz.", "Hayır, çünkü basın özgürlüğünü yalnız Bundesrat kaldırabilir."],
+    "explanation": "Pressefreiheit, yani basın özgürlüğü, Grundgesetz'in koruduğu temel haklardandır. Demokratik anayasal düzenin temel hak koruması basit bir çoğunluk kararıyla ortadan kaldırılamaz."
+  },
+  "official-13": {
+    "germanQuestion": "Im Parlament steht der Begriff „Opposition“ für ...",
+    "question": "Parlamentoda 'muhalefet' (Opposition) kavramı neyi ifade eder?",
+    "answers": ["Hükümeti oluşturan partileri", "En fazla milletvekiline sahip grubu", "Son seçimde %5 barajını geçen bütün partileri", "Hükümet partisi veya partilerine mensup olmayan milletvekillerini"],
+    "explanation": "Muhalefet, hükümeti oluşturmayan siyasi partiler ve onların parlamentodaki milletvekillerinden oluşur. Görevlerinden biri hükümeti denetlemek ve alternatif politikalar sunmaktır."
+  },
+  "official-14": {
+    "germanQuestion": "Meinungsfreiheit in Deutschland heißt zum Beispiel, dass ich",
+    "question": "Almanya'da düşünce ve ifade özgürlüğü örneğin ne anlama gelir?",
+    "answers": ["Sokaktaki insanlara hakaret edebilirim.", "İnternette kendi görüşümü ifade edebilirim.", "Nazi, Hamas veya IŞİD sembollerini kamusal alanda taşıyabilirim.", "Sadece hükümete karşı çıkmadığım sürece görüşümü ifade edebilirim."],
+    "explanation": "Meinungsfreiheit kişinin görüşünü, örneğin internette, ifade edebilmesini korur. Ancak hakaret, bazı yasaklı sembollerin kullanımı ve başka ceza hukuku sınırları ifade özgürlüğünün dışında kalabilir."
+  },
+  "official-15": {
+    "germanQuestion": "Was verbietet das deutsche Grundgesetz?",
+    "question": "Alman Anayasası aşağıdakilerden hangisini yasaklar?",
+    "answers": ["Askerlik hizmetini", "Zorla çalıştırmayı", "Mesleğini özgürce seçmeyi", "Yurt dışında çalışmayı"],
+    "explanation": "Grundgesetz zorla çalıştırmayı (Zwangsarbeit) yasaklar. Meslek seçme özgürlüğü ise anayasal olarak korunan haklardandır."
+  },
+  "official-16": {
+    "germanQuestion": "Wann ist die Meinungsfreiheit in Deutschland eingeschränkt?",
+    "question": "Almanya'da düşünce ve ifade özgürlüğü hangi durumda sınırlandırılır?",
+    "answers": ["Bir kişi hakkında kamuya açık biçimde yanlış iddialar yayarken", "Federal Hükümet hakkında görüş bildirirken", "Dinler hakkında tartışırken", "Devleti eleştirirken"],
+    "explanation": "İfade özgürlüğü sınırsız değildir. Örneğin bir kişi hakkında gerçeğe aykırı ve kişilik haklarını ihlal eden iddiaların yayılması hukuki sonuç doğurabilir; hükümeti veya devleti eleştirmek ise tek başına yasak değildir."
+  },
+  "official-17": {
+    "germanQuestion": "Die deutschen Gesetze verbieten …",
+    "question": "Alman yasaları aşağıdakilerden hangisini yasaklar?",
+    "answers": ["Ülkede yaşayanların düşünce özgürlüğünü", "Vatandaşların dilekçe vermesini", "Ülkede yaşayanların toplantı ve gösteri özgürlüğünü", "Devletin vatandaşlara eşit olmayan biçimde muamele etmesini"],
+    "explanation": "Devlet, anayasal eşitlik ilkesi nedeniyle kişilere keyfî biçimde farklı muamele edemez. Düşünce, dilekçe ve toplantı özgürlükleri ise hukuk düzeni tarafından korunur."
+  },
+  "official-18": {
+    "germanQuestion": "Welches Grundrecht ist in Artikel 1 des Grundgesetzes der Bundesrepublik Deutschland garantiert?",
+    "question": "Federal Almanya Cumhuriyeti Grundgesetz'inin 1. maddesinde hangi temel hak güvence altına alınır?",
+    "answers": ["İnsan onurunun dokunulmazlığı", "Yaşam hakkı", "Din özgürlüğü", "Düşünce ve ifade özgürlüğü"],
+    "explanation": "Grundgesetz'in 1. maddesi 'Die Würde des Menschen ist unantastbar' der: İnsan onuru dokunulmazdır. Bu ilke Alman anayasal düzeninin temelidir."
+  },
+  "official-19": {
+    "germanQuestion": "Was versteht man unter dem Recht der „Freizügigkeit“ in Deutschland?",
+    "question": "Almanya'da 'Freizügigkeit' hakkı ne anlama gelir?",
+    "answers": ["İkamet edeceği yeri kendisi seçebilmek", "Mesleğini değiştirebilmek", "Başka bir dini seçebilmek", "Kamusal alanda yalnız hafif kıyafetlerle dolaşabilmek"],
+    "explanation": "Freizügigkeit, kişinin Almanya içinde ikamet edeceği ve bulunacağı yeri genel olarak özgürce seçebilmesi anlamına gelir."
+  },
+  "official-20": {
+    "germanQuestion": "Eine Partei in Deutschland verfolgt das Ziel, eine Diktatur zu errichten. Sie ist dann …",
+    "question": "Almanya'da bir siyasi parti diktatörlük kurmayı amaçlıyorsa bu parti nasıl değerlendirilir?",
+    "answers": ["Hoşgörülü", "Hukuk devleti yanlısı", "Yasalara bağlı", "Anayasaya aykırı (verfassungswidrig)"],
+    "explanation": "Diktatörlük kurmayı amaçlayan bir parti, özgür demokratik temel düzene karşı olduğu için anayasaya aykırı olarak değerlendirilir."
+  }
+}
