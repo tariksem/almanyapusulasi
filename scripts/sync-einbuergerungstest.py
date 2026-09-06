@@ -26,6 +26,10 @@ def clean_text(value):
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
+def comparable(value):
+    return clean_text(value).replace("…", "...").casefold()
+
+
 def looks_broken_turkish(value, german_source=""):
     text = clean_text(value)
     if not text:
@@ -69,12 +73,24 @@ def question_key(q):
     return str(q.get("num", "")).strip().upper()
 
 
+def find_reviewed(reviewed, key, german_question):
+    # Never trust numeric position alone: technical mirrors may reorder questions.
+    # A reviewed translation is accepted only when its stored German source text matches.
+    candidate = reviewed.get(key)
+    if isinstance(candidate, dict) and comparable(candidate.get("germanQuestion", "")) == comparable(german_question):
+        return candidate
+    for value in reviewed.values():
+        if isinstance(value, dict) and comparable(value.get("germanQuestion", "")) == comparable(german_question):
+            return value
+    return {}
+
+
 def compact(q, reviewed):
     tr = (q.get("translation") or {}).get("tr") or {}
     question = clean_text(q.get("question", ""))
     answers = [clean_text(q.get(k, "")) for k in ("a", "b", "c", "d")]
     key = question_key(q)
-    override = reviewed.get(key) or {}
+    override = find_reviewed(reviewed, key, question)
 
     auto_question = safe_tr(tr.get("question", ""), question)
     auto_answers = [safe_tr(tr.get(k, ""), answers[i]) for i, k in enumerate(("a", "b", "c", "d"))]
@@ -109,7 +125,7 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     reviewed = load_reviewed()
     try:
-        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/3.0"})
+        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/4.0"})
         with urllib.request.urlopen(req, timeout=45) as res:
             raw = json.load(res)
         questions = [compact(q, reviewed) for q in raw if q.get("question") and q.get("solution")]
@@ -123,7 +139,7 @@ def main():
                 "officialCatalogUrl": "https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.pdf?__blob=publicationFile",
                 "technicalMirror": "https://github.com/leben-in-deutschland/leben-in-deutschland-scrapper",
                 "technicalMirrorLicense": "MIT",
-                "translationPolicy": "Reviewed Almanya Pusulası Turkish overrides take precedence. Unreviewed upstream Turkish text is shown only after local quality checks; translations failing those checks are suppressed.",
+                "translationPolicy": "Reviewed Almanya Pusulası Turkish overrides take precedence only when the stored German source text matches exactly. Unreviewed upstream Turkish text is shown only after local quality checks; translations failing those checks are suppressed.",
                 "translationQa": {
                     "reviewedQuestions": reviewed_count,
                     "rejectedQuestions": rejected_questions,
