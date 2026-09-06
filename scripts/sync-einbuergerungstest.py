@@ -5,7 +5,8 @@ import urllib.request
 
 SOURCE = "https://raw.githubusercontent.com/leben-in-deutschland/leben-in-deutschland-scrapper/main/data/question.json"
 OUT = Path("assets/data/einbuergerungstest.json")
-REVIEWED_TR = Path("data/einbuergerungstest-tr-reviewed.json")
+REVIEWED_GLOB = "einbuergerungstest-tr-reviewed*.json"
+REVIEWED_DIR = Path("data")
 
 # Upstream translations are AI-generated and occasionally contain untranslated German,
 # broken line-wrap grammar or generic/non-explanatory context. Never publish those blindly.
@@ -59,14 +60,23 @@ def safe_context(value):
 
 
 def load_reviewed():
-    if not REVIEWED_TR.exists():
-        return {}
-    try:
-        raw = json.loads(REVIEWED_TR.read_text(encoding="utf-8"))
-        return raw if isinstance(raw, dict) else {}
-    except Exception as exc:
-        print(f"WARNING: reviewed Turkish translation file could not be read: {exc}")
-        return {}
+    merged = {}
+    files = sorted(REVIEWED_DIR.glob(REVIEWED_GLOB))
+    if not files:
+        print("WARNING: no reviewed Turkish translation files found")
+        return merged
+    for path in files:
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(raw, dict):
+                print(f"WARNING: ignored non-object reviewed translation file: {path}")
+                continue
+            for key, value in raw.items():
+                merged[f"{path.name}:{key}"] = value
+        except Exception as exc:
+            print(f"WARNING: reviewed Turkish translation file could not be read ({path}): {exc}")
+    print(f"Loaded {len(merged)} reviewed Turkish translation records from {len(files)} file(s)")
+    return merged
 
 
 def question_key(q):
@@ -76,11 +86,9 @@ def question_key(q):
 def find_reviewed(reviewed, key, german_question):
     # Never trust numeric position alone: technical mirrors may reorder questions.
     # A reviewed translation is accepted only when its stored German source text matches.
-    candidate = reviewed.get(key)
-    if isinstance(candidate, dict) and comparable(candidate.get("germanQuestion", "")) == comparable(german_question):
-        return candidate
+    target = comparable(german_question)
     for value in reviewed.values():
-        if isinstance(value, dict) and comparable(value.get("germanQuestion", "")) == comparable(german_question):
+        if isinstance(value, dict) and comparable(value.get("germanQuestion", "")) == target:
             return value
     return {}
 
@@ -125,7 +133,7 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     reviewed = load_reviewed()
     try:
-        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/4.0"})
+        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/5.0"})
         with urllib.request.urlopen(req, timeout=45) as res:
             raw = json.load(res)
         questions = [compact(q, reviewed) for q in raw if q.get("question") and q.get("solution")]
@@ -139,7 +147,7 @@ def main():
                 "officialCatalogUrl": "https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.pdf?__blob=publicationFile",
                 "technicalMirror": "https://github.com/leben-in-deutschland/leben-in-deutschland-scrapper",
                 "technicalMirrorLicense": "MIT",
-                "translationPolicy": "Reviewed Almanya Pusulası Turkish overrides take precedence only when the stored German source text matches exactly. Unreviewed upstream Turkish text is shown only after local quality checks; translations failing those checks are suppressed.",
+                "translationPolicy": "Reviewed Almanya Pusulası Turkish overrides take precedence only when the stored German source text matches. Unreviewed upstream Turkish text is shown only after local quality checks; translations failing those checks are suppressed.",
                 "translationQa": {
                     "reviewedQuestions": reviewed_count,
                     "rejectedQuestions": rejected_questions,
