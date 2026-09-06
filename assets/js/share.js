@@ -15,24 +15,52 @@
   const title=()=>{const h=document.querySelector('h1');return (h?h.textContent:document.title.split('|')[0]).trim();};
   const track=(channel,kind)=>{if(typeof window.gtag==='function')window.gtag('event',kind==='result'?'tool_result_share':'content_share',{share_channel:channel,page_path:location.pathname});};
   const popup=(url)=>window.open(url,'_blank','noopener,noreferrer,width=720,height=640');
+  const sharedUrl=(channel,kind)=>{const u=new URL(cleanUrl());u.searchParams.set('utm_source',channel==='native'?'share':channel);u.searchParams.set('utm_medium','social');u.searchParams.set('utm_campaign',kind==='result'?'tool_result_share':'content_share');return u.toString();};
+  const cleanText=(box)=>{const copy=box.cloneNode(true);copy.querySelectorAll('.ap-share').forEach(n=>n.remove());return (copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim();};
 
-  function textFor(kind,box){
-    if(kind==='result'&&box){
-      const copy=box.cloneNode(true);copy.querySelectorAll('.ap-share').forEach(n=>n.remove());
-      const raw=(copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim();
-      return (title()+' — '+raw.slice(0,420)+'\n'+cleanUrl()).trim();
+  function resultMessage(box){
+    const path=location.pathname;
+    const raw=cleanText(box);
+    if(path.includes('/blue-card-uygunluk-kontrolu-2026/')){
+      const state=(box.querySelector('h2')||{}).textContent||'Blue Card ön kontrol sonucu';
+      const salary=(box.querySelector('.salary-gap')||{}).textContent||'';
+      return 'Almanya EU Blue Card 2026 ön kontrolüm: '+state+'. '+salary.trim()+' Maaş ve temel şartları ücretsiz Türkçe araçla sen de kontrol et:';
     }
-    return title()+'\n'+cleanUrl();
+    if(path.includes('/chancenkarte-puan-hesaplayici-2026/')){
+      const route=(box.querySelector('h2')||{}).textContent||'Fırsat Kartı ön kontrolü';
+      const score=(box.querySelector('.score')||{}).textContent||'';
+      return 'Almanya Fırsat Kartı (Chancenkarte) 2026 ön kontrolüm: '+route+(score?' · '+score.trim():'')+'. Puanını ve başvuru blokajlarını ücretsiz Türkçe araçla sen de kontrol et:';
+    }
+    if(path.includes('/brutto-netto-hesaplayici-2026/')){
+      const metric=box.querySelector('.metric strong');
+      return 'Almanya 2026 net maaş tahminim'+(metric?': '+metric.textContent.trim():'')+'. Brüt maaştan net maaşını ve kira sonrası bütçeni ücretsiz Türkçe araçla hesapla:';
+    }
+    if(path.includes('/almanya-emeklilik-hesaplayici-2026/')){
+      const metric=box.querySelector('.metric');
+      return '2026 Almanya emekli maaşı tahminim'+(metric?': '+metric.textContent.trim():'')+'. Emeklilik puanlarınla yaklaşık aylık brüt maaşını ücretsiz Türkçe araçla hesapla:';
+    }
+    if(path.includes('/kinderzuschlag-uygunluk-kontrolu-2026/')){
+      const state=(box.querySelector('h2,h3,strong')||{}).textContent||'ön kontrol sonucum';
+      return 'Kinderzuschlag 2026 Türkçe ön kontrol sonucum: '+state.trim()+'. Temel şartları ücretsiz araçla sen de kontrol et:';
+    }
+    return title()+' sonucum: '+raw.slice(0,240)+(raw.length>240?'…':'')+' Sonucunu ücretsiz Türkçe araçla sen de kontrol et:';
+  }
+
+  function textFor(kind,box,channel){
+    const url=sharedUrl(channel,kind);
+    if(kind==='result'&&box)return resultMessage(box)+'\n'+url;
+    const meta=document.querySelector('meta[name="description"]');
+    const desc=meta&&meta.content?meta.content.trim():'';
+    return title()+(desc?' — '+desc.slice(0,180):'')+'\n'+url;
   }
 
   function bar(kind,box){
     const el=document.createElement('div');el.className='ap-share ap-share-'+kind;el.setAttribute('data-ap-share','1');
     const label=kind==='result'?'Sonucunu paylaş':'Paylaş';
     el.innerHTML='<span class="ap-share-label">'+label+'</span><button type="button" class="ap-share-btn ap-wa" aria-label="WhatsApp ile paylaş">'+ICONS.whatsapp+'<span>WhatsApp</span></button><button type="button" class="ap-share-btn ap-tg" aria-label="Telegram ile paylaş">'+ICONS.telegram+'<span>Telegram</span></button><button type="button" class="ap-share-btn ap-native" aria-label="Diğer uygulamalarla paylaş">'+ICONS.share+'<span>Paylaş</span></button>';
-    const get=()=>textFor(kind,box);
-    el.querySelector('.ap-wa').onclick=()=>{track('whatsapp',kind);popup('https://wa.me/?text='+encodeURIComponent(get()));};
-    el.querySelector('.ap-tg').onclick=()=>{track('telegram',kind);popup('https://t.me/share/url?url='+encodeURIComponent(cleanUrl())+'&text='+encodeURIComponent(get().replace(cleanUrl(),'')));};
-    el.querySelector('.ap-native').onclick=async()=>{track('native',kind);const text=get();if(navigator.share){try{await navigator.share({title:title(),text:text.replace(cleanUrl(),''),url:cleanUrl()});return;}catch(e){if(e&&e.name==='AbortError')return;}}try{await navigator.clipboard.writeText(text);const span=el.querySelector('.ap-native span');const old=span.textContent;span.textContent='Kopyalandı';setTimeout(()=>span.textContent=old,1600);}catch(_){popup('mailto:?subject='+encodeURIComponent(title())+'&body='+encodeURIComponent(text));}};
+    el.querySelector('.ap-wa').onclick=()=>{track('whatsapp',kind);popup('https://wa.me/?text='+encodeURIComponent(textFor(kind,box,'whatsapp')));};
+    el.querySelector('.ap-tg').onclick=()=>{track('telegram',kind);const url=sharedUrl('telegram',kind);const txt=textFor(kind,box,'telegram').replace(url,'').trim();popup('https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(txt));};
+    el.querySelector('.ap-native').onclick=async()=>{track('native',kind);const url=sharedUrl('native',kind);const text=textFor(kind,box,'native').replace(url,'').trim();if(navigator.share){try{await navigator.share({title:title(),text:text,url:url});return;}catch(e){if(e&&e.name==='AbortError')return;}}try{await navigator.clipboard.writeText(text+'\n'+url);const span=el.querySelector('.ap-native span');const old=span.textContent;span.textContent='Kopyalandı';setTimeout(()=>span.textContent=old,1600);}catch(_){popup('mailto:?subject='+encodeURIComponent(title())+'&body='+encodeURIComponent(text+'\n'+url));}};
     return el;
   }
 
