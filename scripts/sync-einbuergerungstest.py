@@ -31,6 +31,10 @@ def comparable(value):
     return clean_text(value).replace("…", "...").casefold()
 
 
+def comparable_answers(values):
+    return tuple(comparable(v) for v in (values or []))
+
+
 def looks_broken_turkish(value, german_source=""):
     text = clean_text(value)
     if not text:
@@ -79,17 +83,32 @@ def load_reviewed():
     return merged
 
 
-def question_key(q):
-    return str(q.get("num", "")).strip().upper()
+def find_reviewed(reviewed, german_question, german_answers):
+    target_q = comparable(german_question)
+    target_a = comparable_answers(german_answers)
+    candidates = [
+        value for value in reviewed.values()
+        if isinstance(value, dict) and comparable(value.get("germanQuestion", "")) == target_q
+    ]
+    if not candidates:
+        return {}
 
+    # Strongest match: same German question AND the same four German answer choices.
+    for candidate in candidates:
+        stored = candidate.get("germanAnswers")
+        if isinstance(stored, list) and len(stored) == 4 and comparable_answers(stored) == target_a:
+            return candidate
 
-def find_reviewed(reviewed, key, german_question):
-    # Never trust numeric position alone: technical mirrors may reorder questions.
-    # A reviewed translation is accepted only when its stored German source text matches.
-    target = comparable(german_question)
-    for value in reviewed.values():
-        if isinstance(value, dict) and comparable(value.get("germanQuestion", "")) == target:
-            return value
+    # A small number of politically dynamic BAMF questions deliberately override a stale
+    # technical mirror. They are explicitly marked and may therefore carry newer answers.
+    official_overrides = [c for c in candidates if c.get("officialOverride") is True]
+    if len(official_overrides) == 1:
+        return official_overrides[0]
+
+    # Old reviewed records did not always store answer fingerprints. Use them only when the
+    # German question text is unique; never guess when duplicate question stems exist.
+    if len(candidates) == 1:
+        return candidates[0]
     return {}
 
 
@@ -97,8 +116,7 @@ def compact(q, reviewed):
     tr = (q.get("translation") or {}).get("tr") or {}
     question = clean_text(q.get("question", ""))
     answers = [clean_text(q.get(k, "")) for k in ("a", "b", "c", "d")]
-    key = question_key(q)
-    override = find_reviewed(reviewed, key, question)
+    override = find_reviewed(reviewed, question, answers)
 
     auto_question = safe_tr(tr.get("question", ""), question)
     auto_answers = [safe_tr(tr.get(k, ""), answers[i]) for i, k in enumerate(("a", "b", "c", "d"))]
@@ -110,15 +128,28 @@ def compact(q, reviewed):
     reviewed_explanation = clean_text(override.get("explanation", ""))
     is_reviewed = bool(reviewed_question and len(reviewed_answers) == 4 and all(reviewed_answers))
 
+    override_de_answers = override.get("germanAnswers") if isinstance(override.get("germanAnswers"), list) else []
+    override_de_answers = [clean_text(v) for v in override_de_answers]
+    override_solution = clean_text(override.get("solution", "")).lower()
+    has_official_override = bool(
+        override.get("officialOverride") is True
+        and len(override_de_answers) == 4
+        and all(override_de_answers)
+        and override_solution in ("a", "b", "c", "d")
+    )
+    final_answers = override_de_answers if has_official_override else answers
+    final_solution = override_solution if has_official_override else str(q.get("solution", "")).strip().lower()
+
     return {
         "num": str(q.get("num", "")).strip(),
         "id": q.get("id", ""),
         "question": question,
-        "answers": answers,
-        "solution": str(q.get("solution", "")).strip().lower(),
+        "answers": final_answers,
+        "solution": final_solution,
         "image": q.get("image", ""),
         "context": clean_text(q.get("context", "")),
         "category": q.get("category") or "General",
+        "officialOverride": has_official_override,
         "tr": {
             "question": reviewed_question if is_reviewed else auto_question,
             "answers": reviewed_answers if is_reviewed else auto_answers,
@@ -133,13 +164,14 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     reviewed = load_reviewed()
     try:
-        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/5.0"})
+        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/6.0"})
         with urllib.request.urlopen(req, timeout=45) as res:
             raw = json.load(res)
         questions = [compact(q, reviewed) for q in raw if q.get("question") and q.get("solution")]
         rejected_questions = sum(1 for q in questions if not q["tr"]["question"])
         rejected_answers = sum(1 for q in questions for a in q["tr"]["answers"] if not a)
         reviewed_count = sum(1 for q in questions if q["tr"].get("reviewed"))
+        official_overrides = sum(1 for q in questions if q.get("officialOverride"))
         payload = {
             "meta": {
                 "officialCatalog": "BAMF Gesamtfragenkatalog zum Test Leben in Deutschland und Einbürgerungstest",
@@ -147,9 +179,10 @@ def main():
                 "officialCatalogUrl": "https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.pdf?__blob=publicationFile",
                 "technicalMirror": "https://github.com/leben-in-deutschland/leben-in-deutschland-scrapper",
                 "technicalMirrorLicense": "MIT",
-                "translationPolicy": "Reviewed Almanya Pusulası Turkish overrides take precedence only when the stored German source text matches. Unreviewed upstream Turkish text is shown only after local quality checks; translations failing those checks are suppressed.",
+                "translationPolicy": "Reviewed Almanya Pusulası Turkish overrides are matched against German source text and, where available, the German answer fingerprint. Explicit BAMF-current overrides can replace politically stale mirror answers. Unreviewed Turkish text is shown only after local quality checks.",
                 "translationQa": {
                     "reviewedQuestions": reviewed_count,
+                    "officialGermanOverrides": official_overrides,
                     "rejectedQuestions": rejected_questions,
                     "rejectedAnswers": rejected_answers,
                 },
@@ -161,7 +194,7 @@ def main():
         general = sum(1 for q in questions if q["num"].isdigit() and int(q["num"]) <= 300)
         states = len(questions) - general
         print(f"Synced {len(questions)} questions: {general} general, {states} state entries")
-        print(f"Reviewed Turkish: {reviewed_count}; suppressed {rejected_questions} question translations and {rejected_answers} answer translations")
+        print(f"Reviewed Turkish: {reviewed_count}; official German overrides: {official_overrides}; suppressed {rejected_questions} question translations and {rejected_answers} answer translations")
     except Exception as exc:
         print(f"WARNING: citizenship test sync failed: {exc}")
         if OUT.exists():
