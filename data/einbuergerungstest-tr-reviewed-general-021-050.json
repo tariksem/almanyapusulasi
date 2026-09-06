@@ -1,0 +1,182 @@
+{
+  "official-21": {
+    "germanQuestion": "Welches ist das Wappen der Bundesrepublik Deutschland?",
+    "question": "Aşağıdaki görsellerden hangisi Federal Almanya Cumhuriyeti'nin devlet armasıdır?",
+    "answers": ["Görsel 1", "Görsel 2", "Görsel 3", "Görsel 4"],
+    "explanation": "Federal Almanya Cumhuriyeti'nin devlet armasında siyah Federal Kartal (Bundesadler) bulunur. Doğru cevap, bu kartalı gösteren görseldir."
+  },
+  "official-22": {
+    "germanQuestion": "Was für eine Staatsform hat Deutschland?",
+    "question": "Almanya'nın devlet şekli nedir?",
+    "answers": ["Monarşi", "Diktatörlük", "Cumhuriyet", "Prenslik"],
+    "explanation": "Almanya bir cumhuriyettir. Devlet başkanı kalıtsal bir hükümdar değil, belirli bir süre için seçilen Federal Cumhurbaşkanıdır."
+  },
+  "official-23": {
+    "germanQuestion": "In Deutschland sind die meisten Erwerbstätigen …",
+    "question": "Almanya'da çalışanların çoğu hangi şekilde çalışır?",
+    "answers": ["Küçük aile işletmelerinde", "Bir eyalet için gönüllü olarak", "Kendi şirketiyle serbest çalışan olarak", "Bir şirket veya kamu kurumunda çalışan olarak"],
+    "explanation": "Almanya'da çalışanların büyük bölümü bir işverene bağlı olarak, yani bir şirket veya kamu kurumunda ücretli çalışan statüsündedir."
+  },
+  "official-24": {
+    "germanQuestion": "Wie viele Bundesländer hat die Bundesrepublik Deutschland?",
+    "question": "Federal Almanya Cumhuriyeti kaç eyaletten (Bundesland) oluşur?",
+    "answers": ["14", "15", "16", "17"],
+    "explanation": "Federal Almanya Cumhuriyeti 16 eyaletten oluşur."
+  },
+  "official-25": {
+    "germanQuestion": "Was ist kein Bundesland der Bundesrepublik Deutschland?",
+    "question": "Aşağıdakilerden hangisi Federal Almanya Cumhuriyeti'nin bir eyaleti değildir?",
+    "answers": ["Elsass-Lothringen", "Nordrhein-Westfalen", "Mecklenburg-Vorpommern", "Sachsen-Anhalt"],
+    "explanation": "Elsass-Lothringen Almanya'nın bir eyaleti değildir. Nordrhein-Westfalen, Mecklenburg-Vorpommern ve Sachsen-Anhalt ise Almanya'nın 16 eyaleti arasındadır."
+  },
+  "official-26": {
+    "germanQuestion": "Deutschland ist …",
+    "question": "Almanya nasıl bir devlettir?",
+    "answers": ["Komünist bir cumhuriyet", "Demokratik ve sosyal bir federal devlet", "Kapitalist ve sosyal bir monarşi", "Sosyal ve sosyalist bir federal devlet"],
+    "explanation": "Grundgesetz'e göre Federal Almanya Cumhuriyeti demokratik ve sosyal bir federal devlettir."
+  },
+  "official-27": {
+    "germanQuestion": "Deutschland ist …",
+    "question": "Almanya'nın devlet yapısı aşağıdakilerden hangisidir?",
+    "answers": ["Sosyalist devlet", "Federal devlet (Bundesstaat)", "Diktatörlük", "Monarşi"],
+    "explanation": "Almanya bir Bundesstaat, yani federal devlettir. Yetkiler federal düzey ile 16 eyalet arasında paylaşılır."
+  },
+  "official-28": {
+    "germanQuestion": "Wer wählt in Deutschland die Abgeordneten zum Bundestag?",
+    "question": "Almanya'da Federal Meclis (Bundestag) milletvekillerini kim seçer?",
+    "answers": ["Ordu", "Ekonomi çevreleri", "Oy kullanma hakkına sahip halk", "Kamu yönetimi"],
+    "explanation": "Bundestag milletvekilleri genel seçimlerde oy kullanma hakkına sahip seçmenler tarafından seçilir."
+  },
+  "official-29": {
+    "germanQuestion": "Welches Tier ist das Wappentier der Bundesrepublik Deutschland?",
+    "question": "Federal Almanya Cumhuriyeti'nin armasındaki hayvan hangisidir?",
+    "answers": ["Aslan", "Kartal", "Ayı", "At"],
+    "explanation": "Almanya'nın devlet armasında Bundesadler, yani Federal Kartal bulunur."
+  },
+  "official-30": {
+    "germanQuestion": "Was ist kein Merkmal unserer Demokratie?",
+    "question": "Aşağıdakilerden hangisi demokratik düzenin bir özelliği değildir?",
+    "answers": ["Düzenli seçimler", "Basın sansürü", "Düşünce ve ifade özgürlüğü", "Farklı siyasi partiler"],
+    "explanation": "Demokraside düzenli seçimler, siyasi çoğulculuk ve ifade özgürlüğü esastır. Basın sansürü demokratik bir özellik değildir."
+  },
+  "official-31": {
+    "germanQuestion": "Die Zusammenarbeit von Parteien zur Bildung einer Regierung nennt man in Deutschland …",
+    "question": "Almanya'da partilerin hükümet kurmak için birlikte çalışmasına ne denir?",
+    "answers": ["Birlik (Einheit)", "Koalisyon (Koalition)", "Bakanlık (Ministerium)", "Parlamento grubu (Fraktion)"],
+    "explanation": "Birden fazla siyasi partinin birlikte hükümet kurmasına Koalition, yani koalisyon denir."
+  },
+  "official-32": {
+    "germanQuestion": "Was ist keine staatliche Gewalt in Deutschland?",
+    "question": "Aşağıdakilerden hangisi Almanya'da devlet erklerinden biri değildir?",
+    "answers": ["Yasama", "Yürütme/hükümet", "Basın", "Yargı"],
+    "explanation": "Kuvvetler ayrılığında devlet erkleri yasama, yürütme ve yargıdır. Basın devlet erki değildir; bağımsız medya demokratik kamuoyunun parçasıdır."
+  },
+  "official-33": {
+    "germanQuestion": "Welche Aussage ist richtig? In Deutschland …",
+    "question": "Aşağıdaki ifadelerden hangisi doğrudur? Almanya'da...",
+    "answers": ["Devlet ile dinî topluluklar birbirinden ayrıdır.", "Dinî topluluklar devleti oluşturur.", "Devlet dinî topluluklara bağlıdır.", "Devlet ile dinî topluluklar tek bir bütündür."],
+    "explanation": "Almanya'da devlet ile dinî topluluklar kurumsal olarak birbirinden ayrıdır. Devlet belirli bir dinî topluluğun yönetimi altında değildir."
+  },
+  "official-34": {
+    "germanQuestion": "Was ist Deutschland nicht?",
+    "question": "Almanya aşağıdakilerden hangisi değildir?",
+    "answers": ["Demokrasi", "Hukuk devleti", "Monarşi", "Sosyal devlet"],
+    "explanation": "Almanya demokratik, sosyal ve hukuk devleti niteliğinde bir cumhuriyettir; monarşi değildir."
+  },
+  "official-35": {
+    "germanQuestion": "Womit finanziert der deutsche Staat die Sozialversicherung?",
+    "question": "Alman devleti sosyal sigorta sistemini hangi kaynakla finanse eder?",
+    "answers": ["Kilise vergileri", "Sosyal sigorta primleri (Sozialabgaben)", "Bağışlar", "Dernek aidatları"],
+    "explanation": "Sosyal sigorta sistemi esas olarak çalışanlar ve işverenler tarafından ödenen sosyal sigorta primleriyle finanse edilir."
+  },
+  "official-36": {
+    "germanQuestion": "Welche Maßnahme schafft in Deutschland soziale Sicherheit?",
+    "question": "Aşağıdakilerden hangisi Almanya'da sosyal güvenlik sağlar?",
+    "answers": ["Sağlık sigortası", "Araç sigortası", "Bina sigortası", "Özel sorumluluk sigortası"],
+    "explanation": "Krankenversicherung, yani sağlık sigortası, Almanya'daki sosyal güvenlik sisteminin temel unsurlarından biridir."
+  },
+  "official-37": {
+    "germanQuestion": "Wie werden die Regierungschefs / Regierungschefinnen der meisten Bundesländer in Deutschland genannt?",
+    "question": "Almanya'daki eyaletlerin çoğunda hükümet başkanlarına ne ad verilir?",
+    "answers": ["Birinci Bakan", "Premier", "Senatör", "Eyalet Başbakanı (Ministerpräsident/Ministerpräsidentin)"],
+    "explanation": "Alman eyaletlerinin çoğunda eyalet hükümetinin başındaki kişi Ministerpräsident veya Ministerpräsidentin olarak adlandırılır."
+  },
+  "official-38": {
+    "germanQuestion": "Die Bundesrepublik Deutschland ist ein demokratischer und sozialer …",
+    "question": "Federal Almanya Cumhuriyeti demokratik ve sosyal bir ...dır.",
+    "answers": ["Devletler birliği", "Federal devlet (Bundesstaat)", "Konfederasyon", "Merkezî devlet"],
+    "explanation": "Grundgesetz Almanya'yı demokratik ve sosyal bir Bundesstaat, yani federal devlet olarak tanımlar."
+  },
+  "official-39": {
+    "germanQuestion": "Was hat jedes deutsche Bundesland?",
+    "question": "Almanya'daki her eyalet aşağıdakilerden hangisine sahiptir?",
+    "answers": ["Kendi dışişleri bakanına", "Kendi para birimine", "Kendi ordusuna", "Kendi eyalet hükümetine"],
+    "explanation": "Her Bundesland'ın kendi eyalet hükümeti vardır. Dış politika, para birimi ve ordu gibi alanlar federal düzeyde düzenlenir."
+  },
+  "official-40": {
+    "germanQuestion": "Mit welchen Worten beginnt die deutsche Nationalhymne?",
+    "question": "Alman millî marşı hangi sözlerle başlar?",
+    "answers": ["Völker, hört die Signale …", "Einigkeit und Recht und Freiheit …", "Freude schöner Götterfunken …", "Deutschland einig Vaterland …"],
+    "explanation": "Alman millî marşı, Deutschlandlied'in üçüncü kıtasıdır ve 'Einigkeit und Recht und Freiheit' sözleriyle başlar."
+  },
+  "official-41": {
+    "germanQuestion": "Warum gibt es in einer Demokratie mehr als eine Partei?",
+    "question": "Bir demokraside neden birden fazla siyasi parti vardır?",
+    "answers": ["Vatandaşların farklı görüşlerinin temsil edilebilmesi için", "Siyasette rüşveti sınırlamak için", "Siyasi gösterileri önlemek için", "Ekonomik rekabeti artırmak için"],
+    "explanation": "Çok partili sistem, toplumdaki farklı siyasi görüşlerin temsil edilmesini ve seçmenlerin alternatifler arasında tercih yapabilmesini sağlar."
+  },
+  "official-42": {
+    "germanQuestion": "Wer beschließt in Deutschland ein neues Gesetz?",
+    "question": "Almanya'da yeni bir yasayı kim kabul eder?",
+    "answers": ["Hükümet", "Parlamento", "Mahkemeler", "Polis"],
+    "explanation": "Yasama görevi parlamentoya aittir. Federal düzeyde yasama sürecinde özellikle Bundestag ve kanunun türüne göre Bundesrat rol oynar."
+  },
+  "official-43": {
+    "germanQuestion": "Wann kann in Deutschland eine Partei verboten werden?",
+    "question": "Almanya'da bir siyasi parti hangi durumda yasaklanabilir?",
+    "answers": ["Seçim kampanyası çok pahalıysa", "Anayasal düzene karşı mücadele ediyorsa", "Devlet başkanını eleştiriyorsa", "Programında yeni bir siyasi yön öneriyorsa"],
+    "explanation": "Bir siyasi parti özgür demokratik temel düzene karşı mücadele ediyorsa anayasa karşıtı sayılabilir. Parti yasağına yalnız yetkili anayasa mahkemesi karar verebilir."
+  },
+  "official-44": {
+    "germanQuestion": "Wen kann man als Bürger / Bürgerin in Deutschland nicht direkt wählen?",
+    "question": "Almanya'da vatandaşlar aşağıdakilerden hangisini doğrudan seçemez?",
+    "answers": ["Avrupa Parlamentosu milletvekillerini", "Federal Cumhurbaşkanını", "Eyalet meclisi milletvekillerini", "Bundestag milletvekillerini"],
+    "explanation": "Federal Cumhurbaşkanı halk tarafından doğrudan seçilmez. Bundesversammlung adı verilen Federal Kongre tarafından seçilir."
+  },
+  "official-45": {
+    "germanQuestion": "Zu welcher Versicherung gehört die Pflegeversicherung?",
+    "question": "Bakım sigortası (Pflegeversicherung) hangi sigorta sistemine dahildir?",
+    "answers": ["Sosyal sigorta", "Kaza sigortası", "Ev eşyası sigortası", "Sorumluluk ve yangın sigortası"],
+    "explanation": "Pflegeversicherung, Almanya'nın yasal sosyal sigorta sisteminin temel dallarından biridir."
+  },
+  "official-46": {
+    "germanQuestion": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört dazu?",
+    "question": "Alman devletinin birçok görevi vardır. Aşağıdakilerden hangisi bu görevlerden biridir?",
+    "answers": ["Yol ve okul yapmak", "Gıda ve giysi satmak", "Herkese ücretsiz gazete dağıtmak", "Otomobil ve otobüs üretmek"],
+    "explanation": "Kamu altyapısı ve eğitim için gerekli tesislerin sağlanması devletin ve kamu kurumlarının görevleri arasındadır."
+  },
+  "official-47": {
+    "germanQuestion": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht dazu?",
+    "question": "Alman devletinin görevleri arasında aşağıdakilerden hangisi yoktur?",
+    "answers": ["Tüm vatandaşların tatil seyahatlerini ödemek", "Kindergeld ödemek", "Müzeleri desteklemek", "Sporcuları desteklemek"],
+    "explanation": "Devlet sosyal yardımlar ve kültür/spor desteği sağlayabilir; ancak tüm vatandaşların tatil seyahatlerini finanse etmek devletin görevi değildir."
+  },
+  "official-48": {
+    "germanQuestion": "Welches Organ gehört nicht zu den Verfassungsorganen Deutschlands?",
+    "question": "Aşağıdakilerden hangisi Almanya'nın anayasal devlet organlarından biri değildir?",
+    "answers": ["Bundesrat", "Federal Cumhurbaşkanı", "Vatandaşlar toplantısı (Bürgerversammlung)", "Federal Hükümet"],
+    "explanation": "Bundesrat, Federal Cumhurbaşkanı ve Federal Hükümet anayasal organlardır. Bürgerversammlung ise federal anayasal organ değildir."
+  },
+  "official-49": {
+    "germanQuestion": "Wer bestimmt in Deutschland die Schulpolitik?",
+    "question": "Almanya'da okul politikasını kim belirler?",
+    "answers": ["Öğretmenler", "Eyaletler (Bundesländer)", "Aile Bakanlığı", "Üniversiteler"],
+    "explanation": "Eğitim ve okul politikası Almanya'nın federal yapısı nedeniyle büyük ölçüde Bundesländer, yani eyaletlerin yetki alanındadır."
+  },
+  "official-50": {
+    "germanQuestion": "Die Wirtschaftsform in Deutschland nennt man …",
+    "question": "Almanya'daki ekonomik sistemin adı nedir?",
+    "answers": ["Serbest merkezî ekonomi", "Sosyal piyasa ekonomisi", "Yönlendirilen merkezî ekonomi", "Planlı ekonomi"],
+    "explanation": "Almanya'nın ekonomik düzeni soziale Marktwirtschaft, yani sosyal piyasa ekonomisi olarak adlandırılır. Piyasa rekabeti sosyal güvenlik ve düzenleyici kurallarla birleştirilir."
+  }
+}
