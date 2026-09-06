@@ -1,0 +1,177 @@
+{
+  "official-76": {
+    "germanQuestion": "Was bedeutet die Abkürzung CDU in Deutschland?",
+    "germanAnswers": ["Christliche Deutsche Union", "Club Deutscher Unternehmer", "Christlicher Deutscher Umweltschutz", "Christlich Demokratische Union"],
+    "question": "Almanya'da CDU kısaltmasının açılımı nedir?",
+    "answers": ["Christliche Deutsche Union", "Club Deutscher Unternehmer", "Christlicher Deutscher Umweltschutz", "Christlich Demokratische Union"],
+    "explanation": "CDU'nun açılımı Christlich Demokratische Union Deutschlands'tır; Türkçede yaklaşık olarak Almanya Hristiyan Demokrat Birliği denir."
+  },
+  "official-77": {
+    "germanQuestion": "Was ist die Bundeswehr?",
+    "germanAnswers": ["die deutsche Polizei", "ein deutscher Hafen", "eine deutsche Bürgerinitiative", "die deutsche Armee"],
+    "question": "Bundeswehr nedir?",
+    "answers": ["Alman polisi", "Bir Alman limanı", "Bir Alman vatandaş girişimi", "Alman Silahlı Kuvvetleri"],
+    "explanation": "Bundeswehr, Federal Almanya Cumhuriyeti'nin silahlı kuvvetleridir. Polis teşkilatı değildir."
+  },
+  "official-78": {
+    "germanQuestion": "Was bedeutet die Abkürzung SPD?",
+    "germanAnswers": ["Sozialistische Partei Deutschlands", "Sozialpolitische Partei Deutschlands", "Sozialdemokratische Partei Deutschlands", "Sozialgerechte Partei Deutschlands"],
+    "question": "SPD kısaltmasının açılımı nedir?",
+    "answers": ["Sozialistische Partei Deutschlands", "Sozialpolitische Partei Deutschlands", "Sozialdemokratische Partei Deutschlands", "Sozialgerechte Partei Deutschlands"],
+    "explanation": "SPD, Sozialdemokratische Partei Deutschlands'ın kısaltmasıdır; Türkçede Almanya Sosyal Demokrat Partisi olarak ifade edilir."
+  },
+  "official-79": {
+    "germanQuestion": "Was bedeutet die Abkürzung FDP in Deutschland?",
+    "germanAnswers": ["Friedliche Demonstrative Partei", "Freie Deutschland Partei", "Führende Demokratische Partei", "Freie Demokratische Partei"],
+    "question": "Almanya'da FDP kısaltmasının açılımı nedir?",
+    "answers": ["Friedliche Demonstrative Partei", "Freie Deutschland Partei", "Führende Demokratische Partei", "Freie Demokratische Partei"],
+    "explanation": "FDP, Freie Demokratische Partei'nin kısaltmasıdır; Türkçede Hür Demokrat Parti olarak anılır."
+  },
+  "official-80": {
+    "germanQuestion": "Welches Gericht in Deutschland ist zuständig für die Auslegung des Grundgesetzes?",
+    "germanAnswers": ["Oberlandesgericht", "Amtsgericht", "Bundesverfassungsgericht", "Verwaltungsgericht"],
+    "question": "Almanya'da Grundgesetz'in (Temel Yasa) yorumlanmasından hangi mahkeme sorumludur?",
+    "answers": ["Eyalet Yüksek Mahkemesi (Oberlandesgericht)", "Yerel Mahkeme (Amtsgericht)", "Federal Anayasa Mahkemesi (Bundesverfassungsgericht)", "İdare Mahkemesi (Verwaltungsgericht)"],
+    "explanation": "Grundgesetz'in anayasal yorumunda merkezi kurum Karlsruhe'deki Bundesverfassungsgericht, yani Federal Anayasa Mahkemesi'dir."
+  },
+  "official-81": {
+    "germanQuestion": "Wer wählt den Bundeskanzler / die Bundeskanzlerin in Deutschland?",
+    "germanAnswers": ["der Bundesrat", "die Bundesversammlung", "das Volk", "der Bundestag"],
+    "question": "Almanya'da Federal Şansölyeyi kim seçer?",
+    "answers": ["Bundesrat", "Bundesversammlung", "Halk doğrudan", "Bundestag"],
+    "explanation": "Federal Şansölye halk tarafından doğrudan seçilmez. Federal Cumhurbaşkanının önerisi üzerine Bundestag tarafından seçilir."
+  },
+  "official-82": {
+    "germanQuestion": "Wer leitet das deutsche Bundeskabinett?",
+    "germanAnswers": ["der Bundestagspräsident/die Bundestagspräsidentin", "der Bundespräsident/die Bundespräsidentin", "der Bundesratspräsident/die Bundesratspräsidentin", "der Bundeskanzler/die Bundeskanzlerin"],
+    "question": "Alman federal kabinesine kim başkanlık eder?",
+    "answers": ["Bundestag Başkanı", "Federal Cumhurbaşkanı", "Bundesrat Başkanı", "Federal Şansölye"],
+    "explanation": "Federal hükümetin başı Federal Şansölyedir. Şansölye kabinenin çalışmalarına ve hükümet politikasının genel yönüne liderlik eder."
+  },
+  "official-83": {
+    "germanQuestion": "Wer wählt den deutschen Bundeskanzler / die deutsche Bundeskanzlerin?",
+    "germanAnswers": ["das Volk", "die Bundesversammlung", "der Bundestag", "die Bundesregierung"],
+    "question": "Alman Federal Şansölyesini kim seçer?",
+    "answers": ["Halk", "Bundesversammlung", "Bundestag", "Federal hükümet"],
+    "explanation": "Federal Şansölyeyi Bundestag seçer. Bu, Almanya'nın parlamenter hükümet sisteminin temel özelliklerinden biridir."
+  },
+  "official-84": {
+    "germanQuestion": "Welche Hauptaufgabe hat der deutsche Bundespräsident / die deutsche Bundespräsidentin? Er / Sie …",
+    "germanAnswers": ["regiert das Land.", "entwirft die Gesetze.", "repräsentiert das Land.", "überwacht die Einhaltung der Gesetze."],
+    "question": "Federal Cumhurbaşkanının temel görevi nedir?",
+    "answers": ["Ülkeyi yönetmek", "Yasaları hazırlamak", "Ülkeyi temsil etmek", "Yasalara uyulup uyulmadığını denetlemek"],
+    "explanation": "Federal Cumhurbaşkanı Almanya'nın devlet başkanıdır ve ülkeyi özellikle temsilî görevlerde temsil eder. Günlük hükümet işlerini Federal Şansölye yürütür."
+  },
+  "official-85": {
+    "germanQuestion": "Wer bildet den deutschen Bundesrat?",
+    "germanAnswers": ["die Abgeordneten des Bundestages", "die Minister und Ministerinnen der Bundesregierung", "die Regierungsvertreter der Bundesländer", "die Parteimitglieder"],
+    "question": "Alman Bundesrat'ını kimler oluşturur?",
+    "answers": ["Bundestag milletvekilleri", "Federal hükümetin bakanları", "Eyalet hükümetlerinin temsilcileri", "Siyasi parti üyeleri"],
+    "explanation": "Bundesrat, 16 eyalet hükümetlerinin temsilcilerinden oluşur ve eyaletlerin federal yasama sürecine katılmasını sağlar."
+  },
+  "official-86": {
+    "germanQuestion": "Wer wählt in Deutschland den Bundespräsidenten / die Bundespräsidentin?",
+    "germanAnswers": ["die Bundesversammlung", "der Bundesrat", "das Bundesparlament", "das Bundesverfassungsgericht"],
+    "question": "Almanya'da Federal Cumhurbaşkanını kim seçer?",
+    "answers": ["Federal Kongre (Bundesversammlung)", "Bundesrat", "Federal parlamento", "Federal Anayasa Mahkemesi"],
+    "explanation": "Federal Cumhurbaşkanı Bundesversammlung tarafından seçilir. Bu özel kurul Bundestag üyeleri ile eyaletlerin gönderdiği aynı sayıda temsilciden oluşur."
+  },
+  "official-87": {
+    "germanQuestion": "Wer ist das Staatsoberhaupt der Bundesrepublik Deutschland?",
+    "germanAnswers": ["der Bundeskanzler / die Bundeskanzlerin", "der Bundespräsident / die Bundespräsidentin", "der Bundesratspräsident / die Bundesratspräsidentin", "der Bundestagspräsident / die Bundestagspräsidentin"],
+    "question": "Federal Almanya Cumhuriyeti'nin devlet başkanı kimdir?",
+    "answers": ["Federal Şansölye", "Federal Cumhurbaşkanı", "Bundesrat Başkanı", "Bundestag Başkanı"],
+    "explanation": "Almanya'nın devlet başkanı Bundespräsident, yani Federal Cumhurbaşkanıdır. Federal Şansölye ise hükümetin başıdır."
+  },
+  "official-88": {
+    "germanQuestion": "Die parlamentarische Opposition im Deutschen Bundestag …",
+    "germanAnswers": ["kontrolliert die Regierung.", "entscheidet, wer Bundesminister / Bundesministerin wird.", "bestimmt, wer im Bundesrat sitzt.", "schlägt die Regierungschefs / Regierungschefinnen der Länder vor."],
+    "question": "Bundestag'daki parlamenter muhalefetin temel görevlerinden biri nedir?",
+    "answers": ["Hükümeti denetlemek", "Federal bakanların kim olacağına karar vermek", "Bundesrat'ta kimlerin oturacağını belirlemek", "Eyalet hükümet başkanlarını önermek"],
+    "explanation": "Muhalefetin temel demokratik görevlerinden biri hükümeti eleştirmek ve denetlemektir. Bakanları veya Bundesrat üyelerini muhalefet belirlemez."
+  },
+  "official-89": {
+    "germanQuestion": "Wie nennt man in Deutschland die Vereinigung von Abgeordneten einer Partei im Parlament?",
+    "germanAnswers": ["Verband", "Ältestenrat", "Fraktion", "Opposition"],
+    "question": "Almanya'da bir siyasi partinin parlamentodaki milletvekili grubuna ne denir?",
+    "answers": ["Birlik (Verband)", "Yaşlılar Konseyi (Ältestenrat)", "Meclis grubu (Fraktion)", "Muhalefet (Opposition)"],
+    "explanation": "Bir partinin parlamentodaki milletvekillerinin oluşturduğu gruba Fraktion denir."
+  },
+  "official-90": {
+    "germanQuestion": "Die deutschen Bundesländer wirken an der Gesetzgebung des Bundes mit durch …",
+    "germanAnswers": ["den Bundesrat.", "die Bundesversammlung.", "den Bundestag.", "die Bundesregierung."],
+    "question": "Alman eyaletleri federal yasama sürecine hangi kurum üzerinden katılır?",
+    "answers": ["Bundesrat", "Bundesversammlung", "Bundestag", "Federal hükümet"],
+    "explanation": "Eyalet hükümetleri Bundesrat üzerinden federal yasama sürecine katılır. Bu, Almanya'nın federal yapısının temel unsurlarındandır."
+  },
+  "official-91": {
+    "germanQuestion": "In Deutschland kann ein Regierungswechsel in einem Bundesland Auswirkungen auf die Bundespolitik haben. Das Regieren wird …",
+    "germanAnswers": ["schwieriger, wenn sich dadurch die Mehrheit im Bundestag ändert.", "leichter, wenn dadurch neue Parteien in den Bundesrat kommen.", "schwieriger, wenn dadurch die Mehrheit im Bundesrat verändert wird.", "leichter, wenn es sich um ein reiches Bundesland handelt."],
+    "question": "Bir eyalette hükümet değişikliği federal siyaseti etkileyebilir. Federal hükümetin işi hangi durumda zorlaşabilir?",
+    "answers": ["Bu nedenle Bundestag çoğunluğu değişirse", "Bundesrat'a yeni partiler girerse daha kolaylaşır", "Bu nedenle Bundesrat'taki çoğunluk değişirse", "Değişiklik zengin bir eyalette olursa daha kolaylaşır"],
+    "explanation": "Eyalet hükümetleri Bundesrat'taki oyları belirlediği için bir eyalette hükümet değişikliği Bundesrat çoğunluğunu değiştirebilir ve federal yasaların kabulünü zorlaştırabilir."
+  },
+  "official-92": {
+    "germanQuestion": "Was bedeutet die Abkürzung CSU in Deutschland?",
+    "germanAnswers": ["Christlich Sichere Union", "Christlich Süddeutsche Union", "Christlich Sozialer Unternehmerverband", "Christlich Soziale Union"],
+    "question": "Almanya'da CSU kısaltmasının açılımı nedir?",
+    "answers": ["Christlich Sichere Union", "Christlich Süddeutsche Union", "Christlich Sozialer Unternehmerverband", "Christlich Soziale Union"],
+    "explanation": "CSU, Christlich-Soziale Union in Bayern'ın kısaltmasıdır. Parti ağırlıklı olarak Bayern eyaletinde faaliyet gösterir."
+  },
+  "official-93": {
+    "germanQuestion": "Je mehr „Zweitstimmen“ eine Partei bei einer Bundestagswahl bekommt, desto …",
+    "germanAnswers": ["weniger Erststimmen kann sie haben.", "mehr Direktkandidaten der Partei ziehen ins Parlament ein.", "größer ist das Risiko, eine Koalition bilden zu müssen.", "mehr Sitze erhält die Partei im Parlament."],
+    "question": "Bir parti Bundestag seçiminde ne kadar çok “ikinci oy” (Zweitstimme) alırsa genel olarak ne olur?",
+    "answers": ["O kadar az birinci oy alabilir", "O kadar çok doğrudan adayı parlamentoya girer", "Koalisyon kurma riski o kadar artar", "Parti parlamentoda o kadar fazla sandalye elde eder"],
+    "explanation": "Zweitstimme, partilerin Bundestag'daki sandalye dağılımı için belirleyici oydur. Bu nedenle daha yüksek Zweitstimme oranı genel olarak daha fazla sandalye anlamına gelir."
+  },
+  "official-94": {
+    "germanQuestion": "Ab welchem Alter darf man in Deutschland an der Wahl zum Deutschen Bundestag teilnehmen?",
+    "germanAnswers": ["16", "18", "21", "23"],
+    "question": "Almanya'da Bundestag seçimlerinde kaç yaşından itibaren oy kullanılabilir?",
+    "answers": ["16", "18", "21", "23"],
+    "explanation": "Bundestag seçimlerinde aktif oy kullanma yaşı 18'dir. Avrupa Parlamentosu veya bazı yerel seçimlerde farklı yaş sınırları bulunabilir."
+  },
+  "official-95": {
+    "germanQuestion": "Was gilt für die meisten Kinder in Deutschland?",
+    "germanAnswers": ["Wahlpflicht", "Schulpflicht", "Schweigepflicht", "Religionspflicht"],
+    "question": "Almanya'daki çocukların çoğu için aşağıdakilerden hangisi geçerlidir?",
+    "answers": ["Oy kullanma zorunluluğu", "Okula devam zorunluluğu (Schulpflicht)", "Susma yükümlülüğü", "Dinî yükümlülük"],
+    "explanation": "Almanya'da çocuklar belirli bir yaştan itibaren zorunlu eğitime tabidir. Buna Schulpflicht denir."
+  },
+  "official-96": {
+    "germanQuestion": "Wie kann jemand, der den Holocaust leugnet, bestraft werden?",
+    "germanAnswers": ["Kürzung sozialer Leistungen", "bis zu 100 Sozialstunden", "gar nicht, Holocaustleugnung ist erlaubt", "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe"],
+    "question": "Holokost'u inkâr eden bir kişi Almanya'da nasıl cezalandırılabilir?",
+    "answers": ["Sosyal yardımların azaltılmasıyla", "En fazla 100 saat kamu hizmetiyle", "Cezalandırılamaz; Holokost'u inkâr etmek serbesttir", "Beş yıla kadar hapis veya para cezasıyla"],
+    "explanation": "Resmî soru kataloğuna göre Holokost inkârı beş yıla kadar hapis veya para cezasıyla cezalandırılabilir. Almanya'da bu tür ifadeler belirli koşullarda ceza hukukunda halkı kin ve nefrete teşvik (Volksverhetzung) kapsamında değerlendirilir."
+  },
+  "official-97": {
+    "germanQuestion": "Was bezahlt man in Deutschland automatisch, wenn man fest angestellt ist?",
+    "germanAnswers": ["Sozialversicherung", "Sozialhilfe", "Kindergeld", "Wohngeld"],
+    "question": "Almanya'da düzenli bir iş sözleşmesiyle çalışan kişinin ücretinden otomatik olarak hangisi ödenir?",
+    "answers": ["Sosyal sigorta (Sozialversicherung)", "Sosyal yardım (Sozialhilfe)", "Çocuk parası (Kindergeld)", "Konut yardımı (Wohngeld)"],
+    "explanation": "Sosyal sigorta primleri ücretli çalışanlarda kural olarak maaş üzerinden otomatik olarak hesaplanıp ödenir. Sozialhilfe, Kindergeld ve Wohngeld ise bu şekilde otomatik maaş kesintisi değildir."
+  },
+  "official-98": {
+    "germanQuestion": "Wenn Abgeordnete im Deutschen Bundestag ihre Fraktion wechseln, …",
+    "germanAnswers": ["dürfen sie nicht mehr an den Sitzungen des Parlaments teilnehmen.", "kann die Regierung ihre Mehrheit verlieren.", "muss der Bundespräsident/die Bundespräsidentin zuvor sein/ihr Einverständnis geben.", "dürfen die Wähler/Wählerinnen dieser Abgeordneten noch einmal wählen."],
+    "question": "Bundestag milletvekilleri meclis grubunu (Fraktion) değiştirirse ne olabilir?",
+    "answers": ["Artık parlamento oturumlarına katılamazlar", "Hükümet parlamentodaki çoğunluğunu kaybedebilir", "Önce Federal Cumhurbaşkanının izin vermesi gerekir", "O milletvekillerinin seçmenleri yeniden oy kullanabilir"],
+    "explanation": "Meclis çoğunluğu sandalye sayılarına bağlıdır. Milletvekillerinin Fraktion değiştirmesi çoğunluk dengesini etkileyebilir ve hükümetin çoğunluğunu kaybetmesine yol açabilir."
+  },
+  "official-99": {
+    "germanQuestion": "Wer bezahlt in Deutschland die Sozialversicherungen?",
+    "germanAnswers": ["Arbeitgeber / Arbeitgeberinnen und Arbeitnehmer / Arbeitnehmerinnen", "nur Arbeitnehmer / Arbeitnehmerinnen", "alle Staatsangehörigen", "nur Arbeitgeber / Arbeitgeberinnen"],
+    "question": "Almanya'da sosyal sigorta primlerini kim öder?",
+    "answers": ["İşverenler ve çalışanlar", "Yalnız çalışanlar", "Tüm Alman vatandaşları", "Yalnız işverenler"],
+    "explanation": "Almanya'daki sosyal sigorta sisteminin temelinde primlerin işveren ve çalışan tarafından paylaşılması vardır; ayrıntılar sigorta koluna göre değişebilir."
+  },
+  "official-100": {
+    "germanQuestion": "Was gehört nicht zur gesetzlichen Sozialversicherung?",
+    "germanAnswers": ["die Lebensversicherung", "die gesetzliche Rentenversicherung", "die Arbeitslosenversicherung", "die Pflegeversicherung"],
+    "question": "Aşağıdakilerden hangisi yasal sosyal sigorta sisteminin bir parçası değildir?",
+    "answers": ["Hayat sigortası (Lebensversicherung)", "Yasal emeklilik sigortası", "İşsizlik sigortası", "Bakım sigortası (Pflegeversicherung)"],
+    "explanation": "Yasal emeklilik, işsizlik ve bakım sigortaları sosyal sigorta sisteminin parçalarıdır. Özel hayat sigortası (Lebensversicherung) yasal sosyal sigortanın bir kolu değildir."
+  }
+}
