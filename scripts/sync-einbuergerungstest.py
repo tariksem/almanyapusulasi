@@ -55,22 +55,49 @@ def find_reviewed(reviewed, german_question, german_answers):
     if not candidates:
         return {}
 
-    # Strongest match: exact German question plus exact four-answer fingerprint.
     for candidate in candidates:
         stored = candidate.get("germanAnswers")
         if isinstance(stored, list) and len(stored) == 4 and comparable_answers(stored) == target_a:
             return candidate
 
-    # Politically dynamic BAMF questions can deliberately override a stale technical mirror.
     official_overrides = [c for c in candidates if c.get("officialOverride") is True]
     if len(official_overrides) == 1:
         return official_overrides[0]
 
-    # Backward compatibility for older reviewed records: only allow a question-only match
-    # if there is exactly one candidate. Duplicate stems are never guessed.
     if len(candidates) == 1:
         return candidates[0]
     return {}
+
+
+def add_official_supplements(raw):
+    # The technical mirror currently contains 299 general questions and misses the
+    # current BAMF antisemitism item. Add it from the official 07.05.2025 catalog.
+    question = "Was ist ein Beispiel für antisemitisches Verhalten?"
+    if any(comparable(q.get("question", "")) == comparable(question) for q in raw):
+        return raw
+
+    used = {
+        int(str(q.get("num", ""))) for q in raw
+        if str(q.get("num", "")).isdigit() and 1 <= int(str(q.get("num"))) <= 300
+    }
+    missing = [n for n in range(1, 301) if n not in used]
+    num = str(missing[0] if missing else 300)
+    raw.append({
+        "num": num,
+        "id": "official-bamf-2025-antisemitism-example",
+        "question": question,
+        "a": "ein jüdisches Fest besuchen",
+        "b": "die israelische Regierung kritisieren",
+        "c": "den Holocaust leugnen",
+        "d": "gegen Juden Fußball spielen",
+        "solution": "c",
+        "image": "",
+        "context": "",
+        "category": "History & Geography",
+        "translation": None,
+    })
+    print(f"Added official BAMF supplement at internal question number {num}: antisemitism example")
+    return raw
 
 
 def compact(q, reviewed):
@@ -96,7 +123,6 @@ def compact(q, reviewed):
     final_answers = override_de_answers if has_official_override else answers
     final_solution = override_solution if has_official_override else str(q.get("solution", "")).strip().lower()
 
-    # Critical quality rule: unreviewed Turkish is blank, never machine-translated fallback.
     return {
         "num": str(q.get("num", "")).strip(),
         "id": q.get("id", ""),
@@ -131,13 +157,18 @@ def validate_questions(questions):
     if bad_states:
         raise ValueError(f"State question count validation failed: {bad_states}")
 
-    # Guard the exact question that exposed the production translation bug.
     ns = next((q for q in questions if comparable(q["question"]) == comparable("Was gab es während der Zeit des Nationalsozialismus in Deutschland?")), None)
     if not ns:
         raise ValueError("NS regression question not found")
     expected = "Almanya'da Nasyonal Sosyalizm döneminde aşağıdakilerden hangisi vardı?"
     if ns["tr"]["question"] != expected or not ns["tr"].get("reviewed"):
         raise ValueError("NS Turkish translation regression check failed")
+    if ns["tr"]["answers"] != ["Kişiliğini özgürce geliştirme hakkı", "İnsan onurunun korunması", "Siyasi partilerin yasaklanması", "Basın özgürlüğü"]:
+        raise ValueError("NS Turkish answer-order regression check failed")
+
+    anti = next((q for q in questions if comparable(q["question"]) == comparable("Was ist ein Beispiel für antisemitisches Verhalten?")), None)
+    if not anti or anti["solution"] != "c" or not anti["tr"].get("reviewed"):
+        raise ValueError("Current BAMF antisemitism question regression check failed")
 
     return len(general), len(states), per_state
 
@@ -146,9 +177,10 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     reviewed = load_reviewed()
     try:
-        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/7.0"})
+        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/8.0"})
         with urllib.request.urlopen(req, timeout=45) as res:
             raw = json.load(res)
+        raw = add_official_supplements(raw)
         questions = [compact(q, reviewed) for q in raw if q.get("question") and q.get("solution")]
         general, states, per_state = validate_questions(questions)
         reviewed_count = sum(1 for q in questions if q["tr"].get("reviewed"))
@@ -161,12 +193,12 @@ def main():
                 "officialCatalogUrl": "https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.pdf?__blob=publicationFile",
                 "technicalMirror": "https://github.com/leben-in-deutschland/leben-in-deutschland-scrapper",
                 "technicalMirrorLicense": "MIT",
-                "translationPolicy": "Strict reviewed-only Turkish. No upstream AI-generated Turkish text is published. Reviewed translations are matched against the German source question and, where available, the four-answer fingerprint. Unreviewed items remain German-only until editor review is complete.",
+                "translationPolicy": "Strict reviewed-only Turkish. No upstream AI-generated Turkish text is published. Reviewed translations are matched against German source text and answer order. Unreviewed items remain German-only until editor review is complete.",
                 "translationQa": {
                     "reviewedQuestions": reviewed_count,
                     "unreviewedQuestions": unreviewed_count,
                     "officialGermanOverrides": official_overrides,
-                    "regressionChecks": ["NS question Turkish wording"],
+                    "regressionChecks": ["NS Turkish wording", "NS answer order", "current BAMF antisemitism item"],
                 },
                 "datasetQa": {
                     "generalQuestions": general,
@@ -177,17 +209,16 @@ def main():
             },
             "questions": questions,
         }
-        # Write only after every validation passes, so a bad sync cannot replace a good dataset.
         OUT.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         print(f"Synced {len(questions)} questions: {general} general, {states} state entries")
         print(f"Reviewed Turkish: {reviewed_count}; unreviewed hidden: {unreviewed_count}; official German overrides: {official_overrides}")
-        print("Regression QA passed: NS Turkish translation is reviewed and exact")
+        print("Regression QA passed: NS wording/order and current BAMF antisemitism item")
     except Exception as exc:
         print(f"WARNING: citizenship test sync failed: {exc}")
         if OUT.exists():
             print("Keeping existing local dataset.")
         else:
-            print("No local dataset created. Client fallback remains German-only by policy and should not expose upstream Turkish translations.")
+            print("No local dataset created. Client fallback remains German-only by policy.")
 
 
 if __name__ == "__main__":
