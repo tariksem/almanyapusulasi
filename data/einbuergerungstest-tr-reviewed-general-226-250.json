@@ -1,0 +1,177 @@
+{
+  "official-226": {
+    "germanQuestion": "Welche ist die Flagge der Europäischen Union?",
+    "germanAnswers": ["1", "2", "3", "4"],
+    "question": "Aşağıdaki görsellerden hangisi Avrupa Birliği bayrağıdır?",
+    "answers": ["Görsel 1", "Görsel 2", "Görsel 3", "Görsel 4"],
+    "explanation": "Avrupa Birliği bayrağı mavi zemin üzerinde daire biçiminde yerleştirilmiş 12 altın yıldızdan oluşur. Yıldız sayısı üye ülke sayısını göstermez; 12 sayısı birlik, bütünlük ve uyum fikrini simgeler. Sınav ipucu: AB bayrağı = mavi zemin + 12 altın yıldız."
+  },
+  "official-227": {
+    "germanQuestion": "Welches Land ist ein Nachbarland von Deutschland?",
+    "germanAnswers": ["Finnland", "Dänemark", "Norwegen", "Schweden"],
+    "question": "Aşağıdaki ülkelerden hangisi Almanya'nın komşusudur?",
+    "answers": ["Finlandiya", "Danimarka", "Norveç", "İsveç"],
+    "explanation": "Danimarka, Almanya'nın kuzeyindeki tek kara komşusudur. Almanya'nın toplam dokuz kara komşusu vardır. Kuzeyi hatırlamak için: Almanya'nın kuzey sınırında Danimarka bulunur; diğer İskandinav ülkeleriyle doğrudan kara sınırı yoktur."
+  },
+  "official-228": {
+    "germanQuestion": "Wie wird der Beitritt der DDR zur Bundesrepublik Deutschland im Jahr 1990 allgemein genannt?",
+    "germanAnswers": ["NATO-Osterweiterung", "EU-Osterweiterung", "Deutsche Wiedervereinigung", "Europäische Gemeinschaft"],
+    "question": "DDR'nin 1990'da Federal Almanya Cumhuriyeti'ne katılması genel olarak nasıl adlandırılır?",
+    "answers": ["NATO'nun doğuya genişlemesi", "AB'nin doğuya genişlemesi", "Almanya'nın yeniden birleşmesi", "Avrupa Topluluğu"],
+    "explanation": "1990'da DDR'nin sona erip Federal Almanya Cumhuriyeti'ne katılması Deutsche Wiedervereinigung, yani Almanya'nın yeniden birleşmesi olarak adlandırılır. Bu süreç 3 Ekim 1990'da tamamlandı ve bu tarih bugün Alman Birliği Günü'dür. Sınav ipucu: Wiedervereinigung = 3 Ekim 1990."
+  },
+  "official-229": {
+    "germanQuestion": "Welches Land ist ein Nachbarland von Deutschland?",
+    "germanAnswers": ["Spanien", "Bulgarien", "Norwegen", "Luxemburg"],
+    "question": "Aşağıdaki ülkelerden hangisi Almanya'nın komşusudur?",
+    "answers": ["İspanya", "Bulgaristan", "Norveç", "Lüksemburg"],
+    "explanation": "Lüksemburg Almanya'nın batı komşularından biridir. Almanya'nın batısında Hollanda, Belçika, Lüksemburg ve Fransa bulunur. Bu dört ülkeyi birlikte öğrenmek, komşu ülke sorularını kolaylaştırır."
+  },
+  "official-230": {
+    "germanQuestion": "Das Europäische Parlament wird regelmäßig gewählt, nämlich alle …",
+    "germanAnswers": ["5 Jahre.", "6 Jahre.", "7 Jahre.", "8 Jahre."],
+    "question": "Avrupa Parlamentosu kaç yılda bir seçilir?",
+    "answers": ["5 yılda bir", "6 yılda bir", "7 yılda bir", "8 yılda bir"],
+    "explanation": "Avrupa Parlamentosu seçimleri beş yılda bir yapılır. AB vatandaşları kendi ülkelerinde Avrupa Parlamentosu üyelerini doğrudan seçer. Sınav ipucu: Europawahl = 5 yılda bir."
+  },
+  "official-231": {
+    "germanQuestion": "Was bedeutet der Begriff „europäische Integration“?",
+    "germanAnswers": ["Damit sind amerikanische Einwanderer in Europa gemeint.", "Der Begriff meint den Einwanderungsstopp nach Europa.", "Damit sind europäische Auswanderer in den USA gemeint.", "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU."],
+    "question": "'Avrupa bütünleşmesi' kavramı ne anlama gelir?",
+    "answers": ["Amerikalı göçmenlerin Avrupa'ya gelmesi", "Avrupa'ya göçün durdurulması", "Avrupalıların ABD'ye göç etmesi", "Avrupa devletlerinin Avrupa Birliği çatısı altında birleşmesi ve iş birliğini derinleştirmesi"],
+    "explanation": "Europäische Integration, Avrupa devletlerinin savaş sonrası dönemde ekonomi, hukuk ve siyasette giderek daha yakın iş birliği kurması sürecidir. Bu süreç Avrupa Kömür ve Çelik Topluluğu, Avrupa Ekonomik Topluluğu ve sonunda Avrupa Birliği'ne uzanmıştır. Ana fikir, ülkeler arasında kalıcı iş birliği ve barış oluşturmaktır."
+  },
+  "official-232": {
+    "germanQuestion": "Wer wird bei der Europawahl gewählt?",
+    "germanAnswers": ["die Europäische Kommission", "die Länder, die in die EU eintreten dürfen", "die Abgeordneten des Europäischen Parlaments", "die europäische Verfassung"],
+    "question": "Avrupa Parlamentosu seçimlerinde kim seçilir?",
+    "answers": ["Avrupa Komisyonu", "AB'ye girecek ülkeler", "Avrupa Parlamentosu milletvekilleri", "Avrupa anayasası"],
+    "explanation": "Europawahl'da vatandaşlar Avrupa Parlamentosu'nda kendilerini temsil edecek milletvekillerini seçer. Avrupa Komisyonu doğrudan halk tarafından bu seçimle seçilmez. Sınav ipucu: Europawahl = Avrupa Parlamentosu üyeleri."
+  },
+  "official-233": {
+    "germanQuestion": "Welches Land ist ein Nachbarland von Deutschland?",
+    "germanAnswers": ["Tschechien", "Bulgarien", "Griechenland", "Portugal"],
+    "question": "Aşağıdaki ülkelerden hangisi Almanya'nın komşusudur?",
+    "answers": ["Çekya", "Bulgaristan", "Yunanistan", "Portekiz"],
+    "explanation": "Çekya Almanya'nın doğu komşularından biridir. Almanya'nın doğusunda Polonya ve Çekya bulunur. Bu iki ülkeyi birlikte öğrenmek, komşu ülke sorularını kolaylaştırır."
+  },
+  "official-234": {
+    "germanQuestion": "Wo ist ein Sitz des Europäischen Parlaments?",
+    "germanAnswers": ["London", "Paris", "Berlin", "Straßburg"],
+    "question": "Avrupa Parlamentosu'nun çalışma merkezlerinden biri nerededir?",
+    "answers": ["Londra", "Paris", "Berlin", "Strasbourg"],
+    "explanation": "Avrupa Parlamentosu'nun resmî genel kurul merkezi Strasbourg'dur. Parlamentonun çalışmalarının önemli bir bölümü Brüksel'de, bazı idari birimleri ise Lüksemburg'da yürütülür. Sınav ipucu: Parlamento = Strasbourg, Brüksel, Lüksemburg."
+  },
+  "official-235": {
+    "germanQuestion": "Der französische Staatspräsident François Mitterrand und der deutsche Bundeskanzler Helmut Kohl gedenken in Verdun gemeinsam der Toten beider Weltkriege. Welches Ziel der Europäischen Union wird bei diesem Treffen deutlich?",
+    "germanAnswers": ["Freundschaft zwischen England und Deutschland", "Reisefreiheit in alle Länder der EU", "Frieden und Sicherheit in den Ländern der EU", "einheitliche Feiertage in den Ländern der EU"],
+    "question": "François Mitterrand ile Helmut Kohl'un Verdun'da savaş kurbanlarını birlikte anması, Avrupa Birliği'nin hangi amacını simgeler?",
+    "answers": ["İngiltere ile Almanya arasındaki dostluğu", "Tüm AB ülkelerine seyahat özgürlüğünü", "AB ülkelerinde barış ve güvenliği", "AB ülkelerinde ortak resmî tatilleri"],
+    "explanation": "Verdun, Birinci Dünya Savaşı'nın en kanlı cephelerinden biriydi. Fransa ve Almanya geçmişte savaşmış iki ülkeyken, savaş sonrası dönemde yakın iş birliği kurdu. Mitterrand ve Kohl'un birlikte anma töreni, Avrupa bütünleşmesinin temel amacını gösterir: savaşın tekrarını önlemek, barış ve güvenliği kalıcı hâle getirmek."
+  },
+  "official-236": {
+    "germanQuestion": "Wie viele Mitgliedstaaten hat die EU heute?",
+    "germanAnswers": ["21", "23", "25", "27"],
+    "question": "Avrupa Birliği'nin bugün kaç üye devleti vardır?",
+    "answers": ["21", "23", "25", "27"],
+    "explanation": "Avrupa Birliği 27 üye devletten oluşur. Birleşik Krallık 2020'de AB'den ayrıldığı için sayı 28'den 27'ye düştü. Bu tür güncel sayısal sorularda her zaman resmî güncel soru kataloğundaki cevabı esas almak gerekir. Sınav ipucu: AB = 27 üye ülke."
+  },
+  "official-237": {
+    "germanQuestion": "2007 wurde das 50-jährige Jubiläum der „Römischen Verträge“ gefeiert. Was war der Inhalt der Verträge?",
+    "germanAnswers": ["Beitritt Deutschlands zur NATO", "Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)", "Verpflichtung Deutschlands zu Reparationsleistungen", "Festlegung der Oder-Neiße-Linie als Ostgrenze"],
+    "question": "2007'de 50. yılı kutlanan Roma Antlaşmaları'nın temel sonucu neydi?",
+    "answers": ["Almanya'nın NATO'ya katılması", "Avrupa Ekonomik Topluluğu'nun (EWG) kurulması", "Almanya'nın savaş tazminatı ödemeyi kabul etmesi", "Oder-Neisse hattının doğu sınırı olarak belirlenmesi"],
+    "explanation": "Roma Antlaşmaları 1957'de imzalandı ve Avrupa Ekonomik Topluluğu'nun kurulmasının temelini attı. Amaç, ortak bir pazar oluşturarak Avrupa ülkeleri arasındaki ekonomik iş birliğini derinleştirmekti. Bu yapı daha sonra Avrupa Birliği'ne dönüşen bütünleşme sürecinin önemli bir aşamasıdır. Sınav ipucu: 1957 Roma Antlaşmaları = EWG."
+  },
+  "official-238": {
+    "germanQuestion": "An welchen Orten arbeitet das Europäische Parlament?",
+    "germanAnswers": ["Paris, London und Den Haag", "Straßburg, Luxemburg und Brüssel", "Rom, Bern und Wien", "Bonn, Zürich und Mailand"],
+    "question": "Avrupa Parlamentosu hangi şehirlerde çalışır?",
+    "answers": ["Paris, Londra ve Lahey", "Strasbourg, Lüksemburg ve Brüksel", "Roma, Bern ve Viyana", "Bonn, Zürih ve Milano"],
+    "explanation": "Avrupa Parlamentosu'nun çalışmaları üç şehirde yürütülür: Strasbourg'da genel kurul oturumları, Brüksel'de komite ve birçok parlamento çalışması, Lüksemburg'da ise bazı idari hizmetler bulunur. Sınav ipucu: Strasbourg + Brüksel + Lüksemburg."
+  },
+  "official-239": {
+    "germanQuestion": "Durch welche Verträge schloss sich die Bundesrepublik Deutschland mit anderen Staaten zur Europäischen Wirtschaftsgemeinschaft zusammen?",
+    "germanAnswers": ["durch die „Hamburger Verträge“", "durch die „Römischen Verträge“", "durch die „Pariser Verträge“", "durch die „Londoner Verträge“"],
+    "question": "Federal Almanya, diğer devletlerle Avrupa Ekonomik Topluluğu'nu hangi antlaşmalarla kurdu?",
+    "answers": ["Hamburg Antlaşmaları", "Roma Antlaşmaları", "Paris Antlaşmaları", "Londra Antlaşmaları"],
+    "explanation": "Federal Almanya, Fransa, İtalya, Belçika, Hollanda ve Lüksemburg ile birlikte 1957 Roma Antlaşmaları'nı imzaladı. Bu antlaşmalar Avrupa Ekonomik Topluluğu'nun temelini oluşturdu. Sınav ipucu: EWG kurulması = Roma Antlaşmaları."
+  },
+  "official-240": {
+    "germanQuestion": "Seit wann bezahlt man in Deutschland mit dem Euro in bar?",
+    "germanAnswers": ["1995", "1998", "2002", "2005"],
+    "question": "Almanya'da euro banknot ve madeni paralarıyla ne zamandan beri ödeme yapılıyor?",
+    "answers": ["1995", "1998", "2002", "2005"],
+    "explanation": "Euro hesap para birimi olarak daha önce kullanılmaya başlasa da, euro banknot ve madeni paraları Almanya'da 1 Ocak 2002'de günlük hayata girdi. O tarihe kadar Alman Markı (Deutsche Mark) kullanılıyordu. Sınav ipucu: Euro nakit = 2002."
+  },
+  "official-241": {
+    "germanQuestion": "Frau Seger bekommt ein Kind. Was muss sie tun, um Elterngeld zu erhalten?",
+    "germanAnswers": ["Sie muss an ihre Krankenkasse schreiben.", "Sie muss einen Antrag bei der Elterngeldstelle stellen.", "Sie muss nichts tun, denn sie bekommt automatisch Elterngeld.", "Sie muss das Arbeitsamt um Erlaubnis bitten."],
+    "question": "Frau Seger'in çocuğu oluyor. Elterngeld alabilmek için ne yapması gerekir?",
+    "answers": ["Sağlık sigortasına yazması gerekir.", "Elterngeldstelle'ye başvuru yapması gerekir.", "Hiçbir şey yapmasına gerek yoktur; ödeme otomatik başlar.", "İş kurumundan izin istemesi gerekir."],
+    "explanation": "Elterngeld otomatik olarak bağlanmaz. Ebeveynin yetkili Elterngeldstelle'ye başvurması gerekir. Elterngeld, çocuğun doğumundan sonra ebeveynin gelir kaybını kısmen telafi etmeyi amaçlayan aile desteğidir. Sınav ipucu: Elterngeld = başvuru gerekir, otomatik değildir."
+  },
+  "official-242": {
+    "germanQuestion": "Wer entscheidet, ob ein Kind in Deutschland in den Kindergarten geht?",
+    "germanAnswers": ["der Staat", "die Bundesländer", "die Eltern/die Erziehungsberechtigten", "die Schulen"],
+    "question": "Almanya'da bir çocuğun anaokuluna gidip gitmeyeceğine kim karar verir?",
+    "answers": ["Devlet", "Eyaletler", "Ebeveynler veya yasal veliler", "Okullar"],
+    "explanation": "Çocuğun günlük bakım ve eğitimine ilişkin temel kararlar öncelikle ebeveynlere veya yasal velilere aittir. Devlet çerçeve kuralları ve bakım sistemi sağlar, ancak bu sorudaki temel karar yetkisi ebeveynlerdedir."
+  },
+  "official-243": {
+    "germanQuestion": "Maik und Sybille wollen mit Freunden an ihrem deutschen Wohnort eine Demonstration auf der Straße abhalten. Was müssen sie vorher tun?",
+    "germanAnswers": ["Sie müssen die Demonstration anmelden.", "Sie müssen nichts tun. Man darf in Deutschland jederzeit überall demonstrieren.", "Sie können gar nichts tun, denn Demonstrationen sind in Deutschland grundsätzlich verboten.", "Maik und Sybille müssen einen neuen Verein gründen, weil nur Vereine demonstrieren dürfen."],
+    "question": "Maik ve Sybille arkadaşlarıyla sokakta bir gösteri düzenlemek istiyor. Önceden ne yapmaları gerekir?",
+    "answers": ["Gösteriyi yetkili makama bildirmeleri gerekir.", "Hiçbir şey yapmaları gerekmez; her yerde her zaman gösteri yapılabilir.", "Gösteriler Almanya'da genel olarak yasaktır.", "Önce yeni bir dernek kurmaları gerekir."],
+    "explanation": "Almanya'da barışçıl toplantı ve gösteri özgürlüğü temel bir haktır. Ancak açık alandaki gösteriler kural olarak önceden yetkili makama bildirilir (anmelden). Bu, izin istemekle aynı şey değildir; devlet güvenlik ve trafik düzenlemelerini planlayabilsin diye bildirim yapılır. Sınav ipucu: Demonstration = anmelden."
+  },
+  "official-244": {
+    "germanQuestion": "Welchen Schulabschluss braucht man normalerweise, um an einer Universität in Deutschland ein Studium zu beginnen?",
+    "germanAnswers": ["das Abitur", "ein Diplom", "die Prokura", "eine Gesellenprüfung"],
+    "question": "Almanya'da üniversite eğitimine başlamak için normalde hangi okul diplomasına ihtiyaç vardır?",
+    "answers": ["Abitur", "Diplom", "Prokura", "Kalfalık sınavı belgesi"],
+    "explanation": "Abitur, Almanya'da genel üniversiteye giriş yeterliliğini gösteren okul bitirme belgesidir. Diplom üniversite sonrası alınan akademik bir derece olabilir; Gesellenprüfung ise mesleki eğitimde kalfalık yeterliliğidir. Sınav ipucu: Üniversiteye giriş = Abitur."
+  },
+  "official-245": {
+    "germanQuestion": "Wer darf in Deutschland nicht als Paar zusammenleben?",
+    "germanAnswers": ["Hans (20 Jahre) und Marie (19 Jahre)", "Tom (20 Jahre) und Klaus (45 Jahre)", "Sofie (35 Jahre) und Lisa (40 Jahre)", "Anne (13 Jahre) und Tim (25 Jahre)"],
+    "question": "Aşağıdaki çiftlerden hangisinin Almanya'da çift olarak birlikte yaşaması hukuken kabul edilemez?",
+    "answers": ["Hans (20) ve Marie (19)", "Tom (20) ve Klaus (45)", "Sofie (35) ve Lisa (40)", "Anne (13) ve Tim (25)"],
+    "explanation": "Yetişkinlerin karşılıklı rızaya dayalı ilişkileri cinsiyetlerinden bağımsız olarak hukuken mümkündür. Ancak 13 yaşındaki bir çocuk ile 25 yaşındaki bir yetişkin arasındaki ilişki, çocuğun korunmasına ilişkin ceza ve gençlik koruma hükümleri nedeniyle kabul edilemez. Sınav ipucu: Sorunun odağı eşcinsellik değil, çocuğun korunması ve yaştır."
+  },
+  "official-246": {
+    "germanQuestion": "Ab welchem Alter ist man in Deutschland volljährig?",
+    "germanAnswers": ["16", "18", "19", "21"],
+    "question": "Almanya'da kaç yaşından itibaren reşit olunur?",
+    "answers": ["16", "18", "19", "21"],
+    "explanation": "Almanya'da Volljährigkeit, yani reşitlik 18 yaşında başlar. Kişi bu yaştan itibaren genel olarak kendi adına tam hukuki işlemler yapabilir ve ebeveyn velayeti sona erer. Sınav ipucu: Volljährig = 18 yaş."
+  },
+  "official-247": {
+    "germanQuestion": "Eine Frau ist schwanger. Sie ist kurz vor und nach der Geburt ihres Kindes vom Gesetz besonders beschützt. Wie heißt dieser Schutz?",
+    "germanAnswers": ["Elternzeit", "Mutterschutz", "Geburtsvorbereitung", "Wochenbett"],
+    "question": "Hamile bir kadın doğumdan kısa süre önce ve sonra yasa tarafından özel olarak korunur. Bu korumanın adı nedir?",
+    "answers": ["Elternzeit", "Mutterschutz", "Doğuma hazırlık", "Lohusalık dönemi"],
+    "explanation": "Mutterschutz, hamile çalışanları ve yeni doğum yapmış anneleri iş ve sağlık açısından koruyan yasal sistemdir. Doğum öncesi ve sonrası koruma süreleri, işten çıkarma koruması ve çalışma koşullarına ilişkin hükümler içerir. Elternzeit ise ebeveynlerin çocuk bakımı için kullanabildiği ayrı bir izin dönemidir. Sınav ipucu: Doğum çevresindeki yasal koruma = Mutterschutz."
+  },
+  "official-248": {
+    "germanQuestion": "Die Erziehung der Kinder ist in Deutschland vor allem Aufgabe …",
+    "germanAnswers": ["des Staates.", "der Eltern.", "der Großeltern.", "der Schulen."],
+    "question": "Almanya'da çocukların yetiştirilmesi öncelikle kimin görevidir?",
+    "answers": ["Devletin", "Ebeveynlerin", "Büyükanne ve büyükbabaların", "Okulların"],
+    "explanation": "Alman hukukunda çocukların bakımı ve yetiştirilmesi öncelikle ebeveynlerin hakkı ve görevidir. Devlet, çocuğun korunması gereken durumlarda denetim ve destek rolü üstlenir; okul ise eğitimden sorumludur fakat ebeveynlerin temel yetiştirme sorumluluğunun yerini almaz."
+  },
+  "official-249": {
+    "germanQuestion": "Wer ist in Deutschland hauptsächlich verantwortlich für die Kindererziehung?",
+    "germanAnswers": ["der Staat", "die Eltern", "die Verwandten", "die Schulen"],
+    "question": "Almanya'da çocukların yetiştirilmesinden esas olarak kim sorumludur?",
+    "answers": ["Devlet", "Ebeveynler", "Akrabalar", "Okullar"],
+    "explanation": "Bu soru 248. soruyla aynı temel ilkeyi ölçer: çocuk yetiştirme sorumluluğu öncelikle ebeveynlere aittir. Devlet ve Jugendamt destek veya koruma amacıyla devreye girebilir; okul eğitim verir, fakat temel aile sorumluluğu ebeveynlerde kalır. Sınav ipucu: Kindererziehung = Eltern."
+  },
+  "official-250": {
+    "germanQuestion": "In Deutschland hat man die besten Chancen auf einen gut bezahlten Arbeitsplatz, wenn man …",
+    "germanAnswers": ["katholisch ist.", "gut ausgebildet ist.", "eine Frau ist.", "Mitglied einer Partei ist."],
+    "question": "Almanya'da iyi ücretli bir iş bulma şansı en çok hangi durumda artar?",
+    "answers": ["Katolik olmak", "İyi eğitimli ve nitelikli olmak", "Kadın olmak", "Bir siyasi partiye üye olmak"],
+    "explanation": "İş piyasasında ücret ve fırsatlar özellikle eğitim, mesleki yeterlilik, deneyim ve aranan becerilerle ilişkilidir. Din, cinsiyet veya siyasi parti üyeliği bir kişinin daha iyi işe sahip olmasının meşru ölçütü değildir; ayrımcılık hukuken de sınırlandırılmıştır. Sınav ipucu: İş fırsatı sorusunda anahtar kavram = gute Ausbildung."
+  }
+}
