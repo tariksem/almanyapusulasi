@@ -27,6 +27,38 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Sync citizenship test study data
         run: python scripts/sync-einbuergerungstest.py
+      - name: Bust citizenship test asset cache
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, os
+
+          sha = os.environ['GITHUB_SHA']
+          data_path = Path('assets/data/einbuergerungstest.json')
+          js_path = Path('assets/js/einbuergerungstest.js')
+          html_path = Path('vatandaslik-testi/index.html')
+
+          payload = json.loads(data_path.read_text(encoding='utf-8'))
+          target = next((q for q in payload.get('questions', []) if q.get('question') == 'Was war am 8. Mai 1945?'), None)
+          assert target, 'Regression failed: 8 May 1945 question missing'
+          assert target.get('tr', {}).get('question') == "8 Mayıs 1945'te ne oldu?", 'Regression failed: Turkish question missing'
+          assert all(target.get('tr', {}).get('answers', [])), 'Regression failed: Turkish answers missing'
+
+          js = js_path.read_text(encoding='utf-8')
+          old = "const LOCAL_DATA='/assets/data/einbuergerungstest.json';"
+          new = f"const LOCAL_DATA='/assets/data/einbuergerungstest.json?v={sha}';"
+          assert old in js, 'Expected LOCAL_DATA declaration not found'
+          js_path.write_text(js.replace(old, new, 1), encoding='utf-8')
+
+          html = html_path.read_text(encoding='utf-8')
+          old_script = '<script defer src="/assets/js/einbuergerungstest.js"></script>'
+          new_script = f'<script defer src="/assets/js/einbuergerungstest.js?v={sha}"></script>'
+          assert old_script in html, 'Expected citizenship script tag not found'
+          html_path.write_text(html.replace(old_script, new_script, 1), encoding='utf-8')
+
+          print(f'Citizenship assets cache-busted with {sha}')
+          print('Regression QA: 8 May 1945 Turkish question and four answers are present in deployment artifact')
+          PY
       - name: Install social preview dependency
         run: python -m pip install --disable-pip-version-check pillow
       - name: Generate social preview card
