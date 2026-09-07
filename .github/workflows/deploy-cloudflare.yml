@@ -60,6 +60,26 @@ jobs:
           print(f'Cloudflare citizenship assets versioned with {sha}')
           PY
 
+      - name: Prepare clean production directory
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          rsync -a ./ dist/ \
+            --exclude 'dist/' \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '.wrangler/' \
+            --exclude 'scripts/' \
+            --exclude 'data/' \
+            --exclude 'wrangler.jsonc' \
+            --exclude '.gitignore' \
+            --exclude '*.md'
+          test -f dist/vatandaslik-testi/index.html
+          test -f dist/assets/data/einbuergerungstest.json
+          test -f dist/assets/js/einbuergerungstest.js
+          test ! -e dist/.git
+          echo 'Clean Cloudflare production directory prepared.'
+
       - name: Deploy to Cloudflare Workers
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
