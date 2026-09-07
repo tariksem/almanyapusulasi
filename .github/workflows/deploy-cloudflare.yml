@@ -54,7 +54,7 @@ jobs:
 
           html = html_path.read_text(encoding='utf-8')
           old_script = '<script defer src="/assets/js/einbuergerungstest.js"></script>'
-          new_script = f'<script defer src="/assets/js/einbuerungstest.js?v={sha}"></script>'
+          new_script = f'<script defer src="/assets/js/einbuergerungstest.js?v={sha}"></script>'
           assert old_script in html, 'Expected citizenship script tag not found'
           html_path.write_text(html.replace(old_script, new_script, 1), encoding='utf-8')
           print(f'Cloudflare citizenship assets versioned with {sha}')
