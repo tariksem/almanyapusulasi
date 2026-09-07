@@ -10,7 +10,7 @@
     "wohngebaeude-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=wohngebaeudeversicherung",label:"Wohngebäude tekliflerini karşılaştır",note:"Feuer, Leitungswasser, Sturm/Hagel, grobe Fahrlässigkeit ve Elementarschäden kapsamını birlikte kontrol edin.",target:"wohngebaeude-affiliate"},
     "pkv-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=private-krankenversicherung",label:"PKV tekliflerini karşılaştır",note:"Aylık prim kadar Selbstbehalt, tarif kapsamı, sağlık değerlendirmesi ve uzun vadeli prim riskini de karşılaştırın.",target:"pkv-affiliate"},
     "krankenzusatz-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=krankenzusatzversicherung",label:"Krankenzusatz tekliflerini karşılaştır",note:"Diş, hastane ve ayakta tedavi modüllerini ihtiyacınıza göre ayrı değerlendirin; bekleme ve limitleri kontrol edin.",target:"krankenzusatz-affiliate"},
-    "pflegezusatz-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=pflegezusatzversicherung",label:"Pflegezusatz tekliflerini karşılaştır",note:"Aylık/ günlük ödeme yapısı, bekleme süresi, sağlık değerlendirmesi, prim gelişimi ve bakım derecelerindeki ödeme oranlarını kontrol edin.",target:"pflegezusatz-affiliate"},
+    "pflegezusatz-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=pflegezusatzversicherung",label:"Pflegezusatz tekliflerini karşılaştır",note:"Ödeme yapısı, bekleme süresi, sağlık değerlendirmesi, prim gelişimi ve bakım derecelerindeki ödeme oranlarını kontrol edin.",target:"pflegezusatz-affiliate"},
     "unfall-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=unfallversicherung",label:"Unfallversicherung tekliflerini karşılaştır",note:"Invaliditätssumme, Progression, Gliedertaxe ve kapsam dışı durumları teklif koşullarında kontrol edin.",target:"unfall-affiliate"},
     "risikoleben-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=risikolebensversicherung",label:"Risikoleben tekliflerini karşılaştır",note:"Sigorta tutarını ve süreyi aile yükümlülükleri, gelir açığı ve mevcut borçlarla birlikte belirleyin.",target:"risikoleben-affiliate"},
     "motorrad-comparison":{enabled:true,provider:"TARIFCHECK",partnerId:"204420",url:"https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=motorradversicherung",label:"Motorradversicherung tekliflerini karşılaştır",note:"Haftpflicht, Teilkasko/Vollkasko, Selbstbeteiligung ve Saisonkennzeichen koşullarını birlikte karşılaştırın.",target:"motorrad-affiliate"},
@@ -24,6 +24,17 @@
     "money-transfer":{enabled:false,provider:"",partnerId:"",url:"",label:"Para transferi teklifini incele",note:"",target:"transfer-affiliate"}
   };
   function esc(v){return String(v==null?"":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#39;");}
-  function renderSlot(slot){var key=slot.getAttribute("data-affiliate-slot"),cfg=PARTNERS[key];if(!cfg||!cfg.enabled||!cfg.url)return;var provider=cfg.provider?'<span class="affiliate-provider">'+esc(cfg.provider)+'</span>':'';slot.classList.add("affiliate-slot","is-active");slot.innerHTML='<div><span class="affiliate-kicker">Partner karşılaştırması</span><h3>'+esc(cfg.label)+'</h3><p>'+esc(cfg.note)+'</p>'+provider+'</div><a class="btn btn-primary" href="'+esc(cfg.url)+'" target="_blank" rel="sponsored noopener" data-track="affiliate_click" data-commercial-area="'+esc(key)+'" data-commercial-target="'+esc(cfg.target)+'" data-commercial-provider="'+esc(cfg.provider||'')+'">Teklifleri karşılaştır →</a>';}
-  document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-affiliate-slot]").forEach(renderSlot);});
+  function removeLegacyDisclosure(slot){var root=slot.closest("article")||document;root.querySelectorAll(".commercial-disclosure").forEach(function(el){el.remove();});}
+  function renderSlot(slot){
+    if(!slot||slot.classList.contains("is-active"))return;
+    var key=slot.getAttribute("data-affiliate-slot"),cfg=PARTNERS[key];
+    if(!cfg||!cfg.enabled||!cfg.url)return;
+    removeLegacyDisclosure(slot);
+    var provider=cfg.provider?'<span class="affiliate-provider">'+esc(cfg.provider)+'</span>':'';
+    slot.classList.add("affiliate-slot","is-active");
+    slot.innerHTML='<div><span class="affiliate-kicker">Partner karşılaştırması</span><h3>'+esc(cfg.label)+'</h3><p>'+esc(cfg.note)+'</p>'+provider+'</div><a class="btn btn-primary" href="'+esc(cfg.url)+'" target="_blank" rel="sponsored noopener" data-track="affiliate_click" data-commercial-area="'+esc(key)+'" data-commercial-target="'+esc(cfg.target)+'" data-commercial-provider="'+esc(cfg.provider||'')+'">Teklifleri karşılaştır →</a>';
+  }
+  function renderAll(root){(root||document).querySelectorAll("[data-affiliate-slot]").forEach(renderSlot);}
+  window.APAffiliate={renderSlot:renderSlot,renderAll:renderAll,has:function(key){var cfg=PARTNERS[key];return !!(cfg&&cfg.enabled&&cfg.url);}};
+  document.addEventListener("DOMContentLoaded",function(){renderAll(document);});
 })();
