@@ -16,6 +16,14 @@
     "money-transfer":{enabled:false,provider:"",partnerId:"",url:"",label:"Para transferi teklifini incele",note:"",target:"transfer-affiliate"}
   };
   function esc(v){return String(v==null?"":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#39;");}
-  function renderSlot(slot){var key=slot.getAttribute("data-affiliate-slot"),cfg=PARTNERS[key];if(!cfg||!cfg.enabled||!cfg.url)return;var provider=cfg.provider?'<span class="affiliate-provider">'+esc(cfg.provider)+'</span>':'';slot.classList.add("affiliate-slot","is-active");slot.innerHTML='<div><span class="affiliate-kicker">Partner karşılaştırması</span><h3>'+esc(cfg.label)+'</h3><p>'+esc(cfg.note)+'</p>'+provider+'</div><a class="btn btn-primary" href="'+esc(cfg.url)+'" target="_blank" rel="sponsored noopener" data-track="affiliate_click" data-commercial-area="'+esc(key)+'" data-commercial-target="'+esc(cfg.target)+'" data-commercial-provider="'+esc(cfg.provider||'')+'">Teklifleri karşılaştır →</a>';}
+  function renderSlot(slot){
+    var key=slot.getAttribute("data-affiliate-slot"),cfg=PARTNERS[key];
+    if(!cfg||!cfg.enabled||!cfg.url)return;
+    var article=slot.closest("article");
+    if(article){article.querySelectorAll(".commercial-disclosure").forEach(function(el){el.remove();});}
+    var provider=cfg.provider?'<span class="affiliate-provider">'+esc(cfg.provider)+'</span>':'';
+    slot.classList.add("affiliate-slot","is-active");
+    slot.innerHTML='<div><span class="affiliate-kicker">Partner karşılaştırması</span><h3>'+esc(cfg.label)+'</h3><p>'+esc(cfg.note)+'</p>'+provider+'</div><a class="btn btn-primary" href="'+esc(cfg.url)+'" target="_blank" rel="sponsored noopener" data-track="affiliate_click" data-commercial-area="'+esc(key)+'" data-commercial-target="'+esc(cfg.target)+'" data-commercial-provider="'+esc(cfg.provider||'')+'">Teklifleri karşılaştır →</a>';
+  }
   document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-affiliate-slot]").forEach(renderSlot);});
 })();
