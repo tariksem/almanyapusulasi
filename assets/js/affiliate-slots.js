@@ -16,21 +16,21 @@
    */
   var PARTNERS = {
     "bank-comparison": {
-      enabled: false,
+      enabled: true,
       provider: "TARIFCHECK",
       partnerId: "204420",
-      url: "",
+      url: "https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=girokonto",
       label: "Banka hesaplarını karşılaştır",
       note: "Ticari bağlantı — sonuçlar ve koşullar TARIFCHECK üzerinde gösterilir.",
       target: "bank-affiliate"
     },
     "insurance-comparison": {
-      enabled: false,
-      provider: "",
-      partnerId: "",
-      url: "",
+      enabled: true,
+      provider: "TARIFCHECK",
+      partnerId: "204420",
+      url: "https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=haftpflichtversicherung",
       label: "Sigorta tekliflerini karşılaştır",
-      note: "Ticari bağlantı — karşılaştırma kapsamı partner ürününe göre değişebilir.",
+      note: "Ticari bağlantı — karşılaştırma kapsamı TARIFCHECK ürününe göre değişebilir.",
       target: "insurance-affiliate"
     },
     "tax-software": {
@@ -70,10 +70,10 @@
       target: "electricity-affiliate"
     },
     "kfz-insurance": {
-      enabled: false,
+      enabled: true,
       provider: "TARIFCHECK",
       partnerId: "204420",
-      url: "",
+      url: "https://a.partner-versicherung.de/click.php?partner_id=204420&ad_id=15&deep=kfz-versicherung",
       label: "Kfz sigorta tekliflerini karşılaştır",
       note: "Ticari bağlantı — prim kişisel ve araç bilgilerine göre değişir; kapsam ve Selbstbeteiligung'u TARIFCHECK üzerinde ayrıca kontrol edin.",
       target: "kfz-affiliate"
