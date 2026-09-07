@@ -1,0 +1,177 @@
+{
+  "official-201": {
+    "germanQuestion": "Welche der folgenden Auflistungen enthält nur Bundesländer, die zum Gebiet der früheren DDR gehörten?",
+    "germanAnswers": ["Niedersachsen, Nordrhein-Westfalen, Hessen, Schleswig-Holstein, Brandenburg", "Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen", "Bayern, Baden-Württemberg, Rheinland-Pfalz, Thüringen, Sachsen", "Sachsen, Thüringen, Hessen, Niedersachsen, Brandenburg"],
+    "question": "Aşağıdaki listelerden hangisi yalnızca eski DDR topraklarında yer alan eyaletlerden oluşur?",
+    "answers": ["Niedersachsen, Nordrhein-Westfalen, Hessen, Schleswig-Holstein, Brandenburg", "Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen", "Bayern, Baden-Württemberg, Rheinland-Pfalz, Thüringen, Sachsen", "Sachsen, Thüringen, Hessen, Niedersachsen, Brandenburg"],
+    "explanation": "DDR'nin bugünkü Almanya'daki ana mirası beş doğu eyaletidir: Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt ve Thüringen. Berlin ayrı bir özel durumdur; şehir ikiye bölünmüştü ve Doğu Berlin DDR'nin fiilî başkentiydi. Sınav ipucu: Eski DDR eyaletlerini akılda tutmak için 'MV-BB-SN-ST-TH' sıralamasını ezberleyebilirsiniz."
+  },
+  "official-202": {
+    "germanQuestion": "Zu wem gehörte die DDR im „Kalten Krieg“?",
+    "germanAnswers": ["zu den Westmächten", "zum Warschauer Pakt", "zur NATO", "zu den blockfreien Staaten"],
+    "question": "Soğuk Savaş döneminde DDR hangi bloğa aitti?",
+    "answers": ["Batılı güçlere", "Varşova Paktı'na", "NATO'ya", "Bağlantısız devletlere"],
+    "explanation": "DDR, Sovyetler Birliği'nin etkisi altındaki Doğu Bloku'nun parçasıydı ve 1955'ten itibaren Varşova Paktı üyesiydi. Batı Almanya olan Federal Almanya Cumhuriyeti ise NATO üyesiydi. Sınav ipucu: DDR = Doğu Bloku = Varşova Paktı; BRD = Batı Bloku = NATO."
+  },
+  "official-203": {
+    "germanQuestion": "Wie hieß das Wirtschaftssystem der DDR?",
+    "germanAnswers": ["Marktwirtschaft", "Planwirtschaft", "Angebot und Nachfrage", "Kapitalismus"],
+    "question": "DDR'nin ekonomik sistemi ne olarak adlandırılıyordu?",
+    "answers": ["Piyasa ekonomisi", "Planlı ekonomi", "Arz ve talep sistemi", "Kapitalizm"],
+    "explanation": "DDR'de ekonomi büyük ölçüde devlet tarafından planlanıyordu. Ne kadar üretileceği, hangi sektörlere kaynak ayrılacağı ve birçok fiyat merkezi kararlarla belirlenirdi. Buna Planwirtschaft, yani planlı ekonomi denir. Federal Almanya'da ise sosyal piyasa ekonomisi gelişti. Sınav ipucu: DDR sorularında ekonomi denince 'Planwirtschaft'ı hatırlayın."
+  },
+  "official-204": {
+    "germanQuestion": "Wie wurden die Bundesrepublik Deutschland und die DDR zu einem Staat?",
+    "germanAnswers": ["Die Bundesrepublik Deutschland hat die DDR besetzt.", "Die heutigen fünf östlichen Bundesländer sind der Bundesrepublik Deutschland beigetreten.", "Die westlichen Bundesländer sind der DDR beigetreten.", "Die DDR hat die Bundesrepublik Deutschland besetzt."],
+    "question": "Federal Almanya Cumhuriyeti ile DDR 1990'da nasıl tek devlet hâline geldi?",
+    "answers": ["Federal Almanya DDR'yi işgal etti.", "Bugünkü beş doğu eyaleti Federal Almanya Cumhuriyeti'ne katıldı.", "Batı eyaletleri DDR'ye katıldı.", "DDR Federal Almanya'yı işgal etti."],
+    "explanation": "3 Ekim 1990'da DDR sona erdi ve yeniden oluşturulan beş doğu eyaleti Federal Almanya Cumhuriyeti'ne katıldı. Bu süreç askerî işgal değil, hukuki ve siyasi birleşmeydi. Bu tarih bugün Almanya'nın millî günü olan Tag der Deutschen Einheit olarak kutlanır. Sınav ipucu: 3 Ekim 1990 = Alman Birliği Günü."
+  },
+  "official-205": {
+    "germanQuestion": "Mit dem Beitritt der DDR zur Bundesrepublik Deutschland gehören die neuen Bundesländer nun auch …",
+    "germanAnswers": ["zur Europäischen Union.", "zum Warschauer Pakt.", "zur OPEC.", "zur Europäischen Verteidigungsgemeinschaft."],
+    "question": "DDR'nin Federal Almanya'ya katılmasıyla yeni doğu eyaletleri aynı zamanda hangi yapının parçası oldu?",
+    "answers": ["Avrupa Birliği'nin", "Varşova Paktı'nın", "OPEC'in", "Avrupa Savunma Topluluğu'nun"],
+    "explanation": "Federal Almanya, Avrupa bütünleşmesinin kurucu ülkelerinden biriydi. 1990'da doğu eyaletleri Federal Almanya'ya katılınca, bu eyaletler de otomatik olarak Avrupa Topluluklarının ve daha sonra Avrupa Birliği'nin parçası oldu. Varşova Paktı ise Doğu Bloku'nun askerî ittifakıydı ve artık bu yapıdan çıkılmış oldu."
+  },
+  "official-206": {
+    "germanQuestion": "Woran erinnern die sogenannten „Stolpersteine“ in Deutschland?",
+    "germanAnswers": ["an berühmte deutsche Politikerinnen und Politiker", "an die Opfer des Nationalsozialismus", "an Verkehrstote", "an bekannte jüdische Musiker"],
+    "question": "Almanya'daki 'Stolpersteine' adlı anı taşları kimi hatırlatır?",
+    "answers": ["Ünlü Alman siyasetçileri", "Nasyonal Sosyalizm kurbanlarını", "Trafik kazalarında ölenleri", "Tanınmış Yahudi müzisyenleri"],
+    "explanation": "Stolpersteine, Nazi döneminde zulme uğrayan, sürgün edilen veya öldürülen insanların yaşadığı ya da çalıştığı yerlerin önüne yerleştirilen küçük pirinç plakalı anı taşlarıdır. Üzerlerinde kişinin adı ve kaderine ilişkin kısa bilgiler bulunur. Amaç, kurbanların bireysel hikâyelerini günlük yaşamın içine geri taşımaktır. Sınav ipucu: Stolpersteine = Nazi kurbanlarını anma."
+  },
+  "official-207": {
+    "germanQuestion": "In welchem Militärbündnis war die DDR Mitglied?",
+    "germanAnswers": ["in der NATO", "im Rheinbund", "im Warschauer Pakt", "im Europabündnis"],
+    "question": "DDR hangi askerî ittifakın üyesiydi?",
+    "answers": ["NATO", "Ren Konfederasyonu", "Varşova Paktı", "Avrupa İttifakı"],
+    "explanation": "DDR 1955'ten itibaren Varşova Paktı üyesiydi. Bu ittifak Sovyetler Birliği liderliğindeki Doğu Bloku ülkelerini bir araya getiriyordu. Aynı dönemde Federal Almanya Cumhuriyeti NATO'ya üyeydi. Bu karşıtlık Soğuk Savaş'ın temel özelliklerinden biridir."
+  },
+  "official-208": {
+    "germanQuestion": "Was war die „Stasi“?",
+    "germanAnswers": ["der Geheimdienst im „Dritten Reich“", "eine berühmte deutsche Gedenkstätte", "der Geheimdienst der DDR", "ein deutscher Sportverein während des Zweiten Weltkrieges"],
+    "question": "'Stasi' neydi?",
+    "answers": ["Nazi Almanyası'nın istihbarat servisi", "Ünlü bir Alman anıtı", "DDR'nin devlet güvenlik ve istihbarat kurumu", "İkinci Dünya Savaşı döneminde bir Alman spor kulübü"],
+    "explanation": "Stasi, DDR'nin Ministerium für Staatssicherheit adlı devlet güvenlik kurumunun yaygın adıdır. Kurum, çok geniş bir muhbir ağıyla vatandaşları izliyor, muhalifleri takip ediyor ve rejime karşı görülen faaliyetleri bastırıyordu. Bu nedenle Stasi, DDR'deki siyasi baskı ve gözetim sisteminin sembollerinden biridir. Sınav ipucu: Stasi = DDR devlet güvenlik servisi."
+  },
+  "official-209": {
+    "germanQuestion": "Welches war das Wappen der Deutschen Demokratischen Republik?",
+    "germanAnswers": ["1", "2", "3", "4"],
+    "question": "Aşağıdaki görsellerden hangisi DDR'nin devlet armasını gösterir?",
+    "answers": ["Görsel 1", "Görsel 2", "Görsel 3", "Görsel 4"],
+    "explanation": "DDR arması; bir çekiç, bir pergel ve bunları çevreleyen başak çelenginden oluşuyordu. Çekiç işçileri, pergel aydınları/teknik uzmanları, başaklar ise çiftçileri simgeliyordu. Bu sembol DDR bayrağının ortasında da kullanılmıştır. Sınav ipucu: Çekiç + pergel + başak = DDR arması."
+  },
+  "official-210": {
+    "germanQuestion": "Was ereignete sich am 17. Juni 1953 in der DDR?",
+    "germanAnswers": ["der feierliche Beitritt zum Warschauer Pakt", "landesweite Streiks und ein Volksaufstand", "der 1. SED-Parteitag", "der erste Besuch Fidel Castros"],
+    "question": "17 Haziran 1953'te DDR'de ne oldu?",
+    "answers": ["Varşova Paktı'na törenle katılım", "Ülke çapında grevler ve halk ayaklanması", "İlk SED parti kongresi", "Fidel Castro'nun ilk ziyareti"],
+    "explanation": "17 Haziran 1953'te işçi protestoları kısa sürede DDR'nin birçok şehrine yayılan geniş bir halk ayaklanmasına dönüştü. Göstericiler çalışma koşullarının yanı sıra siyasi değişim taleplerinde de bulundu. Ayaklanma Sovyet birliklerinin desteğiyle bastırıldı. Sınav ipucu: 17 Haziran 1953 = DDR halk ayaklanması."
+  },
+  "official-211": {
+    "germanQuestion": "Welcher Politiker steht für die „Ostverträge“?",
+    "germanAnswers": ["Helmut Kohl", "Willy Brandt", "Michail Gorbatschow", "Ludwig Erhard"],
+    "question": "'Ostverträge' denilen Doğu Antlaşmaları en çok hangi siyasetçiyle ilişkilendirilir?",
+    "answers": ["Helmut Kohl", "Willy Brandt", "Mihail Gorbaçov", "Ludwig Erhard"],
+    "explanation": "Willy Brandt'ın şansölyeliği döneminde yürütülen Neue Ostpolitik, Federal Almanya'nın Doğu Avrupa ülkeleri ve DDR ile ilişkilerini normalleştirmeyi hedefliyordu. 1970'lerin başındaki Ostverträge bu politikanın temel parçalarıdır. Brandt, gerginliği azaltma ve karşılıklı tanımaya dayalı yaklaşımıyla tanınır. Sınav ipucu: Ostpolitik/Ostverträge = Willy Brandt."
+  },
+  "official-212": {
+    "germanQuestion": "Wie heißt Deutschland mit vollem Namen?",
+    "germanAnswers": ["Bundesstaat Deutschland", "Bundesländer Deutschland", "Bundesrepublik Deutschland", "Bundesbezirk Deutschland"],
+    "question": "Almanya'nın tam resmî adı nedir?",
+    "answers": ["Bundesstaat Deutschland", "Bundesländer Deutschland", "Bundesrepublik Deutschland", "Bundesbezirk Deutschland"],
+    "explanation": "Almanya'nın resmî adı Bundesrepublik Deutschland'dır; Türkçede Federal Almanya Cumhuriyeti denir. 'Bundesrepublik' ifadesi, ülkenin federal yapısını vurgular: Almanya tek bir merkezî devlet değil, 16 eyaletten oluşan federal bir devlettir."
+  },
+  "official-213": {
+    "germanQuestion": "Wie viele Einwohner hat Deutschland?",
+    "germanAnswers": ["70 Millionen", "78 Millionen", "84 Millionen", "90 Millionen"],
+    "question": "Almanya'nın nüfusu yaklaşık kaç milyondur?",
+    "answers": ["70 milyon", "78 milyon", "84 milyon", "90 milyon"],
+    "explanation": "Bu soru yaklaşık nüfusu ölçer. Güncel resmî soru havuzunda doğru seçenek 84 milyondur. Nüfus zaman içinde değişebileceği için bu tür sorularda sınavda verilen güncel katalogdaki seçeneği esas almak gerekir. Sınav ipucu: Bu soru için katalog cevabı = 84 milyon."
+  },
+  "official-214": {
+    "germanQuestion": "Welche Farben hat die deutsche Flagge?",
+    "germanAnswers": ["schwarz-rot-gold", "rot-weiß-schwarz", "schwarz-rot-grün", "schwarz-gelb-rot"],
+    "question": "Alman bayrağının renkleri hangileridir?",
+    "answers": ["Siyah-kırmızı-altın", "Kırmızı-beyaz-siyah", "Siyah-kırmızı-yeşil", "Siyah-sarı-kırmızı"],
+    "explanation": "Alman federal bayrağı yatay üç şeritten oluşur: üstte siyah, ortada kırmızı, altta altın rengi. Bu renkler 19. yüzyıldaki özgürlük ve birlik hareketleriyle ilişkilendirilir ve bugün Federal Almanya Cumhuriyeti'nin resmî renkleridir. Sınav ipucu: Schwarz-Rot-Gold sırasını aynen ezberleyin."
+  },
+  "official-215": {
+    "germanQuestion": "Wer wird als „Kanzler der Deutschen Einheit“ bezeichnet?",
+    "germanAnswers": ["Gerhard Schröder", "Helmut Kohl", "Konrad Adenauer", "Helmut Schmidt"],
+    "question": "'Alman Birliği Şansölyesi' olarak kim anılır?",
+    "answers": ["Gerhard Schröder", "Helmut Kohl", "Konrad Adenauer", "Helmut Schmidt"],
+    "explanation": "Helmut Kohl, 1982-1998 arasında Federal Şansölye olarak görev yaptı ve 1989-1990'daki birleşme sürecinde merkezi siyasi rol üstlendi. Bu nedenle sıkça 'Kanzler der Deutschen Einheit' olarak anılır. Sınav ipucu: Almanya'nın yeniden birleşmesi = Helmut Kohl."
+  },
+  "official-216": {
+    "germanQuestion": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
+    "germanAnswers": ["der Bundesadler", "die Fahne der Stadt Berlin", "der Reichsadler", "die Reichskrone"],
+    "question": "Alman Federal Meclisi'nin (Bundestag) genel kurul salonunda hangi sembol görülür?",
+    "answers": ["Federal kartal (Bundesadler)", "Berlin şehir bayrağı", "İmparatorluk kartalı (Reichsadler)", "İmparatorluk tacı"],
+    "explanation": "Bundesadler, Federal Almanya Cumhuriyeti'nin devlet sembollerinden biridir. Bundestag genel kurul salonunun arkasında büyük bir federal kartal figürü bulunur. Kartal Almanya'da uzun tarihsel geçmişe sahip olsa da bugünkü Bundesadler demokratik federal devleti temsil eder."
+  },
+  "official-217": {
+    "germanQuestion": "In welchem Zeitraum gab es die Deutsche Demokratische Republik (DDR)?",
+    "germanAnswers": ["1919 bis 1927", "1933 bis 1945", "1945 bis 1961", "1949 bis 1990"],
+    "question": "DDR hangi yıllar arasında varlığını sürdürdü?",
+    "answers": ["1919-1927", "1933-1945", "1945-1961", "1949-1990"],
+    "explanation": "DDR 7 Ekim 1949'da kuruldu ve 3 Ekim 1990'da Federal Almanya Cumhuriyeti'ne katılmasıyla sona erdi. Bu nedenle doğru dönem 1949-1990'dır. Sınav ipucu: BRD ve DDR'nin ikisi de 1949'da kuruldu; birleşme 1990'da gerçekleşti."
+  },
+  "official-218": {
+    "germanQuestion": "Wie viele Bundesländer kamen bei der Wiedervereinigung 1990 zur Bundesrepublik Deutschland hinzu?",
+    "germanAnswers": ["4", "5", "6", "7"],
+    "question": "1990'daki yeniden birleşmeyle Federal Almanya'ya kaç eyalet katıldı?",
+    "answers": ["4", "5", "6", "7"],
+    "explanation": "DDR topraklarında yeniden oluşturulan beş eyalet Federal Almanya'ya katıldı: Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt ve Thüringen. Berlin ise özel statüsü nedeniyle bu 'beş yeni eyalet' sayımına dahil edilmez. Sınav ipucu: Neue Bundesländer = 5."
+  },
+  "official-219": {
+    "germanQuestion": "Die Bundesrepublik Deutschland hat die Grenzen von heute seit …",
+    "germanAnswers": ["1933.", "1949.", "1971.", "1990."],
+    "question": "Federal Almanya Cumhuriyeti bugünkü sınırlarına hangi yıldan beri sahiptir?",
+    "answers": ["1933", "1949", "1971", "1990"],
+    "explanation": "Almanya'nın bugünkü devlet sınırları, 1990'daki yeniden birleşme ve bunun uluslararası olarak düzenlenmesiyle kesinleşti. İki Artı Dört Antlaşması, birleşmiş Almanya'nın dış politika ve sınır konularında önemli temel belgelerindendir. Sınav ipucu: Bugünkü Almanya'nın sınırları = 1990."
+  },
+  "official-220": {
+    "germanQuestion": "Der 27. Januar ist in Deutschland ein offizieller Gedenktag. Woran erinnert dieser Tag?",
+    "germanAnswers": ["an das Ende des Zweiten Weltkrieges", "an die Verabschiedung des Grundgesetzes", "an die Wiedervereinigung Deutschlands", "an die Opfer des Nationalsozialismus (Tag der Befreiung des Vernichtungslagers Auschwitz)"],
+    "question": "27 Ocak Almanya'da resmî bir anma günüdür. Bu gün neyi anmak için kullanılır?",
+    "answers": ["İkinci Dünya Savaşı'nın sona ermesini", "Grundgesetz'in kabulünü", "Almanya'nın yeniden birleşmesini", "Nasyonal Sosyalizm kurbanlarını ve Auschwitz imha kampının kurtarılmasını"],
+    "explanation": "27 Ocak 1945'te Auschwitz-Birkenau toplama ve imha kampı Sovyet birlikleri tarafından kurtarıldı. Almanya'da 27 Ocak, Nasyonal Sosyalizm kurbanlarını anma günü olarak kabul edilir. Aynı tarih Birleşmiş Milletler tarafından da Holokost Kurbanlarını Uluslararası Anma Günü olarak benimsenmiştir. Sınav ipucu: 27 Ocak = Auschwitz'in kurtarılması ve Nazi kurbanlarını anma."
+  },
+  "official-221": {
+    "germanQuestion": "Deutschland ist Mitglied des Schengener Abkommens. Was bedeutet das?",
+    "germanAnswers": ["Deutsche können in viele Länder Europas ohne Passkontrolle reisen.", "Alle Menschen können ohne Personenkontrolle in Deutschland einreisen.", "Deutsche können ohne Passkontrolle in jedes Land reisen.", "Deutsche können in jedem Land mit dem Euro bezahlen."],
+    "question": "Almanya Schengen sistemine üyedir. Bu ne anlama gelir?",
+    "answers": ["Almanlar Avrupa'daki birçok ülkeye rutin pasaport kontrolü olmadan seyahat edebilir.", "Herkes Almanya'ya kimlik kontrolü olmadan girebilir.", "Almanlar dünyadaki her ülkeye pasaport kontrolü olmadan gidebilir.", "Almanlar her ülkede euro ile ödeme yapabilir."],
+    "explanation": "Schengen, üye ülkeler arasındaki iç sınır kontrollerinin büyük ölçüde kaldırıldığı ortak seyahat alanıdır. Bu, sınırların tamamen kontrolsüz olduğu anlamına gelmez; geçici kontroller uygulanabilir ve Schengen dış sınırlarında kontroller devam eder. Ayrıca Schengen ile euro kullanımı farklı konulardır. Sınav ipucu: Schengen = iç sınır/pasaport kontrollerinin büyük ölçüde kaldırılması."
+  },
+  "official-222": {
+    "germanQuestion": "Welches Land ist ein Nachbarland von Deutschland?",
+    "germanAnswers": ["Ungarn", "Portugal", "Spanien", "Schweiz"],
+    "question": "Aşağıdaki ülkelerden hangisi Almanya'nın komşusudur?",
+    "answers": ["Macaristan", "Portekiz", "İspanya", "İsviçre"],
+    "explanation": "İsviçre Almanya'nın güney sınırındaki komşularından biridir. Almanya'nın toplam dokuz kara komşusu vardır: Danimarka, Polonya, Çekya, Avusturya, İsviçre, Fransa, Lüksemburg, Belçika ve Hollanda. Sınav ipucu: Almanya'nın 9 kara komşusunu ezberlemek, birden fazla soruyu çözmenizi sağlar."
+  },
+  "official-223": {
+    "germanQuestion": "Welches Land ist ein Nachbarland von Deutschland?",
+    "germanAnswers": ["Rumänien", "Bulgarien", "Polen", "Griechenland"],
+    "question": "Aşağıdaki ülkelerden hangisi Almanya'nın komşusudur?",
+    "answers": ["Romanya", "Bulgaristan", "Polonya", "Yunanistan"],
+    "explanation": "Polonya Almanya'nın doğu komşularından biridir. Almanya'nın doğusunda Polonya ve Çekya bulunur. Romanya, Bulgaristan ve Yunanistan ise Avrupa'da olsalar da Almanya ile kara sınırı paylaşmaz. Sınav ipucu: Doğu komşuları = Polonya ve Çekya."
+  },
+  "official-224": {
+    "germanQuestion": "Was bedeutet die Abkürzung EU?",
+    "germanAnswers": ["Europäische Unternehmen", "Europäische Union", "Einheitliche Union", "Euro Union"],
+    "question": "EU kısaltmasının açılımı nedir?",
+    "answers": ["Avrupa Şirketleri", "Avrupa Birliği", "Birleşik Birlik", "Euro Birliği"],
+    "explanation": "EU, Almanca Europäische Union, Türkçe Avrupa Birliği anlamına gelir. Avrupa Birliği; üye devletlerin ekonomi, hukuk ve birçok ortak politika alanında iş birliği yaptığı siyasi ve ekonomik bir birliktir. Avrupa Birliği ile euro bölgesi aynı şey değildir; her AB ülkesi euro kullanmaz."
+  },
+  "official-225": {
+    "germanQuestion": "In welchem anderen Land gibt es eine große deutschsprachige Bevölkerung?",
+    "germanAnswers": ["Tschechien", "Norwegen", "Spanien", "Österreich"],
+    "question": "Almanca konuşan nüfusun büyük olduğu başka hangi ülke vardır?",
+    "answers": ["Çekya", "Norveç", "İspanya", "Avusturya"],
+    "explanation": "Avusturya'nın resmî dili Almancadır ve nüfusun büyük çoğunluğu Almanca konuşur. Almanca ayrıca İsviçre'nin resmî dillerinden biridir ve Belçika'da da Almanca konuşan bir topluluk vardır. Sınav ipucu: Almanca konuşulan başlıca ülkeler arasında Almanya, Avusturya ve İsviçre bulunur."
+  }
+}
