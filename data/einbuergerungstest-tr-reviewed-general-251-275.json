@@ -1,0 +1,177 @@
+{
+  "official-251": {
+    "germanQuestion": "Wenn man in Deutschland ein Kind schlägt, …",
+    "germanAnswers": ["geht das niemanden etwas an.", "geht das nur die Familie etwas an.", "kann man dafür nicht bestraft werden.", "kann man dafür bestraft werden."],
+    "question": "Almanya'da bir çocuğa vurulursa aşağıdakilerden hangisi doğrudur?",
+    "answers": ["Bu kimseyi ilgilendirmez.", "Bu yalnızca aileyi ilgilendirir.", "Bunun için ceza verilemez.", "Bunun için cezalandırılmak mümkündür."],
+    "explanation": "Çocukların şiddetten korunma hakkı vardır. Fiziksel ceza, aile içi özel bir mesele olarak görülmez; çocuğa vurmak hukuki sonuç doğurabilir. Devlet, özellikle çocuğun güvenliği tehlikedeyse müdahale edebilir. Sınav ipucu: Çocuğa yönelik şiddet 'aile içi mesele' değildir; doğru yaklaşım koruma ve hukuki sorumluluktur."
+  },
+  "official-252": {
+    "germanQuestion": "In Deutschland …",
+    "germanAnswers": ["darf man zur gleichen Zeit nur mit einem Partner / einer Partnerin verheiratet sein.", "kann man mehrere Ehepartner / Ehepartnerinnen gleichzeitig haben.", "darf man nicht wieder heiraten, wenn man einmal verheiratet war.", "darf eine Frau nicht wieder heiraten, wenn ihr Mann gestorben ist."],
+    "question": "Almanya'da evlilikle ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "answers": ["Aynı anda yalnızca bir kişiyle evli olunabilir.", "Aynı anda birden fazla eşle evli olunabilir.", "Bir kez evlenmiş kişi tekrar evlenemez.", "Kocası ölen bir kadın tekrar evlenemez."],
+    "explanation": "Alman medeni hukukunda tek eşlilik esastır. Mevcut bir evlilik devam ederken ikinci bir evlilik yapılamaz. Boşanma veya eşin ölümü sonrasında yeniden evlenmek mümkündür. Sınav ipucu: Aynı anda yalnızca bir geçerli evlilik olabilir."
+  },
+  "official-253": {
+    "germanQuestion": "Wo müssen Sie sich anmelden, wenn Sie in Deutschland umziehen?",
+    "germanAnswers": ["beim Einwohnermeldeamt", "beim Standesamt", "beim Ordnungsamt", "beim Gewerbeamt"],
+    "question": "Almanya'da taşındığınızda yeni adresinizi nereye kaydettirmeniz gerekir?",
+    "answers": ["Einwohnermeldeamt'a (nüfus/ikamet kayıt birimi)", "Standesamt'a (medeni hâl dairesi)", "Ordnungsamt'a", "Gewerbeamt'a (işletme kayıt dairesi)"],
+    "explanation": "Almanya'da ikamet adresi resmî olarak kayıt altına alınır. Taşınan kişi yeni adresini yetkili ikamet kayıt makamına bildirir; bu işlem günlük dilde Anmeldung veya Ummeldung olarak bilinir. Standesamt doğum, evlilik ve ölüm gibi medeni hâl işlemleriyle; Gewerbeamt ise ticari işletmelerle ilgilenir. Sınav ipucu: Adres değişikliği = Einwohnermeldeamt/Bürgeramt."
+  },
+  "official-254": {
+    "germanQuestion": "In Deutschland dürfen Ehepaare sich scheiden lassen. Meistens müssen sie dazu das „Trennungsjahr“ einhalten. Was bedeutet das?",
+    "germanAnswers": ["Der Scheidungsprozess dauert ein Jahr", "Die Ehegatten sind ein Jahr verheiratet, dann ist die Scheidung möglich", "Das Besuchsrecht für die Kinder gilt ein Jahr", "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich"],
+    "question": "Almanya'da boşanmada çoğunlukla uygulanan 'Trennungsjahr' ne anlama gelir?",
+    "answers": ["Boşanma davasının tam bir yıl sürmesi", "Çift bir yıl evli kaldıktan sonra otomatik olarak boşanabilmesi", "Çocuklarla görüşme hakkının bir yıl sürmesi", "Eşlerin en az bir yıl ayrı hayat sürmesi ve ardından boşanmanın mümkün hâle gelmesi"],
+    "explanation": "Trennungsjahr, evliliğin fiilen sona erdiğini göstermek için eşlerin en az bir yıl ayrı yaşam sürmesi anlamına gelir. Aynı evde kalınsa bile ekonomik ve günlük yaşamın ayrılması bazı durumlarda ayrı yaşama sayılabilir. Ama temel sınav bilgisi, boşanmadan önceki bir yıllık ayrılık dönemidir. Sınav ipucu: Trennungsjahr = bir yıl ayrı yaşam; 'davanın bir yıl sürmesi' değildir."
+  },
+  "official-255": {
+    "germanQuestion": "Bei Erziehungsproblemen können Eltern in Deutschland Hilfe erhalten vom …",
+    "germanAnswers": ["Ordnungsamt.", "Schulamt.", "Jugendamt.", "Gesundheitsamt."],
+    "question": "Almanya'da çocuk yetiştirme sorunlarında ebeveynler hangi kurumdan yardım alabilir?",
+    "answers": ["Ordnungsamt", "Schulamt", "Jugendamt", "Gesundheitsamt"],
+    "explanation": "Jugendamt, çocukların ve gençlerin korunması ile ailelerin desteklenmesinden sorumlu temel kamu kurumlarından biridir. Ebeveynler eğitim, bakım, aile içi sorunlar veya çocuğun güvenliği gibi konularda Jugendamt'tan danışmanlık ve destek alabilir. Sınav ipucu: Çocuk + aile desteği + yetiştirme sorunu = Jugendamt."
+  },
+  "official-256": {
+    "germanQuestion": "Ein Ehepaar möchte in Deutschland ein Restaurant eröffnen. Was braucht es dazu unbedingt?",
+    "germanAnswers": ["eine Erlaubnis der Polizei", "eine Genehmigung einer Partei", "eine Genehmigung des Einwohnermeldeamts", "eine Gaststättenerlaubnis von der zuständigen Behörde"],
+    "question": "Almanya'da bir çift restoran açmak istiyor. Bunun için aşağıdakilerden hangisine ihtiyaç vardır?",
+    "answers": ["Polisten izin", "Bir siyasi partiden izin", "Einwohnermeldeamt'tan izin", "Yetkili makamdan restoran işletme izni (Gaststättenerlaubnis)"],
+    "explanation": "Gastronomi işletmeleri belediye ve eyalet kurallarına tabidir; gereken izin ve bildirimler işletmenin türüne göre değişebilir. Sınavdaki temel ayrım şudur: İşletme faaliyeti için yetkili idari makam devrededir; polis veya siyasi parti işletme ruhsatı vermez. Sınav ipucu: Restoran işletme izni = yetkili idari makam, siyasi parti veya polis değil."
+  },
+  "official-257": {
+    "germanQuestion": "Eine erwachsene Frau möchte in Deutschland das Abitur nachholen. Das kann sie an …",
+    "germanAnswers": ["einer Hochschule.", "einem Abendgymnasium.", "einer Hauptschule.", "einer Privatuniversität."],
+    "question": "Yetişkin bir kadın Almanya'da sonradan Abitur yapmak istiyor. Bunu nerede yapabilir?",
+    "answers": ["Bir yüksekokulda", "Bir Abendgymnasium'da", "Bir Hauptschule'de", "Bir özel üniversitede"],
+    "explanation": "Abendgymnasium, yetişkinlerin çalışırken veya daha ileri yaşta lise bitirme yeterliliği olan Abitur'u sonradan edinmelerine imkân veren eğitim yoludur. Üniversite ise Abitur'un alınacağı yer değil, çoğunlukla Abitur ile girilen yükseköğretim kurumudur. Sınav ipucu: Yetişkin + sonradan Abitur = Abendgymnasium."
+  },
+  "official-258": {
+    "germanQuestion": "Was darf das Jugendamt in Deutschland?",
+    "germanAnswers": ["Es entscheidet, welche Schule das Kind besucht.", "Es kann ein Kind, das geschlagen wird oder hungern muss, aus der Familie nehmen.", "Es bezahlt das Kindergeld an die Eltern.", "Es kontrolliert, ob das Kind einen Kindergarten besucht."],
+    "question": "Almanya'da Jugendamt hangi yetkiye sahiptir?",
+    "answers": ["Çocuğun hangi okula gideceğine karar verir.", "Şiddet gören veya aç bırakılan bir çocuğu korumak için aile ortamından çıkarabilir.", "Ebeveynlere Kindergeld öder.", "Çocuğun anaokuluna gidip gitmediğini kontrol eder."],
+    "explanation": "Jugendamt'ın temel görevi çocuğun esenliğini ve güvenliğini korumaktır. Ciddi ihmal, şiddet veya tehlike durumunda koruyucu önlemler alınabilir ve çocuk geçici olarak güvenli bir yere yerleştirilebilir. Okul seçimi veya Kindergeld ödemesi Jugendamt'ın temel görevi değildir. Sınav ipucu: Kindeswohl yani çocuğun esenliği tehlikedeyse Jugendamt müdahale edebilir."
+  },
+  "official-259": {
+    "germanQuestion": "Das Berufsinformationszentrum BIZ bei der Bundesagentur für Arbeit in Deutschland hilft bei der …",
+    "germanAnswers": ["Rentenberechnung.", "Lehrstellensuche.", "Steuererklärung.", "Krankenversicherung."],
+    "question": "Bundesagentur für Arbeit bünyesindeki Berufsinformationszentrum (BIZ) hangi konuda yardımcı olur?",
+    "answers": ["Emeklilik maaşı hesaplama", "Mesleki eğitim yeri (Lehrstelle/Ausbildungsplatz) arama", "Vergi beyannamesi", "Sağlık sigortası"],
+    "explanation": "BIZ, meslekler, Ausbildung, eğitim yolları ve iş piyasası hakkında bilgi sunan kariyer danışmanlığı merkezidir. Özellikle gençler ve meslek değiştirmek isteyen yetişkinler burada mesleki eğitim ve kariyer seçeneklerini araştırabilir. Sınav ipucu: BIZ = meslek ve Ausbildung bilgisi."
+  },
+  "official-260": {
+    "germanQuestion": "In Deutschland hat ein Kind in der Schule…",
+    "germanAnswers": ["Recht auf unbegrenzte Freizeit.", "Wahlfreiheit für alle Fächer.", "Anspruch auf Schulgeld.", "Anwesenheitspflicht."],
+    "question": "Almanya'da okula giden bir çocuk için aşağıdakilerden hangisi geçerlidir?",
+    "answers": ["Sınırsız boş zaman hakkı", "Tüm dersleri serbestçe seçme hakkı", "Okul parası alma hakkı", "Okula devam zorunluluğu"],
+    "explanation": "Almanya'da Schulpflicht, yani okul zorunluluğu vardır. Çocuklar belirli bir yaş aralığında okula düzenli olarak devam etmek zorundadır. Bu sadece bir hak değil, aynı zamanda yasal bir yükümlülüktür. Sınav ipucu: Schule + Pflicht = Anwesenheitspflicht/Schulpflicht."
+  },
+  "official-261": {
+    "germanQuestion": "Ein Mann möchte mit 30 Jahren in Deutschland sein Abitur nachholen. Wo kann er das tun? An …",
+    "germanAnswers": ["einer Hochschule", "einem Abendgymnasium", "einer Hauptschule", "einer Privatuniversität"],
+    "question": "30 yaşındaki bir kişi Almanya'da sonradan Abitur yapmak istiyor. Bunu nerede yapabilir?",
+    "answers": ["Bir yüksekokulda", "Bir Abendgymnasium'da", "Bir Hauptschule'de", "Bir özel üniversitede"],
+    "explanation": "Abendgymnasium, yetişkinlere ikinci eğitim yolu üzerinden Abitur kazanma imkânı sağlar. Bu yapı özellikle okul döneminde Abitur almamış kişilerin daha sonra üniversiteye giriş yeterliliği edinmesi için kullanılır. Sınav ipucu: Yetişkin yaşta Abitur tamamlama = Abendgymnasium."
+  },
+  "official-262": {
+    "germanQuestion": "Was bedeutet in Deutschland der Grundsatz der Gleichbehandlung?",
+    "germanAnswers": ["Niemand darf z. B. wegen einer Behinderung benachteiligt werden.", "Man darf andere Personen benachteiligen, wenn ausreichende persönliche Gründe hierfür vorliegen.", "Niemand darf gegen Personen klagen, wenn sie benachteiligt wurden.", "Es ist für alle Gesetz, benachteiligten Gruppen jährlich Geld zu spenden."],
+    "question": "Almanya'da eşit muamele ilkesi (Gleichbehandlung) ne anlama gelir?",
+    "answers": ["Hiç kimse örneğin engelliliği nedeniyle dezavantajlı duruma düşürülemez.", "Yeterli kişisel gerekçe varsa başkalarına ayrımcılık yapılabilir.", "Ayrımcılığa uğrayan kişiler dava açamaz.", "Herkes her yıl ayrımcılığa uğrayan gruplara para bağışlamak zorundadır."],
+    "explanation": "Eşit muamele ilkesi, kişilerin ırk, etnik köken, cinsiyet, din, engellilik, yaş gibi korunan özellikler nedeniyle haksız biçimde dezavantajlı duruma düşürülmemesini hedefler. Engellilik nedeniyle sırf bu özellikten dolayı olumsuz işlem yapmak ayrımcılığa örnektir. Sınav ipucu: Gleichbehandlung = korunan bir özellik nedeniyle haksız dezavantaj yaratmamak."
+  },
+  "official-263": {
+    "germanQuestion": "In Deutschland sind Jugendliche ab 14 Jahren strafmündig. Das bedeutet: Jugendliche, die 14 Jahre und älter sind und gegen Strafgesetze verstoßen, …",
+    "germanAnswers": ["werden bestraft.", "werden wie Erwachsene behandelt.", "teilen die Strafe mit ihren Eltern.", "werden nicht bestraft."],
+    "question": "Almanya'da gençlerin 14 yaşından itibaren 'strafmündig' olması ne anlama gelir?",
+    "answers": ["Ceza hukuku kapsamında sorumlu tutulabilirler.", "Her durumda yetişkinler gibi muamele görürler.", "Cezayı ebeveynleriyle paylaşırlar.", "Hiçbir şekilde cezalandırılamazlar."],
+    "explanation": "Strafmündigkeit, bir kişinin ceza hukuku bakımından sorumluluk taşıyabilecek yaşa ulaşmasıdır. Almanya'da bu sınır 14 yaştır. Ancak 14-17 yaş grubunda yetişkin ceza hukuku değil, gençlik ceza hukuku (Jugendstrafrecht) uygulanır. Sınav ipucu: 14 yaş = cezai sorumluluğun başlangıcı; fakat 'yetişkin gibi yargılanır' demek değildir."
+  },
+  "official-264": {
+    "germanQuestion": "Zu welchem Fest tragen Menschen in Deutschland bunte Kostüme und Masken?",
+    "germanAnswers": ["am Rosenmontag", "am Maifeiertag", "beim Oktoberfest", "an Pfingsten"],
+    "question": "Almanya'da insanlar hangi kutlamada renkli kostümler ve maskeler takar?",
+    "answers": ["Rosenmontag'da", "1 Mayıs'ta", "Oktoberfest'te", "Pfingsten'de"],
+    "explanation": "Rosenmontag, özellikle Rheinland bölgesinde Karneval/Fasching döneminin en önemli günlerinden biridir. Geçit törenleri, kostümler ve maskeler bu geleneğin tipik parçalarıdır. Oktoberfest ise bira ve halk festivali geleneğiyle bilinir. Sınav ipucu: Kostüm + maske + geçit töreni = Rosenmontag/Karneval."
+  },
+  "official-265": {
+    "germanQuestion": "Wohin muss man in Deutschland zuerst gehen, wenn man heiraten möchte?",
+    "germanAnswers": ["zum Einwohnermeldeamt", "zum Ordnungsamt", "zur Agentur für Arbeit", "zum Standesamt"],
+    "question": "Almanya'da evlenmek isteyen biri önce hangi kuruma başvurur?",
+    "answers": ["Einwohnermeldeamt'a", "Ordnungsamt'a", "Agentur für Arbeit'a", "Standesamt'a"],
+    "explanation": "Resmî medeni nikâh işlemleri Standesamt tarafından yürütülür. Evlenmek isteyen çift gerekli belgeleri Standesamt'a sunar ve evlenme işlemini burada resmîleştirir. Dini nikâh veya düğün töreni, medeni evliliğin yerine geçmez. Sınav ipucu: Evlilik, doğum, ölüm gibi medeni hâl işlemleri = Standesamt."
+  },
+  "official-266": {
+    "germanQuestion": "Wann beginnt die gesetzliche Nachtruhe in Deutschland?",
+    "germanAnswers": ["wenn die Sonne untergeht", "wenn die Nachbarn schlafen gehen", "um 0 Uhr, Mitternacht", "um 22 Uhr"],
+    "question": "Einbürgerungstest'e göre Almanya'da gece sessizliği (Nachtruhe) saat kaçta başlar?",
+    "answers": ["Güneş battığında", "Komşular uyumaya gittiğinde", "Gece 00.00'da", "Saat 22.00'de"],
+    "explanation": "Sınav kataloğunda Nachtruhe için temel cevap saat 22.00'dir. Bu dönemde yüksek sesli müzik, matkap gibi komşuları rahatsız edebilecek faaliyetlerden kaçınmak beklenir. Uygulamadaki ayrıntılar eyalet, belediye, kira sözleşmesi veya Hausordnung'a göre değişebilir; sınav cevabı 22.00 olarak öğrenilmelidir. Sınav ipucu: Nachtruhe = 22:00."
+  },
+  "official-267": {
+    "germanQuestion": "Eine junge Frau in Deutschland, 22 Jahre alt, lebt mit ihrem Freund zusammen. Die Eltern der Frau finden das nicht gut, weil ihnen der Freund nicht gefällt. Was können die Eltern tun?",
+    "germanAnswers": ["Sie müssen die Entscheidung der volljährigen Tochter respektieren.", "Sie haben das Recht, die Tochter in die elterliche Wohnung zurückzuholen.", "Sie können zur Polizei gehen und die Tochter anzeigen.", "Sie suchen einen anderen Mann für die Tochter."],
+    "question": "22 yaşındaki yetişkin bir kadın erkek arkadaşıyla yaşıyor ve ailesi bunu istemiyor. Ailenin hukuken yapabileceği nedir?",
+    "answers": ["Yetişkin kızlarının kararına saygı göstermek zorundadırlar.", "Kızlarını zorla aile evine geri getirme hakları vardır.", "Polise gidip kızlarını şikâyet edebilirler.", "Kızları için başka bir eş seçebilirler."],
+    "explanation": "18 yaşından itibaren kişi reşittir ve kendi yaşamı hakkında temel kararları kendisi verir. Kiminle yaşayacağı veya ilişki kuracağı konusunda ebeveynlerin zorlayıcı bir karar yetkisi yoktur. Sınav ipucu: Volljährig = kendi özel yaşam kararlarını kendisi verebilir."
+  },
+  "official-268": {
+    "germanQuestion": "Eine junge Frau will den Führerschein machen. Sie hat Angst vor der Prüfung, weil ihre Muttersprache nicht Deutsch ist. Was ist richtig?",
+    "germanAnswers": ["Sie muss mindestens zehn Jahre in Deutschland leben, bevor sie den Führerschein machen kann.", "Wenn sie kein Deutsch kann, darf sie keinen Führerschein haben.", "Sie muss den Führerschein in dem Land machen, in dem man ihre Sprache spricht.", "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl."],
+    "question": "Ana dili Almanca olmayan genç bir kadın ehliyet sınavı konusunda endişeli. Hangisi doğrudur?",
+    "answers": ["Ehliyet alabilmek için Almanya'da en az 10 yıl yaşamış olmalıdır.", "Almanca bilmiyorsa ehliyet alamaz.", "Ehliyeti yalnız kendi dilinin konuşulduğu ülkede alabilir.", "Teorik sınavı mevcut yabancı dil seçeneklerinden birinde yapması mümkün olabilir."],
+    "explanation": "Ehliyet alma hakkı kişinin ana diline bağlı değildir. Teorik sınav Almanca dışında çeşitli dillerde de sunulabilir; bu nedenle dil engeli otomatik olarak ehliyet almaya engel değildir. Pratik sınavın kuralları ayrıdır. Sınav ipucu: Ana dil Almanca değil diye ehliyet hakkı kaybolmaz; teorik sınav için yabancı dil seçenekleri vardır."
+  },
+  "official-269": {
+    "germanQuestion": "In Deutschland haben Kinder ab dem Alter von drei Jahren bis zur Ersteinschulung einen Anspruch auf …",
+    "germanAnswers": ["monatliches Taschengeld.", "einen Platz in einem Sportverein.", "einen Kindergartenplatz.", "einen Ferienpass."],
+    "question": "Einbürgerungstest'e göre Almanya'da üç yaşından ilkokula başlayana kadar çocukların hangi hakka sahip olduğu sorulur?",
+    "answers": ["Aylık harçlık", "Bir spor kulübünde yer", "Bir anaokulu yeri (Kindergartenplatz)", "Tatil kartı"],
+    "explanation": "Soru, çocuk bakımına erişim hakkını ölçer. Kindergarten/Kita, çocukların okul öncesi bakım ve eğitim aldığı kurumdur; bu alan yalnız özel bir aile tercihi değil, kamu tarafından düzenlenen bir sosyal hizmet alanıdır. Sınav ipucu: 3 yaş + okul öncesi = Kindergartenplatz."
+  },
+  "official-270": {
+    "germanQuestion": "Die Volkshochschule in Deutschland ist eine Einrichtung …",
+    "germanAnswers": ["für den Religionsunterricht.", "nur für Jugendliche.", "zur Weiterbildung.", "nur für Rentner und Rentnerinnen."],
+    "question": "Almanya'daki Volkshochschule (VHS) nasıl bir kurumdur?",
+    "answers": ["Din eğitimi kurumu", "Yalnız gençler için bir kurum", "Yetişkin eğitimi ve ileri eğitim kurumu", "Yalnız emekliler için bir kurum"],
+    "explanation": "Volkshochschule belediyelerde yaygın bulunan yetişkin eğitimi merkezidir. Dil kursları, mesleki gelişim, bilgisayar, kültür ve genel eğitim gibi çok farklı alanlarda kurslar sunar. Yaşlılara veya gençlere özel bir kurum değildir. Sınav ipucu: VHS = Weiterbildung / yetişkin eğitimi."
+  },
+  "official-271": {
+    "germanQuestion": "Was ist in Deutschland ein Brauch zu Weihnachten?",
+    "germanAnswers": ["bunte Eier verstecken", "einen Tannenbaum schmücken", "sich mit Masken und Kostümen verkleiden", "Kürbisse vor die Tür stellen"],
+    "question": "Almanya'da Noel döneminin (Weihnachten) tipik geleneklerinden biri hangisidir?",
+    "answers": ["Renkli yumurta saklamak", "Bir Noel ağacını süslemek", "Maske ve kostüm giymek", "Kapının önüne balkabağı koymak"],
+    "explanation": "Weihnachten döneminde süslenmiş Tannenbaum/Weihnachtsbaum yaygın bir gelenektir. Renkli yumurta Paskalya'ya, kostüm ve maskeler Karneval'e, balkabağı ise Halloween geleneğine aittir. Sınav ipucu: Weihnachten = Tannenbaum."
+  },
+  "official-272": {
+    "germanQuestion": "Welche Lebensform ist in Deutschland nicht erlaubt?",
+    "germanAnswers": ["Mann und Frau sind geschieden und leben mit neuen Partnern zusammen.", "Zwei Frauen leben zusammen.", "Ein allein erziehender Vater lebt mit seinen zwei Kindern zusammen.", "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet."],
+    "question": "Almanya'da aşağıdaki yaşam biçimlerinden hangisine izin verilmez?",
+    "answers": ["Boşanmış bir kadın ve erkeğin yeni partnerleriyle yaşaması", "İki kadının birlikte yaşaması", "Tek başına çocuk yetiştiren bir babanın iki çocuğuyla yaşaması", "Bir erkeğin aynı anda iki kadınla evli olması"],
+    "explanation": "Almanya'da yetişkinlerin farklı aile ve birlikte yaşam biçimleri hukuken mümkündür. Buradaki yasak olan durum aynı anda birden fazla kişiyle evli olmaktır; medeni hukuk tek eşlilik esasına dayanır. Sınav ipucu: Farklı yaşam biçimleri serbesttir; eşzamanlı birden fazla evlilik değildir."
+  },
+  "official-273": {
+    "germanQuestion": "Bei Erziehungsproblemen gehen Sie in Deutschland …",
+    "germanAnswers": ["zum Arzt / zur Ärztin.", "zum Gesundheitsamt.", "zum Einwohnermeldeamt.", "zum Jugendamt."],
+    "question": "Almanya'da çocuk yetiştirme sorunlarında hangi kuruma başvurulur?",
+    "answers": ["Doktora", "Gesundheitsamt'a", "Einwohnermeldeamt'a", "Jugendamt'a"],
+    "explanation": "Jugendamt yalnız kriz anında müdahale eden bir kurum değildir; ailelere danışmanlık ve eğitim desteği de sağlar. Ebeveynler çocuk yetiştirme, aile içi çatışmalar veya bakım sorunlarında buradan destek isteyebilir. Sınav ipucu: Erziehungsprobleme = Jugendamt."
+  },
+  "official-274": {
+    "germanQuestion": "Sie haben in Deutschland absichtlich einen Brief geöffnet, der an eine andere Person adressiert ist. Was haben Sie nicht beachtet?",
+    "germanAnswers": ["das Schweigerecht", "das Briefgeheimnis", "die Schweigepflicht", "die Meinungsfreiheit"],
+    "question": "Başka bir kişiye gönderilmiş bir mektubu bilerek açarsanız hangi hakkı ihlal etmiş olursunuz?",
+    "answers": ["Susma hakkını", "Mektup gizliliğini (Briefgeheimnis)", "Mesleki sır saklama yükümlülüğünü", "İfade özgürlüğünü"],
+    "explanation": "Briefgeheimnis, kişisel yazışmaların gizliliğini korur. Başkasına gönderilmiş kapalı bir mektubu yetkisiz biçimde açmak kişinin özel iletişim alanına müdahaledir. Bu kavram Meinungsfreiheit veya mesleki Schweigepflicht ile karıştırılmamalıdır. Sınav ipucu: Mektup + gizlilik = Briefgeheimnis."
+  },
+  "official-275": {
+    "germanQuestion": "Was braucht man in Deutschland für eine Ehescheidung?",
+    "germanAnswers": ["die Einwilligung der Eltern", "ein Attest eines Arztes / einer Ärztin", "die Einwilligung der Kinder", "die Unterstützung eines Anwalts / einer Anwältin"],
+    "question": "Almanya'da boşanma işlemi için aşağıdakilerden hangisine ihtiyaç vardır?",
+    "answers": ["Ebeveynlerin onayı", "Doktor raporu", "Çocukların onayı", "Bir avukatın desteği"],
+    "explanation": "Boşanma aile mahkemesi üzerinden yürütülen hukuki bir işlemdir. Boşanma başvurusu bakımından avukat aracılığı gerekir; ebeveyn veya çocuk onayı boşanmanın genel koşulu değildir. Ayrıca çoğu durumda Trennungsjahr konusu da önem taşır. Sınav ipucu: Ehescheidung = Familiengericht + avukat; aile büyüklerinin izni değildir."
+  }
+}
