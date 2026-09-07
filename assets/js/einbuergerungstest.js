@@ -1,8 +1,7 @@
 (function(){
   'use strict';
 
-  const DATA_VERSION='20260907-2';
-  const LOCAL_DATA='/assets/data/einbuergerungstest.json?v='+DATA_VERSION;
+  const LOCAL_DATA='/assets/data/einbuergerungstest.json';
   const FALLBACK_DATA='https://raw.githubusercontent.com/leben-in-deutschland/leben-in-deutschland-scrapper/main/data/question.json';
   const STORE='ap_einbuergerungstest_v1';
   const LETTERS=['a','b','c','d'];
@@ -137,7 +136,7 @@
     const deContext=(q.context||'').trim();
     const reviewed=!!((q.tr||{}).reviewed);
     return '<div class="citizen-explanation">'+
-      '<div class="citizen-correct-head"><span class="citizen-correct-icon">âœ“</span><div><strong>'+(rec.correct?'DoÄŸru cevap':'DoÄŸru seÃ§enek: '+LETTERS[correct].toUpperCase())+'</strong><div class="citizen-correct-answer" lang="de">'+escapeHtml(q.answers[i])+'</div>'+(tr?'<div class="citizen-correct-tr" lang="tr">'+escapeHtml(tr)+'</div>':'')+'</div></div>'+
+      '<div class="citizen-correct-head"><span class="citizen-correct-icon">âœ“</span><div><strong>'+(rec.correct?'DoÄŸru cevap':'DoÄŸru seÃ§enek: '+LETTERS[correct].toUpperCase())+'</strong><div class="citizen-correct-answer" lang="de">'+escapeHtml(q.answers[correct])+'</div>'+(tr?'<div class="citizen-correct-tr" lang="tr">'+escapeHtml(tr)+'</div>':'')+'</div></div>'+
       (trContext?'<div class="citizen-learning"><h3>Neden doÄŸru?</h3>'+richExplanation(trContext)+'</div>':'')+
       (deContext?'<details><summary>Almanca kaynak aÃ§Ä±klamasÄ±nÄ± gÃ¶ster</summary><p>'+escapeHtml(deContext)+'</p></details>':'')+
       '<div class="citizen-explanation-meta">'+(reviewed?'<span class="citizen-reviewed">EditÃ¶r kontrollÃ¼ TÃ¼rkÃ§e</span>':'<span>TÃ¼rkÃ§e henÃ¼z editÃ¶r kontrolÃ¼nde</span>')+'<small>ResmÃ® BAMF Ã§evirisi deÄŸildir.</small></div></div>';
@@ -153,7 +152,7 @@
     const q=pool[index],rec=answerRecord(q),trq=((q.tr||{}).question||'').trim();
     const trPending=!trq?'<div class="citizen-translation-pending">Bu sorunun TÃ¼rkÃ§e Ã§evirisi editÃ¶r kontrolÃ¼nden geÃ§iyor. YanlÄ±ÅŸ Ã§eviri gÃ¶stermemek iÃ§in geÃ§ici olarak yalnÄ±z Almanca metin gÃ¶steriliyor.</div>':'';
     const nextDisabled=(index===pool.length-1||!rec)?'disabled':'';
-    host.innerHTML='<section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+escapeHtml(q.num)+'</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span>'+(q.category?'<span class="citizen-pill">'+escapeHtml(categoryLabel(q))+'</span>':'')+'</div><button class="citizen-fav" id="citizenFav" type="button" aria-label="Favoriye ekle">'+(isFab(q)?'â˜…':'â˜†')+'</button></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(htrq?'<p class="citizen-tr" lang="tr">'+escapeHtml(trq)+'</p>':trPending)+'<div class="citizen-answers">'+q.answers.map((_,i)=>answerButton(q,i,rec)).join('')+'</div>'+explanation(q,rec)+'<div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" type="button" id="citizenPrev" '+(index===0?'disabled':'')+'>â† Ãnceki</button><button class="btn btn-primary" type="button" id="citizenNext" '+nextDisabled+'>Sonraki â†’</button></div><div class="citizen-jump"><span>'+(index+1)+' / '+pool.length+'</span><input id="citizenJumpInput" type="number" min="1" max="'+pool.length+'" placeholder="Soru"><button class="btn btn-secondary" id="citizenJump" type="button">Git</button></div></div></section>';
+    host.innerHTML='<section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+escapeHtml(q.num)+'</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span>'+(q.category?'<span class="citizen-pill">'+escapeHtml(categoryLabel(q))+'</span>':'')+'</div><button class="citizen-fav" id="citizenFav" type="button" aria-label="Favoriye ekle">'+(isFav(q)?'â˜…':'â˜†')+'</button></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(trq?'<p class="citizen-tr" lang="tr">'+escapeHtml(trq)+'</p>':trPending)+'<div class="citizen-answers">'+q.answers.map((_,i)=>answerButton(q,i,rec)).join('')+'</div>'+explanation(q,rec)+'<div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" type="button" id="citizenPrev" '+(index===0?'disabled':'')+'>â† Ã–nceki</button><button class="btn btn-primary" type="button" id="citizenNext" '+nextDisabled+'>Sonraki â†’</button></div><div class="citizen-jump"><span>'+(index+1)+' / '+pool.length+'</span><input id="citizenJumpInput" type="number" min="1" max="'+pool.length+'" placeholder="Soru"><button class="btn btn-secondary" id="citizenJump" type="button">Git</button></div></div></section>';
     host.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>submitAnswer(q,Number(b.dataset.answer)));
     el('citizenFav').onclick=()=>toggleFav(q);
     el('citizenPrev').onclick=()=>{if(index>0){index--;renderQuestion();scrollCard();}};
@@ -184,71 +183,48 @@
   function renderExam(){
     const host=el('citizenQuestionHost');if(!exam){startExam();return;}if(exam.finished){renderExamResult();return;}
     const q=exam.questions[exam.index],selected=exam.answers[exam.index];
-    host.innerHTML='<div class="citizen-exam-banner"><div><strong>GerÃ§ek sÄ±nav provasÄ±</strong><div>33 soru Â· 30 genel + 3 '+escapeHtml(STATES[stateCode()])+' Â· GefÖS¢rFüI÷'SÂöF—cãÂöF—cãÆF—b6Æ73Ò&6—F—¦Vâ×F–ÖW""–CÒ&6—F—¦VåF–ÖW"#âr¶f÷&ÖEF–ÖR†W†ÒæVæG2ÔFFRææ÷r‚’’²sÂöF—cãÂöF—cãÇ6V7F–öâ6Æ73Ò&6—F—¦Vâ×VW7F–öâ#ãÆF—b6Æ73Ò&6—F—¦Vâ×VW7F–öâÖ†VB#ãÆF—b6Æ73Ò&6—F—¦VâÖ¶–6¶W"#ãÇ7â6Æ73Ò&6—F—¦Vâ×–ÆÂ#å6÷'Rr²†W†Òæ–æFW‚³’²rò33Â÷7ããÇ7â6Æ73Ò&6—F—¦Vâ×–ÆÂ#âr¶W66T‡FÖÂ‡VW7F–öäÆ&VÂ‡’’²sÂ÷7ããÂöF—cãÂöF—câr·&VæFW$–ÖvR‡’²sÇ6Æ73Ò&6—F—¦VâÖFR"ÆæsÒ&FR#âr¶W66T‡FÖÂ‡çVW7F–öâ’²sÂ÷âr²‚‚‡çG'ÇÇ·Ò’çVW7F–öâ“òsÇ6Æ73Ò&6—F—¦Vâ×G""ÆæsÒ'G"#âr¶W66T‡FÖÂ‡çG"çVW7F–öâ’²sÂ÷âs¢rr’²sÆF—b6Æ73Ò&6—F—¦VâÖç7vW'2#âr·æç7vW'2æÖ‚†Æ’“ÓâsÆ'WGFöâG—SÒ&'WGFöâ"6Æ73Ò&6—F—¦VâÖç7vW"r²†—6VÆV7FVCÓÓÖ“òv—2×6VÆV7FVBs¢rr’²r"FFÖW†ÒÖç7vW#Ò"r¶’²r#ãÇ7â6Æ73Ò&6—F—¦VâÖç7vW"ÖÆWGFW"#âr´ÄUEDU%5¶•ÒçFõWW$66R‚’²sÂ÷7ããÇ7ããÇ7â6Æ73Ò&6—F—¦VâÖç7vW"ÖFR#âr¶W66T‡FÖÂ†’²sÂ÷7ãâr²‚‚‚‡çG'ÇÇ·Ò’æç7vW'7ÇÅµÒ•¶•Ò“òsÇ7â6Æ73Ò&6—F—¦VâÖç7vW"×G"#âr¶W66T‡FÖÂ‡çG"æç7vW'5¶•Ò’²sÂ÷7ãâs¢rr’²sÂ÷7ããÂö'WGFöãâr’æ¦ö–â‚rr’²sÂöF—cãÆF—b6Æ73Ò&6—F—¦VâÖæb#ãÆF—b6Æ73Ò&6—F—¦VâÖæbÖw&÷W#ãÆ'WGFöâ6Æ73Ò&'Fâ'Fâ×6V6öæF'’"–CÒ&W†Õ&Wb"G—SÒ&'WGFöâ"r²†W†Òæ–æFWƒÓÓÓòvF—6&ÆVBs¢rr’²sî(i8ææ6V¶“Âö'WGFöãâr²†W†Òæ–æFWƒÓÓÓ3#òsÆ'WGFöâ6Æ73Ò&'Fâ'Fâ×&–Ö'’"–CÒ&W†Ôf–æ—6‚"G—SÒ&'WGFöâ#å<KælK&—F—#Âö'WGFöãâs¢sÆ'WGFöâ6Æ73Ò&'Fâ'Fâ×&–Ö'’"–CÒ&W†ÔæW‡B"G—SÒ&'WGFöâ#å6öç&¶’(i#Âö'WGFöãâr’²sÂöF—cãÇ7ãâr´ö&¦V7Bæ¶W—2†W†Òæç7vW'2’æÆVæwF‚²rò326WfÆæLKÂ÷7ããÂöF—cãÂ÷6V7F–öãâs°¢†÷7BçVW'•6VÆV7F÷$ÆÂ‚u¶FFÖW†ÒÖç7vW%Òr’æf÷$V6‚†#Óæ"æöæ6Æ–6³Ò‚“Óç¶W†Òæç7vW'5¶W†Òæ–æFW…ÓÔçVÖ&W"†"æFF6WBæW†Ôç7vW"“·&VæFW$W†Ò‚“·Ò“°¢–b†VÂ‚vW†Õ&Wbr’–VÂ‚vW†Õ&Wbr’æöæ6Æ–6³Ò‚“Óç¶W†Òæ–æFW‚ÒÓ·&VæFW$W†Ò‚“·Ó°¢–b†VÂ‚vW†ÔæW‡Br’–VÂ‚vW†ÔæW‡Br’æöæ6Æ–6³Ò‚“Óç¶W†Òæ–æFW‚²³·&VæFW$W†Ò‚“·Ó°¢–b†VÂ‚vW†Ôf–æ—6‚r’–VÂ‚vW†Ôf–æ—6‚r’æöæ6Æ–6³Öf–æ—6„W†Ó°¢Ğ¢gVæ7F–öâf–æ—6„W†Ò‚—¶–b‚W†×ÇÆW†Òæf–æ—6†VB—&WGW&ã¶W†Òæf–æ—6†VC×G'VS¶6ÆV$–çFW'fÂ‡F–ÖW$–B“¶ÆWB6÷'&V7CÓ¶W†ÒçVW7F–öç2æf÷$V6‚‚‡Æ’“Óç¶–b†W†Òæç7vW'5¶•ÓÓÓ×6öÇWF–öä–æFW‚‡’–6÷'&V7B²³·Ò“¶W†Òæ6÷'&V7CÖ6÷'&V7C¶W†Òç76VCÖ6÷'&V7CãÓs¶–b‡G—Vöbv–æF÷ræwFsÓÓÒvgVæ7F–öâr—v–æF÷ræwFr‚vWfVçBrÂv6—F—¦Vç6†—öW†Õöf–æ—6‚rÇ·7FFS§7FFT6öFR‚’Æ6÷'&V7BÇ76VC¦W†Òç76VGÒ“·&VæFW$W†Õ&W7VÇB‚“·Ğ¢gVæ7F–öâ&VæFW$W†Õ&W7VÇB‚—°¢6öç7BÖ—76VCÖW†ÒçVW7F–öç2æÖ‚‡Æ’“Óâ‡·Æ’Æö³¦W†Òæç7vW'5¶•ÓÓÓ×6öÇWF–öä–æFW‚‡—Ò’’æf–ÇFW"‡ƒÓâ‚æö²“°¢VÂ‚v6—F—¦VåVW7F–öä†÷7Br’æ–ææW$…DÔÃÒsÆF—b6Æ73Ò&6—F—¦Vâ×&W7VÇBr²†W†Òç76VCòw72s¢vf–Âr’²r#ãÆƒ#âr²†W†Òç76VCòtFVæVÖR<KælKìKv\:wF–æ—¢s¢t&—&¢F†:vÌKYöÖvW&V¶—–÷"r’²sÂöƒ#ãÇ7G&öæsâr¶W†Òæ6÷'&V7B²rò33Â÷7G&öæsãÇå&W6Ü:âV–æ,;Ç&vW'Væw7FW7Bœ:v–âv\:†ÖR\Yö±,HMÈñ'ÜHÙ]˜\1,\‹Ü]ÛˆÛ\ÜÏH˜ˆ‹\š[X\HˆYH™^[PYØZ[ˆˆ\OH˜]Ûˆ–Y[šH[™[YH˜qgÛ]Ø]Û]ÛˆÛ\ÜÏH˜ˆ‹\ÙXÛÛ™\HˆYH™^[T™]šY]Èˆ\OH˜]Ûˆ–X[›1,qgÛ\±,H0éØ[1,qgÏØ]ÛÙ]‰ÎÂˆ[
-	Ù^[PYØZ[‰ÊK›Û˜ÛXÚÏ\İ\^[NÂˆ[
-	Ù^[T™]šY]ÉÊK›Û˜ÛXÚÏJ
-OOÛZ\ÜÙY™›Ü‘XXÚ
-OœİÜ™T]Ú
-ÏOÜË˜[œİÙ\œÏ\Ë˜[œİÙ\œßßNÜË˜[œİÙ\œÖÚÙ^JœJWO^ÜÙ[XİY™^[K˜[œİÙ\œÖŞšWOÏËLKÛÜœ™Xİ™˜[ÙK]‘]K››İÊ
-_NßJJNÛ[ÙOIİÜ›Û™ÉÎÜÙ]Xİ]™UXŠ	İÜ›Û™ÉÊNØÚÛÜÙTÛÛ
+    host.innerHTML='<div class="citizen-exam-banner"><div><strong>GerÃ§ek sÄ±nav provasÄ±</strong><div>33 soru Â· 30 genel + 3 '+escapeHtml(STATES[stateCode()])+' Â· GeÃ§me: 17 doÄŸru</div></div><div class="citizen-timer" id="citizenTimer">'+formatTime(exam.ends-Date.now())+'</div></div><section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+(exam.index+1)+' / 33</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span></div></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(((q.tr||{}).question)?'<p class="citizen-tr" lang="tr">'+escapeHtml(q.tr.question)+'</p>':'')+'<div class="citizen-answers">'+q.answers.map((a,i)=>'<button type="button" class="citizen-answer '+(selected===i?'is-selected':'')+'" data-exam-answer="'+i+'"><span class="citizen-answer-letter">'+LETTERS[i].toUpperCase()+'</span><span><span class="citizen-answer-de">'+escapeHtml(a)+'</span>'+((((q.tr||{}).answers||[])[i])?'<span class="citizen-answer-tr">'+escapeHtml(q.tr.answers[i])+'</span>':'')+'</span></button>').join('')+'</div><div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" id="examPrev" type="button" '+(exam.index===0?'disabled':'')+'>â† Ã–nceki</button>'+(exam.index===32?'<button class="btn btn-primary" id="examFinish" type="button">SÄ±navÄ± bitir</button>':'<button class="btn btn-primary" id="examNext" type="button">Sonraki â†’</button>')+'</div><span>'+Object.keys(exam.answers).length+' / 33 cevaplandÄ±</span></div></section>';
+    host.querySelectorAll('[data-exam-answer]').forEach(b=>b.onclick=()=>{exam.answers[exam.index]=Number(b.dataset.examAnswer);renderExam();});
+    if(el('examPrev'))el('examPrev').onclick=()=>{exam.index--;renderExam();};
+    if(el('examNext'))el('examNext').onclick=()=>{exam.index++;renderExam();};
+    if(el('examFinish'))el('examFinish').onclick=finishExam;
+  }
+  function finishExam(){if(!exam||exam.finished)return;exam.finished=true;clearInterval(timerId);let correct=0;exam.questions.forEach((q,i)=>{if(exam.answers[i]===solutionIndex(q))correct++;});exam.correct=correct;exam.passed=correct>=17;if(typeof window.gtag==='function')window.gtag('event','citizenship_exam_finish',{state:stateCode(),correct,passed:exam.passed});renderExamResult();}
+  function renderExamResult(){
+    const missed=exam.questions.map((q,i)=>({q,i,ok:exam.answers[i]===solutionIndex(q)})).filter(x=>!x.ok);
+    el('citizenQuestionHost').innerHTML='<div class="citizen-result '+(exam.passed?'pass':'fail')+'"><h2>'+(exam.passed?'Deneme sÄ±navÄ±nÄ± geÃ§tiniz':'Biraz daha Ã§alÄ±ÅŸma gerekiyor')+'</h2><strong>'+exam.correct+' / 33</strong><p>ResmÃ® EinbÃ¼rgerungstest iÃ§in geÃ§me eÅŸiÄŸi 17 doÄŸru cevaptÄ±r.</p><button class="btn btn-primary" id="examAgain" type="button">Yeni deneme baÅŸlat</button><button class="btn btn-secondary" id="examReview" type="button">YanlÄ±ÅŸlarÄ± Ã§alÄ±ÅŸ</button></div>';
+    el('examAgain').onclick=startExam;
+    el('examReview').onclick=()=>{missed.forEach(x=>storePatch(s=>{s.answers=s.answers||{};s.answers[key(x.q)]={selected:exam.answers[x.i]??-1,correct:false,at:Date.now()};}));mode='wrong';setActiveTab('wrong');choosePool();};
+  }
 
-NßNÂˆB‚ˆ[˜İ[Ûˆ™\Ù]›ÙÜ™\ÜÊ
-^ÂˆÛÛœİÏ[ØYİÜ™J
-NÂˆÛÛœİ[œİÙ\™YSØš™XİšÙ^\ÊË˜[œİÙ\œßßJK›[™İÂˆYŠX[œİÙ\™Y
-^Ø[\
-	Ò[°ïˆñ,Y±,\›[˜XØZÈš\ˆÙ]˜\ÙpéÛZqgÚH[ÚË‰ÊNÜ™]\›ßBˆYŠXÛÛ™š\›J	ĞÙ]˜\ÙpéÛZqgÚ[š^‹ñ'ÜKŞX[›1,qgÈØ^q,[\±,H™H8 'X[›1,qgÛ\±,[x 'H\İ\ÚHñ,Y±,\›[˜XØZËˆ˜]›Üš[\š[š^ˆ™H^X[]ÙpéÚ[Z[š^ˆÛÜ[˜XØZËˆ]˜[HY[Ú[ˆZOÉÊJ\™]\›ÂˆÛÛœİÙY\^ßNÂˆYŠËœİ]JZÙY\œİ]O\Ëœİ]NÂˆYŠË™˜]›Üš]\É‰“Øš™XİšÙ^\ÊË™˜]›Üš]\ÊK›[™İ
-ZÙY\™˜]›Üš]\Ï\Ë™˜]›Üš]\ÎÂˆØ]™TİÜ™JÙY\
-NÂˆÛX\’[\˜[
-[Y\’Y
-NÙ^[O[[Û[ÙOIÜİYIÎÚ[™^LÜÙ]Xİ]™UXŠ	ÜİYIÊNØÚÛÜÙTÛÛ
+  function resetProgress(){
+    const s=loadStore();
+    const answered=Object.keys(s.answers||{}).length;
+    if(!answered){alert('HenÃ¼z sÄ±fÄ±rlanacak bir cevap geÃ§miÅŸi yok.');return;}
+    if(!confirm('Cevap geÃ§miÅŸiniz, doÄŸru/yanlÄ±ÅŸ sayÄ±larÄ± ve â€œYanlÄ±ÅŸlarÄ±mâ€ listesi sÄ±fÄ±rlanacak. Favorileriniz ve eyalet seÃ§iminiz korunacak. Devam edilsin mi?'))return;
+    const keep={};
+    if(s.state)keep.state=s.state;
+    if(s.favorites&&Object.keys(s.favorites).length)keep.favorites=s.favorites;
+    saveStore(keep);
+    clearInterval(timerId);exam=null;mode='study';index=0;setActiveTab('study');choosePool();
+    if(typeof window.gtag==='function')window.gtag('event','citizenship_progress_reset',{state:stateCode(),answered_before_reset:answered});
+    alert('Ã‡alÄ±ÅŸma ilerlemeniz sÄ±fÄ±rlandÄ±. Favorileriniz ve eyalet seÃ§iminiz korundu.');
+  }
 
-NÂˆYŠ\[ÙˆÚ[™İË™İYÏOOIÙ[˜İ[Û‰Ê]Ú[™İË™İYÊ	Ù]™[	Ë	ØÚ]^™[œÚ\Ü›ÙÜ™\Ü×Ü™\Ù]	ËÜİ]Nœİ]PÛÙJ
-K[œİÙ\™YØ™Y›Ü™WÜ™\Ù]˜[œİÙ\™YJNÂˆ[\
-	ğáØ[1,qgÛXH[\›[Y[š^ˆñ,Y±,\›[™1,Kˆ˜]›Üš[\š[š^ˆ™H^X[]ÙpéÚ[Z[š^ˆÛÜ[™K‰ÊNÂˆB‚ˆ[˜İ[ÛˆÙ]Xİ]™UXŠ˜[YJ^ÙØİ[Y[œ]Y\TÙ[XİÜ[
-	Ë˜Ú]^™[‹]X‰ÊK™›Ü‘XXÚ
-O˜‹˜Û\ÜÓ\İÙÙÛJ	Ú\ËXXİ]™IË‹™]\Ù]›[ÙOOO[˜[YJJNßBˆ[˜İ[Ûˆš[™
+  function setActiveTab(name){document.querySelectorAll('.citizen-tab').forEach(b=>b.classList.toggle('is-active',b.dataset.mode===name));}
+  function bind(){
+    el('citizenState').onchange=()=>{storePatch(s=>s.state=stateCode());index=0;if(mode==='exam'){exam=null;mode='study';setActiveTab('study');}choosePool();};
+    el('citizenFilter').onchange=()=>{index=0;choosePool();};
+    el('citizenSearch').oninput=()=>{index=0;choosePool();};
+    document.querySelectorAll('.citizen-tab').forEach(b=>b.onclick=()=>{const m=b.dataset.mode;if(m==='exam'){startExam();return;}clearInterval(timerId);exam=null;mode=m;index=0;setActiveTab(m);choosePool();});
+    el('citizenReset').onclick=resetProgress;
+  }
 
-^Âˆ[
-	ØÚ]^™[”İ]IÊK›Û˜Ú[™ÙOJ
-OOÜİÜ™T]Ú
-ÏOœËœİ]O\İ]PÛÙJ
-JNÚ[™^LÚYŠ[ÙOOOIÙ^[IÊ^Ù^[O[[Û[ÙOIÜİYIÎÜÙ]Xİ]™UXŠ	ÜİYIÊNßXÚÛÜÙTÛÛ
-
-NßNÂˆ[
-	ØÚ]^™[‘š[\‰ÊK›Û˜Ú[™ÙOJ
-OOÚ[™^LØÚÛÜÙTÛÛ
-
-NßNÂˆ[
-	ØÚ]^™[”ÙX\˜Ú	ÊK›Ûš[œ]J
-OOÚ[™^LØÚÛÜÙTÛÛ
-
-NßNÂˆØİ[Y[œ]Y\TÙ[XİÜ[
-	Ë˜Ú]^™[‹]X‰ÊK™›Ü‘XXÚ
-O˜‹›Û˜ÛXÚÏJ
-OOØÛÛœİOX‹™]\Ù]›[ÙNÚYŠOOOIÙ^[IÊ^Üİ\^[J
-NÜ™]\›ßXÛX\’[\˜[
-[Y\’Y
-NÙ^[O[[Û[ÙO[NÚ[™^LÜÙ]Xİ]™UXŠJNØÚÛÜÙTÛÛ
-
-NßJNÂˆ[
-	ØÚ]^™[”™\Ù]	ÊK›Û˜ÛXÚÏ\™\Ù]›ÙÜ™\ÜÎÂˆB‚ˆ\Ş[˜È[˜İ[Ûˆ[š]
-
-^ÂˆÛÛœİÜİY[
-	ØÚ]^™[”]Y\İ[Û’Üİ	ÊNÚYŠZÜİ
-\™]\›ÂˆÛÛœİÏ[ØYİÜ™J
-NÚYŠËœİ]I‰”ÕUTÖÜËœİ]WJY[
-	ØÚ]^™[”İ]IÊK˜[YO\Ëœİ]NÂˆš[™
-
-NÂˆ^Ù]OX]ØZ]™]Ú]J
-NÜÜ]]J
-NØÚÛÜÙTÛÛ
-
-NÙ[
-	ØÚ]^™[“ØY[™ÉÊKšY[]YNÙ[
-	ØÚ]^™[\›ÙIÊKšY[Y˜[ÙNßXØ]Ú
-\œŠ^Ù[
-	ØÚ]^™[“ØY[™ÉÊKš[›™\’SIÏİ›Û™Ï”ÛÜH™\š[\šH1gİH[™HpïÛ[™[YYKÜİ›Û™Ï”Ø^Y˜^q,HY[š[^Z[ˆ™^XHH™YHšÎ‹ËÛÙ]˜˜[Y‹™KÛÜ™ËÛÙ]]ÙÜMLMŒNŒˆ\™Ù]H—Ø›[šÈˆ™[H››ÛÜ[™\ˆSQˆ™\ÛpëˆÛÜHØ][ñ'İ[Hpéñ,[ØO‹Ü‰ÎßBˆBˆYŠØİ[Y[œ™XYTİ]OOOIÛØY[™ÉÊYØİ[Y[˜Y]™[\İ[™\Š	ÑÓPÛÛ[ØYY	Ë[š]
-NÙ[ÙH[š]
-
-NÂŸJJ
-N
+  async function init(){
+    const host=el('citizenQuestionHost');if(!host)return;
+    const s=loadStore();if(s.state&&STATES[s.state])el('citizenState').value=s.state;
+    bind();
+    try{data=await fetchData();splitData();choosePool();el('citizenLoading').hidden=true;el('citizenAppBody').hidden=false;}catch(err){el('citizenLoading').innerHTML='<strong>Soru verileri ÅŸu anda yÃ¼klenemedi.</strong><p>SayfayÄ± yenileyin veya <a href="https://oet.bamf.de/ords/oetut/f?p=514:1:0" target="_blank" rel="noopener">BAMF resmÃ® soru kataloÄŸunu aÃ§Ä±n</a>.</p>';}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
