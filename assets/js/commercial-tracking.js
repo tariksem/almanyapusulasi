@@ -28,7 +28,9 @@
 
   function detectCommercialArea(){
     var slot=document.querySelector("[data-affiliate-slot]");
-    return slot?slot.getAttribute("data-affiliate-slot")||"unknown":"unknown";
+    if(slot)return slot.getAttribute("data-affiliate-slot")||"unknown";
+    var stack=document.querySelector("[data-offer-stack]");
+    return stack?stack.getAttribute("data-offer-stack")||"unknown":"unknown";
   }
 
   function isDecisionDestination(href){
@@ -52,25 +54,48 @@
 
   document.addEventListener("DOMContentLoaded",function(){
     var slots=[].slice.call(document.querySelectorAll("[data-affiliate-slot]"));
+    var stacks=[].slice.call(document.querySelectorAll("[data-offer-stack]"));
     var area=detectCommercialArea();
 
-    if(slots.length){
+    if(slots.length||stacks.length){
       track("commercial_page_view",{commercial_area:area,page_path:location.pathname,page_title:document.title});
     }
 
-    if(slots.length&&"IntersectionObserver" in window){
-      var seen={};
-      var observer=new IntersectionObserver(function(entries){
+    if("IntersectionObserver" in window){
+      var seenSlots={};
+      var slotObserver=new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
           if(!entry.isIntersecting)return;
           var key=entry.target.getAttribute("data-affiliate-slot")||"unknown";
-          if(seen[key])return;
-          seen[key]=true;
-          track("affiliate_slot_view",{commercial_area:key,page_path:location.pathname,slot_active:entry.target.classList.contains("is-active")});
-          observer.unobserve(entry.target);
+          if(seenSlots[key])return;
+          seenSlots[key]=true;
+          track("affiliate_slot_view",{
+            commercial_area:key,
+            page_path:location.pathname,
+            slot_active:entry.target.classList.contains("is-active")
+          });
+          slotObserver.unobserve(entry.target);
         });
       },{threshold:0.25});
-      slots.forEach(function(slot){observer.observe(slot);});
+      slots.forEach(function(slot){slotObserver.observe(slot);});
+
+      var seenStacks={};
+      var stackObserver=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(!entry.isIntersecting)return;
+          var key=entry.target.getAttribute("data-offer-stack")||"unknown";
+          if(seenStacks[key])return;
+          seenStacks[key]=true;
+          track("commercial_offer_stack_view",{
+            commercial_area:key,
+            page_path:location.pathname,
+            stack_active:entry.target.classList.contains("is-active"),
+            offer_count:entry.target.querySelectorAll(".commercial-offer-card").length
+          });
+          stackObserver.unobserve(entry.target);
+        });
+      },{threshold:0.25});
+      stacks.forEach(function(stack){stackObserver.observe(stack);});
     }
   });
 })();
