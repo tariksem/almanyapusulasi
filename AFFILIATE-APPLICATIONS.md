@@ -6,10 +6,11 @@ Last reviewed: 2026-09-07
 
 1. **TARIFCHECK — APPROVED / ACTIVE.** Partner-ID `204420`. Activation email received 2026-09-07. Support request sent 2026-09-07 for exact attributable Girokonto/Kfz deeplinks and recommended Werbemittel. First target pages: `/girokonto-karsilastirma-2026/`, `/banka-secim-araci/`, `/kfz-versicherung-karsilastirma-2026/`.
 2. **CHECK24 — APPROVED / ACTIVE.** Partner-ID `1177200`. Activation email received 2026-09-07. Support request already sent for exact attributable deeplinks/Werbemittel for Girokonto, Strom and Kfz. First target pages: `/girokonto-karsilastirma-2026/`, `/stromtarif-karsilastirma-2026/`, `/kfz-versicherung-karsilastirma-2026/`.
-3. **Wise — PARTNERIZE ACCOUNT APPROVED.** Welcome email confirms the account is approved and directs the publisher to generate a tracking link in Partnerize. Exact tracking URL must still be copied from the authenticated Partnerize dashboard before activation. First target: `/almanyadan-turkiyeye-para-transferi/` and the transfer-cost calculator.
-4. **Verivox — OUTREACH / APPLICATION PREP.** Public programme page confirms Privatpersonen are eligible. Partner-team outreach sent 2026-09-07 to `partner@verivox.de` asking for fit confirmation and recommended Link-out/iFrame formats for Strom, DSL, Kfz and Privathaftpflicht. Direct registration still requires personal address/telephone fields in the authenticated/application form.
-5. **N26 — UNDER REVIEW.** Impact application received; no approval email found as of 2026-09-07.
-6. **financeAds — DEFERRED.** Reassess after business/Gewerbe setup if current publisher requirements make it worthwhile.
+3. **Wise — PARTNERIZE ACCOUNT APPROVED.** Welcome email confirms the account is approved and directs the publisher to generate a tracking link in Partnerize. Exact tracking URL must still be copied from the authenticated Partnerize dashboard before activation. Wise affiliate-team follow-up sent 2026-09-07. First target: `/almanyadan-turkiyeye-para-transferi/` and the transfer-cost calculator.
+4. **Verivox — OUTREACH / APPLICATION PREP.** Public programme page confirms Privatpersonen are eligible. Partner-team outreach sent 2026-09-07 to `partner@verivox.de` asking for fit confirmation and recommended Link-out/iFrame formats for Strom, DSL, Kfz and Privathaftpflicht. Direct registration still requires personal address/telephone fields in the application form.
+5. **WorldRemit — APPLICATION TARGET / IMPACT.** Official programme supports promotion in Germany and routes affiliate registration through Impact. Public programme page states a standard £30 commission at £50 minimum spend, subject to traffic quality and current terms. The existing transfer page is now prepared for multiple commercial offers so Wise and WorldRemit can coexist without commission-based editorial ranking.
+6. **N26 — UNDER REVIEW.** Impact application received; no approval email found as of 2026-09-07.
+7. **financeAds — DEFERRED.** Reassess after business/Gewerbe setup if current publisher requirements make it worthwhile.
 
 **Revenue rule:** approved programmes are implementation priority. Do not publish a normal provider URL in a commercial CTA. Activate only the exact attributable tracking/deeplink supplied by the partner dashboard/support.
 
@@ -23,7 +24,7 @@ Internal prioritisation only; do not hard-code commissions into evergreen public
 | P0 | Girokonto | TARIFCHECK / CHECK24 | TARIFCHECK public page currently advertises 40 € / sale | `/girokonto-karsilastirma-2026/`, `/banka-secim-araci/`, `/finans/` |
 | P1 | DSL / Internet | Verivox | Verivox public partner page: 50 € / confirmed contract | `/internet-tarife-karsilastirma-2026/`, internet cost tool |
 | P1 | Strom | CHECK24 / Verivox | Verivox public partner page: 20 € / confirmed contract; CHECK24 public programme announcements repeatedly market 20 € energy leads | `/stromtarif-karsilastirma-2026/`, Strom cluster |
-| P1 | Wise transfer | Wise / Partnerize | partner-specific rate not published here | `/almanyadan-turkiyeye-para-transferi/`, transfer-cost tool |
+| P1 | International transfer | Wise / WorldRemit | WorldRemit public programme: standard £30 subject to terms; Wise rate account-specific | `/almanyadan-turkiyeye-para-transferi/`, transfer-cost tool |
 | P2 | Privathaftpflicht | Verivox | Verivox public partner page: 16.50 € / confirmed contract | `/haftpflicht-karsilastirma-2026/`, insurance cluster |
 | P2 | N26 | Impact | application under review | Girokonto / bank cluster |
 
@@ -36,7 +37,7 @@ Status:
 - Partner-ID: `204420`;
 - programme explicitly permits partner Werbemittel on website, social media and messenger channels according to the activation email;
 - exact product/deeplink still required before live commercial CTA;
-- support request sent to `support@tarifcheck.de` for Girokonto and Kfz deeplinks/Werbemittel.
+- support requests sent to `support@tarifcheck.de` for Girokonto and Kfz deeplinks/Werbemittel.
 
 Immediate site fit:
 - Girokonto → `/girokonto-karsilastirma-2026/`, `/banka-secim-araci/`, `/finans/`;
@@ -78,7 +79,8 @@ Activation procedure:
 Status:
 - Partnerize welcome email received;
 - email states the account is approved and provides access to tracking-link creation;
-- exact tracking URL still requires authenticated Partnerize dashboard access.
+- exact tracking URL still requires authenticated Partnerize dashboard access;
+- follow-up sent 2026-09-07 to `partnerwise@wise.com` asking for Germany-to-Turkey landing/deeplink guidance.
 
 Best placement:
 - `/almanyadan-turkiyeye-para-transferi/`
@@ -97,14 +99,10 @@ Restrictions from current Wise partner guidance:
 - use educational content first, then the affiliate CTA;
 - comparison claims against competitors require coordination with Wise.
 
-Official pages:
-- https://wise.com/de/help/articles/2978038/was-ist-das-wise-affiliate-programm
-- https://wise.com/partner/guidelines
-
 Activation procedure:
 1. Log in to Partnerize.
 2. Generate/copy the exact Wise tracking link.
-3. Configure `money-transfer` only.
+3. Add Wise as a verified offer in `money-transfer`.
 4. Test destination and attribution.
 5. Expand to additional transfer pages only after the first placement is verified.
 
@@ -123,7 +121,7 @@ Best Almanya Pusulası fit:
 - Privathaftpflicht → `/haftpflicht-karsilastirma-2026/`.
 
 Status/actions:
-- partner-team outreach sent 2026-09-07 to `partner@verivox.de`;
+- partner-team outreach plus prioritisation follow-up sent 2026-09-07 to `partner@verivox.de`;
 - direct registration form requires Privatperson/Gewerbe choice, name, German address, phone, email and website plus acceptance of programme terms;
 - no Verivox tracking link or Partner-ID is active yet.
 
@@ -133,6 +131,31 @@ Activation procedure after approval:
 3. Add as a verified offer to the matching `commercial-offers.js` category.
 4. Run destination, attribution, mobile and Core Web Vitals checks; use iFrame only if page performance remains acceptable.
 5. Expand from one placement per product only after click/conversion evidence.
+
+## WorldRemit / Impact
+
+Official programme facts checked 2026-09-07:
+- affiliate signup is routed through Impact;
+- Germany is listed as a supported promotion country;
+- public standard commission is £30 at £50 minimum spend, but WorldRemit states the rate can vary with traffic quality;
+- affiliates receive unique tracking and have access to localised creative assets, promo codes and a marketing API.
+
+Best placement:
+- `/almanyadan-turkiyeye-para-transferi/`
+- `/para-transferi-maliyet-hesaplayici/`
+- `/almanya-turkiye-para-gonderme-maliyeti-2026/`
+
+Site readiness:
+- `/almanyadan-turkiyeye-para-transferi/` now loads both `commercial-offers.js` and the single-slot fallback;
+- the `money-transfer` offer stack can therefore display Wise and WorldRemit side by side once exact approved tracking links are available;
+- editorial order must not be based on commission amount.
+
+Application procedure:
+1. Use the official WorldRemit affiliate signup routed to Impact.
+2. Apply using `almanyapusulasi.de` as the editorial website/channel.
+3. After approval, copy exact attributable tracking/deeplink and verify Germany-to-Turkey destination support.
+4. Add the offer to `commercial-offers.js` only after current terms are checked.
+5. Test attribution before expanding placement.
 
 ## N26 / Impact
 
@@ -158,9 +181,6 @@ After approval:
 4. Keep comparison criteria independent from commission.
 5. Test destination and attribution.
 
-Official programme:
-- https://n26.com/de-de/affiliate
-
 ## financeAds
 
 Potential later finance/insurance network. Reassess after business/Gewerbe setup.
@@ -169,9 +189,6 @@ Candidate pages:
 - `/girokonto-karsilastirma-2026/`;
 - `/sigorta-secim-rehberi/`;
 - `/kredi/`.
-
-Official page:
-- https://www.financeads.net/affiliates/
 
 ## Activation checklist
 
@@ -192,5 +209,6 @@ Official page:
 - CHECK24: exact Girokonto/Strom/Kfz tracking/deeplinks.
 - Wise: exact Partnerize tracking link.
 - Verivox: registration/approval plus exact partner-coded Werbemittel.
+- WorldRemit: Impact application/approval plus exact tracking link.
 
 Once any one exact attributable link is available, activate that revenue path immediately rather than waiting for the other programmes.
