@@ -8,9 +8,10 @@ Last reviewed: 2026-09-07
 2. **CHECK24 — APPROVED / ACTIVE.** Partner-ID `1177200`. Activation email received 2026-09-07. Support request already sent for exact attributable deeplinks/Werbemittel for Girokonto, Strom and Kfz. First target pages: `/girokonto-karsilastirma-2026/`, `/stromtarif-karsilastirma-2026/`, `/kfz-versicherung-karsilastirma-2026/`.
 3. **Wise — PARTNERIZE ACCOUNT APPROVED.** Welcome email confirms the account is approved and directs the publisher to generate a tracking link in Partnerize. Exact tracking URL must still be copied from the authenticated Partnerize dashboard before activation. Wise affiliate-team follow-up sent 2026-09-07. First target: `/almanyadan-turkiyeye-para-transferi/` and the transfer-cost calculator.
 4. **Verivox — OUTREACH / APPLICATION PREP.** Public programme page confirms Privatpersonen are eligible. Partner-team outreach sent 2026-09-07 to `partner@verivox.de` asking for fit confirmation and recommended Link-out/iFrame formats for Strom, DSL, Kfz and Privathaftpflicht. Direct registration still requires personal address/telephone fields in the application form.
-5. **WorldRemit — APPLICATION TARGET / IMPACT.** Official programme supports promotion in Germany and routes affiliate registration through Impact. Public programme page states a standard £30 commission at £50 minimum spend, subject to traffic quality and current terms. The existing transfer page is now prepared for multiple commercial offers so Wise and WorldRemit can coexist without commission-based editorial ranking.
-6. **N26 — UNDER REVIEW.** Impact application received; no approval email found as of 2026-09-07.
-7. **financeAds — DEFERRED.** Reassess after business/Gewerbe setup if current publisher requirements make it worthwhile.
+5. **WorldRemit — APPLICATION TARGET / IMPACT.** Official programme supports promotion in Germany and routes affiliate registration through Impact. Public programme page states a standard £30 commission at £50 minimum spend, subject to traffic quality and current terms. The existing transfer page is prepared for multiple commercial offers so Wise and WorldRemit can coexist without commission-based editorial ranking.
+6. **Remitly — APPLICATION TARGET / IMPACT.** Official Partner Program accepts Germany-based individuals and content partners, explicitly including comparison sites, finance blogs and expat media. Programme signup is through Impact. Partner-team outreach sent 2026-09-07 to `partner@remitly.com` asking for the fastest application path using the existing Impact publisher account and confirmation of Germany-to-Turkey corridor eligibility.
+7. **N26 — UNDER REVIEW.** Impact application received; no approval email found as of 2026-09-07.
+8. **financeAds — DEFERRED.** Reassess after business/Gewerbe setup if current publisher requirements make it worthwhile.
 
 **Revenue rule:** approved programmes are implementation priority. Do not publish a normal provider URL in a commercial CTA. Activate only the exact attributable tracking/deeplink supplied by the partner dashboard/support.
 
@@ -24,7 +25,7 @@ Internal prioritisation only; do not hard-code commissions into evergreen public
 | P0 | Girokonto | TARIFCHECK / CHECK24 | TARIFCHECK public page currently advertises 40 € / sale | `/girokonto-karsilastirma-2026/`, `/banka-secim-araci/`, `/finans/` |
 | P1 | DSL / Internet | Verivox | Verivox public partner page: 50 € / confirmed contract | `/internet-tarife-karsilastirma-2026/`, internet cost tool |
 | P1 | Strom | CHECK24 / Verivox | Verivox public partner page: 20 € / confirmed contract; CHECK24 public programme announcements repeatedly market 20 € energy leads | `/stromtarif-karsilastirma-2026/`, Strom cluster |
-| P1 | International transfer | Wise / WorldRemit | WorldRemit public programme: standard £30 subject to terms; Wise rate account-specific | `/almanyadan-turkiyeye-para-transferi/`, transfer-cost tool |
+| P1 | International transfer | Wise / WorldRemit / Remitly | WorldRemit public programme: standard £30 subject to terms; Remitly public programme: USD $5–20 depending on send corridor; Wise rate account-specific | `/almanyadan-turkiyeye-para-transferi/`, transfer-cost tool |
 | P2 | Privathaftpflicht | Verivox | Verivox public partner page: 16.50 € / confirmed contract | `/haftpflicht-karsilastirma-2026/`, insurance cluster |
 | P2 | N26 | Impact | application under review | Girokonto / bank cluster |
 
@@ -146,8 +147,8 @@ Best placement:
 - `/almanya-turkiye-para-gonderme-maliyeti-2026/`
 
 Site readiness:
-- `/almanyadan-turkiyeye-para-transferi/` now loads both `commercial-offers.js` and the single-slot fallback;
-- the `money-transfer` offer stack can therefore display Wise and WorldRemit side by side once exact approved tracking links are available;
+- `/almanyadan-turkiyeye-para-transferi/` loads both `commercial-offers.js` and the single-slot fallback;
+- the `money-transfer` offer stack can display Wise, WorldRemit and Remitly side by side once exact approved tracking links are available;
 - editorial order must not be based on commission amount.
 
 Application procedure:
@@ -156,6 +157,33 @@ Application procedure:
 3. After approval, copy exact attributable tracking/deeplink and verify Germany-to-Turkey destination support.
 4. Add the offer to `commercial-offers.js` only after current terms are checked.
 5. Test attribution before expanding placement.
+
+## Remitly / Impact
+
+Official programme facts checked 2026-09-07:
+- Germany-based individuals and businesses are eligible;
+- Remitly explicitly works with comparison sites, finance blogs, news publishers and expat media;
+- onboarding is through Impact;
+- public commission range is USD $5–20 per referral depending on send corridor;
+- attribution cookie window is 30 days;
+- approval provides trackable links and creative assets.
+
+Best placement:
+- `/almanyadan-turkiyeye-para-transferi/`
+- `/para-transferi-maliyet-hesaplayici/`
+- `/almanya-turkiye-para-gonderme-maliyeti-2026/`
+
+Status/actions:
+- outreach sent 2026-09-07 to `partner@remitly.com`;
+- asked whether the existing Impact publisher account can be used directly and whether Germany-to-Turkey is currently eligible for affiliate attribution;
+- no tracking link is active yet.
+
+Activation procedure:
+1. Apply through the official Remitly Impact onboarding form/account.
+2. Confirm Germany-to-Turkey corridor and current campaign terms.
+3. Copy exact attributable tracking link.
+4. Add Remitly as a verified `money-transfer` offer without commission-based ranking.
+5. Test attribution and mobile destination before expanding.
 
 ## N26 / Impact
 
@@ -167,7 +195,7 @@ Application details:
 - website ownership: verified;
 - status: application received / under review as of 2026-09-07.
 
-Impact verification tag remains on the homepage while review is pending.
+Impact verification tag remains on the homepage while the application is under review.
 
 Planned pages:
 - `/girokonto-karsilastirma-2026/`;
@@ -210,5 +238,6 @@ Candidate pages:
 - Wise: exact Partnerize tracking link.
 - Verivox: registration/approval plus exact partner-coded Werbemittel.
 - WorldRemit: Impact application/approval plus exact tracking link.
+- Remitly: Impact application/approval plus exact tracking link.
 
 Once any one exact attributable link is available, activate that revenue path immediately rather than waiting for the other programmes.
