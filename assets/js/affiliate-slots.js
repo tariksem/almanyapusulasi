@@ -2,25 +2,26 @@
   "use strict";
 
   /*
-   * Affiliate configuration is intentionally disabled by default.
-   * Activate only after the relevant publisher account has been approved
-   * and replace the empty url values with the publisher-specific tracking URL.
+   * Affiliate slots remain disabled until an exact attributable product URL
+   * or approved widget is copied from the relevant partner dashboard.
+   * CHECK24 account approval is confirmed (Partner-ID 1177200), but Partner-ID
+   * alone must never be used to invent or derive a tracking URL.
    */
   var PARTNERS = {
     "bank-comparison": {
       enabled: false,
-      provider: "",
+      provider: "CHECK24",
       url: "",
       label: "Banka hesaplarını karşılaştır",
-      note: "Ticari bağlantı — sonuçlar ve koşullar partner sitesinde gösterilir.",
+      note: "Ticari bağlantı — sonuçlar ve koşullar CHECK24 üzerinde gösterilir.",
       target: "bank-affiliate"
     },
     "insurance-comparison": {
       enabled: false,
-      provider: "",
+      provider: "CHECK24",
       url: "",
       label: "Sigorta tekliflerini karşılaştır",
-      note: "Ticari bağlantı — karşılaştırma kapsamı partner sitesine göre değişebilir.",
+      note: "Ticari bağlantı — karşılaştırma kapsamı CHECK24 ürününe göre değişebilir.",
       target: "insurance-affiliate"
     },
     "tax-software": {
@@ -49,18 +50,18 @@
     },
     "electricity-comparison": {
       enabled: false,
-      provider: "",
+      provider: "CHECK24",
       url: "",
       label: "Elektrik tarifelerini karşılaştır",
-      note: "Ticari bağlantı — fiyat, bonus, sözleşme süresi ve toplam yıllık maliyeti partner sitesinde yeniden kontrol edin.",
+      note: "Ticari bağlantı — fiyat, bonus, sözleşme süresi ve toplam yıllık maliyeti CHECK24 üzerinde yeniden kontrol edin.",
       target: "electricity-affiliate"
     },
     "kfz-insurance": {
       enabled: false,
-      provider: "",
+      provider: "CHECK24",
       url: "",
       label: "Kfz sigorta tekliflerini karşılaştır",
-      note: "Ticari bağlantı — prim kişisel ve araç bilgilerine göre değişir; kapsam ve Selbstbeteiligung'u ayrıca kontrol edin.",
+      note: "Ticari bağlantı — prim kişisel ve araç bilgilerine göre değişir; kapsam ve Selbstbeteiligung'u CHECK24 üzerinde ayrıca kontrol edin.",
       target: "kfz-affiliate"
     }
   };
