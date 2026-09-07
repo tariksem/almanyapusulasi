@@ -1,0 +1,44 @@
+{
+  "official-118": {
+    "germanQuestion": "Wer darf bei den rund 40 jüdischen Makkabi-Sportvereinen Mitglied werden?",
+    "germanAnswers": ["nur Deutsche", "nur Israelis", "nur religiöse Menschen", "alle Menschen"],
+    "question": "Almanya'daki yaklaşık 40 Yahudi Makkabi spor kulübüne kimler üye olabilir?",
+    "answers": ["Yalnız Almanlar", "Yalnız İsrailliler", "Yalnız dindar kişiler", "Herkes"],
+    "explanation": "Makkabi spor kulüplerinde üyelik yalnız Almanlara, İsraillilere veya dindar kişilere ayrılmış değildir; herkes üye olabilir."
+  },
+  "official-251": {
+    "germanQuestion": "Wenn man in Deutschland ein Kind schlägt, …",
+    "germanAnswers": ["geht das niemanden etwas an.", "geht das nur die Familie etwas an.", "kann man dafür nicht bestraft werden.", "kann man dafür bestraft werden."],
+    "question": "Almanya'da bir çocuğa vurursanız aşağıdakilerden hangisi doğrudur?",
+    "answers": ["Bu kimseyi ilgilendirmez.", "Bu yalnızca aileyi ilgilendirir.", "Bunun için cezalandırılamazsınız.", "Bunun için cezalandırılabilirsiniz."],
+    "explanation": "Çocukların şiddetten korunma hakkı vardır. Fiziksel ceza yalnızca aile içi özel bir mesele değildir; bir çocuğa vurmak hukuki ve cezai sonuçlar doğurabilir. Sınav ipucu: Çocuğa yönelik şiddet 'aile içi mesele' değildir; doğru cevap, bunun cezalandırılabileceğidir."
+  },
+  "official-268": {
+    "germanQuestion": "Eine junge Frau will den Führerschein machen. Sie hat Angst vor der Prüfung, weil ihre Muttersprache nicht Deutsch ist. Was ist richtig?",
+    "germanAnswers": ["Sie muss mindestens zehn Jahre in Deutschland leben, bevor sie den Führerschein machen kann.", "Wenn sie kein Deutsch kann, darf sie keinen Führerschein haben.", "Sie muss den Führerschein in dem Land machen, in dem man ihre Sprache spricht.", "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl."],
+    "question": "Ana dili Almanca olmayan genç bir kadın ehliyet almak istiyor ve sınavdan endişe ediyor. Hangisi doğrudur?",
+    "answers": ["Ehliyet alabilmek için Almanya'da en az 10 yıl yaşamış olmalıdır.", "Almanca bilmiyorsa ehliyet alamaz.", "Ehliyeti, kendi dilinin konuşulduğu ülkede almak zorundadır.", "Teori sınavını belki ana dilinde yapabilir; seçilebilecek ondan fazla dil vardır."],
+    "explanation": "Ehliyet alma hakkı kişinin ana diline bağlı değildir. Teori sınavı Almanca dışında ondan fazla dil seçeneğiyle sunulabilir. Sınav ipucu: Ana diliniz Almanca değilse teori sınavı için başka bir dil seçeneği bulunabilir."
+  },
+  "official-269": {
+    "germanQuestion": "In Deutschland haben Kinder ab dem Alter von drei Jahren bis zur Ersteinschulung einen Anspruch auf …",
+    "germanAnswers": ["monatliches Taschengeld.", "einen Platz in einem Sportverein.", "einen Kindergartenplatz.", "einen Ferienpass."],
+    "question": "Almanya'da çocuklar üç yaşından ilkokula başlayana kadar aşağıdakilerden hangisine hak sahibidir?",
+    "answers": ["Aylık harçlığa", "Bir spor kulübünde yere", "Bir anaokulu yerine (Kindergartenplatz)", "Tatil kartına"],
+    "explanation": "Almanya'da çocukların üç yaşından okula başlayana kadar bir Kindergarten/Kita bakım yerine ilişkin yasal hakkı vardır. Sınav ipucu: 3 yaş + okul öncesi = Kindergartenplatz."
+  },
+  "official-272": {
+    "germanQuestion": "Welche Lebensform ist in Deutschland nicht erlaubt?",
+    "germanAnswers": ["Mann und Frau sind geschieden und leben mit neuen Partnern zusammen.", "Zwei Frauen leben zusammen.", "Ein allein erziehender Vater lebt mit seinen zwei Kindern zusammen.", "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet."],
+    "question": "Almanya'da aşağıdaki yaşam biçimlerinden hangisine izin verilmez?",
+    "answers": ["Boşanmış bir kadın ve erkeğin yeni partnerleriyle yaşamasına", "İki kadının birlikte yaşamasına", "Tek başına çocuk yetiştiren bir babanın iki çocuğuyla yaşamasına", "Bir erkeğin aynı anda iki kadınla evli olmasına"],
+    "explanation": "Almanya'da yetişkinlerin farklı aile ve birlikte yaşam biçimleri hukuken mümkündür. Ancak aynı anda birden fazla kişiyle evli olmaya izin verilmez; medeni hukukta tek eşlilik esastır. Sınav ipucu: Farklı yaşam biçimlerine izin verilir, eşzamanlı birden fazla evliliğe izin verilmez."
+  },
+  "official-282": {
+    "germanQuestion": "Welches Ehrenamt müssen deutsche Staatsbürger/Staatsbürgerinnen übernehmen, wenn sie dazu aufgefordert werden?",
+    "germanAnswers": ["Vereinstrainer/Vereinstrainerin", "Wahlhelfer/Wahlhelferin", "Bibliotheksaufsicht", "Lehrer/Lehrerin"],
+    "question": "Alman vatandaşları, çağrıldıklarında aşağıdaki fahri görevlerden hangisini üstlenmek zorundadır?",
+    "answers": ["Spor kulübü antrenörlüğünü", "Seçim görevliliğini (Wahlhelfer/Wahlhelferin)", "Kütüphane gözetmenliğini", "Öğretmenliği"],
+    "explanation": "Wahlhelfer görevi seçimlerin düzenli yürütülmesine hizmet eden fahri bir kamu görevidir. Yetkili makam tarafından görevlendirilen kişiler, geçerli bir mazeretleri yoksa bu görevi yerine getirmekle yükümlü olabilir. Sınav ipucu: Seçimlerin yürütülmesi + Ehrenamt = Wahlhelfer."
+  }
+}
