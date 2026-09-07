@@ -7,10 +7,27 @@ Last reviewed: 2026-09-07
 1. **TARIFCHECK — APPROVED / ACTIVE.** Partner-ID `204420`. Activation email received 2026-09-07. Support request sent 2026-09-07 for exact attributable Girokonto/Kfz deeplinks and recommended Werbemittel. First target pages: `/girokonto-karsilastirma-2026/`, `/banka-secim-araci/`, `/kfz-versicherung-karsilastirma-2026/`.
 2. **CHECK24 — APPROVED / ACTIVE.** Partner-ID `1177200`. Activation email received 2026-09-07. Support request already sent for exact attributable deeplinks/Werbemittel for Girokonto, Strom and Kfz. First target pages: `/girokonto-karsilastirma-2026/`, `/stromtarif-karsilastirma-2026/`, `/kfz-versicherung-karsilastirma-2026/`.
 3. **Wise — PARTNERIZE ACCOUNT APPROVED.** Welcome email confirms the account is approved and directs the publisher to generate a tracking link in Partnerize. Exact tracking URL must still be copied from the authenticated Partnerize dashboard before activation. First target: `/almanyadan-turkiyeye-para-transferi/` and the transfer-cost calculator.
-4. **N26 — UNDER REVIEW.** Impact application received; no approval email found as of 2026-09-07.
-5. **financeAds — DEFERRED.** Reassess after business/Gewerbe setup if current publisher requirements make it worthwhile.
+4. **Verivox — OUTREACH / APPLICATION PREP.** Public programme page confirms Privatpersonen are eligible. Partner-team outreach sent 2026-09-07 to `partner@verivox.de` asking for fit confirmation and recommended Link-out/iFrame formats for Strom, DSL, Kfz and Privathaftpflicht. Direct registration still requires personal address/telephone fields in the authenticated/application form.
+5. **N26 — UNDER REVIEW.** Impact application received; no approval email found as of 2026-09-07.
+6. **financeAds — DEFERRED.** Reassess after business/Gewerbe setup if current publisher requirements make it worthwhile.
 
-**Revenue rule:** approved programmes are now implementation priority. Do not publish a normal provider URL in a commercial CTA. Activate only the exact attributable tracking/deeplink supplied by the partner dashboard/support.
+**Revenue rule:** approved programmes are implementation priority. Do not publish a normal provider URL in a commercial CTA. Activate only the exact attributable tracking/deeplink supplied by the partner dashboard/support.
+
+## Current revenue priority matrix
+
+Internal prioritisation only; do not hard-code commissions into evergreen public pages because rates/promotions change.
+
+| Priority | Product | Best current partner path | Public commission signal checked 2026-09-07 | Site targets |
+| --- | --- | --- | --- | --- |
+| P0 | Kfz-Versicherung | TARIFCHECK first; Verivox backup | TARIFCHECK public page currently advertises 70 € / sale; Verivox 50 € / confirmed contract | `/kfz-versicherung-karsilastirma-2026/`, Kfz cluster |
+| P0 | Girokonto | TARIFCHECK / CHECK24 | TARIFCHECK public page currently advertises 40 € / sale | `/girokonto-karsilastirma-2026/`, `/banka-secim-araci/`, `/finans/` |
+| P1 | DSL / Internet | Verivox | Verivox public partner page: 50 € / confirmed contract | `/internet-tarife-karsilastirma-2026/`, internet cost tool |
+| P1 | Strom | CHECK24 / Verivox | Verivox public partner page: 20 € / confirmed contract; CHECK24 public programme announcements repeatedly market 20 € energy leads | `/stromtarif-karsilastirma-2026/`, Strom cluster |
+| P1 | Wise transfer | Wise / Partnerize | partner-specific rate not published here | `/almanyadan-turkiyeye-para-transferi/`, transfer-cost tool |
+| P2 | Privathaftpflicht | Verivox | Verivox public partner page: 16.50 € / confirmed contract | `/haftpflicht-karsilastirma-2026/`, insurance cluster |
+| P2 | N26 | Impact | application under review | Girokonto / bank cluster |
+
+Seasonality note: September–November is commercially important for Kfz switching intent, so Kfz should receive faster tracking-link activation and stronger internal traffic routing once the exact attributable link exists.
 
 ## TARIFCHECK
 
@@ -91,6 +108,32 @@ Activation procedure:
 4. Test destination and attribution.
 5. Expand to additional transfer pages only after the first placement is verified.
 
+## Verivox
+
+Public programme facts checked 2026-09-07:
+- Gewerbetreibende and Privatpersonen are eligible;
+- supported monetisation formats include iFrame, banner, Link-out and webservice;
+- no minimum turnover; public page states monthly payout from 1 € balance;
+- current public commission examples include DSL 50 €, Kfz 50 €, Strom 20 €, Private Haftpflicht 16.50 €, Rechtsschutz 50 €, Wohngebäude 75 € per confirmed contract; rates may change and must be rechecked before public claims or forecasting.
+
+Best Almanya Pusulası fit:
+- DSL → `/internet-tarife-karsilastirma-2026/`;
+- Kfz → `/kfz-versicherung-karsilastirma-2026/`;
+- Strom → `/stromtarif-karsilastirma-2026/`;
+- Privathaftpflicht → `/haftpflicht-karsilastirma-2026/`.
+
+Status/actions:
+- partner-team outreach sent 2026-09-07 to `partner@verivox.de`;
+- direct registration form requires Privatperson/Gewerbe choice, name, German address, phone, email and website plus acceptance of programme terms;
+- no Verivox tracking link or Partner-ID is active yet.
+
+Activation procedure after approval:
+1. Prefer Link-out for fastest first conversion test unless Verivox recommends an iFrame for the target product.
+2. Copy the exact partner-coded Werbemittel from `Programm/Werbemittel` in the Verivox partner account.
+3. Add as a verified offer to the matching `commercial-offers.js` category.
+4. Run destination, attribution, mobile and Core Web Vitals checks; use iFrame only if page performance remains acceptable.
+5. Expand from one placement per product only after click/conversion evidence.
+
 ## N26 / Impact
 
 Application details:
@@ -109,7 +152,7 @@ Planned pages:
 - `/finans/`.
 
 After approval:
-1. Obtain exact Impact/N26 tracking URL/deeplink.
+1. Obtain the exact Impact/N26 tracking URL/deeplink.
 2. Review current campaign terms.
 3. Create a dedicated N26 offer if the destination/wording does not fit a generic comparison slot.
 4. Keep comparison criteria independent from commission.
@@ -143,10 +186,11 @@ Official page:
 9. GA4 `affiliate_click` remains consent-aware.
 10. Start with high-intent pages; expand only after verified clicks/conversions.
 
-## Current blockers requiring authenticated dashboard access
+## Current blockers requiring authenticated dashboard/application access
 
 - TARIFCHECK: exact Girokonto/Kfz tracking/deeplinks.
 - CHECK24: exact Girokonto/Strom/Kfz tracking/deeplinks.
 - Wise: exact Partnerize tracking link.
+- Verivox: registration/approval plus exact partner-coded Werbemittel.
 
 Once any one exact attributable link is available, activate that revenue path immediately rather than waiting for the other programmes.
