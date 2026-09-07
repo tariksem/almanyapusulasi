@@ -5,5 +5,12 @@
     "question": "Aşağıdakilerden hangisi antisemitik davranışa bir örnektir?",
     "answers": ["Bir Yahudi bayramına katılmak", "İsrail hükümetini eleştirmek", "Holokost'u inkâr etmek", "Yahudilere karşı futbol oynamak"],
     "explanation": "Doğru cevap Holokost'u inkâr etmektir. Holokost, Nazi Almanyası tarafından yaklaşık altı milyon Yahudinin sistematik olarak öldürüldüğü tarihsel soykırımdır. Bu soykırımı inkâr etmek antisemitizmin bir biçimidir. Buna karşılık bir Yahudi bayramına katılmak veya bir hükümetin politikasını eleştirmek tek başına antisemitik davranış değildir. Sınav ipucu: Bir devletin hükümetini eleştirmek ile Yahudilere kimlikleri nedeniyle düşmanlık göstermek aynı şey değildir."
+  },
+  "official-basic-law-forced-labour": {
+    "germanQuestion": "Was verbietet das deutsche Grundgesetz?",
+    "germanAnswers": ["Militärdienst", "Zwangsarbeit", "freie Berufswahl", "Arbeit im Ausland"],
+    "question": "Alman Anayasası (Grundgesetz) aşağıdakilerden hangisini yasaklar?",
+    "answers": ["Askerlik hizmetini", "Zorla çalıştırmayı", "Mesleğini özgürce seçmeyi", "Yurt dışında çalışmayı"],
+    "explanation": "Doğru cevap zorla çalıştırmadır (Zwangsarbeit). Grundgesetz'in 12. maddesi meslek seçme özgürlüğünü korur; zorla çalıştırma ise yalnız anayasanın çok dar biçimde öngördüğü istisnalar dışında yasaktır. Bu ayrım önemlidir: devlet insanların meslek seçme özgürlüğünü korurken, kişiyi iradesi dışında çalışmaya zorlayamaz. Sınav ipucu: Grundgesetz + Zwangsarbeit = yasak; freie Berufswahl = korunan hak."
   }
 }
