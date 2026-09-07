@@ -2,7 +2,45 @@
 
 Son güncelleme: 7 Eylül 2026
 
-Bu belge web sitesinin mevcut görsel sistemi, içerik yaklaşımı ve ticari şeffaflık ilkelerinden türetilen ana marka standardıdır. Web, sosyal medya, görsel üretim ve partner iletişiminde referans alınmalıdır.
+> **KİLİTLİ MARKA STANDARDI — DEĞİŞTİRİLEMEZ**
+>
+> Bu belge Almanya Pusulası'nın sabit kurumsal kimlik standardıdır. Logo, marka adı, ana renk sistemi ve aşağıdaki temel marka kuralları açık kullanıcı talimatı olmadan değiştirilemez, yeniden yorumlanamaz veya yapay zekâ tarafından yeniden tasarlanamaz. Eksik bir marka varlığı varsa tahmin/uydurma yapılmaz; mevcut repo varlığı kullanılır veya işlem durdurulur.
+
+## 0. Değiştirilemez marka varlıkları
+
+### Kanonik marka adı
+**Almanya Pusulası**
+
+### Kanonik logo
+Tek kaynak repo içindeki mevcut resmi logo ailesidir:
+- `assets/brand/almanya-pusulasi-logo.png` — ana kaynak
+- `assets/brand/almanya-pusulasi-logo-256.png` — ölçeklenmiş resmi varyant
+- `assets/brand/almanya-pusulasi-logo-64.png` — küçük resmi varyant
+- mevcut favicon ve Apple Touch Icon dosyaları — yalnız kendi kullanım amaçları için
+
+**Logo kilidi:**
+- Logo yeniden çizilmez.
+- Logo image-generation aracına yeniden ürettirilmez.
+- Logoya benzeyen alternatif pusula/ikon kullanılmaz.
+- Logo şekli, oranı, renkleri veya iç geometrisi tahmin edilmez.
+- Logo üzerine yeni sembol eklenmez.
+- Logo başka bir logoyla birleştirilmez.
+- Görsel üretiminde gerçek logo dosyasının birebir yerleştirilmesi teknik olarak mümkün değilse logo üretilmez; sonradan kanonik dosya yerleştirilir veya işlem durdurulur.
+
+### Kilitli ana renk sistemi
+- **Primary / Kurumsal lacivert:** `#102A43`
+- **Primary Light / Destek mavi:** `#1F4E79`
+- **Accent / Altın:** `#D89B2B`
+- **Ana metin:** `#172033`
+- **Muted metin:** `#5F6B7A`
+- **Arka plan:** `#F6F8FB`
+- **Surface / Kart:** `#FFFFFF`
+- **Soft surface:** `#F9FAFB`
+- **Border:** `#E2E8F0`
+- **Footer / çok koyu lacivert:** `#0B1220`
+- **Başarı:** `#047857`
+
+Bu palet marka tasarımlarının ana sistemidir. Yeni ana marka renkleri türetilmez veya tahmin edilmez.
 
 ## 1. Marka özü
 
@@ -43,22 +81,6 @@ Marka şu izlenimleri vermemelidir:
 
 ## 3. Görsel kimlik
 
-### Ana renk paleti
-
-Web sitesindeki mevcut CSS değişkenleri ana standarttır:
-
-- **Primary / Kurumsal lacivert:** `#102A43`
-- **Primary Light / Destek mavi:** `#1F4E79`
-- **Accent / Altın:** `#D89B2B`
-- **Ana metin:** `#172033`
-- **Muted metin:** `#5F6B7A`
-- **Arka plan:** `#F6F8FB`
-- **Surface / Kart:** `#FFFFFF`
-- **Soft surface:** `#F9FAFB`
-- **Border:** `#E2E8F0`
-- **Footer / çok koyu lacivert:** `#0B1220`
-- **Başarı:** `#047857`
-
 ### Renk kullanım oranı
 
 Önerilen genel dağılım:
@@ -73,19 +95,7 @@ Altın, ana zemin rengi değil; CTA, vurgu, aktif durum ve küçük marka detay�
 
 Kırmızı-sarı-siyah Alman bayrağı kombinasyonu ana marka paleti değildir. Bu renkler ancak konu gerektiriyorsa küçük bağlamsal detaylarda kullanılabilir. Sosyal medya görsellerinde Almanya Pusulası'nın lacivert + altın + beyaz sistemi korunmalıdır.
 
-## 4. Logo standardı
-
-Repo içindeki mevcut logo ailesi kurumsal kaynaktır:
-- `assets/brand/almanya-pusulasi-logo.png`
-- `assets/brand/almanya-pusulasi-logo-256.png`
-- `assets/brand/almanya-pusulasi-logo-64.png`
-- favicon ve Apple Touch Icon varyantları
-
-Yeni bir pusula, ikon veya alternatif logo yapay zekâ ile yeniden tasarlanmamalıdır. Sosyal medya profil resmi mevcut logo varlığından türetilmelidir.
-
-Logo çevresinde yeterli boşluk bırakılmalı; logo fotoğraf, yoğun desen veya metin kalabalığı içine gömülmemelidir.
-
-## 5. Tipografi
+## 4. Tipografi
 
 Web sitesinin mevcut ana yazı ailesi:
 `Arial, Helvetica, sans-serif`
@@ -95,7 +105,7 @@ Dijital marka materyallerinde temiz, sans-serif ve yüksek okunabilirlik korunma
 Başlıklar: güçlü, kısa, yüksek kontrastlı.
 Gövde: sade, bilgi odaklı.
 
-## 6. UI görsel dili
+## 5. UI görsel dili
 
 Web sitesinin karakteristik öğeleri sosyal tasarımlara da aktarılabilir:
 - 18–24 px yuvarlatılmış kartlar
@@ -109,7 +119,7 @@ Web sitesinin karakteristik öğeleri sosyal tasarımlara da aktarılabilir:
 
 Hero karakteri: koyu lacivert/mavi gradient, kontrollü altın vurgu, beyaz metin.
 
-## 7. Fotoğraf ve illüstrasyon yaklaşımı
+## 6. Fotoğraf ve illüstrasyon yaklaşımı
 
 Fotoğraf markanın ana kimliği değildir; bilgi ve karar araçları ana kimliktir.
 
@@ -126,7 +136,7 @@ Kaçınılacaklar:
 - stok fotoğraf hissi veren mutlu aile/iş insanı kompozisyonları
 - aşırı parlak satış/reklam görselleri
 
-## 8. Ses ve metin tonu
+## 7. Ses ve metin tonu
 
 Dil: Öncelikle Türkçe.
 
@@ -148,7 +158,7 @@ Kaçınılacak:
 
 Marka vaat satmaz; kullanıcıya karar desteği sağlar.
 
-## 9. Güven ilkeleri
+## 8. Güven ilkeleri
 
 Kurumsal kimliğin önemli parçası yalnız görsel değil, davranışsal güvendir:
 - kamuya açık rehber, hesaplayıcı ve kontrol araçları ücretsizdir
@@ -158,15 +168,15 @@ Kurumsal kimliğin önemli parçası yalnız görsel değil, davranışsal güve
 - resmî/bağımsız kaynaklar ticari içerikten ayrılır
 - komisyon tek başına sağlayıcı sıralamasını belirlememelidir
 
-## 10. Sosyal medya kimliği
+## 9. Sosyal medya kimliği
 
 ### Profil resmi
-Mevcut Almanya Pusulası logosunun kare, temiz, küçük boyutta okunabilir versiyonu. Yeni logo oluşturulmaz.
+Yalnızca mevcut kanonik Almanya Pusulası logo dosyasının kare, temiz, küçük boyutta okunabilir versiyonu kullanılır. Yeni logo oluşturulmaz.
 
 ### Kapak görseli
 Facebook ve diğer geniş banner alanlarında web sitesiyle aynı kurumsal his kullanılmalıdır:
 - açık veya kurumsal lacivert zemin
-- mevcut logo
+- yalnızca kanonik logo dosyası
 - tek ana mesaj
 - en fazla birkaç kısa konu etiketi
 - `almanyapusulasi.de`
@@ -181,14 +191,14 @@ Destek satırı:
 Kapak görseli bir reklam afişi gibi doldurulmamalıdır. Berlin fotoğrafı zorunlu değildir ve marka kimliğinin önüne geçmemelidir.
 
 ### Sosyal içerik şablonu
-1. Üst/alt küçük marka işareti
+1. Kanonik logo/marka işareti
 2. Tek güçlü soru veya veri
 3. Lacivert/beyaz ana alan
 4. Altın vurgu
 5. Gerekirse sonuç/veri kartı
 6. `almanyapusulasi.de` veya ilgili CTA
 
-## 11. Marka mimarisi
+## 10. Marka mimarisi
 
 Ana marka her zaman **Almanya Pusulası**dır. Araçlar bağımsız alt markalara dönüştürülmemelidir.
 
@@ -199,13 +209,23 @@ Ana marka her zaman **Almanya Pusulası**dır. Araçlar bağımsız alt markalar
 
 Bu yaklaşım sosyal medya trafiğinin tek marka altında birikmesini sağlar.
 
-## 12. Kurumsal kalite kontrolü
+## 11. Kurumsal kalite kontrolü
 
-Yeni bir görsel veya içerik yayınlanmadan önce şu beş soru sorulur:
-1. İlk bakışta Almanya Pusulası'na ait olduğu anlaşılıyor mu?
-2. Web sitesindeki lacivert-altın-beyaz kimlikle uyumlu mu?
-3. Tek ve net bir kullanıcı problemi/mesajı var mı?
-4. Güvenilir bilgi platformu hissi veriyor mu, yoksa reklam/turizm sitesi gibi mi görünüyor?
-5. Trafik veya karar desteği hedefimize hizmet ediyor mu?
+Yeni bir görsel veya içerik yayınlanmadan önce şu kontroller zorunludur:
+1. Kullanılan logo kanonik repo dosyasının birebir kendisi mi?
+2. Logo üzerinde herhangi bir AI yeniden çizimi/değişiklik var mı? Varsa materyal reddedilir.
+3. Renkler kilitli kurumsal palete uyuyor mu?
+4. İlk bakışta Almanya Pusulası'na ait olduğu anlaşılıyor mu?
+5. Tek ve net bir kullanıcı problemi/mesajı var mı?
+6. Güvenilir bilgi platformu hissi veriyor mu, yoksa reklam/turizm sitesi gibi mi görünüyor?
+7. Trafik veya karar desteği hedefimize hizmet ediyor mu?
 
-Bu beş kontrolden geçmeyen materyal yayınlanmaz.
+Bu kontrollerden geçmeyen materyal yayınlanmaz.
+
+## 12. Uydurma/tahmin yasağı
+
+Kurumsal kimlik üretiminde bilinmeyen hiçbir öğe tamamlanmış varsayılmaz. Logo, renk, slogan, marka sembolü veya başka bir temel varlık mevcut kaynaklarda doğrulanamıyorsa:
+
+**TAHMİN ETME → UYDURMA → YENİDEN ÇİZME → KULLANMA.**
+
+Önce kanonik repo kaynağı doğrulanır. Kaynak yoksa işlem durdurulur veya kullanıcıdan açık karar alınır.
