@@ -54,7 +54,7 @@ jobs:
 
           html = html_path.read_text(encoding='utf-8')
           old_script = '<script defer src="/assets/js/einbuergerungstest.js"></script>'
-          new_script = f'<script defer src="/assets/js/einbuergerungstest.js?v={sha}"></script>'
+          new_script = f'<script defer src="/assets/js/einbuerungstest.js?v={sha}"></script>'
           assert old_script in html, 'Expected citizenship script tag not found'
           html_path.write_text(html.replace(old_script, new_script, 1), encoding='utf-8')
           print(f'Cloudflare citizenship assets versioned with {sha}')
@@ -76,6 +76,45 @@ jobs:
           test ! -e dist/.git
           echo 'Clean Cloudflare production directory prepared.'
 
+      - name: Verify flagship growth pages in production bundle
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          pages = {
+              'brutto-netto-hesaplayici-2026': 'https://almanyapusulasi.de/brutto-netto-hesaplayici-2026/',
+              'chancenkarte-puan-hesaplayici-2026': 'https://almanyapusulasi.de/chancenkarte-puan-hesaplayici-2026/',
+              'blue-card': 'https://almanyapusulasi.de/blue-card/',
+              'blue-card-uygunluk-kontrolu-2026': 'https://almanyapusulasi.de/blue-card-uygunluk-kontrolu-2026/',
+              'kinderzuschlag': 'https://almanyapusulasi.de/kinderzuschlag/',
+              'banka-secim-araci': 'https://almanyapusulasi.de/banka-secim-araci/',
+              'girokonto-karsilastirma-2026': 'https://almanyapusulasi.de/girokonto-karsilastirma-2026/',
+              'almanya-2026-resmi-esikler': 'https://almanyapusulasi.de/almanya-2026-resmi-esikler/',
+              'embed-araclar': 'https://almanyapusulasi.de/embed-araclar/',
+              'site-haritasi': 'https://almanyapusulasi.de/site-haritasi/',
+          }
+
+          errors = []
+          for slug, expected in pages.items():
+              path = Path('dist') / slug / 'index.html'
+              if not path.exists():
+                  errors.append(f'missing production file: {path}')
+                  continue
+              html = path.read_text(encoding='utf-8', errors='replace')
+              match = re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)', html, re.I)
+              if not match:
+                  errors.append(f'missing canonical: {path}')
+              elif match.group(1) != expected:
+                  errors.append(f'wrong canonical: {path} -> {match.group(1)} (expected {expected})')
+              if re.search(r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', html, re.I):
+                  errors.append(f'noindex on flagship page: {path}')
+
+          if errors:
+              raise SystemExit('\n'.join(errors))
+          print(f'Flagship production-bundle QA passed for {len(pages)} URLs.')
+          PY
+
       - name: Deploy to Cloudflare Workers
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -84,3 +123,50 @@ jobs:
           test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing GitHub secret: CLOUDFLARE_API_TOKEN"; exit 1; }
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing GitHub secret: CLOUDFLARE_ACCOUNT_ID"; exit 1; }
           npx --yes wrangler@4 deploy --config wrangler.jsonc
+
+      - name: Smoke test flagship production URLs
+        run: |
+          python - <<'PY'
+          import time
+          import urllib.request
+
+          urls = [
+              'https://almanyapusulasi.de/',
+              'https://almanyapusulasi.de/brutto-netto-hesaplayici-2026/',
+              'https://almanyapusulasi.de/chancenkarte-puan-hesaplayici-2026/',
+              'https://almanyapusulasi.de/blue-card/',
+              'https://almanyapusulasi.de/blue-card-uygunluk-kontrolu-2026/',
+              'https://almanyapusulasi.de/kinderzuschlag/',
+              'https://almanyapusulasi.de/banka-secim-araci/',
+              'https://almanyapusulasi.de/girokonto-karsilastirma-2026/',
+              'https://almanyapusulasi.de/almanya-2026-resmi-esikler/',
+              'https://almanyapusulasi.de/embed-araclar/',
+              'https://almanyapusulasi.de/site-haritasi/',
+          ]
+
+          failures = []
+          headers = {'User-Agent': 'AlmanyaPusulasi-Deploy-QA/1.0'}
+          for url in urls:
+              last_error = None
+              for attempt in range(4):
+                  try:
+                      req = urllib.request.Request(url, headers=headers)
+                      with urllib.request.urlopen(req, timeout=15) as response:
+                          body = response.read().decode('utf-8', errors='replace')
+                          if response.status != 200:
+                              raise RuntimeError(f'HTTP {response.status}')
+                          if '<html' not in body.lower():
+                              raise RuntimeError('response is not HTML')
+                          print(f'OK {response.status} {url}')
+                          last_error = None
+                          break
+                  except Exception as exc:
+                      last_error = exc
+                      time.sleep(3)
+              if last_error:
+                  failures.append(f'{url}: {last_error}')
+
+          if failures:
+              raise SystemExit('Production smoke test failed:\n' + '\n'.join(failures))
+          print(f'Production smoke test passed for {len(urls)} URLs.')
+          PY
