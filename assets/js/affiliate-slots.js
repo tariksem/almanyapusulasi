@@ -61,10 +61,10 @@
       target: "transfer-affiliate"
     },
     "electricity-comparison": {
-      enabled: false,
+      enabled: true,
       provider: "CHECK24",
       partnerId: "1177200",
-      url: "",
+      url: "https://a.check24.net/misc/click.php?pid=1177200&aid=18&deep=stromanbieter-wechseln&cat=1",
       label: "Elektrik tarifelerini karşılaştır",
       note: "Ticari bağlantı — fiyat, bonus, sözleşme süresi ve toplam yıllık maliyeti CHECK24 üzerinde yeniden kontrol edin.",
       target: "electricity-affiliate"
