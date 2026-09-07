@@ -1,0 +1,70 @@
+name: Deploy Almanya Pusulasi to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Sync citizenship test study data
+        run: python scripts/sync-einbuergerungstest.py
+
+      - name: Verify Turkish citizenship-test payload
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          payload = json.loads(Path('assets/data/einbuergerungstest.json').read_text(encoding='utf-8'))
+          target = next((q for q in payload.get('questions', []) if q.get('question') == 'Was war am 8. Mai 1945?'), None)
+          assert target, '8 May 1945 question missing'
+          assert target.get('tr', {}).get('question') == "8 Mayıs 1945'te ne oldu?", 'Turkish question missing'
+          assert len(target.get('tr', {}).get('answers', [])) == 4 and all(target['tr']['answers']), 'Turkish answers missing'
+          print('Cloudflare payload QA passed: 8 May 1945 Turkish question + four answers present')
+          PY
+
+      - name: Bust citizenship test cache
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import os
+
+          sha = os.environ['GITHUB_SHA']
+          js_path = Path('assets/js/einbuergerungstest.js')
+          html_path = Path('vatandaslik-testi/index.html')
+
+          js = js_path.read_text(encoding='utf-8')
+          old = "const LOCAL_DATA='/assets/data/einbuergerungstest.json';"
+          new = f"const LOCAL_DATA='/assets/data/einbuergerungstest.json?v={sha}';"
+          assert old in js, 'Expected LOCAL_DATA declaration not found'
+          js_path.write_text(js.replace(old, new, 1), encoding='utf-8')
+
+          html = html_path.read_text(encoding='utf-8')
+          old_script = '<script defer src="/assets/js/einbuergerungstest.js"></script>'
+          new_script = f'<script defer src="/assets/js/einbuergerungstest.js?v={sha}"></script>'
+          assert old_script in html, 'Expected citizenship script tag not found'
+          html_path.write_text(html.replace(old_script, new_script, 1), encoding='utf-8')
+          print(f'Cloudflare citizenship assets versioned with {sha}')
+          PY
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing GitHub secret: CLOUDFLARE_API_TOKEN"; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing GitHub secret: CLOUDFLARE_ACCOUNT_ID"; exit 1; }
+          npx --yes wrangler@4 deploy --config wrangler.jsonc
