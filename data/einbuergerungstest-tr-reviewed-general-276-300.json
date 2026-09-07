@@ -1,0 +1,177 @@
+{
+  "official-276": {
+    "germanQuestion": "Was sollten Sie tun, wenn Sie von Ihrem Ansprechpartner / Ihrer Ansprechpartnerin in einer deutschen Behörde schlecht behandelt werden?",
+    "germanAnswers": ["Ich kann nichts tun.", "Ich muss mir diese Behandlung gefallen lassen.", "Ich drohe der Person.", "Ich kann mich beim Behördenleiter / bei der Behördenleiterin beschweren."],
+    "question": "Bir Alman kamu kurumunda görevli tarafından kötü muamele gördüğünüzü düşünüyorsanız ne yapabilirsiniz?",
+    "answers": ["Hiçbir şey yapamam.", "Bu davranışı kabul etmek zorundayım.", "Görevliyi tehdit ederim.", "Kurumun yöneticisine şikâyette bulunabilirim."],
+    "explanation": "Kamu kurumları hukuka bağlıdır ve vatandaşlar ile başvuru sahipleri idari işlemler veya personel davranışları konusunda şikâyet yollarını kullanabilir. Tehdit etmek doğru veya hukuki bir yol değildir. İlk adımlardan biri kurumun amirine ya da ilgili şikâyet birimine başvurmaktır. Sınav ipucu: Behörde'de sorun = şikâyet hakkı vardır; 'katlanmak zorundasın' değildir."
+  },
+  "official-277": {
+    "germanQuestion": "Eine Frau, die ein zweijähriges Kind hat, bewirbt sich in Deutschland um eine Stelle. Was ist ein Beispiel für Diskriminierung? Sie bekommt die Stelle nur deshalb nicht, weil sie …",
+    "germanAnswers": ["kein Englisch spricht.", "zu hohe Gehaltsvorstellungen hat.", "keine Erfahrungen in diesem Beruf hat.", "Mutter ist."],
+    "question": "İki yaşında çocuğu olan bir kadının işe alınmaması hangi durumda ayrımcılık örneğidir?",
+    "answers": ["İngilizce bilmediği için", "Maaş beklentisi çok yüksek olduğu için", "Mesleki deneyimi olmadığı için", "Sadece anne olduğu için"],
+    "explanation": "İşe alımda mesleki yeterlilik, dil bilgisi veya makul iş koşulları değerlendirilebilir. Ancak bir kişiyi yalnızca anne olduğu için dışlamak, cinsiyet ve aile durumu ile bağlantılı ayrımcı bir uygulama olabilir. Sınav ipucu: İşe uygunlukla ilgisiz kişisel özellik nedeniyle dışlama = ayrımcılık."
+  },
+  "official-278": {
+    "germanQuestion": "Ein Mann im Rollstuhl hat sich auf eine Stelle als Buchhalter beworben. Was ist ein Beispiel für Diskriminierung? Er bekommt die Stelle nur deshalb nicht, weil er …",
+    "germanAnswers": ["im Rollstuhl sitzt.", "keine Erfahrung hat.", "zu hohe Gehaltsvorstellungen hat.", "kein Englisch spricht."],
+    "question": "Tekerlekli sandalye kullanan bir muhasebeci adayının işe alınmaması hangi durumda ayrımcılık örneğidir?",
+    "answers": ["Sadece tekerlekli sandalye kullandığı için", "Deneyimi olmadığı için", "Maaş beklentisi çok yüksek olduğu için", "İngilizce bilmediği için"],
+    "explanation": "Engellilik, eşit muamele hukukunda korunan özelliklerden biridir. Kişi işi yapabilecek niteliklere sahipse sırf tekerlekli sandalye kullanması nedeniyle reddedilmesi ayrımcılık olabilir. Sınav ipucu: Behinderung nedeniyle otomatik dışlama = Gleichbehandlung ilkesine aykırıdır."
+  },
+  "official-279": {
+    "germanQuestion": "In den meisten Mietshäusern in Deutschland gibt es eine „Hausordnung“. Was steht in einer solchen „Hausordnung“? Sie nennt …",
+    "germanAnswers": ["Regeln für die Benutzung öffentlicher Verkehrsmittel.", "alle Mieter und Mieterinnen im Haus.", "Regeln, an die sich alle Bewohner und Bewohnerinnen halten müssen.", "die Adresse des nächsten Ordnungsamtes."],
+    "question": "Almanya'daki apartmanlarda bulunan Hausordnung genellikle neyi düzenler?",
+    "answers": ["Toplu taşıma kullanım kurallarını", "Apartmandaki tüm kiracıların isimlerini", "Tüm bina sakinlerinin uyması gereken kuralları", "En yakın Ordnungsamt'ın adresini"],
+    "explanation": "Hausordnung, ortak yaşamın kurallarını belirler. Sessizlik saatleri, merdiven ve ortak alanların kullanımı, temizlik veya çöp düzeni gibi konular burada yer alabilir. Kira sözleşmesinin parçası veya eki olabilir. Sınav ipucu: Hausordnung = binadaki ortak yaşam kuralları."
+  },
+  "official-280": {
+    "germanQuestion": "Wenn Sie sich in Deutschland gegen einen falschen Steuerbescheid wehren wollen, müssen Sie …",
+    "germanAnswers": ["nichts machen.", "den Bescheid wegwerfen.", "Einspruch einlegen.", "warten, bis ein anderer Bescheid kommt."],
+    "question": "Yanlış olduğunu düşündüğünüz bir vergi kararına (Steuerbescheid) karşı ne yapmanız gerekir?",
+    "answers": ["Hiçbir şey yapmamak", "Belgeyi çöpe atmak", "İtiraz etmek (Einspruch einlegen)", "Yeni bir karar gelmesini beklemek"],
+    "explanation": "Steuerbescheid, Finanzamt'ın vergiye ilişkin resmî kararıdır. Hata olduğunu düşünüyorsanız süresi içinde Einspruch denilen itiraz yoluna başvurabilirsiniz. Belgeyi görmezden gelmek kararı ortadan kaldırmaz. Sınav ipucu: Steuerbescheid'e karşı hukuki yol = Einspruch."
+  },
+  "official-281": {
+    "germanQuestion": "Zwei Freunde wollen in ein öffentliches Schwimmbad in Deutschland. Beide haben eine dunkle Hautfarbe und werden deshalb nicht hineingelassen. Welches Recht wird in dieser Situation verletzt? Das Recht auf …",
+    "germanAnswers": ["Meinungsfreiheit", "Gleichbehandlung", "Versammlungsfreiheit", "Freizügigkeit"],
+    "question": "İki kişinin sırf ten renkleri nedeniyle halka açık bir yüzme havuzuna alınmaması hangi hakkı ihlal eder?",
+    "answers": ["İfade özgürlüğü", "Eşit muamele hakkı", "Toplantı özgürlüğü", "Yerleşme ve dolaşım özgürlüğü"],
+    "explanation": "Kişilere ten rengi veya etnik köken nedeniyle farklı muamele yapılması ayrımcılıktır. Bu örnek doğrudan Gleichbehandlung yani eşit muamele ilkesini ölçer. Sınav ipucu: Ten rengi nedeniyle dışlama = Gleichbehandlung ihlali."
+  },
+  "official-282": {
+    "germanQuestion": "Welches Ehrenamt müssen deutsche Staatsbürger/Staatsbürgerinnen übernehmen, wenn sie dazu aufgefordert werden?",
+    "germanAnswers": ["Vereinstrainer/Vereinstrainerin", "Wahlhelfer/Wahlhelferin", "Bibliotheksaufsicht", "Lehrer/Lehrerin"],
+    "question": "Alman vatandaşları çağrıldıklarında hangi gönüllü/kamusal görevi üstlenmek zorunda kalabilir?",
+    "answers": ["Spor kulübü antrenörlüğü", "Seçim görevliliği (Wahlhelfer/Wahlhelferin)", "Kütüphane gözetmenliği", "Öğretmenlik"],
+    "explanation": "Seçimlerin düzenli yürütülebilmesi için belediyeler Wahlhelfer görevlendirir. Bu görev kamu yararına fahri bir görevdir ve çağrılan kişiler kural olarak haklı bir neden olmadan reddetmemelidir. Sınav ipucu: Seçimlerin yürütülmesi + Ehrenamt = Wahlhelfer."
+  },
+  "official-283": {
+    "germanQuestion": "Was tun Sie, wenn Sie eine falsche Rechnung von einer deutschen Behörde bekommen?",
+    "germanAnswers": ["Ich lasse die Rechnung liegen.", "Ich lege Widerspruch bei der Behörde ein.", "Ich schicke die Rechnung an die Behörde zurück.", "Ich gehe mit der Rechnung zum Finanzamt."],
+    "question": "Bir Alman kamu kurumundan yanlış bir ödeme/fatura bildirimi alırsanız ne yaparsınız?",
+    "answers": ["Belgeyi görmezden gelirim.", "Kuruma itiraz ederim (Widerspruch).", "Belgeyi açıklamasız geri gönderirim.", "Finanzamt'a giderim."],
+    "explanation": "Bir kamu kurumu tarafından verilen hatalı bir idari karara karşı uygun hukuk yolu kullanılmalıdır. Soruda bu yol Widerspruch olarak verilir. Hangi itiraz yolunun geçerli olduğu belgedeki Rechtsbehelfsbelehrung bölümünden anlaşılır. Sınav ipucu: Behörde + yanlış karar = resmî itiraz yolu; belgeyi görmezden gelmek değil."
+  },
+  "official-284": {
+    "germanQuestion": "Was man für die Arbeit können muss, ändert sich in Zukunft sehr schnell. Was kann man tun?",
+    "germanAnswers": ["Es ist egal, was man lernt.", "Erwachsene müssen auch nach der Ausbildung immer weiter lernen.", "Kinder lernen in der Schule alles, was im Beruf wichtig ist. Nach der Schule muss man nicht weiter lernen.", "Alle müssen früher aufhören zu arbeiten, weil sich alles ändert."],
+    "question": "İş hayatındaki beceriler hızla değiştiğinde ne yapmak gerekir?",
+    "answers": ["Ne öğrenildiğinin önemi yoktur.", "Yetişkinler mesleki eğitimden sonra da öğrenmeye devam etmelidir.", "Okulda öğrenilenler ömür boyu yeterlidir.", "Değişim yüzünden herkes daha erken çalışmayı bırakmalıdır."],
+    "explanation": "Almanya'da Weiterbildung ve lebenslanges Lernen kavramları önemlidir. Teknoloji ve iş süreçleri değiştikçe çalışanların eğitimlerini güncellemesi beklenir. Sınav ipucu: İş dünyası değişiyor = lebenslanges Lernen / sürekli eğitim."
+  },
+  "official-285": {
+    "germanQuestion": "Frau Frost arbeitet als fest angestellte Mitarbeiterin in einem Büro. Was muss sie nicht von ihrem Gehalt bezahlen?",
+    "germanAnswers": ["Lohnsteuer", "Beiträge zur Arbeitslosenversicherung", "Beiträge zur Renten- und Krankenversicherung", "Umsatzsteuer"],
+    "question": "Maaşlı çalışan Frau Frost maaşından aşağıdakilerden hangisini ödemez?",
+    "answers": ["Ücret vergisi (Lohnsteuer)", "İşsizlik sigortası primi", "Emeklilik ve sağlık sigortası primleri", "Katma değer vergisi (Umsatzsteuer)"],
+    "explanation": "Çalışanın brüt maaşından vergi ve sosyal sigorta kesintileri yapılabilir. Umsatzsteuer ise mal ve hizmet tüketiminde fiyat üzerinden alınan dolaylı bir vergidir; maaş bordrosundan kesilen bir vergi değildir. Sınav ipucu: Maaş bordrosu = Lohnsteuer + Sozialversicherung; Umsatzsteuer değil."
+  },
+  "official-286": {
+    "germanQuestion": "Welche Organisation in einer Firma hilft den Arbeitnehmern und Arbeitnehmerinnen bei Problemen mit dem Arbeitgeber / der Arbeitgeberin?",
+    "germanAnswers": ["der Betriebsrat", "der Betriebsprüfer / die Betriebsprüferin", "die Betriebsgruppe", "das Betriebsmanagement"],
+    "question": "Bir şirkette çalışanların işverenle yaşadığı sorunlarda hangi yapı çalışanları temsil eder?",
+    "answers": ["Betriebsrat (işyeri çalışan temsilciliği)", "Betriebsprüfer", "Betriebsgruppe", "Betriebsmanagement"],
+    "explanation": "Betriebsrat, belirli koşullardaki işyerlerinde çalışanların seçtiği temsil organıdır. Çalışma saatleri, personel uygulamaları ve çalışan hakları gibi konularda işveren karşısında çalışanları temsil eder. Sınav ipucu: İşyerinde çalışan temsilciliği = Betriebsrat."
+  },
+  "official-287": {
+    "germanQuestion": "Sie möchten bei einer Firma in Deutschland Ihr Arbeitsverhältnis beenden. Was müssen Sie beachten?",
+    "germanAnswers": ["die Gehaltszahlungen", "die Arbeitszeit", "die Kündigungsfrist", "die Versicherungspflicht"],
+    "question": "Almanya'da iş sözleşmenizi sona erdirmek istediğinizde özellikle neye dikkat etmelisiniz?",
+    "answers": ["Maaş ödemelerine", "Çalışma saatine", "İhbar süresine (Kündigungsfrist)", "Sigorta yükümlülüğüne"],
+    "explanation": "İş sözleşmesinin feshi genellikle belirli bir Kündigungsfrist'e tabidir. Süre kanundan, toplu sözleşmeden veya bireysel iş sözleşmesinden kaynaklanabilir. Fesih bildiriminin şekli de önemlidir. Sınav ipucu: İşten ayrılma/fesih = Kündigungsfrist."
+  },
+  "official-288": {
+    "germanQuestion": "Woraus begründet sich Deutschlands besondere Verantwortung für Israel?",
+    "germanAnswers": ["aus der Mitgliedschaft in der Europäischen Union (EU)", "aus den nationalsozialistischen Verbrechen gegen Juden", "aus dem Grundgesetz der Bundesrepublik Deutschland", "aus der christlichen Tradition"],
+    "question": "Almanya'nın İsrail'e karşı özel tarihsel sorumluluğunun temelinde ne vardır?",
+    "answers": ["Avrupa Birliği üyeliği", "Nasyonal Sosyalistlerin Yahudilere karşı işlediği suçlar", "Grundgesetz", "Hristiyan geleneği"],
+    "explanation": "Nazi Almanyası döneminde Avrupa Yahudilerine karşı sistematik soykırım gerçekleştirildi. Holokost'un tarihsel sorumluluğu, Federal Almanya'nın İsrail ve Yahudi yaşamına ilişkin özel sorumluluk anlayışının temelini oluşturur. Sınav ipucu: Almanya–İsrail özel sorumluluğu = Holocaust/NS suçları."
+  },
+  "official-289": {
+    "germanQuestion": "Ein Mann mit dunkler Hautfarbe bewirbt sich um eine Stelle als Kellner in einem Restaurant in Deutschland. Was ist ein Beispiel für Diskriminierung? Er bekommt die Stelle nur deshalb nicht, weil …",
+    "germanAnswers": ["seine Deutschkenntnisse zu gering sind.", "er zu hohe Gehaltsvorstellungen hat.", "er eine dunkle Haut hat.", "er keine Erfahrungen im Beruf hat."],
+    "question": "Bir iş başvurusunda aşağıdakilerden hangisi ayrımcılık örneğidir?",
+    "answers": ["Almancası iş için yetersiz olduğu için", "Maaş beklentisi çok yüksek olduğu için", "Sırf koyu tenli olduğu için", "Mesleki deneyimi olmadığı için"],
+    "explanation": "Ten rengi veya etnik köken işe uygunluk kriteri değildir. Bir adayın sadece bu nedenle reddedilmesi ayrımcılıktır. Buna karşılık iş için gerekli dil veya deneyim seviyesi objektif mesleki kriter olabilir. Sınav ipucu: Hautfarbe nedeniyle ret = Diskriminierung."
+  },
+  "official-290": {
+    "germanQuestion": "Sie haben in Deutschland einen Fernseher gekauft. Zu Hause packen Sie den Fernseher aus, doch er funktioniert nicht. Der Fernseher ist kaputt. Was können Sie machen?",
+    "germanAnswers": ["eine Anzeige schreiben", "den Fernseher reklamieren", "das Gerät ungefragt austauschen", "die Garantie verlängern"],
+    "question": "Yeni aldığınız televizyon arızalı çıkarsa ne yapabilirsiniz?",
+    "answers": ["Polise suç duyurusunda bulunmak", "Ürünü satıcıya şikâyet/ayıp bildirimiyle geri götürmek (reklamieren)", "Habersizce başka bir cihazla değiştirmek", "Garantiyi kendiniz uzatmak"],
+    "explanation": "Arızalı malda tüketici satıcıya başvurarak ayıbı bildirir; günlük dilde bu reklamieren olarak ifade edilir. Satıcıdan onarım veya değiştirme gibi yasal ayıp hakları gündeme gelebilir. Sınav ipucu: Yeni ürün bozuk = Händler'a reklamieren."
+  },
+  "official-291": {
+    "germanQuestion": "Warum muss man in Deutschland bei der Steuererklärung aufschreiben, ob man zu einer Kirche gehört oder nicht? Weil ...",
+    "germanAnswers": ["es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer geknüpft ist.", "das für die Statistik in Deutschland wichtig ist.", "man mehr Steuern zahlen muss, wenn man nicht zu einer Kirche gehört.", "die Kirche für die Steuererklärung verantwortlich ist."],
+    "question": "Vergi beyannamesinde kilise üyeliğinin sorulmasının nedeni nedir?",
+    "answers": ["Kirchensteuer'in gelir/ücret vergisiyle bağlantılı olması", "Sadece istatistik için gerekli olması", "Kiliseye üye olmayanların daha çok vergi ödemesi", "Vergi beyannamesinden kilisenin sorumlu olması"],
+    "explanation": "Belirli dinî cemaatlerin üyelerinden Kirchensteuer alınabilir. Bu vergi gelir vergisi sistemi üzerinden hesaplanıp tahsil edildiği için vergi bilgilerinde üyelik durumu önem taşıyabilir. Sınav ipucu: Kirche + Steuererklärung = Kirchensteuer."
+  },
+  "official-292": {
+    "germanQuestion": "Die Menschen in Deutschland leben nach dem Grundsatz der religiösen Toleranz. Was bedeutet das?",
+    "germanAnswers": ["Es dürfen keine Moscheen gebaut werden.", "Alle Menschen glauben an Gott.", "Jeder kann glauben, was er möchte.", "Der Staat entscheidet, an welchen Gott die Menschen glauben."],
+    "question": "Dini hoşgörü (religiöse Toleranz) ilkesi ne anlama gelir?",
+    "answers": ["Cami yapılmasına izin verilmez.", "Herkes Tanrı'ya inanmak zorundadır.", "Herkes istediğine inanabilir veya inanmamayı seçebilir.", "Devlet insanların hangi Tanrı'ya inanacağına karar verir."],
+    "explanation": "Din ve vicdan özgürlüğü bireyin inanç seçimini korur. Devlet kişiye hangi dine inanacağını dayatmaz; kişinin din değiştirme veya hiçbir dine inanmama özgürlüğü de bu alanın parçasıdır. Sınav ipucu: Religiöse Toleranz = inancı birey seçer, devlet değil."
+  },
+  "official-293": {
+    "germanQuestion": "Was ist in Deutschland ein Brauch an Ostern?",
+    "germanAnswers": ["Kürbisse vor die Tür stellen", "einen Tannenbaum schmücken", "Eier bemalen", "Raketen in die Luft schießen"],
+    "question": "Almanya'da Paskalya (Ostern) geleneklerinden biri hangisidir?",
+    "answers": ["Kapıya balkabağı koymak", "Noel ağacı süslemek", "Yumurta boyamak", "Havai fişek atmak"],
+    "explanation": "Ostern döneminde yumurta boyama ve yumurta saklama yaygın geleneklerdir. Tannenbaum Weihnachten'a, havai fişek daha çok Silvester'e, balkabağı ise Halloween'e aittir. Sınav ipucu: Ostern = Eier bemalen."
+  },
+  "official-294": {
+    "germanQuestion": "Pfingsten ist ein …",
+    "germanAnswers": ["christlicher Feiertag.", "deutscher Gedenktag.", "internationaler Trauertag.", "bayerischer Brauch."],
+    "question": "Pfingsten nedir?",
+    "answers": ["Hristiyan bayramı", "Alman anma günü", "Uluslararası yas günü", "Bavyera geleneği"],
+    "explanation": "Pfingsten, Hristiyan takvimindeki önemli dini bayramlardan biridir. Almanya'da Pfingstsonntag ve bazı yerlerde Pfingstmontag resmî tatil düzeninde yer alır. Sınav ipucu: Pfingsten = christlicher Feiertag."
+  },
+  "official-295": {
+    "germanQuestion": "Welche Religion hat die europäische und deutsche Kultur geprägt?",
+    "germanAnswers": ["der Hinduismus", "das Christentum", "der Buddhismus", "der Islam"],
+    "question": "Avrupa ve Alman kültürünü tarihsel olarak en çok etkileyen din hangisidir?",
+    "answers": ["Hinduizm", "Hristiyanlık", "Budizm", "İslam"],
+    "explanation": "Avrupa'nın hukuk, bayramlar, sanat, mimari ve toplumsal tarihinin birçok alanı yüzyıllar boyunca Hristiyan geleneklerinden etkilenmiştir. Bu ifade günümüz toplumunun yalnızca Hristiyan olduğu anlamına gelmez; Almanya bugün dini açıdan çoğulcu bir toplumdur. Sınav ipucu: Tarihsel Avrupa/Almanya kültürü = Christentum etkisi."
+  },
+  "official-296": {
+    "germanQuestion": "In Deutschland nennt man die letzten vier Wochen vor Weihnachten …",
+    "germanAnswers": ["den Buß- und Bettag.", "das Erntedankfest.", "die Adventszeit.", "Allerheiligen."],
+    "question": "Noel'den önceki yaklaşık dört haftalık döneme Almanya'da ne denir?",
+    "answers": ["Buß- und Bettag", "Erntedankfest", "Adventszeit", "Allerheiligen"],
+    "explanation": "Advent, Weihnachten öncesindeki hazırlık dönemidir. Adventskranz ve Adventskalender gibi gelenekler bu döneme aittir. Dört Advent pazar günü bulunur. Sınav ipucu: Weihnachten'dan önceki dört hafta = Adventszeit."
+  },
+  "official-297": {
+    "germanQuestion": "Aus welchem Land sind die meisten Migranten / Migrantinnen nach Deutschland gekommen?",
+    "germanAnswers": ["Italien", "Polen", "Marokko", "Türkei"],
+    "question": "Bu sınav sorusunun tarihsel bağlamına göre Almanya'ya gelen en büyük göçmen gruplarından biri hangi ülkeden gelmiştir?",
+    "answers": ["İtalya", "Polonya", "Fas", "Türkiye"],
+    "explanation": "Soru, Federal Almanya'nın savaş sonrası işgücü göçü tarihine dayanır. Özellikle 1961'de Türkiye ile yapılan işgücü anlaşmasından sonra çok sayıda Türkiye kökenli kişi Almanya'ya geldi ve kalıcı bir topluluk oluştu. Güncel göç istatistikleri zamanla değişebilir; sınavdaki tarihsel cevap Türkiye'dir. Sınav ipucu: Gastarbeiter dönemi + büyük kalıcı göçmen topluluğu = Türkiye."
+  },
+  "official-298": {
+    "germanQuestion": "In der DDR lebten vor allem Migranten aus …",
+    "germanAnswers": ["Vietnam, Polen, Mosambik.", "Frankreich, Rumänien, Somalia.", "Chile, Ungarn, Simbabwe.", "Nordkorea, Mexiko, Ägypten."],
+    "question": "DDR döneminde göçmenler özellikle hangi ülkelerden geliyordu?",
+    "answers": ["Vietnam, Polonya ve Mozambik", "Fransa, Romanya ve Somali", "Şili, Macaristan ve Zimbabve", "Kuzey Kore, Meksika ve Mısır"],
+    "explanation": "DDR, sosyalist ülkeler ve bazı ortak devletlerle sözleşmeli işçi programları yürüttü. Vietnam ve Mozambik'ten gelen Vertragsarbeiter grupları bunun önemli örnekleridir; Polonya ile de yoğun hareketlilik vardı. Sınav ipucu: DDR göç tarihi = Vietnam + Polen + Mosambik."
+  },
+  "official-299": {
+    "germanQuestion": "Ausländische Arbeitnehmer und Arbeitnehmerinnen, die in den 50er und 60er Jahren von der Bundesrepublik Deutschland angeworben wurden, nannte man …",
+    "germanAnswers": ["Schwarzarbeiter / Schwarzarbeiterinnen", "Gastarbeiter / Gastarbeiterinnen", "Zeitarbeiter / Zeitarbeiterinnen", "Schichtarbeiter / Schichtarbeiterinnen"],
+    "question": "1950'li ve 1960'lı yıllarda Federal Almanya'nın yurt dışından işe aldığı çalışanlara ne deniyordu?",
+    "answers": ["Kayıt dışı işçiler", "Gastarbeiter (misafir işçiler)", "Geçici işçiler", "Vardiyalı işçiler"],
+    "explanation": "Ekonomik büyüme döneminde Federal Almanya işgücü açığını kapatmak için başka ülkelerle anlaşmalar yaptı ve yabancı işçiler davet etti. Bu kişiler dönemin resmî ve toplumsal dilinde Gastarbeiter olarak adlandırıldı. Birçoğu daha sonra Almanya'da kalıcı olarak yaşamaya başladı. Sınav ipucu: 1950/60'lar + işe alınan yabancı işçiler = Gastarbeiter."
+  },
+  "official-300": {
+    "germanQuestion": "Aus welchem Land kamen die ersten Gastarbeiter / Gastarbeiterinnen nach Deutschland?",
+    "germanAnswers": ["Italien", "Spanien", "Portugal", "Türkei"],
+    "question": "Federal Almanya'ya ilk Gastarbeiter grupları hangi ülkeden geldi?",
+    "answers": ["İtalya", "İspanya", "Portekiz", "Türkiye"],
+    "explanation": "Federal Almanya'nın ilk işgücü anlaşması 1955'te İtalya ile yapıldı. Daha sonra İspanya, Yunanistan, Türkiye, Portekiz ve başka ülkelerle anlaşmalar izledi. Bu nedenle ilk Gastarbeiter grubu denildiğinde doğru cevap İtalya'dır. Sınav ipucu: İlk Anwerbeabkommen = 1955, Italien."
+  }
+}
