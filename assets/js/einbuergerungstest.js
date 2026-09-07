@@ -6,6 +6,20 @@
   const STORE='ap_einbuergerungstest_v1';
   const LETTERS=['a','b','c','d'];
   const STATES={bw:'Baden-Württemberg',by:'Bayern',be:'Berlin',bb:'Brandenburg',hb:'Bremen',hh:'Hamburg',he:'Hessen',mv:'Mecklenburg-Vorpommern',ni:'Niedersachsen',nw:'Nordrhein-Westfalen',rp:'Rheinland-Pfalz',sl:'Saarland',sn:'Sachsen',st:'Sachsen-Anhalt',sh:'Schleswig-Holstein',th:'Thüringen'};
+  const CATEGORY_TR={
+    'Rights & Freedoms':'Haklar ve özgürlükler',
+    'Education & Religion':'Eğitim ve din',
+    'Law & Governance':'Hukuk ve yönetim',
+    'Democracy & Politics':'Demokrasi ve siyaset',
+    'Economy & Employment':'Ekonomi ve çalışma hayatı',
+    'History & Geography':'Tarih ve coğrafya',
+    'Elections':'Seçimler',
+    'Press Freedom':'Basın özgürlüğü',
+    'Assembly & Protests':'Toplantı ve gösteri hakkı',
+    'Federal System':'Federal sistem',
+    'Constitution':'Anayasa',
+    'General':'Genel'
+  };
 
   let data=[],general=[],state=[],pool=[];
   let index=0,mode='study',exam=null,timerId=null;
@@ -22,8 +36,9 @@
     const list=Array.isArray(raw)?raw:(raw.questions||[]);
     return list.map(q=>{
       if(Array.isArray(q.answers))return q;
-      const tr=(q.translation||{}).tr||{};
-      return {num:safe(q.num).trim(),id:q.id||'',question:q.question||'',answers:[q.a||'',q.b||'',q.c||'',q.d||''],solution:safe(q.solution).trim().toLowerCase(),image:q.image||'',context:q.context||'',category:q.category||'General',tr:{question:tr.question||'',answers:[tr.a||'',tr.b||'',tr.c||'',tr.d||''],context:tr.context||'',reviewed:false,source:''}};
+      // Critical quality rule: the upstream fallback may contain AI-generated Turkish.
+      // Never expose that text. Fallback questions remain German-only until reviewed data loads.
+      return {num:safe(q.num).trim(),id:q.id||'',question:q.question||'',answers:[q.a||'',q.b||'',q.c||'',q.d||''],solution:safe(q.solution).trim().toLowerCase(),image:q.image||'',context:q.context||'',category:q.category||'General',tr:{question:'',answers:['','','',''],context:'',reviewed:false,source:'Türkçe çeviri henüz editör kontrolünde'}};
     }).filter(q=>q.question&&q.answers&&q.answers.length===4);
   }
 
@@ -54,6 +69,7 @@
   function isFav(q){return !!((loadStore().favorites||{})[key(q)]);}
   function isWrong(q){const r=answerRecord(q);return !!(r&&!r.correct);}
   function isCorrect(q){const r=answerRecord(q);return !!(r&&r.correct);}
+  function categoryLabel(q){return CATEGORY_TR[q.category]||q.category||'';}
 
   function choosePool(){
     splitData();
@@ -123,7 +139,7 @@
       '<div class="citizen-correct-head"><span class="citizen-correct-icon">✓</span><div><strong>'+(rec.correct?'Doğru cevap':'Doğru seçenek: '+LETTERS[correct].toUpperCase())+'</strong><div class="citizen-correct-answer" lang="de">'+escapeHtml(q.answers[correct])+'</div>'+(tr?'<div class="citizen-correct-tr" lang="tr">'+escapeHtml(tr)+'</div>':'')+'</div></div>'+
       (trContext?'<div class="citizen-learning"><h3>Neden doğru?</h3>'+richExplanation(trContext)+'</div>':'')+
       (deContext?'<details><summary>Almanca kaynak açıklamasını göster</summary><p>'+escapeHtml(deContext)+'</p></details>':'')+
-      '<div class="citizen-explanation-meta">'+(reviewed?'<span class="citizen-reviewed">Editör kontrollü Türkçe</span>':'<span>Türkçe çalışma desteği</span>')+'<small>Resmî BAMF çevirisi değildir.</small></div></div>';
+      '<div class="citizen-explanation-meta">'+(reviewed?'<span class="citizen-reviewed">Editör kontrollü Türkçe</span>':'<span>Türkçe henüz editör kontrolünde</span>')+'<small>Resmî BAMF çevirisi değildir.</small></div></div>';
   }
 
   function questionLabel(q){return /^\d+$/.test(q.num)?'Genel soru':'Eyalet · '+STATES[stateCode()];}
@@ -134,11 +150,13 @@
     if(mode==='exam'){renderExam();return;}
     if(!pool.length){host.innerHTML='<div class="citizen-empty"><strong>Bu görünümde soru yok.</strong><p>Filtreyi değiştirin veya diğer sorulara dönün.</p></div>';return;}
     const q=pool[index],rec=answerRecord(q),trq=((q.tr||{}).question||'').trim();
-    host.innerHTML='<section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+escapeHtml(q.num)+'</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span>'+(q.category?'<span class="citizen-pill">'+escapeHtml(q.category)+'</span>':'')+'</div><button class="citizen-fav" id="citizenFav" type="button" aria-label="Favoriye ekle">'+(isFav(q)?'★':'☆')+'</button></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(trq?'<p class="citizen-tr" lang="tr">'+escapeHtml(trq)+'</p>':'')+'<div class="citizen-answers">'+q.answers.map((_,i)=>answerButton(q,i,rec)).join('')+'</div>'+explanation(q,rec)+'<div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" type="button" id="citizenPrev" '+(index===0?'disabled':'')+'>← Önceki</button><button class="btn btn-primary" type="button" id="citizenNext" '+(index===pool.length-1?'disabled':'')+'>Sonraki →</button></div><div class="citizen-jump"><span>'+(index+1)+' / '+pool.length+'</span><input id="citizenJumpInput" type="number" min="1" max="'+pool.length+'" placeholder="Soru"><button class="btn btn-secondary" id="citizenJump" type="button">Git</button></div></div></section>';
+    const trPending=!trq?'<div class="citizen-translation-pending">Bu sorunun Türkçe çevirisi editör kontrolünden geçiyor. Yanlış çeviri göstermemek için geçici olarak yalnız Almanca metin gösteriliyor.</div>':'';
+    const nextDisabled=(index===pool.length-1||!rec)?'disabled':'';
+    host.innerHTML='<section class="citizen-question"><div class="citizen-question-head"><div class="citizen-kicker"><span class="citizen-pill">Soru '+escapeHtml(q.num)+'</span><span class="citizen-pill">'+escapeHtml(questionLabel(q))+'</span>'+(q.category?'<span class="citizen-pill">'+escapeHtml(categoryLabel(q))+'</span>':'')+'</div><button class="citizen-fav" id="citizenFav" type="button" aria-label="Favoriye ekle">'+(isFav(q)?'★':'☆')+'</button></div>'+renderImage(q)+'<p class="citizen-de" lang="de">'+escapeHtml(q.question)+'</p>'+(trq?'<p class="citizen-tr" lang="tr">'+escapeHtml(trq)+'</p>':trPending)+'<div class="citizen-answers">'+q.answers.map((_,i)=>answerButton(q,i,rec)).join('')+'</div>'+explanation(q,rec)+'<div class="citizen-nav"><div class="citizen-nav-group"><button class="btn btn-secondary" type="button" id="citizenPrev" '+(index===0?'disabled':'')+'>← Önceki</button><button class="btn btn-primary" type="button" id="citizenNext" '+nextDisabled+'>Sonraki →</button></div><div class="citizen-jump"><span>'+(index+1)+' / '+pool.length+'</span><input id="citizenJumpInput" type="number" min="1" max="'+pool.length+'" placeholder="Soru"><button class="btn btn-secondary" id="citizenJump" type="button">Git</button></div></div></section>';
     host.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>submitAnswer(q,Number(b.dataset.answer)));
     el('citizenFav').onclick=()=>toggleFav(q);
     el('citizenPrev').onclick=()=>{if(index>0){index--;renderQuestion();scrollCard();}};
-    el('citizenNext').onclick=()=>{if(index<pool.length-1){index++;renderQuestion();scrollCard();}};
+    el('citizenNext').onclick=()=>{if(answerRecord(q)&&index<pool.length-1){index++;renderQuestion();scrollCard();}};
     el('citizenJump').onclick=()=>{const n=Math.max(1,Math.min(pool.length,Number(el('citizenJumpInput').value)||1));index=n-1;renderQuestion();scrollCard();};
   }
 
