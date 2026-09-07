@@ -64,16 +64,10 @@ jobs:
         run: |
           rm -rf dist
           mkdir -p dist
-          rsync -a ./ dist/ \
-            --exclude 'dist/' \
-            --exclude '.git/' \
-            --exclude '.github/' \
-            --exclude '.wrangler/' \
-            --exclude 'scripts/' \
-            --exclude 'data/' \
-            --exclude 'wrangler.jsonc' \
-            --exclude '.gitignore' \
-            --exclude '*.md'
+          git ls-files -z | rsync -a --from0 --files-from=- ./ dist/
+          rm -rf dist/.github dist/scripts dist/data
+          rm -f dist/wrangler.jsonc dist/.gitignore
+          find dist -maxdepth 1 -type f -name '*.md' -delete
           test -f dist/vatandaslik-testi/index.html
           test -f dist/assets/data/einbuergerungstest.json
           test -f dist/assets/js/einbuergerungstest.js
