@@ -14,7 +14,16 @@ def clean_text(value):
 
 
 def comparable(value):
-    return clean_text(value).replace("…", "...").casefold()
+    text = clean_text(value).casefold()
+    replacements = {
+        "…": "...", "„": '"', "“": '"', "”": '"', "‘": "'", "’": "'",
+        "\u00ad": "", "\u200b": "", "fuеr": "für", "für": "für"
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    text = re.sub(r"\s*/\s*", "/", text)
+    text = re.sub(r"[^0-9a-zäöüß]+", " ", text)
+    return clean_text(text)
 
 
 def comparable_answers(values):
@@ -29,6 +38,9 @@ def load_reviewed():
             raw = json.loads(path.read_text(encoding="utf-8"))
             if isinstance(raw, dict):
                 for key, value in raw.items():
+                    if isinstance(value, dict):
+                        value = dict(value)
+                        value["_reviewKey"] = key
                     merged[f"{path.name}:{key}"] = value
         except Exception as exc:
             print(f"WARNING: reviewed file unreadable {path}: {exc}")
@@ -79,7 +91,7 @@ def align_reviewed_answers(override, actual):
 
 
 def repair_official_items(raw):
-    """Repair known gaps in the technical mirror using the current official BAMF catalog."""
+    """Repair known gaps in the technical mirror using the current official catalog."""
     repaired = 0
     for q in raw:
         question = comparable(q.get("question", ""))
@@ -90,8 +102,70 @@ def repair_official_items(raw):
             q["d"] = "Arbeit im Ausland"
             q["solution"] = "b"
             repaired += 1
-            print("QA: repaired official BAMF item 'Was verbietet das deutsche Grundgesetz?' -> solution b")
+            print("QA: repaired official item 'Was verbietet das deutsche Grundgesetz?' -> solution b")
     return repaired
+
+
+def state_official_number(question):
+    q = comparable(question)
+    if "wappen" in q:
+        return 1
+    if "landkreis" in q or "stadtteil" in q:
+        return 2
+    if "für wie viele jahre" in q and ("landtag" in q or "landesparlament" in q or "bürgerschaft" in q or "abgeordnetenhaus" in q):
+        return 3
+    if "ab welchem alter" in q and "kommunalwahlen" in q:
+        return 4
+    if "farben" in q and "landesflagge" in q:
+        return 5
+    if "über politische themen informieren" in q:
+        return 6
+    if "landeshauptstadt" in q or "welches bundesland ist ein stadtstaat" in q:
+        return 7
+    if q.startswith("welches bundesland ist "):
+        return 8
+    if "regierungschef" in q or "regierungschefin" in q:
+        return 9
+    if ("welchen minister" in q or "welche ministerin" in q or "welchen senator" in q or "welche senatorin" in q) and "nicht" in q:
+        return 10
+    return None
+
+
+def repair_and_renumber_states(raw):
+    """Canonicalize state question numbers and add two capital-city items missing from the mirror."""
+    state_rows = [q for q in raw if "-" in str(q.get("num", ""))]
+    for q in state_rows:
+        code = str(q.get("num", "")).split("-", 1)[0].upper()
+        n = state_official_number(q.get("question", ""))
+        if n:
+            q["num"] = f"{code}-{n}"
+
+    supplements = [
+        {
+            "num": "BB-7",
+            "id": "official-bb-7-supplement",
+            "question": "Die Landeshauptstadt von Brandenburg heißt ...",
+            "a": "Potsdam.", "b": "Cottbus.", "c": "Brandenburg.", "d": "Frankfurt/Oder.",
+            "solution": "a", "image": "", "context": "", "category": "General"
+        },
+        {
+            "num": "HE-7",
+            "id": "official-he-7-supplement",
+            "question": "Die Landeshauptstadt von Hessen heißt ...",
+            "a": "Kassel.", "b": "Darmstadt.", "c": "Frankfurt.", "d": "Wiesbaden.",
+            "solution": "d", "image": "", "context": "", "category": "General"
+        }
+    ]
+    existing = {(str(q.get("num", "")), comparable(q.get("question", ""))) for q in raw}
+    added = 0
+    for q in supplements:
+        sig = (q["num"], comparable(q["question"]))
+        if sig not in existing:
+            raw.append(q)
+            existing.add(sig)
+            added += 1
+    print(f"QA: state numbering canonicalized; official state supplements added={added}")
+    return added
 
 
 def compact(q, reviewed):
@@ -109,9 +183,13 @@ def compact(q, reviewed):
     trq = clean_text(o.get("question", ""))
     tre = clean_text(o.get("explanation", ""))
     tra, answers_reviewed = align_reviewed_answers(o, answers)
+    review_key = clean_text(o.get("_reviewKey", ""))
+    m = re.fullmatch(r"official-(\d{1,3})", review_key)
+    official_number = int(m.group(1)) if m else None
 
     return {
         "num": str(q.get("num", "")).strip(),
+        "officialNumber": official_number,
         "id": q.get("id", ""),
         "question": question,
         "answers": answers,
@@ -135,11 +213,12 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     reviewed = load_reviewed()
 
-    req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/11.0"})
+    req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/12.0"})
     with urllib.request.urlopen(req, timeout=45) as res:
         raw = json.load(res)
 
     repaired = repair_official_items(raw)
+    state_supplements = repair_and_renumber_states(raw)
     questions = [compact(q, reviewed) for q in raw if q.get("question") and clean_text(q.get("solution", ""))]
 
     general = [q for q in questions if q["num"].isdigit() and int(q["num"]) <= 300]
@@ -148,17 +227,21 @@ def main():
         raise ValueError(f"Expected exactly 300 answered general questions after official repairs, got {len(general)}")
 
     state_counts = {}
+    state_numbers = {}
     for q in states:
         code = q["num"].split("-", 1)[0].upper() if "-" in q["num"] else "UNKNOWN"
         state_counts[code] = state_counts.get(code, 0) + 1
+        state_numbers.setdefault(code, set()).add(q["num"])
     incomplete_states = {code: count for code, count in state_counts.items() if count != 10}
-    if incomplete_states:
-        print(f"QA: state sets needing source repair: {incomplete_states}")
+    invalid_number_sets = {code: sorted(nums) for code, nums in state_numbers.items() if nums != {f"{code}-{i}" for i in range(1, 11)}}
+    if incomplete_states or invalid_number_sets:
+        raise ValueError(f"State dataset QA failed: counts={incomplete_states}, numbering={invalid_number_sets}")
 
     reviewed_count = sum(1 for q in questions if q["tr"].get("reviewed"))
     answer_count = sum(1 for q in questions if q["tr"].get("answersReviewed"))
     general_reviewed = sum(1 for q in general if q["tr"].get("reviewed"))
     general_answers_reviewed = sum(1 for q in general if q["tr"].get("answersReviewed"))
+    mapped_official_numbers = len({q["officialNumber"] for q in general if q.get("officialNumber")})
 
     q15 = next((q for q in general if comparable(q["question"]) == comparable("Was verbietet das deutsche Grundgesetz?")), None)
     if not q15 or q15["solution"] != "b" or not q15["tr"].get("reviewed") or not q15["tr"].get("answersReviewed"):
@@ -175,22 +258,26 @@ def main():
                 "fingerprintVerifiedAnswerSets": answer_count,
                 "reviewedGeneralQuestions": general_reviewed,
                 "verifiedGeneralAnswerSets": general_answers_reviewed,
-                "officialRepairs": repaired
+                "mappedOfficialGeneralNumbers": mapped_official_numbers,
+                "officialRepairs": repaired,
+                "stateSupplements": state_supplements
             },
             "datasetQa": {
                 "answeredGeneralQuestions": len(general),
                 "stateQuestions": len(states),
                 "stateCounts": state_counts,
-                "incompleteStateSets": incomplete_states
+                "incompleteStateSets": incomplete_states,
+                "invalidStateNumberSets": invalid_number_sets
             },
-            "note": "German questions and answers follow the current official BAMF catalog. Turkish translations and explanations are study aids, not official BAMF translations."
+            "note": "German questions and answers follow the current official catalog. Turkish translations and explanations are study aids, not official BAMF translations."
         },
         "questions": questions
     }
 
     OUT.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"Generated study dataset: {len(general)} general + {len(states)} state questions")
-    print(f"Turkish QA: general reviewed={general_reviewed}/300; verified answer sets={general_answers_reviewed}/300; all reviewed={reviewed_count}; all verified={answer_count}")
+    print(f"Turkish QA: general reviewed={general_reviewed}/300; verified answer sets={general_answers_reviewed}/300; official numbers mapped={mapped_official_numbers}/300")
+    print("State QA passed: all 16 Bundesländer contain canonical questions 1-10")
     print("Regression QA passed: Grundgesetz/Zwangsarbeit item is complete and Turkish fingerprint-verified")
 
 
