@@ -8,19 +8,9 @@ OUT = Path("assets/data/einbuergerungstest.json")
 REVIEWED_GLOB = "einbuergerungstest-tr-reviewed*.json"
 REVIEWED_DIR = Path("data")
 
-# Upstream translations are AI-generated and occasionally contain untranslated German,
-# broken line-wrap grammar or generic/non-explanatory context. Never publish those blindly.
-GERMAN_MARKERS = re.compile(
-    r"\b(der|die|das|den|dem|des|ein|eine|einer|einem|einen|und|oder|ist|sind|war|waren|"
-    r"wird|werden|hat|haben|für|mit|von|zur|zum|bei|auf|nicht|Bundeskanzler|Bundestag|"
-    r"Bundesrat|Grundgesetz|Deutschland|Deutschen|deutsche|Recht|Gesetz)\b",
-    re.IGNORECASE,
-)
-GENERIC_CONTEXT = {
-    "almanya'daki hayat için önemli bir soru",
-    "almanya'da yaşam için önemli bir soru",
-    "almanya'daki yaşam için önemli bir soru",
-}
+# Turkish content is intentionally strict: only Almanya Pusulası-reviewed translations
+# are published. Upstream Turkish text is AI-generated and may be inaccurate or awkward,
+# so it is never shown to users as a fallback.
 
 
 def clean_text(value):
@@ -33,34 +23,6 @@ def comparable(value):
 
 def comparable_answers(values):
     return tuple(comparable(v) for v in (values or []))
-
-
-def looks_broken_turkish(value, german_source=""):
-    text = clean_text(value)
-    if not text:
-        return True
-    low = text.casefold()
-    if "almanya mı?" in low or "almanya mı" in low:
-        return True
-    source = clean_text(german_source)
-    if text == source and len(re.findall(r"[A-Za-zÄÖÜäöüß]+", source)) >= 2:
-        return True
-    markers = GERMAN_MARKERS.findall(text)
-    if len(markers) >= 2:
-        return True
-    return False
-
-
-def safe_tr(value, german_source=""):
-    text = clean_text(value)
-    return "" if looks_broken_turkish(text, german_source) else text
-
-
-def safe_context(value):
-    text = clean_text(value)
-    if not text or text.casefold() in GENERIC_CONTEXT or looks_broken_turkish(text):
-        return ""
-    return text
 
 
 def load_reviewed():
@@ -93,34 +55,28 @@ def find_reviewed(reviewed, german_question, german_answers):
     if not candidates:
         return {}
 
-    # Strongest match: same German question AND the same four German answer choices.
+    # Strongest match: exact German question plus exact four-answer fingerprint.
     for candidate in candidates:
         stored = candidate.get("germanAnswers")
         if isinstance(stored, list) and len(stored) == 4 and comparable_answers(stored) == target_a:
             return candidate
 
-    # A small number of politically dynamic BAMF questions deliberately override a stale
-    # technical mirror. They are explicitly marked and may therefore carry newer answers.
+    # Politically dynamic BAMF questions can deliberately override a stale technical mirror.
     official_overrides = [c for c in candidates if c.get("officialOverride") is True]
     if len(official_overrides) == 1:
         return official_overrides[0]
 
-    # Old reviewed records did not always store answer fingerprints. Use them only when the
-    # German question text is unique; never guess when duplicate question stems exist.
+    # Backward compatibility for older reviewed records: only allow a question-only match
+    # if there is exactly one candidate. Duplicate stems are never guessed.
     if len(candidates) == 1:
         return candidates[0]
     return {}
 
 
 def compact(q, reviewed):
-    tr = (q.get("translation") or {}).get("tr") or {}
     question = clean_text(q.get("question", ""))
     answers = [clean_text(q.get(k, "")) for k in ("a", "b", "c", "d")]
     override = find_reviewed(reviewed, question, answers)
-
-    auto_question = safe_tr(tr.get("question", ""), question)
-    auto_answers = [safe_tr(tr.get(k, ""), answers[i]) for i, k in enumerate(("a", "b", "c", "d"))]
-    auto_context = safe_context(tr.get("context", ""))
 
     reviewed_question = clean_text(override.get("question", ""))
     reviewed_answers = override.get("answers") if isinstance(override.get("answers"), list) else []
@@ -140,6 +96,7 @@ def compact(q, reviewed):
     final_answers = override_de_answers if has_official_override else answers
     final_solution = override_solution if has_official_override else str(q.get("solution", "")).strip().lower()
 
+    # Critical quality rule: unreviewed Turkish is blank, never machine-translated fallback.
     return {
         "num": str(q.get("num", "")).strip(),
         "id": q.get("id", ""),
@@ -151,26 +108,51 @@ def compact(q, reviewed):
         "category": q.get("category") or "General",
         "officialOverride": has_official_override,
         "tr": {
-            "question": reviewed_question if is_reviewed else auto_question,
-            "answers": reviewed_answers if is_reviewed else auto_answers,
-            "context": reviewed_explanation if is_reviewed else auto_context,
+            "question": reviewed_question if is_reviewed else "",
+            "answers": reviewed_answers if is_reviewed else ["", "", "", ""],
+            "context": reviewed_explanation if is_reviewed else "",
             "reviewed": is_reviewed,
-            "source": "Almanya Pusulası editör kontrolü" if is_reviewed else "otomatik çeviri + yerel kalite filtresi",
+            "source": "Almanya Pusulası editör kontrolü" if is_reviewed else "Türkçe çeviri henüz editör kontrolünde",
         },
     }
+
+
+def validate_questions(questions):
+    general = [q for q in questions if q["num"].isdigit() and int(q["num"]) <= 300]
+    states = [q for q in questions if not (q["num"].isdigit() and int(q["num"]) <= 300)]
+    if len(general) != 300:
+        raise ValueError(f"Expected 300 general questions, got {len(general)}")
+
+    per_state = {}
+    for q in states:
+        code = q["num"].split("-", 1)[0].upper() if "-" in q["num"] else "UNKNOWN"
+        per_state[code] = per_state.get(code, 0) + 1
+    bad_states = {code: count for code, count in per_state.items() if count != 10}
+    if bad_states:
+        raise ValueError(f"State question count validation failed: {bad_states}")
+
+    # Guard the exact question that exposed the production translation bug.
+    ns = next((q for q in questions if comparable(q["question"]) == comparable("Was gab es während der Zeit des Nationalsozialismus in Deutschland?")), None)
+    if not ns:
+        raise ValueError("NS regression question not found")
+    expected = "Almanya'da Nasyonal Sosyalizm döneminde aşağıdakilerden hangisi vardı?"
+    if ns["tr"]["question"] != expected or not ns["tr"].get("reviewed"):
+        raise ValueError("NS Turkish translation regression check failed")
+
+    return len(general), len(states), per_state
 
 
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     reviewed = load_reviewed()
     try:
-        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/6.0"})
+        req = urllib.request.Request(SOURCE, headers={"User-Agent": "AlmanyaPusulasi-Einbuergerungstest-Sync/7.0"})
         with urllib.request.urlopen(req, timeout=45) as res:
             raw = json.load(res)
         questions = [compact(q, reviewed) for q in raw if q.get("question") and q.get("solution")]
-        rejected_questions = sum(1 for q in questions if not q["tr"]["question"])
-        rejected_answers = sum(1 for q in questions for a in q["tr"]["answers"] if not a)
+        general, states, per_state = validate_questions(questions)
         reviewed_count = sum(1 for q in questions if q["tr"].get("reviewed"))
+        unreviewed_count = len(questions) - reviewed_count
         official_overrides = sum(1 for q in questions if q.get("officialOverride"))
         payload = {
             "meta": {
@@ -179,28 +161,33 @@ def main():
                 "officialCatalogUrl": "https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.pdf?__blob=publicationFile",
                 "technicalMirror": "https://github.com/leben-in-deutschland/leben-in-deutschland-scrapper",
                 "technicalMirrorLicense": "MIT",
-                "translationPolicy": "Reviewed Almanya Pusulası Turkish overrides are matched against German source text and, where available, the German answer fingerprint. Explicit BAMF-current overrides can replace politically stale mirror answers. Unreviewed Turkish text is shown only after local quality checks.",
+                "translationPolicy": "Strict reviewed-only Turkish. No upstream AI-generated Turkish text is published. Reviewed translations are matched against the German source question and, where available, the four-answer fingerprint. Unreviewed items remain German-only until editor review is complete.",
                 "translationQa": {
                     "reviewedQuestions": reviewed_count,
+                    "unreviewedQuestions": unreviewed_count,
                     "officialGermanOverrides": official_overrides,
-                    "rejectedQuestions": rejected_questions,
-                    "rejectedAnswers": rejected_answers,
+                    "regressionChecks": ["NS question Turkish wording"],
+                },
+                "datasetQa": {
+                    "generalQuestions": general,
+                    "stateQuestions": states,
+                    "perState": per_state,
                 },
                 "note": "German questions and answers originate from the official BAMF catalog. Turkish translations and explanatory context are learning aids and are not official BAMF translations."
             },
             "questions": questions,
         }
+        # Write only after every validation passes, so a bad sync cannot replace a good dataset.
         OUT.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-        general = sum(1 for q in questions if q["num"].isdigit() and int(q["num"]) <= 300)
-        states = len(questions) - general
         print(f"Synced {len(questions)} questions: {general} general, {states} state entries")
-        print(f"Reviewed Turkish: {reviewed_count}; official German overrides: {official_overrides}; suppressed {rejected_questions} question translations and {rejected_answers} answer translations")
+        print(f"Reviewed Turkish: {reviewed_count}; unreviewed hidden: {unreviewed_count}; official German overrides: {official_overrides}")
+        print("Regression QA passed: NS Turkish translation is reviewed and exact")
     except Exception as exc:
         print(f"WARNING: citizenship test sync failed: {exc}")
         if OUT.exists():
             print("Keeping existing local dataset.")
         else:
-            print("No local dataset created; client will use the upstream fallback.")
+            print("No local dataset created. Client fallback remains German-only by policy and should not expose upstream Turkish translations.")
 
 
 if __name__ == "__main__":
