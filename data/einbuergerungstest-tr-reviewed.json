@@ -7,9 +7,10 @@
   },
   "2": {
     "germanQuestion": "Was gab es während der Zeit des Nationalsozialismus in Deutschland?",
-    "question": "Nasyonal Sosyalizm döneminde Almanya'da hangisi vardı?",
+    "germanAnswers": ["das Recht zur freien Entfaltung der Persönlichkeit", "den Schutz der Menschenwürde", "das Verbot von Parteien", "Pressefreiheit"],
+    "question": "Almanya'da Nasyonal Sosyalizm döneminde aşağıdakilerden hangisi vardı?",
     "answers": ["Kişiliğini özgürce geliştirme hakkı", "İnsan onurunun korunması", "Siyasi partilerin yasaklanması", "Basın özgürlüğü"],
-    "explanation": "Nasyonal Sosyalist diktatörlük döneminde siyasi çoğulculuk ortadan kaldırıldı ve siyasi partiler yasaklandı. Basın özgürlüğü ve temel haklar da ağır biçimde kısıtlandı."
+    "explanation": "Doğru cevap siyasi partilerin yasaklanmasıdır. Nazi diktatörlüğü 1933'ten itibaren siyasi çoğulculuğu ortadan kaldırdı; muhalefet partileri kapatıldı ve Almanya tek parti diktatörlüğüne dönüştürüldü. Basın özgürlüğü ile kişisel temel haklar güvence altında değildi, devlet tarafından ağır biçimde sınırlandırıldı. Sınav ipucu: Nasyonal Sosyalizm dönemiyle ilgili sorularda özgür seçim, basın özgürlüğü ve temel hakların korunması demokratik düzeni; parti yasağı, sansür ve keyfî baskı ise diktatörlüğü işaret eder."
   },
   "3": {
     "germanQuestion": "Wie hieß der erste Bundeskanzler der Bundesrepublik Deutschland?",
