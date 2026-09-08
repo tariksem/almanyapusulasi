@@ -1,0 +1,90 @@
+name: One-shot racism theme sync
+
+on:
+  push:
+    branches: [main]
+    paths: ['.racism-theme-trigger']
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply racism theme to section pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          paths = [
+            'almanyada-irkcilik/index.html',
+            'irkci-saldiriya-ugradim-ne-yapmaliyim/index.html',
+            'irkcilik-olayini-belgeleme/index.html',
+            'almanyada-irkcilik-ayrimcilik-nedir/index.html',
+            'isyerinde-irkcilik-ayrimcilik/index.html',
+            'okulda-irkcilik-cocuklar/index.html',
+            'ev-kiralarken-irkcilik-ayrimcilik/index.html',
+            'kamu-kurumunda-irkcilik-ayrimcilik/index.html',
+            'internette-irkci-hakaret-tehdit/index.html',
+            'irkcilik-ayrimcilik-yardim-destek/index.html',
+          ]
+
+          css_link = '<link rel="stylesheet" href="/assets/racism-theme.css">'
+          stance = '<div class="anti-racism-stance"><div class="container"><strong>Irkçılığa sıfır tolerans</strong><span>•</span><span>Eşitlik • Güvenlik • İnsan onuru</span></div></div>'
+
+          changed=[]
+          for raw in paths:
+            p=Path(raw)
+            if not p.exists():
+              raise SystemExit(f'Missing page: {raw}')
+            text=p.read_text(encoding='utf-8')
+            original=text
+
+            if css_link not in text:
+              needle='<link rel="stylesheet" href="/assets/style.css">'
+              if needle not in text:
+                raise SystemExit(f'Style anchor missing: {raw}')
+              text=text.replace(needle, needle+css_link, 1)
+
+            if '<body class="theme-racism">' not in text:
+              if '<body>' not in text:
+                raise SystemExit(f'Body anchor missing: {raw}')
+              text=text.replace('<body>','<body class="theme-racism">',1)
+
+            if 'class="anti-racism-stance"' not in text:
+              needle='<header class="site-header"></header>'
+              if needle not in text:
+                raise SystemExit(f'Header anchor missing: {raw}')
+              text=text.replace(needle, needle+stance,1)
+
+            if text != original:
+              p.write_text(text,encoding='utf-8')
+              changed.append(raw)
+
+          print('Theme applied to',len(changed),'pages')
+          PY
+      - name: Validate racism theme
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          pages=list(Path('.').glob('*/index.html'))
+          themed=[]
+          for p in pages:
+            t=p.read_text(encoding='utf-8',errors='replace')
+            if 'theme-racism' in t:
+              themed.append(str(p))
+              assert '/assets/racism-theme.css' in t
+              assert 'anti-racism-stance' in t
+          assert len(themed)==10, f'Expected 10 themed pages, got {len(themed)}: {themed}'
+          print('Validated',len(themed),'racism pages')
+          PY
+      - name: Commit theme changes
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add almanyada-irkcilik irkci-saldiriya-ugradim-ne-yapmaliyim irkcilik-olayini-belgeleme almanyada-irkcilik-ayrimcilik-nedir isyerinde-irkcilik-ayrimcilik okulda-irkcilik-cocuklar ev-kiralarken-irkcilik-ayrimcilik kamu-kurumunda-irkcilik-ayrimcilik internette-irkci-hakaret-tehdit irkcilik-ayrimcilik-yardim-destek
+          git commit -m "design: apply anti-racism theme to rights section"
+          git push
