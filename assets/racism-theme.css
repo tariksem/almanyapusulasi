@@ -1,0 +1,220 @@
+/* Irkçılık & Haklar — Almanya Pusulası karşı duruş teması.
+   Kurumsal lacivert yapıyı korur; kırmızı yalnızca bu konu kümesinde etik vurgu olarak kullanılır. */
+.theme-racism{
+  --racism-red:#a61b24;
+  --racism-red-dark:#76131a;
+  --racism-red-soft:#fff1f2;
+  --racism-red-pale:#fff8f7;
+  --racism-ink:#211719;
+  --racism-charcoal:#17191f;
+  --racism-border:#ecd5d7;
+  background:linear-gradient(180deg,#fbf8f7 0,#f6f8fb 520px);
+  color:var(--racism-ink);
+}
+
+.theme-racism .anti-racism-stance{
+  background:linear-gradient(90deg,#78151c 0,#a61b24 52%,#7b1820 100%);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.13);
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,.12);
+}
+.theme-racism .anti-racism-stance .container{
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+.theme-racism .anti-racism-stance strong{color:#fff}
+.theme-racism .anti-racism-stance span{color:#fecdd3;font-weight:700}
+
+.theme-racism .site-context-bar{
+  background:#fffafa;
+  border-bottom-color:#efdcde;
+}
+.theme-racism .breadcrumbs strong{color:#68151b}
+
+.theme-racism .hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 86% 12%,rgba(214,55,65,.26),transparent 30%),
+    radial-gradient(circle at 10% 100%,rgba(255,255,255,.06),transparent 28%),
+    linear-gradient(128deg,#101b29 0%,#182434 46%,#4a161b 78%,#741820 100%);
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,.08);
+}
+.theme-racism .hero:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:5px;
+  background:linear-gradient(90deg,#741820,#d9464f 52%,#741820);
+}
+.theme-racism .hero .badge{
+  background:rgba(255,241,242,.96);
+  color:#861922;
+  border-color:#fecdd3;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+.theme-racism .hero h1{
+  color:#fff;
+  text-shadow:0 2px 18px rgba(0,0,0,.18);
+}
+.theme-racism .hero h1:after{
+  content:"";
+  display:block;
+  width:74px;
+  height:4px;
+  border-radius:999px;
+  margin-top:20px;
+  background:#ef5b63;
+}
+.theme-racism .hero p{color:#e8edf4}
+.theme-racism .hero .trust-card{
+  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.07));
+  border-color:rgba(255,210,214,.26);
+}
+.theme-racism .hero .trust-list li{color:#f3f4f6;border-color:rgba(255,220,223,.14)}
+
+.theme-racism .btn-primary{
+  background:var(--racism-red);
+  color:#fff;
+  border-color:var(--racism-red);
+  box-shadow:0 10px 24px rgba(166,27,36,.18);
+}
+.theme-racism .btn-primary:hover{
+  background:var(--racism-red-dark);
+  border-color:var(--racism-red-dark);
+}
+.theme-racism .hero .btn-primary{
+  background:#c82d37;
+  border-color:#c82d37;
+  color:#fff;
+}
+.theme-racism .hero .btn-primary:hover{background:#a61b24;border-color:#a61b24}
+.theme-racism .hero .btn-secondary{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.34);
+  color:#fff;
+}
+.theme-racism .hero .btn-secondary:hover{background:rgba(255,255,255,.15)}
+
+.theme-racism .section-label{color:var(--racism-red);letter-spacing:.1em}
+.theme-racism .section h2,
+.theme-racism .article h1,
+.theme-racism .article h2,
+.theme-racism .article h3,
+.theme-racism .card h3{color:#35191c}
+.theme-racism .section-header h2{
+  position:relative;
+  padding-left:16px;
+}
+.theme-racism .section-header h2:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.08em;
+  bottom:.08em;
+  width:4px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#8f1820,#d7444d);
+}
+.theme-racism .section-header p,
+.theme-racism .card p{color:#64575a}
+
+.theme-racism .card{
+  background:linear-gradient(180deg,#fff 0%,#fffbfb 100%);
+  border-color:var(--racism-border);
+  box-shadow:0 10px 26px rgba(90,25,31,.045);
+}
+.theme-racism a.card:hover{
+  transform:translateY(-3px);
+  border-color:#d58b90;
+  box-shadow:0 18px 42px rgba(112,25,32,.11);
+}
+.theme-racism .card-icon{
+  background:#fff0f1;
+  color:var(--racism-red);
+  border:1px solid #f7dadd;
+}
+
+.theme-racism .article-wrap{
+  background:linear-gradient(180deg,#fff7f7 0,#f7f4f4 190px,#f6f8fb 100%);
+}
+.theme-racism .article{
+  border-color:#ead6d8;
+  box-shadow:0 22px 58px rgba(71,22,26,.08);
+}
+.theme-racism .article:before{
+  background:linear-gradient(90deg,#76131a,#c7333c 55%,#e99ba0);
+}
+.theme-racism .article h1{
+  border-bottom:1px solid #f0dcde;
+  padding-bottom:20px;
+}
+.theme-racism .article h2{
+  border-left:4px solid #b6232d;
+  padding-left:13px;
+}
+.theme-racism .article p,
+.theme-racism .article li{color:#463b3d}
+.theme-racism .article a:not(.btn){
+  color:#8f1820;
+  text-decoration-color:#d9a4a8;
+  text-underline-offset:3px;
+}
+.theme-racism .article a:not(.btn):hover{text-decoration:underline}
+
+.theme-racism .info-box{
+  background:#fff3f2;
+  border-left-color:#b4232d;
+  color:#501a1d;
+  box-shadow:inset 0 0 0 1px #f1dcdd;
+}
+
+.theme-racism .cta-band{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(125deg,#171b24 0%,#292029 46%,#771820 100%);
+  border:1px solid rgba(166,27,36,.42);
+  box-shadow:0 18px 44px rgba(52,18,21,.13);
+}
+.theme-racism .cta-band:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:6px;
+  background:#d13a43;
+}
+.theme-racism .cta-band h2{color:#fff}
+.theme-racism .cta-band p{color:#e4d9da}
+
+.theme-racism .hub-return-card{
+  background:linear-gradient(135deg,#fff8f8,#fff);
+  border-color:#ead6d8;
+}
+.theme-racism .hub-return-kicker{color:#a61b24}
+.theme-racism .hub-return-card h2{color:#35191c}
+
+@media(max-width:760px){
+  .theme-racism .anti-racism-stance .container{
+    min-height:34px;
+    font-size:9px;
+    letter-spacing:.055em;
+    gap:7px;
+  }
+  .theme-racism .anti-racism-stance span{display:none}
+  .theme-racism .hero h1:after{width:52px;height:3px;margin-top:13px}
+  .theme-racism .section-header h2{padding-left:12px}
+  .theme-racism .article h1{padding-bottom:14px}
+  .theme-racism .article h2{border-left-width:3px;padding-left:10px}
+}
