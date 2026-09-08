@@ -1,6 +1,8 @@
 # CHECK24 Affiliate Integration
 
-Last reviewed: 2026-09-07
+Application history: 2026-09-07. Activation routing corrected: 2026-09-08.
+
+> Current integration: CHECK24 is used for Strom (`electricity-comparison`, Partner-ID `1177200`). Girokonto and Kfz use TARIFCHECK (`204420`); the earlier priority/placement lists below are application history, not instructions to change their provider. See [the current activation audit](AFFILIATE-LINK-ACTIVATION.md).
 
 ## Status — APPROVED
 
@@ -10,7 +12,7 @@ Verified state:
 - account is activated;
 - Partner-ID: `1177200`;
 - CHECK24 explicitly states that products and advertising materials can now be selected and integrated into the website and other channels;
-- exact product-specific attributable deeplinks/widgets still need to be selected from the authenticated partner dashboard before public commercial CTAs are enabled.
+- Strom is already enabled in the repository; authenticated dashboard provenance and release verification still need to be recorded as described in the activation audit.
 
 This supersedes the previous pending-registration state.
 
@@ -74,4 +76,4 @@ Slot: `insurance-comparison`.
 
 ## Next execution step
 
-Open the CHECK24 partner dashboard and select the highest-intent approved Girokonto product/advertising material first. Copy its exact attributable deeplink/widget configuration. Then enable the matching `bank-comparison` slot in `assets/js/affiliate-slots.js` or `assets/js/commercial-offers.js`, test destination + attribution + disclosure + consent-aware analytics, and deploy. Repeat for electricity and Kfz only after the bank flow is live.
+Open the authenticated CHECK24 Strom generator specified in `AFFILIATE-LINK-ACTIVATION.md`. Compare its exact generated visitor URL with the existing `electricity-comparison` URL. Record the account, verification date, source and match result, and verify product destination and account attribution. If it matches, no configuration change is needed. If it differs, prepare a separate change using only the exact verified output. Keep Girokonto and Kfz on TARIFCHECK. Do not enable any additional slots as part of this documentation correction. Existing main-branch deployment workflows run automatically on merge.
