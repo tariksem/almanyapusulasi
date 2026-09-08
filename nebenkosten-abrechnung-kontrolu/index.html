@@ -1,1 +1,125 @@
-<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nebenkostenabrechnung Kontrol Aracı | Almanya Yan Gider</title><meta name="description" content="Nebenkostenabrechnung için yıllık ödeme, ek ödeme/iade ve temel kontrol noktalarını hesaplayın. Umlagefähige giderler ve 12 aylık bildirim süresini kontrol edin."><link rel="canonical" href="https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/"><meta name="google-adsense-account" content="ca-pub-6014752203462020"><link rel="stylesheet" href="/assets/style.css"><script defer src="/assets/js/analytics-consent.js"></script><style>.tool{max-width:820px;margin:auto}.tool label{display:block;font-weight:700;margin:14px 0 6px}.tool input,.tool select{width:100%;padding:11px;border:1px solid #ccd3dc;border-radius:8px}.result{margin-top:18px;padding:18px;background:#f5f7fa;border-radius:10px}</style></head><body><header class="site-header"></header><main class="article-wrap"><article class="article tool"><span class="badge">Kira · Ücretsiz Kontrol</span><h1>Nebenkostenabrechnung Kontrol Aracı</h1><p>Yıllık yan gider hesabınızda çıkan Nachzahlung veya Guthaben'i hızlıca kontrol edin ve temel hukuki kontrol noktalarını görün.</p><label for="advance">Aylık Nebenkosten avansı (€)</label><input id="advance" type="number" value="250" min="0"><label for="months">Ödenen ay sayısı</label><input id="months" type="number" value="12" min="1" max="12"><label for="actual">Abrechnung'da size düşen toplam gider (€)</label><input id="actual" type="number" value="3200" min="0"><label for="periodEnd">Abrechnungszeitraum bitiş tarihi</label><input id="periodEnd" type="date"><label for="received">Abrechnung size ulaştığı tarih</label><input id="received" type="date"><button class="btn btn-primary" style="margin-top:16px" onclick="calc()">Kontrol et</button><div id="out" class="result"></div><h2>Özellikle hangi kalemlere bakılmalı?</h2><p>Betriebskosten yalnız sözleşmede kararlaştırılmışsa kiracıya yansıtılabilir. Yönetim giderleri ile bakım/onarım giderleri Betriebskosten değildir. Dağıtım anahtarı sözleşmeye ve gider türüne uygun olmalıdır; tüketim ölçülen kalemlerde tüketim esaslı dağıtım önemlidir.</p><h2>12 aylık Abrechnung süresi</h2><p>BGB §556 uyarınca Betriebskostenvorauszahlungen için yıllık hesap yapılır. Abrechnung, hesap döneminin bitiminden sonra genel olarak en geç 12 ay içinde kiracıya bildirilmelidir; gecikmiş ek talepler için yasal istisnalar ayrıca değerlendirilir.</p><h2>Resmî kaynaklar</h2><p><a href="https://www.gesetze-im-internet.de/bgb/__556.html" target="_blank" rel="noopener">BGB §556</a> · <a href="https://www.gesetze-im-internet.de/betrkv/__1.html" target="_blank" rel="noopener">BetrKV §1</a></p><p><a href="/nebenkosten-yan-giderler-hesabi/">Nebenkosten rehberi</a> · <a href="/araclar/">Tüm araçlar</a></p></article></main><footer class="footer"></footer><script>function eur(n){return n.toLocaleString('de-DE',{style:'currency',currency:'EUR'})}function calc(){const paid=(Number(advance.value)||0)*(Number(months.value)||0),actualN=Number(actual.value)||0,diff=actualN-paid;let txt='<strong>Toplam avans: '+eur(paid)+'</strong><br>Hesaplanan gider: '+eur(actualN)+'<br>';txt+=diff>0?'Tahmini Nachzahlung: '+eur(diff):diff<0?'Tahmini Guthaben/iade: '+eur(Math.abs(diff)):'Fark: 0 €';if(periodEnd.value&&received.value){const end=new Date(periodEnd.value+'T00:00:00'),rec=new Date(received.value+'T00:00:00');const deadline=new Date(end);deadline.setFullYear(deadline.getFullYear()+1);txt+='<br>12 aylık bildirim kontrolü: '+(rec<=deadline?'Süre içinde görünüyor.':'12 aylık sürenin dışında görünüyor; ayrıntılı hukuki kontrol gerekir.')}txt+='<br><small>Bu araç belgenin matematiksel ve temel süre kontrolünü yapar; hukuki danışmanlık değildir.</small>';out.innerHTML=txt}calc()</script></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nebenkostenabrechnung Kontrolü | Yan Gider Hesabı ve Kontrol Aracı</title>
+  <meta name="description" content="Almanya'daki Nebenkostenabrechnung belgenizi Türkçe anlayın. Nachzahlung veya Guthaben hesabını, dönem ve teslim tarihlerini, gider kalemlerini, dağıtım hesabını ve ısıtma yüzdelerini ücretsiz kontrol edin.">
+  <link rel="canonical" href="https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="google-adsense-account" content="ca-pub-6014752203462020">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nebenkostenabrechnung Kontrolü | Almanya Pusulası">
+  <meta property="og:description" content="Yan gider hesabınızı Türkçe anlayın, matematiği ve önemli kontrol noktalarını ücretsiz inceleyin.">
+  <meta property="og:url" content="https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/nebenkosten-tool.css">
+  <script defer src="/assets/js/analytics-consent.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Nebenkostenabrechnung Kontrolü","url":"https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Almanya'daki Nebenkostenabrechnung için Türkçe matematik ve kontrol noktaları aracı.","publisher":{"@type":"Organization","name":"Almanya Pusulası","url":"https://almanyapusulasi.de/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Nebenkostenabrechnung nedir?","acceptedAnswer":{"@type":"Answer","text":"Kiracının yıl içinde ödediği işletme gideri avanslarının, gerçekleşen giderlerle karşılaştırıldığı yıllık hesap dökümüdür."}},{"@type":"Question","name":"Nebenkostenabrechnung ne zaman gönderilmelidir?","acceptedAnswer":{"@type":"Answer","text":"BGB § 556 Abs. 3 uyarınca hesap, genel olarak hesap döneminin bitiminden sonraki on ikinci ayın sonuna kadar kiracıya bildirilir. Kanunda gecikme için istisna da öngörülür."}},{"@type":"Question","name":"Isıtma giderlerinin ne kadarı tüketime göre dağıtılır?","acceptedAnswer":{"@type":"Answer","text":"HeizkostenV § 7'ye göre merkezi ısıtma maliyetlerinin genel kural olarak en az yüzde 50, en fazla yüzde 70'i ölçülen tüketime göre dağıtılır; mevzuatta özel durumlar ve istisnalar bulunur."}}]}</script>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="/"><img class="logo-img" src="/assets/brand/almanya-pusulasi-logo-64.png" width="34" height="34" alt="">Almanya Pusulası</a><nav class="nav" aria-label="Ana menü"><a href="/araclar/">Araçlar</a><a href="/finans/">Finans</a><a href="/site-haritasi/">Site haritası</a></nav></div></header>
+
+<main class="nk-page">
+  <div class="container nk-shell">
+    <section class="nk-intro">
+      <span class="badge">Kira · Ücretsiz Türkçe Kontrol</span>
+      <h1>Nebenkostenabrechnung'ı satır satır daha iyi anlayın.</h1>
+      <p>Ek ödeme neden çıktı? Giderler doğru toplanmış mı? Avanslar düşülmüş mü? Dönem ve teslim tarihleri, dağıtım hesabı ve ısıtma yüzdeleri tutarlı mı? Bilgileri belgenizden girin; araç size hesaplamayı ve açıklama istemeye değer noktaları gösterir.</p>
+      <div class="nk-trust"><span>✓ Ücretsiz</span><span>✓ Kayıt gerektirmez</span><span>✓ Manuel veriler tarayıcıda işlenir</span><span>✓ Resmî kaynak bağlantıları</span></div>
+    </section>
+
+    <div class="nk-layout">
+      <section class="nk-card" aria-label="Nebenkosten kontrol aracı">
+        <div class="nk-progress" aria-label="İlerleme"><span class="is-active"></span><span></span><span></span><span></span></div>
+        <form id="nk-form" novalidate>
+          <section class="nk-step is-active" data-step="1">
+            <h2>1. Fatura dönemi ve teslim tarihi</h2>
+            <p class="nk-step-lead">Bu tarihleri genellikle belgenin ilk sayfasında “Abrechnungszeitraum” ve yazı/tarih bölümünde bulabilirsiniz.</p>
+            <div class="nk-form-grid">
+              <div class="nk-field"><label for="nk-period-start">Hesap dönemi başlangıcı *</label><input id="nk-period-start" type="date" required><small>Örn. 01.01.2025</small></div>
+              <div class="nk-field"><label for="nk-period-end">Hesap dönemi bitişi *</label><input id="nk-period-end" type="date" required><small>Örn. 31.12.2025</small></div>
+              <div class="nk-field nk-full"><label for="nk-received">Belge size ne zaman ulaştı?</label><input id="nk-received" type="date"><small>Bu tarih, teslim ve kendi inceleme süreniz için hatırlatma hesaplamasında kullanılır.</small></div>
+            </div>
+            <div class="nk-help"><strong>Neden soruyoruz?</strong> Araç hesap döneminin 12 ayı aşıp aşmadığını ve girilen teslim tarihinin BGB § 556'daki genel zaman çerçevesi açısından ayrıca kontrol edilmesi gerekip gerekmediğini gösterir. Kesin hukuki sonuç üretmez.</div>
+            <div class="nk-actions"><span></span><button class="btn btn-primary" type="button" data-next>Devam et</button></div>
+          </section>
+
+          <section class="nk-step" data-step="2">
+            <h2>2. Toplam gider, avans ve sonuç</h2>
+            <p class="nk-step-lead">Burada önce belgenin ana matematiğini kontrol ediyoruz: toplam gider − ödediğiniz avanslar = Nachzahlung veya Guthaben.</p>
+            <div class="nk-form-grid">
+              <div class="nk-field"><label for="nk-total-cost">Size düşen toplam gider (€) *</label><input id="nk-total-cost" inputmode="decimal" placeholder="örn. 3.240,50" required><small>Belgede “Ihr Anteil”, “Kosten Mieter” veya toplam kiracı payı benzeri satır.</small></div>
+              <div class="nk-field"><label for="nk-advances">Toplam avans ödemesi (€) *</label><input id="nk-advances" inputmode="decimal" placeholder="örn. 2.760,00" required><small>Aylık tutar değil, bu hesap döneminde hesaba katılan toplam Vorauszahlung.</small></div>
+              <div class="nk-field"><label for="nk-stated-balance">Belgede yazan sonuç (€)</label><input id="nk-stated-balance" inputmode="decimal" placeholder="örn. 480,50"><small>Nachzahlung veya Guthaben tutarı.</small></div>
+              <div class="nk-field"><label>Belgedeki sonuç türü</label><label class="nk-check"><input id="nk-balance-credit" type="checkbox"> Bu tutar Guthaben / alacak olarak gösteriliyor</label></div>
+            </div>
+            <div class="nk-help">Alman ve Türk sayı biçimlerini anlayabilir: <strong>1.234,56</strong>, <strong>1234,56</strong> veya <strong>1234.56</strong>.</div>
+            <div class="nk-actions"><button class="btn nk-btn-ghost nk-back" type="button" data-back>Geri</button><button class="btn btn-primary" type="button" data-next>Devam et</button></div>
+          </section>
+
+          <section class="nk-step" data-step="3">
+            <h2>3. Gider kalemleri ve dağıtım</h2>
+            <p class="nk-step-lead">Belgedeki satırları ekleyin. Araç toplamı karşılaştırır ve isterseniz tek tek dağıtım matematiğini de hesaplar.</p>
+            <div id="nk-cost-list" class="nk-cost-list"></div>
+            <button id="nk-add-cost" class="btn btn-secondary" type="button" style="margin-top:14px">+ Gider kalemi ekle</button>
+            <label class="nk-check"><input id="nk-unexplained" type="checkbox"> Anlamadığım veya açıklamasını görmek istediğim en az bir gider kalemi var</label>
+            <div class="nk-help"><strong>Otomatik metin taraması:</strong> “Verwaltung”, “Instandhaltung”, “Instandsetzung”, “Reparatur” gibi bazı terimler görülürse araç bunları yalnızca <em>inceleme noktası</em> olarak işaretler. “Bu gider kesinlikle hukuka aykırı” sonucu vermez.</div>
+            <div class="nk-actions"><button class="btn nk-btn-ghost nk-back" type="button" data-back>Geri</button><button class="btn btn-primary" type="button" data-next>Devam et</button></div>
+          </section>
+
+          <section class="nk-step" data-step="4">
+            <h2>4. Isıtma ve sıcak su kontrolü</h2>
+            <p class="nk-step-lead">Bu bölüm yalnız belgenizde yüzdesel dağılım açıkça yazıyorsa kullanılmalıdır.</p>
+            <label class="nk-check"><input id="nk-heating-enabled" type="checkbox"> Isıtma gideri için tüketim / sabit-alan yüzdelerini girmek istiyorum</label>
+            <div id="nk-heating-fields" class="nk-form-grid nk-hidden">
+              <div class="nk-field"><label for="nk-heating-consumption">Tüketime göre (%)</label><input id="nk-heating-consumption" inputmode="decimal" placeholder="örn. 70"></div>
+              <div class="nk-field"><label for="nk-heating-area">Alan / sabit kısım (%)</label><input id="nk-heating-area" inputmode="decimal" placeholder="örn. 30"></div>
+            </div>
+            <label class="nk-check"><input id="nk-water-enabled" type="checkbox"> Sıcak su gideri için tüketim / alan yüzdelerini girmek istiyorum</label>
+            <div id="nk-water-fields" class="nk-form-grid nk-hidden">
+              <div class="nk-field"><label for="nk-water-consumption">Tüketime göre (%)</label><input id="nk-water-consumption" inputmode="decimal" placeholder="örn. 70"></div>
+              <div class="nk-field"><label for="nk-water-area">Alan / sabit kısım (%)</label><input id="nk-water-area" inputmode="decimal" placeholder="örn. 30"></div>
+            </div>
+            <div class="nk-help">HeizkostenV §§ 7–8 kapsamında genel kural olarak tüketim payı %50–70 aralığındadır. Mevzuatta özel durumlar ve istisnalar bulunur; araç bunları bireysel olarak değerlendirmez.</div>
+            <label class="nk-check"><input id="nk-save-local" type="checkbox"> Sonuç özetini yalnız bu tarayıcıda sakla (isteğe bağlı)</label>
+            <div class="nk-actions"><button class="btn nk-btn-ghost nk-back" type="button" data-back>Geri</button><button id="nk-analyze" class="btn btn-primary" type="button">Analizi göster</button></div>
+          </section>
+        </form>
+
+        <section id="nk-result" class="nk-result" aria-live="polite">
+          <div class="nk-result-hero"><div id="nk-result-label" class="nk-result-kicker">Sonuç</div><div id="nk-result-amount" class="nk-balance">—</div><p id="nk-result-message"></p></div>
+          <div class="nk-stat-grid"><div class="nk-stat"><strong id="nk-stat-review">0</strong><span>kontrol noktası</span></div><div class="nk-stat"><strong id="nk-stat-high">0</strong><span>öncelikli kontrol</span></div><div class="nk-stat"><strong id="nk-stat-pass">0</strong><span>tutarlı görünen kontrol</span></div></div>
+          <h2 class="nk-section-title">Neyi kontrol etmelisiniz?</h2><div id="nk-findings" class="nk-findings"></div>
+          <div class="nk-report-actions"><button id="nk-print" class="btn btn-primary" type="button">Raporu yazdır / PDF kaydet</button><button id="nk-letter-toggle" class="btn btn-secondary" type="button">Almanca açıklama / belge talebi hazırla</button><button id="nk-reset" class="btn nk-btn-ghost" type="button">Yeni analiz</button></div>
+          <div id="nk-letter" class="nk-letter"><h3>Nötr Almanca Rückfrage / Belegeinsicht metni</h3><p>Bu taslak, yalnız açıklama ve dayanak belge istemek için hazırlanır; otomatik gönderilmez.</p><textarea id="nk-letter-text" aria-label="Almanca mektup taslağı"></textarea><button id="nk-letter-copy" class="btn btn-secondary" type="button">Metni kopyala</button></div>
+          <p id="nk-rule-version" class="nk-test-state"></p>
+          <div class="nk-disclaimer"><strong>Önemli:</strong> Bu araç genel bilgi ve hesaplama desteğidir; Rechtsberatung/hukuki danışmanlık değildir. Bir kontrol noktası bulunması faturanın otomatik olarak geçersiz olduğu, ödeme yapılmaması gerektiği veya kesin bir alacak doğduğu anlamına gelmez.</div>
+        </section>
+
+        <div class="nk-privacy"><strong>Gizlilik:</strong> Bu sürümde forma yazdığınız fatura tutarları ve tarihler analiz için tarayıcınızda işlenir. Analitik sisteme bu değerleri göndermiyoruz. “Tarayıcıda sakla” seçeneğini açmadıkça sonuç özeti de kalıcı olarak kaydedilmez.<div id="nk-history"><p>Bu tarayıcıda kayıtlı analiz özeti yok.</p></div><button id="nk-clear-history" class="privacy-settings-button" type="button">Bu tarayıcıdaki kayıtlı analiz özetlerini sil</button><div id="nk-test-state" class="nk-test-state"></div></div>
+      </section>
+
+      <aside class="nk-card nk-sidebar"><h3>Belgenizde hazır olsun</h3><ul><li>Abrechnungszeitraum</li><li>Toplam kiracı gideri</li><li>Vorauszahlungen</li><li>Nachzahlung/Guthaben</li><li>Gider kalemleri</li><li>Varsa Verteilerschlüssel</li><li>Varsa Heizkosten yüzdeleri</li><li>Belgenin ulaştığı tarih</li></ul><p><strong>İpucu:</strong> Emin olmadığınız alanı tahmin etmeyin. Boş bırakmak, yanlış bir “uygun” sonucu üretmekten daha güvenlidir.</p></aside>
+    </div>
+
+    <section class="nk-card nk-content">
+      <h2>Bu araç neyi kontrol eder?</h2>
+      <p>NebenkostenCheck; fatura döneminin uzunluğunu, teslim zamanını, toplam gider ile avans ödemeleri arasındaki matematiği, gider kalemleri toplamını, isteğe bağlı dağıtım hesabını ve ısıtma/sıcak su yüzdelerini kontrol eder. Ayrıca bazı gider adlarını yalnızca açıklama istemeye değer bir işaret olarak tarar.</p>
+      <h2>Nebenkostenabrechnung neden yüksek çıkabilir?</h2>
+      <p>Yüksek Nachzahlung tek başına hata anlamına gelmez. Enerji fiyatları, gerçek tüketim, önceki yıl belirlenen düşük avanslar, bina giderleri veya dönem içindeki değişiklikler fark yaratabilir. Bu nedenle önce matematiği ve belgedeki dayanakları ayırarak kontrol etmek daha sağlıklıdır.</p>
+      <h2>Resmî kaynaklar</h2>
+      <ul><li><a href="https://www.gesetze-im-internet.de/bgb/__556.html" target="_blank" rel="noopener noreferrer"><strong>BGB § 556</strong></a> — yıllık hesap, bildirim ve Einwendungen zaman çerçevesi, Belegeinsicht.</li><li><a href="https://www.gesetze-im-internet.de/betrkv/__2.html" target="_blank" rel="noopener noreferrer"><strong>BetrKV § 2</strong></a> — Betriebskosten kalemlerinin listesi ve Hauswart düzenlemesi.</li><li><a href="https://www.gesetze-im-internet.de/heizkostenv/__7.html" target="_blank" rel="noopener noreferrer"><strong>HeizkostenV § 7</strong></a> — ısıtma maliyetlerinin dağıtımı.</li><li><a href="https://www.gesetze-im-internet.de/heizkostenv/__8.html" target="_blank" rel="noopener noreferrer"><strong>HeizkostenV § 8</strong></a> — sıcak su maliyetlerinin dağıtımı.</li></ul>
+      <p><a href="/nebenkosten-yan-giderler-hesabi/"><strong>Nebenkosten rehberini okuyun →</strong></a> &nbsp;·&nbsp; <a href="/araclar/">Tüm ücretsiz araçlar</a></p>
+      <div class="nk-faq"><h2>Sık sorulan sorular</h2><details><summary>Nebenkostenabrechnung'daki Nachzahlung nasıl hesaplanır?</summary><p>Temel matematik, hesap döneminde size düşen giderlerden hesaba katılan avans ödemelerinin çıkarılmasıdır. Sonuç pozitifse ek ödeme, negatifse alacak/Guthaben yönünde görünür. Araç belge üzerindeki sonuçla bu hesabı karşılaştırır.</p></details><details><summary>12 aylık süre ne anlama geliyor?</summary><p>BGB § 556 Abs. 3, hesap döneminin bitiminden sonra bildirim için ve belgenin ulaşmasından sonra Einwendungen için on iki aylık zaman çerçeveleri düzenler. Kanunda istisnalar vardır; bu nedenle araç gecikme gördüğünde yalnızca “kontrol edin” uyarısı verir.</p></details><details><summary>Belge veya faturaları görmeyi isteyebilir miyim?</summary><p>BGB § 556 Abs. 4, kiracının talep üzerine hesaplamanın dayandığı belgelere erişimini düzenler. Sonuçta açıklama gerektiren noktalar varsa araç nötr bir Almanca Belegeinsicht/Rückfrage taslağı hazırlayabilir.</p></details></div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div>© Almanya Pusulası</div><div><a href="/privacy/">Gizlilik</a> · <a href="/impressum/">Impressum</a> · <a href="/ticari-seffaflik/">Ticari şeffaflık</a></div></div></footer>
+<script src="/assets/js/nebenkosten-core.js"></script>
+<script src="/assets/js/nebenkosten-tool.js"></script>
+</body>
+</html>
