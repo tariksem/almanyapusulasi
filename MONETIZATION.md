@@ -1,5 +1,7 @@
 # Almanya Pusulası — Monetization Plan
 
+> Activation status correction (2026-09-08): the original pending-link items below are historical for Girokonto, Kfz and Strom. All three are now enabled in the repository. TARIFCHECK Girokonto/Kfz match the authenticated-dashboard catalog; CHECK24 Strom still needs an equivalent provenance record. Use [the current activation audit](AFFILIATE-LINK-ACTIVATION.md) for exact mapping and remaining checks; do not reactivate or reroute products from this older pipeline.
+
 Last reviewed: 2026-09-07
 
 ## Objective
