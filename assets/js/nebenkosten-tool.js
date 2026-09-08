@@ -59,4 +59,6 @@ const hToggle=$('#nk-heating-enabled'),wToggle=$('#nk-water-enabled');function s
 
 function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 const fixture=C.runFixtures();$('#nk-test-state').textContent=fixture.pass?'Dahili deterministik kontroller: başarılı':'Dahili kontrollerde hata tespit edildi';if(!fixture.pass){console.error('Nebenkosten fixtures failed',fixture);$('#nk-analyze').disabled=true;$('#nk-analyze').textContent='Kontrol motoru geçici olarak kullanılamıyor';}
+
+const uploadModule=document.createElement('script');uploadModule.src='/assets/js/nebenkosten-upload.js';uploadModule.defer=true;document.head.appendChild(uploadModule);
 })();

@@ -24,6 +24,7 @@ jobs:
         run: |
           node --check assets/js/nebenkosten-core.js
           node --check assets/js/nebenkosten-tool.js
+          node --check assets/js/nebenkosten-upload.js
       - name: Deterministic rule fixtures
         run: |
           node <<'NODE'
@@ -39,6 +40,7 @@ jobs:
           node <<'NODE'
           const fs = require('fs');
           const ui = fs.readFileSync('assets/js/nebenkosten-tool.js','utf8');
+          const upload = fs.readFileSync('assets/js/nebenkosten-upload.js','utf8');
           const html = fs.readFileSync('nebenkosten-abrechnung-kontrolu/index.html','utf8');
           const required = [
             'https://www.gesetze-im-internet.de/bgb/__556.html',
@@ -49,13 +51,16 @@ jobs:
           for (const source of required) {
             if (!html.includes(source)) throw new Error(`Missing official source: ${source}`);
           }
-          const forbiddenAnalytics = ['statedTenantCost','statedAdvancePayments','statedBalance','billingPeriodStart','billingPeriodEnd','receivedOn','costLines'];
-          const analyticsCalls = [...ui.matchAll(/analytics\(([^;]+)\)/g)].map(m=>m[0]).join('\n');
+          const forbiddenAnalytics = ['statedTenantCost','statedAdvancePayments','statedBalance','billingPeriodStart','billingPeriodEnd','receivedOn','costLines','extractedText','currentFile','file.name'];
+          const analyticsCalls = [...ui.matchAll(/analytics\(([^;]+)\)/g), ...upload.matchAll(/analytics\(([^;]+)\)/g)].map(m=>m[0]).join('\n');
           for (const token of forbiddenAnalytics) {
             if (analyticsCalls.includes(token)) throw new Error(`Sensitive field appears in analytics call: ${token}`);
           }
+          if (upload.includes('localStorage.setItem') || upload.includes('sessionStorage.setItem')) throw new Error('Upload module must not persist document data');
+          if (!upload.includes("Ham belge veya çıkarılan metin localStorage'a kaydedilmez")) throw new Error('Missing local processing/privacy statement');
+          if (!upload.includes('nk-r-confirm') || !upload.includes('Onayla ve forma aktar')) throw new Error('Missing user confirmation gate');
           if (!html.includes('hukuki danışmanlık değildir')) throw new Error('Missing legal boundary text');
-          console.log('Privacy/source guardrails passed');
+          console.log('Privacy/source/upload guardrails passed');
           NODE
       - name: Canonical and asset checks
         run: |
@@ -63,3 +68,4 @@ jobs:
           test -f assets/brand/almanya-pusulasi-logo-64.png
           test -f assets/style.css
           test -f assets/nebenkosten-tool.css
+          test -f assets/js/nebenkosten-upload.js
