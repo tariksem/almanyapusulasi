@@ -11,6 +11,10 @@
   shellCss.href="/assets/site-shell.css";
   document.head.appendChild(shellCss);
 
+  const racismStyle=document.createElement("style");
+  racismStyle.textContent='.site-nav-link[href="/almanyada-irkcilik/"]{background:#fff1f2;color:#b42318;border:1px solid #fecdd3;font-weight:850}.site-nav-link[href="/almanyada-irkcilik/"]:hover,.site-nav-link[href="/almanyada-irkcilik/"].is-active{background:#b42318!important;color:#fff!important;border-color:#b42318;box-shadow:0 6px 16px rgba(180,35,24,.18)}.mega-link[href="/almanyada-irkcilik/"]{background:#fff7f7;border-color:#fecaca}.mega-link[href="/almanyada-irkcilik/"] .mega-icon{background:#fee2e2}.mega-link[href="/almanyada-irkcilik/"] strong{color:#b42318}.mega-link[href="/almanyada-irkcilik/"]:hover,.mega-link[href="/almanyada-irkcilik/"].is-active{background:#fff1f2;border-color:#ef4444}';
+  document.head.appendChild(racismStyle);
+
   const shareScript=document.createElement("script");
   shareScript.defer=true;
   shareScript.src="/assets/js/share.js";
@@ -18,6 +22,11 @@
 
   const SECTIONS=[
     {key:"haberler",href:"/haberler/",label:"Haberler",icon:"📰",paths:["/haberler"]},
+    {key:"irkcilik",href:"/almanyada-irkcilik/",label:"Irkçılık & Haklar",icon:"🛡️",paths:[
+      "/almanyada-irkcilik","/irkci-saldiriya-ugradim-ne-yapmaliyim","/irkcilik-olayini-belgeleme","/isyerinde-irkcilik-ayrimcilik",
+      "/okulda-irkcilik-cocuklar","/ev-kiralarken-irkcilik-ayrimcilik","/internette-irkci-hakaret-tehdit",
+      "/irkcilik-ayrimcilik-yardim-destek","/almanyada-irkcilik-ayrimcilik-nedir","/kamu-kurumunda-irkcilik-ayrimcilik"
+    ]},
     {key:"tools",href:"/araclar/",label:"Araçlar",icon:"🧮",paths:[
       "/araclar","/almanya-kontrol-paneli","/almanya-hazirlik-blokaj-motoru","/meslek-almanya-yolu-karar-araci","/almanyaya-gelis-yolu-secim-araci",
       "/is-piyasasi-gucu-motoru","/sehir-butce-karsilastirma-araci","/is-teklifi-degerlendirme-araci","/ilk-90-gun-almanya-planlayici","/vergi-yontemi-secim-araci",
@@ -62,7 +71,7 @@
     {key:"tr",href:"/turkiye-seyahati/",label:"Türkiye Seyahati",icon:"🚗",paths:["/turkiye-seyahati","/almanyadan-turkiyeye-arabayla","/turkiye-yolu"]}
   ];
 
-  const PRIMARY=["haberler","tools","goc","is","yer","fin"];
+  const PRIMARY=["haberler","irkcilik","tools","goc","is","yer"];
   const currentPath=()=>location.pathname.toLowerCase();
   const section=()=>SECTIONS.find(s=>s.paths.some(p=>currentPath().startsWith(p)))||null;
   const pageTitle=()=>{
@@ -75,7 +84,7 @@
     if(!header)return;
     const active=section();
     const primary=PRIMARY.map(k=>SECTIONS.find(s=>s.key===k));
-    const mega=SECTIONS.map(s=>'<a class="mega-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'"><span class="mega-icon">'+s.icon+'</span><span><strong>'+s.label+'</strong><small>'+(s.key==='haberler'?'Güncel gelişmeler':s.key==='tools'?'Hesaplayıcılar ve kontroller':'Rehberleri görüntüle')+'</small></span></a>').join("");
+    const mega=SECTIONS.map(s=>'<a class="mega-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'"><span class="mega-icon">'+s.icon+'</span><span><strong>'+s.label+'</strong><small>'+(s.key==='haberler'?'Güncel gelişmeler':s.key==='irkcilik'?'Güvenlik, haklar ve destek':s.key==='tools'?'Hesaplayıcılar ve kontroller':'Rehberleri görüntüle')+'</small></span></a>').join("");
     header.innerHTML='<div class="container header-inner"><a class="site-brand" href="/"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>Karar araçları & resmî kaynaklı rehberler</small></span></a><button class="mobile-menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button><nav class="site-nav"><div class="primary-nav-links">'+primary.map(s=>'<a class="site-nav-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'">'+s.label+'</a>').join("")+'</div><details class="nav-more"><summary>Tüm Rehberler <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
     const toggle=header.querySelector(".mobile-menu-toggle");
     const nav=header.querySelector(".site-nav");
@@ -103,7 +112,7 @@
   function renderFooter(){
     const footer=document.querySelector(".footer");
     if(!footer)return;
-    footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="/" class="footer-brand-name">Almanya Pusulası</a><p>Almanya’da yaşayan ve Almanya’ya gelmek isteyen Türkler için karar araçları, resmî kaynaklı rehberler ve seçilmiş güncel gelişmeler.</p></div><div><strong class="footer-title">Keşfet</strong><a href="/araclar/">Araçlar</a><a href="/haberler/">Haberler</a><a href="/goc-kariyer/">Göç & Kariyer</a><a href="/is-gelir/">İş & Gelir</a><a href="/aile-cocuk/">Aile & Çocuk</a><a href="/vatandaslik/">Vatandaşlık</a><a href="/finans/">Finans</a><a href="/sigorta/">Sigorta</a></div><div><strong class="footer-title">Kaynaklar</strong><a href="/almanya-2026-resmi-esikler/">2026 Veri Merkezi</a><a href="/site-haritasi/">Site Haritası</a><a href="/embed-araclar/">Ücretsiz Embed Araçları</a><a href="/yerlesim/">Yerleşim</a><a href="/saglik-sigortasi/">Sağlık Sigortası</a><a href="/mobilite-arac/">Mobilite & Araç</a><a href="/vergi/">Vergi</a></div><div class="footer-legal"><strong class="footer-title">Site</strong><a href="/about/">Hakkımızda</a><a href="/contact/">İletişim</a><a href="/ticari-seffaflik/">Ticari Şeffaflık</a><a href="/privacy/">Gizlilik</a><a href="/impressum/">Impressum</a><button type="button" class="privacy-settings-link">Gizlilik ayarları</button></div></div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>Karar araçları ve resmî kaynaklı Türkçe Almanya rehberi</span></div>';
+    footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="/" class="footer-brand-name">Almanya Pusulası</a><p>Almanya’da yaşayan ve Almanya’ya gelmek isteyen Türkler için karar araçları, resmî kaynaklı rehberler ve seçilmiş güncel gelişmeler.</p></div><div><strong class="footer-title">Keşfet</strong><a href="/araclar/">Araçlar</a><a href="/haberler/">Haberler</a><a href="/almanyada-irkcilik/" style="color:#fca5a5;font-weight:800">Irkçılık & Haklar</a><a href="/goc-kariyer/">Göç & Kariyer</a><a href="/is-gelir/">İş & Gelir</a><a href="/aile-cocuk/">Aile & Çocuk</a><a href="/vatandaslik/">Vatandaşlık</a><a href="/finans/">Finans</a><a href="/sigorta/">Sigorta</a></div><div><strong class="footer-title">Kaynaklar</strong><a href="/almanya-2026-resmi-esikler/">2026 Veri Merkezi</a><a href="/site-haritasi/">Site Haritası</a><a href="/embed-araclar/">Ücretsiz Embed Araçları</a><a href="/yerlesim/">Yerleşim</a><a href="/saglik-sigortasi/">Sağlık Sigortası</a><a href="/mobilite-arac/">Mobilite & Araç</a><a href="/vergi/">Vergi</a></div><div class="footer-legal"><strong class="footer-title">Site</strong><a href="/about/">Hakkımızda</a><a href="/contact/">İletişim</a><a href="/ticari-seffaflik/">Ticari Şeffaflık</a><a href="/privacy/">Gizlilik</a><a href="/impressum/">Impressum</a><button type="button" class="privacy-settings-link">Gizlilik ayarları</button></div></div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>Karar araçları ve resmî kaynaklı Türkçe Almanya rehberi</span></div>';
     footer.querySelector(".privacy-settings-link").onclick=()=>showConsent(true);
   }
 
