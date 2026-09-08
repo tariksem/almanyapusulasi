@@ -1,0 +1,65 @@
+name: Validate NebenkostenCheck
+
+on:
+  pull_request:
+    paths:
+      - 'nebenkosten-abrechnung-kontrolu/**'
+      - 'assets/js/nebenkosten-*.js'
+      - 'assets/nebenkosten-tool.css'
+      - '.github/workflows/nebenkostencheck-validate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check assets/js/nebenkosten-core.js
+          node --check assets/js/nebenkosten-tool.js
+      - name: Deterministic rule fixtures
+        run: |
+          node <<'NODE'
+          require('./assets/js/nebenkosten-core.js');
+          const result = globalThis.NebenkostenCore.runFixtures();
+          for (const check of result.checks) {
+            console.log(`${check.pass ? 'PASS' : 'FAIL'} ${check.name}`);
+          }
+          if (!result.pass) process.exit(1);
+          NODE
+      - name: Privacy and source guardrails
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const ui = fs.readFileSync('assets/js/nebenkosten-tool.js','utf8');
+          const html = fs.readFileSync('nebenkosten-abrechnung-kontrolu/index.html','utf8');
+          const required = [
+            'https://www.gesetze-im-internet.de/bgb/__556.html',
+            'https://www.gesetze-im-internet.de/betrkv/__2.html',
+            'https://www.gesetze-im-internet.de/heizkostenv/__7.html',
+            'https://www.gesetze-im-internet.de/heizkostenv/__8.html'
+          ];
+          for (const source of required) {
+            if (!html.includes(source)) throw new Error(`Missing official source: ${source}`);
+          }
+          const forbiddenAnalytics = ['statedTenantCost','statedAdvancePayments','statedBalance','billingPeriodStart','billingPeriodEnd','receivedOn','costLines'];
+          const analyticsCalls = [...ui.matchAll(/analytics\(([^;]+)\)/g)].map(m=>m[0]).join('\n');
+          for (const token of forbiddenAnalytics) {
+            if (analyticsCalls.includes(token)) throw new Error(`Sensitive field appears in analytics call: ${token}`);
+          }
+          if (!html.includes('hukuki danışmanlık değildir')) throw new Error('Missing legal boundary text');
+          console.log('Privacy/source guardrails passed');
+          NODE
+      - name: Canonical and asset checks
+        run: |
+          grep -q '<link rel="canonical" href="https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/">' nebenkosten-abrechnung-kontrolu/index.html
+          test -f assets/brand/almanya-pusulasi-logo-64.png
+          test -f assets/style.css
+          test -f assets/nebenkosten-tool.css
