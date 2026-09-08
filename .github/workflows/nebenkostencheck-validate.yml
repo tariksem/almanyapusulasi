@@ -56,7 +56,8 @@ jobs:
           for (const token of forbiddenAnalytics) {
             if (analyticsCalls.includes(token)) throw new Error(`Sensitive field appears in analytics call: ${token}`);
           }
-          if (!upload.includes("localStorage") || !upload.includes("Ham belge veya çıkarılan metin localStorage'a kaydedilmez")) throw new Error('Missing local processing/privacy statement');
+          if (upload.includes('localStorage.setItem') || upload.includes('sessionStorage.setItem')) throw new Error('Upload module must not persist document data');
+          if (!upload.includes("Ham belge veya çıkarılan metin localStorage'a kaydedilmez")) throw new Error('Missing local processing/privacy statement');
           if (!upload.includes('nk-r-confirm') || !upload.includes('Onayla ve forma aktar')) throw new Error('Missing user confirmation gate');
           if (!html.includes('hukuki danışmanlık değildir')) throw new Error('Missing legal boundary text');
           console.log('Privacy/source/upload guardrails passed');
