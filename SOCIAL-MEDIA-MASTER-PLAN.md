@@ -1,6 +1,6 @@
 # Almanya Pusulası — Social Media Master Plan
 
-Last updated: 2026-09-07
+Last updated: 2026-09-10
 
 ## Objective
 
@@ -8,32 +8,112 @@ Social media is a distribution and revenue channel, not a vanity-metric project.
 
 Primary funnel:
 
-Social discovery → almanyapusulasi.de → tool/comparison → attributable affiliate CTA → partner → conversion/revenue.
+Problem / money / right / bureaucracy hook → useful explanation → almanyapusulasi.de guide/tool → commercial-intent action → attributable affiliate CTA where relevant → conversion/revenue.
 
-Primary KPIs: social sessions, tool starts/results, commercial-intent clicks, affiliate clicks, affiliate conversions/revenue. Followers and views are secondary.
+Primary KPIs: social sessions, tool starts/results, commercial-intent clicks, affiliate clicks, affiliate conversions/revenue. Saves/shares are useful distribution signals. Followers and raw views are secondary.
+
+## Editorial promise — locked
+
+**Almanya'da cebinizi, haklarınızı ve zamanınızı etkileyen şeyleri Türkçe ve anlaşılır anlatıyoruz.**
+
+Every proposed topic must pass at least one practical-value test:
+- Para: does it save/earn/protect money?
+- Hak: does it help the reader exercise a right?
+- Bürokrasi: does it simplify a German administrative process or term?
+- Hata önleme: does it prevent a deadline, penalty, rejection, bad contract or avoidable loss?
+- Fırsat: does it expose a legitimate option many Turkish-speaking residents may not know?
+- Araç: can the reader immediately calculate/check/compare something?
+
+Low-value generic lifestyle content is deprioritized unless it has strong demonstrated distribution value.
+
+## Practical-value format
+
+Default structure for high-value posts and source articles:
+1. **Hook:** a concrete consequence, question, amount, deadline or misconception.
+2. **Why it matters:** one short paragraph explaining the practical impact.
+3. **3–5 actionable points:** plain Turkish, with the German term in parentheses where useful.
+4. **Nuance / risk:** avoid false certainty; state when individual circumstances matter.
+5. **Next action:** tell the reader exactly what to check/do next.
+6. **Tool/guide CTA:** only when the destination materially continues the task.
+
+German terminology is a product feature, not decoration. Prefer forms such as `Kleinunternehmerregelung (§ 19 UStG)`, `Arbeitsuchendmeldung`, `Nebenkostenabrechnung`, `Selbstständige Tätigkeit` so readers recognize the same terms in letters/forms.
 
 ## Channel priority
 
-- P0 Facebook Page — trust, distribution, link traffic.
+- P0 Facebook Page — trust, distribution, clickable link traffic.
 - P0 Facebook Groups — targeted organic traffic and problem-led discovery.
-- P0 Instagram — Reels, carousels, brand recall.
+- P0 Instagram — Reels, carousels, saves/shares, brand recall and profile-link funnel.
 - P1 TikTok — organic short-video reach after the format is validated.
 - P1 YouTube Shorts — reuse validated short videos.
 - P2 LinkedIn — Blue Card/career content selectively.
 - P3 Pinterest/X — no meaningful resource allocation yet.
 
+## Platform CTA rules
+
+### Instagram
+Feed/Reel caption URLs are not treated as a conversion mechanism. Do not clutter captions with non-clickable raw article URLs.
+- Growth CTA: `Kaydet • paylaş • takip et`
+- Site CTA: `Ücretsiz araç/rehber: profildeki bağlantı.`
+- Stories: use a Link Sticker when available and useful.
+
+### Facebook
+Use the direct relevant landing page with platform-specific UTM parameters. The link should continue the exact problem raised by the post.
+
 ## Content engine
 
-Do not build a separate editorial factory for social media. Repurpose existing site assets.
+One strong source-backed web page/tool should produce multiple social assets, not one disposable post:
+- 1 Reel/Short
+- 1 carousel
+- 1 practical long-caption post
+- 1 Facebook link post
+- 1 Story/poll/question
+- useful Facebook Group contribution(s) where rules permit
 
-One strong web page/tool should produce multiple social assets: Reel/Short, carousel, Facebook post, Story/poll, group contribution and later TikTok/YouTube reuse.
+### Core series
+1. **Cebinden Gitmesin** — taxes, fees, insurance, contracts, household costs.
+2. **Bu Hakkını Biliyor musun?** — employment, housing, family, consumer rights.
+3. **Almanca Mektup Geldi** — Finanzamt, Familienkasse, Ausländerbehörde, Krankenkasse, Agentur für Arbeit.
+4. **3 Günde / 14 Günde / Şu Tarihe Kadar** — deadlines and first actions.
+5. **Almanya'da Yan Gelir** — Nebengewerbe, Kleinunternehmer, freelance/Gewerbe distinctions, residence-permit caveats.
+6. **Kaç Euro?** — Brutto-Netto, transfer costs, household costs.
+7. **Uygun musun?** — Blue Card, Chancenkarte, Kinderzuschlag.
+8. **Almanya'da Para** — Girokonto, Kfz, Strom, DSL, money transfer, Haftpflicht.
+9. **60 saniyede Almanya** — one practical concept, one decision, one next step.
+10. **2026 Almanya** — current official thresholds/rules with source-backed explanations.
 
-Core series:
-1. “Kaç Euro?” — Brutto-Netto, transfer costs, household costs.
-2. “Uygun musun?” — Blue Card, Chancenkarte, Kinderzuschlag.
-3. “Almanya'da para” — Girokonto, Kfz, Strom, DSL, money transfer, Haftpflicht.
-4. “60 saniyede Almanya” — concise practical concepts and decisions.
-5. “2026 Almanya” — current official thresholds/rules with source-backed explanations.
+## Priority web-content clusters
+
+### P0 — Work, side income and tax
+- Kleinunternehmerregelung 2026: what 25,000 € / 100,000 € actually mean
+- Kleinunternehmer turnover pre-check tool
+- Gewerbeanmeldung + first steps
+- Nebengewerbe while employed
+- Gewerbe vs Freiberufler
+- invoice basics and VAT/Kleinunternehmer wording
+- residence-permit/self-employment warning for third-country nationals
+
+### P0 — Money and recurring household costs
+- Brutto-Netto
+- Kfz
+- Strom
+- Internet
+- Girokonto
+- Germany→Turkey money transfer
+- Nebenkosten and recurring-cost checks
+
+### P1 — Rights and deadline prevention
+- Kündigung / first actions after job loss
+- Arbeitsuchend vs Arbeitslosmeldung
+- Krankmeldung / AU basics
+- rent increase and tenant checks
+- SCHUFA wrong-data correction
+- Familienkasse letters and deadlines
+
+### P1 — Immigration and family
+- Blue Card eligibility and settlement-permit path
+- Chancenkarte
+- Kindergeld / Kinderzuschlag
+- citizenship/current requirements
 
 ## Commercial priority
 
@@ -54,14 +134,14 @@ Do not sacrifice editorial trust for affiliate commission. Commercial relationsh
 
 ## Publishing model
 
-Initial weekly target after launch:
+Weekly operating target:
 - 3 short videos/Reels
 - 2 carousels
 - 3–5 Facebook Page distributions
 - 5–7 Stories
-- 10+ useful Facebook Group contributions where rules permit
+- useful Facebook Group contributions where rules permit
 
-One original asset should be reused across compatible channels rather than recreated from scratch.
+Do not create collisions with already scheduled commercial posts. Growth/trust content should support, not bury, conversion content.
 
 ## Facebook Groups rule
 
@@ -69,16 +149,15 @@ No link dumping or promotional spam. Answer an actual user problem first. Link t
 
 ## Video model
 
-15–30 seconds, face not required:
-Hook → screen/tool demonstration → useful result → site CTA.
+15–30 seconds, face not required. Avoid moving-poster/slideshow treatment.
 
-Example: “Almanya'da 4.000 € brüt maaş kaç € net?” → calculator demonstration → result → “Kendi maaşını ücretsiz hesapla: almanyapusulasi.de”.
+Hook → consequence/value → 2–4 independently animated facts → next action → profile/site CTA.
 
-Reuse validated videos on Instagram Reels, Facebook Reels, TikTok and YouTube Shorts.
+For premium Reels use independent text/number/icon layers, restrained motion, readable captions and natural Turkish narration when voice is used.
 
 ## Measurement
 
-Every social link must use campaign-specific UTM parameters where practical.
+Every clickable social link must use campaign-specific UTM parameters where practical.
 
 Baseline convention:
 - utm_source=facebook / instagram / tiktok / youtube
@@ -88,9 +167,22 @@ Baseline convention:
 
 Measure social session → tool interaction → commercial-intent click → affiliate click → conversion/revenue.
 
-## Paid media policy
+Do not claim timing/content optimization unless analytics supports it. When data is sparse, preserve the baseline schedule and learn from actual outcomes.
 
-Initial paid budget: €0. Validate organically first. Only promote creatives with demonstrated site traffic and downstream commercial behavior. Do not boost content solely because it has high views.
+## Brand system — locked
+
+- Commercial / conversion: yellow + navy + white.
+- Growth / save-share-follow: turquoise + navy + white.
+- Information / news / rights: burgundy + navy + white.
+- Canonical logo must never be redrawn, approximated, stylized or regenerated. If the exact asset is unavailable, omit it and use plain `Almanya Pusulası` text.
+- Visuals must be professional, editorial and readable on mobile; reject weak template/stock/slideshow output.
+- Verify legal, tax, immigration, finance and social-benefit claims against current official sources before publication.
+- Do not fabricate affiliate URLs/provider claims.
+- No paid boosts until organic downstream conversion signals exist.
+
+## Source-of-truth principle
+
+The current AlmanyaPusulasi.de page/tool is the destination source of truth for social copy. Current official German sources are the factual source of truth for changeable legal/tax/immigration thresholds. If the site and current official source conflict, fix the site before promoting the claim.
 
 ## Milestones
 
@@ -99,49 +191,3 @@ Initial paid budget: €0. Validate organically first. Only promote creatives wi
 3. First 100 attributable affiliate clicks from the social funnel.
 4. First social-origin affiliate conversion.
 5. Scale proven funnels toward €100/month → €500/month → €1,000+/month while monitoring acquisition economics.
-
-# Phase 1 — Foundation & Launch
-
-## Account setup
-
-Create/standardize:
-- Facebook Page: Almanya Pusulası
-- Instagram professional account: Almanya Pusulası
-
-Recommended public bio:
-“Almanya'da hayatı kolaylaştıran ücretsiz Türkçe araçlar. Maaş • Blue Card • Chancenkarte • Aile • Banka • Sigorta”
-
-Website: https://almanyapusulasi.de/
-
-Use the same brand name, logo and visual identity on both accounts.
-
-## First 10 content topics
-
-1. 4.000 € Brutto kaç Netto?
-2. Chancenkarte için kaç puanın var?
-3. Blue Card için maaşın yeterli mi?
-4. Kinderzuschlag alabilir misin?
-5. Almanya'da hangi banka hesabı sana uygun?
-6. Kfz Versicherung ne zaman değiştirilir?
-7. Almanya'dan Türkiye'ye 1.000 € göndermenin gerçek maliyeti
-8. Stromanbieter değiştirmek mantıklı mı?
-9. Almanya'da emeklilik maaşı nasıl hesaplanır?
-10. 2026 Almanya'daki önemli resmi eşikler
-
-## Phase 1 execution order
-
-1. Create/standardize Facebook and Instagram profiles.
-2. Add website and bio.
-3. Prepare first 3 launch creatives from existing high-value tools: Brutto-Netto, Chancenkarte, Blue Card.
-4. Use tracked social landing links.
-5. Publish and collect baseline reach/click/session data.
-6. Build a curated Facebook Group target list; review each group's promotion/link rules before posting.
-7. Expand only formats/topics that create site visits or commercial-intent actions.
-
-## Guardrails
-
-- Never fabricate official values or financial/legal eligibility claims for social hooks.
-- Keep 2026 claims synchronized with source-backed site content.
-- Do not invent affiliate URLs; only attributable approved partner links may be activated.
-- Do not use engagement bait that damages trust.
-- Do not spend on paid social until organic conversion signals exist.
