@@ -49,5 +49,6 @@ Date: 2026-09-12
 | `/kindergeld-hesaplayici-2026/` | TOOL+REBUILD | Kindergeld utility |
 | `/kinderzuschlag/` | FLAGSHIP | KiZ decision/action guide; rebuilt 2026-09-12 |
 | `/kinderzuschlag-uygunluk-kontrolu-2026/` | TOOL | KiZ blocker/document decision utility; rebuilt 2026-09-12 |
+| `/wohngeld/` | FLAGSHIP | Wohngeld eligibility + housing-cost decision guide; rebuilt 2026-09-12 |
 
 Merged URLs use `noindex,follow`, canonical to the surviving flagship and a user-facing redirect. They must stay out of XML sitemaps. Useful unique material is moved into the surviving flagship before consolidation.
