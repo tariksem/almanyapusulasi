@@ -55,5 +55,10 @@ Date: 2026-09-12
 | `/schufa-skoru-yukseltme/` | KEEP+DIFFERENTIATE | 12-criteria action guide for correct data but weak score |
 | `/banka-hesabi-schufa-gerekli-mi/` | KEEP+DIFFERENTIATE | Girokonto/credit-feature/Basiskonto intent |
 | `/almanyada-ev-kredisi/` | FLAGSHIP | mortgage readiness including SCHUFA, income, debt and equity |
+| `/saglik-sigortasi/` | HUB/FLAGSHIP | health-insurance decision center; system, family, Krankenkasse and supplementary coverage |
+| `/almanya-saglik-sigortasi-gkv-pkv/` | FLAGSHIP+REBUILD | GKV/PKV eligibility and long-term decision guide; rebuilt and official facts reverified 2026-09-12 |
+| `/familienversicherung/` | KEEP+DIFFERENTIATE | spouse/child free GKV eligibility; 565/603 € 2026 thresholds reverified 2026-09-12 |
+| `/krankenkasse-degistirme/` | KEEP+DIFFERENTIATE | GKV fund-switching and Zusatzbeitrag process |
+| `/is-birakinca-saglik-sigortasi/` | KEEP+DIFFERENTIATE | coverage continuity after employment ends |
 
 Merged URLs use `noindex,follow`, canonical to the surviving flagship and a user-facing redirect. They must stay out of XML sitemaps. Useful unique material is moved into the surviving flagship before consolidation.
