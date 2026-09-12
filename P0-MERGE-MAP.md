@@ -1,6 +1,6 @@
 # P0 Merge / Cannibalization Map
 
-Date: 2026-09-11
+Date: 2026-09-12
 
 ## Blue Card — preserve differentiated intent
 
@@ -31,6 +31,7 @@ Date: 2026-09-11
 | `/lagerhelfer-vize-almanya/` | MERGED | `/almanyada-lojistik-depo-kariyeri/` |
 | `/almanyada-doktor-denklik-suresi/` | MERGED | `/almanyada-doktor-hekim-kariyeri/`; unique timeline material moved first |
 | `/erzieher-denklik-nrw-2026/` | MERGED | `/almanyada-erzieher-pedagoji-kariyeri/`; NRW B2/recognition material moved first |
+| `/kindergeld-adres-degisikligi/` | MERGED | `/kindergeld-basvuru/`; change-notification material moved into process guide |
 | `/haberler/vergi-reformu-2027-kindergeld/` | NOINDEX/REDIRECT | `/haberler/vergi-kindergeld-2027/` |
 
 ## Keep / differentiate / tools
@@ -43,6 +44,10 @@ Date: 2026-09-11
 | `/banka-secim-araci/` | TOOL | bank decision utility |
 | `/nebenkosten-abrechnung-kontrolu/` | TOOL/KEEP | flagship tool + guide |
 | `/lkw-fahrer-turk-ehliyeti-almanya/` | KEEP | distinct Turkey licence conversion intent |
+| `/kindergeld/` | FLAGSHIP | Kindergeld decision hub; rebuilt 2026-09-12 |
+| `/kindergeld-basvuru/` | KEEP+DIFFERENTIATE | application + change-notification process |
 | `/kindergeld-hesaplayici-2026/` | TOOL+REBUILD | Kindergeld utility |
+| `/kinderzuschlag/` | FLAGSHIP | KiZ decision/action guide; rebuilt 2026-09-12 |
+| `/kinderzuschlag-uygunluk-kontrolu-2026/` | TOOL | KiZ blocker/document decision utility; rebuilt 2026-09-12 |
 
 Merged URLs use `noindex,follow`, canonical to the surviving flagship and a user-facing redirect. They must stay out of XML sitemaps. Useful unique material is moved into the surviving flagship before consolidation.
