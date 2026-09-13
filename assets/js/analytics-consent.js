@@ -34,7 +34,7 @@
       "/brutto-netto","/netto-brutto","/elterngeld-hesaplayici","/kindergeld-hesaplayici","/kinderzuschlag-uygunluk",
       "/blue-card-uygunluk","/chancenkarte-puan","/warmmiete-kira-butcesi","/nebenkosten-abrechnung",
       "/araba-toplam-maliyet","/internet-tarife-maliyet","/kleinunternehmer-ciro","/vatandaslik-testi",
-      "/almanyaya-tasinma-kontrol-listesi"
+      "/almanyaya-tasinma-kontrol-listesi","/almanca-mektup-asistani"
     ]},
     {key:"goc",href:"/goc-kariyer/",label:"Göç & Kariyer",icon:"🧭",paths:[
       "/goc-kariyer","/chancenkarte","/almanyada-ausbildung","/almanya-is-arama","/diploma-denkligi",

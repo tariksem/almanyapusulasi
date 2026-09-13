@@ -145,3 +145,13 @@ jobs:
           }
           if (!result.pass) process.exit(1);
           JS
+      - name: Validate German letter templates
+        run: |
+          node - <<'JS'
+          const core = require('./assets/js/letter-core.js');
+          const result = core.runTests();
+          for (const item of result.cases) {
+            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
+          }
+          if (!result.pass) process.exit(1);
+          JS
