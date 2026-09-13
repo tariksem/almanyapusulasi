@@ -57,8 +57,9 @@ Date: 2026-09-12
 | `/almanyada-ev-kredisi/` | FLAGSHIP | mortgage readiness including SCHUFA, income, debt and equity |
 | `/saglik-sigortasi/` | HUB/FLAGSHIP | health-insurance decision center; system, family, Krankenkasse and supplementary coverage |
 | `/almanya-saglik-sigortasi-gkv-pkv/` | FLAGSHIP+REBUILD | GKV/PKV eligibility and long-term decision guide; rebuilt and official facts reverified 2026-09-12 |
-| `/familienversicherung/` | KEEP+DIFFERENTIATE | spouse/child free GKV eligibility; 565/603 € 2026 thresholds reverified 2026-09-12 |
-| `/krankenkasse-degistirme/` | KEEP+DIFFERENTIATE | GKV fund-switching and Zusatzbeitrag process |
+| `/familienversicherung/` | KEEP+DIFFERENTIATE+REBUILD | spouse/child free GKV eligibility; corrected to BMG's 603 € 2026 income limit and rebuilt 2026-09-13 |
+| `/krankenkasse-degistirme/` | KEEP+DIFFERENTIATE+REBUILD | GKV fund-switching, binding periods, Wahltarif and Zusatzbeitrag process; rebuilt 2026-09-13 |
 | `/is-birakinca-saglik-sigortasi/` | KEEP+DIFFERENTIATE | coverage continuity after employment ends |
+| `/private-krankenversicherung-pkv-2026/` | KEEP+DIFFERENTIATE | PKV tariff/offer due diligence after system eligibility; separated from the GKV-vs-PKV flagship 2026-09-13 |
 
 Merged URLs use `noindex,follow`, canonical to the surviving flagship and a user-facing redirect. They must stay out of XML sitemaps. Useful unique material is moved into the surviving flagship before consolidation.
