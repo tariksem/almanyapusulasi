@@ -1,0 +1,44 @@
+.nk-premium-card {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid #bfdbfe;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eff6ff, #fff);
+}
+
+.nk-premium-card > span {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.nk-premium-card h2 {
+  margin: 12px 0 7px;
+  color: var(--primary);
+  font-size: 22px;
+}
+
+.nk-premium-card p {
+  margin: 0 0 16px;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.nk-premium-card small {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .nk-premium-card { padding: 18px 16px; }
+  .nk-premium-card .btn { width: 100%; }
+}
+
+@media print {
+  .nk-premium-card { display: none !important; }
+}

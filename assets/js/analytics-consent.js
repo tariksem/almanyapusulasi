@@ -148,11 +148,13 @@
     document.head.appendChild(script);
     gtag("js",new Date());
     gtag("config",GA_ID,{allow_google_signals:false,allow_ad_personalization_signals:false});
+    document.dispatchEvent(new CustomEvent("ap:analytics-ready"));
   }
 
   function readConsent(){try{return localStorage.getItem(CONSENT_KEY);}catch(_){return null;}}
   function saveConsent(v){try{localStorage.setItem(CONSENT_KEY,v);}catch(_){}}
   function track(name,params){if(readConsent()!==ACCEPTED)return;ensureDataLayer();gtag("event",name,params||{});}
+  window.APAnalytics={track};
 
   function bindGrowthTracking(){
     document.addEventListener("click",event=>{
@@ -183,8 +185,26 @@
     if(!hero||document.querySelector(".home-tools-growth"))return;
     const s=document.createElement("section");
     s.className="section popular-strip home-tools-growth";
-    s.innerHTML='<div class="container"><div class="section-header"><span class="section-label">Ücretsiz Araçlar</span><h2>Hesaplayın, kontrol edin, karar verin</h2><p>En çok ihtiyaç duyulan Almanya hesaplayıcılarına doğrudan ulaşın.</p></div><div class="popular-grid"><a class="popular-link" href="/meslek-almanya-yolu-karar-araci/"><span>🧭</span><span><strong>Mesleğimle gelebilir miyim?</strong><small>Meslek, denklik ve vize yolu</small></span></a><a class="popular-link" href="/is-teklifi-degerlendirme-araci/"><span>💼</span><span><strong>İş teklifim iyi mi?</strong><small>Maaş, saat, izin ve vize eşiği</small></span></a><a class="popular-link" href="/ilk-90-gun-almanya-planlayici/"><span>🗓️</span><span><strong>İlk 90 Gün</strong><small>Yeni gelenler için kişisel plan</small></span></a><a class="popular-link" href="/sigorta-secim-araci/"><span>🛡️</span><span><strong>Sigorta Seçimi</strong><small>Risklerinize göre öncelik verin</small></span></a><a class="popular-link" href="/internet-secim-araci/"><span>🌐</span><span><strong>İnternet Seçimi</strong><small>DSL, Kabel veya Glasfaser</small></span></a><a class="popular-link" href="/para-transferi-maliyet-hesaplayici/"><span>💱</span><span><strong>Para Transferi</strong><small>Gerçek efektif maliyeti görün</small></span></a></div><div style="margin-top:1.25rem"><a class="btn btn-primary" href="/araclar/">Tüm ücretsiz araçları aç →</a></div></div>';
+    s.innerHTML='<div class="container"><div class="section-header"><span class="section-label">Ücretsiz Araçlar</span><h2>Hesaplayın, kontrol edin, karar verin</h2><p>En çok ihtiyaç duyulan Almanya hesaplayıcılarına doğrudan ulaşın.</p></div><div class="popular-grid"><a class="popular-link" href="/nebenkosten-abrechnung-kontrolu/"><span>🧾</span><span><strong>Nebenkosten faturam doğru mu?</strong><small>Nachzahlung, süre ve gider kontrolü</small></span></a><a class="popular-link" href="/meslek-almanya-yolu-karar-araci/"><span>🧭</span><span><strong>Mesleğimle gelebilir miyim?</strong><small>Meslek, denklik ve vize yolu</small></span></a><a class="popular-link" href="/is-teklifi-degerlendirme-araci/"><span>💼</span><span><strong>İş teklifim iyi mi?</strong><small>Maaş, saat, izin ve vize eşiği</small></span></a><a class="popular-link" href="/sigorta-secim-araci/"><span>🛡️</span><span><strong>Sigorta Seçimi</strong><small>Risklerinize göre öncelik verin</small></span></a><a class="popular-link" href="/internet-secim-araci/"><span>🌐</span><span><strong>İnternet Seçimi</strong><small>DSL, Kabel veya Glasfaser</small></span></a><a class="popular-link" href="/para-transferi-maliyet-hesaplayici/"><span>💱</span><span><strong>Para Transferi</strong><small>Gerçek efektif maliyeti görün</small></span></a></div><div style="margin-top:1.25rem"><a class="btn btn-primary" href="/araclar/">Tüm ücretsiz araçları aç →</a></div></div>';
     hero.after(s);
+  }
+
+  function enhanceToolsHub(){
+    if(currentPath()!=="/araclar/"||document.querySelector(".tools-priority"))return;
+    const hero=document.querySelector(".hero");
+    const firstGrid=document.querySelector(".section .grid");
+    if(!hero||!firstGrid)return;
+    const style=document.createElement("style");
+    style.textContent='.tools-priority{padding:34px 0 0}.tools-priority-card{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);gap:24px;align-items:center;padding:clamp(24px,5vw,42px);border:1px solid #bfdbfe;border-radius:24px;background:linear-gradient(135deg,#eff6ff,#fff);box-shadow:0 16px 40px rgba(15,23,42,.07)}.tools-priority-card h2{margin:10px 0;color:var(--primary);font-size:clamp(27px,4vw,38px);line-height:1.12}.tools-priority-card p{margin:0 0 18px;color:#475569;font-size:17px;line-height:1.6}.tools-priority-points{display:grid;gap:10px;padding:18px;border-radius:18px;background:#fff;border:1px solid var(--border);color:#334155;font-weight:700}.tools-priority-points span:before{content:"✓";margin-right:8px;color:#047857}.tools-all-title{margin:0 0 20px;color:var(--primary);font-size:28px}@media(max-width:760px){.tools-priority-card{grid-template-columns:1fr}.tools-priority .btn{width:100%;text-align:center}}';
+    document.head.appendChild(style);
+    const sectionEl=document.createElement("section");
+    sectionEl.className="tools-priority";
+    sectionEl.innerHTML='<div class="container"><div class="tools-priority-card"><div><span class="badge">Öne çıkan ücretsiz kontrol</span><h2>Nebenkosten faturanızdaki farkı ve riskli noktaları kontrol edin</h2><p>PDF veya fotoğrafı cihazınızda okuyun ya da değerleri elle girin. Nachzahlung/Guthaben matematiğini, süreleri ve gider kalemlerini ücretsiz inceleyin.</p><a class="btn btn-primary" href="/nebenkosten-abrechnung-kontrolu/">NebenkostenCheck’i aç →</a></div><div class="tools-priority-points"><span>Kayıt gerekmez</span><span>Ücretsiz sonuç</span><span>Almanca belge talep taslağı</span><span>Tarayıcıda veri işleme</span></div></div></div>';
+    hero.after(sectionEl);
+    const title=document.createElement("h2");
+    title.className="tools-all-title";
+    title.textContent="Diğer ücretsiz araçlar";
+    firstGrid.before(title);
   }
 
   function showConsent(force){
@@ -206,6 +226,7 @@
     renderReturnRail();
     bindGrowthTracking();
     injectHomepageTools();
+    enhanceToolsHub();
     const consent=readConsent();
     if(consent===ACCEPTED)loadAnalytics();
     else if(consent!==REJECTED)showConsent(false);

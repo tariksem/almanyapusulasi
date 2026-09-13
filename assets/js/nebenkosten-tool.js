@@ -3,11 +3,14 @@
 const C=window.NebenkostenCore;if(!C)return;
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const form=$('#nk-form'), resultBox=$('#nk-result'); if(!form||!resultBox)return;
-let step=1, analysis=null, started=false;
+let step=1, analysis=null, started=false, viewed=false;
 const moneyFmt=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'});
 const dateFmt=new Intl.DateTimeFormat('tr-TR',{day:'2-digit',month:'2-digit',year:'numeric'});
 
-function analytics(name,params){try{if(typeof window.gtag==='function')window.gtag('event',name,Object.assign({tool_name:'nebenkostencheck'},params||{}));}catch(e){}}
+function analytics(name,params){try{const payload=Object.assign({tool_name:'nebenkostencheck'},params||{});if(window.APAnalytics&&typeof window.APAnalytics.track==='function')window.APAnalytics.track(name,payload);else if(localStorage.getItem('ap_cookie_consent')==='accepted'&&typeof window.gtag==='function')window.gtag('event',name,payload);}catch(e){}}
+function markViewed(){if(viewed)return;try{if(localStorage.getItem('ap_cookie_consent')!=='accepted')return;}catch(e){return;}viewed=true;analytics('tool_view',{tool_path:location.pathname});}
+document.addEventListener('ap:analytics-ready',markViewed);
+document.addEventListener('DOMContentLoaded',()=>setTimeout(markViewed,0));
 function markStarted(){if(started)return;started=true;analytics('tool_start');}
 form.addEventListener('input',markStarted,{once:true});
 
@@ -38,7 +41,7 @@ function render(){const s=gather();analysis=C.analyze(s,{today:new Date().toISOS
  $('#nk-stat-review').textContent=review.length;$('#nk-stat-high').textContent=high.length;$('#nk-stat-pass').textContent=pass.length;
  const list=$('#nk-findings');list.innerHTML='';analysis.results.filter(r=>r.status!=='not_applicable').sort((a,b)=>rank(a)-rank(b)).forEach(r=>{const d=document.createElement('div');d.className=`nk-finding ${r.status}${r.status==='review'?'-'+r.severity:''}`;d.innerHTML=`<div class="nk-finding-head"><h3>${escapeHtml(r.title)}</h3><span class="nk-status">${statusLabel(r)}</span></div><p>${escapeHtml(r.explanation)}</p>${calculationText(r)}${sourceLinks(r.sourceIds)}`;list.appendChild(d)});
  $('#nk-rule-version').textContent='Kontrol motoru: '+analysis.version;resultBox.classList.add('is-visible');$$('.nk-step').forEach(x=>x.classList.remove('is-active'));$('.nk-progress').classList.add('nk-hidden');
- analytics('tool_analysis_complete',{result_status:high.length?'review_high':review.length?'review':'no_review',finding_bucket:review.length===0?'0':review.length<=2?'1_2':'3_plus'});analytics('tool_result_view',{finding_bucket:review.length===0?'0':review.length<=2?'1_2':'3_plus'});saveLocalSummary(s,sum,review.length);window.scrollTo({top:resultBox.getBoundingClientRect().top+window.scrollY-90,behavior:'smooth'});
+ analytics('tool_analysis_complete',{result_status:high.length?'review_high':review.length?'review':'no_review',finding_bucket:review.length===0?'0':review.length<=2?'1_2':'3_plus'});analytics('free_result_viewed',{finding_bucket:review.length===0?'0':review.length<=2?'1_2':'3_plus'});saveLocalSummary(s,sum,review.length);window.scrollTo({top:resultBox.getBoundingClientRect().top+window.scrollY-90,behavior:'smooth'});
 }
 function rank(r){if(r.status==='review'&&r.severity==='high')return 0;if(r.status==='review')return 1;if(r.status==='missing_data')return 2;return 3;}
 function calculationText(r){const c=r.calculation;if(!c)return '';if(r.ruleId==='R002'||r.ruleId==='R003')return `<p><strong>Hatırlatma tarihi:</strong> ${formatIso(c.deadline)}${Number.isFinite(c.daysRemaining)?` · ${c.daysRemaining>=0?c.daysRemaining+' gün kaldı':Math.abs(c.daysRemaining)+' gün geçti'}`:''}</p>`;if(r.ruleId==='R004')return `<p><strong>Kalem toplamı:</strong> ${euro(c.lineSumCents)} · <strong>Belge toplamı:</strong> ${euro(c.statedCents)} · <strong>Fark:</strong> ${euro(Math.abs(c.differenceCents))}</p>`;if(r.ruleId==='R005')return `<p><strong>Hesaplanan sonuç:</strong> ${euro(c.expectedBalanceCents)}${c.statedBalanceCents!==undefined?` · <strong>Belgedeki sonuç:</strong> ${euro(c.statedBalanceCents)}`:''}</p>`;if(r.ruleId==='R006')return `<p><strong>Hesaplanan pay:</strong> ${euro(c.expectedCents)} · <strong>Belgedeki pay:</strong> ${euro(c.statedCents)}</p>`;if(r.ruleId==='R007'||r.ruleId==='R008')return `<p><strong>Dağılım:</strong> %${c.consumptionPercent} tüketim + %${c.otherPercent} diğer = %${c.totalPercent}</p>`;return '';}
@@ -49,6 +52,7 @@ $('#nk-reset').addEventListener('click',()=>{if(!confirm('Girdiğiniz verileri v
 $('#nk-print').addEventListener('click',()=>{analytics('tool_pdf_download',{method:'browser_print'});window.print()});
 $('#nk-letter-toggle').addEventListener('click',()=>{if(!analysis)return;const box=$('#nk-letter'),ta=$('#nk-letter-text');ta.value=buildLetter();box.classList.toggle('is-visible');analytics('tool_letter_view')});
 $('#nk-letter-copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#nk-letter-text').value);$('#nk-letter-copy').textContent='Kopyalandı';setTimeout(()=>$('#nk-letter-copy').textContent='Metni kopyala',1600);analytics('tool_letter_copy')}catch(e){$('#nk-letter-text').select();document.execCommand('copy')}});
+$('#nk-premium-interest').addEventListener('click',()=>analytics('premium_clicked',{offer_type:'nebenkosten_detailed_report',destination:'email_interest'}));
 function buildLetter(){const reviews=analysis.results.filter(r=>r.status==='review');const topics=reviews.map(r=>'– '+r.title).join('\n');return `Betreff: Bitte um Erläuterung der Betriebskostenabrechnung / Belegeinsicht\n\nSehr geehrte Damen und Herren,\n\nvielen Dank für die Betriebskostenabrechnung. Bei meiner eigenen Prüfung sind einige Punkte aufgefallen, die ich gern besser nachvollziehen möchte:\n\n${topics||'– einzelne Positionen und deren Berechnung'}\n\nKönnten Sie mir diese Punkte bitte erläutern und mir, soweit einschlägig, Einsicht in die zugrunde liegenden Belege und Berechnungsunterlagen ermöglichen?\n\nVielen Dank im Voraus.\n\nMit freundlichen Grüßen`}
 
 function saveLocalSummary(s,sum,count){if(!checked('#nk-save-local'))return;try{const key='ap_nk_history_v1',arr=JSON.parse(localStorage.getItem(key)||'[]');arr.unshift({savedAt:new Date().toISOString(),periodEnd:s.billingPeriodEnd||'',balanceCents:sum.cents,reviewCount:count});localStorage.setItem(key,JSON.stringify(arr.slice(0,8)));renderHistory()}catch(e){}}
