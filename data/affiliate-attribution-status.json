@@ -1,0 +1,81 @@
+{
+  "updated": "2026-09-13",
+  "purpose": "Machine-readable evidence and guardrails for affiliate attribution configuration. This file does not prove a sale; it records what has been verified and what still requires authenticated dashboard confirmation.",
+  "providers": {
+    "TARIFCHECK": {
+      "partnerId": "204420",
+      "accountStatus": "active",
+      "accountEvidence": "Activation email received 2026-09-07; Partner-ID 204420.",
+      "directlinkEvidence": "TARIFCHECK-DIRECTLINKS.md records authenticated partner-dashboard verification on 2026-09-07.",
+      "configurationStatus": "verified_config",
+      "host": "a.partner-versicherung.de",
+      "path": "/click.php",
+      "requiredAdId": "15",
+      "verifiedDeepLinks": [
+        "girokonto",
+        "haftpflichtversicherung",
+        "rentenversicherung",
+        "rechtsschutzversicherung",
+        "hausratversicherung",
+        "wohngebaeudeversicherung",
+        "private-krankenversicherung",
+        "krankenzusatzversicherung",
+        "pflegezusatzversicherung",
+        "unfallversicherung",
+        "risikolebensversicherung",
+        "motorradversicherung",
+        "kreditkarten",
+        "kredit",
+        "baufinanzierung",
+        "kfz-versicherung"
+      ]
+    },
+    "CHECK24": {
+      "partnerId": "1177200",
+      "accountStatus": "active",
+      "accountEvidence": "Activation email received 2026-09-07; Partner-ID 1177200.",
+      "generatorEvidence": "CHECK24 Affiliate Support confirmed the Strom deeplink generator path on 2026-09-07.",
+      "configurationStatus": "pending_external_exact_match",
+      "host": "a.check24.net",
+      "path": "/misc/click.php",
+      "electricity": {
+        "slot": "electricity-comparison",
+        "configuredUrl": "https://a.check24.net/misc/click.php?pid=1177200&aid=18&deep=stromanbieter-wechseln&cat=1",
+        "requiredParams": {
+          "pid": "1177200",
+          "aid": "18",
+          "deep": "stromanbieter-wechseln",
+          "cat": "1"
+        },
+        "externalExactMatchStatus": "pending",
+        "requiredNextEvidence": "Copy the exact visitor URL generated while logged in at the CHECK24 Strom deeplink generator and compare it byte-for-byte with configuredUrl. Record date and exact-match result; do not infer or reconstruct the URL from Partner-ID."
+      }
+    }
+  },
+  "revenueCriticalSlots": {
+    "bank-comparison": {
+      "provider": "TARIFCHECK",
+      "status": "verified_config"
+    },
+    "kfz-insurance": {
+      "provider": "TARIFCHECK",
+      "status": "verified_config"
+    },
+    "risikoleben-comparison": {
+      "provider": "TARIFCHECK",
+      "status": "verified_config"
+    },
+    "electricity-comparison": {
+      "provider": "CHECK24",
+      "status": "pending_external_exact_match"
+    }
+  },
+  "trackingPolicy": {
+    "siteEvent": "affiliate_click",
+    "requiredLinkRel": "sponsored noopener",
+    "requiredDisclosurePrefix": "Ticari bağlantı:",
+    "analyticsConsentRequired": true,
+    "syntheticPartnerClicksAllowed": false,
+    "reason": "Do not pollute partner reporting or generate invalid affiliate traffic merely to test a redirect."
+  }
+}
