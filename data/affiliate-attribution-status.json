@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13",
+  "updated": "2026-09-14",
   "purpose": "Machine-readable evidence and guardrails for affiliate attribution configuration. This file does not prove a sale; it records what has been verified at configuration level and what still depends on genuine partner-side conversion reporting.",
   "providers": {
     "TARIFCHECK": {
@@ -56,6 +56,14 @@
   },
   "revenueCriticalSlots": {
     "bank-comparison": {
+      "provider": "TARIFCHECK",
+      "status": "verified_config"
+    },
+    "credit-card-comparison": {
+      "provider": "TARIFCHECK",
+      "status": "verified_config"
+    },
+    "credit-comparison": {
       "provider": "TARIFCHECK",
       "status": "verified_config"
     },

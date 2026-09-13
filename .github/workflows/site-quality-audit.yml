@@ -50,10 +50,8 @@ jobs:
                       self.viewport=True
                   if tag=='meta' and a.get('name','').lower()=='description':
                       self.description=(a.get('content') or '').strip()
-                  if tag=='title':
-                      self.in_title=True
-                  if tag=='h1':
-                      self.h1_count+=1
+                  if tag=='title': self.in_title=True
+                  if tag=='h1': self.h1_count+=1
               def handle_endtag(self,tag):
                   if tag=='title': self.in_title=False
               def handle_data(self,data):
@@ -71,8 +69,7 @@ jobs:
               p=root/rel
               if path.endswith('/'):
                   return (p/'index.html').exists()
-              if p.exists():
-                  return True
+              if p.exists(): return True
               return (p/'index.html').exists()
 
           def expected_url(file):
@@ -86,8 +83,7 @@ jobs:
               text=file.read_text(encoding='utf-8',errors='replace')
               parser=Parser()
               try: parser.feed(text)
-              except Exception as e:
-                  seo.append(f'{file}: HTML parse warning: {e}')
+              except Exception as e: seo.append(f'{file}: HTML parse warning: {e}')
 
               if file.name=='index.html':
                   if not parser.viewport: seo.append(f'{file}: missing viewport meta')
@@ -95,7 +91,6 @@ jobs:
                   if not parser.title_text.strip(): seo.append(f'{file}: missing/empty title')
                   if not parser.description: seo.append(f'{file}: missing/empty meta description')
                   if parser.h1_count!=1: seo.append(f'{file}: expected exactly one h1, found {parser.h1_count}')
-
                   if parser.canonical:
                       canonicals[parser.canonical].append(str(file))
                       parts=urlsplit(parser.canonical)
@@ -104,12 +99,9 @@ jobs:
                       expected=expected_url(file)
                       if parser.canonical!=expected:
                           warnings.append(f'{file}: non-self canonical {parser.canonical} (expected {expected})')
-
               for href in parser.hrefs:
-                  if href.startswith(('#','mailto:','tel:','javascript:')):
-                      continue
-                  if not target_exists(href):
-                      missing.append(f'{file}: {href}')
+                  if href.startswith(('#','mailto:','tel:','javascript:')): continue
+                  if not target_exists(href): missing.append(f'{file}: {href}')
 
           for canonical,files in canonicals.items():
               if len(files)>1:
@@ -122,8 +114,7 @@ jobs:
           for x in seo[:200]: print(f'::error::{x}')
           print(f'Canonical diagnostics: {len(warnings)}')
           for x in warnings[:300]: print(f'::warning::{x}')
-          if missing or seo:
-              sys.exit(1)
+          if missing or seo: sys.exit(1)
           PY
       - name: Validate affiliate attribution configuration
         run: node scripts/validate-affiliate-attribution.js
@@ -159,6 +150,16 @@ jobs:
           for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
           if (!result.pass) process.exit(1);
           JS
+      - name: Validate credit-card intent rules
+        run: |
+          node - <<'JS'
+          const core = require('./assets/js/credit-card-core.js');
+          const result = core.runTests();
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
+          if (!result.pass) process.exit(1);
+          JS
+      - name: Validate finance revenue funnel
+        run: node scripts/validate-finance-revenue-funnel.js
       - name: Validate German letter templates
         run: |
           node - <<'JS'
