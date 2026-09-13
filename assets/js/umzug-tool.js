@@ -1,0 +1,28 @@
+(function(){
+  "use strict";
+  var C=window.UmzugCore,form=document.getElementById("plan-form"),result=document.getElementById("move-result"),groups=document.getElementById("move-task-groups");
+  if(!C||!form||!result||!groups)return;
+  var STORAGE="ap_umzug_assistant_v2",started=false,viewed=false,currentProfile=null,currentTasks=[];
+  var PHASES={before:"Taşınmadan önce",first:"İlk günler",weeks:"İlk 2–4 hafta",family:"Aile işlemleri",vehicle:"Araç işlemleri"};
+  function track(name,params){try{var payload=Object.assign({tool_name:"umzug_assistant"},params||{});if(window.APAnalytics&&typeof window.APAnalytics.track==="function")window.APAnalytics.track(name,payload);else if(localStorage.getItem("ap_cookie_consent")==="accepted"&&typeof window.gtag==="function")window.gtag("event",name,payload);}catch(e){}}
+  function markViewed(){if(viewed)return;try{if(localStorage.getItem("ap_cookie_consent")!=="accepted")return;}catch(e){return;}viewed=true;track("tool_view",{tool_path:location.pathname});}
+  document.addEventListener("ap:analytics-ready",markViewed);document.addEventListener("DOMContentLoaded",function(){setTimeout(markViewed,0);});
+  form.addEventListener("input",function(){if(!started){started=true;track("tool_start");}},{once:true});
+  function profile(){return {scenario:form.elements.scenario.value,family:document.getElementById("family").checked,car:document.getElementById("car").checked,tenant:document.getElementById("tenant").checked};}
+  function loadState(){try{return JSON.parse(localStorage.getItem(STORAGE)||"{}");}catch(e){return {};}}
+  function saveState(state){try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch(e){}}
+  function completed(){var state=loadState(),key=C.signature(currentProfile);return state[key]||{};}
+  function updateProgress(){var done=completed(),n=currentTasks.filter(function(x){return done[x.id];}).length,total=currentTasks.length,pct=total?Math.round(n/total*100):0;document.getElementById("move-progress-count").textContent=n+" / "+total;document.getElementById("move-progress-fill").style.width=pct+"%";document.querySelector(".move-progressbar").setAttribute("aria-valuenow",String(pct));}
+  function renderOffers(){var slots=document.getElementById("move-affiliate-slots"),keys=currentProfile.scenario==="arrival"?["bank-comparison","electricity-comparison"]:["electricity-comparison"];slots.innerHTML=keys.map(function(key){return '<div data-affiliate-slot="'+key+'" aria-live="polite"></div>';}).join("");if(window.APAffiliate){window.APAffiliate.renderAll(slots);slots.querySelectorAll(".affiliate-slot.is-active").forEach(function(el){track("affiliate_slot_view",{commercial_area:el.getAttribute("data-affiliate-slot")||"",slot_active:true});});}document.getElementById("move-offers").hidden=!slots.querySelector(".affiliate-slot.is-active");}
+  function render(){
+    currentTasks=C.buildPlan(currentProfile);var done=completed();groups.innerHTML="";
+    Object.keys(PHASES).forEach(function(phase){var list=currentTasks.filter(function(x){return x.phase===phase;});if(!list.length)return;var section=document.createElement("section");section.className="move-phase";section.innerHTML="<h3>"+PHASES[phase]+"</h3>";list.forEach(function(task){var label=document.createElement("label");label.className="move-task"+(done[task.id]?" is-done":"");label.innerHTML='<input type="checkbox" data-task-id="'+task.id+'" '+(done[task.id]?"checked":"")+'><span><strong>'+task.title+'</strong><small>'+task.description+' <a href="'+task.href+'">Rehberi aç →</a></small></span>';section.appendChild(label);});groups.appendChild(section);});
+    var label=currentProfile.scenario==="arrival"?"Almanya'ya yeni geliş planı":"Almanya içi taşınma planı";document.getElementById("move-result-title").textContent=label;document.getElementById("move-result-summary").textContent=currentTasks.length+" ilgili görev oluşturuldu. İşaretledikleriniz bu cihazda saklanır.";updateProgress();renderOffers();result.hidden=false;result.scrollIntoView({behavior:"smooth",block:"start"});
+    track("free_result_viewed",{scenario:currentProfile.scenario,tasks_count:currentTasks.length,family:currentProfile.family,car:currentProfile.car,tenant:currentProfile.tenant});if(window.APDecision)window.APDecision.complete("moving",label,{scenario:currentProfile.scenario,tasks_count:currentTasks.length});
+  }
+  form.addEventListener("submit",function(e){e.preventDefault();currentProfile=profile();render();});
+  groups.addEventListener("change",function(e){var input=e.target.closest&&e.target.closest("[data-task-id]");if(!input)return;var state=loadState(),key=C.signature(currentProfile);state[key]=state[key]||{};state[key][input.dataset.taskId]=input.checked;saveState(state);input.closest(".move-task").classList.toggle("is-done",input.checked);updateProgress();track("checklist_item_changed",{task_id:input.dataset.taskId,completed:input.checked,scenario:currentProfile.scenario});});
+  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("#move-affiliate-slots a");if(a)track("affiliate_clicked",{commercial_area:a.getAttribute("data-commercial-area")||"",partner:a.getAttribute("data-commercial-provider")||""});});
+  document.getElementById("move-reset").addEventListener("click",function(){if(currentProfile){var state=loadState();delete state[C.signature(currentProfile)];saveState(state);}result.hidden=true;groups.innerHTML="";form.scrollIntoView({behavior:"smooth",block:"start"});track("tool_reset");});
+  var tests=C.runTests();if(!tests.pass){console.error("Umzug core tests failed",tests);form.querySelector(".move-submit").disabled=true;}
+})();

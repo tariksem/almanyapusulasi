@@ -97,6 +97,9 @@ jobs:
               'almanya-2026-resmi-esikler': 'https://almanyapusulasi.de/almanya-2026-resmi-esikler/',
               'embed-araclar': 'https://almanyapusulasi.de/embed-araclar/',
               'site-haritasi': 'https://almanyapusulasi.de/site-haritasi/',
+              'tasarruf-kontrolu': 'https://almanyapusulasi.de/tasarruf-kontrolu/',
+              'nebenkosten-abrechnung-kontrolu': 'https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/',
+              'almanyaya-tasinma-kontrol-listesi': 'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/',
           }
 
           errors = []
@@ -113,6 +116,19 @@ jobs:
                   errors.append(f'wrong canonical: {path} -> {match.group(1)} (expected {expected})')
               if re.search(r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', html, re.I):
                   errors.append(f'noindex on flagship page: {path}')
+
+          if errors:
+              raise SystemExit('\n'.join(errors))
+
+          markers = {
+              'tasarruf-kontrolu': 'id="savings-form"',
+              'nebenkosten-abrechnung-kontrolu': 'id="nk-form"',
+              'almanyaya-tasinma-kontrol-listesi': 'id="plan-form"',
+          }
+          for slug, marker in markers.items():
+              html = (Path('dist') / slug / 'index.html').read_text(encoding='utf-8', errors='replace')
+              if marker not in html:
+                  errors.append(f'missing flagship marker: {slug} -> {marker}')
 
           if errors:
               raise SystemExit('\n'.join(errors))
@@ -150,7 +166,16 @@ jobs:
               'https://almanyapusulasi.de/almanya-2026-resmi-esikler/',
               'https://almanyapusulasi.de/embed-araclar/',
               'https://almanyapusulasi.de/site-haritasi/',
+              'https://almanyapusulasi.de/tasarruf-kontrolu/',
+              'https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/',
+              'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/',
           ]
+
+          markers = {
+              'https://almanyapusulasi.de/tasarruf-kontrolu/': 'id="savings-form"',
+              'https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/': 'id="nk-form"',
+              'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/': 'id="plan-form"',
+          }
 
           failures = []
           headers = {'User-Agent': 'AlmanyaPusulasi-Deploy-QA/1.0'}
@@ -165,6 +190,8 @@ jobs:
                               raise RuntimeError(f'HTTP {response.status}')
                           if '<html' not in body.lower():
                               raise RuntimeError('response is not HTML')
+                          if url in markers and markers[url] not in body:
+                              raise RuntimeError(f'missing production marker {markers[url]}')
                           print(f'OK {response.status} {url}')
                           last_error = None
                           break

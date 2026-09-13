@@ -125,3 +125,13 @@ jobs:
           if missing or seo:
               sys.exit(1)
           PY
+      - name: Validate Umzug assistant rules
+        run: |
+          node - <<'JS'
+          const core = require('./assets/js/umzug-core.js');
+          const result = core.runTests();
+          for (const item of result.cases) {
+            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
+          }
+          if (!result.pass) process.exit(1);
+          JS
