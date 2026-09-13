@@ -31,8 +31,9 @@
     if(!cfg||!cfg.enabled||!cfg.url)return;
     removeLegacyDisclosure(slot);
     var provider=cfg.provider?'<span class="affiliate-provider">'+esc(cfg.provider)+'</span>':'';
+    var disclosure='<p class="affiliate-disclosure"><strong>Ticari bağlantı:</strong> Bu partner bağlantısı üzerinden işlem yapılırsa Almanya Pusulası komisyon alabilir. Komisyon karşılaştırma sonucunu veya editoryal içeriği değiştirmez.</p>';
     slot.classList.add("affiliate-slot","is-active");
-    slot.innerHTML='<div><span class="affiliate-kicker">Partner karşılaştırması</span><h3>'+esc(cfg.label)+'</h3><p>'+esc(cfg.note)+'</p>'+provider+'</div><a class="btn btn-primary" href="'+esc(cfg.url)+'" target="_blank" rel="sponsored noopener" data-track="affiliate_click" data-commercial-area="'+esc(key)+'" data-commercial-target="'+esc(cfg.target)+'" data-commercial-provider="'+esc(cfg.provider||'')+'">Teklifleri karşılaştır →</a>';
+    slot.innerHTML='<div><span class="affiliate-kicker">Partner karşılaştırması</span><h3>'+esc(cfg.label)+'</h3><p>'+esc(cfg.note)+'</p>'+provider+disclosure+'</div><a class="btn btn-primary" href="'+esc(cfg.url)+'" target="_blank" rel="sponsored noopener" data-track="affiliate_click" data-commercial-area="'+esc(key)+'" data-commercial-target="'+esc(cfg.target)+'" data-commercial-provider="'+esc(cfg.provider||'')+'">Teklifleri karşılaştır →</a>';
   }
   function renderAll(root){(root||document).querySelectorAll("[data-affiliate-slot]").forEach(renderSlot);}
   window.APAffiliate={renderSlot:renderSlot,renderAll:renderAll,has:function(key){var cfg=PARTNERS[key];return !!(cfg&&cfg.enabled&&cfg.url);}};
