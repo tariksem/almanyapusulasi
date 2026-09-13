@@ -102,6 +102,7 @@ jobs:
               'almanyaya-tasinma-kontrol-listesi': 'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/',
               'warmmiete-kira-butcesi-hesaplayici': 'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/',
               'almanca-mektup-asistani': 'https://almanyapusulasi.de/almanca-mektup-asistani/',
+              'araba-toplam-maliyet-hesaplayici': 'https://almanyapusulasi.de/araba-toplam-maliyet-hesaplayici/',
           }
 
           errors = []
@@ -128,6 +129,7 @@ jobs:
               'almanyaya-tasinma-kontrol-listesi': 'id="plan-form"',
               'warmmiete-kira-butcesi-hesaplayici': 'id="rent-form"',
               'almanca-mektup-asistani': 'id="letter-form"',
+              'araba-toplam-maliyet-hesaplayici': 'id="auto-form"',
           }
           for slug, marker in markers.items():
               html = (Path('dist') / slug / 'index.html').read_text(encoding='utf-8', errors='replace')
@@ -175,6 +177,7 @@ jobs:
               'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/',
               'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/',
               'https://almanyapusulasi.de/almanca-mektup-asistani/',
+              'https://almanyapusulasi.de/araba-toplam-maliyet-hesaplayici/',
           ]
 
           markers = {
@@ -183,6 +186,7 @@ jobs:
               'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/': 'id="plan-form"',
               'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/': 'id="rent-form"',
               'https://almanyapusulasi.de/almanca-mektup-asistani/': 'id="letter-form"',
+              'https://almanyapusulasi.de/araba-toplam-maliyet-hesaplayici/': 'id="auto-form"',
           }
 
           failures = []
