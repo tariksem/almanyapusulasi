@@ -30,7 +30,7 @@
     {key:"tools",href:"/araclar/",label:"Araçlar",icon:"🧮",paths:[
       "/araclar","/almanya-kontrol-paneli","/almanya-hazirlik-blokaj-motoru","/meslek-almanya-yolu-karar-araci","/almanyaya-gelis-yolu-secim-araci",
       "/is-piyasasi-gucu-motoru","/sehir-butce-karsilastirma-araci","/is-teklifi-degerlendirme-araci","/ilk-90-gun-almanya-planlayici","/vergi-yontemi-secim-araci",
-      "/sigorta-secim-araci","/internet-secim-araci","/banka-secim-araci","/para-transferi-maliyet-hesaplayici",
+      "/sigorta-secim-araci","/internet-secim-araci","/banka-secim-araci","/para-transferi-maliyet-hesaplayici","/tasarruf-kontrolu",
       "/brutto-netto","/netto-brutto","/elterngeld-hesaplayici","/kindergeld-hesaplayici","/kinderzuschlag-uygunluk",
       "/blue-card-uygunluk","/chancenkarte-puan","/warmmiete-kira-butcesi","/nebenkosten-abrechnung",
       "/araba-toplam-maliyet","/internet-tarife-maliyet","/kleinunternehmer-ciro","/vatandaslik-testi",
@@ -185,7 +185,7 @@
     if(!hero||document.querySelector(".home-tools-growth"))return;
     const s=document.createElement("section");
     s.className="section popular-strip home-tools-growth";
-    s.innerHTML='<div class="container"><div class="section-header"><span class="section-label">Ücretsiz Araçlar</span><h2>Hesaplayın, kontrol edin, karar verin</h2><p>En çok ihtiyaç duyulan Almanya hesaplayıcılarına doğrudan ulaşın.</p></div><div class="popular-grid"><a class="popular-link" href="/nebenkosten-abrechnung-kontrolu/"><span>🧾</span><span><strong>Nebenkosten faturam doğru mu?</strong><small>Nachzahlung, süre ve gider kontrolü</small></span></a><a class="popular-link" href="/meslek-almanya-yolu-karar-araci/"><span>🧭</span><span><strong>Mesleğimle gelebilir miyim?</strong><small>Meslek, denklik ve vize yolu</small></span></a><a class="popular-link" href="/is-teklifi-degerlendirme-araci/"><span>💼</span><span><strong>İş teklifim iyi mi?</strong><small>Maaş, saat, izin ve vize eşiği</small></span></a><a class="popular-link" href="/sigorta-secim-araci/"><span>🛡️</span><span><strong>Sigorta Seçimi</strong><small>Risklerinize göre öncelik verin</small></span></a><a class="popular-link" href="/internet-secim-araci/"><span>🌐</span><span><strong>İnternet Seçimi</strong><small>DSL, Kabel veya Glasfaser</small></span></a><a class="popular-link" href="/para-transferi-maliyet-hesaplayici/"><span>💱</span><span><strong>Para Transferi</strong><small>Gerçek efektif maliyeti görün</small></span></a></div><div style="margin-top:1.25rem"><a class="btn btn-primary" href="/araclar/">Tüm ücretsiz araçları aç →</a></div></div>';
+    s.innerHTML='<div class="container"><div class="section-header"><span class="section-label">Ücretsiz Araçlar</span><h2>Hesaplayın, kontrol edin, karar verin</h2><p>En çok ihtiyaç duyulan Almanya hesaplayıcılarına doğrudan ulaşın.</p></div><div class="popular-grid"><a class="popular-link" href="/nebenkosten-abrechnung-kontrolu/"><span>🧾</span><span><strong>Nebenkosten faturam doğru mu?</strong><small>Nachzahlung, süre ve gider kontrolü</small></span></a><a class="popular-link" href="/tasarruf-kontrolu/"><span>💶</span><span><strong>Hangi sözleşmeyi kontrol etmeliyim?</strong><small>Elektrik, internet, Kfz ve sigorta sırası</small></span></a><a class="popular-link" href="/meslek-almanya-yolu-karar-araci/"><span>🧭</span><span><strong>Mesleğimle gelebilir miyim?</strong><small>Meslek, denklik ve vize yolu</small></span></a><a class="popular-link" href="/is-teklifi-degerlendirme-araci/"><span>💼</span><span><strong>İş teklifim iyi mi?</strong><small>Maaş, saat, izin ve vize eşiği</small></span></a><a class="popular-link" href="/internet-secim-araci/"><span>🌐</span><span><strong>İnternet Seçimi</strong><small>DSL, Kabel veya Glasfaser</small></span></a><a class="popular-link" href="/para-transferi-maliyet-hesaplayici/"><span>💱</span><span><strong>Para Transferi</strong><small>Gerçek efektif maliyeti görün</small></span></a></div><div style="margin-top:1.25rem"><a class="btn btn-primary" href="/araclar/">Tüm ücretsiz araçları aç →</a></div></div>';
     hero.after(s);
   }
 
@@ -205,6 +205,7 @@
     title.className="tools-all-title";
     title.textContent="Diğer ücretsiz araçlar";
     firstGrid.before(title);
+    firstGrid.insertAdjacentHTML("afterbegin",'<a class="card" href="/tasarruf-kontrolu/"><div class="card-icon">💶</div><h3>Tasarruf & Sözleşme Kontrolü</h3><p>Elektrik, gaz, internet, mobil hat, Kfz ve sigorta sözleşmelerini kontrol önceliğine göre sıralayın.</p></a>');
   }
 
   function showConsent(force){
