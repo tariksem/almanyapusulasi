@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-13",
-  "purpose": "Machine-readable evidence and guardrails for affiliate attribution configuration. This file does not prove a sale; it records what has been verified and what still requires authenticated dashboard confirmation.",
+  "purpose": "Machine-readable evidence and guardrails for affiliate attribution configuration. This file does not prove a sale; it records what has been verified at configuration level and what still depends on genuine partner-side conversion reporting.",
   "providers": {
     "TARIFCHECK": {
       "partnerId": "204420",
@@ -34,8 +34,8 @@
       "partnerId": "1177200",
       "accountStatus": "active",
       "accountEvidence": "Activation email received 2026-09-07; Partner-ID 1177200.",
-      "generatorEvidence": "CHECK24 Affiliate Support confirmed the Strom deeplink generator path on 2026-09-07.",
-      "configurationStatus": "pending_external_exact_match",
+      "generatorEvidence": "CHECK24 Affiliate Support confirmed the Strom deeplink generator path on 2026-09-07. On 2026-09-13 the logged-in Strom generator visitor URL was manually compared with the configured production URL and reported as an exact match.",
+      "configurationStatus": "verified_config",
       "host": "a.check24.net",
       "path": "/misc/click.php",
       "electricity": {
@@ -47,8 +47,10 @@
           "deep": "stromanbieter-wechseln",
           "cat": "1"
         },
-        "externalExactMatchStatus": "pending",
-        "requiredNextEvidence": "Copy the exact visitor URL generated while logged in at the CHECK24 Strom deeplink generator and compare it byte-for-byte with configuredUrl. Record date and exact-match result; do not infer or reconstruct the URL from Partner-ID."
+        "externalExactMatchStatus": "verified",
+        "verificationDate": "2026-09-13",
+        "verificationMethod": "Manual authenticated dashboard comparison; generated visitor URL matched configuredUrl exactly.",
+        "requiredNextEvidence": "No further configuration-level proof is required unless CHECK24 changes the generator output or the configured URL. Conversion proof still requires genuine partner-side click/lead/sale reporting."
       }
     }
   },
@@ -67,7 +69,7 @@
     },
     "electricity-comparison": {
       "provider": "CHECK24",
-      "status": "pending_external_exact_match"
+      "status": "verified_config"
     }
   },
   "trackingPolicy": {

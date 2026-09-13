@@ -11,10 +11,8 @@ const source = fs.readFileSync(configPath, 'utf8');
 const tracking = fs.readFileSync(trackingPath, 'utf8');
 const evidence = JSON.parse(fs.readFileSync(evidencePath, 'utf8'));
 const errors = [];
-const warnings = [];
 
 function fail(message) { errors.push(message); }
-function warn(message) { warnings.push(message); }
 
 const slotRegex = /"([^"]+)":\{enabled:(true|false),provider:"([^"]*)",partnerId:"([^"]*)",url:"([^"]*)"/g;
 const slots = new Map();
@@ -34,6 +32,13 @@ if (slots.size < 10) fail(`Could not parse affiliate configuration safely; only 
 const tarif = evidence.providers.TARIFCHECK;
 const check24 = evidence.providers.CHECK24;
 const verifiedTarifDeepLinks = new Set(tarif.verifiedDeepLinks || []);
+
+if (tarif.configurationStatus !== 'verified_config') fail('TARIFCHECK configuration evidence is not verified_config.');
+if (check24.configurationStatus !== 'verified_config') fail('CHECK24 configuration evidence is not verified_config.');
+if (!check24.electricity || check24.electricity.externalExactMatchStatus !== 'verified') {
+  fail('CHECK24 Strom authenticated generator exact-match evidence is no longer verified.');
+}
+if (!check24.electricity.verificationDate) fail('CHECK24 Strom verificationDate is missing.');
 
 for (const cfg of slots.values()) {
   if (!cfg.enabled) {
@@ -64,10 +69,7 @@ for (const cfg of slots.values()) {
     for (const [name, value] of Object.entries(expected.requiredParams || {})) {
       if (url.searchParams.get(name) !== value) fail(`${cfg.key}: CHECK24 parameter ${name} mismatch.`);
     }
-    if (cfg.url !== expected.configuredUrl) fail(`${cfg.key}: configured URL changed without updating the attribution evidence record.`);
-    if (expected.externalExactMatchStatus !== 'verified') {
-      warn(`${cfg.key}: CHECK24 account/URL shape is guarded, but authenticated generator exact-match remains ${expected.externalExactMatchStatus}.`);
-    }
+    if (cfg.url !== expected.configuredUrl) fail(`${cfg.key}: configured URL changed from the authenticated exact-match evidence record.`);
   } else {
     fail(`${cfg.key}: enabled slot uses unapproved provider '${cfg.provider}'.`);
   }
@@ -79,6 +81,7 @@ for (const [key, record] of Object.entries(evidence.revenueCriticalSlots || {}))
   else {
     if (!cfg.enabled) fail(`${key}: revenue-critical slot is unexpectedly disabled.`);
     if (cfg.provider !== record.provider) fail(`${key}: provider differs from attribution evidence.`);
+    if (record.status !== 'verified_config') fail(`${key}: revenue-critical evidence status is not verified_config.`);
   }
 }
 
@@ -92,7 +95,7 @@ if (!tracking.includes('partner:')) fail('Commercial tracking no longer records 
 
 console.log(`Affiliate slots parsed: ${slots.size}`);
 console.log(`Enabled slots: ${[...slots.values()].filter(x => x.enabled).length}`);
-for (const message of warnings) console.log(`WARNING: ${message}`);
+console.log(`CHECK24 Strom exact match: ${check24.electricity.externalExactMatchStatus} (${check24.electricity.verificationDate})`);
 for (const message of errors) console.error(`ERROR: ${message}`);
 
 if (errors.length) process.exit(1);
