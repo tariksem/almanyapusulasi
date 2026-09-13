@@ -132,9 +132,7 @@ jobs:
           node - <<'JS'
           const core = require('./assets/js/umzug-core.js');
           const result = core.runTests();
-          for (const item of result.cases) {
-            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
-          }
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
           if (!result.pass) process.exit(1);
           JS
       - name: Validate Miet budget rules
@@ -142,9 +140,7 @@ jobs:
           node - <<'JS'
           const core = require('./assets/js/miet-budget-core.js');
           const result = core.runTests();
-          for (const item of result.cases) {
-            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
-          }
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
           if (!result.pass) process.exit(1);
           JS
       - name: Validate Elterngeld budget rules
@@ -152,9 +148,15 @@ jobs:
           node - <<'JS'
           const core = require('./assets/js/elterngeld-core.js');
           const result = core.runTests();
-          for (const item of result.cases) {
-            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
-          }
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
+          if (!result.pass) process.exit(1);
+          JS
+      - name: Validate Risikoleben need rules
+        run: |
+          node - <<'JS'
+          const core = require('./assets/js/risikoleben-core.js');
+          const result = core.runTests();
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
           if (!result.pass) process.exit(1);
           JS
       - name: Validate German letter templates
@@ -162,9 +164,7 @@ jobs:
           node - <<'JS'
           const core = require('./assets/js/letter-core.js');
           const result = core.runTests();
-          for (const item of result.cases) {
-            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
-          }
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
           if (!result.pass) process.exit(1);
           JS
       - name: Validate Auto-Kosten rules
@@ -172,9 +172,7 @@ jobs:
           node - <<'JS'
           const core = require('./assets/js/auto-cost-core.js');
           const result = core.runTests();
-          for (const item of result.cases) {
-            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
-          }
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
           if (!result.pass) process.exit(1);
           JS
       - name: Validate Familienleistungen routing
@@ -182,8 +180,6 @@ jobs:
           node - <<'JS'
           const core = require('./assets/js/family-benefits-core.js');
           const result = core.runTests();
-          for (const item of result.cases) {
-            console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
-          }
+          for (const item of result.cases) console.log(`${item.ok ? 'PASS' : 'FAIL'} ${item.name}`);
           if (!result.pass) process.exit(1);
           JS
