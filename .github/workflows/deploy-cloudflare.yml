@@ -100,6 +100,7 @@ jobs:
               'tasarruf-kontrolu': 'https://almanyapusulasi.de/tasarruf-kontrolu/',
               'nebenkosten-abrechnung-kontrolu': 'https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/',
               'almanyaya-tasinma-kontrol-listesi': 'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/',
+              'warmmiete-kira-butcesi-hesaplayici': 'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/',
           }
 
           errors = []
@@ -124,6 +125,7 @@ jobs:
               'tasarruf-kontrolu': 'id="savings-form"',
               'nebenkosten-abrechnung-kontrolu': 'id="nk-form"',
               'almanyaya-tasinma-kontrol-listesi': 'id="plan-form"',
+              'warmmiete-kira-butcesi-hesaplayici': 'id="rent-form"',
           }
           for slug, marker in markers.items():
               html = (Path('dist') / slug / 'index.html').read_text(encoding='utf-8', errors='replace')
@@ -169,12 +171,14 @@ jobs:
               'https://almanyapusulasi.de/tasarruf-kontrolu/',
               'https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/',
               'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/',
+              'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/',
           ]
 
           markers = {
               'https://almanyapusulasi.de/tasarruf-kontrolu/': 'id="savings-form"',
               'https://almanyapusulasi.de/nebenkosten-abrechnung-kontrolu/': 'id="nk-form"',
               'https://almanyapusulasi.de/almanyaya-tasinma-kontrol-listesi/': 'id="plan-form"',
+              'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/': 'id="rent-form"',
           }
 
           failures = []

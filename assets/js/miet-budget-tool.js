@@ -1,0 +1,24 @@
+(function(){
+  "use strict";
+  var C=window.MietBudgetCore,form=document.getElementById("rent-form"),result=document.getElementById("rent-result");
+  if(!C||!form||!result)return;
+  var started=false,viewed=false,money=new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR",maximumFractionDigits:0});
+  function track(name,params){try{var payload=Object.assign({tool_name:"miet_budget_check"},params||{});if(window.APAnalytics&&typeof window.APAnalytics.track==="function")window.APAnalytics.track(name,payload);else if(localStorage.getItem("ap_cookie_consent")==="accepted"&&typeof window.gtag==="function")window.gtag("event",name,payload);}catch(e){}}
+  function markViewed(){if(viewed)return;try{if(localStorage.getItem("ap_cookie_consent")!=="accepted")return;}catch(e){return;}viewed=true;track("tool_view",{tool_path:location.pathname});}
+  document.addEventListener("ap:analytics-ready",markViewed);document.addEventListener("DOMContentLoaded",function(){setTimeout(markViewed,0);});
+  form.addEventListener("input",function(){if(!started){started=true;track("tool_start");}},{once:true});
+  function value(id){return document.getElementById(id).value;}
+  function render(x){
+    document.getElementById("warm-total").textContent=money.format(x.warm);document.getElementById("monthly-total").textContent=money.format(x.monthly);document.getElementById("upfront-total").textContent=money.format(x.upfront);
+    var signal=document.getElementById("rent-signal"),summary=document.getElementById("rent-result-summary"),warning=document.getElementById("rent-warning"),remaining=document.getElementById("remaining-total"),ratio=document.getElementById("ratio-note");signal.className="rent-signal";
+    if(x.band==="no_income"){signal.textContent="Aylık toplam hazır";summary.textContent="Aylık gider ve başlangıç nakit ihtiyacı hesaplandı. Gelir oranı için net hane geliri ekleyebilirsiniz.";remaining.textContent="—";ratio.textContent="Gelir girilmedi";warning.innerHTML="<strong>Kontrol:</strong> Isınmanın Nebenkosten içinde olup olmadığını sözleşmeden doğrulayın; aynı kalemi iki kez eklemeyin.";}
+    else {remaining.textContent=money.format(x.remaining);ratio.textContent="Konut gideri gelirin %"+x.ratio.toFixed(1).replace(".",",")+"'i";if(x.band==="under_30"){signal.textContent="Gelirin %30 altında";summary.textContent="Konut gideri gelirinizin yüzde 30'unun altında görünüyor.";warning.innerHTML="<strong>Kontrol:</strong> Son karardan önce ulaşım, borç, çocuk ve diğer zorunlu giderler için kalan bütçeyi ayrıca değerlendirin.";}else if(x.band==="30_40"){signal.textContent="Gelirin %30–40'ı";signal.classList.add("is-watch");summary.textContent="Konut gideri gelirinizin yüzde 30–40 aralığında görünüyor.";warning.innerHTML="<strong>Bütçe sinyali:</strong> Elektrik, internet, ulaşım ve beklenmeyen giderlerdeki artışlara karşı aylık tamponu kontrol edin.";}else{signal.textContent="Gelirin %40 üzerinde";signal.classList.add("is-high");summary.textContent="Konut gideri gelirinizin yüzde 40'ından fazlasını kullanıyor.";warning.innerHTML="<strong>Yüksek bütçe baskısı:</strong> Bu sonuç otomatik ret değildir; fakat diğer zorunlu giderler ve acil durum payı için kalan tutarı özellikle kontrol edin.";}}
+    result.hidden=false;result.scrollIntoView({behavior:"smooth",block:"start"});
+    if(window.APAffiliate){window.APAffiliate.renderAll(result);result.querySelectorAll(".affiliate-slot.is-active").forEach(function(el){track("affiliate_slot_view",{commercial_area:el.getAttribute("data-affiliate-slot")||"",slot_active:true});});}
+    track("free_result_viewed",{ratio_band:x.band,has_income:x.income>0,has_deposit:x.deposit>0,has_setup_cost:x.setup>0});if(window.APDecision)window.APDecision.complete("housing","Gerçek konut bütçemi hesapladım",{ratio_band:x.band});
+  }
+  form.addEventListener("submit",function(e){e.preventDefault();var x=C.calculate({cold:value("cold"),utilities:value("utilities"),heating:value("heating"),electricity:value("electricity"),internet:value("internet"),other:value("other"),income:value("income"),deposit:value("deposit"),setup:value("setup")}),error=document.getElementById("rent-error");if(!x.valid){error.hidden=false;return;}error.hidden=true;render(x);});
+  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".rent-offers a");if(a)track("affiliate_clicked",{commercial_area:a.getAttribute("data-commercial-area")||"",partner:a.getAttribute("data-commercial-provider")||""});});
+  document.getElementById("rent-reset").addEventListener("click",function(){result.hidden=true;form.scrollIntoView({behavior:"smooth",block:"start"});track("tool_reset");});
+  var tests=C.runTests();if(!tests.pass){console.error("Miet budget core tests failed",tests);form.querySelector(".rent-submit").disabled=true;}
+})();

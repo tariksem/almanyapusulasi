@@ -1,1 +1,64 @@
-<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Warmmiete ve Kira Bütçesi Hesaplayıcı | Almanya</title><meta name="description" content="Kaltmiete, Nebenkosten, ısınma, elektrik ve internet giderlerini toplayarak Almanya'daki gerçek aylık konut bütçenizi görün."><link rel="canonical" href="https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/"><meta name="google-adsense-account" content="ca-pub-6014752203462020"><link rel="stylesheet" href="/assets/style.css"><link rel="icon" href="/favicon.ico"><script defer src="/assets/js/analytics-consent.js"></script><script defer src="/assets/js/decision-sync.js"></script><style>.budget-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.budget-field{display:grid;gap:6px}.budget-field span{font-weight:700;color:#243b53}.budget-field input{width:100%;min-height:48px;padding:12px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;font:inherit;font-size:16px}.budget-actions{grid-column:1/-1}.budget-actions .btn{width:100%}.budget-result{grid-column:1/-1;margin-top:2px;padding:16px;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-weight:700}.budget-note{font-size:13px;color:#64748b;font-weight:400}@media(max-width:640px){.budget-form{grid-template-columns:1fr}.budget-actions,.budget-result{grid-column:auto}}</style></head><body><header class="site-header"></header><main class="article-wrap"><article class="article"><span class="badge">Ücretsiz Araç</span><h1>Warmmiete ve Gerçek Kira Bütçesi Hesaplayıcı</h1><p>İlanda görünen Kaltmiete ile gerçek aylık konut gideri aynı değildir. Nebenkosten, ısınma ve çoğu zaman elektrik/internet ayrıca hesaba katılmalıdır.</p><div class="budget-form"><label class="budget-field" for="cold"><span>Kaltmiete (€)</span><input id="cold" type="number" min="0" value="900" inputmode="decimal"></label><label class="budget-field" for="nk"><span>Nebenkosten (€)</span><input id="nk" type="number" min="0" value="220" inputmode="decimal"></label><label class="budget-field" for="heat"><span>Isınma (€)</span><input id="heat" type="number" min="0" value="0" inputmode="decimal"><small class="budget-note">Nebenkosten içinde değilse ayrıca girin.</small></label><label class="budget-field" for="power"><span>Elektrik (€)</span><input id="power" type="number" min="0" value="70" inputmode="decimal"></label><label class="budget-field" for="net"><span>İnternet (€)</span><input id="net" type="number" min="0" value="40" inputmode="decimal"></label><label class="budget-field" for="income"><span>Aylık net hane geliri (€)</span><input id="income" type="number" min="0" value="3500" inputmode="decimal"></label><div class="budget-actions"><button class="btn btn-primary" onclick="calc()">Gerçek aylık konut giderini hesapla</button></div><div id="result" class="budget-result" aria-live="polite"></div></div><h2>Warmmiete nedir?</h2><p>Warmmiete genellikle Kaltmiete ile sözleşmedeki Betriebskosten/Nebenkosten toplamını ifade eder. Sözleşmeye göre ısınma dahil olabilir veya ayrıca gösterilebilir. Elektrik ve internet çoğu kiralamada kiracının ayrı sözleşmesidir.</p><p><a href="/nebenkosten-yan-giderler-hesabi/">Nebenkosten rehberi →</a><br><a href="/almanyada-ev-kiralama-rehberi/">Ev kiralama rehberi →</a></p><script>function calc(){let c=['cold','nk','heat','power','net'].reduce((s,id)=>s+(Number(document.getElementById(id).value)||0),0),i=Number(document.getElementById('income').value)||0,p=i?c/i*100:0;document.getElementById('result').innerHTML='Tahmini toplam aylık konut gideri: '+c.toLocaleString('de-DE')+' €'+(i?'<br>Net hane gelirinin yaklaşık %'+p.toFixed(1).replace('.',',')+'\'i.':'');if(window.APDecision)window.APDecision.complete('housing','Konut bütçemi hesapladım',{monthly_housing:Math.round(c),income:i?Math.round(i):null,housing_ratio:i?Math.round(p*10)/10:null});if(typeof window.gtag==='function')window.gtag('event','housing_budget_result',{monthly_housing:Math.round(c),housing_ratio:i?Math.round(p*10)/10:null});}calc();</script></article></main><footer class="footer"></footer></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Warmmiete ve Kira Bütçesi Hesaplayıcı | Miet-Budget Check</title>
+  <meta name="description" content="Kaltmiete, Nebenkosten, ısınma, elektrik, internet, Kaution ve taşınma giderleriyle gerçek aylık konut maliyetinizi ve başlangıç nakit ihtiyacınızı hesaplayın.">
+  <link rel="canonical" href="https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/">
+  <meta name="google-adsense-account" content="ca-pub-6014752203462020">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/commercial.css">
+  <link rel="stylesheet" href="/assets/miet-budget-tool.css">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Warmmiete ve Kira Bütçesi Hesaplayıcı","url":"https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","isAccessibleForFree":true,"dateModified":"2026-09-13"}</script>
+  <script defer src="/assets/js/analytics-consent.js"></script>
+  <script defer src="/assets/js/decision-sync.js"></script>
+  <script defer src="/assets/js/commercial-tracking.js"></script>
+  <script defer src="/assets/js/affiliate-slots.js"></script>
+</head>
+<body>
+<header class="site-header"></header>
+<main>
+  <section class="rent-hero"><div class="container"><span class="badge">Ücretsiz Miet-Budget Check</span><h1>İlandaki kirayı gerçek konut maliyetine çevirin.</h1><p>Warmmiete, elektrik ve internet gibi aylık giderleri; Kaution ve taşınma masrafları gibi başlangıç ödemelerinden ayırın. Tek sonuçta aylık yükü ve taşınma için gereken nakdi görün.</p><a class="btn btn-primary" href="#rent-form">Kira bütçemi kontrol et</a></div></section>
+
+  <section class="section"><div class="container rent-layout">
+    <form id="rent-form" class="rent-panel" novalidate>
+      <div class="section-header"><span class="section-label">Aylık konut giderleri</span><h2>İlandaki ve sözleşmedeki tutarlar</h2><p>Isınma Nebenkosten içindeyse ayrıca tekrar girmeyin.</p></div>
+      <div class="rent-fields">
+        <label>Kaltmiete (€)<input id="cold" inputmode="decimal" placeholder="örn. 900" required></label>
+        <label>Nebenkosten (€)<input id="utilities" inputmode="decimal" placeholder="örn. 220" required></label>
+        <label>Isınma — ayrıca ödeniyorsa (€)<input id="heating" inputmode="decimal" placeholder="örn. 80"></label>
+        <label>Elektrik (€)<input id="electricity" inputmode="decimal" placeholder="örn. 70"></label>
+        <label>İnternet (€)<input id="internet" inputmode="decimal" placeholder="örn. 40"></label>
+        <label>Park yeri / diğer sabit gider (€)<input id="other" inputmode="decimal" placeholder="örn. 60"></label>
+        <label class="wide">Aylık net hane geliri (€) <small>İsteğe bağlı; yalnız bu cihazda hesaplanır.</small><input id="income" inputmode="decimal" placeholder="örn. 3500"></label>
+      </div>
+
+      <div class="section-header upfront-head"><span class="section-label">Tek seferlik başlangıç</span><h2>Taşınırken gereken nakit</h2></div>
+      <div class="rent-fields">
+        <label>Kaution / depozito (€)<input id="deposit" inputmode="decimal" placeholder="örn. 2700"></label>
+        <label>Taşınma, mobilya ve kurulum (€)<input id="setup" inputmode="decimal" placeholder="örn. 1200"></label>
+      </div>
+      <div id="rent-error" class="form-error" role="alert" hidden>Kaltmiete ve Nebenkosten için geçerli, negatif olmayan tutarlar girin.</div>
+      <button class="btn btn-primary rent-submit" type="submit">Gerçek konut bütçemi hesapla</button>
+      <p class="privacy-note">Tutarlar sunucuya gönderilmez ve analiz olaylarına eklenmez. Sonuç yalnız tarayıcınızda hesaplanır.</p>
+    </form>
+
+    <section id="rent-result" class="rent-result" hidden aria-live="polite">
+      <div class="rent-result-head"><div><span class="section-label">Ücretsiz sonuç</span><h2>Gerçek konut bütçeniz</h2><p id="rent-result-summary"></p></div><span id="rent-signal" class="rent-signal"></span></div>
+      <div class="rent-metrics"><div><span>Sözleşme Warmmiete</span><strong id="warm-total">—</strong><small>Kaltmiete + Nebenkosten + ayrıca girilen ısınma</small></div><div><span>Gerçek aylık toplam</span><strong id="monthly-total">—</strong><small>Elektrik, internet ve diğer giderlerle</small></div><div><span>Gelir sonrası kalan</span><strong id="remaining-total">—</strong><small id="ratio-note">Gelir girilmedi</small></div><div><span>Başlangıç nakit ihtiyacı</span><strong id="upfront-total">—</strong><small>Kaution + kurulum + ilk ay toplamı</small></div></div>
+      <div id="rent-warning" class="info-box"></div>
+      <section class="rent-actions"><span class="section-label">Sonraki kontroller</span><h2>Taşınma ve sözleşme maliyetlerini tamamlayın</h2><div class="grid grid-2"><a class="card" href="/almanyaya-tasinma-kontrol-listesi/"><h3>📦 Umzug planını oluştur</h3><p>Adres, kurum ve sözleşme görevlerini kişiselleştirin.</p></a><a class="card" href="/nebenkosten-abrechnung-kontrolu/"><h3>🧾 Nebenkosten hesabını kontrol et</h3><p>Yıllık hesap, süre ve gider kalemlerini inceleyin.</p></a></div></section>
+      <section class="rent-offers"><span class="section-label">İlgili karşılaştırmalar</span><h2>Yalnız ihtiyacınız olan sözleşmeye geçin</h2><div data-affiliate-slot="electricity-comparison" aria-live="polite"></div><div data-affiliate-slot="haftpflicht-comparison" aria-live="polite"></div><div data-affiliate-slot="hausrat-comparison" aria-live="polite"></div><div class="rent-disclosure"><strong>Ticari şeffaflık</strong><p>Partner bağlantısı üzerinden işlem yapılırsa Almanya Pusulası komisyon alabilir. Komisyon hesap sonucunu veya gösterim sırasını değiştirmez.</p></div></section>
+      <button id="rent-reset" class="btn btn-secondary" type="button">Yeni hesaplama</button>
+    </section>
+  </div></section>
+
+  <section class="section rent-guide"><div class="container"><div class="section-header"><span class="section-label">Doğru okuma</span><h2>Warmmiete tek başına gerçek aylık gider değildir</h2><p>Sözleşmeye göre ısınma dahil olabilir veya ayrıca gösterilebilir. Elektrik ve internet çoğu kiralamada ayrı sözleşmedir. Hesap sonucunu bu nedenle teklif veya sözleşmedeki kalemlerle doğrulayın.</p></div><div class="grid grid-3"><a class="card" href="/warmmiete-kaltmiete-farki/"><h3>Warmmiete–Kaltmiete farkı</h3><p>İlanda görülen kira kalemlerini doğru ayırın.</p></a><a class="card" href="/kaution-depozito-geri-alma/"><h3>Kaution ve depozito</h3><p>Ödeme, belge ve iade sürecini inceleyin.</p></a><a class="card" href="/kira-sozlesmesi-mietvertrag-nelere-dikkat/"><h3>Mietvertrag kontrolü</h3><p>İmzadan önce temel kira sözleşmesi noktalarını kontrol edin.</p></a></div><div class="info-box"><strong>Karar notu:</strong> Gelir oranı yalnızca bütçe planlama sinyalidir; ev sahibi kabulü, Wohngeld hakkı veya hukuki uygunluk kararı değildir.</div></div></section>
+</main>
+<footer class="footer"></footer>
+<script src="/assets/js/miet-budget-core.js"></script>
+<script src="/assets/js/miet-budget-tool.js"></script>
+</body>
+</html>
