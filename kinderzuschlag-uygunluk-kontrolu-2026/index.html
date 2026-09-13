@@ -40,7 +40,7 @@
     <button class="btn btn-primary span2" type="button" onclick="calc()" data-track="kiz_calculate">Durumumu değerlendir →</button>
   </div>
 
-  <div id="out" class="result" aria-live="polite"></div>
+  <div id="out" class="result" aria-live="polite"><p>Bilgilerinizi seçip “Durumumu değerlendir” düğmesine basın.</p></div>
 
   <section><h2>KiZ ihtimali varsa aynı aile bütçesinde Wohngeld'i de kontrol edin</h2><div class="grid grid-2"><a class="card" href="/wohngeld/" data-track="kiz_next_wohngeld"><h3>🏠 Wohngeld rehberi</h3><p>Kira yükünüz yüksekse hane, gelir ve konut gideri üzerinden ikinci yardım kapısını kontrol edin.</p></a><a class="card" href="/warmmiete-kira-butcesi-hesaplayici/" data-track="kiz_next_rent_budget"><h3>📊 Kira bütçesi kontrolü</h3><p>Warmmiete'nin aylık hane geliri içindeki gerçek payını görün.</p></a></div></section>
 
@@ -50,10 +50,11 @@
   <h2>Başvuru için pratik dosya kontrolü</h2><ul><li>Başvurudan önceki son 6 aya ilişkin gelir kanıtlarını hazırlayın.</li><li>Kira ve diğer konut giderlerini gösteren belgeleri hazırlayın.</li><li>Çocukta nafaka, Unterhaltsvorschuss veya başka gelir varsa doğru beyan edin.</li><li>Familienkasse'nin istediği mal varlığı bilgilerini eksiksiz verin.</li><li>KiZ geçmiş aylar için geriye dönük ödenmediğinden başvuruyu gereksiz yere ertelemeyin.</li></ul>
   <div class="info-box"><strong>KiZ aldıktan sonra ek faydaları da kontrol edin:</strong> Bildung und Teilhabe kapsamında okul/öğle yemeği, sınıf gezileri veya benzeri destekler gündeme gelebilir; çocuk bakım ücretinden muafiyet imkânını da yerel Jugendamt üzerinden kontrol edebilirsiniz.</div>
   <h2>Resmî doğrulama ve sonraki adım</h2><ul><li><a href="https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kiz-lotse" target="_blank" rel="noopener">Familienkasse — resmî KiZ-Lotse</a></li><li><a href="https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer" target="_blank" rel="noopener">Familienkasse — Anspruch, Höhe, Dauer</a></li><li><a href="https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder/formulare-kinderzuschlag" target="_blank" rel="noopener">Familienkasse — KiZ formları ve belgeler</a></li></ul>
-  <p><a href="/kinderzuschlag/">Kinderzuschlag ana rehberi</a> · <a href="/kindergeld/">Kindergeld rehberi</a> · <a href="/aile-cocuk/">Aile yardımları merkezi</a></p><p class="note">Bu araç genel ön kontroldür; bağlayıcı karar Familienkasse'ye aittir.</p>
+  <p><a href="/kinderzuschlag/">Kinderzuschlag ana rehberi</a> · <a href="/kindergeld/">Kindergeld rehberi</a> · <a href="/aile-cocuk/#family-benefits-form">Tüm aile desteklerini sırala</a></p><p class="note">Bu araç genel ön kontroldür; bağlayıcı karar Familienkasse'ye aittir.</p>
 </article></main>
 <footer class="footer"></footer>
 <script>
+function trackKiZ(name,params){try{var payload=Object.assign({tool_name:'kinderzuschlag_precheck'},params||{});if(window.APAnalytics&&typeof window.APAnalytics.track==='function')window.APAnalytics.track(name,payload);else if(localStorage.getItem('ap_cookie_consent')==='accepted'&&typeof window.gtag==='function')window.gtag('event',name,payload)}catch(e){}}
 function yes(id){return document.getElementById(id).value==='yes'}
 function calc(){
   const single=document.getElementById('family').value==='single';const income=Number(document.getElementById('income').value)||0;const min=single?600:900;
@@ -65,8 +66,7 @@ function calc(){
   let cls='ok',title='Temel şartlarda açık blokaj görünmüyor',action='Resmî KiZ-Lotse ile ön kontrolü doğrulayın ve başvuru dosyanızı hazırlayın.';
   if(blockers.length){cls='stop';title='Başvuru öncesi temel blokaj var';action='Önce kırmızı görünen temel şartları çözün veya Familienkasse ile doğrulayın.'}else if(docs.length){cls='warn';title='Temel şartlar geçiyor; dosya / hesap doğrulaması gerekiyor';action='Eksik noktaları tamamlayın, ardından KiZ-Lotse ve resmî başvuruya geçin.'}
   document.getElementById('out').className='result '+cls;document.getElementById('out').innerHTML='<h2>'+title+'</h2><div class="checks">'+hard.map(x=>'<div class="check">'+(x[1]?'✓':'✕')+' '+x[0]+'</div>').join('')+'</div>'+(blockers.length?'<h3>Temel blokajlar</h3><ul>'+blockers.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'')+(docs.length?'<h3>Başvurudan önce tamamlayın</h3><ul>'+docs.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'')+'<div class="decision"><strong>Şimdi ne yapmalısınız?</strong><p>'+action+'</p></div><p><a class="btn btn-primary" href="https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kiz-lotse" target="_blank" rel="noopener" data-track="kiz_official_lotse">Resmî KiZ-Lotse ile doğrula →</a></p>';
-  if(typeof window.gtag==='function')window.gtag('event','tool_calculate',{tool_path:'/kinderzuschlag-uygunluk-kontrolu-2026/',result_blockers:blockers.length,result_followups:docs.length,family_type:single?'single':'couple'});
+  trackKiZ('free_result_viewed',{result_band:blockers.length?'blocked':docs.length?'followup':'clear'});
 }
-calc();
 </script>
 </body></html>

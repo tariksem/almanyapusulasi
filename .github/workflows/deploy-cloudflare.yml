@@ -103,6 +103,7 @@ jobs:
               'warmmiete-kira-butcesi-hesaplayici': 'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/',
               'almanca-mektup-asistani': 'https://almanyapusulasi.de/almanca-mektup-asistani/',
               'araba-toplam-maliyet-hesaplayici': 'https://almanyapusulasi.de/araba-toplam-maliyet-hesaplayici/',
+              'aile-cocuk': 'https://almanyapusulasi.de/aile-cocuk/',
           }
 
           errors = []
@@ -130,6 +131,7 @@ jobs:
               'warmmiete-kira-butcesi-hesaplayici': 'id="rent-form"',
               'almanca-mektup-asistani': 'id="letter-form"',
               'araba-toplam-maliyet-hesaplayici': 'id="auto-form"',
+              'aile-cocuk': 'id="family-benefits-form"',
           }
           for slug, marker in markers.items():
               html = (Path('dist') / slug / 'index.html').read_text(encoding='utf-8', errors='replace')
@@ -178,6 +180,7 @@ jobs:
               'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/',
               'https://almanyapusulasi.de/almanca-mektup-asistani/',
               'https://almanyapusulasi.de/araba-toplam-maliyet-hesaplayici/',
+              'https://almanyapusulasi.de/aile-cocuk/',
           ]
 
           markers = {
@@ -187,6 +190,7 @@ jobs:
               'https://almanyapusulasi.de/warmmiete-kira-butcesi-hesaplayici/': 'id="rent-form"',
               'https://almanyapusulasi.de/almanca-mektup-asistani/': 'id="letter-form"',
               'https://almanyapusulasi.de/araba-toplam-maliyet-hesaplayici/': 'id="auto-form"',
+              'https://almanyapusulasi.de/aile-cocuk/': 'id="family-benefits-form"',
           }
 
           failures = []

@@ -16,9 +16,11 @@
   <meta name="google-adsense-account" content="ca-pub-6014752203462020">
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="stylesheet" href="/assets/commercial.css">
+  <link rel="stylesheet" href="/assets/family-benefits-tool.css">
   <link rel="icon" href="/favicon.ico">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","url":"https://almanyapusulasi.de/aile-cocuk/","name":"Almanya Aile Yardımları 2026","inLanguage":"tr","dateModified":"2026-09-13"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","url":"https://almanyapusulasi.de/aile-cocuk/","name":"Almanya Aile Yardımları 2026","inLanguage":"tr","dateModified":"2026-09-13"},{"@type":"WebApplication","name":"Familienleistungen Check","url":"https://almanyapusulasi.de/aile-cocuk/#family-benefits-form","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","isAccessibleForFree":true}]}</script>
   <script defer src="/assets/js/analytics-consent.js"></script>
+  <script defer src="/assets/js/decision-sync.js"></script>
   <script defer src="/assets/js/commercial-tracking.js"></script>
   <script defer src="/assets/js/affiliate-slots.js"></script>
 </head>
@@ -38,7 +40,7 @@
         <h1>Önce hangi aile yardımını kontrol etmeniz gerektiğini bulun.</h1>
         <p>Kindergeld, Kinderzuschlag, Wohngeld ve Elterngeld aynı şey değildir. Aile durumunuza göre doğru yardımı seçin; ücretsiz aracımızla ön kontrol yapın ve ardından resmî başvuruya geçin.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#aile-karari" data-track="family_hub_decision_start">Aile yardımı yolumu bul →</a>
+          <a class="btn btn-primary" href="#family-benefits-form" data-track="family_hub_decision_start">Aile yardımı yolumu bul →</a>
           <a class="btn btn-secondary" href="/kinderzuschlag-uygunluk-kontrolu-2026/" data-track="family_hub_kiz_tool">KiZ ön kontrolünü aç</a>
         </div>
       </div>
@@ -55,21 +57,33 @@
     </div>
   </section>
 
-  <section class="section" id="aile-karari">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Karar sırası</span>
-        <h2>Durumunuza göre ilk kontrol edeceğiniz hak</h2>
-        <p>Bir hakkı kontrol etmek diğerini otomatik olarak dışlamaz. Özellikle çocuklu ve kira yükü yüksek hanelerde Kindergeld + Kinderzuschlag + Wohngeld birlikte değerlendirilmelidir.</p>
+  <section class="section" id="aile-karari"><div class="container family-layout">
+    <form id="family-benefits-form" class="family-panel" novalidate>
+      <div class="section-header"><span class="section-label">Durum seçimi</span><h2>Size uyan tüm seçenekleri işaretleyin</h2><p>Bu araç gelir veya kimlik bilgisi istemez. Birden fazla destek aynı anda kontrol edilmesi gerekebilir.</p></div>
+      <div class="family-options">
+        <label><input type="checkbox" name="scenario" value="new_baby"><span><strong>Doğum bekliyoruz veya yeni bebeğimiz var</strong><small>Elterngeld, Mutterschutz ve Elternzeit</small></span></label>
+        <label><input type="checkbox" name="scenario" value="regular_child"><span><strong>Çocuk için temel ödemeyi kontrol etmek istiyorum</strong><small>Kindergeld ön kontrolü ve başvuru</small></span></label>
+        <label><input type="checkbox" name="scenario" value="adult_child"><span><strong>Çocuğum 18 yaşını doldurdu</strong><small>Eğitim, Ausbildung veya üniversite koşulları</small></span></label>
+        <label><input type="checkbox" name="scenario" value="abroad_turkey"><span><strong>Çocuğum Türkiye’de yaşıyor</strong><small>Sınır ötesi Kindergeld kuralları</small></span></label>
+        <label><input type="checkbox" name="scenario" value="tight_budget"><span><strong>Gelirimiz var ama aile bütçesi yetmiyor</strong><small>Kinderzuschlag ve Wohngeld</small></span></label>
+        <label><input type="checkbox" name="scenario" value="housing_pressure"><span><strong>Kira ve konut giderleri bütçeyi zorluyor</strong><small>Wohngeld ve gerçek konut bütçesi</small></span></label>
+        <label><input type="checkbox" name="scenario" value="sick_child"><span><strong>Çocuğum hastalandığında izin ve ödeme arıyorum</strong><small>Kinderkrankengeld ve bildirim yolu</small></span></label>
+        <label><input type="checkbox" name="scenario" value="childcare"><span><strong>Kita yeri veya çocuk bakımı arıyorum</strong><small>Kita başvurusu ve yerel süreç</small></span></label>
       </div>
-      <div class="grid grid-2">
-        <a class="card" href="/kindergeld/"><h3>Çocuğum var → Kindergeld</h3><p>2026 tutarı, başvuru, ödeme günü, 18 yaş sonrası ve sınır ötesi durumlar.</p></a>
-        <a class="card" href="/kinderzuschlag/"><h3>Gelirim var ama aile bütçesi yetmiyor → KiZ</h3><p>Minimum gelir kapısı, 297 € azami tutar, belgeler ve Wohngeld ilişkisi.</p></a>
-        <a class="card" href="/wohngeld/"><h3>Kira bütçeyi zorluyor → Wohngeld</h3><p>Hane, gelir, kira/konut yükü ve Mietenstufe üzerinden uygunluk mantığı.</p></a>
-        <a class="card" href="/elterngeld-2026/"><h3>Doğum sonrası çalışma azalacak → Elterngeld</h3><p>Basiselterngeld, ElterngeldPlus, gelir sınırı ve planlama.</p></a>
-      </div>
-    </div>
-  </section>
+      <div id="family-benefits-error" class="form-error" role="alert" hidden>Devam etmek için en az bir durum seçin.</div>
+      <button class="btn btn-primary family-submit" type="submit">Kontrol sıramı oluştur</button>
+      <p class="privacy-note">Seçimleriniz sunucuya gönderilmez veya saklanmaz. Analitik olaylarına seçtiğiniz özel durumlar eklenmez.</p>
+    </form>
+
+    <section id="family-benefits-result" class="family-result" hidden aria-live="polite">
+      <div class="family-result-head"><div><span class="section-label">Ücretsiz sonuç</span><h2>Kontrol sıranız</h2><p id="family-benefits-summary"></p></div><span id="family-benefits-signal" class="family-signal"></span></div>
+      <div id="family-primary-routes" class="family-routes"></div>
+      <div id="family-secondary-wrap" class="family-secondary" hidden><span class="section-label">Ayrıca kontrol edin</span><div id="family-secondary-routes" class="family-routes compact"></div></div>
+      <div class="info-box"><strong>Önemli:</strong> Bu sonuç hak kazandığınız anlamına gelmez. Bağlayıcı sonucu ilgili kurumun resmî değerlendirmesi verir.</div>
+      <aside class="family-waitlist"><div><span>Geliştirme listesi</span><h2>Kişisel belge dosyası ve başvuru takibi</h2><p>Seçtiğiniz destekler için tek belge listesi ve takip planı hazır olduğunda haber alın.</p></div><a id="family-interest" class="btn btn-secondary" href="mailto:info@almanyapusulasi.de?subject=Familienleistungen%20dosya%20ve%20takip%20paketi&amp;body=Ki%C5%9Fisel%20belge%20dosyas%C4%B1%20ve%20ba%C5%9Fvuru%20takibi%20haz%C4%B1r%20oldu%C4%9Funda%20haber%20almak%20istiyorum.">Hazır olunca haber ver</a></aside>
+      <button id="family-benefits-reset" class="btn btn-secondary" type="button">Yeni kontrol</button>
+    </section>
+  </div></section>
 
   <section class="section">
     <div class="container">
@@ -127,5 +141,7 @@
 <footer class="footer">
   <div class="container footer-inner"><div>© 2026 Almanya Pusulası</div><div><a href="/about/">Hakkımızda</a> · <a href="/contact/">İletişim</a> · <a href="/privacy/">Gizlilik</a> · <a href="/impressum/">Impressum</a></div></div>
 </footer>
+<script src="/assets/js/family-benefits-core.js"></script>
+<script src="/assets/js/family-benefits-tool.js"></script>
 </body>
 </html>
