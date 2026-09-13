@@ -1,1 +1,94 @@
-<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Elterngeld Hesaplayıcı 2026 | Tahmini Basiselterngeld</title><meta name="description" content="2026 için tahmini Basiselterngeld hesabı: doğum öncesi ve sonrası net gelire göre aylık tutarı yaklaşık görün."><link rel="canonical" href="https://almanyapusulasi.de/elterngeld-hesaplayici-2026/"><meta name="google-adsense-account" content="ca-pub-6014752203462020"><link rel="stylesheet" href="/assets/style.css"><link rel="icon" href="/favicon.ico"><script defer src="/assets/js/analytics-consent.js"></script><style>.eltern-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.eltern-field{display:grid;gap:6px}.eltern-field span{font-weight:700;color:#243b53}.eltern-field input{width:100%;min-height:48px;padding:12px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;font:inherit;font-size:16px}.eltern-actions,.eltern-result{grid-column:1/-1}.eltern-actions .btn{width:100%}.eltern-result{padding:16px;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-weight:800}@media(max-width:640px){.eltern-form{grid-template-columns:1fr}.eltern-actions,.eltern-result{grid-column:auto}}</style></head><body><header class="site-header"></header><main class="article-wrap"><article class="article"><span class="badge">Ücretsiz Araç</span><h1>Elterngeld Hesaplayıcı 2026</h1><p>Doğum öncesi ve sonrası aylık net gelirinizi girerek tahmini Basiselterngeld tutarını görün. Bu araç basitleştirilmiş ön hesap yapar; resmî Elterngeldstelle hesabı farklı olabilir.</p><div class="eltern-form"><label class="eltern-field" for="before"><span>Doğum öncesi aylık net gelir (€)</span><input id="before" type="number" min="0" step="10" value="2000" inputmode="decimal"></label><label class="eltern-field" for="after"><span>Doğum sonrası aylık net gelir (€)</span><input id="after" type="number" min="0" step="10" value="0" inputmode="decimal"></label><div class="eltern-actions"><button class="btn btn-primary" onclick="calc()">Tahmini Elterngeld'i hesapla</button></div><div id="result" class="eltern-result" aria-live="polite"></div></div><h2>Nasıl hesaplanıyor?</h2><p>Basiselterngeld normalde doğum nedeniyle kaybolan net gelirin yaklaşık %65'ine dayanır. Düşük gelirlerde oran artabilir. Hesaplamada doğum öncesi dikkate alınan net gelir üst sınırı 2.770 €, Basiselterngeld ise genel olarak aylık en az 300 € ve en fazla 1.800 €'dur.</p><h2>Önemli</h2><p>Kardeş bonusu, çoğul doğum, serbest çalışma, vergi sınıfı değişiklikleri, Mutterschaftsleistungen ve özel gelir türleri bu basit araçta hesaplanmaz.</p><p><a href="/elterngeld-2026/">Elterngeld 2026 rehberi →</a></p><h2>Resmî kaynak</h2><p><a href="https://familienportal.de/familienportal/familienleistungen/elterngeld" target="_blank" rel="noopener">Familienportal des Bundes — Elterngeld</a></p><script>function rate(x){if(x>=1240)return .65;if(x>=1200)return .65+(1240-x)*.0005;if(x>=1000)return .67;return Math.min(1,.67+(1000-x)/2*.001)}function calc(){let b=Math.max(0,Number(document.getElementById('before').value)||0),a=Math.max(0,Number(document.getElementById('after').value)||0);let capped=Math.min(b,2770),diff=Math.max(0,capped-a),r=rate(capped),amt=diff*r;amt=Math.max(300,Math.min(1800,amt));document.getElementById('result').textContent='Tahmini Basiselterngeld: '+amt.toLocaleString('de-DE',{maximumFractionDigits:0})+' € / ay';}calc();</script></article></main><footer class="footer"></footer></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Elterngeld Hesaplayıcı 2026 | Gelir Açığı ve Aile Bütçesi</title>
+  <meta name="description" content="2026 Elterngeld ön hesabı: tahmini Basiselterngeld, doğum sonrası hane geliri, aylık gelir açığı ve sabit gider sonrası bütçeyi ücretsiz görün.">
+  <link rel="canonical" href="https://almanyapusulasi.de/elterngeld-hesaplayici-2026/">
+  <meta name="google-adsense-account" content="ca-pub-6014752203462020">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/commercial.css">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Elterngeld Hesaplayıcı 2026","url":"https://almanyapusulasi.de/elterngeld-hesaplayici-2026/","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","isAccessibleForFree":true,"dateModified":"2026-09-13"}</script>
+  <script defer src="/assets/js/analytics-consent.js"></script>
+  <script defer src="/assets/js/commercial-tracking.js"></script>
+  <script defer src="/assets/js/affiliate-slots.js"></script>
+  <script defer src="/assets/js/elterngeld-core.js"></script>
+  <script defer src="/assets/js/elterngeld-tool.js"></script>
+  <style>
+    .eg-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:26px 0}.eg-field{display:grid;gap:6px}.eg-field span{font-weight:800;color:#243b53}.eg-field small{color:#64748b}.eg-field input{width:100%;min-height:50px;padding:12px;border:1px solid #cbd5e1;border-radius:12px;background:#fff;font:inherit;font-size:16px}.eg-wide,.eg-actions,.eg-error{grid-column:1/-1}.eg-actions .btn{width:100%}.eg-error{padding:12px 14px;border-radius:10px;background:#fef2f2;color:#991b1b}.eg-result{margin-top:30px;padding-top:8px}.eg-result-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}.eg-result-head h2{margin:4px 0}.eg-signal{display:inline-flex;padding:8px 11px;border-radius:999px;background:#ecfdf5;color:#047857;font-weight:800;font-size:13px;white-space:nowrap}.eg-signal.is-watch{background:#fff7ed;color:#9a5b00}.eg-signal.is-high{background:#fef2f2;color:#b91c1c}.eg-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.eg-metric{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:17px}.eg-metric span{display:block;color:#64748b;font-size:13px;font-weight:700}.eg-metric strong{display:block;color:#102a43;font-size:27px;margin:4px 0}.eg-metric small{color:#64748b}.eg-next{margin-top:28px}.eg-next .grid{margin-top:14px}.eg-protection{margin-top:30px;padding-top:24px;border-top:1px solid #e2e8f0}.eg-protection>p{font-size:16px;color:#64748b}.eg-tax{margin-top:24px}.eg-privacy{font-size:13px;color:#64748b;margin-top:10px}@media(max-width:700px){.eg-form,.eg-metrics{grid-template-columns:1fr}.eg-wide,.eg-actions,.eg-error{grid-column:auto}.eg-result-head{flex-direction:column}.eg-signal{white-space:normal}}
+  </style>
+</head>
+<body>
+<header class="site-header"></header>
+<main class="article-wrap">
+  <article class="article">
+    <span class="badge">Ücretsiz Araç · 2026</span>
+    <h1>Elterngeld Hesaplayıcı: doğumdan sonra bütçeniz ne kadar değişecek?</h1>
+    <p>Yalnız aylık Elterngeld tutarını değil, tahmini <strong>doğum sonrası hane girişini, gelir açığını ve sabit giderlerden sonra kalan bütçeyi</strong> görün. Bu araç hızlı ön planlamadır; resmî Elterngeldstelle hesabının yerine geçmez.</p>
+
+    <div class="info-box"><strong>2026 temel kural:</strong> 1 Nisan 2025 ve sonrasında doğan çocuklarda Elterngeld için çiftler ve tek ebeveynlerde gelir sınırı 175.000 € <em>zu versteuerndes Einkommen</em>'dır. Bu rakam brüt maaş değildir.</div>
+
+    <form id="elterngeld-form" class="eg-form" novalidate>
+      <label class="eg-field" for="eg-before"><span>Bu ebeveynin doğum öncesi aylık net geliri (€)</span><input id="eg-before" inputmode="decimal" value="2000" required><small>Maaş bordrosundaki net tutar yalnız yaklaşık ön hesap için kullanılır.</small></label>
+      <label class="eg-field" for="eg-after"><span>Doğum sonrası aylık çalışma geliri (€)</span><input id="eg-after" inputmode="decimal" value="0"><small>Çalışmayacaksanız 0 bırakın. Elterngeld döneminde genel sınır haftalık ortalama 32 saattir.</small></label>
+      <label class="eg-field" for="eg-other"><span>Diğer sabit hane net geliri (€)</span><input id="eg-other" inputmode="decimal" placeholder="örn. eş geliri 2200"><small>İsteğe bağlı; hane bütçesi görünümünü iyileştirir.</small></label>
+      <label class="eg-field" for="eg-fixed"><span>Aylık sabit zorunlu giderler (€)</span><input id="eg-fixed" inputmode="decimal" placeholder="örn. kira + kredi + sigorta 2400"><small>İsteğe bağlı; değişken market/ulaşım giderlerini ayrıca düşünün.</small></label>
+      <div id="eg-error" class="eg-error" role="alert" hidden>Lütfen negatif olmayan geçerli tutarlar girin.</div>
+      <div class="eg-actions"><button class="btn btn-primary" type="submit">Elterngeld ve gelir açığını hesapla</button></div>
+    </form>
+    <p class="eg-privacy">Girdiğiniz parasal tutarlar analiz sistemine gönderilmez; hesap tarayıcınızda yapılır.</p>
+
+    <section id="elterngeld-result" class="eg-result" hidden aria-live="polite">
+      <div class="eg-result-head"><div><span class="section-label">Tahmini sonuç</span><h2>Doğum sonrası finansal görünüm</h2><p id="eg-summary"></p></div><span id="eg-signal" class="eg-signal"></span></div>
+      <div class="eg-metrics">
+        <div class="eg-metric"><span>Tahmini Basiselterngeld</span><strong id="eg-basis">—</strong><small>Aylık; basitleştirilmiş ön hesap</small></div>
+        <div class="eg-metric"><span>Doğum sonrası tahmini hane girişi</span><strong id="eg-household-after">—</strong><small>Çalışma geliri + diğer hane geliri + tahmini Elterngeld</small></div>
+        <div class="eg-metric"><span>Aylık gelir açığı</span><strong id="eg-gap">—</strong><small>Doğum öncesi hane girişine göre</small></div>
+        <div class="eg-metric"><span>Sabit giderlerden sonra kalan</span><strong id="eg-remaining">—</strong><small>Girdiyseniz sabit giderler düşülür</small></div>
+      </div>
+
+      <div id="eg-plus-note" class="info-box"></div>
+      <div id="eg-fixed-note" class="info-box" hidden></div>
+
+      <section class="eg-next">
+        <span class="section-label">Önce hak ve bütçe</span>
+        <h2>Gelir açığını kapatmak için sırayla kontrol edin</h2>
+        <div id="eg-support-actions" class="grid grid-2"></div>
+      </section>
+
+      <div class="eg-tax info-box"><strong>Vergi uyarısı:</strong> Elterngeld kendisi vergiden muaftır ancak Progressionsvorbehalt kapsamındadır ve Elterngeld alanların bunu vergi beyannamesinde bildirmesi gerekir. <a href="/steuererklaerung-kim-yapmali/"><strong>Steuererklärung yükümlülüğünü kontrol edin →</strong></a></div>
+
+      <section class="eg-next">
+        <span class="section-label">Planlama</span>
+        <h2>Elterngeld aylarını Elternzeit ile eşleştirin</h2>
+        <div class="grid grid-2">
+          <a class="card" href="/elternzeit-almanya/"><h3>Elternzeit planı</h3><p>Yaşam ayları, 7/13 haftalık bildirim süreleri ve 32 saatlik çalışma sınırını birlikte planlayın.</p></a>
+          <a class="card" href="/mutterschutz-mutterschaftsgeld/"><h3>Mutterschutz & Mutterschaftsgeld</h3><p>Doğum çevresindeki ödeme akışını Elterngeld aylarından ayrı değerlendirin.</p></a>
+        </div>
+      </section>
+
+      <section class="eg-protection">
+        <span class="section-label">İsteğe bağlı aile koruması</span>
+        <h2>Yeni çocukla gelir bağımlılığı arttıysa yaşam sigortasını ayrıca değerlendirin</h2>
+        <p>Bu kontrol Elterngeld hakkınızı veya tutarınızı değiştirmez. Ama hanenin kira, kredi veya çocuk giderleri tek/ana gelire bağımlıysa Risikolebensversicherung ihtiyacını ayrı bir finansal risk olarak değerlendirmek mantıklı olabilir.</p>
+        <div data-affiliate-slot="risikoleben-comparison" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <h2>Hesap nasıl çalışıyor?</h2>
+    <p>Basiselterngeld normalde doğum nedeniyle kaybolan hesaplama netinin yaklaşık %65'ine dayanır; düşük gelirlerde oran artabilir. Hesaba alınan doğum öncesi aylık net için üst sınır 2.770 €, Basiselterngeld için genel aralık 300–1.800 €'dur. Resmî makam gerçek bordro netini bire bir kullanmaz; kendi sadeleştirilmiş Elterngeld-Netto hesabını yapar.</p>
+    <p>Bu nedenle sonuç <strong>ön planlama</strong> içindir. Serbest çalışma, kardeş bonusu, çoğul doğum, Mutterschaftsleistungen, özel gelir türleri ve ayrıntılı ElterngeldPlus senaryoları resmî hesaplayıcıda doğrulanmalıdır.</p>
+
+    <h2>Resmî doğrulama</h2>
+    <ul>
+      <li><a href="https://familienportal.de/familienportal/familienleistungen/elterngeld" target="_blank" rel="noopener">Familienportal des Bundes — Elterngeld</a></li>
+      <li><a href="https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-viel-elterngeld-kann-ich-bekommen--124616" target="_blank" rel="noopener">Familienportal — Elterngeld tutarı ve resmî hesap mantığı</a></li>
+    </ul>
+    <p><a href="/elterngeld-2026/"><strong>Elterngeld 2026 karar rehberine dön →</strong></a></p>
+  </article>
+</main>
+<footer class="footer"></footer>
+</body>
+</html>

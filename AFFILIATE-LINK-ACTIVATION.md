@@ -18,7 +18,7 @@ The central config currently has enabled commercial slots plus three intentional
 
 ## Familienleistungen P0 placement expansion — 2026-09-13
 
-Commit `676a256` expanded the existing verified slot system into the family-benefits decision funnel without changing partner URLs or activation flags:
+Commit `676a256` expanded the existing slot system into the family-benefits decision funnel without changing partner URLs or activation flags:
 
 | Page | Slot | Why it is contextually relevant |
 | --- | --- | --- |
@@ -26,9 +26,17 @@ Commit `676a256` expanded the existing verified slot system into the family-bene
 | `/kindergeld-hesaplayici-2026/` | `bank-comparison` | after the Kindergeld result; Kindergeld is bank-transferred and the copy explicitly says a bank change does not alter entitlement or amount |
 | `/kinderzuschlag-uygunluk-kontrolu-2026/` | `electricity-comparison` | after the KiZ decision result; copy explicitly separates KiZ eligibility from household electricity savings |
 
-These placements must keep the editorial sequence **decision first, commercial comparison second**. Do not place the partner CTA ahead of the eligibility/result content and do not imply that buying, switching or comparing a commercial product increases a statutory family benefit.
+The 2026-09-13 Elterngeld P0 adds one further placement:
 
-Commit `4206954` also moved the disclosure guarantee into `assets/js/affiliate-slots.js`. Every active slot now renders an explicit visible statement beginning **“Ticari bağlantı:”** and explains that Almanya Pusulası may receive a commission and that commission does not change the comparison result or editorial content. Page-level legacy `.commercial-disclosure` blocks may still be removed by the renderer to avoid duplication; the renderer disclosure is therefore the required source of truth.
+| Page | Slot | Placement rule |
+| --- | --- | --- |
+| `/elterngeld-hesaplayici-2026/` | `risikoleben-comparison` | only after the free Elterngeld + household-budget result and after statutory-support/budget next steps; framed as optional family income protection when a household depends on earned income |
+
+For the Elterngeld placement, the page must explicitly state that Risikolebensversicherung does **not** change Elterngeld entitlement, amount, Wohngeld or KiZ. The product must not be presented as a remedy for a public-benefit eligibility result. The sequence is **benefit estimate → household gap → statutory/support actions → optional family protection**.
+
+All family-benefits placements must keep the editorial sequence **decision first, commercial comparison second**. Do not place the partner CTA ahead of eligibility/result content and do not imply that buying, switching or comparing a commercial product increases a statutory family benefit.
+
+Commit `4206954` moved the disclosure guarantee into `assets/js/affiliate-slots.js`. Every active slot renders an explicit visible statement beginning **“Ticari bağlantı:”** and explains that Almanya Pusulası may receive a commission and that commission does not change the comparison result or editorial content. Page-level legacy `.commercial-disclosure` blocks may still be removed by the renderer to avoid duplication; the renderer disclosure is therefore the required source of truth.
 
 ## Safest next change
 
