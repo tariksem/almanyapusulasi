@@ -1,5 +1,7 @@
 # Almanya Pusulası — Social Media Master Plan
 
+> **Execution status — 2026-09-19:** acquisition is now the active master-plan phase. Search Console shows first-page tests for several tools but overall volume remains very low. The 2026-09-19 Metricool Facebook/Instagram scheduled post failed because the account reached its Metricool limit. Do not queue more Metricool posts until that constraint changes; use manual/direct publishing with UTM links. Prioritize Blue Card checker, Chancenkarte calculator, Kinderzuschlag checker, Bank selector and Brutto-Netto calculator because they already receive Google impressions.
+
 Last updated: 2026-09-10
 
 ## Objective

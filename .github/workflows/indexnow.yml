@@ -45,16 +45,18 @@ jobs:
               if url not in urls:
                   urls.append(url)
 
-          if not urls and '.github/workflows/indexnow.yml' in changed:
-              ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
-              for sitemap in ('sitemap-commercial.xml','sitemap-tools.xml'):
-                  try:
-                      root=ET.parse(sitemap).getroot()
-                      for loc in root.findall('.//sm:loc',ns):
-                          if loc.text and loc.text.startswith(base) and loc.text not in urls:
-                              urls.append(loc.text)
-                  except Exception as exc:
-                      print('Could not seed from', sitemap, exc)
+          ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          changed_sitemaps=[p for p in changed if p.startswith('sitemap-') and p.endswith('.xml')]
+          if '.github/workflows/indexnow.yml' in changed and not changed_sitemaps:
+              changed_sitemaps=['sitemap-commercial.xml','sitemap-tools.xml']
+          for sitemap in changed_sitemaps:
+              try:
+                  root=ET.parse(sitemap).getroot()
+                  for loc in root.findall('.//sm:loc',ns):
+                      if loc.text and loc.text.startswith(base) and loc.text not in urls:
+                          urls.append(loc.text)
+              except Exception as exc:
+                  print('Could not seed from', sitemap, exc)
 
           with open('/tmp/indexnow.json','w',encoding='utf-8') as f:
               json.dump({

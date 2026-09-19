@@ -160,6 +160,8 @@ jobs:
           JS
       - name: Validate finance revenue funnel
         run: node scripts/validate-finance-revenue-funnel.js
+      - name: Validate acquisition P0
+        run: node scripts/validate-acquisition-p0.js
       - name: Validate German letter templates
         run: |
           node - <<'JS'

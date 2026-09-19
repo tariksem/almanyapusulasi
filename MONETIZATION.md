@@ -1,5 +1,7 @@
 # Almanya Pusulası — Monetization Plan
 
+> **Current execution status — 2026-09-19:** Monetization infrastructure is largely ready; acquisition is the active bottleneck. TARIFCHECK revenue-critical finance/insurance slots and CHECK24 Strom configuration are protected by CI. Wise remains intentionally deferred by owner. No genuine sale/commission proof exists yet because traffic is very low. Current P0 is Google/social traffic growth; see `MASTER-PLAN-STATUS.md`. Older pipeline notes below are historical and must not override this status.
+
 > Activation status correction (2026-09-08): the original pending-link items below are historical for Girokonto, Kfz and Strom. All three are now enabled in the repository. TARIFCHECK Girokonto/Kfz match the authenticated-dashboard catalog; CHECK24 Strom still needs an equivalent provenance record. Use [the current activation audit](AFFILIATE-LINK-ACTIVATION.md) for exact mapping and remaining checks; do not reactivate or reroute products from this older pipeline.
 
 Last reviewed: 2026-09-07
