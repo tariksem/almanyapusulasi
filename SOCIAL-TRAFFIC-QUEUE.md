@@ -23,3 +23,11 @@ Instagram: `utm_source=instagram&utm_medium=social&utm_campaign=acquisition_p0&u
 - Brutto-Netto: “Brüt maaş teklifini görüp netini tahmin etmeyin.” → calculator.
 
 Space posts across the week. The objective is qualified site sessions, not raw reach.
+
+## Evidence-led follow-up posts
+
+These destinations already have GSC impression evidence and can be used in the next manual distribution cycle:
+- Kinderzuschlag guide — “Kinderzuschlag nedir? 297 € herkese otomatik mi?”
+- Kindergeld Türkei — “Çocuğunuz Türkiye'de yaşıyorsa 259 € kuralını otomatik varsaymayın.”
+- Emeklilik hub — “Almanya'da Rente, Rentenversicherung ve Türkiye süreleri aynı şey değil.”
+- Türkiye emekli maaşı/vergi — “SGK emekli maaşı alıp Almanya'da yaşıyorsanız vergi ve sağlık tarafını ayrı kontrol edin.”

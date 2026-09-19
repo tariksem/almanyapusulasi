@@ -63,3 +63,17 @@ Kinderzuschlag guide produced 2 clicks / 45 impressions.
 ## Exit criteria
 
 Return to conversion optimization when the site reaches roughly **50–100 qualified visits/day** or a revenue funnel accumulates enough genuine affiliate clicks for page/placement comparison.
+
+## Growth Sprint 1 — 2026-09-19
+
+Status: **DEPLOYING / VALIDATING**
+
+Actions:
+- homepage search-opportunity block expanded to every meaningful GSC page signal, not only tools;
+- Kinderzuschlag flagship aligned to actual GSC queries: “kinderzuschlag nedir”, “ne demek” and “antrag türkisch”;
+- official BA application/form route surfaced without implying a Turkish official application form;
+- core Kindergeld/KiZ/Wohngeld pages added to the family sitemap;
+- GSC-supported retirement and Turkey-child pages strengthened with homepage links and priority-sitemap freshness;
+- acquisition CI guard expanded to protect these routes.
+
+Measurement: wait for finalized GSC data before another snippet rewrite; compare impressions, clicks, CTR and average position for the same pages after the next settled window.
