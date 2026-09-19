@@ -77,3 +77,18 @@ Actions:
 - acquisition CI guard expanded to protect these routes.
 
 Measurement: wait for finalized GSC data before another snippet rewrite; compare impressions, clicks, CTR and average position for the same pages after the next settled window.
+
+## Growth Sprint 2 — Kindergeld query capture — 2026-09-19
+
+Status: **DEPLOYING / VALIDATING**
+
+GSC evidence: query `almanya da çocuk yardımı ne kadar 2026` appeared at average position ~11 with no click in the finalized window.
+
+Actions:
+- canonical `/kindergeld/` title/meta aligned to the Turkish “Almanya çocuk parası” wording while retaining the official term Kindergeld;
+- exact answer heading added: “Almanya'da çocuk parası ne kadar 2026?”;
+- answer states the official 2026 amount, 259 € per eligible child, without creating a duplicate URL;
+- priority sitemap freshness updated;
+- acquisition guard now protects this query-intent alignment.
+
+Measurement rule: judge only after new finalized GSC data arrives; do not rewrite the snippet again on same-day evidence.
