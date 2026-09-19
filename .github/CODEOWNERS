@@ -4,3 +4,11 @@
 /.github/workflows/site-quality-audit.yml @tariksem
 /SOCIAL-MEDIA-MASTER-PLAN.md @tariksem
 /SOCIAL-TRAFFIC-QUEUE.md @tariksem
+/BRAND-PRODUCTION-GUARD.md @tariksem
+/AGENTS.md @tariksem
+/.github/copilot-instructions.md @tariksem
+/scripts/generate-social-preview.py @tariksem
+/scripts/render-social-card.py @tariksem
+/.github/workflows/deploy-cloudflare.yml @tariksem
+/.github/workflows/deploy-pages.yml @tariksem
+/.github/CODEOWNERS @tariksem
