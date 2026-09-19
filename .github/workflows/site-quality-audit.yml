@@ -116,6 +116,8 @@ jobs:
           for x in warnings[:300]: print(f'::warning::{x}')
           if missing or seo: sys.exit(1)
           PY
+      - name: Validate locked brand identity
+        run: node scripts/validate-brand-lock.js
       - name: Validate affiliate attribution configuration
         run: node scripts/validate-affiliate-attribution.js
       - name: Validate Umzug assistant rules
