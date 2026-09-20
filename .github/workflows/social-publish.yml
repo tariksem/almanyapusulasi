@@ -1,0 +1,51 @@
+name: Publish Almanya Pusulasi Social Queue
+
+on:
+  schedule:
+    # 18:30 Europe/Berlin during the 20-29 Sep 2026 CEST campaign window.
+    - cron: '30 16 * * *'
+  workflow_dispatch:
+    inputs:
+      publish_date:
+        description: 'Optional Europe/Berlin date (YYYY-MM-DD). Blank = today.'
+        required: false
+        type: string
+      dry_run:
+        description: 'Validate the queue/image without posting to Meta.'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: almanya-pusulasi-social-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Validate brand lock
+        run: node scripts/validate-brand-lock.js
+
+      - name: Validate social queue
+        run: node scripts/validate-social-meta.js
+
+      - name: Compile publisher
+        run: python -m py_compile scripts/publish-social-meta.py
+
+      - name: Publish today's Facebook + Instagram post
+        env:
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          INPUT_DATE: ${{ inputs.publish_date }}
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          args=()
+          if [ -n "$INPUT_DATE" ]; then args+=(--date "$INPUT_DATE"); fi
+          if [ "$INPUT_DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          python scripts/publish-social-meta.py "${args[@]}"

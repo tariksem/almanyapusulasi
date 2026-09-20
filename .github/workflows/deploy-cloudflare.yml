@@ -69,6 +69,9 @@ jobs:
       - name: Generate social preview card from canonical logo
         run: python scripts/generate-social-preview.py
 
+      - name: Generate scheduled social cards
+        run: python scripts/render-social-queue.py
+
       - name: Enrich Open Graph and Twitter metadata
         run: python scripts/enhance-social-meta.py
 
@@ -80,13 +83,16 @@ jobs:
           rm -rf dist/.github dist/scripts dist/data
           rm -f dist/wrangler.jsonc dist/.gitignore
           find dist -maxdepth 1 -type f -name '*.md' -delete
-          mkdir -p dist/assets/data dist/assets/brand
+          mkdir -p dist/assets/data dist/assets/brand dist/assets/social
           cp assets/data/einbuergerungstest.json dist/assets/data/einbuergerungstest.json
           cp assets/brand/social-preview.png dist/assets/brand/social-preview.png
+          cp -r assets/social/. dist/assets/social/
           test -f dist/vatandaslik-testi/index.html
           test -f dist/assets/data/einbuergerungstest.json
           test -f dist/assets/js/einbuergerungstest.js
           test -f dist/assets/brand/social-preview.png
+          test -f dist/assets/social/2026-09-20-chancenkarte.png
+          test -f dist/assets/social/2026-09-29-kira-butcesi.png
           test ! -e dist/.git
           echo 'Clean Cloudflare production directory prepared.'
 

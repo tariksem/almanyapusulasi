@@ -118,6 +118,10 @@ jobs:
           PY
       - name: Validate locked brand identity
         run: node scripts/validate-brand-lock.js
+      - name: Validate direct Meta social automation
+        run: |
+          node scripts/validate-social-meta.js
+          python -m py_compile scripts/render-social-queue.py scripts/publish-social-meta.py
       - name: Validate affiliate attribution configuration
         run: node scripts/validate-affiliate-attribution.js
       - name: Validate Umzug assistant rules

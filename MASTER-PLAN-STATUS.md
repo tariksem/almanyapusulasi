@@ -51,14 +51,14 @@ Kinderzuschlag guide produced 2 clicks / 45 impressions.
 2. Wise is deliberately deferred by owner.
 3. No genuine partner-side sale/commission evidence yet; do not generate synthetic clicks.
 
-Social publishing is no longer blocked: Metricool is retired and the current free publishing path is ChatGPT Work → Meta Business Suite, using the 10-day queue in `SOCIAL-AUTO-10D.md`.
+Social publishing architecture is direct and third-party-scheduler-free: GitHub Actions → Meta Graph API. The 10-day queue is machine-readable in `social/meta-queue.json` and documented in `SOCIAL-AUTO-10D.md`. One long-lived Page Access Token is required as GitHub secret `META_PAGE_ACCESS_TOKEN`.
 
 ## Next operating target
 
 - Review settled GSC every 7–14 days.
 - Prioritize positions 2–15 with zero/low clicks, new query/page matches and cannibalization.
 - Push traffic to pages already receiving Google tests before broad new clusters.
-- Run the scheduled Facebook/Instagram acquisition batch through Meta Business Suite and measure UTM traffic.
+- Run the scheduled Facebook/Instagram acquisition batch through direct Meta API automation and measure UTM traffic.
 - Resume conversion reconciliation after meaningful affiliate-click volume exists.
 
 ## Exit criteria

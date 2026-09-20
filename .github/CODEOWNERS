@@ -12,3 +12,9 @@
 /.github/workflows/deploy-cloudflare.yml @tariksem
 /.github/workflows/deploy-pages.yml @tariksem
 /.github/CODEOWNERS @tariksem
+/social/meta-queue.json @tariksem
+/scripts/render-social-queue.py @tariksem
+/scripts/publish-social-meta.py @tariksem
+/scripts/validate-social-meta.js @tariksem
+/.github/workflows/social-publish.yml @tariksem
+/SOCIAL-META-SETUP.md @tariksem

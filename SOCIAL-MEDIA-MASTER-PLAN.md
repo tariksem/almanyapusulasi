@@ -136,10 +136,10 @@ Do not sacrifice editorial trust for affiliate commission. Commercial relationsh
 
 ## Current free publishing workflow
 
-- Publishing engine: Meta Business Suite.
-- Operator: ChatGPT Work for authenticated browser execution.
-- Scheduling source of truth: `SOCIAL-AUTO-10D.md`.
-- Metricool and Windsor.ai are not part of the stack.
+- Publishing engine: direct Meta Graph API.
+- Scheduler: GitHub Actions `.github/workflows/social-publish.yml`.
+- Machine-readable source of truth: `social/meta-queue.json`; human-readable campaign plan: `SOCIAL-AUTO-10D.md`.
+- Metricool, Windsor.ai and ChatGPT Work are not part of the publishing stack.
 - Facebook uses direct UTM-tagged destination URLs.
 - Instagram uses profile-link CTA unless a clickable placement is available.
 - Paid boosts remain disabled.

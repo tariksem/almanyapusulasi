@@ -1,14 +1,19 @@
 # Almanya Pusulası — 10 Günlük Otomatik Sosyal Yayın Kuyruğu
 
-Durum: READY FOR META BUSINESS SUITE
-Platform: Facebook + Instagram
+Durum: AUTOMATED — META GRAPH API + GITHUB ACTIONS
+Platform: Facebook Page + Instagram Professional
 Yayın saati: 18:30 Europe/Berlin
 Başlangıç: 20 Eylül 2026
 Bitiş: 29 Eylül 2026
 
+Yayın motoru:
+- `.github/workflows/social-publish.yml` her gün 18:30 Europe/Berlin saatine karşılık gelen cron ile çalışır.
+- `scripts/publish-social-meta.py` Meta Graph API'ye doğrudan yayın yapar.
+- Tek gizli değer `META_PAGE_ACCESS_TOKEN`dır; Page ID ve bağlı Instagram Business ID otomatik bulunur.
+- Metricool, Windsor.ai ve Work kullanılmaz.
+
 Kural:
-- Meta Business Suite tek yayın motorudur.
-- Metricool kullanılmaz.
+- Üçüncü taraf scheduler kullanılmaz.
 - Facebook'ta doğrudan UTM'li hedef URL kullanılır.
 - Instagram'da ana CTA: "Ücretsiz araç/rehber: profildeki bağlantı."
 - Görsel yalnız kanonik Almanya Pusulası marka varlıklarıyla hazırlanır.
@@ -96,5 +101,10 @@ Facebook:
 Instagram:
 "Warmmiete tek başına gerçek kira bütçeniz değildir. Kaution ve başlangıç maliyetlerini birlikte hesaplayın.\n\nÜcretsiz araç: profildeki bağlantı."
 
-## Work uygulama talimatı
-Meta Business Suite'te Almanya Pusulası Facebook ve Instagram hesaplarını aç. Bu dosyadaki 20–29 Eylül 2026 yayınlarını her gün 18:30 Europe/Berlin için planla. Facebook ve Instagram metinlerini ayrı kullan. UTM'leri aynen koru. Yayından önce BRAND-IDENTITY.md ve BRAND-PRODUCTION-GUARD.md kurallarına uymayan görseli reddet. Her gün tek feed gönderisi planla. Paid boost kullanma.
+## Otomasyon çalışma kuralı
+- Makine-okunur kaynak: `social/meta-queue.json`.
+- 10 görsel build sırasında `scripts/render-social-queue.py` tarafından kanonik logo ile deterministik üretilir.
+- Facebook ve Instagram'a doğrudan Meta API ile yayın yapılır.
+- Aynı caption daha önce yayınlandıysa duplicate guard gönderiyi tekrar basmaz.
+- Görsel public URL'de yoksa veya Meta API hata döndürürse workflow fail olur; sessizce yanlış/eksik paylaşım yapılmaz.
+- 29.09.2026 sonrasında kuyrukta tarih olmadığı için workflow başarılı şekilde no-op olur.
