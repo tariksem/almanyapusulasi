@@ -172,6 +172,44 @@ jobs:
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing GitHub secret: CLOUDFLARE_ACCOUNT_ID"; exit 1; }
           npx --yes wrangler@4 deploy --config wrangler.jsonc
 
+      - name: Verify social card production URLs
+        run: |
+          python - <<'PY'
+          import json
+          import time
+          import urllib.request
+          from pathlib import Path
+
+          queue=json.loads(Path('social/meta-queue.json').read_text(encoding='utf-8'))
+          failures=[]
+          for post in queue['posts']:
+              url=queue['site_base'].rstrip('/') + post['image_path']
+              last=None
+              for _ in range(4):
+                  try:
+                      req=urllib.request.Request(url,headers={'User-Agent':'AlmanyaPusulasi-Deploy-QA/1.0'})
+                      with urllib.request.urlopen(req,timeout=15) as response:
+                          body=response.read(16)
+                          ctype=response.headers.get('Content-Type','')
+                          if response.status != 200:
+                              raise RuntimeError(f'HTTP {response.status}')
+                          if not ctype.startswith('image/png'):
+                              raise RuntimeError(f'Content-Type {ctype}')
+                          if not body.startswith(b'\x89PNG\r\n\x1a\n'):
+                              raise RuntimeError('invalid PNG signature')
+                          print(f'OK social card {url}')
+                          last=None
+                          break
+                  except Exception as exc:
+                      last=exc
+                      time.sleep(3)
+              if last:
+                  failures.append(f'{url}: {last}')
+          if failures:
+              raise SystemExit('Social image production QA failed:\n'+'\n'.join(failures))
+          print(f'Social image production QA passed for {len(queue["posts"])} images.')
+          PY
+
       - name: Verify legacy 301 consolidations
         run: |
           python - <<'PY'

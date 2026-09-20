@@ -39,6 +39,10 @@ for (const required of ["cron: '30 16 * * *'", 'META_PAGE_ACCESS_TOKEN', 'valida
   if (!workflow.includes(required)) fail('social workflow missing: ' + required);
 }
 if (workflow.includes('Metricool') || workflow.includes('Windsor')) fail('retired scheduler referenced in social workflow');
+const cloudflare = fs.readFileSync('.github/workflows/deploy-cloudflare.yml','utf8');
+for (const required of ['Generate scheduled social cards','Verify social card production URLs','assets/social']) {
+  if (!cloudflare.includes(required)) fail('Cloudflare social asset pipeline missing: ' + required);
+}
 
 if (failures.length) {
   failures.forEach(x => console.error('::error::' + x));
