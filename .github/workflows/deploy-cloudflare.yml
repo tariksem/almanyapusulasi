@@ -91,8 +91,8 @@ jobs:
           test -f dist/assets/data/einbuergerungstest.json
           test -f dist/assets/js/einbuergerungstest.js
           test -f dist/assets/brand/social-preview.png
-          test -f dist/assets/social/2026-09-20-chancenkarte.png
-          test -f dist/assets/social/2026-09-29-kira-butcesi.png
+          test -f dist/assets/social/2026-09-20-chancenkarte.jpg
+          test -f dist/assets/social/2026-09-29-kira-butcesi.jpg
           test ! -e dist/.git
           echo 'Clean Cloudflare production directory prepared.'
 
@@ -193,10 +193,10 @@ jobs:
                           ctype=response.headers.get('Content-Type','')
                           if response.status != 200:
                               raise RuntimeError(f'HTTP {response.status}')
-                          if not ctype.startswith('image/png'):
+                          if not ctype.startswith('image/jpeg'):
                               raise RuntimeError(f'Content-Type {ctype}')
-                          if not body.startswith(b'\x89PNG\r\n\x1a\n'):
-                              raise RuntimeError('invalid PNG signature')
+                          if not body.startswith(b'\xff\xd8\xff'):
+                              raise RuntimeError('invalid JPEG signature')
                           print(f'OK social card {url}')
                           last=None
                           break

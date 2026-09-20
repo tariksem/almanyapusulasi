@@ -17,7 +17,7 @@ const seenImages = new Set();
   if (post.date !== expectedDates[i]) fail('post ' + (i+1) + ': expected date ' + expectedDates[i] + ', got ' + post.date);
   if (!post.slug || seenSlugs.has(post.slug)) fail('post ' + (i+1) + ': duplicate/missing slug'); else seenSlugs.add(post.slug);
   if (!post.image_path || seenImages.has(post.image_path)) fail('post ' + (i+1) + ': duplicate/missing image_path'); else seenImages.add(post.image_path);
-  if (!post.image_path.startsWith('/assets/social/') || !post.image_path.endsWith('.png')) fail('post ' + (i+1) + ': invalid image_path');
+  if (!post.image_path.startsWith('/assets/social/') || !post.image_path.endsWith('.jpg')) fail('post ' + (i+1) + ': invalid JPEG image_path');
   if (!post.destination || !post.destination.startsWith('https://almanyapusulasi.de/')) fail('post ' + (i+1) + ': destination must be canonical site URL');
   if (!post.facebook_caption || !post.facebook_caption.includes('utm_source=facebook&utm_medium=social&utm_campaign=acquisition_p0')) fail('post ' + (i+1) + ': Facebook UTM missing');
   if (/https?:\/\//.test(post.instagram_caption || '')) fail('post ' + (i+1) + ': raw URL not allowed in Instagram caption');
@@ -35,7 +35,7 @@ for (const required of ['META_PAGE_ACCESS_TOKEN','instagram_business_account','m
   if (!publisher.includes(required)) fail('publisher missing guard/feature: ' + required);
 }
 const workflow = fs.existsSync('.github/workflows/social-publish.yml') ? fs.readFileSync('.github/workflows/social-publish.yml','utf8') : '';
-for (const required of ["cron: '30 16,17,18 * * *'", 'META_PAGE_ACCESS_TOKEN', 'validate-social-meta.js', 'publish-social-meta.py']) {
+for (const required of ["cron: '30 16,17,18,19,20,21 * * *'", 'META_PAGE_ACCESS_TOKEN', 'validate-social-meta.js', 'publish-social-meta.py']) {
   if (!workflow.includes(required)) fail('social workflow missing: ' + required);
 }
 if (workflow.includes('Metricool') || workflow.includes('Windsor')) fail('retired scheduler referenced in social workflow');
