@@ -171,6 +171,7 @@ jobs:
           python - <<'PY'
           import urllib.request
           import urllib.error
+          import urllib.parse
           from concurrent.futures import ThreadPoolExecutor, as_completed
 
           class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -213,9 +214,10 @@ jobs:
                   return f'{url}: expected 301, got non-redirect response'
               except urllib.error.HTTPError as exc:
                   location = exc.headers.get('Location')
-                  if exc.code != 301 or location != expected:
+                  resolved = urllib.parse.urljoin(url, location) if location else None
+                  if exc.code != 301 or resolved != expected:
                       return f'{url}: expected 301 -> {expected}, got {exc.code} -> {location}'
-                  print(f'OK 301 {url} -> {location}')
+                  print(f'OK 301 {url} -> {resolved}')
                   return None
               except Exception as exc:
                   return f'{url}: {exc}'
