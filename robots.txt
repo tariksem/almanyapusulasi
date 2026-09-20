@@ -2,13 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://almanyapusulasi.de/sitemap-index.xml
-Sitemap: https://almanyapusulasi.de/sitemap-priority.xml
-Sitemap: https://almanyapusulasi.de/sitemap-family.xml
-Sitemap: https://almanyapusulasi.de/sitemap-migration.xml
-Sitemap: https://almanyapusulasi.de/sitemap-news.xml
 Sitemap: https://almanyapusulasi.de/rss.xml
-Sitemap: https://almanyapusulasi.de/sitemap.xml
-Sitemap: https://almanyapusulasi.de/sitemap-career.xml
-Sitemap: https://almanyapusulasi.de/sitemap-finance-housing.xml
-Sitemap: https://almanyapusulasi.de/sitemap-commercial.xml
-Sitemap: https://almanyapusulasi.de/sitemap-tools.xml
