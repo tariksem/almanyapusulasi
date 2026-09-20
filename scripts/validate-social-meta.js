@@ -31,7 +31,7 @@ for (const file of ['scripts/render-social-queue.py','scripts/publish-social-met
 }
 
 const publisher = fs.existsSync('scripts/publish-social-meta.py') ? fs.readFileSync('scripts/publish-social-meta.py','utf8') : '';
-for (const required of ['META_PAGE_ACCESS_TOKEN','instagram_business_account','media_publish','SKIP_DUPLICATE','v26.0']) {
+for (const required of ['META_PAGE_ACCESS_TOKEN','instagram_accounts','page_backed_instagram_accounts','media_publish','SKIP_DUPLICATE','v26.0']) {
   if (!publisher.includes(required)) fail('publisher missing guard/feature: ' + required);
 }
 const workflow = fs.existsSync('.github/workflows/social-publish.yml') ? fs.readFileSync('.github/workflows/social-publish.yml','utf8') : '';

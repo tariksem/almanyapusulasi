@@ -33,18 +33,44 @@ def graph_url(version: str, path: str, query=None) -> str:
     return base + ('?' + urllib.parse.urlencode(query) if query else '')
 
 def derive_accounts(version: str, token: str):
-    result = request_json('GET', graph_url(version, 'me', {
-        'fields': 'id,name,instagram_business_account',
+    # META_PAGE_ACCESS_TOKEN is intentionally a Page Access Token.
+    # A Page token can resolve its own Page id/name, but the
+    # instagram_business_account Page field requires a User token.
+    page = request_json('GET', graph_url(version, 'me', {
+        'fields': 'id,name',
         'access_token': token,
     }))
-    page_id = str(result.get('id') or '')
-    page_name = str(result.get('name') or '')
-    ig = result.get('instagram_business_account') or {}
-    ig_user_id = str(ig.get('id') or '')
+    page_id = str(page.get('id') or '')
+    page_name = str(page.get('name') or '')
     if not page_id or not page_name:
         raise RuntimeError('Page token preflight failed: Page id/name unavailable.')
+
+    # Prefer Page edges that accept a Page token so no second secret is needed.
+    ig_user_id = ''
+    discovery_errors = []
+    for edge in ('instagram_accounts', 'page_backed_instagram_accounts'):
+        try:
+            result = request_json('GET', graph_url(version, f'{page_id}/{edge}', {
+                'fields': 'id,username',
+                'limit': '10',
+                'access_token': token,
+            }))
+            rows = result.get('data') or []
+            if rows:
+                ig_user_id = str(rows[0].get('id') or '')
+                if ig_user_id:
+                    print(f'Instagram account discovered via {edge}: {ig_user_id}.')
+                    break
+        except Exception as exc:
+            discovery_errors.append(f'{edge}: {exc}')
+
     if not ig_user_id:
-        raise RuntimeError('Instagram Business/Creator account is not linked to this Facebook Page.')
+        detail = '; '.join(discovery_errors)
+        raise RuntimeError(
+            'Instagram professional account ID could not be derived from the Page token. '
+            'Facebook Page token is valid, but Instagram account discovery failed. '
+            + detail
+        )
     return page_id, page_name, ig_user_id
 
 def already_on_facebook(version: str, page_id: str, token: str, caption: str) -> bool:
