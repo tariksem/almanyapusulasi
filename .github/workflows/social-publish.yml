@@ -9,9 +9,9 @@ on:
       - 'scripts/validate-social-meta.js'
       - '.github/workflows/social-publish.yml'
   schedule:
-    # Campaign resilience: 18:30 through 23:30 Europe/Berlin (CEST), hourly retry.
+    # Campaign only: 20–29 Sep; 18:30 through 23:30 Europe/Berlin (CEST), hourly retry.
     # Duplicate guards make retry runs no-op after a successful publication.
-    - cron: '30 16,17,18,19,20,21 * * *'
+    - cron: '30 16,17,18,19,20,21 20-29 9 *'
   workflow_dispatch:
     inputs:
       publish_date:

@@ -37,3 +37,10 @@ Never commit either token to repository files or chat.
 - Retry window: hourly through 23:30; exact-caption duplicate protection prevents duplicate posts
 - Missing image/API error: hard failure; no silent success
 - Facebook can temporarily use the existing Page token; Instagram requires the User-token derivation flow
+
+
+## Token lifetime guard
+
+The publisher attempts Meta `debug_token` introspection on the User token, verifies the required scopes and rejects a known expiry before the 30 Sep 2026 campaign boundary. If Meta does not permit self-introspection in the current app mode, the workflow logs that limitation rather than exposing the token.
+
+The preflight also verifies the linked Instagram profile's website because campaign captions use the profile link.

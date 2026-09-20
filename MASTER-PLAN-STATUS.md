@@ -113,3 +113,17 @@ Validation:
 - Cloudflare production #222: success;
 - GitHub Pages #651: success;
 - sitemap structure commit validation: Site Quality Audit #435, Cloudflare #223, Pages #652 all success.
+
+
+## Direct social API first publication — 2026-09-20
+
+Status: **SUCCESS**
+
+- Meta credential/account preflight: passed.
+- Facebook Page resolved: Almanya Pusulası.
+- Linked Instagram professional account resolved automatically.
+- Missed 20 Sep Chancenkarte post recovered through one-time catch-up.
+- Facebook publish: success and API post ID returned.
+- Instagram publish: success and API media ID returned.
+- Duplicate guards remain active for retries.
+- One-time catch-up workflow removed after successful recovery.

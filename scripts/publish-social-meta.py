@@ -8,17 +8,25 @@ import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 QUEUE = Path('social/meta-queue.json')
 GRAPH_ROOT = 'https://graph.facebook.com'
 PAGE_NAME_HINT = 'almanya pusul'
+CAMPAIGN_END_UTC = datetime(2026, 9, 30, 0, 0, tzinfo=timezone.utc)
+REQUIRED_USER_SCOPES = {
+    'pages_show_list',
+    'pages_read_engagement',
+    'pages_manage_posts',
+    'instagram_basic',
+    'instagram_content_publish',
+}
 
 def request_json(method: str, url: str, params=None, timeout: int = 30) -> dict:
     data = urllib.parse.urlencode(params).encode('utf-8') if params is not None else None
-    req = urllib.request.Request(url, data=data, method=method, headers={'User-Agent': 'AlmanyaPusulasi-SocialPublisher/2.0'})
+    req = urllib.request.Request(url, data=data, method=method, headers={'User-Agent': 'AlmanyaPusulasi-SocialPublisher/3.0'})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as response:
             payload = response.read().decode('utf-8')
@@ -90,33 +98,80 @@ def resolve_credentials(version: str):
     legacy_token = os.environ.get('META_PAGE_ACCESS_TOKEN', '').strip()
 
     if user_token:
-        return (*derive_from_user_token(version, user_token), 'full')
+        return (*derive_from_user_token(version, user_token), 'full', user_token)
 
     if legacy_token:
-        # Historical secret name may contain either a User token or a Page token.
-        # Detect it instead of forcing the operator to re-enter credentials.
         try:
             resolved = derive_from_user_token(version, legacy_token)
             print('Legacy META_PAGE_ACCESS_TOKEN detected as a User Access Token; full automation enabled.')
-            return (*resolved, 'full')
+            return (*resolved, 'full', legacy_token)
         except Exception as user_exc:
             print(f'Legacy token is not usable as a User token: {user_exc}')
             page_id, page_name = derive_facebook_only_from_page_token(version, legacy_token)
-            return page_id, page_name, '', legacy_token, 'facebook_only'
+            return page_id, page_name, '', legacy_token, 'facebook_only', ''
 
     raise SystemExit('Missing GitHub secret META_USER_ACCESS_TOKEN or legacy META_PAGE_ACCESS_TOKEN.')
 
-def already_on_facebook(version: str, page_id: str, token: str, caption: str) -> bool:
-    result = request_json('GET', graph_url(version, f'{page_id}/posts', {
-        'fields': 'message,created_time', 'limit': '50', 'access_token': token,
-    }))
-    return any((item.get('message') or '').strip() == caption.strip() for item in result.get('data', []))
+def inspect_user_token(version: str, user_token: str) -> None:
+    try:
+        result = request_json('GET', graph_url(version, 'debug_token', {
+            'input_token': user_token,
+            'access_token': user_token,
+        }))
+    except Exception as exc:
+        print(f'WARNING: token lifetime introspection unavailable with self-debug: {exc}')
+        return
 
-def already_on_instagram(version: str, ig_user_id: str, token: str, caption: str) -> bool:
-    result = request_json('GET', graph_url(version, f'{ig_user_id}/media', {
-        'fields': 'caption,timestamp', 'limit': '50', 'access_token': token,
+    data = result.get('data') or {}
+    if not data.get('is_valid'):
+        raise RuntimeError('Meta User Access Token is not valid according to debug_token.')
+
+    scopes = set(data.get('scopes') or [])
+    missing = sorted(REQUIRED_USER_SCOPES - scopes)
+    if missing:
+        raise RuntimeError('Meta User Access Token is missing required scopes: ' + ', '.join(missing))
+
+    expires_at = int(data.get('expires_at') or 0)
+    data_access_expires_at = int(data.get('data_access_expires_at') or 0)
+    campaign_end = int(CAMPAIGN_END_UTC.timestamp())
+    if expires_at and expires_at < campaign_end:
+        when = datetime.fromtimestamp(expires_at, tz=timezone.utc).isoformat()
+        raise RuntimeError(f'Meta User Access Token expires before campaign end: {when}. Extend/replace it with a long-lived token.')
+    if data_access_expires_at and data_access_expires_at < campaign_end:
+        when = datetime.fromtimestamp(data_access_expires_at, tz=timezone.utc).isoformat()
+        raise RuntimeError(f'Meta data access expires before campaign end: {when}. Re-authorize the app.')
+
+    exp_text = 'never/unspecified' if not expires_at else datetime.fromtimestamp(expires_at, tz=timezone.utc).isoformat()
+    print(f'Token inspection OK: type={data.get("type")}; expires_at={exp_text}; required scopes present.')
+
+def verify_instagram_profile(version: str, ig_user_id: str, user_token: str) -> None:
+    profile = request_json('GET', graph_url(version, ig_user_id, {
+        'fields': 'id,username,website',
+        'access_token': user_token,
     }))
-    return any((item.get('caption') or '').strip() == caption.strip() for item in result.get('data', []))
+    username = str(profile.get('username') or '')
+    website = str(profile.get('website') or '')
+    print(f'Instagram profile OK: @{username}; website={website or "(empty)"}.')
+    if 'almanyapusulasi.de' not in website.casefold():
+        raise RuntimeError('Instagram profile website does not point to almanyapusulasi.de, but campaign captions use "profile link".')
+
+def find_facebook_post(version: str, page_id: str, token: str, caption: str) -> str:
+    result = request_json('GET', graph_url(version, f'{page_id}/posts', {
+        'fields': 'id,message,created_time', 'limit': '50', 'access_token': token,
+    }))
+    for item in result.get('data', []):
+        if (item.get('message') or '').strip() == caption.strip():
+            return str(item.get('id') or '')
+    return ''
+
+def find_instagram_media(version: str, ig_user_id: str, token: str, caption: str) -> str:
+    result = request_json('GET', graph_url(version, f'{ig_user_id}/media', {
+        'fields': 'id,caption,timestamp', 'limit': '50', 'access_token': token,
+    }))
+    for item in result.get('data', []):
+        if (item.get('caption') or '').strip() == caption.strip():
+            return str(item.get('id') or '')
+    return ''
 
 def publish_facebook(version: str, page_id: str, token: str, image_url: str, caption: str) -> str:
     result = request_json('POST', graph_url(version, f'{page_id}/photos'), {
@@ -126,6 +181,15 @@ def publish_facebook(version: str, page_id: str, token: str, image_url: str, cap
     if not post_id:
         raise RuntimeError('Facebook publish returned no post/photo id.')
     return post_id
+
+def verify_facebook_post(version: str, post_id: str, token: str, caption: str) -> None:
+    result = request_json('GET', graph_url(version, post_id, {
+        'fields': 'id,message,created_time,permalink_url',
+        'access_token': token,
+    }))
+    if (result.get('message') or '').strip() != caption.strip():
+        raise RuntimeError(f'Facebook post verification failed for {post_id}: caption mismatch.')
+    print(f'Facebook post verified: {post_id}; permalink={result.get("permalink_url") or "(not returned)"}.') 
 
 def publish_instagram(version: str, ig_user_id: str, token: str, image_url: str, caption: str) -> str:
     container = request_json('POST', graph_url(version, f'{ig_user_id}/media'), {
@@ -154,9 +218,18 @@ def publish_instagram(version: str, ig_user_id: str, token: str, image_url: str,
         raise RuntimeError('Instagram publish returned no media id.')
     return media_id
 
+def verify_instagram_media(version: str, media_id: str, token: str, caption: str) -> None:
+    result = request_json('GET', graph_url(version, media_id, {
+        'fields': 'id,caption,media_type,permalink,timestamp',
+        'access_token': token,
+    }))
+    if (result.get('caption') or '').strip() != caption.strip():
+        raise RuntimeError(f'Instagram media verification failed for {media_id}: caption mismatch.')
+    print(f'Instagram media verified: {media_id}; permalink={result.get("permalink") or "(not returned)"}.') 
+
 def check_public_image(url: str) -> None:
     req = urllib.request.Request(url, method='GET', headers={
-        'User-Agent': 'AlmanyaPusulasi-SocialPublisher/2.0',
+        'User-Agent': 'AlmanyaPusulasi-SocialPublisher/3.0',
         'Range': 'bytes=0-128',
     })
     try:
@@ -186,11 +259,15 @@ def main() -> None:
     print(f'Queue item selected: {post["date"]} {post["slug"]} -> {image_url}')
     version = queue.get('graph_api_version', 'v26.0')
 
-    page_id, page_name, ig_user_id, page_token, mode = resolve_credentials(version)
+    page_id, page_name, ig_user_id, page_token, mode, source_user_token = resolve_credentials(version)
+
+    if mode == 'full':
+        inspect_user_token(version, source_user_token)
+        verify_instagram_profile(version, ig_user_id, source_user_token)
 
     if args.preflight:
         if mode != 'full':
-            raise RuntimeError('Facebook Page token is valid, but full Facebook+Instagram automation requires META_USER_ACCESS_TOKEN.')
+            raise RuntimeError('Facebook Page token is valid, but full Facebook+Instagram automation requires a User Access Token.')
         print('Full Meta preflight complete; no write performed.')
         return
 
@@ -202,23 +279,28 @@ def main() -> None:
         return
 
     results = {}
-    if already_on_facebook(version, page_id, page_token, post['facebook_caption']):
-        results['facebook'] = 'SKIP_DUPLICATE'
+    fb_existing = find_facebook_post(version, page_id, page_token, post['facebook_caption'])
+    if fb_existing:
+        results['facebook'] = f'SKIP_DUPLICATE:{fb_existing}'
     else:
-        results['facebook'] = publish_facebook(version, page_id, page_token, image_url, post['facebook_caption'])
+        fb_id = publish_facebook(version, page_id, page_token, image_url, post['facebook_caption'])
+        verify_facebook_post(version, fb_id, page_token, post['facebook_caption'])
+        results['facebook'] = fb_id
 
     if mode == 'full':
-        if already_on_instagram(version, ig_user_id, page_token, post['instagram_caption']):
-            results['instagram'] = 'SKIP_DUPLICATE'
+        ig_existing = find_instagram_media(version, ig_user_id, page_token, post['instagram_caption'])
+        if ig_existing:
+            results['instagram'] = f'SKIP_DUPLICATE:{ig_existing}'
         else:
-            results['instagram'] = publish_instagram(version, ig_user_id, page_token, image_url, post['instagram_caption'])
+            ig_id = publish_instagram(version, ig_user_id, page_token, image_url, post['instagram_caption'])
+            verify_instagram_media(version, ig_id, page_token, post['instagram_caption'])
+            results['instagram'] = ig_id
     else:
-        results['instagram'] = 'BLOCKED_NEEDS_META_USER_ACCESS_TOKEN'
-        print('Facebook completed; Instagram withheld until META_USER_ACCESS_TOKEN is configured.')
+        results['instagram'] = 'BLOCKED_NEEDS_USER_ACCESS_TOKEN'
 
     print('Publish result: ' + json.dumps(results, ensure_ascii=False))
-    if results.get('instagram') == 'BLOCKED_NEEDS_META_USER_ACCESS_TOKEN':
-        raise RuntimeError('Instagram publication incomplete: configure long-lived META_USER_ACCESS_TOKEN.')
+    if results.get('instagram') == 'BLOCKED_NEEDS_USER_ACCESS_TOKEN':
+        raise RuntimeError('Instagram publication incomplete: configure a User Access Token.')
 
 if __name__ == '__main__':
     main()
