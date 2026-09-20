@@ -112,6 +112,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--date', help='Europe/Berlin publication date YYYY-MM-DD; defaults to today.')
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--preflight', action='store_true', help='Verify Meta token, Page and Instagram linkage without publishing.')
     args = parser.parse_args()
 
     queue = json.loads(QUEUE.read_text(encoding='utf-8'))
@@ -137,6 +138,9 @@ def main() -> None:
     version = queue.get('graph_api_version', 'v26.0')
     page_id, page_name, ig_user_id = derive_accounts(version, token)
     print(f'Meta preflight OK: Facebook Page {page_name} ({page_id}); Instagram professional account {ig_user_id}.')
+    if args.preflight:
+        print('Preflight complete; no Meta write performed.')
+        return
 
     results = {}
     if already_on_facebook(version, page_id, token, post['facebook_caption']):

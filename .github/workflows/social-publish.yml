@@ -1,9 +1,16 @@
 name: Publish Almanya Pusulasi Social Queue
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'social/meta-queue.json'
+      - 'scripts/publish-social-meta.py'
+      - '.github/workflows/social-publish.yml'
   schedule:
-    # 18:30 Europe/Berlin during the 20-29 Sep 2026 CEST campaign window.
-    - cron: '30 16 * * *'
+    # Campaign resilience: 18:30, 19:30 and 20:30 Europe/Berlin (CEST).
+    # Duplicate guards make retry runs no-op after a successful publication.
+    - cron: '30 16,17,18 * * *'
   workflow_dispatch:
     inputs:
       publish_date:
@@ -24,21 +31,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  preflight:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Validate brand lock
         run: node scripts/validate-brand-lock.js
-
       - name: Validate social queue
         run: node scripts/validate-social-meta.js
-
       - name: Compile publisher
         run: python -m py_compile scripts/publish-social-meta.py
+      - name: Verify Meta credentials and linked accounts without publishing
+        env:
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+        run: python scripts/publish-social-meta.py --preflight
 
+  publish:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Validate brand lock
+        run: node scripts/validate-brand-lock.js
+      - name: Validate social queue
+        run: node scripts/validate-social-meta.js
+      - name: Compile publisher
+        run: python -m py_compile scripts/publish-social-meta.py
       - name: Publish today's Facebook + Instagram post
         env:
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
