@@ -43,8 +43,31 @@ for(const {source,destination} of mappings){
   if(sitemapText.includes('https://almanyapusulasi.de'+src)) failures.push(`merged source still appears in XML sitemap: ${src}`);
 }
 
+
+function walk(dir){
+  const out=[];
+  for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
+    if(entry.name==='.git'||entry.name==='node_modules'||entry.name==='dist') continue;
+    const full=path.join(dir,entry.name);
+    if(entry.isDirectory()) out.push(...walk(full));
+    else if(entry.isFile() && entry.name.endsWith('.html')) out.push(full);
+  }
+  return out;
+}
+const htmlFiles=walk('.');
+for(const file of htmlFiles){
+  const html=fs.readFileSync(file,'utf8');
+  for(const {source} of mappings){
+    const src=source.endsWith('/')?source:source+'/';
+    const base=src.slice(0,-1);
+    if(html.includes(`href="${src}"`) || html.includes(`href="${base}"`)){
+      failures.push(`internal link points to merged URL: ${file} -> ${source}`);
+    }
+  }
+}
+
 if(failures.length){
   for(const x of failures) console.error('::error::'+x);
   process.exit(1);
 }
-console.log(`PASS legacy 301 consolidations: ${mappings.length} merged URLs, ${mappings.length*3} redirect variants`);
+console.log(`PASS legacy 301 consolidations: ${mappings.length} merged URLs, ${mappings.length*3} redirect variants, no internal links to merged URLs`);
