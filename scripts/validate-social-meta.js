@@ -8,6 +8,7 @@ const fail = msg => failures.push(msg);
 if (queue.timezone !== 'Europe/Berlin') fail('timezone must be Europe/Berlin');
 if (queue.publish_time !== '18:30') fail('publish_time must be 18:30');
 if (queue.graph_api_version !== 'v26.0') fail('Graph API version must be v26.0');
+if (typeof queue.approved !== 'boolean') fail('queue.approved must be explicit boolean');
 if (!Array.isArray(queue.posts) || queue.posts.length !== 10) fail('queue must contain exactly 10 posts');
 
 const expectedDates = Array.from({length:10}, (_,i) => '2026-09-' + String(20+i).padStart(2,'0'));

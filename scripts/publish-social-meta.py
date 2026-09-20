@@ -248,6 +248,9 @@ def main() -> None:
     args = parser.parse_args()
 
     queue = json.loads(QUEUE.read_text(encoding='utf-8'))
+    if queue.get('approved') is not True:
+        print('Social queue is NOT APPROVED. Publishing blocked by approval gate.')
+        return
     tz = ZoneInfo(queue['timezone'])
     target_date = args.date or datetime.now(tz).date().isoformat()
     post = next((item for item in queue['posts'] if item['date'] == target_date), None)
