@@ -23,7 +23,7 @@ Add one long-lived User Access Token as:
 
 The publisher calls `/me/accounts?fields=id,name,access_token,tasks,instagram_business_account` on every run, selects the Almanya Pusulası Page, then derives both the current Page Access Token and Instagram professional account ID automatically.
 
-`META_PAGE_ACCESS_TOKEN` is retained only as a temporary Facebook-only fallback and is not sufficient for full Instagram automation.
+`META_PAGE_ACCESS_TOKEN` is a legacy secret name. The runtime now auto-detects whether its value is actually a User token; if so, it enables full Facebook+Instagram automation without requiring a second secret. A real Page token remains Facebook-only fallback.
 
 Never commit either token to repository files or chat.
 

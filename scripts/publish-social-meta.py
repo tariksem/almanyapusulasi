@@ -87,16 +87,24 @@ def derive_facebook_only_from_page_token(version: str, page_token: str):
 
 def resolve_credentials(version: str):
     user_token = os.environ.get('META_USER_ACCESS_TOKEN', '').strip()
-    page_token = os.environ.get('META_PAGE_ACCESS_TOKEN', '').strip()
+    legacy_token = os.environ.get('META_PAGE_ACCESS_TOKEN', '').strip()
 
     if user_token:
         return (*derive_from_user_token(version, user_token), 'full')
 
-    if page_token:
-        page_id, page_name = derive_facebook_only_from_page_token(version, page_token)
-        return page_id, page_name, '', page_token, 'facebook_only'
+    if legacy_token:
+        # Historical secret name may contain either a User token or a Page token.
+        # Detect it instead of forcing the operator to re-enter credentials.
+        try:
+            resolved = derive_from_user_token(version, legacy_token)
+            print('Legacy META_PAGE_ACCESS_TOKEN detected as a User Access Token; full automation enabled.')
+            return (*resolved, 'full')
+        except Exception as user_exc:
+            print(f'Legacy token is not usable as a User token: {user_exc}')
+            page_id, page_name = derive_facebook_only_from_page_token(version, legacy_token)
+            return page_id, page_name, '', legacy_token, 'facebook_only'
 
-    raise SystemExit('Missing GitHub secret META_USER_ACCESS_TOKEN (preferred) or META_PAGE_ACCESS_TOKEN (Facebook-only fallback).')
+    raise SystemExit('Missing GitHub secret META_USER_ACCESS_TOKEN or legacy META_PAGE_ACCESS_TOKEN.')
 
 def already_on_facebook(version: str, page_id: str, token: str, caption: str) -> bool:
     result = request_json('GET', graph_url(version, f'{page_id}/posts', {
