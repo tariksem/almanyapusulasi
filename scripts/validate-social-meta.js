@@ -35,7 +35,7 @@ for (const required of ['META_PAGE_ACCESS_TOKEN','instagram_business_account','m
   if (!publisher.includes(required)) fail('publisher missing guard/feature: ' + required);
 }
 const workflow = fs.existsSync('.github/workflows/social-publish.yml') ? fs.readFileSync('.github/workflows/social-publish.yml','utf8') : '';
-for (const required of ["cron: '30 16 * * *'", 'META_PAGE_ACCESS_TOKEN', 'validate-social-meta.js', 'publish-social-meta.py']) {
+for (const required of ["cron: '30 16,17,18 * * *'", 'META_PAGE_ACCESS_TOKEN', 'validate-social-meta.js', 'publish-social-meta.py']) {
   if (!workflow.includes(required)) fail('social workflow missing: ' + required);
 }
 if (workflow.includes('Metricool') || workflow.includes('Windsor')) fail('retired scheduler referenced in social workflow');
