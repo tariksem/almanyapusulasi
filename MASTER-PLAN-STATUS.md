@@ -1,6 +1,6 @@
 # Almanya Pusulası — Master Plan Status
 
-Last updated: 2026-09-19
+Last updated: 2026-09-20
 
 ## Current phase
 
@@ -19,13 +19,13 @@ The technical, content-quality and monetization foundations are largely in place
 
 ## Search Console baseline
 
-Finalized GSC period: **2026-08-20 → 2026-09-16**
-Comparison period: **2026-07-23 → 2026-08-19**
+Finalized GSC period: **2026-08-21 → 2026-09-17**
+Comparison period: **2026-07-24 → 2026-08-20**
 
 - Clicks: **16** (previous 0)
-- Impressions: **76** (previous 45)
-- CTR: **21.1%**
-- Average position: **42.1**, improved from **51.9**
+- Impressions: **77** (previous 45)
+- CTR: **20.8%**
+- Average position: **41.6**, improved from **51.9**
 - Data is sparse; do not infer stable conversion behavior yet.
 
 High-opportunity pages receiving first-page tests but no clicks in this window:
@@ -47,17 +47,18 @@ Kinderzuschlag guide produced 2 clicks / 45 impressions.
 
 ## Active blockers
 
-1. Traffic scale is too small for conversion optimization.
-2. Metricool Facebook/Instagram post on 2026-09-19 failed with `You have reached your Metricool account limit.`; do not buy a plan automatically.
-3. Wise is deliberately deferred by owner.
-4. No genuine partner-side sale/commission evidence yet; do not generate synthetic clicks.
+1. Traffic scale is still too small for conversion optimization.
+2. Wise is deliberately deferred by owner.
+3. No genuine partner-side sale/commission evidence yet; do not generate synthetic clicks.
+
+Social publishing is no longer blocked: Metricool is retired and the current free publishing path is ChatGPT Work → Meta Business Suite, using the 10-day queue in `SOCIAL-AUTO-10D.md`.
 
 ## Next operating target
 
 - Review settled GSC every 7–14 days.
 - Prioritize positions 2–15 with zero/low clicks, new query/page matches and cannibalization.
 - Push traffic to pages already receiving Google tests before broad new clusters.
-- Use manual/direct social distribution while Metricool is blocked.
+- Run the scheduled Facebook/Instagram acquisition batch through Meta Business Suite and measure UTM traffic.
 - Resume conversion reconciliation after meaningful affiliate-click volume exists.
 
 ## Exit criteria
@@ -66,7 +67,7 @@ Return to conversion optimization when the site reaches roughly **50–100 quali
 
 ## Growth Sprint 1 — 2026-09-19
 
-Status: **DEPLOYING / VALIDATING**
+Status: **CLOSED / MEASUREMENT PENDING**
 
 Actions:
 - homepage search-opportunity block expanded to every meaningful GSC page signal, not only tools;
@@ -80,7 +81,7 @@ Measurement: wait for finalized GSC data before another snippet rewrite; compare
 
 ## Growth Sprint 2 — Kindergeld query capture — 2026-09-19
 
-Status: **DEPLOYING / VALIDATING**
+Status: **CLOSED / MEASUREMENT PENDING**
 
 GSC evidence: query `almanya da çocuk yardımı ne kadar 2026` appeared at average position ~11 with no click in the finalized window.
 
@@ -92,3 +93,23 @@ Actions:
 - acquisition guard now protects this query-intent alignment.
 
 Measurement rule: judge only after new finalized GSC data arrives; do not rewrite the snippet again on same-day evidence.
+
+
+## Growth Sprint 3 — Technical consolidation — 2026-09-20
+
+Status: **CLOSED**
+
+Actions:
+- all 23 merged legacy routes now have permanent Cloudflare HTTP 301 redirects, covering slash, no-slash and index.html variants;
+- legacy HTML files remain only as noindex/canonical fallbacks;
+- internal links to merged legacy URLs reduced to zero and protected by CI;
+- live redirect QA resolves both same-origin relative Location headers and the www → canonical-host case;
+- sitemap submission simplified to one primary sitemap index plus RSS;
+- nested sitemap-index references removed and sitemap structure protected by CI;
+- brand production guard remains mandatory in audit and deploy workflows.
+
+Validation:
+- Site Quality Audit #434: success;
+- Cloudflare production #222: success;
+- GitHub Pages #651: success;
+- sitemap structure commit validation: Site Quality Audit #435, Cloudflare #223, Pages #652 all success.

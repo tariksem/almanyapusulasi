@@ -1,8 +1,8 @@
 # Almanya Pusulası — Social Media Master Plan
 
-> **Execution status — 2026-09-19:** acquisition is now the active master-plan phase. Search Console shows first-page tests for several tools but overall volume remains very low. The 2026-09-19 Metricool Facebook/Instagram scheduled post failed because the account reached its Metricool limit. Do not queue more Metricool posts until that constraint changes; use manual/direct publishing with UTM links. Prioritize Blue Card checker, Chancenkarte calculator, Kinderzuschlag checker, Bank selector and Brutto-Netto calculator because they already receive Google impressions.
+> **Execution status — 2026-09-20:** acquisition is the active master-plan phase. Metricool is retired. The free publishing path is ChatGPT Work → Meta Business Suite. The current 10-day Facebook + Instagram batch is defined in `SOCIAL-AUTO-10D.md` and uses platform-specific UTM attribution. Prioritize Blue Card, Chancenkarte, Kinderzuschlag, Bank selector and Brutto-Netto because they already receive Google impressions.
 
-Last updated: 2026-09-10
+Last updated: 2026-09-20
 
 ## Objective
 
@@ -133,6 +133,17 @@ P0/P1 social destinations:
 - Kinderzuschlag checker/guide
 
 Do not sacrifice editorial trust for affiliate commission. Commercial relationships must remain disclosed and rankings must not be represented as editorial if they are commission-driven.
+
+## Current free publishing workflow
+
+- Publishing engine: Meta Business Suite.
+- Operator: ChatGPT Work for authenticated browser execution.
+- Scheduling source of truth: `SOCIAL-AUTO-10D.md`.
+- Metricool and Windsor.ai are not part of the stack.
+- Facebook uses direct UTM-tagged destination URLs.
+- Instagram uses profile-link CTA unless a clickable placement is available.
+- Paid boosts remain disabled.
+- Final branded visuals must comply with `BRAND-IDENTITY.md` and `BRAND-PRODUCTION-GUARD.md`; AI must never generate or redraw the final logo.
 
 ## Publishing model
 
