@@ -9,7 +9,7 @@ Bitiş: 29 Eylül 2026
 Yayın motoru:
 - `.github/workflows/social-publish.yml` her gün 18:30 Europe/Berlin saatine karşılık gelen cron ile çalışır.
 - `scripts/publish-social-meta.py` Meta Graph API'ye doğrudan yayın yapar.
-- Tek gizli değer `META_PAGE_ACCESS_TOKEN`dır; Page ID ve bağlı Instagram Business ID otomatik bulunur.
+- Tam otomasyon için tek ana gizli değer `META_USER_ACCESS_TOKEN`dır; Page token, Page ID ve bağlı Instagram Business ID her çalışmada otomatik türetilir.
 - Metricool, Windsor.ai ve Work kullanılmaz.
 
 Kural:
@@ -104,7 +104,7 @@ Instagram:
 ## Otomasyon çalışma kuralı
 - Makine-okunur kaynak: `social/meta-queue.json`.
 - 10 görsel build sırasında `scripts/render-social-queue.py` tarafından kanonik logo ile deterministik üretilir.
-- Facebook ve Instagram'a doğrudan Meta API ile yayın yapılır.
+- Facebook ve Instagram'a doğrudan Meta API ile yayın yapılır; mevcut Page token yalnız Facebook-only fallback'tir.
 - Aynı caption daha önce yayınlandıysa duplicate guard gönderiyi tekrar basmaz.
 - Görsel public URL'de yoksa veya Meta API hata döndürürse workflow fail olur; sessizce yanlış/eksik paylaşım yapılmaz.
 - 29.09.2026 sonrasında kuyrukta tarih olmadığı için workflow başarılı şekilde no-op olur.

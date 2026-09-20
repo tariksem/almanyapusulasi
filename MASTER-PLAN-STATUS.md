@@ -51,7 +51,7 @@ Kinderzuschlag guide produced 2 clicks / 45 impressions.
 2. Wise is deliberately deferred by owner.
 3. No genuine partner-side sale/commission evidence yet; do not generate synthetic clicks.
 
-Social publishing architecture is direct and third-party-scheduler-free: GitHub Actions → Meta Graph API. The 10-day queue is machine-readable in `social/meta-queue.json` and documented in `SOCIAL-AUTO-10D.md`. One long-lived Page Access Token is required as GitHub secret `META_PAGE_ACCESS_TOKEN`.
+Social publishing architecture is direct and third-party-scheduler-free: GitHub Actions → Meta Graph API. The 10-day queue is machine-readable in `social/meta-queue.json` and documented in `SOCIAL-AUTO-10D.md`. One long-lived User Access Token is required as GitHub secret `META_USER_ACCESS_TOKEN`; the Page token and Instagram ID are derived at runtime. The existing Page token remains Facebook-only fallback.
 
 ## Next operating target
 

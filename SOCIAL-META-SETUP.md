@@ -1,12 +1,12 @@
 # Direct Meta Social Publishing — One-Time Setup
 
-Status: CODE READY
+Status: CODE READY — FULL AUTOMATION REQUIRES LONG-LIVED USER TOKEN
 
 The runtime has no third-party scheduler. GitHub Actions publishes directly to the Facebook Page and linked Instagram Professional account through Meta Graph API v26.0.
 
 ## Required Meta permission set
 
-Generate the token from a Meta app you control with:
+The Meta User Access Token must include:
 - `pages_show_list`
 - `pages_read_engagement`
 - `pages_manage_posts`
@@ -15,20 +15,17 @@ Generate the token from a Meta app you control with:
 
 The Facebook Page must be linked to the Instagram Business/Creator account.
 
-## Only repository secret
+## Required repository secret
 
-Add one GitHub Actions repository secret:
+Add one long-lived User Access Token as:
 
-`META_PAGE_ACCESS_TOKEN`
+`META_USER_ACCESS_TOKEN`
 
-Use the long-lived **Page Access Token** for Almanya Pusulası. Do not commit the token to any file.
+The publisher calls `/me/accounts?fields=id,name,access_token,tasks,instagram_business_account` on every run, selects the Almanya Pusulası Page, then derives both the current Page Access Token and Instagram professional account ID automatically.
 
-The publisher derives:
-- Facebook Page ID
-- Facebook Page name
-- linked Instagram Business Account ID
+`META_PAGE_ACCESS_TOKEN` is retained only as a temporary Facebook-only fallback and is not sufficient for full Instagram automation.
 
-from that Page token at runtime.
+Never commit either token to repository files or chat.
 
 ## Runtime
 
@@ -36,6 +33,7 @@ from that Page token at runtime.
 - Deterministic visuals: `scripts/render-social-queue.py`
 - Publisher: `scripts/publish-social-meta.py`
 - Workflow: `.github/workflows/social-publish.yml`
-- Schedule: daily 16:30 UTC = 18:30 Europe/Berlin for the 20–29 Sep 2026 CEST campaign
-- Duplicate protection: exact caption comparison on both platforms
-- Missing image/API error: hard failure; no partial silent success
+- Main publish time: 18:30 Europe/Berlin during the 20–29 Sep 2026 CEST campaign
+- Retry window: hourly through 23:30; exact-caption duplicate protection prevents duplicate posts
+- Missing image/API error: hard failure; no silent success
+- Facebook can temporarily use the existing Page token; Instagram requires the User-token derivation flow

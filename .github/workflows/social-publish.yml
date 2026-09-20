@@ -44,8 +44,9 @@ jobs:
         run: node scripts/validate-social-meta.js
       - name: Compile publisher
         run: python -m py_compile scripts/publish-social-meta.py
-      - name: Verify Meta credentials and linked accounts without publishing
+      - name: Verify full Meta credentials and linked accounts without publishing
         env:
+          META_USER_ACCESS_TOKEN: ${{ secrets.META_USER_ACCESS_TOKEN }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
         run: python scripts/publish-social-meta.py --preflight
 
@@ -63,6 +64,7 @@ jobs:
         run: python -m py_compile scripts/publish-social-meta.py
       - name: Publish today's Facebook + Instagram post
         env:
+          META_USER_ACCESS_TOKEN: ${{ secrets.META_USER_ACCESS_TOKEN }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           INPUT_DATE: ${{ inputs.publish_date }}
           INPUT_DRY_RUN: ${{ inputs.dry_run }}

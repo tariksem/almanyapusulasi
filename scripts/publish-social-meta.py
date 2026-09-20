@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -13,10 +14,11 @@ from zoneinfo import ZoneInfo
 
 QUEUE = Path('social/meta-queue.json')
 GRAPH_ROOT = 'https://graph.facebook.com'
+PAGE_NAME_HINT = 'almanya pusul'
 
 def request_json(method: str, url: str, params=None, timeout: int = 30) -> dict:
     data = urllib.parse.urlencode(params).encode('utf-8') if params is not None else None
-    req = urllib.request.Request(url, data=data, method=method, headers={'User-Agent': 'AlmanyaPusulasi-SocialPublisher/1.0'})
+    req = urllib.request.Request(url, data=data, method=method, headers={'User-Agent': 'AlmanyaPusulasi-SocialPublisher/2.0'})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as response:
             payload = response.read().decode('utf-8')
@@ -32,55 +34,69 @@ def graph_url(version: str, path: str, query=None) -> str:
     base = f'{GRAPH_ROOT}/{version}/{path.lstrip("/")}'
     return base + ('?' + urllib.parse.urlencode(query) if query else '')
 
-def derive_accounts(version: str, token: str):
-    # META_PAGE_ACCESS_TOKEN is a Page Access Token.
-    # Current Page fields expose the linked Instagram identity as
-    # connected_instagram_account / connected_page_backed_instagram_account.
+def normalize(value: str) -> str:
+    text = unicodedata.normalize('NFKD', value or '')
+    text = ''.join(ch for ch in text if not unicodedata.combining(ch))
+    return ' '.join(text.casefold().split())
+
+def derive_from_user_token(version: str, user_token: str):
+    result = request_json('GET', graph_url(version, 'me/accounts', {
+        'fields': 'id,name,access_token,tasks,instagram_business_account',
+        'limit': '100',
+        'access_token': user_token,
+    }))
+    rows = result.get('data') or []
+    eligible = []
+    for row in rows:
+        name = str(row.get('name') or '')
+        page_token = str(row.get('access_token') or '')
+        ig = row.get('instagram_business_account') or {}
+        ig_user_id = str(ig.get('id') or '') if isinstance(ig, dict) else ''
+        if PAGE_NAME_HINT in normalize(name):
+            eligible.append((row, page_token, ig_user_id))
+
+    if not eligible:
+        available = ', '.join(str(row.get('name') or '') for row in rows) or '(none)'
+        raise RuntimeError(f'Almanya Pusulası Page not found in /me/accounts. Available Pages: {available}')
+
+    with_ig = [item for item in eligible if item[2]]
+    selected = with_ig[0] if with_ig else eligible[0]
+    row, page_token, ig_user_id = selected
+    page_id = str(row.get('id') or '')
+    page_name = str(row.get('name') or '')
+
+    if not page_id or not page_name or not page_token:
+        raise RuntimeError('User-token preflight failed: selected Page id/name/access_token is incomplete.')
+    if not ig_user_id:
+        raise RuntimeError('Selected Almanya Pusulası Page has no instagram_business_account in /me/accounts.')
+
+    print(f'Meta account derivation OK: Facebook Page {page_name} ({page_id}); Instagram professional account {ig_user_id}.')
+    return page_id, page_name, ig_user_id, page_token
+
+def derive_facebook_only_from_page_token(version: str, page_token: str):
     page = request_json('GET', graph_url(version, 'me', {
-        'fields': 'id,name,connected_instagram_account,connected_page_backed_instagram_account',
-        'access_token': token,
+        'fields': 'id,name',
+        'access_token': page_token,
     }))
     page_id = str(page.get('id') or '')
     page_name = str(page.get('name') or '')
     if not page_id or not page_name:
-        raise RuntimeError('Page token preflight failed: Page id/name unavailable.')
+        raise RuntimeError('Fallback Page token preflight failed: Page id/name unavailable.')
+    print(f'Fallback Page token OK for Facebook only: {page_name} ({page_id}).')
+    return page_id, page_name
 
-    ig_user_id = ''
-    for field in ('connected_instagram_account', 'connected_page_backed_instagram_account'):
-        value = page.get(field) or {}
-        candidate = str(value.get('id') or '') if isinstance(value, dict) else ''
-        if candidate:
-            ig_user_id = candidate
-            print(f'Instagram account discovered via Page field {field}: {ig_user_id}.')
-            break
+def resolve_credentials(version: str):
+    user_token = os.environ.get('META_USER_ACCESS_TOKEN', '').strip()
+    page_token = os.environ.get('META_PAGE_ACCESS_TOKEN', '').strip()
 
-    # Fallbacks for Page configurations/API variants.
-    discovery_errors = []
-    if not ig_user_id:
-        for edge in ('instagram_accounts', 'page_backed_instagram_accounts'):
-            try:
-                result = request_json('GET', graph_url(version, f'{page_id}/{edge}', {
-                    'fields': 'id,username',
-                    'limit': '10',
-                    'access_token': token,
-                }))
-                rows = result.get('data') or []
-                if rows:
-                    ig_user_id = str(rows[0].get('id') or '')
-                    if ig_user_id:
-                        print(f'Instagram account discovered via {edge}: {ig_user_id}.')
-                        break
-            except Exception as exc:
-                discovery_errors.append(f'{edge}: {exc}')
+    if user_token:
+        return (*derive_from_user_token(version, user_token), 'full')
 
-    if not ig_user_id:
-        detail = '; '.join(discovery_errors)
-        raise RuntimeError(
-            'Instagram professional account ID could not be derived from the Page token. '
-            'Facebook Page token is valid, but no linked Instagram account was returned. '
-            + detail
-        )
-    return page_id, page_name, ig_user_id
+    if page_token:
+        page_id, page_name = derive_facebook_only_from_page_token(version, page_token)
+        return page_id, page_name, '', page_token, 'facebook_only'
+
+    raise SystemExit('Missing GitHub secret META_USER_ACCESS_TOKEN (preferred) or META_PAGE_ACCESS_TOKEN (Facebook-only fallback).')
 
 def already_on_facebook(version: str, page_id: str, token: str, caption: str) -> bool:
     result = request_json('GET', graph_url(version, f'{page_id}/posts', {
@@ -132,13 +148,13 @@ def publish_instagram(version: str, ig_user_id: str, token: str, image_url: str,
 
 def check_public_image(url: str) -> None:
     req = urllib.request.Request(url, method='GET', headers={
-        'User-Agent': 'AlmanyaPusulasi-SocialPublisher/1.0',
+        'User-Agent': 'AlmanyaPusulasi-SocialPublisher/2.0',
         'Range': 'bytes=0-128',
     })
     try:
         with urllib.request.urlopen(req, timeout=20) as response:
             content_type = response.headers.get('Content-Type', '')
-            if response.status not in {200, 206} or not content_type.startswith('image/'):
+            if response.status not in {200, 206} or not content_type.startswith('image/jpeg'):
                 raise RuntimeError(f'Unexpected social image response: HTTP {response.status}, {content_type}')
     except Exception as exc:
         raise RuntimeError(f'Social image is not publicly reachable: {url}: {exc}') from exc
@@ -147,7 +163,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--date', help='Europe/Berlin publication date YYYY-MM-DD; defaults to today.')
     parser.add_argument('--dry-run', action='store_true')
-    parser.add_argument('--preflight', action='store_true', help='Verify Meta token, Page and Instagram linkage without publishing.')
+    parser.add_argument('--preflight', action='store_true', help='Verify Meta credentials/accounts without publishing.')
     args = parser.parse_args()
 
     queue = json.loads(QUEUE.read_text(encoding='utf-8'))
@@ -160,44 +176,41 @@ def main() -> None:
 
     image_url = queue['site_base'].rstrip('/') + post['image_path']
     print(f'Queue item selected: {post["date"]} {post["slug"]} -> {image_url}')
+    version = queue.get('graph_api_version', 'v26.0')
 
-    token = os.environ.get('META_PAGE_ACCESS_TOKEN', '').strip()
+    page_id, page_name, ig_user_id, page_token, mode = resolve_credentials(version)
 
     if args.preflight:
-        if not token:
-            raise SystemExit('Missing GitHub secret META_PAGE_ACCESS_TOKEN.')
-        version = queue.get('graph_api_version', 'v26.0')
-        page_id, page_name, ig_user_id = derive_accounts(version, token)
-        print(f'Meta preflight OK: Facebook Page {page_name} ({page_id}); Instagram professional account {ig_user_id}.')
-        print('Preflight complete; no Meta write performed.')
+        if mode != 'full':
+            raise RuntimeError('Facebook Page token is valid, but full Facebook+Instagram automation requires META_USER_ACCESS_TOKEN.')
+        print('Full Meta preflight complete; no write performed.')
         return
 
     check_public_image(image_url)
     print('Public social image preflight OK.')
 
     if args.dry_run:
-        print('Dry-run complete; no Meta API write performed.')
+        print('Dry-run complete; no Meta write performed.')
         return
 
-    if not token:
-        raise SystemExit('Missing GitHub secret META_PAGE_ACCESS_TOKEN.')
-
-    version = queue.get('graph_api_version', 'v26.0')
-    page_id, page_name, ig_user_id = derive_accounts(version, token)
-    print(f'Meta preflight OK: Facebook Page {page_name} ({page_id}); Instagram professional account {ig_user_id}.')
-
     results = {}
-    if already_on_facebook(version, page_id, token, post['facebook_caption']):
+    if already_on_facebook(version, page_id, page_token, post['facebook_caption']):
         results['facebook'] = 'SKIP_DUPLICATE'
     else:
-        results['facebook'] = publish_facebook(version, page_id, token, image_url, post['facebook_caption'])
+        results['facebook'] = publish_facebook(version, page_id, page_token, image_url, post['facebook_caption'])
 
-    if already_on_instagram(version, ig_user_id, token, post['instagram_caption']):
-        results['instagram'] = 'SKIP_DUPLICATE'
+    if mode == 'full':
+        if already_on_instagram(version, ig_user_id, page_token, post['instagram_caption']):
+            results['instagram'] = 'SKIP_DUPLICATE'
+        else:
+            results['instagram'] = publish_instagram(version, ig_user_id, page_token, image_url, post['instagram_caption'])
     else:
-        results['instagram'] = publish_instagram(version, ig_user_id, token, image_url, post['instagram_caption'])
+        results['instagram'] = 'BLOCKED_NEEDS_META_USER_ACCESS_TOKEN'
+        print('Facebook completed; Instagram withheld until META_USER_ACCESS_TOKEN is configured.')
 
     print('Publish result: ' + json.dumps(results, ensure_ascii=False))
+    if results.get('instagram') == 'BLOCKED_NEEDS_META_USER_ACCESS_TOKEN':
+        raise RuntimeError('Instagram publication incomplete: configure long-lived META_USER_ACCESS_TOKEN.')
 
 if __name__ == '__main__':
     main()
