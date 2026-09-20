@@ -6,6 +6,7 @@ on:
     paths:
       - 'social/meta-queue.json'
       - 'scripts/publish-social-meta.py'
+      - 'scripts/validate-social-meta.js'
       - '.github/workflows/social-publish.yml'
   schedule:
     # Campaign resilience: 18:30, 19:30 and 20:30 Europe/Berlin (CEST).
