@@ -164,6 +164,8 @@ jobs:
         run: node scripts/validate-finance-revenue-funnel.js
       - name: Validate acquisition P0
         run: node scripts/validate-acquisition-p0.js
+      - name: Validate legacy 301 consolidations
+        run: node scripts/validate-legacy-redirects.js
       - name: Validate German letter templates
         run: |
           node - <<'JS'

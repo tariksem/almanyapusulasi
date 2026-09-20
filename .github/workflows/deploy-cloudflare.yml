@@ -166,36 +166,69 @@ jobs:
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing GitHub secret: CLOUDFLARE_ACCOUNT_ID"; exit 1; }
           npx --yes wrangler@4 deploy --config wrangler.jsonc
 
-      - name: Verify Kindergeld legacy 301 consolidation
+      - name: Verify legacy 301 consolidations
         run: |
           python - <<'PY'
           import urllib.request
           import urllib.error
+          from concurrent.futures import ThreadPoolExecutor, as_completed
 
           class NoRedirect(urllib.request.HTTPRedirectHandler):
               def redirect_request(self, req, fp, code, msg, headers, newurl):
                   return None
 
-          opener = urllib.request.build_opener(NoRedirect)
           tests = [
-              'https://almanyapusulasi.de/kindergeld-2026/',
-              'https://www.almanyapusulasi.de/kindergeld-2026/',
+              ("https://almanyapusulasi.de/almanyada-banka-hesabi-yeni-gelenler/", "https://almanyapusulasi.de/almanyada-banka-hesabi/"),
+              ("https://almanyapusulasi.de/girokonto-karsilastirma-2026/", "https://almanyapusulasi.de/almanyada-banka-hesabi-karsilastirma/"),
+              ("https://almanyapusulasi.de/ucretsiz-girokonto-2026/", "https://almanyapusulasi.de/almanyada-banka-hesabi-karsilastirma/"),
+              ("https://almanyapusulasi.de/basiskonto-kim-acabilir/", "https://almanyapusulasi.de/girokonto-basiskonto-farki/"),
+              ("https://almanyapusulasi.de/warmmiete-kaltmiete-farki/", "https://almanyapusulasi.de/almanyada-ev-kiralama-rehberi/"),
+              ("https://almanyapusulasi.de/kaution-en-fazla-ne-kadar/", "https://almanyapusulasi.de/kaution-depozito-geri-alma/"),
+              ("https://almanyapusulasi.de/nebenkosten-nachzahlung-normal-mi/", "https://almanyapusulasi.de/nebenkosten-yan-giderler-hesabi/"),
+              ("https://almanyapusulasi.de/almanyada-yazilimci-maasi-2026/", "https://almanyapusulasi.de/almanyada-yazilimci-it-kariyeri/"),
+              ("https://almanyapusulasi.de/almanyada-muhendis-maasi-2026/", "https://almanyapusulasi.de/almanyada-muhendis-kariyeri/"),
+              ("https://almanyapusulasi.de/almanyada-pflege-maasi-2026/", "https://almanyapusulasi.de/almanyada-pflegefachkraft-hemsire-kariyeri/"),
+              ("https://almanyapusulasi.de/turk-hemsire-almanya-denklik/", "https://almanyapusulasi.de/almanyada-pflegefachkraft-hemsire-kariyeri/"),
+              ("https://almanyapusulasi.de/almanyada-elektrikci-denklik-gerekli-mi/", "https://almanyapusulasi.de/almanyada-elektroniker-elektrikci-kariyeri/"),
+              ("https://almanyapusulasi.de/schulbegleiter-almanca-b2-gerekli-mi/", "https://almanyapusulasi.de/almanyada-ogretmen-schulbegleitung-kariyeri/"),
+              ("https://almanyapusulasi.de/sachbearbeiter-almanca-seviyesi/", "https://almanyapusulasi.de/almanyada-satis-office-kariyeri/"),
+              ("https://almanyapusulasi.de/lagerhelfer-vize-almanya/", "https://almanyapusulasi.de/almanyada-lojistik-depo-kariyeri/"),
+              ("https://almanyapusulasi.de/almanyada-doktor-denklik-suresi/", "https://almanyapusulasi.de/almanyada-doktor-hekim-kariyeri/"),
+              ("https://almanyapusulasi.de/erzieher-denklik-nrw-2026/", "https://almanyapusulasi.de/almanyada-erzieher-pedagoji-kariyeri/"),
+              ("https://almanyapusulasi.de/kindergeld-adres-degisikligi/", "https://almanyapusulasi.de/kindergeld-basvuru/"),
+              ("https://almanyapusulasi.de/kindergeld-2026/", "https://almanyapusulasi.de/kindergeld/"),
+              ("https://almanyapusulasi.de/blue-card-nedir/", "https://almanyapusulasi.de/blue-card/"),
+              ("https://almanyapusulasi.de/schufa-nedir/", "https://almanyapusulasi.de/schufa/"),
+              ("https://almanyapusulasi.de/schufa-ve-ev-kredisi/", "https://almanyapusulasi.de/almanyada-ev-kredisi/"),
+              ("https://almanyapusulasi.de/haberler/vergi-reformu-2027-kindergeld/", "https://almanyapusulasi.de/haberler/vergi-kindergeld-2027/"),
+              ('https://www.almanyapusulasi.de/kindergeld-2026/', 'https://almanyapusulasi.de/kindergeld/'),
           ]
-          expected = 'https://almanyapusulasi.de/kindergeld/'
-          failures = []
-          for url in tests:
+
+          def check(item):
+              url, expected = item
+              opener = urllib.request.build_opener(NoRedirect)
               req = urllib.request.Request(url, headers={'User-Agent': 'AlmanyaPusulasi-Deploy-QA/1.0'})
               try:
                   opener.open(req, timeout=15)
-                  failures.append(f'{url}: expected 301, got non-redirect response')
+                  return f'{url}: expected 301, got non-redirect response'
               except urllib.error.HTTPError as exc:
                   location = exc.headers.get('Location')
                   if exc.code != 301 or location != expected:
-                      failures.append(f'{url}: expected 301 -> {expected}, got {exc.code} -> {location}')
-                  else:
-                      print(f'OK 301 {url} -> {location}')
+                      return f'{url}: expected 301 -> {expected}, got {exc.code} -> {location}'
+                  print(f'OK 301 {url} -> {location}')
+                  return None
+              except Exception as exc:
+                  return f'{url}: {exc}'
+
+          failures=[]
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              futures=[pool.submit(check,item) for item in tests]
+              for future in as_completed(futures):
+                  error=future.result()
+                  if error: failures.append(error)
           if failures:
-              raise SystemExit('Legacy redirect QA failed:\n' + '\n'.join(failures))
+              raise SystemExit('Legacy redirect QA failed:\n' + '\n'.join(sorted(failures)))
+          print(f'Legacy redirect QA passed for {len(tests)} URLs.')
           PY
 
       - name: Smoke test flagship production URLs
