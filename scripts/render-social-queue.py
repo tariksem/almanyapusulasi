@@ -7,7 +7,7 @@ from pathlib import Path
 from PIL import Image
 
 QUEUE = Path('social/meta-queue.json')
-RENDERER = Path('scripts/render-social-card.py')
+RENDERER = Path('scripts/render-social-card-v2.py')
 
 def main() -> None:
     data = json.loads(QUEUE.read_text(encoding='utf-8'))
@@ -18,6 +18,7 @@ def main() -> None:
         temp_png = output.with_suffix('.tmp.png')
         cmd = [
             sys.executable, str(RENDERER),
+            '--slug', post['slug'],
             '--headline', post['headline'],
             '--cta', post['cta'],
             '--url', 'almanyapusulasi.de',
@@ -31,7 +32,7 @@ def main() -> None:
         temp_png.unlink(missing_ok=True)
         if not output.exists() or output.stat().st_size < 10000:
             raise SystemExit(f'Invalid generated social image: {output}')
-    print(f'Rendered {len(posts)} deterministic JPEG social cards from canonical brand assets.')
+    print(f'Rendered {len(posts)} deterministic 4:5 JPEG social cards from canonical brand assets.')
 
 if __name__ == '__main__':
     main()

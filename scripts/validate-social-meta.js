@@ -44,7 +44,7 @@ const seenUtmContent = new Set();
 });
 if (JSON.stringify(queue).includes('utm_content=kiz_10d')) fail('deprecated Kinderzuschlag UTM remains');
 
-for (const file of ['scripts/render-social-queue.py','scripts/publish-social-meta.py','.github/workflows/social-publish.yml']) {
+for (const file of ['scripts/render-social-queue.py','scripts/render-social-card-v2.py','scripts/publish-social-meta.py','.github/workflows/social-publish.yml']) {
   if (!fs.existsSync(file)) fail('missing automation file: ' + file);
 }
 
@@ -68,3 +68,11 @@ if (failures.length) {
   process.exit(1);
 }
 console.log('PASS Meta social automation: 10 posts, valid destinations, unique UTMs, deterministic assets, credential guards, post verification and bounded campaign schedule.');
+
+const socialRenderer = fs.readFileSync('scripts/render-social-card-v2.py','utf8');
+for (const required of ["assets/brand/almanya-pusulasi-logo.png","Image.open(LOGO)","W, H = 1080, 1350","META = {"]) {
+  if (!socialRenderer.includes(required)) fail('v2 social renderer missing brand guard: ' + required);
+}
+for (const forbidden of ['image_gen','DALL-E','fake logo','draw compass']) {
+  if (socialRenderer.includes(forbidden)) fail('v2 social renderer contains forbidden generated-logo path: ' + forbidden);
+}
