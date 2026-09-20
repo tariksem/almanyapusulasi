@@ -124,23 +124,32 @@ def main() -> None:
         return
 
     image_url = queue['site_base'].rstrip('/') + post['image_path']
+    print(f'Queue item selected: {post["date"]} {post["slug"]} -> {image_url}')
+
+    token = os.environ.get('META_PAGE_ACCESS_TOKEN', '').strip()
+
+    if args.preflight:
+        if not token:
+            raise SystemExit('Missing GitHub secret META_PAGE_ACCESS_TOKEN.')
+        version = queue.get('graph_api_version', 'v26.0')
+        page_id, page_name, ig_user_id = derive_accounts(version, token)
+        print(f'Meta preflight OK: Facebook Page {page_name} ({page_id}); Instagram professional account {ig_user_id}.')
+        print('Preflight complete; no Meta write performed.')
+        return
+
     check_public_image(image_url)
-    print(f'Queue item ready: {post["date"]} {post["slug"]} -> {image_url}')
+    print('Public social image preflight OK.')
 
     if args.dry_run:
         print('Dry-run complete; no Meta API write performed.')
         return
 
-    token = os.environ.get('META_PAGE_ACCESS_TOKEN', '').strip()
     if not token:
         raise SystemExit('Missing GitHub secret META_PAGE_ACCESS_TOKEN.')
 
     version = queue.get('graph_api_version', 'v26.0')
     page_id, page_name, ig_user_id = derive_accounts(version, token)
     print(f'Meta preflight OK: Facebook Page {page_name} ({page_id}); Instagram professional account {ig_user_id}.')
-    if args.preflight:
-        print('Preflight complete; no Meta write performed.')
-        return
 
     results = {}
     if already_on_facebook(version, page_id, token, post['facebook_caption']):
