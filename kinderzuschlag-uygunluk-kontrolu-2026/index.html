@@ -54,7 +54,7 @@
 </article></main>
 <footer class="footer"></footer>
 <script>
-function trackKiZ(name,params){try{var payload=Object.assign({tool_name:'kinderzuschlag_precheck'},params||{});if(window.APAnalytics&&typeof window.APAnalytics.track==='function')window.APAnalytics.track(name,payload);else if(localStorage.getItem('ap_cookie_consent')==='accepted'&&typeof window.gtag==='function')window.gtag('event',name,payload)}catch(e){}}
+function trackKiZ(name,params){try{var payload=Object.assign({tool_name:'kinderzuschlag_precheck'},params||{});if(window.APAnalytics&&typeof window.APAnalytics.track==='function')window.APAnalytics.track(name,payload);}catch(e){}}
 function yes(id){return document.getElementById(id).value==='yes'}
 function calc(){
   const single=document.getElementById('family').value==='single';const income=Number(document.getElementById('income').value)||0;const min=single?600:900;

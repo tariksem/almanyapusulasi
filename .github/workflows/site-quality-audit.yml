@@ -1,6 +1,8 @@
 name: Site Quality Audit
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -13,6 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Validate audit regressions
+        run: |
+          node scripts/generate-discovery.js
+          node scripts/validate-audit-fixes.js
+          node scripts/validate-worker.mjs
+          node scripts/validate-consent.js
+          node scripts/validate-commercial-consent.js
       - name: Audit internal links, canonicals and SEO basics
         run: |
           python3 - <<'PY'

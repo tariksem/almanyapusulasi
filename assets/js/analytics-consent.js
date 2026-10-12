@@ -85,12 +85,13 @@
     const active=section();
     const primary=PRIMARY.map(k=>SECTIONS.find(s=>s.key===k));
     const mega=SECTIONS.map(s=>'<a class="mega-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'"><span class="mega-icon">'+s.icon+'</span><span><strong>'+s.label+'</strong><small>'+(s.key==='haberler'?'Güncel gelişmeler':s.key==='irkcilik'?'Güvenlik, haklar ve destek':s.key==='tools'?'Hesaplayıcılar ve kontroller':'Rehberleri görüntüle')+'</small></span></a>').join("");
-    header.innerHTML='<div class="container header-inner"><a class="site-brand" href="/"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>Karar araçları & resmî kaynaklı rehberler</small></span></a><button class="mobile-menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button><nav class="site-nav"><div class="primary-nav-links">'+primary.map(s=>'<a class="site-nav-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'">'+s.label+'</a>').join("")+'</div><details class="nav-more"><summary>Tüm Rehberler <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
+    header.innerHTML='<div class="container header-inner"><a class="site-brand" href="/"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>Karar araçları & resmî kaynaklı rehberler</small></span></a><button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button><nav class="site-nav"><div class="primary-nav-links">'+primary.map(s=>'<a class="site-nav-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'">'+s.label+'</a>').join("")+'</div><details class="nav-more"><summary>Tüm Rehberler <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
     const toggle=header.querySelector(".mobile-menu-toggle");
     const nav=header.querySelector(".site-nav");
     toggle.onclick=()=>{
       const open=toggle.getAttribute("aria-expanded")==="true";
       toggle.setAttribute("aria-expanded",String(!open));
+      toggle.setAttribute("aria-label",open?"Menüyü aç":"Menüyü kapat");
       nav.classList.toggle("is-open",!open);
       document.body.classList.toggle("menu-open",!open);
     };
@@ -132,12 +133,26 @@
   }
 
   function updateConsent(ok){
+    window["ga-disable-"+GA_ID]=!ok;
     ensureDataLayer();
     gtag("consent","update",{analytics_storage:ok?"granted":"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});
   }
 
+  function clearAnalyticsCookies(){
+    const names=document.cookie.split(";").map(c=>c.trim().split("=")[0]).filter(n=>n==="_ga"||n.startsWith("_ga_"));
+    const parts=location.hostname.split(".");
+    const domains=[""];
+    for(let i=0;i<parts.length-1;i++)domains.push(parts.slice(i).join("."),"."+parts.slice(i).join("."));
+    const segments=location.pathname.split("/").filter(Boolean);
+    const paths=new Set(["/"]);
+    for(let i=1;i<=segments.length;i++)paths.add("/"+segments.slice(0,i).join("/"),"/"+segments.slice(0,i).join("/")+"/");
+    names.forEach(name=>domains.forEach(domain=>paths.forEach(path=>{
+      document.cookie=name+"=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path="+path+(domain?"; domain="+domain:"")+"; SameSite=Lax";
+    })));
+  }
+
   function loadAnalytics(){
-    if(window.__apGaLoaded){updateConsent(true);return;}
+    if(window.__apGaLoaded){updateConsent(true);document.dispatchEvent(new CustomEvent("ap:analytics-ready"));return;}
     window.__apGaLoaded=true;
     ensureDataLayer();
     gtag("consent","default",{analytics_storage:"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});
@@ -174,7 +189,7 @@
         }catch(_){ }
       }
       if(b&&section()&&section().key==="tools"){
-        track("tool_calculate",{tool_path:currentPath(),button_text:(b.textContent||"").trim().slice(0,100)});
+        track("tool_action",{tool_path:currentPath(),button_text:(b.textContent||"").trim().slice(0,100)});
       }
     });
   }
@@ -217,7 +232,7 @@
     banner.innerHTML='<div class="cookie-banner-inner"><div><strong>Gizlilik ayarları</strong><p>Google Analytics yalnızca izninizle yüklenir. <a href="/privacy/">Gizlilik Politikası</a></p></div><div class="cookie-actions"><button class="btn btn-secondary cookie-reject">Yalnızca gerekli</button><button class="btn btn-primary cookie-accept">Analize izin ver</button></div></div>';
     document.body.appendChild(banner);
     banner.querySelector(".cookie-accept").onclick=()=>{saveConsent(ACCEPTED);banner.remove();loadAnalytics();};
-    banner.querySelector(".cookie-reject").onclick=()=>{saveConsent(REJECTED);updateConsent(false);banner.remove();};
+    banner.querySelector(".cookie-reject").onclick=()=>{saveConsent(REJECTED);updateConsent(false);clearAnalyticsCookies();banner.remove();};
   }
 
   document.addEventListener("DOMContentLoaded",()=>{
@@ -228,8 +243,15 @@
     bindGrowthTracking();
     injectHomepageTools();
     enhanceToolsHub();
+    const hubs=document.querySelector(".home-hubs-disclosure");
+    if(hubs){
+      hubs.open=!window.matchMedia("(max-width:768px)").matches;
+      const summary=hubs.querySelector("summary");
+      const label=()=>{summary.textContent=hubs.open?"Konu merkezlerini kapat":"Tüm konu merkezlerini aç";};
+      hubs.addEventListener("toggle",label);label();
+    }
     const consent=readConsent();
     if(consent===ACCEPTED)loadAnalytics();
-    else if(consent!==REJECTED)showConsent(false);
+    else {window["ga-disable-"+GA_ID]=true;clearAnalyticsCookies();if(consent!==REJECTED)showConsent(false);}
   });
 })();

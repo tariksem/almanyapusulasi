@@ -7,8 +7,9 @@
   }
 
   function track(name,params){
-    if(!analyticsAllowed()||typeof window.gtag!=="function")return;
-    window.gtag("event",name,params||{});
+    if(!analyticsAllowed()||!window.APAnalytics||typeof window.APAnalytics.track!=="function")return false;
+    window.APAnalytics.track(name,params||{});
+    return true;
   }
 
   function payload(el){
@@ -57,24 +58,26 @@
     var stacks=[].slice.call(document.querySelectorAll("[data-offer-stack]"));
     var area=detectCommercialArea();
 
-    if(slots.length||stacks.length){
-      track("commercial_page_view",{commercial_area:area,page_path:location.pathname,page_title:document.title});
+    var pageSeen=false;
+    function pageView(){
+      if(!pageSeen&&(slots.length||stacks.length))pageSeen=track("commercial_page_view",{commercial_area:area,page_path:location.pathname,page_title:document.title});
     }
+    pageView();
+    document.addEventListener("ap:analytics-ready",pageView);
 
     if("IntersectionObserver" in window){
       var seenSlots={};
       var slotObserver=new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
-          if(!entry.isIntersecting)return;
+          if(!entry.isIntersecting||!analyticsAllowed())return;
           var key=entry.target.getAttribute("data-affiliate-slot")||"unknown";
           if(seenSlots[key])return;
-          seenSlots[key]=true;
-          track("affiliate_slot_view",{
+          var sent=track("affiliate_slot_view",{
             commercial_area:key,
             page_path:location.pathname,
             slot_active:entry.target.classList.contains("is-active")
           });
-          slotObserver.unobserve(entry.target);
+          if(sent){seenSlots[key]=true;slotObserver.unobserve(entry.target);}
         });
       },{threshold:0.25});
       slots.forEach(function(slot){slotObserver.observe(slot);});
@@ -82,20 +85,24 @@
       var seenStacks={};
       var stackObserver=new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
-          if(!entry.isIntersecting)return;
+          if(!entry.isIntersecting||!analyticsAllowed())return;
           var key=entry.target.getAttribute("data-offer-stack")||"unknown";
           if(seenStacks[key])return;
-          seenStacks[key]=true;
-          track("commercial_offer_stack_view",{
+          var sent=track("commercial_offer_stack_view",{
             commercial_area:key,
             page_path:location.pathname,
             stack_active:entry.target.classList.contains("is-active"),
             offer_count:entry.target.querySelectorAll(".commercial-offer-card").length
           });
-          stackObserver.unobserve(entry.target);
+          if(sent){seenStacks[key]=true;stackObserver.unobserve(entry.target);}
         });
       },{threshold:0.25});
       stacks.forEach(function(stack){stackObserver.observe(stack);});
+      document.addEventListener("ap:analytics-ready",function(){
+        if(!analyticsAllowed())return;
+        slots.forEach(function(slot){if(!seenSlots[slot.getAttribute("data-affiliate-slot")]){slotObserver.unobserve(slot);slotObserver.observe(slot);}});
+        stacks.forEach(function(stack){if(!seenStacks[stack.getAttribute("data-offer-stack")]){stackObserver.unobserve(stack);stackObserver.observe(stack);}});
+      });
     }
   });
 })();
