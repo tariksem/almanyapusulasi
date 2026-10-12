@@ -21,6 +21,7 @@ jobs:
           node scripts/validate-audit-fixes.js
           node scripts/validate-worker.mjs
           node scripts/validate-consent.js
+          node scripts/validate-commercial-consent.js
       - name: Audit internal links, canonicals and SEO basics
         run: |
           python3 - <<'PY'

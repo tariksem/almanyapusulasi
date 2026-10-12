@@ -9,6 +9,19 @@ function secure(response,url){
   const embed=url.searchParams.get('embed')==='1';
   out.headers.set('Content-Security-Policy',embed?"frame-ancestors 'self' https:":"frame-ancestors 'self'");
   if(!embed)out.headers.set('X-Frame-Options','SAMEORIGIN');
+  // Observe source violations before enforcing a policy on uploads, OCR and partner widgets.
+  out.headers.set('Content-Security-Policy-Report-Only',[
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob: https:",
+    "font-src 'self' data:",
+    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://raw.githubusercontent.com https://oet.bamf.de https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://tessdata.projectnaptha.com",
+    "frame-src 'self' blob: https://*.check24.net https://*.partner-versicherung.de",
+    "worker-src 'self' blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net",
+    "object-src 'none'",
+    "base-uri 'self'"
+  ].join('; '));
   // Start with a short policy; extend it only after live HTTPS checks.
   if(url.protocol==='https:')out.headers.set('Strict-Transport-Security','max-age=86400');
   return out;

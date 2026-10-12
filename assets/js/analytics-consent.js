@@ -152,7 +152,7 @@
   }
 
   function loadAnalytics(){
-    if(window.__apGaLoaded){updateConsent(true);return;}
+    if(window.__apGaLoaded){updateConsent(true);document.dispatchEvent(new CustomEvent("ap:analytics-ready"));return;}
     window.__apGaLoaded=true;
     ensureDataLayer();
     gtag("consent","default",{analytics_storage:"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});
@@ -243,6 +243,13 @@
     bindGrowthTracking();
     injectHomepageTools();
     enhanceToolsHub();
+    const hubs=document.querySelector(".home-hubs-disclosure");
+    if(hubs){
+      hubs.open=!window.matchMedia("(max-width:768px)").matches;
+      const summary=hubs.querySelector("summary");
+      const label=()=>{summary.textContent=hubs.open?"Konu merkezlerini kapat":"Tüm konu merkezlerini aç";};
+      hubs.addEventListener("toggle",label);label();
+    }
     const consent=readConsent();
     if(consent===ACCEPTED)loadAnalytics();
     else {window["ga-disable-"+GA_ID]=true;clearAnalyticsCookies();if(consent!==REJECTED)showConsent(false);}

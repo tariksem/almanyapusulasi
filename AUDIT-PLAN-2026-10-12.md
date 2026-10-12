@@ -59,3 +59,23 @@ Yerel doğrulamalar: 250 HTML, 109 JSON-LD, 25 inline script, 227 benzersiz site
 Bu paket henüz canlıya yayınlanmadı. Worker'ın hem apex hem www alan adlarına atanması hesapta doğrulanmalı; kod yalnız Worker'a ulaşan istekleri yönlendirebilir. Canlıya yayın sonrası HTTPS varyantları, JSON endpoint, sitemap kapsamı, gerçek tarayıcı onay/geri çekme ağı ve GA4 Realtime kontrol edilmeli. Tam CSP kaynak kısıtlaması ayrıca planlanmalı; bu pakette embed=1 akışını koruyan frame-ancestors politikası var. HSTS başlangıç süresi bir gün; HTTPS doğrulamasından sonra uzatılmalı.
 
 Search Console yeniden bağlantısı, GA4 rapor erişimi, partner gerçek dönüşüm mutabakatı, AdSense onay/CMP kontrolü ve uzun/kısa içeriklerin editoryal iyileştirmesi bekliyor.
+
+## İkinci uygulama turu — kalan işler
+
+1. Hazır paketin CI/yayın durumunu kontrol et; yayın kaynağı ve Worker alan adı davranışını doğrula.
+2. Canonical/indexlenebilir sayfalardaki uzun başlık ve açıklamaları anlamı koruyarak düzenle. Sosyal metaları aynı başlık/açıklamalarla eşitle.
+3. Kısa araç sayfalarına kullanım, sonuç yorumu, hesap sınırları ve ilgili rehber bağlantıları ekle.
+4. Mobil menü, dokunma alanları ve ana sayfa yoğunluğunu mevcut marka düzenini koruyarak iyileştir.
+5. Güvenlik politikasını kaynak envanteri üzerinden kademeli sıkılaştır; kamusal embed akışlarını koru.
+6. Yayın gerçekleşirse HTTPS/www, JSON endpoint, sitemap, mobil araçlar ve onay/geri çekme ağını yeniden kontrol et.
+7. Hesap erişimi gerektiren Search Console, GA4 Realtime/rapor, partner satış mutabakatı ve AdSense/CMP işlerini doğrulanmadan tamamlandı sayma.
+
+### İkinci tur uygulananlar
+
+- 51 sayfanın title veya description metni kısaltıldı; mevcut sosyal metalar eşitlendi. Indexlenebilir sayfalarda HTML entity çözümlemesi sonrası 65 karakter üzeri title / 170 karakter üzeri description kalanları yeniden taranacak.
+- İlk 90 gün, Netto-Brutto, internet maliyeti, şehir bütçesi ve vergi yöntemi araçlarına kullanım, yöntem, örnek, sınır ve ilgili rehber bölümleri eklendi.
+- Ana sayfada doğrulanmamış güncel Search Console görünürlük iddiası kaldırıldı. Konu merkezleri mobilde açılır/kapanır; 12 bağlantı HTML içinde korunuyor.
+- Yeni dönüşüm hatası onarıldı: onay öncesi görünen partner kutuları artık ölçülmüş sayılıp gözlemden çıkarılmıyor. Kabulden sonra görünür yerleşimler bir kez ölçülüyor; yeniden kabul çift sayım yapmıyor. Partner uç noktalarına sahte test tıklaması gönderilmedi.
+- CSP kaynak politikası Report-Only olarak hazırlandı. Enforcement henüz frame-ancestors ile sınırlı; OCR, upload ve partner bileşenlerinin kaynak ihlalleri gözlenmeden yeni kısıtlar zorlanmıyor.
+- Gerçek tarayıcı mobil kontrolü: beş araç yatay taşma olmadan açılıyor; dört araçta yeni açıklamalar var, tarayıcı hata/warn kaydı yok. Ana sayfa konu merkezleri aç/kapa çalışıyor. Ret sonrası Google etiketi yok; kabulde tek etiket yükleniyor. Çerez silme ve geri çekme davranışı kod testinde doğrulandı; gerçek Google ağ/GA4 hesap kanıtı ayrıca gerekiyor.
+- Doğrudan Cloudflare oturumu yok. Mevcut GitHub yayın akışı kullanılabilir; alan adı davranışı canlıda ayrıca doğrulanmalı.

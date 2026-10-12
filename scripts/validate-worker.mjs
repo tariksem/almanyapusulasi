@@ -14,6 +14,8 @@ assert.equal(normal.headers.get('X-Content-Type-Options'),'nosniff');
 assert.equal(normal.headers.get('Strict-Transport-Security'),'max-age=86400');
 assert.equal(normal.headers.get('Content-Security-Policy'),"frame-ancestors 'self'");
 assert.equal(normal.headers.get('X-Frame-Options'),'SAMEORIGIN');
+assert(normal.headers.get('Content-Security-Policy-Report-Only').includes("default-src 'self'"));
+assert(normal.headers.get('Content-Security-Policy-Report-Only').includes("worker-src 'self' blob:"));
 const embed=await worker.fetch(new Request('https://almanyapusulasi.de/araclar/?embed=1'),env);
 assert(embed.headers.get('Content-Security-Policy').includes('https:'),'External embeds must remain available');
 assert(!embed.headers.has('X-Frame-Options'));
