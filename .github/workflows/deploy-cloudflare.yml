@@ -19,6 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Generate and validate discovery assets
+        run: |
+          node scripts/generate-discovery.js
+          node scripts/validate-audit-fixes.js
+
       - name: Validate locked brand identity
         run: node scripts/validate-brand-lock.js
 
@@ -81,13 +86,18 @@ jobs:
           mkdir -p dist
           git ls-files -z | rsync -a --from0 --files-from=- ./ dist/
           rm -rf dist/.github dist/scripts dist/data
+          mkdir -p dist/data
+          cp data/almanya-2026-esikler.json dist/data/almanya-2026-esikler.json
           rm -f dist/wrangler.jsonc dist/.gitignore
+          rm -f dist/worker.mjs
           find dist -maxdepth 1 -type f -name '*.md' -delete
           mkdir -p dist/assets/data dist/assets/brand dist/assets/social
           cp assets/data/einbuergerungstest.json dist/assets/data/einbuergerungstest.json
           cp assets/brand/social-preview.png dist/assets/brand/social-preview.png
           cp -r assets/social/. dist/assets/social/
+          cp sitemap-*.xml rss.xml index.html dist/
           test -f dist/vatandaslik-testi/index.html
+          test -f dist/data/almanya-2026-esikler.json
           test -f dist/assets/data/einbuergerungstest.json
           test -f dist/assets/js/einbuergerungstest.js
           test -f dist/assets/brand/social-preview.png

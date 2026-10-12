@@ -1,5 +1,6 @@
 const fs = require('fs');
 const crypto = require('crypto');
+const {execFileSync} = require('child_process');
 
 const locked = {
   'BRAND-IDENTITY.md': '5c176fcbafec266e7a1d31312dcddea6b77fadb8',
@@ -30,7 +31,8 @@ for (const [path, expected] of Object.entries(locked)) {
     fail(`Locked brand file missing: ${path}`);
     continue;
   }
-  const actual = gitBlobSha(fs.readFileSync(path));
+  // Apply Git's clean filters so CRLF checkouts match the locked repository bytes.
+  const actual = execFileSync('git',['hash-object','--path='+path,path],{encoding:'utf8'}).trim();
   if (actual !== expected) {
     fail(`Locked brand file changed: ${path} expected ${expected} got ${actual}`);
   } else {

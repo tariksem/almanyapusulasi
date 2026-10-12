@@ -46,7 +46,7 @@
   'use strict';
   const $=id=>document.getElementById(id), result=$('result');
   function analyticsAllowed(){try{return localStorage.getItem('ap_cookie_consent')==='accepted'}catch(e){return false}}
-  function track(name,params){if(!analyticsAllowed())return;try{if(window.APAnalytics&&typeof window.APAnalytics.track==='function')window.APAnalytics.track(name,params);else if(typeof window.gtag==='function')window.gtag('event',name,params)}catch(e){}}
+  function track(name,params){if(!analyticsAllowed())return;try{if(window.APAnalytics&&typeof window.APAnalytics.track==='function')window.APAnalytics.track(name,params);}catch(e){}}
   function band(amount){if(amount<5000)return 'under_5k';if(amount<15000)return '5k_15k';if(amount<30000)return '15k_30k';if(amount<75000)return '30k_75k';return '75k_plus'}
   function calc(){
     const purpose=$('purpose').value,amount=Math.max(0,Number($('amount').value)||0),debt=$('debt').value,buffer=$('buffer').value,income=$('income').value,ready=$('ready').value;
