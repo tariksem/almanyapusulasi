@@ -67,4 +67,32 @@ check('Housing UI shows deposit instalment warning',()=>{
   assert(js.includes('x.upfrontWithInstalment'));
   assert(js.includes('x.depositOverLimit'));
 });
+check('Nebenkosten wizard progress exposes current step to assistive technology',()=>{
+  const html=fs.readFileSync('nebenkosten-abrechnung-kontrolu/index.html','utf8');
+  const js=fs.readFileSync('assets/js/nebenkosten-tool.js','utf8');
+  assert(html.includes('role="progressbar" aria-label="Form adımı"'));
+  assert(js.includes("setAttribute('aria-valuenow',String(step))"));
+});
+check('Dynamic cost fields have unique matching accessible labels',()=>{
+  const js=fs.readFileSync('assets/js/nebenkosten-tool.js','utf8');
+  assert(js.includes('let nextCostRowId=0'));
+  for(const id of ['nk-cost-label','nk-cost-share','nk-building-total','nk-tenant-units','nk-total-units','nk-note']){
+    assert(js.includes('for="'+id+'-${rowId}"'),'Missing label for '+id);
+    assert(js.includes('id="'+id+'-${rowId}"'),'Missing input id '+id);
+  }
+});
+check('Hidden file selectors and OCR progress have accessible names',()=>{
+  const js=fs.readFileSync('assets/js/nebenkosten-upload.js','utf8');
+  assert(js.includes('aria-label="PDF veya fotoğraf dosyası seç"'));
+  assert(js.includes('aria-label="Kamerayla fotoğraf çek"'));
+  assert(js.includes('aria-label="Belge okuma ilerlemesi"'));
+  for(const id of ['nk-r-period-start','nk-r-period-end','nk-r-total','nk-r-advances','nk-r-balance','nk-r-balance-type']){
+    assert(js.includes('for="'+id+'"'),'Unlabelled OCR field '+id);
+  }
+});
+check('Nebenkosten privacy action and long headings remain readable on mobile',()=>{
+  const css=fs.readFileSync('assets/nebenkosten-tool.css','utf8');
+  assert(css.includes('.nk-privacy .privacy-settings-button{color:#102a43'));
+  assert(css.includes('.nk-intro h1,.nk-step h2,.nk-card h3{overflow-wrap:anywhere}'));
+});
 console.log('PASS housing/Nebenkosten boundary checks: '+count+' cases');
