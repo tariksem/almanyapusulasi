@@ -131,6 +131,15 @@ for(const item of checks){
           maxRight:Math.max(...[...document.querySelectorAll('*')].map(el=>el.getBoundingClientRect().right))}
       });
       console.log('MOBILE METRICS '+item.name+' '+JSON.stringify(metrics));
+      const scrollOffenders=await page.evaluate(()=>
+        [...document.querySelectorAll('body *')].map(el=>({
+          tag:el.tagName,id:el.id,cls:String(el.className||'').slice(0,65),
+          client:el.clientWidth,scroll:el.scrollWidth,overflow:getComputedStyle(el).overflowX,
+          text:(el.textContent||'').trim().slice(0,35)
+        })).filter(el=>el.scroll>el.client+8).sort((a,b)=>(b.scroll-b.client)-(a.scroll-a.client)).slice(0,15)
+      );
+      console.log('MOBILE SCROLL OFFENDERS '+item.name+' '+JSON.stringify(scrollOffenders));
+
       console.log('MOBILE OVERFLOW '+item.name+' '+JSON.stringify(offenders));
     }
     if(item.mobile)assert.equal(row.overflowPixels,0,'Mobile document horizontally overflows viewport by '+row.overflowPixels+'px');
