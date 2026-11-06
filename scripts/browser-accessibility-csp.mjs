@@ -114,6 +114,16 @@ for(const item of checks){
     // Fail on serious and critical WCAG regressions; moderate findings remain in inventory.
     const blockers=row.violations.filter(x=>x.impact==='serious'||x.impact==='critical');
     assert.equal(blockers.length,0,'Serious or critical axe accessibility violations: '+blockers.map(x=>x.id).join(','));
+    if(item.mobile&&row.overflowPixels>0){
+      const offenders=await page.evaluate(()=>{
+        const w=window.visualViewport?.width||window.innerWidth;
+        return [...document.querySelectorAll('body *')].map(el=>{
+          const r=el.getBoundingClientRect();
+          return {tag:el.tagName,id:el.id,cls:String(el.className||'').slice(0,65),right:Math.round(r.right),left:Math.round(r.left),width:Math.round(r.width)};
+        }).filter(x=>x.right>w+2||x.width>w+2).sort((a,b)=>b.right-a.right).slice(0,15);
+      });
+      console.log('MOBILE OVERFLOW '+item.name+' '+JSON.stringify(offenders));
+    }
     if(item.mobile)assert.equal(row.overflowPixels,0,'Mobile document horizontally overflows viewport by '+row.overflowPixels+'px');
     row.pass=true;
     console.log('PASS A11Y '+item.name+' axe violations='+row.violations.length+' CSP='+row.cspCount+' overflow='+row.overflowPixels+'px');
