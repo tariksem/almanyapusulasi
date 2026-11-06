@@ -23,7 +23,7 @@ async function recordViolations(page,label){
 }
 function check(condition,message){assert.ok(condition,message);}
 
-const browser=await chromium.launch({headless:true});
+const browser=await chromium.launch({headless:true,channel:process.env.AP_BROWSER_CHANNEL||undefined});
 let failures=0;
 try{
   for(const scenario of [
