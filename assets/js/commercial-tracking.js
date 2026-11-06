@@ -12,9 +12,13 @@
     return true;
   }
 
+  function safeTrackingUrl(href){
+    try{const url=new URL(href,location.origin);return url.origin+url.pathname;}catch(_){return "";}
+  }
+
   function payload(el){
     return {
-      link_url:el.href||"",
+      link_url:safeTrackingUrl(el.href),
       link_text:(el.textContent||"").trim().slice(0,120),
       commercial_area:el.getAttribute("data-commercial-area")||detectCommercialArea(),
       commercial_target:el.getAttribute("data-commercial-target")||"unknown",
