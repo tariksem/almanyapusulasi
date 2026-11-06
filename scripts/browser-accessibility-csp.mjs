@@ -21,7 +21,7 @@ const checks=[
   {slug:'/embed-araclar/',name:'embed-guide-desktop',width:1366}
 ];
 const summaries=[],cspCounts=new Map();
-const browser=await chromium.launch({headless:true});
+const browser=await chromium.launch({headless:true,channel:process.env.AP_BROWSER_CHANNEL||undefined});
 let fail=0;
 try{
 for(const item of checks){
