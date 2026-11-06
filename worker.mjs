@@ -1,12 +1,18 @@
 import redirects from './scripts/redirect-map.json' with {type:'json'};
 
 const PRIMARY='https://almanyapusulasi.de';
+const EMBED_PATHS=new Set([
+  '/almanya-emeklilik-hesaplayici-2026/',
+  '/chancenkarte-puan-hesaplayici-2026/',
+  '/blue-card-uygunluk-kontrolu-2026/',
+  '/brutto-netto-hesaplayici-2026/'
+]);
 function secure(response,url){
   const out=new Response(response.body,response);
   out.headers.set('X-Content-Type-Options','nosniff');
   out.headers.set('Referrer-Policy','strict-origin-when-cross-origin');
   out.headers.set('Permissions-Policy','camera=(), microphone=(), geolocation=()');
-  const embed=url.searchParams.get('embed')==='1';
+  const embed=url.searchParams.get('embed')==='1'&&EMBED_PATHS.has(url.pathname);
   out.headers.set('Content-Security-Policy',embed?"frame-ancestors 'self' https:":"frame-ancestors 'self'");
   if(!embed)out.headers.set('X-Frame-Options','SAMEORIGIN');
   // Observe source violations before enforcing a policy on uploads, OCR and partner widgets.
@@ -22,8 +28,8 @@ function secure(response,url){
     "object-src 'none'",
     "base-uri 'self'"
   ].join('; '));
-  // Start with a short policy; extend it only after live HTTPS checks.
-  if(url.protocol==='https:')out.headers.set('Strict-Transport-Security','max-age=86400');
+  // HTTPS-only apex verified in live checks; stage HSTS at 30 days without subdomain preload.
+  if(url.protocol==='https:')out.headers.set('Strict-Transport-Security','max-age=2592000');
   return out;
 }
 export default {
