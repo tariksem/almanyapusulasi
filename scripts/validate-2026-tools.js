@@ -20,6 +20,8 @@ function simulate(page,initial,resultId){
   };
   vm.createContext(ctx);
   vm.runInContext(scripts[0],ctx,{filename:page,timeout:1500});
+  // Some tools calculate on load; others wait for the user's button click.
+  if(!result.innerHTML && typeof ctx.calc==='function')ctx.calc();
   return {result,ctx};
 }
 function blue(override={}){
