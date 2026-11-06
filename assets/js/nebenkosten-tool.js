@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded',()=>setTimeout(markViewed,0));
 function markStarted(){if(started)return;started=true;analytics('tool_start');}
 form.addEventListener('input',markStarted,{once:true});
 
-function showStep(n){step=Math.max(1,Math.min(4,n));$$('.nk-step').forEach(x=>x.classList.toggle('is-active',Number(x.dataset.step)===step));$$('.nk-progress span').forEach((x,i)=>{x.classList.toggle('is-active',i+1===step);x.classList.toggle('is-done',i+1<step)});window.scrollTo({top:Math.max(0,form.getBoundingClientRect().top+window.scrollY-90),behavior:'smooth'});}
+function showStep(n){step=Math.max(1,Math.min(4,n));$('.nk-progress').setAttribute('aria-valuenow',String(step));$('.nk-step').forEach(x=>x.classList.toggle('is-active',Number(x.dataset.step)===step));$$('.nk-progress span').forEach((x,i)=>{x.classList.toggle('is-active',i+1===step);x.classList.toggle('is-done',i+1<step)});window.scrollTo({top:Math.max(0,form.getBoundingClientRect().top+window.scrollY-90),behavior:'smooth'});}
 function validStep(n){let ok=true;$$(`.nk-step[data-step="${n}"] [required]`).forEach(el=>{const good=el.value.trim()!=='';el.setAttribute('aria-invalid',good?'false':'true');if(!good)ok=false});return ok;}
 $$('[data-next]').forEach(b=>b.addEventListener('click',()=>{if(validStep(step)){analytics('tool_step_complete',{step_number:step});showStep(step+1)}else alert('Lütfen bu adımdaki zorunlu alanları tamamlayın.')}));
 $$('[data-back]').forEach(b=>b.addEventListener('click',()=>showStep(step-1)));
