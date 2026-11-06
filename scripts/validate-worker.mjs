@@ -11,6 +11,7 @@ assert.equal(legacy.status,301);assert.equal(legacy.headers.get('Location'),'htt
 const normal=await worker.fetch(new Request('https://almanyapusulasi.de/araclar/'),env);
 assert.equal(normal.status,200);assert.equal(await normal.text(),'asset');assert.equal(calls.length,1);
 assert.equal(normal.headers.get('X-Content-Type-Options'),'nosniff');
+assert(normal.headers.get('Cache-Control').includes('no-transform'),'HTML must suppress Cloudflare automatic analytics injection');
 assert.equal(normal.headers.get('Strict-Transport-Security'),'max-age=2592000');
 assert.equal(normal.headers.get('Content-Security-Policy'),"frame-ancestors 'self'");
 assert.equal(normal.headers.get('X-Frame-Options'),'SAMEORIGIN');
@@ -33,6 +34,8 @@ for(const page of ['/araclar/','/','/familienversicherung/']){
 }
 const normalized=await worker.fetch(new Request('https://almanyapusulasi.de/araclar'),{ASSETS:{fetch:async()=>new Response(null,{status:307,headers:{Location:'/araclar/'}})}});
 assert.equal(normalized.status,308);
+const jsAsset=await worker.fetch(new Request('https://almanyapusulasi.de/assets/js/analytics-consent.js'),{ASSETS:{fetch:async()=>new Response('x', {headers:{'Content-Type':'application/javascript','Cache-Control':'public, max-age=604800'}})}});
+assert.equal(jsAsset.headers.get('Cache-Control'),'public, max-age=604800','Non-HTML caching must remain unchanged');
 const missing=await worker.fetch(new Request('https://almanyapusulasi.de/missing/'),{ASSETS:{fetch:async()=>new Response('Not found',{status:404})}});
 assert.equal(missing.status,404);
 console.log('PASS worker: HTTPS/apex, query preservation, legacy redirects, asset normalization, headers and 404.');
