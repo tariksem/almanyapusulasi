@@ -32,7 +32,7 @@ function blue(override={}){
 }
 function net(override={}){
   return simulate('brutto-netto-hesaplayici-2026/index.html',{
-    gross:4000,rent:1200,extra:2.9,children:1.8,church:0,saxony:0,...override
+    gross:4000,rent:1200,extra:2.9,children:1.8,under23:'no',church:0,saxony:0,...override
   },'out');
 }
 test('Official 2026 thresholds match the JSON',()=>{
@@ -83,6 +83,28 @@ test('Net tool with zero income and rent displays deficit',()=>{
 test('Net tool with rent below net has no deficit warning',()=>{
   const r=net({gross:4000,rent:600}).result;
   assert.doesNotMatch(r.innerHTML,/Uyarı: Kira net maaşı/);
+});
+test('2026 Pflegeversicherung age boundaries are sourced in data',()=>{
+  assert.equal(data.social_insurance.care_childless_surcharge_from_age_years,23);
+  assert.equal(data.social_insurance.care_additional_child_discount_until_age_years,25);
+  assert.equal(data.social_insurance.care_childless_employee_share_under23_percent,1.8);
+});
+function netAmount(overrides){const x=net({...overrides,rent:0});return vm.runInContext('lastNet',x.ctx);}
+test('Under-23 childless employee does not pay 0.6 point Pflege surcharge',()=>{
+  const young=netAmount({gross:4000,children:2.4,under23:'yes'});
+  const older=netAmount({gross:4000,children:2.4,under23:'no'});
+  assert(young>older,'Under-23 take-home pay must be higher');
+  assert(young-older>10&&young-older<25,'Net delta reflects a 0.6% lower PV employee contribution');
+});
+test('Age cutoff still works for childless Saxony employees',()=>{
+  const young=netAmount({gross:4000,children:2.4,under23:'yes',saxony:0.5});
+  const older=netAmount({gross:4000,children:2.4,under23:'no',saxony:0.5});
+  assert(young>older,'Saxony must also exempt under-23 childless PV surcharge');
+});
+test('Under-23 option does not grant extra PV reduction to parents',()=>{
+  const young=netAmount({gross:4000,children:1.8,under23:'yes'});
+  const older=netAmount({gross:4000,children:1.8,under23:'no'});
+  assert(Math.abs(young-older)<0.000001);
 });
 test('2026 tax tariff respects tax-free and next bracket',()=>{
   const {ctx}=net({gross:2500,rent:0});
