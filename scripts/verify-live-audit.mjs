@@ -20,6 +20,8 @@ await Promise.all(hostTests.map(async([url,status,target])=>{
 }));
 const home=await get(SITE+'/');
 check(home.response.status===200,'Homepage status');
+check((home.response.headers.get('cache-control')||'').includes('no-transform'),'HTML must prevent Cloudflare auto-injected beacon');
+check(!home.body.includes('static.cloudflareinsights.com/beacon.min.js'),'Cloudflare analytics beacon still auto-injected without consent');
 for(const header of ['strict-transport-security','content-security-policy','content-security-policy-report-only','x-content-type-options','referrer-policy','permissions-policy'])check(home.response.headers.has(header),'Missing header '+header);
 check(home.body.includes('home-hubs-disclosure'),'Mobile topic disclosure missing');
 check(home.response.headers.get('strict-transport-security')==='max-age=2592000','30-day HSTS not deployed');
