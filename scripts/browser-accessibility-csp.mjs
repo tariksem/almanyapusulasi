@@ -18,7 +18,12 @@ const checks=[
   {slug:'/blue-card-uygunluk-kontrolu-2026/',name:'blue-card-desktop',width:1366},
   {slug:'/almanya-emeklilik-hesaplayici-2026/',name:'pension-mobile',mobile:true,width:390},
   {slug:'/vatandaslik-testi/',name:'citizenship-desktop',width:1366},
-  {slug:'/embed-araclar/',name:'embed-guide-desktop',width:1366}
+  {slug:'/embed-araclar/',name:'embed-guide-desktop',width:1366},
+  {slug:'/',name:'home-320',mobile:true,width:320},
+  {slug:'/araclar/',name:'tools-320',mobile:true,width:320},
+  {slug:'/nebenkosten-abrechnung-kontrolu/',name:'nebenkosten-320',mobile:true,width:320},
+  {slug:'/sigorta-secim-araci/',name:'insurance-320',mobile:true,width:320},
+  {slug:'/familienversicherung/',name:'family-gkv-320',mobile:true,width:320}
 ];
 const summaries=[],cspCounts=new Map();
 const browser=await chromium.launch({headless:true,channel:process.env.AP_BROWSER_CHANNEL||undefined});
