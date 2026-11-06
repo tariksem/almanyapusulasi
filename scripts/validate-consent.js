@@ -7,7 +7,7 @@ function setup(initial,landingUrl='https://almanyapusulasi.de/araclar/?email=sec
   const document={
     head:{appendChild(el){loaded.push(el);}},body:{appendChild(el){},classList:{toggle(){}}},
     querySelector(){return null;},addEventListener(name,fn){if(name==='DOMContentLoaded')ready=fn;if(name==='click')click=fn;},dispatchEvent(){},
-    createElement(){return {remove(){},querySelector(selector){return buttons[selector]||(buttons[selector]={});}}}
+    createElement(){return {remove(){},setAttribute(){},querySelector(selector){return buttons[selector]||(buttons[selector]={focus(){}});}}}
   };
   Object.defineProperty(document,'cookie',{get(){return [...cookies].map(n=>n+'=value').join('; ');},set(value){writes.push(value);if(value.includes('Max-Age=0'))cookies.delete(value.split('=')[0]);}});
   const context={window:{},document,location:{pathname:'/araclar/',hostname:'almanyapusulasi.de',origin:'https://almanyapusulasi.de',href:landingUrl},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},CustomEvent:class {},URL};
