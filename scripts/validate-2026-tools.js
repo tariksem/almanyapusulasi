@@ -92,6 +92,33 @@ test('Employee standard allowance explicitly represented in net formula',()=>{
   const html=fs.readFileSync('brutto-netto-hesaplayici-2026/index.html','utf8');
   assert(html.includes('annual-social*12-Math.min(1230,annual)'));
 });
+
+function kiz(override={}){
+  return simulate('kinderzuschlag-uygunluk-kontrolu-2026/index.html',{
+    family:'couple',income:900,home:'yes',child:'yes',kg:'yes',
+    docs:'yes',housing:'yes',childIncome:'no',withBenefits:'yes',...override
+  },'out').result;
+}
+function chance(override={}){
+  return simulate('chancenkarte-puan-hesaplayici-2026/index.html',{
+    recognized:'no',formal:'yes',baseLanguage:'yes',finance:'yes',
+    partial:'4',shortage:'0',exp:'0',de:'0',en:'0',age:'2',stay:'0',partner:'0',...override
+  },'out').result;
+}
+test('KiZ couple minimum gross income at exactly 900 passes',()=>assert.match(kiz({income:900}).className,/ok/));
+test('KiZ couple 1 cent below 900 blocks',()=>assert.match(kiz({income:899.99}).className,/stop/));
+test('KiZ single-parent minimum gross income at exactly 600 passes',()=>assert.match(kiz({family:'single',income:600}).className,/ok/));
+test('KiZ single-parent 1 cent below 600 blocks',()=>assert.match(kiz({family:'single',income:599.99}).className,/stop/));
+test('KiZ incomplete child-income data warns without an eligibility guarantee',()=>assert.match(kiz({childIncome:'unknown'}).className,/warn/));
+test('Chancenkarte points route exactly six passes without blockers',()=>assert.match(chance().className,/result-ok/));
+test('Chancenkarte five points fails even with language and financing',()=>assert.match(chance({age:'1'}).className,/result-stop/));
+test('Chancenkarte recognized skilled-worker route does not require points or language',()=>{
+  const r=chance({recognized:'yes',formal:'no',baseLanguage:'no',partial:'0',age:'0'});
+  assert.match(r.className,/result-ok/);
+  assert.doesNotMatch(r.innerHTML,/6 puan eşiği/);
+});
+test('Chancenkarte recognized route without financing warns',()=>assert.match(chance({recognized:'yes',finance:'no'}).className,/result-warn/));
+
 for(const [name,ok] of cases)console.log((ok?'PASS ':'FAIL ')+name);
 const failed=cases.filter(x=>!x[1]);
 if(failed.length)process.exit(1);
