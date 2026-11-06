@@ -79,22 +79,62 @@
     return h?h.textContent.trim():document.title.split("|")[0];
   };
 
+  function renderSkipLink(){
+    const header=document.querySelector(".site-header");
+    const target=document.querySelector("main")||document.querySelector(".hero")||document.querySelector(".article-wrap")||document.querySelector(".section");
+    if(!header||!target||document.querySelector(".skip-link"))return;
+    if(!target.id)target.id="ap-main-content";
+    if(!target.hasAttribute("tabindex"))target.setAttribute("tabindex","-1");
+    const link=document.createElement("a");
+    link.href="#"+target.id;
+    link.className="skip-link";
+    link.textContent="Ana içeriğe geç";
+    header.before(link);
+  }
+
   function renderHeader(){
     const header=document.querySelector(".site-header");
     if(!header)return;
     const active=section();
     const primary=PRIMARY.map(k=>SECTIONS.find(s=>s.key===k));
     const mega=SECTIONS.map(s=>'<a class="mega-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'"><span class="mega-icon">'+s.icon+'</span><span><strong>'+s.label+'</strong><small>'+(s.key==='haberler'?'Güncel gelişmeler':s.key==='irkcilik'?'Güvenlik, haklar ve destek':s.key==='tools'?'Hesaplayıcılar ve kontroller':'Rehberleri görüntüle')+'</small></span></a>').join("");
-    header.innerHTML='<div class="container header-inner"><a class="site-brand" href="/"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>Karar araçları & resmî kaynaklı rehberler</small></span></a><button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button><nav class="site-nav"><div class="primary-nav-links">'+primary.map(s=>'<a class="site-nav-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'">'+s.label+'</a>').join("")+'</div><details class="nav-more"><summary>Tüm Rehberler <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
+    header.innerHTML='<div class="container header-inner"><a class="site-brand" href="/"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>Karar araçları & resmî kaynaklı rehberler</small></span></a><button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="ap-site-nav"><span></span><span></span><span></span></button><nav id="ap-site-nav" class="site-nav" aria-label="Ana menü"><div class="primary-nav-links">'+primary.map(s=>'<a class="site-nav-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'">'+s.label+'</a>').join("")+'</div><details class="nav-more"><summary>Tüm Rehberler <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
     const toggle=header.querySelector(".mobile-menu-toggle");
     const nav=header.querySelector(".site-nav");
+    function closeMenu(restoreFocus=false){
+      toggle.setAttribute("aria-expanded","false");
+      toggle.setAttribute("aria-label","Menüyü aç");
+      nav.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      const more=nav.querySelector(".nav-more");
+      if(more)more.open=false;
+      if(restoreFocus)toggle.focus();
+    }
     toggle.onclick=()=>{
       const open=toggle.getAttribute("aria-expanded")==="true";
-      toggle.setAttribute("aria-expanded",String(!open));
-      toggle.setAttribute("aria-label",open?"Menüyü aç":"Menüyü kapat");
-      nav.classList.toggle("is-open",!open);
-      document.body.classList.toggle("menu-open",!open);
+      if(open)closeMenu();
+      else{
+        toggle.setAttribute("aria-expanded","true");
+        toggle.setAttribute("aria-label","Menüyü kapat");
+        nav.classList.add("is-open");
+        document.body.classList.add("menu-open");
+      }
     };
+    document.addEventListener("keydown",event=>{
+      if(event.key!=="Escape")return;
+      const more=nav.querySelector(".nav-more");
+      if(more&&more.open){
+        more.open=false;
+        more.querySelector("summary").focus();
+        event.preventDefault();
+      }else if(nav.classList.contains("is-open")){
+        closeMenu(true);
+        event.preventDefault();
+      }
+    });
+    document.addEventListener("click",event=>{
+      if(nav.classList.contains("is-open")&&!header.contains(event.target))closeMenu();
+    });
   }
 
   function renderContext(){
@@ -249,14 +289,19 @@
     if(!force&&readConsent())return;
     const banner=document.createElement("div");
     banner.className="cookie-banner";
+    banner.setAttribute("role","region");
+    banner.setAttribute("aria-label","Çerez ve gizlilik tercihleri");
     banner.innerHTML='<div class="cookie-banner-inner"><div><strong>Gizlilik ayarları</strong><p>Google Analytics yalnızca izninizle yüklenir. <a href="/privacy/">Gizlilik Politikası</a></p></div><div class="cookie-actions"><button class="btn btn-secondary cookie-reject">Yalnızca gerekli</button><button class="btn btn-primary cookie-accept">Analize izin ver</button></div></div>';
     document.body.appendChild(banner);
-    banner.querySelector(".cookie-accept").onclick=()=>{saveConsent(ACCEPTED);banner.remove();loadAnalytics();};
-    banner.querySelector(".cookie-reject").onclick=()=>{saveConsent(REJECTED);updateConsent(false);clearAnalyticsCookies();banner.remove();};
+    const restoreFocus=()=>{if(force){const preferences=document.querySelector(".privacy-settings-link");if(preferences)preferences.focus();}};
+    banner.querySelector(".cookie-accept").onclick=()=>{saveConsent(ACCEPTED);banner.remove();loadAnalytics();restoreFocus();};
+    banner.querySelector(".cookie-reject").onclick=()=>{saveConsent(REJECTED);updateConsent(false);clearAnalyticsCookies();banner.remove();restoreFocus();};
+    if(force)banner.querySelector(".cookie-reject").focus();
   }
 
   document.addEventListener("DOMContentLoaded",()=>{
     renderHeader();
+    renderSkipLink();
     renderContext();
     renderFooter();
     renderReturnRail();
