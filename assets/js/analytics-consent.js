@@ -151,6 +151,26 @@
     })));
   }
 
+  // Never transmit arbitrary URL queries or fragments to analytics.
+  // Preserve only bounded, machine-readable campaign tags used for acquisition attribution.
+  function safePageLocation(){
+    try{
+      const current=new URL(location.href),clean=new URL(current.origin+current.pathname);
+      for(const key of ["utm_source","utm_medium","utm_campaign","utm_id","utm_source_platform","utm_content"]){
+        const value=current.searchParams.get(key);
+        if(value&&/^[A-Za-z][A-Za-z0-9_-]{0,63}$/.test(value))clean.searchParams.set(key,value);
+      }
+      return clean.href;
+    }catch(_){return location.origin+location.pathname;}
+  }
+
+  function safePageReferrer(){
+    try{
+      const ref=new URL(document.referrer);
+      return /^https?:$/.test(ref.protocol)?ref.origin+ref.pathname:"";
+    }catch(_){return "";}
+  }
+
   function loadAnalytics(){
     if(window.__apGaLoaded){updateConsent(true);document.dispatchEvent(new CustomEvent("ap:analytics-ready"));return;}
     window.__apGaLoaded=true;
@@ -162,7 +182,7 @@
     script.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;
     document.head.appendChild(script);
     gtag("js",new Date());
-    gtag("config",GA_ID,{allow_google_signals:false,allow_ad_personalization_signals:false,page_location:location.origin+location.pathname});
+    gtag("config",GA_ID,{allow_google_signals:false,allow_ad_personalization_signals:false,page_location:safePageLocation(),page_referrer:safePageReferrer()});
     document.dispatchEvent(new CustomEvent("ap:analytics-ready"));
   }
 
