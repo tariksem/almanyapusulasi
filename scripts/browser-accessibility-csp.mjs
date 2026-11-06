@@ -96,6 +96,21 @@ for(const item of checks){
       assert(await toggle.evaluate(el=>document.activeElement===el),'Keyboard focus did not return to nav toggle');
       row.keyboardPass=true;
     }
+    if(item.name==='nebenkosten-mobile'){
+      // An unsupported document must be rejected locally, with no OCR library
+      // fetched or file sent to a remote server.
+      const network=[];
+      const onRequest=request=>network.push(request.url());
+      page.on('request',onRequest);
+      try{
+        const input=page.locator('#nk-upload-file');
+        assert.equal(await input.count(),1,'PDF/image file picker missing');
+        await input.setInputFiles({name:'not-a-bill.txt',mimeType:'text/plain',buffer:Buffer.from('synthetic test only')});
+        await page.locator('#nk-upload-status').getByText(/desteklenmiyor/i).waitFor({timeout:5000});
+        assert.equal(network.filter(u=>/tesseract|pdf\.min\.js|\.pdf|not-a-bill/i.test(u)).length,0,
+          'Unsupported document unexpectedly loaded OCR or transmitted content');
+      }finally{page.off('request',onRequest);}
+    }
     // Fail on serious and critical WCAG regressions; moderate findings remain in inventory.
     const blockers=row.violations.filter(x=>x.impact==='serious'||x.impact==='critical');
     assert.equal(blockers.length,0,'Serious or critical axe accessibility violations: '+blockers.map(x=>x.id).join(','));
