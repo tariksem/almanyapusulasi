@@ -21,6 +21,7 @@ await Promise.all(hostTests.map(async([url,status,target])=>{
 const home=await get(SITE+'/');
 check(home.response.status===200,'Homepage status');
 check((home.response.headers.get('cache-control')||'').includes('no-transform'),'HTML must prevent Cloudflare auto-injected beacon');
+check((home.response.headers.get('content-security-policy')||'').includes("object-src 'none'; base-uri 'self'"),'CSP object/base protections not enforced');
 check(!home.body.includes('static.cloudflareinsights.com/beacon.min.js'),'Cloudflare analytics beacon still auto-injected without consent');
 for(const header of ['strict-transport-security','content-security-policy','content-security-policy-report-only','x-content-type-options','referrer-policy','permissions-policy'])check(home.response.headers.has(header),'Missing header '+header);
 check(home.body.includes('home-hubs-disclosure'),'Mobile topic disclosure missing');
@@ -34,7 +35,7 @@ check(allowedEmbed.response.status===200 &&
       !allowedEmbed.response.headers.has('x-frame-options'),
       'Approved tool iframe embed no longer works');
 check(deniedEmbed.response.status===200 &&
-      deniedEmbed.response.headers.get('content-security-policy')==="frame-ancestors 'self'" &&
+      deniedEmbed.response.headers.get('content-security-policy')==="frame-ancestors 'self'; object-src 'none'; base-uri 'self'" &&
       deniedEmbed.response.headers.get('x-frame-options')==='SAMEORIGIN',
       'Non-tool page can bypass frame protection with ?embed=1');
 
