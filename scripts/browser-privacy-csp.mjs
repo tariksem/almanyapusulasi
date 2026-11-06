@@ -38,8 +38,12 @@ try{
     });
     const page=await context.newPage();
     const traffic=[];
+    let probeLeak=false;
     page.on('request',req=>{
-      if(isTracking(req.url()))traffic.push({host:safeOrigin(req.url()),phase:page.__apPhase||'initial'});
+      if(isTracking(req.url())){
+        traffic.push({host:safeOrigin(req.url()),phase:page.__apPhase||'initial'});
+        if(req.url().includes('synthetic_token'))probeLeak=true;
+      }
     });
     await page.addInitScript(()=>{
       window.__apCspViolations=[];
@@ -74,6 +78,7 @@ try{
       // Explicit refusal, then reload: remain rejected with no Google tag.
       await page.locator('.cookie-banner .cookie-reject').click();
       assert.equal(await page.evaluate(()=>localStorage.getItem('ap_cookie_consent')),'rejected');
+      row.cspViolations+=await recordViolations(page,scenario.name+'-before-consent');
       page.__apPhase='rejected-reload';
       await page.reload({waitUntil:'domcontentloaded'});
       await page.waitForTimeout(400);
@@ -85,7 +90,7 @@ try{
       await page.locator('.cookie-banner .cookie-accept').waitFor();
       page.__apPhase='after-opt-in';
       await page.locator('.cookie-banner .cookie-accept').click();
-      await page.waitForFunction(()=>window.__apGaLoaded===true,{timeout:12000});
+      await page.waitForFunction(()=>window.__apGaLoaded===true,null,{timeout:12000});
       await page.waitForTimeout(700);
       assert.equal(await page.evaluate(()=>localStorage.getItem('ap_cookie_consent')),'accepted');
       check(await page.locator('script[src*="googletagmanager.com/gtag/js"]').count()===1,'Google tag is missing or duplicated after consent');
@@ -98,7 +103,7 @@ try{
       assert.equal(config,SITE+scenario.path,'GA page_location must strip query tokens');
       row.acceptedTracking=traffic.filter(x=>x.phase==='after-opt-in').length;
       check(row.acceptedTracking>0,'Google tag did not make an observable network request after opt-in');
-      check(!traffic.some(x=>JSON.stringify(x).includes('synthetic_token')),'Probe token leaked into tracking event');
+      check(!probeLeak,'Probe token leaked into tracking network request');
 
       // Explicit revocation should remove existing first-party GA cookies and block new events.
       await page.evaluate(()=>{
@@ -115,19 +120,20 @@ try{
         return (window.dataLayer||[]).length===old;
       });
       check(noNewEvent,'Tracking API accepted an event after withdrawal');
+      row.cspViolations+=await recordViolations(page,scenario.name+'-opted-in');
       page.__apPhase='after-withdrawal-reload';
       await page.reload({waitUntil:'domcontentloaded'});
       await page.waitForTimeout(400);
       assert.equal(await page.locator('script[src*="googletagmanager.com/gtag/js"]').count(),0);
       assert.equal(traffic.filter(x=>x.phase==='after-withdrawal-reload').length,0,'Tracking restarted after withdrawal reload');
-      row.cspViolations=await recordViolations(page,scenario.name);
+      row.cspViolations+=await recordViolations(page,scenario.name+'-withdrawn');
       row.pass=true;
       console.log('PASS browser '+scenario.name+' — no pre-consent traffic, opt-in, revocation, reload, security headers');
     }catch(e){
       failures++;
       row.error=String(e.message||e).slice(0,1000);
       console.error('FAIL browser '+scenario.name+': '+row.error);
-      try{row.cspViolations=await recordViolations(page,scenario.name);}catch{}
+      try{row.cspViolations+=await recordViolations(page,scenario.name+'-failed');}catch{}
     }finally{
       summaries.push(row);
       await context.close();
