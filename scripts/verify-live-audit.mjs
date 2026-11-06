@@ -52,8 +52,18 @@ const commercial=await get(SITE+'/assets/js/commercial-tracking.js');
 check(commercial.body.includes('ap:analytics-ready')&&commercial.body.includes('return false'),'Commercial consent fix missing');
 const affiliate=await get(SITE+'/assets/js/affiliate-slots.js');
 check((affiliate.body.match(/enabled:true/g)||[]).length===18,'Affiliate configuration changed unexpectedly');
+const [rentCore,nebenCore,wohngeld,rentPage]=await Promise.all([
+  get(SITE+'/assets/js/miet-budget-core.js'),
+  get(SITE+'/assets/js/nebenkosten-core.js'),
+  get(SITE+'/wohngeld/'),
+  get(SITE+'/warmmiete-kira-butcesi-hesaplayici/')
+]);
+check(rentCore.response.status===200&&rentCore.body.includes('upfrontWithInstalment')&&rentCore.body.includes('depositOverLimit'),'Live housing deposit calculation not deployed');
+check(nebenCore.response.status===200&&nebenCore.body.includes('addCalendarMonths')&&!nebenCore.body.includes('addMonthsEndOfMonth'),'Live Nebenkosten day-exact deadline fix not deployed');
+check(wohngeld.response.status===200&&wohngeld.body.includes('Bruttokaltmiete (Nettokaltmiete + soğuk işletme giderleri)'),'Live Wohngeld rental-cost guidance not deployed');
+check(rentPage.response.status===200&&rentPage.body.includes('id="rent-deposit-note"'),'Live move-in deposit note missing');
 const chance=await get(SITE+'/chancenkarte-puan-hesaplayici-2026/');
 check(chance.body.includes("checks=recognized?")&&!chance.body.includes("['Temel dil',recognized||lang]"),'Chancenkarte route fix missing');
 console.log(JSON.stringify({sitemapUrls:urls.length,jsonStatus:json.response.status,errors},null,2));
 if(errors.length)process.exitCode=1;
-else console.log('PASS live audit: host redirects, headers, dataset, schema, discovery, consent and affiliate configuration.');
+else console.log('PASS live audit: host redirects, headers, dataset, schema, housing/legal deadlines, discovery, consent and affiliate configuration.');
