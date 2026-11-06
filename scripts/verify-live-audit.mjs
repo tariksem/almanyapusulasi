@@ -40,7 +40,10 @@ const localUrls=fs.readdirSync('.').filter(p=>/^sitemap-(?!index).*\.xml$/.test(
 check(new Set(urls).size===urls.length,'Duplicate live sitemap URLs');
 check(urls.length===localUrls.length&&localUrls.every(u=>urls.includes(u)),'Live sitemap differs from local canonical inventory: '+urls.length+' / '+localUrls.length);
 const rss=await get(SITE+'/rss.xml');
-check((rss.body.match(/<item>/g)||[]).length===12,'RSS item count');
+const localRss=fs.readFileSync('rss.xml','utf8');
+const liveRssGuids=[...rss.body.matchAll(/<guid isPermaLink="true">([^<]+)<\/guid>/g)].map(m=>m[1]);
+const localRssGuids=[...localRss.matchAll(/<guid isPermaLink="true">([^<]+)<\/guid>/g)].map(m=>m[1]);
+check(liveRssGuids.length===localRssGuids.length&&localRssGuids.every(id=>liveRssGuids.includes(id)),'Live RSS differs from generated source: '+liveRssGuids.length+' / '+localRssGuids.length);
 const privacy=await get(SITE+'/privacy/');
 check(privacy.body.includes('“Gizlilik ayarları”'),'Privacy preference label not updated');
 const consent=await get(SITE+'/assets/js/analytics-consent.js');
