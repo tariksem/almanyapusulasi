@@ -15,7 +15,11 @@
       "kinderzuschlag_max_monthly_per_child": 297,
       "kinderzuschlag_min_gross_income_couple_monthly": 900,
       "kinderzuschlag_min_gross_income_single_parent_monthly": 600,
-      "source": "Bundesagentur fuer Arbeit / Bundesfinanzministerium"
+      "source": "Bundesagentur fuer Arbeit / Bundesfinanzministerium",
+      "familienversicherung_general_income_monthly": 565,
+      "familienversicherung_minijob_income_monthly": 603,
+      "familienversicherung_source": "GKV-Spitzenverband, 2026 Rechengrößen im Beitragsrecht; § 10 SGB V",
+      "familienversicherung_note": "General limit and the special Minijob limit must not be conflated. Relevant Gesamteinkommen and insurance status are assessed together."
     },
     "eu_blue_card": {
       "general_salary_annual": 50700,
@@ -62,7 +66,8 @@
     "https://www.gesetze-im-internet.de/estg/__9a.html",
     "https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html",
     "https://www.deutsche-rentenversicherung.de/DRV/DE/Experten/Zahlen-und-Fakten/Werte-der-Rentenversicherung/werte-der-rentenversicherung.html",
-    "https://www.gesetze-im-internet.de/rwbestv_2026/__1.html"
+    "https://www.gesetze-im-internet.de/rwbestv_2026/__1.html",
+    "https://www.gkv-spitzenverband.de/media/dokumente/presse/zahlen_und_grafiken/20260101_Faktenblatt_Rechengroessen_Beitragsrecht.pdf"
   ],
   "license_note": "Values are factual public information. Cite the original official source for legal or financial decisions.",
   "valid_from": "2026-01-01",
