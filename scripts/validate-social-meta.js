@@ -63,12 +63,6 @@ for (const required of ['Generate scheduled social cards','Verify social card pr
   if (!cloudflare.includes(required)) fail('Cloudflare social asset pipeline missing: ' + required);
 }
 
-if (failures.length) {
-  failures.forEach(x => console.error('::error::' + x));
-  process.exit(1);
-}
-console.log('PASS Meta social automation: 10 posts, valid destinations, unique UTMs, deterministic assets, credential guards, post verification and bounded campaign schedule.');
-
 const socialRenderer = fs.readFileSync('scripts/render-social-card-v2.py','utf8');
 for (const required of ["assets/brand/almanya-pusulasi-logo.png","Image.open(LOGO)","W, H = 1080, 1350","META = {"]) {
   if (!socialRenderer.includes(required)) fail('v2 social renderer missing brand guard: ' + required);
@@ -76,3 +70,10 @@ for (const required of ["assets/brand/almanya-pusulasi-logo.png","Image.open(LOG
 for (const forbidden of ['image_gen','DALL-E','fake logo','draw compass']) {
   if (socialRenderer.includes(forbidden)) fail('v2 social renderer contains forbidden generated-logo path: ' + forbidden);
 }
+
+if (failures.length) {
+  failures.forEach(x => console.error('::error::' + x));
+  process.exit(1);
+}
+console.log('PASS Meta social automation: 10 posts, approved-state gate, brand renderer, unique UTMs, valid destinations, publication guards and bounded schedule.');
+
