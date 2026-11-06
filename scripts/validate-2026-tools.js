@@ -121,6 +121,27 @@ test('Chancenkarte recognized skilled-worker route does not require points or la
 });
 test('Chancenkarte recognized route without financing warns',()=>assert.match(chance({recognized:'yes',finance:'no'}).className,/result-warn/));
 
+
+function pension(override={}){
+  return simulate('almanya-emeklilik-hesaplayici-2026/index.html',{
+    points:1,access:1,type:1,...override
+  },'out').result;
+}
+test('2026 pension point value has July 1 effective date',()=>{
+  assert.equal(data.retirement.current_pension_value_eur,42.52);
+  assert.equal(data.retirement.current_value_valid_from,'2026-07-01');
+  assert.equal(data.retirement.previous_pension_value_eur,40.79);
+});
+test('Pension estimate for 1 point matches official 42.52 EUR',()=>{
+  assert.match(pension().innerHTML,/42,52/);
+});
+test('Pension estimate for 10 points with 0.8 entry factor',()=>{
+  assert.match(pension({points:10,access:0.8}).innerHTML,/340,16/);
+});
+test('Pension zero-point estimate remains zero',()=>{
+  assert.match(pension({points:0}).innerHTML,/0,00/);
+});
+
 for(const [name,ok] of cases)console.log((ok?'PASS ':'FAIL ')+name);
 const failed=cases.filter(x=>!x[1]);
 if(failed.length)process.exit(1);
