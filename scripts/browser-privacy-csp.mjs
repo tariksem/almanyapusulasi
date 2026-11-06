@@ -99,8 +99,16 @@ try{
             const cx=r.left+r.width/2,cy=r.top+r.height/2,hit=document.elementFromPoint(cx,cy);
             return {x:Math.round(r.x),y:Math.round(r.y),w:Math.round(r.width),h:Math.round(r.height),display:style.display,position:style.position,centerHit:hit?.className||hit?.tagName};
           };
-          return {innerWidth:innerWidth,scrollWidth:document.documentElement.scrollWidth,scrollY:scrollY,
-            viewport:visualViewport?{width:visualViewport.width,height:visualViewport.height,offsetTop:visualViewport.offsetTop}:null,
+          const maxVisible=visualViewport?visualViewport.width:innerWidth;
+          const overflow=[...document.querySelectorAll('body *')]
+            .filter(el=>!el.closest('.cookie-banner'))
+            .map(el=>{const r=el.getBoundingClientRect();return {tag:el.tagName,id:el.id,cl:String(el.className||'').slice(0,60),x:Math.round(r.x),right:Math.round(r.right),width:Math.round(r.width)}})
+            .filter(x=>x.right>maxVisible+3 || x.width>maxVisible+3)
+            .sort((a,b)=>b.right-a.right).slice(0,14);
+          return {innerWidth:innerWidth,innerHeight:innerHeight,scrollWidth:document.documentElement.scrollWidth,scrollY:scrollY,
+            metaViewport:document.querySelector('meta[name="viewport"]')?.content,
+            viewport:visualViewport?{width:visualViewport.width,height:visualViewport.height,scale:visualViewport.scale,offsetTop:visualViewport.offsetTop}:null,
+            overflow,
             banner:info('.cookie-banner'),inner:info('.cookie-banner-inner'),actions:info('.cookie-actions'),
             reject:info('.cookie-reject'),accept:info('.cookie-accept')};
         });
