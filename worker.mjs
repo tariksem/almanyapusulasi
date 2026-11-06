@@ -10,6 +10,13 @@ const EMBED_PATHS=new Set([
 function secure(response,url){
   const out=new Response(response.body,response);
   out.headers.set('X-Content-Type-Options','nosniff');
+  // Suppress Cloudflare's zone-wide Web Analytics auto-injection. It bypasses
+  // our first-party consent gate; Cloudflare documents no-transform for opt-out.
+  // Only HTML: preserve normal caching/compression for CSS, JS, images and fonts.
+  if((out.headers.get('Content-Type')||'').toLowerCase().includes('text/html')){
+    out.headers.set('Cache-Control','public, max-age=0, no-transform');
+  }
+
   out.headers.set('Referrer-Policy','strict-origin-when-cross-origin');
   out.headers.set('Permissions-Policy','camera=(), microphone=(), geolocation=()');
   const embed=url.searchParams.get('embed')==='1'&&EMBED_PATHS.has(url.pathname);
