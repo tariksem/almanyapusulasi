@@ -13,10 +13,11 @@ assert.equal(normal.status,200);assert.equal(await normal.text(),'asset');assert
 assert.equal(normal.headers.get('X-Content-Type-Options'),'nosniff');
 assert(normal.headers.get('Cache-Control').includes('no-transform'),'HTML must suppress Cloudflare automatic analytics injection');
 assert.equal(normal.headers.get('Strict-Transport-Security'),'max-age=2592000');
-assert.equal(normal.headers.get('Content-Security-Policy'),"frame-ancestors 'self'");
+assert.equal(normal.headers.get('Content-Security-Policy'),"frame-ancestors 'self'; object-src 'none'; base-uri 'self'");
 assert.equal(normal.headers.get('X-Frame-Options'),'SAMEORIGIN');
 assert(normal.headers.get('Content-Security-Policy-Report-Only').includes("default-src 'self'"));
 assert(normal.headers.get('Content-Security-Policy-Report-Only').includes("worker-src 'self' blob:"));
+assert(normal.headers.get('Content-Security-Policy').includes("object-src 'none'; base-uri 'self'"));
 for(const slug of [
   'almanya-emeklilik-hesaplayici-2026',
   'chancenkarte-puan-hesaplayici-2026',
@@ -29,7 +30,7 @@ for(const slug of [
 }
 for(const page of ['/araclar/','/','/familienversicherung/']){
   const blocked=await worker.fetch(new Request('https://almanyapusulasi.de'+page+'?embed=1'),env);
-  assert.equal(blocked.headers.get('Content-Security-Policy'),"frame-ancestors 'self'",'Other pages must not permit external framing');
+  assert.equal(blocked.headers.get('Content-Security-Policy'),"frame-ancestors 'self'; object-src 'none'; base-uri 'self'",'Other pages must not permit external framing');
   assert.equal(blocked.headers.get('X-Frame-Options'),'SAMEORIGIN');
 }
 const normalized=await worker.fetch(new Request('https://almanyapusulasi.de/araclar'),{ASSETS:{fetch:async()=>new Response(null,{status:307,headers:{Location:'/araclar/'}})}});
