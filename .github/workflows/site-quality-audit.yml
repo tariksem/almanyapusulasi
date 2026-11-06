@@ -20,6 +20,7 @@ jobs:
           node scripts/generate-discovery.js
           node scripts/validate-audit-fixes.js
           node scripts/validate-2026-tools.js
+          node scripts/validate-housing-tools.js
           node scripts/validate-worker.mjs
           node scripts/validate-consent.js
           node scripts/validate-commercial-consent.js
