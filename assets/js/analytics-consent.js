@@ -162,7 +162,7 @@
     script.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;
     document.head.appendChild(script);
     gtag("js",new Date());
-    gtag("config",GA_ID,{allow_google_signals:false,allow_ad_personalization_signals:false});
+    gtag("config",GA_ID,{allow_google_signals:false,allow_ad_personalization_signals:false,page_location:location.origin+location.pathname});
     document.dispatchEvent(new CustomEvent("ap:analytics-ready"));
   }
 
@@ -184,7 +184,7 @@
         try{
           const url=new URL(a.href,location.href);
           if(url.hostname&&url.hostname!==location.hostname){
-            track("outbound_click",{link_url:url.href,link_text:(a.textContent||"").trim().slice(0,100)});
+            track("outbound_click",{link_url:url.origin+url.pathname,link_text:(a.textContent||"").trim().slice(0,100)});
           }
         }catch(_){ }
       }
