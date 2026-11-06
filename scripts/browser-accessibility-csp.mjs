@@ -59,6 +59,7 @@ for(const item of checks){
     });
     row.violations=axe.violations;
     row.incompleteCount=axe.incompleteCount;
+    if(row.violations.length)console.log('A11Y FINDINGS '+item.name+' '+JSON.stringify(row.violations));
     row.overflowPixels=await page.evaluate(()=>Math.max(0,Math.round(
       document.documentElement.scrollWidth-(window.visualViewport?.width||window.innerWidth)
     )));
@@ -95,7 +96,7 @@ for(const item of checks){
     assert.equal(critical.length,0,'Critical axe accessibility violations: '+critical.map(x=>x.id).join(','));
     row.pass=true;
     console.log('PASS A11Y '+item.name+' axe violations='+row.violations.length+' CSP='+row.cspCount+' overflow='+row.overflowPixels+'px');
-    if(row.violations.length)console.log('A11Y FINDINGS '+item.name+' '+JSON.stringify(row.violations));
+
   }catch(e){
     fail++;
     row.error=String(e.message||e).slice(0,500);
