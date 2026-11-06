@@ -25,7 +25,11 @@ check(home.body.includes('home-hubs-disclosure'),'Mobile topic disclosure missin
 check(!home.body.includes('Search Console verisinde görünmeye'),'Unverified homepage visibility claim remains');
 const json=await get(SITE+'/data/almanya-2026-esikler.json');
 check(json.response.status===200,'Public dataset status '+json.response.status);
-try{JSON.parse(json.body);}catch{errors.push('Public dataset is not valid JSON');}
+let officialData=null;
+try{officialData=JSON.parse(json.body);}catch{errors.push('Public dataset is not valid JSON');}
+check(officialData?.data?.family?.familienversicherung_general_income_monthly===565&&
+      officialData?.data?.family?.familienversicherung_minijob_income_monthly===603,
+      '2026 family GKV 565/603 thresholds missing from live dataset');
 const schemaPages=['alman-emekli-maasi-turkiyede','almanya-emeklilik-hesaplayici-2026','almanya-emeklilik-sistemi','blue-card-is-kaybi-chancenkarte','emeklilik','lohnsteuerhilfeverein-2026','steuer-software-vergleich-2026','stromanbieter-wechseln-2026','stromtarif-karsilastirma-2026'];
 await Promise.all(schemaPages.map(async slug=>{
  const {response,body}=await get(SITE+'/'+slug+'/');check(response.status===200,'Schema page status '+slug);
@@ -62,6 +66,24 @@ check(rentCore.response.status===200&&rentCore.body.includes('upfrontWithInstalm
 check(nebenCore.response.status===200&&nebenCore.body.includes('addCalendarMonths')&&!nebenCore.body.includes('addMonthsEndOfMonth'),'Live Nebenkosten day-exact deadline fix not deployed');
 check(wohngeld.response.status===200&&wohngeld.body.includes('Bruttokaltmiete (Nettokaltmiete + soğuk işletme giderleri)'),'Live Wohngeld rental-cost guidance not deployed');
 check(rentPage.response.status===200&&rentPage.body.includes('id="rent-deposit-note"'),'Live move-in deposit note missing');
+const [familyArticle,insuranceCore,insuranceTool,officialThresholds]=await Promise.all([
+  get(SITE+'/familienversicherung/'),
+  get(SITE+'/assets/js/insurance-priority-core.js'),
+  get(SITE+'/sigorta-secim-araci/'),
+  get(SITE+'/almanya-2026-resmi-esikler/')
+]);
+check(familyArticle.response.status===200&&familyArticle.body.includes('ayda 565 €')&&
+      familyArticle.body.includes('603 €')&&
+      !familyArticle.body.includes('genel olarak ayda 603 euroyu'),
+      'Live Familienversicherung 565/603 income correction missing');
+check(insuranceCore.response.status===200&&insuranceCore.body.includes('existingLiability')&&
+      insuranceCore.body.includes('carMandatory'),
+      'Live insurance priority core missing');
+check(insuranceTool.response.status===200&&insuranceTool.body.includes('window.InsurancePriorityCore.rank'),
+      'Live insurance selection tool not linked to validated ranking core');
+check(officialThresholds.response.status===200&&officialThresholds.body.includes('Familienversicherung genel sınırı')&&
+      officialThresholds.body.includes('Familienversicherung / Minijob'),
+      'Live 2026 data center missing distinct family GKV limits');
 const chance=await get(SITE+'/chancenkarte-puan-hesaplayici-2026/');
 check(chance.body.includes("checks=recognized?")&&!chance.body.includes("['Temel dil',recognized||lang]"),'Chancenkarte route fix missing');
 console.log(JSON.stringify({sitemapUrls:urls.length,jsonStatus:json.response.status,errors},null,2));
