@@ -122,6 +122,15 @@ for(const item of checks){
           return {tag:el.tagName,id:el.id,cls:String(el.className||'').slice(0,65),right:Math.round(r.right),left:Math.round(r.left),width:Math.round(r.width)};
         }).filter(x=>x.right>w+2||x.width>w+2).sort((a,b)=>b.right-a.right).slice(0,15);
       });
+      const metrics=await page.evaluate(()=>{
+        const root=document.documentElement,body=document.body;
+        return {innerWidth,innerHeight,visualWidth:visualViewport?.width,visualScale:visualViewport?.scale,
+          rootClient:root.clientWidth,rootScroll:root.scrollWidth,rootRect:root.getBoundingClientRect().width,
+          bodyClient:body.clientWidth,bodyScroll:body.scrollWidth,bodyRect:body.getBoundingClientRect().width,
+          styleRoot:getComputedStyle(root).overflowX,styleBody:getComputedStyle(body).overflowX,
+          maxRight:Math.max(...[...document.querySelectorAll('*')].map(el=>el.getBoundingClientRect().right))}
+      });
+      console.log('MOBILE METRICS '+item.name+' '+JSON.stringify(metrics));
       console.log('MOBILE OVERFLOW '+item.name+' '+JSON.stringify(offenders));
     }
     if(item.mobile)assert.equal(row.overflowPixels,0,'Mobile document horizontally overflows viewport by '+row.overflowPixels+'px');
