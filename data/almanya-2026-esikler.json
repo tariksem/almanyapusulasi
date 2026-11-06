@@ -41,6 +41,13 @@
       "source": "BMAS / Bundesgesundheitsministerium",
       "gkv_mandatory_insurance_threshold_annual": 77400,
       "note": "GKV/PV contribution ceiling is not the mandatory insurance salary threshold (Jahresarbeitsentgeltgrenze)."
+    },
+    "retirement": {
+      "current_pension_value_eur": 42.52,
+      "current_value_valid_from": "2026-07-01",
+      "previous_pension_value_eur": 40.79,
+      "previous_value_valid_until": "2026-06-30",
+      "source": "Deutsche Rentenversicherung / Rentenwertbestimmungsverordnung 2026"
     }
   },
   "sources": [
@@ -53,7 +60,9 @@
     "https://www.bundesgesundheitsministerium.de/beitraege/seite",
     "https://www.bundesgesundheitsministerium.de/themen/pflege/online-ratgeber-pflege/die-pflegeversicherung/finanzierung",
     "https://www.gesetze-im-internet.de/estg/__9a.html",
-    "https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html"
+    "https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html",
+    "https://www.deutsche-rentenversicherung.de/DRV/DE/Experten/Zahlen-und-Fakten/Werte-der-Rentenversicherung/werte-der-rentenversicherung.html",
+    "https://www.gesetze-im-internet.de/rwbestv_2026/__1.html"
   ],
   "license_note": "Values are factual public information. Cite the original official source for legal or financial decisions.",
   "valid_from": "2026-01-01",
