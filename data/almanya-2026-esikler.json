@@ -44,7 +44,10 @@
       "care_employee_share_one_child_percent": 1.8,
       "source": "BMAS / Bundesgesundheitsministerium",
       "gkv_mandatory_insurance_threshold_annual": 77400,
-      "note": "GKV/PV contribution ceiling is not the mandatory insurance salary threshold (Jahresarbeitsentgeltgrenze)."
+      "note": "GKV/PV contribution ceiling is not the mandatory insurance salary threshold (Jahresarbeitsentgeltgrenze).",
+      "care_childless_surcharge_from_age_years": 23,
+      "care_additional_child_discount_until_age_years": 25,
+      "care_childless_employee_share_under23_percent": 1.8
     },
     "retirement": {
       "current_pension_value_eur": 42.52,
