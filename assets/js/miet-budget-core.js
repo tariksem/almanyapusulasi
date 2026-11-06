@@ -19,7 +19,14 @@
     if(values.some(function(x){return x===null;}))return {valid:false};
     var warm=cold+utilities+heating,monthly=warm+electricity+internet+other,hasIncome=income>0,remaining=hasIncome?income-monthly:null,ratio=hasIncome?monthly/income*100:null;
     var band=!hasIncome?"no_income":ratio<30?"under_30":ratio<=40?"30_40":"over_40";
-    return {valid:true,warm:warm,monthly:monthly,income:income,remaining:remaining,ratio:ratio,upfront:deposit+setup+monthly,deposit:deposit,setup:setup,band:band};
+    // BGB §551: monetary security <= three months of Nettokaltmiete;
+    // the tenant may pay it in three equal consecutive monthly instalments.
+    // Full deposit remains a conservative total-cash scenario.
+    var depositLimit=3*cold,depositOverLimit=deposit>depositLimit,
+        upfrontWithInstalment=monthly+setup+deposit/3;
+    return {valid:true,warm:warm,monthly:monthly,income:income,remaining:remaining,ratio:ratio,
+      upfront:deposit+setup+monthly,upfrontWithInstalment:upfrontWithInstalment,
+      depositLimit:depositLimit,depositOverLimit:depositOverLimit,deposit:deposit,setup:setup,band:band};
   }
   function runTests(){
     var a=calculate({cold:"900",utilities:"220",heating:"80",electricity:"70",internet:"40",other:"0",income:"3500",deposit:"2700",setup:"1200"});
@@ -29,6 +36,10 @@
       {name:"warm total",ok:a.warm===1200},
       {name:"remaining income",ok:a.remaining===2190},
       {name:"upfront includes first month",ok:a.upfront===5210},
+      {name:"first instalment upfront",ok:a.upfrontWithInstalment===3410},
+      {name:"deposit cap at 3 times cold rent",ok:a.depositLimit===2700&&!a.depositOverLimit},
+      {name:"deposit above cap flagged",ok:calculate({cold:"900",utilities:"200",deposit:"2800"}).depositOverLimit===true},
+      {name:"empty deposit no warning",ok:!calculate({cold:"900",utilities:"200"}).depositOverLimit},
       {name:"ratio band",ok:a.band==="30_40"},
       {name:"comma decimal",ok:b.valid&&b.warm===1100.5},
       {name:"German thousands",ok:amount("1.200",true)===1200},
