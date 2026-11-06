@@ -91,9 +91,10 @@ for(const item of checks){
       assert(await toggle.evaluate(el=>document.activeElement===el),'Keyboard focus did not return to nav toggle');
       row.keyboardPass=true;
     }
-    // Critical defects block publish; serious/moderate issues remain in actionable inventory.
-    const critical=row.violations.filter(x=>x.impact==='critical');
-    assert.equal(critical.length,0,'Critical axe accessibility violations: '+critical.map(x=>x.id).join(','));
+    // Fail on serious and critical WCAG regressions; moderate findings remain in inventory.
+    const blockers=row.violations.filter(x=>x.impact==='serious'||x.impact==='critical');
+    assert.equal(blockers.length,0,'Serious or critical axe accessibility violations: '+blockers.map(x=>x.id).join(','));
+    if(item.mobile)assert.equal(row.overflowPixels,0,'Mobile document horizontally overflows viewport by '+row.overflowPixels+'px');
     row.pass=true;
     console.log('PASS A11Y '+item.name+' axe violations='+row.violations.length+' CSP='+row.cspCount+' overflow='+row.overflowPixels+'px');
 
