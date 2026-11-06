@@ -24,6 +24,19 @@ jobs:
           node scripts/generate-discovery.js
           node scripts/validate-audit-fixes.js
 
+      - name: Enforce production release gates before deployment
+        run: |
+          python3 scripts/validate-site-structure.py
+          node scripts/validate-worker.mjs
+          node scripts/validate-consent.js
+          node scripts/validate-commercial-consent.js
+          node scripts/validate-social-meta.js
+          node scripts/validate-affiliate-attribution.js
+          node scripts/validate-finance-revenue-funnel.js
+          node scripts/validate-acquisition-p0.js
+          node scripts/validate-legacy-redirects.js
+          node scripts/validate-sitemap-structure.js
+
       - name: Validate locked brand identity
         run: node scripts/validate-brand-lock.js
 
