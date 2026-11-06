@@ -91,6 +91,21 @@ try{
       await page.locator('.privacy-settings-link').click();
       await page.locator('.cookie-banner .cookie-accept').waitFor();
       page.__apPhase='after-opt-in';
+      if(scenario.name==='mobile-nebenkosten'){
+        const geometry=await page.evaluate(()=>{
+          const info=sel=>{
+            const el=document.querySelector(sel),r=el?.getBoundingClientRect(),style=el?getComputedStyle(el):null;
+            if(!r)return null;
+            const cx=r.left+r.width/2,cy=r.top+r.height/2,hit=document.elementFromPoint(cx,cy);
+            return {x:Math.round(r.x),y:Math.round(r.y),w:Math.round(r.width),h:Math.round(r.height),display:style.display,position:style.position,centerHit:hit?.className||hit?.tagName};
+          };
+          return {innerWidth:innerWidth,scrollWidth:document.documentElement.scrollWidth,scrollY:scrollY,
+            viewport:visualViewport?{width:visualViewport.width,height:visualViewport.height,offsetTop:visualViewport.offsetTop}:null,
+            banner:info('.cookie-banner'),inner:info('.cookie-banner-inner'),actions:info('.cookie-actions'),
+            reject:info('.cookie-reject'),accept:info('.cookie-accept')};
+        });
+        console.log('MOBILE CONSENT GEOMETRY '+JSON.stringify(geometry));
+      }
       await page.locator('.cookie-banner .cookie-accept').click();
       await page.waitForFunction(()=>window.__apGaLoaded===true,null,{timeout:12000});
       await page.waitForTimeout(700);
