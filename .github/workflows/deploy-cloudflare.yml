@@ -23,6 +23,7 @@ jobs:
         run: |
           node scripts/generate-discovery.js
           node scripts/validate-audit-fixes.js
+          node scripts/validate-2026-tools.js
 
       - name: Enforce production release gates before deployment
         run: |
