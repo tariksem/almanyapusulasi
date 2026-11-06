@@ -22,6 +22,20 @@ const home=await get(SITE+'/');
 check(home.response.status===200,'Homepage status');
 for(const header of ['strict-transport-security','content-security-policy','content-security-policy-report-only','x-content-type-options','referrer-policy','permissions-policy'])check(home.response.headers.has(header),'Missing header '+header);
 check(home.body.includes('home-hubs-disclosure'),'Mobile topic disclosure missing');
+check(home.response.headers.get('strict-transport-security')==='max-age=2592000','30-day HSTS not deployed');
+const [allowedEmbed,deniedEmbed]=await Promise.all([
+ get(SITE+'/almanya-emeklilik-hesaplayici-2026/?embed=1'),
+ get(SITE+'/araclar/?embed=1')
+]);
+check(allowedEmbed.response.status===200 &&
+      allowedEmbed.response.headers.get('content-security-policy')?.includes('https:') &&
+      !allowedEmbed.response.headers.has('x-frame-options'),
+      'Approved tool iframe embed no longer works');
+check(deniedEmbed.response.status===200 &&
+      deniedEmbed.response.headers.get('content-security-policy')==="frame-ancestors 'self'" &&
+      deniedEmbed.response.headers.get('x-frame-options')==='SAMEORIGIN',
+      'Non-tool page can bypass frame protection with ?embed=1');
+
 check(!home.body.includes('Search Console verisinde görünmeye'),'Unverified homepage visibility claim remains');
 const json=await get(SITE+'/data/almanya-2026-esikler.json');
 check(json.response.status===200,'Public dataset status '+json.response.status);
