@@ -369,3 +369,6 @@ jobs:
               raise SystemExit('Production smoke test failed:\n' + '\n'.join(failures))
           print(f'Production smoke test passed for {len(urls)} URLs.')
           PY
+
+      - name: Verify live redirects, headers, discovery and consent artifacts
+        run: node scripts/verify-live-audit.mjs
