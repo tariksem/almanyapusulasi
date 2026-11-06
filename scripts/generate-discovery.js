@@ -57,6 +57,19 @@ if(news.length){
   const updated=home.replace(/(<section class="section news-home">[\s\S]*?<div class="news-grid">)[\s\S]*?(<\/div><\/div><\/section>)/,(_,a,b)=>a+cards+b);
   if(updated===home&&!home.includes(cards))throw new Error('Homepage news block not found');
   fs.writeFileSync('index.html',updated);
+  // News archive is generated from the same NewsArticle metadata as homepage and RSS.
+  // This avoids a manually maintained featured story/list becoming stale.
+  const formatNewsDate=n=>new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+  const featured=news[0];
+  const featuredBody='<div class="news-meta"><span class="news-tag">'+escape(featured.category)+'</span><time datetime="'+featured.date.slice(0,10)+'">'+formatNewsDate(featured)+'</time></div><h2>'+escape(featured.title)+'</h2><p>'+escape(featured.description)+'</p><a class="btn btn-primary" href="'+new URL(featured.url).pathname+'">Haberi oku →</a>';
+  const archiveCards=news.slice(1).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+formatNewsDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi oku →</span></div></a>').join('');
+  const archive=fs.readFileSync('haberler/index.html','utf8');
+  const featurePattern=/(<div class="news-feature"><div class="news-feature-body">)[\s\S]*?(<\/div><\/div><\/div><\/section><section class="section news-latest">)/;
+  const archivePattern=/(<section class="section news-latest">[\s\S]*?<div class="news-grid">)[\s\S]*?(<\/div><\/div><\/section>)/;
+  if(!featurePattern.test(archive)||!archivePattern.test(archive))throw new Error('News archive feature/list markup not found');
+  const refreshed=archive.replace(featurePattern,(_,a,b)=>a+featuredBody+b).replace(archivePattern,(_,a,b)=>a+archiveCards+b);
+  if(!refreshed.includes('datetime="'+featured.date.slice(0,10)+'"'))throw new Error('News archive featured article was not updated');
+  fs.writeFileSync('haberler/index.html',refreshed);
   const items=news.map(n=>'<item><title>'+escape(n.title)+'</title><link>'+escape(n.url)+'</link><guid isPermaLink="true">'+escape(n.url)+'</guid><pubDate>'+new Date(n.date).toUTCString()+'</pubDate><category>'+escape(n.category)+'</category><description>'+escape(n.description)+'</description></item>').join('\n');
   fs.writeFileSync('rss.xml','<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Almanya Pusulası — Haberler</title><link>'+SITE+'/haberler/</link><description>Almanya’daki Türkleri ilgilendiren seçilmiş gelişmeler.</description><language>tr</language><lastBuildDate>'+new Date(news[0].date).toUTCString()+'</lastBuildDate>\n'+items+'\n</channel></rss>\n');
 }
