@@ -5,7 +5,7 @@
 (function (root) {
   'use strict';
 
-  const VERSION = '2026.09.08-web.1';
+  const VERSION = '2026.11.06-web.2';
   const SOURCES = Object.freeze({
     BGB_556_3: { label: 'BGB § 556 Abs. 3', url: 'https://www.gesetze-im-internet.de/bgb/__556.html' },
     BGB_556_4: { label: 'BGB § 556 Abs. 4', url: 'https://www.gesetze-im-internet.de/bgb/__556.html' },
@@ -63,9 +63,13 @@
   function isoDate(dt) { return dt ? dt.toISOString().slice(0, 10) : null; }
   function endOfMonthUTC(y, monthIndex) { return new Date(Date.UTC(y, monthIndex + 1, 0)); }
 
-  function addMonthsEndOfMonth(date, months) {
+  // BGB §§ 187–188: a 12-month deadline ends on the same calendar day,
+  // or on the last day of the target month when that day does not exist.
+  // Do not silently extend the tenant's objection deadline to month end.
+  function addCalendarMonths(date, months) {
     const target = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + months, 1));
-    return endOfMonthUTC(target.getUTCFullYear(), target.getUTCMonth());
+    const maxDay = endOfMonthUTC(target.getUTCFullYear(), target.getUTCMonth()).getUTCDate();
+    return new Date(Date.UTC(target.getUTCFullYear(),target.getUTCMonth(),Math.min(date.getUTCDate(),maxDay)));
   }
 
   function inclusiveMonthsExceeds12(start, end) {
@@ -99,15 +103,15 @@
   function R002(s) {
     const end = parseDate(s.billingPeriodEnd), received = parseDate(s.receivedOn);
     if (!end || !received) return result('R002','missing_data','info','Teslim tarihi kontrolü için veri eksik','Hesap döneminin bitişi ve belgenin size ulaştığı tarihi girin.',{sourceIds:['BGB_556_3']});
-    const deadline = addMonthsEndOfMonth(end,12);
-    if (received > deadline) return result('R002','review','high','Belgenin gönderim zamanını kontrol edin','Belgenin size ulaştığı tarih, hesap döneminin bitiminden sonraki 12. ayın sonundan daha geç görünüyor. İstisnalar olabileceği için kesin hukuki sonuç çıkarılmaz.',{sourceIds:['BGB_556_3'],calculation:{deadline:isoDate(deadline),receivedOn:isoDate(received)}});
-    return result('R002','pass','info','Belge teslim zamanı temel süre içinde görünüyor','Girilen tarihlere göre belge, hesap döneminin bitiminden sonraki 12. ayın sonundan önce ulaşmış görünüyor.',{sourceIds:['BGB_556_3'],calculation:{deadline:isoDate(deadline)}});
+    const deadline = addCalendarMonths(end,12);
+    if (received > deadline) return result('R002','review','high','Belgenin gönderim zamanını kontrol edin','Belgenin size ulaştığı tarih, hesap döneminin bitiminden 12 ay sonraki son tarihten daha geç görünüyor. İstisnalar olabileceği için kesin hukuki sonuç çıkarılmaz.',{sourceIds:['BGB_556_3'],calculation:{deadline:isoDate(deadline),receivedOn:isoDate(received)}});
+    return result('R002','pass','info','Belge teslim zamanı temel süre içinde görünüyor','Girilen tarihlere göre belge, hesap döneminin bitiminden sonraki 12 aylık süre içinde ulaşmış görünüyor.',{sourceIds:['BGB_556_3'],calculation:{deadline:isoDate(deadline)}});
   }
 
   function R003(s, todayValue) {
     const received = parseDate(s.receivedOn);
     if (!received) return result('R003','missing_data','info','Kendi kontrol süreniz için teslim tarihi gerekli','Belgenin size ulaştığı tarihi girerseniz 12 aylık kontrol/itiraz penceresi için hatırlatma gösterebiliriz.',{sourceIds:['BGB_556_3']});
-    const deadline = addMonthsEndOfMonth(received,12);
+    const deadline = addCalendarMonths(received,12);
     const today = parseDate(todayValue) || new Date();
     const remaining = daysBetween(new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate())),deadline);
     if (remaining < 0) return result('R003','review','high','12 aylık inceleme penceresi geçmiş görünüyor','Girilen teslim tarihine göre genel 12 aylık bildirim/itiraz penceresi geçmiş olabilir. Somut durum ve istisnalar ayrıca değerlendirilmelidir.',{sourceIds:['BGB_556_3'],calculation:{deadline:isoDate(deadline),daysRemaining:remaining}});
@@ -197,6 +201,12 @@
     ok('period >12 review',R001({billingPeriodStart:'2025-01-01',billingPeriodEnd:'2026-01-01'}).status==='review');
     ok('leap year period pass',R001({billingPeriodStart:'2024-02-29',billingPeriodEnd:'2025-02-28'}).status==='pass');
     ok('late receipt review',R002({billingPeriodEnd:'2024-12-31',receivedOn:'2026-01-01'}).status==='review');
+    ok('R002 non-month-end deadline is exact day',R002({billingPeriodEnd:'2025-06-15',receivedOn:'2026-06-16'}).calculation.deadline==='2026-06-15');
+    ok('R002 exact deadline arrival accepted',R002({billingPeriodEnd:'2025-06-15',receivedOn:'2026-06-15'}).status==='pass');
+    ok('R003 tenant objection deadline exact day',R003({receivedOn:'2025-08-07'},'2026-08-08').calculation.deadline==='2026-08-07');
+    ok('R003 last timely day is not passed',R003({receivedOn:'2025-08-07'},'2026-08-07').calculation.daysRemaining===0);
+    ok('R003 leap-day calendar clamp',R003({receivedOn:'2024-02-29'},'2025-03-01').calculation.deadline==='2025-02-28');
+
     ok('line sum mismatch review',R004({statedTenantCost:'100',costLines:[{tenantShare:'40'},{tenantShare:'50'}]}).status==='review');
     ok('balance pass',R005({statedTenantCost:'1000',statedAdvancePayments:'800',statedBalance:'200'}).status==='pass');
     ok('balance mismatch review',R005({statedTenantCost:'1000',statedAdvancePayments:'800',statedBalance:'250'}).status==='review');
