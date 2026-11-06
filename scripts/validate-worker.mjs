@@ -11,14 +11,26 @@ assert.equal(legacy.status,301);assert.equal(legacy.headers.get('Location'),'htt
 const normal=await worker.fetch(new Request('https://almanyapusulasi.de/araclar/'),env);
 assert.equal(normal.status,200);assert.equal(await normal.text(),'asset');assert.equal(calls.length,1);
 assert.equal(normal.headers.get('X-Content-Type-Options'),'nosniff');
-assert.equal(normal.headers.get('Strict-Transport-Security'),'max-age=86400');
+assert.equal(normal.headers.get('Strict-Transport-Security'),'max-age=2592000');
 assert.equal(normal.headers.get('Content-Security-Policy'),"frame-ancestors 'self'");
 assert.equal(normal.headers.get('X-Frame-Options'),'SAMEORIGIN');
 assert(normal.headers.get('Content-Security-Policy-Report-Only').includes("default-src 'self'"));
 assert(normal.headers.get('Content-Security-Policy-Report-Only').includes("worker-src 'self' blob:"));
-const embed=await worker.fetch(new Request('https://almanyapusulasi.de/araclar/?embed=1'),env);
-assert(embed.headers.get('Content-Security-Policy').includes('https:'),'External embeds must remain available');
-assert(!embed.headers.has('X-Frame-Options'));
+for(const slug of [
+  'almanya-emeklilik-hesaplayici-2026',
+  'chancenkarte-puan-hesaplayici-2026',
+  'blue-card-uygunluk-kontrolu-2026',
+  'brutto-netto-hesaplayici-2026'
+]){
+  const embed=await worker.fetch(new Request('https://almanyapusulasi.de/'+slug+'/?embed=1'),env);
+  assert(embed.headers.get('Content-Security-Policy').includes('https:'),'Allowed tool embed must remain available: '+slug);
+  assert(!embed.headers.has('X-Frame-Options'),'Allowed tool embed cannot use SAMEORIGIN: '+slug);
+}
+for(const page of ['/araclar/','/','/familienversicherung/']){
+  const blocked=await worker.fetch(new Request('https://almanyapusulasi.de'+page+'?embed=1'),env);
+  assert.equal(blocked.headers.get('Content-Security-Policy'),"frame-ancestors 'self'",'Other pages must not permit external framing');
+  assert.equal(blocked.headers.get('X-Frame-Options'),'SAMEORIGIN');
+}
 const normalized=await worker.fetch(new Request('https://almanyapusulasi.de/araclar'),{ASSETS:{fetch:async()=>new Response(null,{status:307,headers:{Location:'/araclar/'}})}});
 assert.equal(normalized.status,308);
 const missing=await worker.fetch(new Request('https://almanyapusulasi.de/missing/'),{ASSETS:{fetch:async()=>new Response('Not found',{status:404})}});
