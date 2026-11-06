@@ -2,6 +2,10 @@
 
 /* Mobile cookie consent: stack both actions to prevent tap-target overlap. */
 @media(max-width:760px){
+  /* Keep the entire consent panel inside the *visible* mobile viewport,
+     even when long content expands the browser's layout viewport. */
+  .cookie-banner{top:12px;bottom:auto;left:10px;right:auto;width:min(340px,calc(100vw - 48px));max-height:calc(100dvh - 24px);overflow-y:auto}
+  .cookie-banner-inner{width:100%;max-width:none}
   .cookie-banner .cookie-actions{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:10px}
   .cookie-banner .cookie-actions .btn{width:100%;min-width:0;position:relative;z-index:1}
 }
