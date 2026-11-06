@@ -8,9 +8,9 @@ const SITE=process.env.AP_SITE_URL || 'https://almanyapusulasi.de';
 const REPORT='audit-output/browser-privacy-csp.json';
 const summaries=[];
 const allViolations=[];
-const trackedHosts=/(\.|^)(?:googletagmanager\.com|google-analytics\.com|analytics\.google\.com|doubleclick\.net|googlesyndication\.com|googleadservices\.com)$/i;
+const trackedHosts=/(\.|^)(?:googletagmanager\.com|google-analytics\.com|analytics\.google\.com|doubleclick\.net|googlesyndication\.com|googleadservices\.com|cloudflareinsights\.com)$/i;
 function isTracking(url){
-  try{return trackedHosts.test(new URL(url).hostname);}catch{return false;}
+  try{const u=new URL(url);return trackedHosts.test(u.hostname)||u.pathname==='/cdn-cgi/rum';}catch{return false;}
 }
 function safeOrigin(uri){
   if(!uri)return '(none)';
@@ -68,11 +68,13 @@ try{
       }
       check(headers['content-security-policy'].includes('frame-ancestors'),'Enforced frame protection missing');
       check(headers['content-security-policy-report-only'].includes("default-src 'self'"),'Report-only policy missing');
+      check((headers['cache-control']||'').includes('no-transform'),'Cloudflare auto-injection protection missing');
       await page.locator('.cookie-banner .cookie-reject').waitFor({timeout:12000});
       await page.waitForTimeout(600);
       row.preConsentTracking=traffic.filter(x=>x.phase==='before-consent').length;
       assert.equal(row.preConsentTracking,0,'Tracking request before acceptance');
       assert.equal(await page.locator('script[src*="googletagmanager.com/gtag/js"]').count(),0,'Google tag loaded before acceptance');
+      assert.equal(await page.locator('script[src*="cloudflareinsights.com"]').count(),0,'Cloudflare beacon injected without opt-in');
       assert.equal(await page.evaluate(()=>localStorage.getItem('ap_cookie_consent')),null,'New visitor has stored consent');
 
       // Explicit refusal, then reload: remain rejected with no Google tag.
@@ -121,11 +123,17 @@ try{
       });
       check(noNewEvent,'Tracking API accepted an event after withdrawal');
       row.cspViolations+=await recordViolations(page,scenario.name+'-opted-in');
-      page.__apPhase='after-withdrawal-reload';
-      await page.reload({waitUntil:'domcontentloaded'});
-      await page.waitForTimeout(400);
-      assert.equal(await page.locator('script[src*="googletagmanager.com/gtag/js"]').count(),0);
-      assert.equal(traffic.filter(x=>x.phase==='after-withdrawal-reload').length,0,'Tracking restarted after withdrawal reload');
+      // A fresh page in the same storage context separates late in-flight
+      // requests from the old Google script from genuinely new tracking.
+      const isolated=await context.newPage(),isolatedTraffic=[];
+      isolated.on('request',req=>{if(isTracking(req.url()))isolatedTraffic.push(safeOrigin(req.url()));});
+      try{
+        await isolated.goto(SITE+scenario.path+'?ap_privacy_probe=synthetic_token',{waitUntil:'domcontentloaded'});
+        await isolated.waitForTimeout(500);
+        assert.equal(await isolated.locator('script[src*="googletagmanager.com/gtag/js"]').count(),0);
+        assert.equal(await isolated.locator('script[src*="cloudflareinsights.com"]').count(),0);
+        assert.equal(isolatedTraffic.length,0,'Fresh page restarted tracking after consent withdrawal: '+isolatedTraffic.join(','));
+      }finally{await isolated.close();}
       row.cspViolations+=await recordViolations(page,scenario.name+'-withdrawn');
       row.pass=true;
       console.log('PASS browser '+scenario.name+' — no pre-consent traffic, opt-in, revocation, reload, security headers');
