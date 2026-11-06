@@ -2,12 +2,13 @@
   "name": "Almanya 2026 Resmi Esikler",
   "publisher": "Almanya Pusulasi",
   "url": "https://almanyapusulasi.de/almanya-2026-resmi-esikler/",
-  "last_verified": "2026-09-06",
+  "last_verified": "2026-11-06",
   "currency": "EUR",
   "data": {
     "tax": {
       "grundfreibetrag_annual": 12348,
-      "source": "Bundesministerium der Finanzen, EStG §32a 2026"
+      "source": "Bundesministerium der Finanzen, EStG §§ 32a, 9a (2026)",
+      "employee_standard_deduction_annual": 1230
     },
     "family": {
       "kindergeld_monthly_per_child": 259,
@@ -19,7 +20,8 @@
     "eu_blue_card": {
       "general_salary_annual": 50700,
       "reduced_salary_annual": 45934.2,
-      "source": "Make it in Germany"
+      "source": "Make it in Germany",
+      "note": "Reduced threshold applies only to qualifying routes; BA consent is necessary where the discounted threshold is used and for degree-free IT professionals."
     },
     "opportunity_card": {
       "points_required": 6,
@@ -36,18 +38,24 @@
       "gkv_average_additional_rate_percent": 2.9,
       "care_employee_share_childless_percent": 2.4,
       "care_employee_share_one_child_percent": 1.8,
-      "source": "BMAS / Bundesgesundheitsministerium"
+      "source": "BMAS / Bundesgesundheitsministerium",
+      "gkv_mandatory_insurance_threshold_annual": 77400,
+      "note": "GKV/PV contribution ceiling is not the mandatory insurance salary threshold (Jahresarbeitsentgeltgrenze)."
     }
   },
   "sources": [
     "https://ao.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/IV-Tarif-31-34b/Paragraf-32a/inhalt.html",
     "https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/das-aendert-sich-2026.html",
     "https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer",
-    "https://www.make-it-in-germany.com/en/visa-residence/types/eu-blue-card",
-    "https://www.make-it-in-germany.com/en/visa-residence/opportunity-card/job-search",
+    "https://www.make-it-in-germany.com/en/visa-recognition/visa-types/eu-blue-card",
+    "https://www.make-it-in-germany.com/en/visa-recognition/opportunity-card/job-search",
     "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2026.html",
     "https://www.bundesgesundheitsministerium.de/beitraege/seite",
-    "https://www.bundesgesundheitsministerium.de/themen/pflege/online-ratgeber-pflege/die-pflegeversicherung/finanzierung"
+    "https://www.bundesgesundheitsministerium.de/themen/pflege/online-ratgeber-pflege/die-pflegeversicherung/finanzierung",
+    "https://www.gesetze-im-internet.de/estg/__9a.html",
+    "https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html"
   ],
-  "license_note": "Values are factual public information. Cite the original official source for legal or financial decisions."
+  "license_note": "Values are factual public information. Cite the original official source for legal or financial decisions.",
+  "valid_from": "2026-01-01",
+  "valid_until": "2026-12-31"
 }
