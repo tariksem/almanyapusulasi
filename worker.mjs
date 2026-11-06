@@ -20,7 +20,10 @@ function secure(response,url){
   out.headers.set('Referrer-Policy','strict-origin-when-cross-origin');
   out.headers.set('Permissions-Policy','camera=(), microphone=(), geolocation=()');
   const embed=url.searchParams.get('embed')==='1'&&EMBED_PATHS.has(url.pathname);
-  out.headers.set('Content-Security-Policy',embed?"frame-ancestors 'self' https:":"frame-ancestors 'self'");
+  // Enforce low-risk directives now; keep external script/connect/frame rules
+  // in Report-Only until OCR, embed and partner scenarios are exhaustively tested.
+  const framePolicy=embed?"frame-ancestors 'self' https:":"frame-ancestors 'self'";
+  out.headers.set('Content-Security-Policy',framePolicy+"; object-src 'none'; base-uri 'self'");
   if(!embed)out.headers.set('X-Frame-Options','SAMEORIGIN');
   // Observe source violations before enforcing a policy on uploads, OCR and partner widgets.
   out.headers.set('Content-Security-Policy-Report-Only',[
