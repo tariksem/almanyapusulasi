@@ -72,7 +72,13 @@ check(consent.body.includes('clearAnalyticsCookies')&&consent.body.includes('ga-
 const commercial=await get(SITE+'/assets/js/commercial-tracking.js');
 check(commercial.body.includes('ap:analytics-ready')&&commercial.body.includes('return false'),'Commercial consent fix missing');
 const affiliate=await get(SITE+'/assets/js/affiliate-slots.js');
-check((affiliate.body.match(/enabled:true/g)||[]).length===18,'Affiliate configuration changed unexpectedly');
+const localAffiliate=fs.readFileSync('assets/js/affiliate-slots.js','utf8');
+const enabledAffiliateKeys=src=>[...src.matchAll(/"([^"]+)":\\{enabled:true/g)].map(m=>m[1]).sort();
+check(affiliate.response.status===200&&
+      JSON.stringify(enabledAffiliateKeys(affiliate.body))===JSON.stringify(enabledAffiliateKeys(localAffiliate))&&
+      affiliate.body.includes('"bu-comparison":{enabled:false,provider:"",partnerId:"",url:""')&&
+      !enabledAffiliateKeys(affiliate.body).includes('bu-comparison'),
+      'Live affiliate configuration differs from approved enabled slots or unsafe BU link was re-enabled');
 const [rentCore,nebenCore,wohngeld,rentPage]=await Promise.all([
   get(SITE+'/assets/js/miet-budget-core.js'),
   get(SITE+'/assets/js/nebenkosten-core.js'),
