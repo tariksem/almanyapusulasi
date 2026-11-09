@@ -9,9 +9,13 @@ function pdfFixture(){
   const lines=[
     'Nebenkostenabrechnung fiktive Testwohnung.',
     'Abrechnungszeitraum 01.01.2025 bis 31.12.2025.',
-    'Gesamtkosten 2700,00 EUR. Vorauszahlungen 2400,00 EUR.',
-    'Nachzahlung 300,00 EUR. Hausmeister 240,00 EUR.',
-    'Heizung 900,00 EUR. Wasser 360,00 EUR. Grundsteuer 150,00 EUR.',
+    'Gesamtkosten 2700,00 EUR',
+    'Vorauszahlungen 2400,00 EUR',
+    'Nachzahlung 300,00 EUR',
+    'Hausmeister 240,00 EUR',
+    'Heizung 900,00 EUR',
+    'Wasser 360,00 EUR',
+    'Grundsteuer 150,00 EUR',
     ...Array.from({length:18},(_,i)=>'Fiktive Kostenposition '+(i+1)+' aus dem synthetischen Beleg. Keine Personendaten.')
   ];
   const stream='BT\n/F1 10 Tf\n45 790 Td\n13 TL\n'+lines.map(x=>'('+x.replace(/[\\()]/g,c=>'\\'+c)+') Tj T*').join('\n')+'\nET\n';
