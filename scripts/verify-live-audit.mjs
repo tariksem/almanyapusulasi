@@ -107,6 +107,25 @@ check(insuranceTool.response.status===200&&insuranceTool.body.includes('window.I
 check(officialThresholds.response.status===200&&officialThresholds.body.includes('Familienversicherung genel sınırı')&&
       officialThresholds.body.includes('Familienversicherung / Minijob'),
       'Live 2026 data center missing distinct family GKV limits');
+// Check the staged enforced CSP only on audited partner comparison pages.
+// Other pages (notably OCR and decision tools) must retain Report-Only for now.
+await Promise.all([
+  '/stromtarif-karsilastirma-2026/',
+  '/haftpflicht-karsilastirma-2026/',
+  '/private-krankenversicherung-pkv-2026/',
+  '/kfz-versicherung-karsilastirma-2026/'
+].map(async path=>{
+  const {response}=await get(SITE+path);
+  const csp=response.headers.get('content-security-policy')||'';
+  check(response.status===200&&csp.includes("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com")&&
+        csp.includes("connect-src 'self' https://*.google-analytics.com")&&
+        csp.includes("frame-src 'none'"),
+        'Live partner CSP enforcement missing: '+path);
+}));
+const ocrPage=await get(SITE+'/nebenkosten-abrechnung-kontrolu/');
+check(ocrPage.response.status===200&&
+      !(ocrPage.response.headers.get('content-security-policy')||'').includes('script-src'),
+      'OCR page was accidentally moved into strict CSP before complete source validation');
 const chance=await get(SITE+'/chancenkarte-puan-hesaplayici-2026/');
 check(chance.body.includes("checks=recognized?")&&!chance.body.includes("['Temel dil',recognized||lang]"),'Chancenkarte route fix missing');
 console.log(JSON.stringify({sitemapUrls:urls.length,jsonStatus:json.response.status,errors},null,2));
