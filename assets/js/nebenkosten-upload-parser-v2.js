@@ -7,10 +7,13 @@ function moneyMatches(line){
 }
 function cleanMoney(v){return String(v||'').replace(/\s/g,'').replace(/^-/, '').replace(/[-–—]$/, '');}
 function toIso(s){
-  const m=String(s||'').match(/(\d{1,2})[.\-/](\d{1,2})[.\-/](\d{2}|\d{4})/);
+  const m=String(s||'').match(/(\d{1,2})[.\-/](\d{1,2})[.\-/](\d{4}|\d{2})(?!\d)/);
   if(!m)return '';
   let y=m[3];if(y.length===2)y='20'+y;
-  return `${y}-${String(m[2]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}`;
+  const day=Number(m[1]),month=Number(m[2]),year=Number(y);
+  const valid=new Date(Date.UTC(year,month-1,day));
+  if(year<2000||year>2100||valid.getUTCFullYear()!==year||valid.getUTCMonth()!==month-1||valid.getUTCDate()!==day)return '';
+  return `${y}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
 }
 function monthRangeToIso(s){
   const m=String(s||'').match(/(\d{1,2})[.\-/](\d{4})\s*(?:bis|[-–—])\s*(\d{1,2})[.\-/](\d{4})/i);
@@ -29,11 +32,11 @@ function scorePeriodLine(line){
   return 0;
 }
 function findPeriod(lines){
-  const dateRx=/(\d{1,2}[.\-/]\d{1,2}[.\-/](?:\d{2}|\d{4}))/g,candidates=[];
+  const dateRx=/(\d{1,2}[.\-/]\d{1,2}[.\-/](?:\d{4}|\d{2})(?!\d))/g,candidates=[];
   for(let i=0;i<lines.length;i++){
     const score=scorePeriodLine(lines[i]);if(!score)continue;
     const ctx=[lines[i-1]||'',lines[i],lines[i+1]||''].join(' '),full=ctx.match(dateRx)||[];
-    if(full.length>=2)candidates.push({score,start:toIso(full[0]),end:toIso(full[1])});
+    if(full.length>=2){const start=toIso(full[0]),end=toIso(full[1]);if(start&&end&&start<=end)candidates.push({score,start,end});}
     const mr=monthRangeToIso(ctx);if(mr)candidates.push({score:score-5,start:mr.start,end:mr.end});
   }
   if(candidates.length){candidates.sort((a,b)=>b.score-a.score);return candidates[0];}
@@ -71,7 +74,7 @@ function formatMoneyNumber(n){return Number(n).toFixed(2).replace('.',',');}
 function parse(text){
   const lines=String(text||'').split(/\r?\n/).map(x=>x.replace(/\s+/g,' ').trim()).filter(Boolean),period=findPeriod(lines);
   let total=findSameLineMoney(lines,[/ihr\s+anteil\s+brutto/i,/mieter(?:anteil|kosten).*brutto/i,/ihr\s+anteil\s+netto/i,/mieter(?:anteil|kosten)/i]);
-  const advances=findSameLineMoney(lines,[/abzgl\.?\s*(?:ihre\s+)?einzahlungen/i,/(?:ihre\s+)?einzahlungen/i,/vorauszahlungen?\s+gesamt/i,/geleistet.*voraus/i,/abschlags?zahlung/i]),bal=findBalance(lines);
+  const advances=findSameLineMoney(lines,[/abzgl\.?\s*(?:ihre\s+)?einzahlungen/i,/(?:ihre\s+)?einzahlungen/i,/vorauszahlungen?\s+gesamt/i,/geleistet.*voraus/i,/abschlags?zahlung/i,/\bvorauszahlungen?\b/i]),bal=findBalance(lines);
   if(!total&&advances&&bal.value){const a=parseMoneyNumber(advances),b=parseMoneyNumber(bal.value);if(a!=null&&b!=null)total=formatMoneyNumber(bal.credit?a-b:a+b);}
   return {periodStart:period.start,periodEnd:period.end,totalCost:total,advances,balance:bal.value,balanceCredit:bal.credit,costs:findCostLines(lines,text),heating:findPercentPair(lines,/heiz(?:ung|kosten)/i),warmWater:findPercentPair(lines,/warmwasser|warmes wasser/i)};
 }
