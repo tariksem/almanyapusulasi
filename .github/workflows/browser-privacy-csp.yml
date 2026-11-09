@@ -55,6 +55,20 @@ jobs:
           AP_SITE_URL: https://almanyapusulasi.de
         run: node scripts/browser-affiliate-csp.mjs
 
+      - name: Validate editorial CSP enforcement with rejected accepted and withdrawn GA consent
+        env:
+          AP_SITE_URL: https://almanyapusulasi.de
+        run: node scripts/browser-editorial-csp.mjs
+
+      - name: Upload sanitized editorial CSP audit
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: browser-editorial-csp
+          path: audit-output/browser-editorial-csp.json
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Upload sanitized partner privacy/CSP audit
         if: always()
         uses: actions/upload-artifact@v5
