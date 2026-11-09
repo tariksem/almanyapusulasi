@@ -88,9 +88,7 @@ try{
 
         await page.locator('.privacy-settings-link').click();
         await page.locator('.cookie-banner .cookie-accept').click();
-        await page.waitForFunction(()=>window.APAnalytics&&window.APAnalytics.hasConsent&&window.APAnalytics.hasConsent(),null,{timeout:12000}).catch(async()=>{
-          assert.equal(await page.evaluate(()=>localStorage.getItem('ap_cookie_consent')),'accepted');
-        });
+        await page.waitForFunction(()=>localStorage.getItem('ap_cookie_consent')==='accepted'&&window.__apGaLoaded===true,null,{timeout:12000});
         await link.click();
         const recorded=await page.evaluate(()=>{
           const e=(window.dataLayer||[]).filter(x=>x[0]==='event'&&x[1]==='affiliate_click');
