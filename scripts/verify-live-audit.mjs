@@ -73,7 +73,7 @@ const commercial=await get(SITE+'/assets/js/commercial-tracking.js');
 check(commercial.body.includes('ap:analytics-ready')&&commercial.body.includes('return false'),'Commercial consent fix missing');
 const affiliate=await get(SITE+'/assets/js/affiliate-slots.js');
 const localAffiliate=fs.readFileSync('assets/js/affiliate-slots.js','utf8');
-const enabledAffiliateKeys=src=>[...src.matchAll(/"([^"]+)":\\{enabled:true/g)].map(m=>m[1]).sort();
+const enabledAffiliateKeys=src=>[...src.matchAll(/"([^"]+)":\{enabled:true/g)].map(m=>m[1]).sort();
 check(affiliate.response.status===200&&
       JSON.stringify(enabledAffiliateKeys(affiliate.body))===JSON.stringify(enabledAffiliateKeys(localAffiliate))&&
       affiliate.body.includes('"bu-comparison":{enabled:false,provider:"",partnerId:"",url:""')&&
