@@ -4,6 +4,27 @@
 **Durum anahtarı:** `TODO`, `DOING`, `DONE`, `BLOCKED`, `VERIFIED` (hata yok).
 **Sosyal medya güvenlik kuralı:** `social/meta-queue.json` içindeki `approved: false` korunur; yeni görsel ve yayın için kullanıcı onayı gereklidir. Otomatik sosyal paylaşım başlatılmaz.
 
+## DEVAM NOKTASI — 09.11.2026 itibarıyla kalan işler
+
+**Tetikleyici:** Kullanıcı "güncelleme adımlarına devam et", "devam et" veya benzerini yazdığında bu bölümü ve aşağıdaki 18 maddelik güncel durum tablosunu önce oku. İşi yeniden planlamakla veya önceki tamamlanmış aşamaları tekrarlamakla vakit kaybetme. GitHub `main`, Cloudflare deploy ve en son test run'larını kontrol et; daha güncel kayıt varsa bu bölümü ona göre ilerlet.
+
+**Son doğrulanmış teknik temel:** `59b358276` kodunda 12 sayfada zorunlu CSP etkin; Site Quality Audit, Cloudflare ve GitHub Pages başarılı, gerçek Chrome koşusu **42611596647** başarılı (4 consent, 18 a11y/klavye/mobil, 2 PDF/OCR, 5 affiliate, 8 editorial CSP). Plan kaydı için son commit `fa5ac4e34`; bu commit'in kalite, Cloudflare, Pages ve tekrar Chrome koşusu **42611936711** de başarılı. 78 bağımsız hesaplama/parser regresyonu başarılı. Bunlar geçmiş başarı kanıtıdır; yeni commit ve yeni canlı yayınlar için testler tekrar aranmalıdır.
+
+**Bir sonraki doğrudan uygulama adımı — AP-05 + AP-10:** Blue Card, Chancenkarte, Brutto-Netto ve Sigorta Seçim Aracı'nın **gerçek Chrome kullanıcı akışlarını** (form doldur, sınır girdi, sonucu göster, uyarı/CTA ve yeniden hesaplama) otomasyona ekle. İzin reddi/kabulü ve CSP `securitypolicyviolation` olayları ile hatalı local/dış network isteklerini kaydet. Eski `scripts/validate-2026-tools.js` ve `scripts/validate-insurance-tools.js` koşuları bu tarayıcı akışlarının yerini tutmaz. Testler yeşilse yalnızca doğrulanmış bu sayfalarda `worker.mjs` içinde `script-src`, `connect-src`, `frame-src` ve `form-action` enforcement'ını aşamalı aç. **Dışarıdan gömülebilen 4 hesaplayıcıda `?embed=1` korumasını bozma; `frame-ancestors` ve X-Frame-Options davranışlarını embed/normal modda ayrı sınamadan yayınlama.** Sigorta dinamik affiliate slotları ve yeniden sonuç üretme akışını da test et.
+
+**Sonraki işler — açık öncelik sırası:**
+
+1. **AP-10 CSP devamı:** Diğer içerik ve hesaplayıcı sayfalarının harici script, iframe, worker, API ve `unsafe-inline` bağımlılıklarını envanterle; `script-src`, `connect-src`, `worker-src`, `frame-src`, `form-action` kurallarını yalnız doğrulanan sayfalarda `Report-Only → Enforced` geçir. Inline JS/CSS için nonce/hash veya harici dosyaya taşıma yaklaşımını değerlendir. **Nebenkosten PDF.js/Tesseract OCR, diğer dinamik araçlar, dört embed URL'si ve partner dönüşüm yolları kanıtlanmadan site geneline zorunlu CSP uygulama.**
+2. **AP-04 / AP-12 P0 yıl geçişi:** 2026 resmî sınır/veri merkezini kurum kaynağı ve geçerlilik tarihleriyle yeniden denetle; 2027 için henüz yürürlüğe girmemiş teklifleri "taslak" olarak bırak. Yeni rakamları sadece yayımlanmış/yürürlüğe girme tarihi belli birincil resmî kaynakla ve ilgili hesaplama testini güncelleyerek etkinleştir. `data/almanya-2026-esikler.json` ve 2027 etiketlerinin tarih/expiry stratejisini tamamla.
+3. **AP-09 kırık resmî bağlantılar:** BAMF, BA, Familienkasse, BMG, DRV, federal/eyalet resmî kaynaklarına giden kritik URL'leri 200/301/302, kaynak içeriği ve güncellik açısından denetle; kırıkları sayfa düzeyinde düzelt ve tarayıcı/CI kontrolü ekle.
+4. **AP-11 mobil/erişilebilirlik:** 320/390px dışında klavye, odak sırası, etiketler, kontrast, dokunma hedefleri ve manuel ekran okuyucu denetimini ilerlet. Önceki 18/18 otomatik başarı tüm erişilebilirlik sorunlarının çözüldüğü anlamına gelmez.
+5. **AP-06 haber güncelliği:** Kalan tarihli duyuruları ve 2027 gelişmelerini resmî kaynak/tarihle denetle; eski başvuru ve haberleri güncel gibi gösterme. AP-13 üretilen RSS/ana sayfa ortak veri davranışını koru.
+6. **AP-16 SEO/içerik:** Çakışan/ince sayfaları önceliklendir; kanonik yönlendirme ve `sitemap.xml` kaydını bozmadan konsolidasyon yap; mümkünse GSC veriyle önceliklendir.
+7. **AP-14 / AP-15 / AP-18:** GA4/GSC gerçek mülkiyet verisi ile 28 günlük arama performansı, TARIFCHECK/CHECK24 gerçek click/lead/sale/komisyon mutabakatı ve ardından gelir A/B optimizasyonu. **Hesap erişimi veya sağlayıcı kanıtı yoksa BLOCKED; tahminleri gerçekleşen dönüşüm gibi sunma. Sahte partner tıklaması üretme.**
+8. **AP-17 sosyal medya:** Onaylı kurumsal logo ve tek tek onaylı görsellerle 10 günlük plan; `social/meta-queue.json` içindeki `approved:false` kullanıcı açıkça onay verene kadar korunur. Herhangi bir paylaşımı kendiliğinden yayınlama.
+
+**Her yeni uygulama turunda kapanış:** Değişiklikleri GitHub'a kaydet; gerekli node testleri ve Site Quality Audit sonucunu kontrol et; Cloudflare production deploy + `scripts/verify-live-audit.mjs` ve ilgili gerçek Chrome workflow'unu doğrula. İlgili AP maddesinin `TODO/DOING/DONE/BLOCKED` durumunu güncelle, commit ve run URL'lerini bu planda kaydet. Sadece doğrulanan başarıyı bildir; devam eden veya engellenen işler açık kalsın. Kullanıcıdan gereksiz yeniden onay/tekrar bilgi istemeden sıradaki teknik işe geç.
+
 ## Bağımlılık ve uygulama sırası
 Sıra, etki (P0 > P1 > P2), risk ve bağımlılığa göre belirlenmiştir. Aynı gruptaki bağımsız işler paralel yapılabilir.
 
