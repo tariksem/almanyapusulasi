@@ -49,6 +49,13 @@ try{
     try{
       const response=await page.goto(SITE+item.page,{waitUntil:'domcontentloaded',timeout:30000});
       assert.equal(response.status(),200,'Page must load');
+      const enforcedCsp=response.headers()['content-security-policy']||'';
+      if(!item.disabled){
+        assert(enforcedCsp.includes("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com"),'Partner script CSP not enforced');
+        assert(enforcedCsp.includes("connect-src 'self' https://*.google-analytics.com"),'Partner connect CSP not enforced');
+        assert(enforcedCsp.includes("frame-src 'none'"),'Partner iframe blocking CSP not enforced');
+        assert.equal(await page.locator('iframe').count(),0,'External iframe detected on link-only comparison page');
+      }
       const slot=page.locator('[data-affiliate-slot="'+item.key+'"]');
       assert.equal(await slot.count(),1,'Missing expected commercial slot');
       if(item.disabled){
@@ -113,6 +120,13 @@ try{
       row.csp=await page.evaluate(()=>window.__apPartnerCsp||[]).catch(()=>[]);
       allViolations.push(...row.csp.map(x=>({...x,case:item.key})));
       if(row.csp.length)console.log('PARTNER CSP '+item.key+' '+JSON.stringify(row.csp.slice(0,15)));
+      const enforcedBlocks=row.csp.filter(x=>x.disposition==='enforce');
+      if(enforcedBlocks.length){
+        if(row.pass)failures++;
+        row.pass=false;
+        row.error='Enforced CSP blocked resources: '+enforcedBlocks.map(x=>x.directive+' '+x.blockedOrigin).join(', ').slice(0,400);
+        console.error('FAIL partner '+item.key+': '+row.error);
+      }
       rows.push(row);
       await context.close();
     }
