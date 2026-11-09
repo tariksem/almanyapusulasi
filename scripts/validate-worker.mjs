@@ -30,22 +30,31 @@ for(const slug of [
 }
 for(const page of ['/araclar/','/','/familienversicherung/']){
   const blocked=await worker.fetch(new Request('https://almanyapusulasi.de'+page+'?embed=1'),env);
-  assert.equal(blocked.headers.get('Content-Security-Policy'),"frame-ancestors 'self'; object-src 'none'; base-uri 'self'",'Other pages must not permit external framing');
+  assert((blocked.headers.get('Content-Security-Policy')||'').startsWith("frame-ancestors 'self'; object-src 'none'; base-uri 'self'"),'Other pages must not permit external framing');
   assert.equal(blocked.headers.get('X-Frame-Options'),'SAMEORIGIN');
 }
-// Narrow CSP enforcement is deliberately limited to four verified affiliate
-// comparison pages. Normal tools retain Report-Only while OCR is evaluated.
+// Scoped enforcement applies to four affiliate and eight reviewed editorial
+// pages. Dynamic tools, especially OCR, stay Report-Only.
 for(const path of [
   '/stromtarif-karsilastirma-2026/',
   '/haftpflicht-karsilastirma-2026/',
   '/private-krankenversicherung-pkv-2026/',
-  '/kfz-versicherung-karsilastirma-2026/'
+  '/kfz-versicherung-karsilastirma-2026/',
+  '/familienversicherung/',
+  '/krankenkasse-degistirme/',
+  '/is-birakinca-saglik-sigortasi/',
+  '/wohngeld/',
+  '/kindergeld/',
+  '/haberler/',
+  '/almanya-2026-resmi-esikler/',
+  '/berufsunfaehigkeitsversicherung/'
 ]){
   const r=await worker.fetch(new Request('https://almanyapusulasi.de'+path),env);
   const policy=r.headers.get('Content-Security-Policy')||'';
   assert(policy.includes("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com"),path+' missing restricted script-src');
   assert(policy.includes("connect-src 'self' https://*.google-analytics.com"),path+' missing restricted connect-src');
   assert(policy.includes("frame-src 'none'"),path+' must not embed third-party widgets');
+  assert(policy.includes("form-action 'self'"),path+' must block off-origin form submissions');
 }
 for(const path of ['/nebenkosten-abrechnung-kontrolu/','/sigorta-secim-araci/']){
   const r=await worker.fetch(new Request('https://almanyapusulasi.de'+path),env);
