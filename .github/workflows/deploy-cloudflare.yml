@@ -25,6 +25,7 @@ jobs:
           node scripts/validate-audit-fixes.js
           node scripts/validate-2026-tools.js
           node scripts/validate-housing-tools.js
+          node scripts/validate-nebenkosten-parser.js
           node scripts/validate-insurance-tools.js
 
       - name: Enforce production release gates before deployment
