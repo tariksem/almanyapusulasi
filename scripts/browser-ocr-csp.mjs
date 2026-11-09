@@ -97,7 +97,18 @@ try{
       assert(review.includes(item.expected),'Wrong extraction method: '+review.slice(0,150));
       assert.equal(await page.locator('#nk-r-confirm').count(),1);
       assert(await page.locator('#nk-review-apply').isDisabled(),'Must require explicit review confirmation');
-      assert(review.includes('2025')||review.includes('2700')||review.includes('2.700'),'No text recovered');
+      const fields=await page.evaluate(()=>{
+        const ids=['nk-r-period-start','nk-r-period-end','nk-r-total','nk-r-advances','nk-r-balance'];
+        return Object.fromEntries(ids.map(id=>[id,document.getElementById(id)?.value||'']));
+      });
+      row.syntheticExtractedFields=fields;
+      console.log('OCR SYNTHETIC FIELDS '+item.name+' '+JSON.stringify(fields));
+      assert(Object.values(fields).some(v=>/2025|2700|2\.700|2400|2\.400|300/.test(v)),
+        'No expected values found in synthetic document review fields');
+      await page.locator('#nk-r-confirm').check();
+      assert(await page.locator('#nk-review-apply').isEnabled(),'Confirmation did not unlock apply');
+      await page.locator('#nk-r-confirm').uncheck();
+      assert(await page.locator('#nk-review-apply').isDisabled(),'Unchecking confirmation did not disable apply');
       row.pass=true;console.log('PASS OCR '+item.name+' real extraction and mandatory confirmation');
     }catch(e){row.error=String(e.message||e).slice(0,500);failures.push(item.name+': '+row.error);console.error('FAIL OCR '+item.name+': '+row.error);}
     finally{
