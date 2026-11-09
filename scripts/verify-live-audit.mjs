@@ -113,13 +113,21 @@ await Promise.all([
   '/stromtarif-karsilastirma-2026/',
   '/haftpflicht-karsilastirma-2026/',
   '/private-krankenversicherung-pkv-2026/',
-  '/kfz-versicherung-karsilastirma-2026/'
+  '/kfz-versicherung-karsilastirma-2026/',
+  '/familienversicherung/',
+  '/krankenkasse-degistirme/',
+  '/is-birakinca-saglik-sigortasi/',
+  '/wohngeld/',
+  '/kindergeld/',
+  '/haberler/',
+  '/almanya-2026-resmi-esikler/',
+  '/berufsunfaehigkeitsversicherung/'
 ].map(async path=>{
   const {response}=await get(SITE+path);
   const csp=response.headers.get('content-security-policy')||'';
   check(response.status===200&&csp.includes("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com")&&
         csp.includes("connect-src 'self' https://*.google-analytics.com")&&
-        csp.includes("frame-src 'none'"),
+        csp.includes("frame-src 'none'")&&csp.includes("form-action 'self'"),
         'Live partner CSP enforcement missing: '+path);
 }));
 const ocrPage=await get(SITE+'/nebenkosten-abrechnung-kontrolu/');
