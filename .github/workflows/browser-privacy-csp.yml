@@ -45,6 +45,20 @@ jobs:
           AP_SITE_URL: https://almanyapusulasi.de
         run: node scripts/browser-accessibility-csp.mjs
 
+      - name: Exercise real synthetic PDF and image OCR in Chrome
+        env:
+          AP_SITE_URL: https://almanyapusulasi.de
+        run: node scripts/browser-ocr-csp.mjs
+
+      - name: Upload sanitized synthetic OCR and CSP inventory
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: browser-ocr-csp
+          path: audit-output/browser-ocr-csp.json
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Upload sanitized accessibility and CSP inventory
         if: always()
         uses: actions/upload-artifact@v5
