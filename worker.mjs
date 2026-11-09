@@ -15,6 +15,18 @@ const PARTNER_COMPARISON_PAGES=new Set([
   '/private-krankenversicherung-pkv-2026/',
   '/kfz-versicherung-karsilastirma-2026/'
 ]);
+// Editorial pages have no third-party scripts, iframes or form submissions.
+// Chrome acceptance/rejection regressions guard this allowlist.
+const EDITORIAL_CSP_PAGES=new Set([
+  '/familienversicherung/',
+  '/krankenkasse-degistirme/',
+  '/is-birakinca-saglik-sigortasi/',
+  '/wohngeld/',
+  '/kindergeld/',
+  '/haberler/',
+  '/almanya-2026-resmi-esikler/',
+  '/berufsunfaehigkeitsversicherung/'
+]);
 function secure(response,url){
   const out=new Response(response.body,response);
   out.headers.set('X-Content-Type-Options','nosniff');
@@ -32,13 +44,13 @@ function secure(response,url){
   // in Report-Only until OCR, embed and partner scenarios are exhaustively tested.
   const framePolicy=embed?"frame-ancestors 'self' https:":"frame-ancestors 'self'";
   const enforced=[framePolicy,"object-src 'none'","base-uri 'self'"];
-  if(PARTNER_COMPARISON_PAGES.has(url.pathname)){
-    // Stage actual enforcement only where Chrome confirmed no partner iframe,
-    // external scripts or cross-origin fetch dependency. Affiliate anchors
-    // still navigate normally after an explicit user click.
+  if(PARTNER_COMPARISON_PAGES.has(url.pathname)||EDITORIAL_CSP_PAGES.has(url.pathname)){
+    // Enforce on a reviewed allowlist: partner pages have outbound links only;
+    // editorial pages use local scripts. Google Analytics remains consent-gated.
     enforced.push("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com");
     enforced.push("connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com");
     enforced.push("frame-src 'none'");
+    enforced.push("form-action 'self'");
   }
   out.headers.set('Content-Security-Policy',enforced.join('; '));
   if(!embed)out.headers.set('X-Frame-Options','SAMEORIGIN');
