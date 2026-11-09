@@ -50,6 +50,20 @@ jobs:
           AP_SITE_URL: https://almanyapusulasi.de
         run: node scripts/browser-ocr-csp.mjs
 
+      - name: Verify affiliate placements and consent without contacting partners
+        env:
+          AP_SITE_URL: https://almanyapusulasi.de
+        run: node scripts/browser-affiliate-csp.mjs
+
+      - name: Upload sanitized partner privacy/CSP audit
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: browser-affiliate-csp
+          path: audit-output/browser-affiliate-csp.json
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Upload sanitized synthetic OCR and CSP inventory
         if: always()
         uses: actions/upload-artifact@v5
