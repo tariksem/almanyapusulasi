@@ -7,6 +7,14 @@ const EMBED_PATHS=new Set([
   '/blue-card-uygunluk-kontrolu-2026/',
   '/brutto-netto-hesaplayici-2026/'
 ]);
+// These four comparison pages were verified in live Chrome with and without
+// analytics consent. Their partner offers are outbound links, not embeds.
+const PARTNER_COMPARISON_PAGES=new Set([
+  '/stromtarif-karsilastirma-2026/',
+  '/haftpflicht-karsilastirma-2026/',
+  '/private-krankenversicherung-pkv-2026/',
+  '/kfz-versicherung-karsilastirma-2026/'
+]);
 function secure(response,url){
   const out=new Response(response.body,response);
   out.headers.set('X-Content-Type-Options','nosniff');
@@ -23,7 +31,16 @@ function secure(response,url){
   // Enforce low-risk directives now; keep external script/connect/frame rules
   // in Report-Only until OCR, embed and partner scenarios are exhaustively tested.
   const framePolicy=embed?"frame-ancestors 'self' https:":"frame-ancestors 'self'";
-  out.headers.set('Content-Security-Policy',framePolicy+"; object-src 'none'; base-uri 'self'");
+  const enforced=[framePolicy,"object-src 'none'","base-uri 'self'"];
+  if(PARTNER_COMPARISON_PAGES.has(url.pathname)){
+    // Stage actual enforcement only where Chrome confirmed no partner iframe,
+    // external scripts or cross-origin fetch dependency. Affiliate anchors
+    // still navigate normally after an explicit user click.
+    enforced.push("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com");
+    enforced.push("connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com");
+    enforced.push("frame-src 'none'");
+  }
+  out.headers.set('Content-Security-Policy',enforced.join('; '));
   if(!embed)out.headers.set('X-Frame-Options','SAMEORIGIN');
   // Observe source violations before enforcing a policy on uploads, OCR and partner widgets.
   out.headers.set('Content-Security-Policy-Report-Only',[
