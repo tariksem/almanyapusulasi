@@ -35,7 +35,20 @@ async function handleFile(file){
 async function extractPdf(file){
  await loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',()=>!!window.pdfjsLib);window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
  const pdf=await window.pdfjsLib.getDocument({data:new Uint8Array(await file.arrayBuffer())}).promise,pages=Math.min(pdf.numPages,MAX_PDF_PAGES);let text='',sparse=[];
- for(let i=1;i<=pages;i++){progress(5+(i/pages)*35,`PDF okunuyor: ${i}/${pages} sayfa…`);const page=await pdf.getPage(i),tc=await page.getTextContent(),pageText=tc.items.map(x=>x.str).join(' ');text+='\n'+pageText;if(pageText.replace(/\s/g,'').length<80)sparse.push(i);}
+ for(let i=1;i<=pages;i++){progress(5+(i/pages)*35,`PDF okunuyor: ${i}/${pages} sayfa…`);const page=await pdf.getPage(i),tc=await page.getTextContent();
+   // PDF.js emits positioned text fragments. Flattening all fragments into
+   // a single line mixes different amounts/dates and corrupts bill parsing.
+   const pieces=[];let lastY=null;
+   for(const item of tc.items){
+     const y=Array.isArray(item.transform)?item.transform[5]:null;
+     if(lastY!==null&&y!==null&&Math.abs(y-lastY)>2)pieces.push('\n');
+     else if(pieces.length&&pieces[pieces.length-1]!=='\n')pieces.push(' ');
+     pieces.push(item.str||'');
+     if(item.hasEOL){pieces.push('\n');lastY=null;}else if(y!==null){lastY=y;}
+   }
+   const pageText=pieces.join('');
+   text+='\n'+pageText;
+   if(pageText.replace(/\s/g,'').length<80)sparse.push(i);}
  if(text.replace(/\s/g,'').length>=350&&sparse.length<=Math.ceil(pages/2))return {text,method:'pdf_text',pages:pdf.numPages,ocrPages:0};
  const targets=(sparse.length?sparse:Array.from({length:pages},(_,i)=>i+1)).slice(0,MAX_OCR_PAGES),worker=await createOcrWorker();let ocr='';
  try{for(let j=0;j<targets.length;j++){const n=targets[j],page=await pdf.getPage(n),viewport=page.getViewport({scale:2}),canvas=document.createElement('canvas');canvas.width=Math.ceil(viewport.width);canvas.height=Math.ceil(viewport.height);await page.render({canvasContext:canvas.getContext('2d',{alpha:false}),viewport}).promise;progress(45+(j/targets.length)*48,`Taranmış sayfa okunuyor: ${j+1}/${targets.length}…`);const r=await worker.recognize(canvas);ocr+='\n'+((r.data&&r.data.text)||'');canvas.width=1;canvas.height=1;}}finally{await worker.terminate();}
