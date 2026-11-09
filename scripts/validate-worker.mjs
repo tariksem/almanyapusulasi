@@ -33,6 +33,24 @@ for(const page of ['/araclar/','/','/familienversicherung/']){
   assert.equal(blocked.headers.get('Content-Security-Policy'),"frame-ancestors 'self'; object-src 'none'; base-uri 'self'",'Other pages must not permit external framing');
   assert.equal(blocked.headers.get('X-Frame-Options'),'SAMEORIGIN');
 }
+// Narrow CSP enforcement is deliberately limited to four verified affiliate
+// comparison pages. Normal tools retain Report-Only while OCR is evaluated.
+for(const path of [
+  '/stromtarif-karsilastirma-2026/',
+  '/haftpflicht-karsilastirma-2026/',
+  '/private-krankenversicherung-pkv-2026/',
+  '/kfz-versicherung-karsilastirma-2026/'
+]){
+  const r=await worker.fetch(new Request('https://almanyapusulasi.de'+path),env);
+  const policy=r.headers.get('Content-Security-Policy')||'';
+  assert(policy.includes("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com"),path+' missing restricted script-src');
+  assert(policy.includes("connect-src 'self' https://*.google-analytics.com"),path+' missing restricted connect-src');
+  assert(policy.includes("frame-src 'none'"),path+' must not embed third-party widgets');
+}
+for(const path of ['/nebenkosten-abrechnung-kontrolu/','/sigorta-secim-araci/']){
+  const r=await worker.fetch(new Request('https://almanyapusulasi.de'+path),env);
+  assert(!r.headers.get('Content-Security-Policy').includes('script-src'),path+' must retain CSP report-only for dynamic workflows');
+}
 const normalized=await worker.fetch(new Request('https://almanyapusulasi.de/araclar'),{ASSETS:{fetch:async()=>new Response(null,{status:307,headers:{Location:'/araclar/'}})}});
 assert.equal(normalized.status,308);
 const jsAsset=await worker.fetch(new Request('https://almanyapusulasi.de/assets/js/analytics-consent.js'),{ASSETS:{fetch:async()=>new Response('x', {headers:{'Content-Type':'application/javascript','Cache-Control':'public, max-age=604800'}})}});
