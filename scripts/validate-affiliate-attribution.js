@@ -75,6 +75,18 @@ for (const cfg of slots.values()) {
   }
 }
 
+// BU (Berufsunfähigkeit) is not a Rentenversicherung product. Do not
+// revive the withdrawn offer without a specifically verified BU deeplink.
+const buSlot=slots.get('bu-comparison');
+if (!buSlot) fail('BU comparison slot is missing.');
+else if (buSlot.enabled) {
+  const buUrl=new URL(buSlot.url);
+  const deep=buUrl.searchParams.get('deep')||'';
+  if (!/berufsunfaehigkeit|berufsunfahigkeit|berufsunf[aä]higkeit/i.test(deep)) {
+    fail('BU comparison must not redirect to pension/retirement insurance.');
+  }
+}
+
 for (const [key, record] of Object.entries(evidence.revenueCriticalSlots || {})) {
   const cfg = slots.get(key);
   if (!cfg) fail(`${key}: revenue-critical slot missing from affiliate configuration.`);
