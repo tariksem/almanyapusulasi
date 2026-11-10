@@ -156,6 +156,25 @@ main {gap:23px;grid-template-columns:minmax(0,1fr) 350px;padding:22px 22px 12px 
 @media(max-width:600px){header .upper{height:65px}.hero{height:auto}.hero h2{font-size:31px;line-height:1.05}.hero .desc{font-size:14.5px}.journeys{grid-template-columns:1fr}.journey:last-child{grid-column:auto}.journey{height:100px;padding:13px 15px}.journey>.i{padding:12px}.tool{height:108px}.tools{grid-template-columns:repeat(3,minmax(0,1fr))}.tool .name{font-size:11.2px}.tool svg.i.toolico{width:24px;height:24px;padding:7px;margin-bottom:6px}.guides{grid-template-columns:1fr 1fr}.guide{height:162px}.guide .image{height:89px}.guide .body{font-size:11.4px;line-height:1.2}.aside{grid-template-columns:1fr}}
 @media(min-width:1400px){header .topnav{gap:28px}header .topright{gap:9px}}
 
+
+/* V4.1 hero image source correction (2026-11-10).
+   Replace the flawed embedded mockup raster, rather than attempting to mask the yellow artifact.
+   Original photo: Jiuguang Wang, CC BY-SA 3.0, Wikimedia Commons.
+   https://commons.wikimedia.org/wiki/File:Cologne_Cathedral_and_the_Hohenzollern_Bridge.jpg */
+.hero{
+  background-color:#0b2b50!important;
+  background-image:
+    linear-gradient(90deg, #0b2b50 0%, #0b2b50 34%, rgba(11,43,80,.98) 43%, rgba(11,43,80,.78) 55%, rgba(11,43,80,.18) 74%, rgba(11,43,80,0) 100%),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Cologne_Cathedral_and_the_Hohenzollern_Bridge.jpg?width=1600")!important;
+  background-size:100% 100%,cover!important;
+  background-position:center,right center!important;
+  background-repeat:no-repeat!important;
+}
+.hero::before{display:none!important}
+.hero::after{display:none!important}
+.hero-inner{position:relative;z-index:2}
+.find{background:#fff!important;opacity:1;isolation:isolate}
+.find button{background:#edbb4b!important;opacity:1}
 </style>
 </head>
 <body>
