@@ -157,24 +157,46 @@ main {gap:23px;grid-template-columns:minmax(0,1fr) 350px;padding:22px 22px 12px 
 @media(min-width:1400px){header .topnav{gap:28px}header .topright{gap:9px}}
 
 
-/* V4.1 hero image source correction (2026-11-10).
-   Replace the flawed embedded mockup raster, rather than attempting to mask the yellow artifact.
-   Original photo: Jiuguang Wang, CC BY-SA 3.0, Wikimedia Commons.
-   https://commons.wikimedia.org/wiki/File:Cologne_Cathedral_and_the_Hohenzollern_Bridge.jpg */
-.hero{
-  background-color:#0b2b50!important;
-  background-image:
-    linear-gradient(90deg, #0b2b50 0%, #0b2b50 34%, rgba(11,43,80,.98) 43%, rgba(11,43,80,.78) 55%, rgba(11,43,80,.18) 74%, rgba(11,43,80,0) 100%),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Cologne_Cathedral_and_the_Hohenzollern_Bridge.jpg?width=1600")!important;
-  background-size:100% 100%,cover!important;
-  background-position:center,right center!important;
-  background-repeat:no-repeat!important;
+/* V4.1 approved layout: verified cathedral-and-bridge image.
+   Photo: Tobi 87 — Kölner Dom bei blauer Stunde, Wikimedia Commons, CC BY-SA 3.0.
+   https://commons.wikimedia.org/wiki/File:K%C3%B6lner_Dom_bei_blauer_Stunde.jpg
+   The previous source/crop did not show the cathedral. */
+.hero {
+  background:#0b2b50!important;
+  background-image:none!important;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
 }
-.hero::before{display:none!important}
-.hero::after{display:none!important}
-.hero-inner{position:relative;z-index:2}
-.find{background:#fff!important;opacity:1;isolation:isolate}
-.find button{background:#edbb4b!important;opacity:1}
+.hero::before {
+  content:"";
+  display:block!important;
+  position:absolute;
+  z-index:-2;
+  inset:0 0 0 auto;
+  width:69%;
+  background-image:url("https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/K%C3%B6lner_Dom_bei_blauer_Stunde.jpg/1280px-K%C3%B6lner_Dom_bei_blauer_Stunde.jpg");
+  background-size:cover;
+  background-position:center top;
+  background-repeat:no-repeat;
+  pointer-events:none;
+}
+.hero::after {
+  content:"";
+  display:block!important;
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  background:linear-gradient(90deg,#0b2b50 0%,#0b2b50 29%,rgba(11,43,80,.98) 39%,rgba(11,43,80,.75) 48%,rgba(11,43,80,.15) 63%,rgba(11,43,80,0) 85%);
+  pointer-events:none;
+}
+.hero-inner {position:relative;z-index:2}
+.find {background:#fff!important;opacity:1;isolation:isolate}
+.find button {background:#edbb4b!important;opacity:1}
+@media(max-width:900px){
+  .hero::before {width:100%;background-position:center top}
+  .hero::after {background:linear-gradient(90deg,rgba(11,43,80,.98),rgba(11,43,80,.82) 67%,rgba(11,43,80,.5))}
+}
 </style>
 </head>
 <body>
@@ -249,7 +271,7 @@ main {gap:23px;grid-template-columns:minmax(0,1fr) 350px;padding:22px 22px 12px 
 </div><a class="allnews" href="https://almanyapusulasi.de/haberler/">Tüm güncel haberler →</a></section>
 <section class="aside-box checks"><h2><svg class="i"><use href="#ic-star"/></svg>Dikkat Çekenler</h2><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>Familienversicherung (Aile sigortası) şartları</span></div><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>Almanya’da ev kiralama: Haklar ve sözleşme</span></div><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>İşten ayrılınca sağlık sigortası ne olur?</span></div><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>Almanya’da emeklilik: Hangi sistem, ne zaman?</span></div></section></aside>
 </main>
-<footer class="footer"><div class="footer-inner"><div><strong>Almanya Pusulası</strong><p>Almanya'da yaşam, çalışma ve aile hayatı için Türkçe bilgi platformu.</p></div><div>Bu sayfa onay öncesi tasarım demosudur. Canlı site değişmedi.</div></div></footer>
+<footer class="footer"><div class="footer-inner"><div><strong>Almanya Pusulası</strong><p>Almanya'da yaşam, çalışma ve aile hayatı için Türkçe bilgi platformu.</p></div><div>Bu sayfa onay öncesi tasarım demosudur. Canlı ana sayfa değişmedi.<br><small>Banner fotoğrafı: <a href="https://commons.wikimedia.org/wiki/File:K%C3%B6lner_Dom_bei_blauer_Stunde.jpg" target="_blank" rel="noopener noreferrer">Tobi 87 / Wikimedia Commons</a> — <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>; banner alanında kırpılmıştır.</small></div></div></footer>
 <div class="modal-backdrop" id="dialog"><div class="modal" role="dialog" aria-modal="true"><h2 id="dialogTitle">Demo özelliği</h2><p id="dialogDescription"></p><button id="dialogClose">Kapat</button></div></div>
 <script>
 (function(){
