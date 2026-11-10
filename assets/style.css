@@ -9,3 +9,29 @@
   .cookie-banner .cookie-actions{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:10px}
   .cookie-banner .cookie-actions .btn{width:100%;min-width:0;position:relative;z-index:1}
 }
+
+
+/* V4.2 production content system — all legacy page classes remain operational. */
+:root{--bg:#f7f9fc;--surface:#fff;--surface-soft:#f6f9fc;--text:#193650;--muted:#60758a;--primary:#102a43;--primary-light:#1f4e79;--accent:#d89b2b;--border:#dfe7ee;--shadow:0 8px 26px rgba(21,52,82,.075);--radius:15px}
+body{font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif;letter-spacing:-.008em;background:#f7f9fc;color:#1a3650}
+.hero:not(.home-hero){background:radial-gradient(ellipse at 92% 9%,rgba(54,113,158,.22),transparent 48%),linear-gradient(115deg,#102a43,#173c5a);padding-top:56px;padding-bottom:57px}
+.hero:not(.home-hero) h1{font-weight:800;font-size:clamp(33px,3.6vw,48px);line-height:1.12;letter-spacing:-.045em}
+.hero:not(.home-hero) p{font-size:16px;line-height:1.7;color:#dce8f2}
+.hero:not(.home-hero) .badge{background:transparent;color:#f2c779;border:none;border-radius:0;border-left:3px solid #d89b2b;letter-spacing:.07em;text-transform:uppercase;font-size:11px;padding:2px 0 2px 12px}
+.hero:not(.home-hero) .trust-card{background:#fff;border:1px solid #dfe7ee;border-radius:16px;box-shadow:0 16px 40px rgba(2,27,45,.2);padding:26px;color:#1e3b54}
+.hero:not(.home-hero) .trust-card h3{color:#102a43;font-size:18px}
+.hero:not(.home-hero) .trust-list li{color:#4e687e;border-color:#e5ecf2;font-size:14px;padding:9px 0}
+.hero:not(.home-hero) .btn-secondary{background:rgba(255,255,255,.08);border-color:#ffffff4b}
+.section{padding-top:52px;padding-bottom:52px}
+.section h2{font-size:clamp(25px,2.6vw,33px);font-weight:780;letter-spacing:-.035em}
+.section-header p{font-size:15px;line-height:1.7;color:#61778b}
+.card{background:#fff;border:1px solid #e0e8ef;border-radius:15px;box-shadow:0 3px 15px rgba(19,52,79,.045);padding:25px}
+a.card:hover{transform:translateY(-2px);border-color:#a9bfd1;box-shadow:0 9px 26px rgba(21,52,82,.1)}
+.card h3{letter-spacing:-.025em}
+.btn{border-radius:10px;min-height:44px}
+.btn-primary{background:#edbd5f;color:#102a43}
+.btn-primary:hover{background:#f2ca79}
+.info-box{border-radius:12px}
+.article-wrap{background:#f7f9fc}
+.article{border-radius:17px}
+@media(max-width:750px){.hero:not(.home-hero){padding-top:35px;padding-bottom:39px}.hero:not(.home-hero) h1{font-size:clamp(30px,7vw,37px)}.section{padding-top:37px;padding-bottom:37px}}
