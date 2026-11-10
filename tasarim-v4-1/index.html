@@ -157,46 +157,32 @@ main {gap:23px;grid-template-columns:minmax(0,1fr) 350px;padding:22px 22px 12px 
 @media(min-width:1400px){header .topnav{gap:28px}header .topright{gap:9px}}
 
 
-/* V4.1 PHOTO COMPOSITION v6 — preserve all approved typography and structure.
- * The chosen Detlef Huhn 5881x2752 landscape has the cathedral central-left and
- * the Hohenzollern Bridge to the right, verified against Wikimedia image preview.
- * Source: https://commons.wikimedia.org/wiki/File:K%C3%B6ln_bei_Nacht,_der_Klassiker!.jpg
- * CC BY-SA 4.0 (attribution in page footer). */
+/* V4.1 banner repair v7: one uninterrupted panoramic image layer.
+   Original: Juri Kowski, CC BY-SA 3.0, Wikimedia Commons.
+   Continuous CSS gradient (no independently positioned photo or pseudo-element seams). */
 .hero {
-  background:#0b2b50!important;
-  background-image:none!important;
-  position:relative;
+  background-color:#102a43!important;
+  background-image:
+    linear-gradient(90deg,#102a43 0%,#102a43 26%,rgba(16,42,67,.99) 35%,rgba(16,42,67,.94) 42%,rgba(16,42,67,.70) 51%,rgba(16,42,67,.30) 61%,rgba(16,42,67,.03) 73%),
+    url("https://upload.wikimedia.org/wikipedia/commons/a/ae/Rheinpanorama_mit_Hohenzollernbr%C3%BCcke%2C_K%C3%B6lner_Dom%2C_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg")!important;
+  background-position:center center,center 52%!important;
+  background-size:100% 100%,cover!important;
+  background-repeat:no-repeat!important;
+  position:relative!important;
   isolation:isolate;
-  overflow:hidden;
+  overflow:visible!important;
 }
-.hero::before {
-  content:"";
-  display:block!important;
-  position:absolute;
-  z-index:-2;
-  inset:0 0 0 auto;
-  width:72%;
-  background-image:url("https://upload.wikimedia.org/wikipedia/commons/d/d5/K%C3%B6ln_bei_Nacht%2C_der_Klassiker%21.jpg");
-  background-size:cover;
-  background-position:50% 54%;
-  background-repeat:no-repeat;
-  pointer-events:none;
-}
-.hero::after {
-  content:"";
-  display:block!important;
-  position:absolute;
-  z-index:-1;
-  inset:0;
-  background:linear-gradient(90deg,#0b2b50 0%,#0b2b50 29%,rgba(11,43,80,.99) 38%,rgba(11,43,80,.88) 45%,rgba(11,43,80,.57) 54%,rgba(11,43,80,.08) 71%,rgba(11,43,80,0) 83%);
-  pointer-events:none;
-}
-.hero-inner {position:relative;z-index:2}
-.find {background:#fff!important;opacity:1;isolation:isolate}
-.find button {background:#edbb4b!important;opacity:1}
+.hero::before,.hero::after{content:none!important;display:none!important}
+.hero-inner{position:relative;z-index:2}
+.find{background:#fff!important;opacity:1;isolation:isolate}
+.find button{background:#edbb4b!important;opacity:1}
 @media(max-width:900px){
-  .hero::before {width:100%;background-position:53% center}
-  .hero::after {background:linear-gradient(90deg,#0b2b50 0%,rgba(11,43,80,.97) 43%,rgba(11,43,80,.73) 82%,rgba(11,43,80,.52) 100%)}
+  .hero{background-image:
+    linear-gradient(90deg,rgba(16,42,67,.98),rgba(16,42,67,.89) 55%,rgba(16,42,67,.66)),
+    url("https://upload.wikimedia.org/wikipedia/commons/a/ae/Rheinpanorama_mit_Hohenzollernbr%C3%BCcke%2C_K%C3%B6lner_Dom%2C_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg")!important;
+    background-size:100% 100%,auto 100%!important;
+    background-position:center center,67% center!important;
+  }
 }
 </style>
 </head>
@@ -272,7 +258,7 @@ main {gap:23px;grid-template-columns:minmax(0,1fr) 350px;padding:22px 22px 12px 
 </div><a class="allnews" href="https://almanyapusulasi.de/haberler/">Tüm güncel haberler →</a></section>
 <section class="aside-box checks"><h2><svg class="i"><use href="#ic-star"/></svg>Dikkat Çekenler</h2><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>Familienversicherung (Aile sigortası) şartları</span></div><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>Almanya’da ev kiralama: Haklar ve sözleşme</span></div><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>İşten ayrılınca sağlık sigortası ne olur?</span></div><div class="check-row"><span class="tick"><svg class="i tiny" aria-hidden="true"><use href="#ic-check"/></svg></span><span>Almanya’da emeklilik: Hangi sistem, ne zaman?</span></div></section></aside>
 </main>
-<footer class="footer"><div class="footer-inner"><div><strong>Almanya Pusulası</strong><p>Almanya'da yaşam, çalışma ve aile hayatı için Türkçe bilgi platformu.</p></div><div>Bu sayfa onay öncesi tasarım demosudur. Canlı ana sayfa değişmedi.<br><small>Banner fotoğrafı: <a href="https://commons.wikimedia.org/wiki/File:K%C3%B6ln_bei_Nacht,_der_Klassiker!.jpg" target="_blank" rel="noopener noreferrer">Detlef Huhn / Wikimedia Commons</a> — <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>; banner alanında kırpılmış ve lacivert geçiş uygulanmıştır.</small></div></div></footer>
+<footer class="footer"><div class="footer-inner"><div><strong>Almanya Pusulası</strong><p>Almanya'da yaşam, çalışma ve aile hayatı için Türkçe bilgi platformu.</p></div><div>Bu sayfa onay öncesi tasarım demosudur. Canlı ana sayfa değişmedi.<br><small>Banner fotoğrafı: <a href="https://commons.wikimedia.org/wiki/File:Rheinpanorama_mit_Hohenzollernbr%C3%BCcke,_K%C3%B6lner_Dom,_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg" target="_blank" rel="noopener noreferrer">Juri Kowski / Wikimedia Commons</a> — <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>; geniş banner kadrajı ve lacivert geçiş uygulanmıştır.</small></div></div></footer>
 <div class="modal-backdrop" id="dialog"><div class="modal" role="dialog" aria-modal="true"><h2 id="dialogTitle">Demo özelliği</h2><p id="dialogDescription"></p><button id="dialogClose">Kapat</button></div></div>
 <script>
 (function(){
