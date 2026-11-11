@@ -403,7 +403,7 @@
   document.addEventListener("DOMContentLoaded",()=>{
     // Apply a shared, scoped design layer to legacy content without changing
     // any calculator's visibility or business logic.
-    if(location.pathname!=="/"&&!document.body.classList.contains("v42-preview")){
+    if(location.pathname!=="/"&&typeof document.body?.classList?.add==="function"&&!document.body.classList.contains("v42-preview")){
       document.body.classList.add("ap-unified");
       if(document.querySelector(".nk-page,.rent-layout,.auto-layout,.letter-layout,.family-layout,.calc,form[id$='-form']")){
         document.body.classList.add("ap-tool-page");
