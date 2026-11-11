@@ -61,6 +61,7 @@ jobs:
         run: node scripts/browser-editorial-csp.mjs
 
       - name: Verify V4.2 site-wide layout consistency in real Chrome
+        if: always()
         env:
           AP_SITE_URL: https://almanyapusulasi.de
         run: node scripts/browser-v42-cohesion.mjs
