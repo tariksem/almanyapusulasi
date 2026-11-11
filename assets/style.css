@@ -83,3 +83,28 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65;color:#1b395
 .ap-tools-directory .section a.card:after{content:"→";position:absolute;right:22px;top:25px;font-size:18px;color:#1f4e79}
 .ap-tools-directory .section a.card:hover{border-color:#a9c1d3;transform:translateY(-2px);box-shadow:0 8px 27px #204c6f19}
 @media(max-width:760px){.ap-tools-directory .section .card{min-height:0;padding:20px}.ap-tools-directory .section .card:before{margin-bottom:12px}}
+
+
+/* V4.2 unified editorial navigation for health, family, finance and residency hubs. */
+.ap-hub-sections{background:#fff;border-bottom:1px solid #e1e8ef;box-shadow:0 4px 18px rgba(21,52,82,.035)}
+.ap-hub-sections-inner{display:flex;align-items:center;gap:22px;min-height:62px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#d5e0e9 transparent}
+.ap-sections-label{color:#9c701f;font-size:11px;font-weight:800;letter-spacing:.075em;text-transform:uppercase;flex-shrink:0}
+.ap-hub-sections a{display:inline-flex;align-items:center;min-height:40px;flex-shrink:0;max-width:280px;color:#385b76;font-size:12px;font-weight:700;line-height:1.35;border-radius:9px;padding:8px 9px}
+.ap-hub-sections a:hover,.ap-hub-sections a:focus-visible{background:#edf4f9;color:#102a43}
+.ap-hub-sections+section.section{padding-top:45px}
+section.section[id^="ap-bolum-"]{scroll-margin-top:165px}
+.ap-article-toc{margin:28px 0 31px;padding:21px 23px;background:#f5f9fc;border:1px solid #dfe9f0;border-radius:15px}
+.ap-article-toc>strong{display:block;color:#102a43;font-size:14px;letter-spacing:-.01em;margin-bottom:14px}
+.ap-article-toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 13px}
+.ap-article-toc-links a{display:block;padding:7px 10px;border-left:2px solid #d8e4ec;color:#365c79;font-size:12.5px;line-height:1.45;text-decoration:none}
+.ap-article-toc-links a:hover,.ap-article-toc-links a[aria-current="location"]{border-left-color:#d89b2b;color:#102a43;background:#eaf2f8}
+.article h2[id^="rehber-bolum-"]{scroll-margin-top:175px}
+@media(max-width:760px){
+ .ap-hub-sections-inner{width:100%;min-height:51px;padding:0 14px;gap:8px}
+ .ap-hub-sections a{font-size:11.5px;min-height:37px}
+ .ap-sections-label{padding-right:9px}
+ .ap-article-toc{padding:17px 16px;margin:22px 0}
+ .ap-article-toc-links{grid-template-columns:1fr}
+ section.section[id^="ap-bolum-"]{scroll-margin-top:130px}
+ .article h2[id^="rehber-bolum-"]{scroll-margin-top:140px}
+}
