@@ -242,3 +242,10 @@ body.v41-preview .footer .container{width:min(100% - 38px,1200px);max-width:1200
  body.v41-preview .ap-secondary-nav a{font-size:12px;min-height:43px}
  body.v41-preview .footer{padding:32px 0 16px}
 }
+
+
+/* Improve legibility of secondary controls in V4.2 calculator */
+.v42-preview .v42-form-panel .v42-panel-sub,.v42-preview .v42-result-panel .v42-panel-desc{color:#455e72}
+.v42-preview .v42-suggest p{color:#e1eaf3}
+.v42-preview .v42-stage small{color:#486175}
+.v42-preview .section-header p{color:#455e72}
