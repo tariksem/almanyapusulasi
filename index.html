@@ -212,6 +212,23 @@ header .logo .brand-title{font-size:25px;letter-spacing:-.055em;line-height:1;fo
 .ap-hub-links a:hover{background:#edf5fb}
 @media(max-width:850px){.ap-hub-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:500px){.ap-hub-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style><style>
+/* The approved V4.1 hero/content remain unchanged; the header/footer are the shared site shell. */
+.site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:0;box-shadow:0 3px 16px #0e2d4712}
+.site-header .header-inner{display:flex;align-items:center;justify-content:space-between;height:auto;min-height:74px;padding:0;width:min(100% - 46px,1536px);max-width:1536px}
+.site-header .site-brand-logo{width:52px;height:52px;object-fit:contain}
+.site-header .site-brand-copy{line-height:1.08}
+.site-header .site-brand-copy strong{font-size:24px;letter-spacing:-.055em}
+.site-header .site-brand-copy small{font-size:11px}
+.site-header .site-nav-link,.site-header .nav-more summary{font-size:13.5px}
+.site-header .ap-secondary-links{width:min(100% - 46px,1536px);max-width:1536px;min-height:47px}
+.site-header .ap-secondary-links a{font-size:12.5px}
+.site-global-footer{background:#102a43;padding:42px 0 22px;margin:0;color:#d3e0ec;font-family:Inter,"Segoe UI",Arial,sans-serif}
+.site-global-footer .container{width:min(100% - 38px,1200px);max-width:1200px}
+.site-global-footer .footer-title{color:#f1f6fa}
+.site-global-footer a{color:#d3e0ec}
+@media(max-width:1080px){.site-header .header-inner{width:min(100% - 32px,1536px);min-height:70px}.site-header .ap-secondary-links{width:max-content;max-width:none;min-width:calc(100% - 32px)}}
+@media(max-width:760px){.site-header .header-inner{min-height:64px}.site-header .site-brand-logo{width:42px;height:42px}.site-header .site-brand-copy strong{font-size:19px}.site-header .ap-secondary-links a{font-size:12px}}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute;visibility:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
 <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
@@ -242,15 +259,7 @@ header .logo .brand-title{font-size:25px;letter-spacing:-.055em;line-height:1;fo
 <symbol id="ic-landmark" viewBox="0 0 24 24"><path d="m3 10 9-6 9 6M4 10h16M5 20h14M7 10v10M12 10v10M17 10v10M2 22h20"/></symbol>
 <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
 </defs></svg>
-<header>
-<div class="upper">
-<a class="logo" href="https://almanyapusulasi.de/" aria-label="Almanya Pusulası ana sayfası"><img src="/assets/brand/almanya-pusulasi-logo.png"  alt="Almanya Pusulası orijinal pusula logosu" id="realLogo"><div><div class="brand-title">Almanya Pusulası</div><p>Almanya’da yaşam, çalışma ve aile rehberiniz</p></div></a>
-<span class="header-divider" aria-hidden="true"></span>
-<nav class="topnav" aria-label="Üst menü"><a href="https://almanyapusulasi.de/site-haritasi/">Rehberler ⌄</a><a href="https://almanyapusulasi.de/araclar/">Hesaplayıcılar ⌄</a><a href="https://almanyapusulasi.de/araclar/">Araçlar ⌄</a><a href="https://almanyapusulasi.de/haberler/">Güncel ⌄</a><a href="https://almanyapusulasi.de/site-haritasi/">Hakkımızda</a></nav>
-<div class="topright"><button class="plain" aria-label="Aramayı aç" onclick="document.getElementById('site-search').focus()"><svg class="i"><use href="#ic-search"/></svg></button><a class="plain bookmark" href="/araclar/" aria-label="Tüm araçlar"><svg class="i tiny"><use href="#ic-bookmark"/></svg>Araçlar</a><a class="newsbtn" href="/haberler/">Haberler <svg class="i tiny" aria-hidden="true"><use href="#ic-mail"/></svg></a><button class="plain menu-btn" aria-label="Menü" onclick="document.getElementById('secondnav').scrollIntoView({block:'start',behavior:'smooth'})"><svg class="i tiny" aria-hidden="true"><use href="#ic-menu"/></svg></button></div>
-</div>
-<nav class="secondnav" id="secondnav" aria-label="Konu kategorileri"><a href="https://almanyapusulasi.de/site-haritasi/"> <svg class="i"><use href="#ic-brief"/></svg>Çalışma & Vize</a><a href="https://almanyapusulasi.de/site-haritasi/"> <svg class="i"><use href="#ic-home"/></svg>Oturum & İkamet</a><a href="https://almanyapusulasi.de/aile-cocuk/"> <svg class="i"><use href="#ic-people"/></svg>Aile & Çocuk</a><a href="https://almanyapusulasi.de/sigorta/"> <svg class="i"><use href="#ic-heart"/></svg>Sağlık & Sigorta</a><a href="https://almanyapusulasi.de/site-haritasi/"> <svg class="i"><use href="#ic-home"/></svg>Konut & Kira</a><a href="https://almanyapusulasi.de/araclar/"> <svg class="i"><use href="#ic-calc"/></svg>Hesaplayıcılar</a><a href="https://almanyapusulasi.de/site-haritasi/"> <svg class="i"><use href="#ic-hand-heart"/></svg>Sosyal Yardımlar</a><a href="https://almanyapusulasi.de/site-haritasi/"> <svg class="i"><use href="#ic-stack"/></svg>Yaşam & Günlük</a></nav>
-</header>
+<header class="site-header"></header>
 <section class="hero" aria-labelledby="hero-title"><div class="hero-inner"><div class="eyebrow">ALMANYA’DA YAŞAM, ÇALIŞMA VE AİLE HAYATI</div><h1 id="hero-title">Almanya’da hayatınızı<br>kolaylaştıran <span class="gold">güvenilir rehber.</span></h1><p class="desc">Vize, oturum, çalışma, aile destekleri, kira, sigorta ve daha fazlası için<br>güncel bilgiler, pratik hesaplayıcılar ve adım adım rehberler.</p><form class="find" id="findForm"><svg class="i"><use href="#ic-search"/></svg><input id="site-search" autocomplete="off" aria-label="Site içinde ara" placeholder="Ne arıyorsunuz?  Örn: Blue Card, Kindergeld, kira desteği, Nebenkosten..." required><button type="submit">Ara</button><div id="searchResults" class="search-results" role="listbox" aria-label="Arama sonuçları"></div></form><div class="popular"><strong>Popüler aramalar:</strong><button data-term="Blue Card">Blue Card</button><button data-term="Chancenkarte">Chancenkarte</button><button data-term="Kindergeld">Kindergeld</button><button data-term="Wohngeld">Wohngeld</button><button data-term="Nebenkosten">Nebenkosten</button><button data-term="Krankenkasse">Krankenkasse</button></div></div></section>
 <main>
 <div class="primary-content">
@@ -290,7 +299,7 @@ header .logo .brand-title{font-size:25px;letter-spacing:-.055em;line-height:1;fo
 <a href="/banka-secim-araci/"><strong>Banka hesabı seçimi</strong><span>İhtiyacınıza uygun hesabı bulun →</span></a>
 <a href="/brutto-netto-hesaplayici-2026/"><strong>Brüt–net maaş</strong><span>Yaklaşık net gelirinizi hesaplayın →</span></a>
 </div><details class="home-hubs-disclosure" aria-label="Konu merkezleri"><summary class="home-hubs-summary">Tüm konu merkezlerini aç</summary><div class="ap-hub-links"><a href="/goc-kariyer/">Göç & Kariyer</a><a href="/is-gelir/">İş & Gelir</a><a href="/yerlesim/">Yerleşim</a><a href="/aile-cocuk/">Aile & Çocuk</a><a href="/finans/">Finans</a><a href="/sigorta/">Sigorta</a><a href="/vatandaslik/">Vatandaşlık</a><a href="/saglik-sigortasi/">Sağlık Sigortası</a><a href="/vergi/">Vergi</a><a href="/mobilite-arac/">Mobilite & Araç</a></div></details></div></section><section class="section news-home"><div class="container"><div class="section-header news-home-head"><div><span class="section-label">Haberler ve duyurular</span><h2>Almanya'dan seçilmiş haberler ve duyurular</h2><p>Yayın tarihlerini dikkate alın. Süresi dolan ulaşım, teşvik veya başvuru duyuruları için güncel durumu resmî kaynaktan yeniden kontrol edin.</p></div><a class="btn btn-secondary" href="/haberler/">Tüm haberler →</a></div><div class="news-grid"><a class="news-card" href="/haberler/tankrabatt-energiesteuer-ekim-2026/"><div class="news-card-body"><div class="news-meta"><span class="news-tag">Gündem</span><time datetime="2026-09-27">27 Eylül 2026</time></div><h3>Almanya'da Tankrabatt: Benzin ve dizelde Ekim–Aralık 2026 vergi indirimi</h3><p>Almanya</p><span class="news-read">Haberi ve etkisini oku →</span></div></a><a class="news-card" href="/haberler/ruhr-tren-kapanmasi-ekim-2026/"><div class="news-card-body"><div class="news-meta"><span class="news-tag">Gündem</span><time datetime="2026-09-24">24 Eylül 2026</time></div><h3>Ruhr bölgesinde 9–30 Ekim 2026 tren kapanması: Düsseldorf Havalimanı bağlantılarına dikkat</h3><p>Duisburg, Essen, Oberhausen ve Düsseldorf çevresindeki tren hatlarında 9–30 Ekim 2026 arasında kapsamlı kapanma, yönlendirme ve otobüsle ikame ulaşım.</p><span class="news-read">Haberi ve etkisini oku →</span></div></a><a class="news-card" href="/haberler/afd-saksonya-anhalt-secim-2026/"><div class="news-card-body"><div class="news-meta"><span class="news-tag">Gündem</span><time datetime="2026-09-08">8 Eylül 2026</time></div><h3>AfD Saksonya-Anhalt'ta birinci oldu: Almanya'daki Türkler için ne değişiyor?</h3><p>Saksonya-Anhalt seçim sonucunun Türkler ve göçmenler için anlamını inceleyin. Oturum ve vatandaşlıkta neyin değişmediğini ve izlenecek adımları görün.</p><span class="news-read">Haberi ve etkisini oku →</span></div></a></div></div></section>
-<footer class="footer"></footer>
+<footer class="footer site-global-footer"></footer>
 <script>
 (function(){
 const records=[
