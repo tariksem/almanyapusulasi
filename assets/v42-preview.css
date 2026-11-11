@@ -249,3 +249,8 @@ body.v41-preview .footer .container{width:min(100% - 38px,1200px);max-width:1200
 .v42-preview .v42-suggest p{color:#e1eaf3}
 .v42-preview .v42-stage small{color:#486175}
 .v42-preview .section-header p{color:#455e72}
+
+
+/* Readability: calculator supporting text must pass WCAG on white cards. */
+body.v42-preview.page-hesaplayici .v42-form-panel .v42-panel-sub,
+body.v42-preview.page-hesaplayici .v42-result-panel .v42-panel-desc{color:#273e53!important}
