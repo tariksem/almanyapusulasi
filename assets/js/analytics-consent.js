@@ -10,6 +10,11 @@
   shellCss.rel="stylesheet";
   shellCss.href="/assets/site-shell.css";
   document.head.appendChild(shellCss);
+  const v42Css=document.createElement("link");
+  v42Css.rel="stylesheet";
+  v42Css.href="/assets/v42-unified.css";
+  document.head.appendChild(v42Css);
+
 
   const racismStyle=document.createElement("style");
   racismStyle.textContent='.site-nav-link[href="/almanyada-irkcilik/"]{background:#fff1f2;color:#b42318;border:1px solid #fecdd3;font-weight:850}.site-nav-link[href="/almanyada-irkcilik/"]:hover,.site-nav-link[href="/almanyada-irkcilik/"].is-active{background:#b42318!important;color:#fff!important;border-color:#b42318;box-shadow:0 6px 16px rgba(180,35,24,.18)}.mega-link[href="/almanyada-irkcilik/"]{background:#fff7f7;border-color:#fecaca}.mega-link[href="/almanyada-irkcilik/"] .mega-icon{background:#fee2e2}.mega-link[href="/almanyada-irkcilik/"] strong{color:#b42318}.mega-link[href="/almanyada-irkcilik/"]:hover,.mega-link[href="/almanyada-irkcilik/"].is-active{background:#fff1f2;border-color:#ef4444}';
@@ -396,6 +401,18 @@
   }
 
   document.addEventListener("DOMContentLoaded",()=>{
+    // Apply a shared, scoped design layer to legacy content without changing
+    // any calculator's visibility or business logic.
+    if(location.pathname!=="/"&&!document.body.classList.contains("v42-preview")){
+      document.body.classList.add("ap-unified");
+      if(document.querySelector(".nk-page,.rent-layout,.auto-layout,.letter-layout,.family-layout,.calc,form[id$='-form']")){
+        document.body.classList.add("ap-tool-page");
+      }else if(document.querySelector(".article-wrap .article")){
+        document.body.classList.add("ap-editorial-page");
+      }else if(document.querySelector(".hero,.news-hero")){
+        document.body.classList.add("ap-hub-page");
+      }
+    }
     renderHeader();
     renderSkipLink();
     renderContext();
