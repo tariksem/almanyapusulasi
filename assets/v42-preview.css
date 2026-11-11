@@ -218,3 +218,27 @@ body.v42-preview{--vnavy:#102a43;--vblue:#1f4e79;--vgold:#d89b2b;font-feature-se
  .v42-preview.page-hesaplayici .v42-result-panel{padding:19px}
  .v42-preview.page-hesaplayici .v42-calc-extras{padding:23px}
 }
+
+
+/* V4.2 content templates inherit the exact same global shell as all other routes. */
+body.v41-preview .site-header{position:sticky;top:0;background:#fff;border-bottom:0;box-shadow:0 3px 16px #0e2d4712}
+body.v41-preview .site-header .header-inner{width:min(100% - 46px,1536px);max-width:1536px;min-height:74px;margin:0 auto;padding:0;gap:24px}
+body.v41-preview .site-header .site-brand-logo{width:52px;height:52px}
+body.v41-preview .site-header .site-brand-copy strong{font-size:24px}
+body.v41-preview .site-header .site-brand-copy small{font-size:11px}
+body.v41-preview .ap-secondary-nav .ap-secondary-links{width:min(100% - 46px,1536px);max-width:1536px;min-height:47px;margin:auto;display:flex;gap:18px}
+body.v41-preview .ap-secondary-nav a{font-size:12.5px;min-height:47px}
+body.v41-preview .site-context-bar .container{width:min(100% - 46px,1536px);max-width:1536px;margin:auto}
+body.v41-preview .footer{background:#102a43;color:#d3e0ec;padding:42px 0 22px}
+body.v41-preview .footer .container{width:min(100% - 38px,1200px);max-width:1200px;margin:auto}
+@media(max-width:1080px){
+ body.v41-preview .site-header .header-inner{width:min(100% - 32px,1536px);min-height:70px}
+ body.v41-preview .ap-secondary-nav .ap-secondary-links{width:max-content;min-width:calc(100% - 32px);max-width:none;gap:25px;padding:0 16px}
+}
+@media(max-width:760px){
+ body.v41-preview .site-header .header-inner{min-height:64px}
+ body.v41-preview .site-header .site-brand-logo{width:42px;height:42px}
+ body.v41-preview .site-header .site-brand-copy strong{font-size:19px}
+ body.v41-preview .ap-secondary-nav a{font-size:12px;min-height:43px}
+ body.v41-preview .footer{padding:32px 0 16px}
+}
