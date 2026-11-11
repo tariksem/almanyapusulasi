@@ -6,12 +6,15 @@ import path from "node:path";
 const root=process.cwd(),problems=[],warnings=[];
 const tree=()=>{const out=[];function walk(base){for(const entry of fs.readdirSync(base,{withFileTypes:true})){const p=path.join(base,entry.name),rel=path.relative(root,p).replaceAll(path.sep,"/");if(entry.isDirectory()){if([".git","node_modules","dist"].includes(entry.name))continue;walk(p);}else if(entry.name==="index.html")out.push(rel)}}walk(root);return out};
 const pages=tree().filter(p=>p==="index.html"||!p.startsWith("tasarim-v4-"));
-let linked=0,missing=0,inlineHeaders=0,broken=0,eligible=0;
+let linked=0,missing=0,inlineHeaders=0,broken=0,eligible=0,redirectStubs=0;
 for(const p of pages){
   const src=fs.readFileSync(p,"utf8");
   const slug=p==="index.html"?"/":"/"+p.slice(0,-10);
   // Some routes consist solely of redirects or bare test documents.
   if(!/<html\b/i.test(src)||!/<body\b/i.test(src))continue;
+  // Redirect fallback files are not live pages: Cloudflare returns 301 before
+  // HTML is displayed. Their noindex/meta-refresh fallback is intentional.
+  if(/<meta[^>]+http-equiv=["']refresh["']/i.test(src)){redirectStubs++;continue;}
   eligible++;
   const pageHasShared=src.includes("/assets/js/analytics-consent.js");
   if(pageHasShared)linked++;else{
@@ -36,8 +39,8 @@ for(const p of ["nebenkosten-abrechnung-kontrolu/index.html","kindergeld/index.h
  const s=fs.readFileSync(p,"utf8");
  if(!s.includes('/assets/js/analytics-consent.js'))problems.push("Major production route lacks central shell: "+p);
 }
-if(linked<Math.floor(eligible*.90))problems.push("Global shell coverage below 90%: "+linked+"/"+eligible);
-const output={routes:eligible,connected:linked,missing,coveragePercent:Number((linked/eligible*100).toFixed(1)),inlineLegacyHeaders:inlineHeaders,warningCount:warnings.length,errors:problems};
+if(linked!==eligible)problems.push("Active page global shell coverage must be 100%: "+linked+"/"+eligible);
+const output={routes:eligible,redirectStubs,connected:linked,missing,coveragePercent:Number((linked/eligible*100).toFixed(1)),inlineLegacyHeaders:inlineHeaders,warningCount:warnings.length,errors:problems};
 fs.mkdirSync("audit-output",{recursive:true});
 fs.writeFileSync("audit-output/v42-cohesion.json",JSON.stringify({...output,warnings},null,2));
 console.log(JSON.stringify(output,null,2));
