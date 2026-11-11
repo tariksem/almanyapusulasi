@@ -16,6 +16,8 @@ for(const p of pages){
   // HTML is displayed. Their noindex/meta-refresh fallback is intentional.
   if(/<meta[^>]+http-equiv=["']refresh["']/i.test(src)){redirectStubs++;continue;}
   eligible++;
+  // All calculator tracking must use the first-party consent-safe API signature.
+  if(/window\\.APAnalytics\\s*\\(\\s*['"]event['"]/.test(src))problems.push(p+": invalid analytics invocation");
   const pageHasShared=src.includes("/assets/js/analytics-consent.js");
   if(pageHasShared)linked++;else{
     missing++;warnings.push(p+": missing global site shell script");
