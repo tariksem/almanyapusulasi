@@ -316,12 +316,92 @@
     if(force)banner.querySelector(".cookie-reject").focus();
   }
 
+
+  // V4.2 content navigation shared by the main editorial clusters.
+  // Existing page copy, linked tools, consent and calculator functionality are untouched.
+  function renderContentNavigation(){
+    const hubPaths=new Set([
+      "/saglik-sigortasi/","/sigorta/","/aile-cocuk/","/finans/",
+      "/vatandaslik/","/yerlesim/","/is-gelir/","/kindergeld/"
+    ]);
+    const articlePaths=new Set([
+      "/familienversicherung/","/private-krankenversicherung-pkv-2026/",
+      "/kinderzuschlag/","/blue-card-suresiz-oturum/"
+    ]);
+    const pathname=currentPath();
+    if(hubPaths.has(pathname)){
+      const hero=document.querySelector(".hero");
+      if(!hero||document.querySelector(".ap-hub-sections"))return;
+      const sections=Array.from(document.querySelectorAll("section.section")).filter(section=>{
+        const heading=section.querySelector(".section-header h2, :scope > .container > h2");
+        return heading&&heading.textContent.trim().length>4;
+      }).slice(0,9);
+      if(sections.length<2)return;
+      const nav=document.createElement("nav");
+      nav.className="ap-hub-sections";
+      nav.setAttribute("aria-label","Bu sayfadaki bölümler");
+      const inner=document.createElement("div");
+      inner.className="container ap-hub-sections-inner";
+      const label=document.createElement("span");
+      label.className="ap-sections-label";
+      label.textContent="Bu sayfada";
+      inner.appendChild(label);
+      sections.forEach((section,index)=>{
+        const heading=section.querySelector(".section-header h2, :scope > .container > h2");
+        if(!section.id)section.id="ap-bolum-"+(index+1);
+        const link=document.createElement("a");
+        link.href="#"+section.id;
+        link.textContent=heading.textContent.trim();
+        inner.appendChild(link);
+      });
+      nav.appendChild(inner);
+      hero.after(nav);
+    }
+    if(articlePaths.has(pathname)){
+      const article=document.querySelector("main.article-wrap article.article");
+      if(!article||article.querySelector(".ap-article-toc"))return;
+      const headings=Array.from(article.querySelectorAll("h2")).filter(h=>h.textContent.trim().length>4).slice(0,15);
+      if(headings.length<4)return;
+      const nav=document.createElement("nav");
+      nav.className="ap-article-toc";
+      nav.setAttribute("aria-label","Rehberin içindekiler bölümü");
+      const heading=document.createElement("strong");
+      heading.textContent="Bu rehberde";
+      nav.appendChild(heading);
+      const list=document.createElement("div");
+      list.className="ap-article-toc-links";
+      headings.forEach((h,index)=>{
+        if(!h.id)h.id="rehber-bolum-"+(index+1);
+        const link=document.createElement("a");
+        link.href="#"+h.id;
+        link.textContent=h.textContent.trim();
+        list.appendChild(link);
+      });
+      nav.appendChild(list);
+      const first=headings[0];
+      first.before(nav);
+      if("IntersectionObserver" in window){
+        const links=Array.from(list.querySelectorAll("a"));
+        const observer=new IntersectionObserver(entries=>{
+          entries.filter(entry=>entry.isIntersecting).forEach(entry=>{
+            links.forEach(link=>{
+              if(link.getAttribute("href")==="#"+entry.target.id)link.setAttribute("aria-current","location");
+              else link.removeAttribute("aria-current");
+            });
+          });
+        },{rootMargin:"-145px 0px -55% 0px",threshold:0});
+        headings.forEach(h=>observer.observe(h));
+      }
+    }
+  }
+
   document.addEventListener("DOMContentLoaded",()=>{
     renderHeader();
     renderSkipLink();
     renderContext();
     renderFooter();
     renderReturnRail();
+    renderContentNavigation();
     bindGrowthTracking();
     injectHomepageTools();
     enhanceToolsHub();
