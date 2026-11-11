@@ -66,6 +66,23 @@ jobs:
           AP_SITE_URL: https://almanyapusulasi.de
         run: node scripts/browser-v42-cohesion.mjs
 
+      - name: Verify V4.2 calculator interactions on desktop and mobile
+        if: always()
+        env:
+          AP_SITE_URL: https://almanyapusulasi.de
+        run: node scripts/browser-v42-tool-flows.mjs
+
+      - name: Upload synthetic calculator screenshots and results
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: v42-tool-ux
+          path: |
+            audit-output/v42-tool-flows.json
+            audit-output/v42-tool-flows/*.png
+          retention-days: 14
+          if-no-files-found: warn
+
       - name: Upload visual cohesion screenshots and report
         if: always()
         uses: actions/upload-artifact@v5
