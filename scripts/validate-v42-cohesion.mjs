@@ -41,4 +41,5 @@ const output={routes:eligible,connected:linked,missing,coveragePercent:Number((l
 fs.mkdirSync("audit-output",{recursive:true});
 fs.writeFileSync("audit-output/v42-cohesion.json",JSON.stringify({...output,warnings},null,2));
 console.log(JSON.stringify(output,null,2));
+for(const warning of warnings)console.log("V42-WARNING "+warning);
 if(problems.length)process.exit(1);
