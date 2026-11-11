@@ -15,12 +15,26 @@ const routes=[
   '/private-krankenversicherung-pkv-2026/','/haberler/',
   '/brutto-netto-hesaplayici-2026/','/chancenkarte-puan-hesaplayici-2026/',
   '/nebenkosten-abrechnung-kontrolu/','/warmmiete-kira-butcesi-hesaplayici/',
-  '/almanca-mektup-asistani/'
+  '/almanca-mektup-asistani/','/almanya-emeklilik-hesaplayici-2026/',
+  '/netto-brutto-hesaplayici-2026/','/blue-card-uygunluk-kontrolu-2026/',
+  '/kindergeld-hesaplayici-2026/','/kinderzuschlag-uygunluk-kontrolu-2026/',
+  '/elterngeld-hesaplayici-2026/','/sigorta-secim-araci/',
+  '/chancenkarte-puan-hesaplayici-2026/','/araba-toplam-maliyet-hesaplayici/',
+  '/tasarruf-kontrolu/','/almanyaya-tasinma-kontrol-listesi/',
+  '/almanyaya-gelis-yolu-secim-araci/','/meslek-almanya-yolu-karar-araci/',
+  '/is-piyasasi-gucu-motoru/','/is-teklifi-degerlendirme-araci/',
+  '/sehir-butce-karsilastirma-araci/','/vergi-yontemi-secim-araci/',
+  '/internet-secim-araci/','/banka-secim-araci/',
+  '/kredi-secim-araci/','/para-transferi-maliyet-hesaplayici/',
+  '/kleinunternehmer-ciro-kontrolu/','/almanya-kontrol-paneli/',
+  '/internet-tarife-maliyet-hesaplayici/','/vatandaslik-testi/'
 ];
 const captures=new Set([
   '/','/goc-kariyer/','/blue-card/','/familienversicherung/',
   '/araclar/','/brutto-netto-hesaplayici-2026/',
-  '/nebenkosten-abrechnung-kontrolu/','/haberler/'
+  '/nebenkosten-abrechnung-kontrolu/','/haberler/',
+  '/sigorta-secim-araci/','/chancenkarte-puan-hesaplayici-2026/',
+  '/warmmiete-kira-butcesi-hesaplayici/'
 ]);
 fs.mkdirSync(BASE,{recursive:true});
 const browser=await chromium.launch({headless:true,channel:process.env.AP_BROWSER_CHANNEL||'chrome'});
