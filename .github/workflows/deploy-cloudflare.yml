@@ -23,6 +23,7 @@ jobs:
         run: |
           node scripts/generate-discovery.js
           node scripts/validate-audit-fixes.js
+          node scripts/validate-v42-cohesion.mjs
           node scripts/validate-2026-tools.js
           node scripts/validate-housing-tools.js
           node scripts/validate-nebenkosten-parser.js
