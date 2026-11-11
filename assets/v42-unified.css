@@ -1,0 +1,55 @@
+/* Almanya Pusulası — unified V4.2 application layer.
+   Loaded by first-party consent/site shell on every standard page.
+   Never override tool visibility, validation states, or calculation internals. */
+:root{--ap-ink:#102a43;--ap-blue:#1f4e79;--ap-accent:#d89b2b;--ap-muted:#5d7286;--ap-line:#dfe7ee;--ap-bg:#f6f9fc;--ap-card:#fff;--ap-radius:15px;--ap-shadow:0 6px 24px rgba(17,47,72,.055)}
+body.ap-unified{font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif;line-height:1.65;background:var(--ap-bg);color:#1a3853}
+.ap-unified .container{width:min(100% - 40px,1200px);margin-left:auto;margin-right:auto}
+.ap-unified :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid var(--ap-accent);outline-offset:3px}
+.ap-unified :is(.section-header h2,.article h2,.nk-step h2,.news-feature h2){letter-spacing:-.03em;color:var(--ap-ink)}
+.ap-unified :is(.section-header p,.article p,.article li){line-height:1.75}
+.ap-unified :is(.card,.tool-card,.calculator-card,.journey-card,.popular-link){border:1px solid var(--ap-line);border-radius:var(--ap-radius);background:var(--ap-card);box-shadow:var(--ap-shadow)}
+.ap-unified :is(a.card,a.tool-card,a.calculator-card,a.journey-card,a.popular-link){transition:transform .16s,border-color .16s,box-shadow .16s}
+.ap-unified :is(a.card,a.tool-card,a.calculator-card,a.journey-card,a.popular-link):hover{transform:translateY(-2px);border-color:#abc2d4;box-shadow:0 12px 29px rgba(17,47,72,.09)}
+.ap-unified .badge{font-size:12px;letter-spacing:.01em}
+.ap-unified .section-label{color:#9e701d;font-size:11px;letter-spacing:.085em}
+.ap-unified .btn{border-radius:10px;min-height:44px;font-weight:720}
+.ap-unified .btn-primary{background:#eac06b;color:#102a43}
+.ap-unified .btn-primary:hover{background:#f1cb7e}
+.ap-unified .section{padding-top:48px;padding-bottom:48px}
+.ap-unified .section .grid{gap:16px}
+.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero){background:radial-gradient(ellipse at 92% 9%,rgba(58,111,151,.2),transparent 48%),linear-gradient(115deg,#102a43,#183d5a);color:#fff;padding:50px 0 52px}
+.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero) h1{font-size:clamp(32px,3.6vw,47px);line-height:1.13;font-weight:800;letter-spacing:-.045em;max-width:950px}
+.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero) p{font-size:15.5px;line-height:1.72;max-width:820px;color:#dae6f1}
+.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero)>.container{max-width:1200px}
+.ap-unified .hero .hero-grid{gap:36px}
+.ap-unified :is(.rent-panel,.rent-result,.auto-panel,.auto-result,.letter-panel,.letter-result,.family-panel,.family-result,.nk-card,.nk-intro){border-radius:16px}
+.ap-unified :is(.rent-panel,.rent-result,.auto-panel,.auto-result,.letter-panel,.letter-result,.family-panel,.family-result,.nk-card){border:1px solid var(--ap-line);background:#fff;box-shadow:var(--ap-shadow)}
+.ap-unified :is(.rent-fields,.auto-fields,.letter-fields,.nk-form-grid,.formgrid,.form-grid){gap:16px}
+.ap-unified :is(.rent-fields,.auto-fields,.letter-fields,.nk-form-grid,.formgrid,.form-grid) label{color:#23445f;font-weight:680}
+.ap-unified :is(input:not([type=checkbox]):not([type=radio]),select,textarea){border-radius:10px}
+.ap-unified :is(.rent-fields,.auto-fields,.letter-fields,.nk-form-grid,.formgrid,.form-grid) :is(input:not([type=checkbox]):not([type=radio]),select,textarea){background:#fff;border:1px solid #c8d8e5}
+.ap-unified :is(.rent-fields,.auto-fields,.letter-fields,.nk-form-grid,.formgrid,.form-grid) :is(input:not([type=checkbox]):not([type=radio]),select,textarea):focus{border-color:#316d9b;box-shadow:0 0 0 3px rgba(49,109,155,.09)}
+.ap-unified :is(.rent-metrics,.auto-metrics,.result-grid,.metrics-grid) > *{border-radius:12px}
+.ap-unified :is(.article-wrap,.nk-page){background:var(--ap-bg)}
+.ap-unified .article-wrap .article:not(.calc){max-width:1050px;background:#fff;border:1px solid var(--ap-line);border-radius:17px;padding:clamp(25px,4.2vw,50px);box-shadow:var(--ap-shadow)}
+.ap-unified .article-wrap .article:not(.calc):before{display:none}
+.ap-unified .article h1{font-size:clamp(30px,3.2vw,41px);line-height:1.16;letter-spacing:-.04em}
+.ap-unified .article h2{font-size:clamp(23px,2.3vw,27px)}
+.ap-unified .article :is(p,li){font-size:15.5px;color:#40596c}
+.ap-unified .article-meta{color:#6b8195;font-size:12px}
+.ap-unified .article .info-box{border-radius:12px;border-left:4px solid #d89b2b;padding:18px 21px}
+.ap-unified .hub-return-card{border-radius:16px;box-shadow:var(--ap-shadow)}
+.ap-unified .site-context-inner{min-height:38px}
+.ap-unified .site-context-bar{background:#f6f9fc}
+/* Intro blocks in specialty applications get the same proportions as standard pages. */
+.ap-unified :is(.nk-intro,.savings-hero,.family-hero,.letter-hero,.rent-hero,.auto-hero){box-shadow:none}
+.ap-unified .nk-intro{background:linear-gradient(115deg,#102a43,#183d5a);padding:clamp(24px,4vw,44px)}
+.ap-unified .nk-intro h1{font-size:clamp(31px,3.6vw,46px);letter-spacing:-.045em}
+.ap-unified .nk-intro p{font-size:15px;line-height:1.72}
+.ap-unified .nk-card{padding:clamp(21px,3.2vw,33px)}
+.ap-unified .nk-step h2{font-size:clamp(23px,2.4vw,27px)}
+.ap-unified .nk-step-lead{font-size:14px}
+.ap-unified :is(.rent-result,.auto-result,.family-result,.letter-result,.nk-card,.calc .result){scroll-margin-top:165px}
+@media(max-width:900px){.ap-unified .hero .hero-grid{grid-template-columns:1fr}.ap-unified .section{padding-top:38px;padding-bottom:38px}}
+@media(max-width:760px){.ap-unified .container{width:min(100% - 28px,1200px)}.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero){padding:35px 0 39px}.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero) h1{font-size:clamp(29px,7.5vw,36px)}.ap-unified .article-wrap .article:not(.calc){border:0;border-radius:0;padding:22px 17px;box-shadow:none}.ap-unified .article :is(p,li){font-size:15px}.ap-unified .article h2{font-size:23px}.ap-unified .nk-card{padding:18px}.ap-unified .section .grid{gap:12px}}
+@media(prefers-reduced-motion:reduce){.ap-unified :is(a,button,.card,.tool-card){transition:none!important}}
