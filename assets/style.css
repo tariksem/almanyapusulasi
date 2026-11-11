@@ -108,3 +108,12 @@ section.section[id^="ap-bolum-"]{scroll-margin-top:165px}
  section.section[id^="ap-bolum-"]{scroll-margin-top:130px}
  .article h2[id^="rehber-bolum-"]{scroll-margin-top:140px}
 }
+
+
+/* WCAG contrast refinements on V4 content surfaces */
+.ap-unified .section-label,.ap-unified .section-header .section-label{color:#785015}
+.ap-unified .section-header p{color:#455e72}
+.ap-unified .article-meta{color:#4d6478}
+.ap-unified .section .card p{color:#496278}
+.ap-unified .article .badge{color:#193b58}
+.ap-unified .info-box{color:#344d61}
