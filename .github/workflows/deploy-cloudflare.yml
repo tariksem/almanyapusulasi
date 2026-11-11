@@ -124,6 +124,9 @@ jobs:
           test ! -e dist/.git
           echo 'Clean Cloudflare production directory prepared.'
 
+      - name: Normalize legacy site headers in production bundle
+        run: node scripts/normalize-site-headers.mjs dist
+
       - name: Verify flagship growth pages in production bundle
         run: |
           python - <<'PY'
