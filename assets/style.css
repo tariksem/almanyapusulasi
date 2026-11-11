@@ -35,3 +35,35 @@ a.card:hover{transform:translateY(-2px);border-color:#a9bfd1;box-shadow:0 9px 26
 .article-wrap{background:#f7f9fc}
 .article{border-radius:17px}
 @media(max-width:750px){.hero:not(.home-hero){padding-top:35px;padding-bottom:39px}.hero:not(.home-hero) h1{font-size:clamp(30px,7vw,37px)}.section{padding-top:37px;padding-bottom:37px}}
+
+
+/* V4 common editorial, category and tool components across older production pages. */
+:root{--container:1200px}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65;color:#1b3952}
+.container{width:min(100% - 40px,1200px)}
+.section-header{max-width:850px;margin-bottom:26px}
+.section-header .section-label{font-size:11px;letter-spacing:.085em;font-weight:800;color:#9b6c1d}
+.section-header h2{font-size:clamp(24px,2.5vw,32px);letter-spacing:-.035em;line-height:1.2}
+.section .grid{gap:16px}
+.section .card{border-radius:14px;padding:24px;border:1px solid #e0e8ef;background:#fff;box-shadow:0 3px 14px #1a405808}
+.section .card h3{font-size:clamp(17px,1.55vw,20px);font-weight:750;line-height:1.35}
+.section .card p{color:#5c7389;line-height:1.6;font-size:14px}
+.article-wrap{padding:36px 0 56px;background:#f7f9fc}
+.article-wrap .article:not(.calc){max-width:1050px;border:1px solid #e1e8ef;background:#fff;border-radius:18px;padding:clamp(25px,4.2vw,52px);box-shadow:0 7px 28px #123b570e}
+.article-wrap .article:not(.calc):before{display:none}
+.article h1{font-weight:790;font-size:clamp(30px,3.3vw,42px);line-height:1.16;letter-spacing:-.045em}
+.article h2{font-weight:760;font-size:clamp(22px,2.4vw,27px);line-height:1.3;letter-spacing:-.025em}
+.article h3{font-weight:740;letter-spacing:-.015em}
+.article p{font-size:15.5px;line-height:1.85;color:#3e566b}
+.article li{font-size:15px;line-height:1.8;color:#3e566b}
+.article-meta{font-size:12.5px;color:#6c8194}
+.article .grid{gap:14px}
+.article .card{border-radius:13px;box-shadow:0 2px 12px #123b570a}
+.article .badge{font-size:12px;border-radius:8px}
+.article a:not(.btn):not(.card){text-underline-offset:3px}
+.hero:not(.home-hero) .hero-grid{gap:34px;grid-template-columns:minmax(0,1.15fr) minmax(290px,.85fr)}
+.hero:not(.home-hero) .hero-actions{gap:10px}
+.hero:not(.home-hero) .btn{font-size:13px;font-weight:720}
+.hero:not(.home-hero) .trust-card{border-radius:16px}
+@media(max-width:820px){.hero:not(.home-hero) .hero-grid{grid-template-columns:1fr}.article-wrap{padding:20px 0 35px}}
+@media(max-width:760px){.container{width:min(100% - 28px,1200px)}.article-wrap .article:not(.calc){border:0;border-radius:0;padding:22px 17px;box-shadow:none}.article h1{font-size:30px}.article h2{font-size:23px}.section .card{padding:19px}.article p,.article li{font-size:15px}}
