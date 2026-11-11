@@ -72,7 +72,7 @@ try{
         if(values.pageWidth>values.viewport+25)warnings.push(mode.name+' '+route+' horizontal overflow '+(values.pageWidth-values.viewport)+'px');
         if(route!=='/'&&!['/blue-card/','/goc-kariyer/','/brutto-netto-hesaplayici-2026/'].includes(route)&&!values.unified)failures.push(mode.name+' '+route+' unified theme class missing');
         if(!values.appLoaded)failures.push(mode.name+' '+route+' central stylesheet not loaded');
-        if(errors.length)warnings.push(mode.name+' '+route+' script console errors: '+errors.join(' | '));
+        if(errors.length)failures.push(mode.name+' '+route+' JS runtime errors: '+errors.join(' | '));
         if(captures.has(route)){
           const label=route==='/'?'home':route.replaceAll('/','-').slice(1,-1);
           await page.screenshot({path:path.join(BASE,mode.name+'-'+label+'.png'),animations:'disabled'});
