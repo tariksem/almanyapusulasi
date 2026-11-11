@@ -97,8 +97,19 @@
     if(!header)return;
     const active=section();
     const primary=PRIMARY.map(k=>SECTIONS.find(s=>s.key===k));
-    const mega=SECTIONS.map(s=>'<a class="mega-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'"><span class="mega-icon">'+s.icon+'</span><span><strong>'+s.label+'</strong><small>'+(s.key==='haberler'?'Güncel gelişmeler':s.key==='irkcilik'?'Güvenlik, haklar ve destek':s.key==='tools'?'Hesaplayıcılar ve kontroller':'Rehberleri görüntüle')+'</small></span></a>').join("");
+    const mega=SECTIONS.map(s=>'<a class="mega-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'"><span><strong>'+s.label+'</strong><small>'+(s.key==='haberler'?'Güncel gelişmeler':s.key==='irkcilik'?'Güvenlik, haklar ve destek':s.key==='tools'?'Hesaplayıcılar ve kontroller':'Rehberleri görüntüle')+'</small></span></a>').join("");
     header.innerHTML='<div class="container header-inner"><a class="site-brand" href="/"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>Karar araçları & resmî kaynaklı rehberler</small></span></a><button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="ap-site-nav"><span></span><span></span><span></span></button><nav id="ap-site-nav" class="site-nav" aria-label="Ana menü"><div class="primary-nav-links">'+primary.map(s=>'<a class="site-nav-link'+(active&&active.key===s.key?' is-active':'')+'" href="'+s.href+'">'+s.label+'</a>').join("")+'</div><details class="nav-more"><summary>Tüm Rehberler <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
+    // A single V4 navigation source is used on every production page.
+    const sublinks=[
+      ["Göç & Kariyer","/goc-kariyer/"],["Oturum & Vatandaşlık","/vatandaslik/"],
+      ["Aile & Çocuk","/aile-cocuk/"],["Sağlık & Sigorta","/saglik-sigortasi/"],
+      ["Konut & Kira","/yerlesim/"],["Hesaplayıcılar","/araclar/"],
+      ["Finans","/finans/"],["Haberler","/haberler/"]
+    ];
+    header.insertAdjacentHTML("beforeend",
+      '<nav class="ap-secondary-nav" aria-label="Konu kategorileri"><div class="container ap-secondary-links">'+
+      sublinks.map(([label,href])=>'<a href="'+href+'"'+(currentPath().startsWith(href)?' aria-current="page"':'')+'>'+label+'</a>').join("")+
+      '</div></nav>');
     const toggle=header.querySelector(".mobile-menu-toggle");
     const nav=header.querySelector(".site-nav");
     function closeMenu(restoreFocus=false){
@@ -163,7 +174,7 @@
     if(!s||!footer||currentPath()===s.href||s.key==="haberler"||s.key==="tools")return;
     const rail=document.createElement("section");
     rail.className="hub-return-rail";
-    rail.innerHTML='<div class="container"><div class="hub-return-card"><div><span class="hub-return-kicker">Bu rehber bir konu kümesinin parçası</span><h2>'+s.icon+' '+s.label+' bölümünde devam edin</h2><p>İlgili rehberleri aynı bölümde topladık.</p></div><a class="btn btn-primary" href="'+s.href+'">'+s.label+' rehberleri →</a></div></div>';
+    rail.innerHTML='<div class="container"><div class="hub-return-card"><div><span class="hub-return-kicker">Bu rehber bir konu kümesinin parçası</span><h2>'+s.label+' bölümünde devam edin</h2><p>İlgili rehberleri aynı bölümde topladık.</p></div><a class="btn btn-primary" href="'+s.href+'">'+s.label+' rehberleri →</a></div></div>';
     footer.before(rail);
   }
 
