@@ -165,6 +165,12 @@
     const footer=document.querySelector(".footer");
     if(!footer)return;
     footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="/" class="footer-brand-name">Almanya Pusulası</a><p>Almanya’da yaşayan ve Almanya’ya gelmek isteyen Türkler için karar araçları, resmî kaynaklı rehberler ve seçilmiş güncel gelişmeler.</p></div><div><strong class="footer-title">Keşfet</strong><a href="/araclar/">Araçlar</a><a href="/haberler/">Haberler</a><a href="/almanyada-irkcilik/" style="color:#fca5a5;font-weight:800">Irkçılık & Haklar</a><a href="/goc-kariyer/">Göç & Kariyer</a><a href="/is-gelir/">İş & Gelir</a><a href="/aile-cocuk/">Aile & Çocuk</a><a href="/vatandaslik/">Vatandaşlık</a><a href="/finans/">Finans</a><a href="/sigorta/">Sigorta</a></div><div><strong class="footer-title">Kaynaklar</strong><a href="/almanya-2026-resmi-esikler/">2026 Veri Merkezi</a><a href="/site-haritasi/">Site Haritası</a><a href="/embed-araclar/">Ücretsiz Embed Araçları</a><a href="/yerlesim/">Yerleşim</a><a href="/saglik-sigortasi/">Sağlık Sigortası</a><a href="/mobilite-arac/">Mobilite & Araç</a><a href="/vergi/">Vergi</a></div><div class="footer-legal"><strong class="footer-title">Site</strong><a href="/about/">Hakkımızda</a><a href="/contact/">İletişim</a><a href="/ticari-seffaflik/">Ticari Şeffaflık</a><a href="/privacy/">Gizlilik</a><a href="/impressum/">Impressum</a><button type="button" class="privacy-settings-link">Gizlilik ayarları</button></div></div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>Karar araçları ve resmî kaynaklı Türkçe Almanya rehberi</span></div>';
+    if(currentPath()==="/"){
+      const credit=document.createElement("div");
+      credit.className="ap-photo-credit";
+      credit.innerHTML='<div class="container">Banner fotoğrafı: <a href="https://commons.wikimedia.org/wiki/File:Rheinpanorama_mit_Hohenzollernbr%C3%BCcke,_K%C3%B6lner_Dom,_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg" target="_blank" rel="noopener noreferrer">Juri Kowski / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> · Banner için kırpılmış ve lacivert geçiş uygulanmıştır.</div>';
+      footer.appendChild(credit);
+    }
     footer.querySelector(".privacy-settings-link").onclick=()=>showConsent(true);
   }
 
