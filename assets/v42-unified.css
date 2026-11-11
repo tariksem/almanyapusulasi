@@ -53,3 +53,9 @@ body.ap-unified{font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif;line-hei
 @media(max-width:900px){.ap-unified .hero .hero-grid{grid-template-columns:1fr}.ap-unified .section{padding-top:38px;padding-bottom:38px}}
 @media(max-width:760px){.ap-unified .container{width:min(100% - 28px,1200px)}.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero){padding:35px 0 39px}.ap-unified :is(.hero,.rent-hero,.auto-hero,.letter-hero,.family-hero,.news-hero):not(.home-hero) h1{font-size:clamp(29px,7.5vw,36px)}.ap-unified .article-wrap .article:not(.calc){border:0;border-radius:0;padding:22px 17px;box-shadow:none}.ap-unified .article :is(p,li){font-size:15px}.ap-unified .article h2{font-size:23px}.ap-unified .nk-card{padding:18px}.ap-unified .section .grid{gap:12px}}
 @media(prefers-reduced-motion:reduce){.ap-unified :is(a,button,.card,.tool-card){transition:none!important}}
+
+
+/* Verified accessibility adjustments (white and off-white backgrounds). */
+body.ap-unified .article-meta{color:#304b61!important}
+body.ap-unified .section-header p{color:#344f64!important}
+body.ap-unified .section-label{color:#68430c!important}
