@@ -459,6 +459,108 @@
           ]
         ]
       }
+    },
+    "almanya-saglik-sigortasi-gkv-pkv": {
+      "en": {
+        "title": "German Health Insurance 2026: GKV or PKV? Full Comparison",
+        "description": "GKV versus PKV in Germany in 2026: €77,400 JAEG, €69,750 BBG, family coverage, premiums and return to statutory insurance.",
+        "badge": "Health insurance · 2026 decision guide",
+        "heading": "GKV or PKV? First check eligibility, then family and long-term costs",
+        "meta": "Source information reviewed: 12 September 2026 · BMG",
+        "intro": "Private health insurance (PKV) is not automatically available to employees simply because their salaries are high. The general 2026 compulsory insurance income threshold (<em>Jahresarbeitsentgeltgrenze</em>, JAEG) is <strong>€77,400 a year / €6,450 a month</strong>. Where compulsory statutory coverage ends, eligible people may choose between voluntary GKV and PKV. Do not compare only today's monthly premium: family members, health underwriting, deductibles and the possibility of returning to GKV matter.",
+        "sections": [
+          [
+            "Which route is open to you?",
+            "<ol><li><strong>Are you an employee?</strong> First assess your regular annual salary against the JAEG. Self-employed people and others may face different conditions.</li><li><strong>Below the 2026 JAEG?</strong> Most employees remain subject to compulsory GKV; do not treat private insurance as a simple cheaper tariff.</li><li><strong>Above the JAEG and no longer compulsorily insured?</strong> Compare voluntary GKV with PKV.</li><li><strong>Spouse or children?</strong> Free <em>Familienversicherung</em> can substantially change total family costs.</li><li><strong>Considering PKV?</strong> Examine the health assessment, deductible, benefits, premiums per person and long-term re-entry restrictions.</li></ol>"
+          ],
+          [
+            "Important figures for employees in 2026",
+            "<table><thead><tr><th>Measure</th><th>2026 figure</th><th>Purpose</th></tr></thead><tbody><tr><td>JAEG</td><td><strong>€77,400/year</strong> (€6,450/month)</td><td>Key threshold for compulsory employee GKV</td></tr><tr><td>GKV/care BBG</td><td><strong>€69,750/year</strong> (€5,812.50/month)</td><td>Income ceiling for calculating contributions</td></tr><tr><td>General GKV contribution</td><td><strong>14.6%</strong></td><td>Plus each insurer's own Zusatzbeitrag</td></tr><tr><td>Official average Zusatzbeitrag reference</td><td><strong>2.9%</strong></td><td>Reference rate; actual insurer rates may differ</td></tr><tr><td>Actual average Zusatzbeitrag, mid-2026</td><td><strong>3.13%</strong></td><td>Observed rate differs from official reference</td></tr></tbody></table><p>The JAEG and the contribution assessment ceiling (<em>Beitragsbemessungsgrenze</em>, BBG) have different roles. Some people privately insured since before 2003 may fall under a special historic JAEG rule.</p>"
+          ],
+          [
+            "When GKV may be the stronger choice",
+            "<ul><li>Your spouse or children may qualify for free statutory family insurance.</li><li>Your income may decrease and you prefer earnings-based contributions.</li><li>Health history could trigger a PKV risk surcharge or benefit restrictions.</li><li>Maintaining future system flexibility is important.</li></ul>"
+          ],
+          [
+            "When PKV deserves serious consideration",
+            "<ul><li>You actually satisfy the legal and status requirements to choose PKV.</li><li>You have compared the whole family's long-term cost, not just your initial personal premium.</li><li>You reviewed benefits covering psychotherapy, dental care, hospital care, medication and medical aids.</li><li>Deductibles (<em>Selbstbehalt</em>) and possible increases are included in your budget.</li><li>You understand that returning to GKV is not freely available at every age.</li></ul>"
+          ],
+          [
+            "The family cost often overlooked",
+            "Under statutory insurance, eligible spouses and children may receive free <em>Familienversicherung</em>. With private insurance, family members are not automatically insured for free. Comparing only your own PKV quote against your employee share of GKV can therefore be misleading. <a href='/en/familienversicherung/'>Read the full 2026 family insurance guide</a>."
+          ],
+          [
+            "Why consider age 55 before switching?",
+            "Returning from PKV to GKV can be restricted, particularly after reaching age 55. Past insurance and employment status during the previous five years may be decisive. Treat the choice as a long-term structural decision rather than a short-term premium-saving exercise."
+          ],
+          [
+            "Three illustrative scenarios",
+            "<div class='grid grid-3'><div class='card'><h3>€70,000 employee</h3><p>Below the general 2026 JAEG; check compulsory GKV status before comparing private tariffs.</p></div><div class='card'><h3>€85,000, spouse and two children</h3><p>PKV eligibility may be possible, but losing free family coverage can significantly change total costs.</p></div><div class='card'><h3>€90,000, single person</h3><p>PKV may be a realistic option, but underwriting, deductibles, benefits and age remain important.</p></div></div>"
+          ],
+          [
+            "If you remain with GKV: which Krankenkasse?",
+            "Statutory benefits share a legal framework, but individual <em>Zusatzbeitrag</em> rates, bonus schemes, supplemental services and customer support vary by insurer. Mid-2026 observed average additional contributions were around <strong>3.13%</strong>; check the actual rate offered by your Krankenkasse rather than assuming that the official reference rate is the rate you pay. <a href='/krankenkasse-degistirme/' lang='tr' hreflang='tr'>Switching health insurers (Turkish)</a>."
+          ],
+          [
+            "Your next steps",
+            "<ol><li>If employed, compare regular annual pay with the <strong>€77,400 JAEG</strong> and confirm your insurance status.</li><li>For a family, calculate the effect of <a href='/en/familienversicherung/'>free family insurance</a> first.</li><li>If PKV is an option, compare at least two offers by coverage, underwriting, deductible and long-term family cost, not price alone.</li></ol>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://www.bundesgesundheitsministerium.de/beitraege/seite' target='_blank' rel='noopener'>BMG — Contribution rules, JAEG and BBG</a></li><li><a href='https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv' target='_blank' rel='noopener'>BMG — Switching between GKV and PKV</a></li><li><a href='https://www.bundesgesundheitsministerium.de/finanzierung-gkv' target='_blank' rel='noopener'>BMG — Financing statutory insurance</a></li></ul><p>This comparison provides general guidance, not personalised insurance or financial advice. Confirm current figures before deciding.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "GKV oder PKV 2026: Krankenversicherung richtig vergleichen",
+        "description": "GKV/PKV Vergleich 2026: JAEG 77.400 €, BBG 69.750 €, Familienversicherung, Beiträge, Selbstbehalt und Rückkehr in die GKV.",
+        "badge": "Krankenversicherung · Entscheidungsratgeber 2026",
+        "heading": "GKV oder PKV? Zuerst Wechselberechtigung, dann Familien- und Langzeitkosten prüfen",
+        "meta": "Ausgangstext zuletzt am 12. September 2026 geprüft · BMG",
+        "intro": "Für Arbeitnehmer ist die private Krankenversicherung (PKV) nicht schon deshalb frei wählbar, weil das Gehalt hoch ist. Die allgemeine Jahresarbeitsentgeltgrenze (<em>JAEG</em>) beträgt 2026 <strong>77.400 € jährlich / 6.450 € monatlich</strong>. Endet die Versicherungspflicht, kommen freiwillige GKV und gegebenenfalls PKV infrage. Berücksichtigen Sie Familienangehörige, Gesundheitsprüfung, Selbstbehalt und die langfristigen Rückkehrbedingungen.",
+        "sections": [
+          [
+            "Entscheidungsbaum: Welcher Weg kommt infrage?",
+            "<ol><li><strong>Sind Sie Arbeitnehmer?</strong> Prüfen Sie zunächst das regelmäßige Jahresarbeitsentgelt gegenüber der JAEG. Für Selbstständige und andere Statusgruppen gelten teils andere Regeln.</li><li><strong>Liegt das Entgelt unter der JAEG 2026?</strong> Für die meisten Arbeitnehmer besteht weiterhin GKV-Pflicht.</li><li><strong>Liegt es über der JAEG und endet die Versicherungspflicht?</strong> Vergleichen Sie freiwillige GKV und PKV.</li><li><strong>Haben Sie Ehepartner oder Kinder?</strong> Beitragsfreie Familienversicherung beeinflusst die Gesamtkosten erheblich.</li><li><strong>Interessieren Sie sich für PKV?</strong> Gesundheitsprüfung, Selbstbehalt, Leistungsumfang und Rückkehrrisiken prüfen.</li></ol>"
+          ],
+          [
+            "Wichtige Rechengrößen für Arbeitnehmer 2026",
+            "<table><thead><tr><th>Rechengröße</th><th>Wert 2026</th><th>Bedeutung</th></tr></thead><tbody><tr><td>JAEG</td><td><strong>77.400 €/Jahr</strong> (6.450 €/Monat)</td><td>Grenze für die Versicherungspflicht bei Arbeitnehmern</td></tr><tr><td>BBG für GKV/Pflege</td><td><strong>69.750 €/Jahr</strong> (5.812,50 €/Monat)</td><td>Obergrenze des beitragspflichtigen Einkommens</td></tr><tr><td>Allgemeiner GKV-Beitragssatz</td><td><strong>14,6 %</strong></td><td>Zuzüglich kassenindividuellem Zusatzbeitrag</td></tr><tr><td>Offizieller durchschnittlicher Zusatzbeitrag</td><td><strong>2,9 %</strong></td><td>Referenzwert, nicht zwingend Ihr Kassensatz</td></tr><tr><td>Ende Juni 2026 tatsächlich durchschnittlich erhobener Zusatzbeitrag</td><td><strong>3,13 %</strong></td><td>Beobachteter Durchschnitt</td></tr></tbody></table><p>JAEG und Beitragsbemessungsgrenze (BBG) erfüllen verschiedene Zwecke. Für bestimmte bereits vor 2003 privat Versicherte kann eine besondere JAEG gelten.</p>"
+          ],
+          [
+            "Wann spricht mehr für die GKV?",
+            "<ul><li>Ehepartner oder Kinder können beitragsfrei familienversichert werden.</li><li>Bei möglicherweise sinkendem Einkommen bevorzugen Sie einkommensabhängige Beiträge.</li><li>Eine gesundheitliche Vorgeschichte könnte in der PKV zu Risikozuschlägen führen.</li><li>Langfristige Flexibilität des Versicherungsstatus ist wichtig.</li></ul>"
+          ],
+          [
+            "Wann sollte die PKV ernsthaft geprüft werden?",
+            "<ul><li>Die gesetzlichen Voraussetzungen und der Versicherungsstatus lassen eine PKV-Wahl zu.</li><li>Sie haben Familien- und Gesamtkosten statt nur des eigenen Einstiegspreises verglichen.</li><li>Leistungen für Psychotherapie, Zahnbehandlung, Krankenhaus, Medikamente und Hilfsmittel sind geprüft.</li><li>Selbstbehalt und mögliche Beitragssteigerungen sind eingeplant.</li><li>Sie wissen, dass die Rückkehr in die GKV nicht jederzeit frei möglich ist.</li></ul>"
+          ],
+          [
+            "Der oft übersehene Familienkostenvergleich",
+            "In der GKV können berechtigte Ehepartner und Kinder beitragsfrei familienversichert sein. In der PKV ist jedes Familienmitglied nicht automatisch kostenlos mitversichert. Ein Vergleich allein des eigenen PKV-Angebots mit dem Arbeitnehmeranteil der GKV ist deshalb unvollständig. <a href='/de/familienversicherung/'>Familienversicherung 2026 im Detail</a>."
+          ],
+          [
+            "Warum das Alter 55 schon heute berücksichtigen?",
+            "Die Rückkehr aus der PKV in die GKV ist nicht beliebig möglich. Insbesondere ab 55 Jahren können vorherige Versicherungszeiten und der Erwerbs- oder Versicherungsstatus der letzten fünf Jahre eine erhebliche Rolle spielen. PKV ist deshalb eine langfristige Systementscheidung."
+          ],
+          [
+            "Drei Beispielsituationen",
+            "<div class='grid grid-3'><div class='card'><h3>Arbeitnehmer mit 70.000 €</h3><p>Unter der allgemeinen JAEG 2026: zuerst den gesetzlichen Versicherungsstatus klären.</p></div><div class='card'><h3>85.000 €, Ehepartner und zwei Kinder</h3><p>PKV kann möglich sein, aber der Wegfall der beitragsfreien Familienversicherung kann die Gesamtkosten erhöhen.</p></div><div class='card'><h3>90.000 €, alleinstehend</h3><p>PKV kann infrage kommen. Gesundheitsprüfung, Selbstbehalt, Leistungsumfang und Alter bleiben entscheidend.</p></div></div>"
+          ],
+          [
+            "Bei Verbleib in der GKV: Welche Krankenkasse?",
+            "Der gesetzliche Leistungsrahmen ist weitgehend gemeinsam, aber Zusatzbeitrag, Bonusprogramme, bestimmte Mehrleistungen und Service variieren. Der Mitte 2026 tatsächlich durchschnittlich erhobene Zusatzbeitrag lag bei ungefähr <strong>3,13 %</strong>. Maßgeblich ist der reale Zusatzbeitrag Ihrer Krankenkasse, nicht lediglich der offizielle Referenzwert. <a href='/krankenkasse-degistirme/' lang='tr' hreflang='tr'>Krankenkasse wechseln (Türkisch)</a>."
+          ],
+          [
+            "Die nächsten Schritte",
+            "<ol><li>Als Arbeitnehmer regelmäßiges Jahresarbeitsentgelt mit der <strong>JAEG 77.400 €</strong> vergleichen und den Versicherungsstatus klären.</li><li>Bei Ehepartner und Kindern den Effekt der <a href='/de/familienversicherung/'>Familienversicherung</a> berechnen.</li><li>Falls PKV möglich ist, mindestens zwei Angebote anhand von Leistungsumfang, Gesundheitsprüfung, Selbstbehalt und langfristigen Familienkosten vergleichen.</li></ol>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://www.bundesgesundheitsministerium.de/beitraege/seite' target='_blank' rel='noopener'>BMG — Beiträge, JAEG und BBG</a></li><li><a href='https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv' target='_blank' rel='noopener'>BMG — Wechsel zwischen GKV und PKV</a></li><li><a href='https://www.bundesgesundheitsministerium.de/finanzierung-gkv' target='_blank' rel='noopener'>BMG — Finanzierung der GKV</a></li></ul><p>Dieser Ratgeber ist allgemeine Orientierung, keine persönliche Versicherungs- oder Finanzberatung. Prüfen Sie aktuelle Werte vor einer Entscheidung.</p>"
+          ]
+        ]
+      }
     }
   }
 }
