@@ -36,10 +36,12 @@ async function main(){
     const credit='Fotoğraf: <a href="'+escape(entry.page)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.author)+'</a> · <a href="'+escape(entry.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.license)+'</a> · Wikimedia Commons · Kartta kırpılmış görünüm';
     const figure='<figure data-news-photo="licensed" style="margin:20px 0 26px"><img src="'+escape(entry.image)+'" alt="'+escape(entry.alt)+'" loading="lazy" decoding="async" width="1200" height="675" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px"><figcaption style="font-size:.8rem;color:#516578;margin-top:8px">'+credit+'</figcaption></figure>';
     if(!html.includes('<article class="article">'))throw Error('Missing article root: '+slug);
-    html=html.replace('<article class="article">','<article class="article">'+figure);
+    const meta=html.match(/<div class="article-meta">[\s\S]*?<\/div>/);
+    if(meta)html=html.replace(meta[0],meta[0]+figure);
+    else html=html.replace(/<\/h1>/,'</h1>'+figure);
     const pageImage='https://almanyapusulasi.de'+entry.image;
+    html=html.replace(/<meta property="og:image" content="[^"]*">/g,'');
     html=html.replace(/(<meta name="description" content="[^"]*">)/, '$1<meta property="og:image" content="'+pageImage+'">');
-    html=html.replace(/<meta property="og:image" content="[^"]*">(?=[\s\S]*<meta property="og:image")/,'');
     // Schema image is synchronized with the same licensed photo as the page.
     html=html.replace(/(<script type="application\/ld\+json">)(\{[\s\S]*?\})(<\/script>)/,(all,open,payload,close)=>{
       const schema=JSON.parse(payload);
