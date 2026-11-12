@@ -18,6 +18,7 @@ jobs:
       - name: Validate audit regressions
         run: |
           node scripts/prepare-news-photos.js --download
+          node scripts/generate-translated-guides.js
           node scripts/generate-discovery.js
           node scripts/validate-news-editorial.js
           node scripts/validate-audit-fixes.js
