@@ -22,7 +22,8 @@ for(const [lang,button,journey] of expected){
   assert.ok(ids.has(href),lang+' broken local anchor #'+href);
  }
  for(const m of [...html.matchAll(/<a[^>]+href="(\/[^"]+)"[^>]*>/g)]){
-  assert.ok(m[0].includes('lang="tr"')&&m[0].includes('hreflang="tr"'),lang+' Turkish guide link must be labeled as Turkish: '+m[0]);
+  if(m[1].startsWith('/en/')||m[1].startsWith('/de/'))assert.ok(m[1].startsWith('/'+lang+'/'),lang+' wrong locale link '+m[1]);
+  else assert.ok(m[0].includes('lang="tr"')&&m[0].includes('hreflang="tr"'),lang+' Turkish guide link must be labeled as Turkish: '+m[0]);
  }
  assert.ok(html.includes('on this page')||html.includes('auf dieser Seite'),lang+' missing language coverage transparency');
 }
