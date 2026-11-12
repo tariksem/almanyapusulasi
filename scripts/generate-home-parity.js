@@ -109,7 +109,10 @@ function build(lang){
  }
  body=body.replace(/placeholder="Ne arıyorsunuz\?[^"]*"/,'placeholder="'+(lang==="en"?"Search: Blue Card, Kindergeld, rent, insurance...":"Suche: Blaue Karte, Kindergeld, Miete, Versicherung...")+'"');
  body=body.replace(/aria-label="Site içinde ara"/g,'aria-label="'+(lang==="en"?"Search this site":"Website durchsuchen")+'"');
- body=body.replace(/<script>\(function\(\)\{const form=document.getElementById\('findForm'\);[\s\S]*?<\/script>/,'');
+ const scriptStart=body.lastIndexOf('<script>');
+ const scriptEnd=body.lastIndexOf('</script>');
+ if(scriptStart<0||scriptEnd<scriptStart||!body.slice(scriptStart,scriptEnd).includes('const records='))throw Error('Original homepage search script not found');
+ body=body.slice(0,scriptStart)+body.slice(scriptEnd+'</script>'.length);
  for(const slug of ['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026']){
   body=body.replaceAll('href="https://almanyapusulasi.de/'+slug+'/"','href="/'+lang+'/'+slug+'/"');
   body=body.replaceAll('href="/'+slug+'/"','href="/'+lang+'/'+slug+'/"');
