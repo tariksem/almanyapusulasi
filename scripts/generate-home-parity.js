@@ -108,8 +108,13 @@ function build(lang){
  const heroDescription=lang==="en"
   ?'For visas, residence, employment, family benefits, rent and insurance:<br>up-to-date information, practical calculators and step-by-step guides.'
   :'Zu Visum, Aufenthalt, Arbeit, Familienleistungen, Miete und Versicherungen:<br>aktuelle Informationen, praktische Rechner und Schritt-für-Schritt-Ratgeber.';
- html=html.replace(/(<h1 id="hero-title">)[\\s\\S]*?(<\\/h1>)/,'$1'+heroHeading+'$2');
- html=html.replace(/(<p class="desc">)[\\s\\S]*?(<\\/p>)/,'$1'+heroDescription+'$2');
+ const replaceBetween=(start,end,value)=>{
+  const first=html.indexOf(start),last=html.indexOf(end,first+start.length);
+  if(first<0||last<0)throw Error('Missing source hero segment: '+start);
+  html=html.slice(0,first+start.length)+value+html.slice(last);
+ };
+ replaceBetween('<h1 id="hero-title">','</h1>',heroHeading);
+ replaceBetween('<p class="desc">','</p>',heroDescription);
  const bodyAt=html.indexOf('</head>');
  let head=html.slice(0,bodyAt),body=html.slice(bodyAt);
  for(const [tr,en,de] of pairs){
