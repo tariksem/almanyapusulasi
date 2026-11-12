@@ -9,7 +9,7 @@ assert.match(script,/\.dataset\.search/);
 assert.match(css,/\.ap-topic-card\[hidden\]/);
 assert.match(css,/@media\(max-width:650px\)/);
 assert.ok(shell.includes('Localized landing pages are rendered by i18n-ui'));
-const expected=[['en','Search','Moving to Germany'],['de','Suchen','Ich möchte nach Deutschland']];
+const expected=[['en','Search',"I'm moving to Germany"],['de','Suchen','Ich möchte nach Deutschland']];
 for(const [lang,button,journey] of expected){
  const html=fs.readFileSync(lang+'/index.html','utf8');
  for(const needle of ['id="ap-local-search"','id="ap-local-search-input"','id="ap-guide-results"','id="ap-no-results"','id="migration"','id="living"','id="family"','id="tools"','id="news"','/assets/js/local-search.js',button,journey]){
