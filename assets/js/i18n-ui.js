@@ -49,17 +49,67 @@ function createPicker(){
 }
 function localShell(){
  if(!pageLang)return;
+ const home=api.home(lang);
+ const tr=(en,de)=>lang==="en"?en:de;
+ const unresolved=tr("Available in Turkish","Auf Türkisch verfügbar");
+ const categories=[
+  ["News","Nachrichten","/haberler/","#news"],
+  ["Discrimination & Rights","Diskriminierung & Rechte","/almanyada-irkcilik/",null],
+  ["Tools","Rechner","/araclar/","#tools"],
+  ["Immigration & Career","Zuwanderung & Beruf","/goc-kariyer/","#guides"],
+  ["Work & Income","Arbeit & Einkommen","/is-gelir/","#guides"],
+  ["Settling In","Ankommen & Wohnen","/yerlesim/","#start"],
+  ["Citizenship","Einbürgerung","/vatandaslik/",null],
+  ["Family & Children","Familie & Kinder","/aile-cocuk/",null],
+  ["Finance","Finanzen","/finans/",null],
+  ["Insurance","Versicherungen","/sigorta/",null],
+  ["Healthcare","Gesundheit","/saglik-sigortasi/",null],
+  ["Car & Mobility","Auto & Mobilität","/mobilite-arac/",null],
+  ["Blue Card","Blaue Karte EU","/blue-card/","/blue-card/"],
+  ["Opportunity Card","Chancenkarte","/chancenkarte-firsat-karti/","/chancenkarte-firsat-karti/"],
+  ["Kindergeld","Kindergeld","/kindergeld/",null],
+  ["Tax","Steuern","/vergi/",null],
+  ["Pensions","Rente","/emeklilik/",null],
+  ["Housing & Mortgage","Wohnen & Immobilienkredit","/kredi/",null],
+  ["Internet & Phone","Internet & Telefon","/telefon-internet/",null]
+ ];
+ function resolved(item){
+  const [en,de,source,anchor]=item;
+  const name=tr(en,de);
+  if(anchor&&anchor.startsWith("/")&&api.equivalent(anchor,lang)!==home)return {name,href:api.equivalent(anchor,lang),untranslated:false};
+  if(anchor&&anchor.startsWith("#"))return {name,href:home+anchor,untranslated:false};
+  return {name,href:source,untranslated:true};
+ }
+ const attr=item=>item.untranslated?' lang="tr" hreflang="tr" title="'+unresolved+'"':'';
+ const first=categories.slice(0,6);
+ const mainNav=first.map(item=>{const t=resolved(item);return '<a class="site-nav-link" href="'+t.href+'"'+attr(t)+'>'+t.name+(t.untranslated?' <small class="ap-tr-indicator">TR</small>':'')+'</a>';}).join("");
+ const mega=categories.map(item=>{const t=resolved(item);return '<a class="mega-link" href="'+t.href+'"'+attr(t)+'><span><strong>'+t.name+'</strong><small>'+(t.untranslated?unresolved:tr("Explore guides","Ratgeber entdecken"))+'</small></span></a>';}).join("");
  const header=document.querySelector(".site-header");
  if(header){
-  const homePrefix=api.home(lang);
-  const navLabels=lang==="de"?[["Startseite","#start"],["Ratgeber","#guides"],["Rechner","#tools"],["Nachrichten","#news"]]:[["Home","#start"],["Guides","#guides"],["Tools","#tools"],["News","#news"]];
-  const navTarget=anchor=>(path==="/en/"||path==="/de/")?anchor:homePrefix+anchor;
-  header.innerHTML='<div class="container header-inner"><a class="site-brand" href="'+api.home(lang)+'"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>'+d.intro+'</small></span></a><nav class="ap-local-header-nav" aria-label="'+d.topics+'">'+navLabels.map(([label,anchor])=>'<a href="'+navTarget(anchor)+'">'+label+'</a>').join("")+'</nav></div>';
+  header.innerHTML='<div class="container header-inner"><a class="site-brand" href="'+home+'"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>'+d.intro+'</small></span></a><button type="button" class="mobile-menu-toggle" aria-label="'+tr("Open menu","Menü öffnen")+'" aria-expanded="false" aria-controls="ap-site-nav"><span></span><span></span><span></span></button><nav class="site-nav" id="ap-site-nav" aria-label="'+d.topics+'"><div class="primary-nav-links">'+mainNav+'</div><details class="nav-more"><summary>'+tr("All Guides","Alle Ratgeber")+' <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
+  const secondary=categories.slice(0,6).concat([categories[7],categories[8]]).map(item=>{const t=resolved(item);return '<a href="'+t.href+'"'+attr(t)+'>'+t.name+'</a>';}).join("");
+  header.insertAdjacentHTML("beforeend",'<nav class="ap-secondary-nav" aria-label="'+tr("Topic categories","Themenkategorien")+'"><div class="container ap-secondary-links">'+secondary+'</div></nav>');
+  const toggle=header.querySelector(".mobile-menu-toggle");
+  const nav=header.querySelector(".site-nav");
+  const close=()=>{toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label",tr("Open menu","Menü öffnen"));nav.classList.remove("is-open");document.body.classList.remove("menu-open");};
+  toggle.addEventListener("click",()=>{const open=nav.classList.toggle("is-open");toggle.setAttribute("aria-expanded",String(open));toggle.setAttribute("aria-label",open?tr("Close menu","Menü schließen"):tr("Open menu","Menü öffnen"));document.body.classList.toggle("menu-open",open);});
+  document.addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(nav.classList.contains("is-open")){close();toggle.focus();}});
+  document.addEventListener("click",e=>{if(nav.classList.contains("is-open")&&!header.contains(e.target))close();});
  }
  const footer=document.querySelector(".footer");
  if(footer){
-  const creditLink='https://commons.wikimedia.org/wiki/File:Rheinpanorama_mit_Hohenzollernbr%C3%BCcke,_K%C3%B6lner_Dom,_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg';
-  footer.innerHTML='<div class="container" style="padding:28px 0"><strong>Almanya Pusulası</strong><p>'+d.intro+'</p><p><a href="'+api.home(lang)+'">'+d.home+'</a> · <a href="/privacy/" lang="tr">'+d.privacy+' (TR)</a> · <a href="/contact/" lang="tr">'+d.contact+' (TR)</a></p><small>'+d.credit+': <a href="'+creditLink+'" target="_blank" rel="noopener noreferrer">Juri Kowski / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a></small></div>';
+  const columns=[
+   [[tr("Discover","Entdecken"),null],[tr("Guides","Ratgeber"),home+"#guides"],[tr("Tools","Rechner"),home+"#tools"],[tr("News","Nachrichten"),home+"#news"],[tr("Blue Card","Blaue Karte"),"/"+lang+"/blue-card/"],[tr("Opportunity Card","Chancenkarte"),"/"+lang+"/chancenkarte-firsat-karti/"]],
+   [[tr("Resources","Ressourcen"),null],[tr("Health insurance (TR)","Krankenversicherung (TR)"),"/saglik-sigortasi/"],[tr("Family benefits (TR)","Familienleistungen (TR)"),"/aile-cocuk/"],[tr("Tax (TR)","Steuern (TR)"),"/vergi/"]],
+   [[tr("Information","Informationen"),null],[tr("About (TR)","Über uns (TR)"),"/about/"],[tr("Contact (TR)","Kontakt (TR)"),"/contact/"],[tr("Privacy (TR)","Datenschutz (TR)"),"/privacy/"],["Impressum","/impressum/"]]
+  ];
+  const renderColumn=items=>'<div><strong class="footer-title">'+items[0][0]+'</strong>'+items.slice(1).map(([label,href])=>'<a href="'+href+'"'+(href.startsWith("/")&&!href.startsWith("/"+lang+"/")?attr({untranslated:true}):"")+'>'+label+'</a>').join("")+'</div>';
+  footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="'+home+'" class="footer-brand-name">Almanya Pusulası</a><p>'+d.intro+'</p></div>'+columns.map(renderColumn).join("")+'</div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>'+d.intro+'</span></div>';
+  if(path==="/en/"||path==="/de/"){
+   const credit=document.createElement("div");credit.className="ap-photo-credit";
+   credit.innerHTML='<div class="container">'+d.credit+': <a href="https://commons.wikimedia.org/wiki/File:Rheinpanorama_mit_Hohenzollernbr%C3%BCcke,_K%C3%B6lner_Dom,_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg" target="_blank" rel="noopener noreferrer">Juri Kowski / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a></div>';
+   footer.appendChild(credit);
+  }
  }
  document.querySelectorAll(".site-context-bar,.hub-return-rail").forEach(el=>el.remove());
 }
