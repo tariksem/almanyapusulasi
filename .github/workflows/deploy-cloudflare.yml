@@ -23,6 +23,7 @@ jobs:
 
       - name: Generate and validate discovery assets
         run: |
+          node scripts/prepare-news-photos.js --download
           node scripts/generate-discovery.js
           node scripts/validate-news-editorial.js
           node scripts/validate-audit-fixes.js
@@ -117,6 +118,8 @@ jobs:
           cp assets/brand/social-preview.png dist/assets/brand/social-preview.png
           cp -r assets/social/. dist/assets/social/
           cp sitemap-*.xml rss.xml index.html dist/
+          mkdir -p dist/assets/news/photos
+          cp -r assets/news/photos/. dist/assets/news/photos/
           test -f dist/vatandaslik-testi/index.html
           test -f dist/data/almanya-2026-esikler.json
           test -f dist/assets/data/einbuergerungstest.json
