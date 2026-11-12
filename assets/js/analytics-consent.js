@@ -111,6 +111,8 @@
   }
 
   function renderHeader(){
+    // Localized landing pages are rendered by i18n-ui, not by the Turkish shell.
+    if(/^\/(en|de)\/?$/.test(location.pathname))return;
     const header=document.querySelector(".site-header");
     if(!header)return;
     const active=section();
@@ -167,6 +169,8 @@
   }
 
   function renderContext(){
+    // Localized landing pages are rendered by i18n-ui, not by the Turkish shell.
+    if(/^\/(en|de)\/?$/.test(location.pathname))return;
     if(currentPath()==="/")return;
     const header=document.querySelector(".site-header");
     const s=section();
@@ -180,6 +184,8 @@
   }
 
   function renderFooter(){
+    // Localized landing pages are rendered by i18n-ui, not by the Turkish shell.
+    if(/^\/(en|de)\/?$/.test(location.pathname))return;
     const footer=document.querySelector(".footer");
     if(!footer)return;
     footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="/" class="footer-brand-name">Almanya Pusulası</a><p>Almanya’da yaşayan ve Almanya’ya gelmek isteyen Türkler için karar araçları, resmî kaynaklı rehberler ve seçilmiş güncel gelişmeler.</p></div><div><strong class="footer-title">Keşfet</strong><a href="/araclar/">Araçlar</a><a href="/haberler/">Haberler</a><a href="/almanyada-irkcilik/" style="color:#fca5a5;font-weight:800">Irkçılık & Haklar</a><a href="/goc-kariyer/">Göç & Kariyer</a><a href="/is-gelir/">İş & Gelir</a><a href="/aile-cocuk/">Aile & Çocuk</a><a href="/vatandaslik/">Vatandaşlık</a><a href="/finans/">Finans</a><a href="/sigorta/">Sigorta</a></div><div><strong class="footer-title">Kaynaklar</strong><a href="/almanya-2026-resmi-esikler/">2026 Veri Merkezi</a><a href="/site-haritasi/">Site Haritası</a><a href="/embed-araclar/">Ücretsiz Embed Araçları</a><a href="/yerlesim/">Yerleşim</a><a href="/saglik-sigortasi/">Sağlık Sigortası</a><a href="/mobilite-arac/">Mobilite & Araç</a><a href="/vergi/">Vergi</a></div><div class="footer-legal"><strong class="footer-title">Site</strong><a href="/about/">Hakkımızda</a><a href="/contact/">İletişim</a><a href="/ticari-seffaflik/">Ticari Şeffaflık</a><a href="/privacy/">Gizlilik</a><a href="/impressum/">Impressum</a><button type="button" class="privacy-settings-link">Gizlilik ayarları</button></div></div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>Karar araçları ve resmî kaynaklı Türkçe Almanya rehberi</span></div>';
@@ -193,6 +199,8 @@
   }
 
   function renderReturnRail(){
+    // Localized landing pages are rendered by i18n-ui, not by the Turkish shell.
+    if(/^\/(en|de)\/?$/.test(location.pathname))return;
     const s=section();
     const footer=document.querySelector(".footer");
     if(!s||!footer||currentPath()===s.href||s.key==="haberler"||s.key==="tools")return;
@@ -344,6 +352,8 @@
   // V4.2 content navigation shared by the main editorial clusters.
   // Existing page copy, linked tools, consent and calculator functionality are untouched.
   function renderContentNavigation(){
+    // Localized landing pages are rendered by i18n-ui, not by the Turkish shell.
+    if(/^\/(en|de)\/?$/.test(location.pathname))return;
     const hubPaths=new Set([
       "/saglik-sigortasi/","/sigorta/","/aile-cocuk/","/finans/",
       "/vatandaslik/","/yerlesim/","/is-gelir/","/kindergeld/"
