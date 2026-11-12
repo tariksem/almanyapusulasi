@@ -100,6 +100,16 @@ function build(lang){
  html=html.replace(/<meta property="og:description" content="[^"]*">/,'<meta property="og:description" content="'+(lang==="en"?"English guides and interactive tools for life in Germany.":"Deutsche Ratgeber und interaktive Werkzeuge für das Leben in Deutschland.")+'">');
  html=html.replace(/"inLanguage":"tr"/g,'"inLanguage":"'+lang+'"');
  html=html.replace(/"url":"https:\/\/almanyapusulasi.de\/"/g,'"url":"'+src+lang+'/"');
+ // The source hero uses <br> and <span>: translate the entire marked-up heading,
+ // rather than replacing only exact >text< nodes (which left "kolaylaştıran").
+ const heroHeading=lang==="en"
+  ?'Make life in Germany<br>easier with a <span class="gold">trusted guide.</span>'
+  :'Gestalten Sie Ihren Alltag in Deutschland<br>einfacher – mit einem <span class="gold">zuverlässigen Ratgeber.</span>';
+ const heroDescription=lang==="en"
+  ?'For visas, residence, employment, family benefits, rent and insurance:<br>up-to-date information, practical calculators and step-by-step guides.'
+  :'Zu Visum, Aufenthalt, Arbeit, Familienleistungen, Miete und Versicherungen:<br>aktuelle Informationen, praktische Rechner und Schritt-für-Schritt-Ratgeber.';
+ html=html.replace(/(<h1 id="hero-title">)[\\s\\S]*?(<\\/h1>)/,'$1'+heroHeading+'$2');
+ html=html.replace(/(<p class="desc">)[\\s\\S]*?(<\\/p>)/,'$1'+heroDescription+'$2');
  const bodyAt=html.indexOf('</head>');
  let head=html.slice(0,bodyAt),body=html.slice(bodyAt);
  for(const [tr,en,de] of pairs){
