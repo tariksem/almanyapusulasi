@@ -357,6 +357,108 @@
           ]
         ]
       }
+    },
+    "almanyada-ev-kiralama-rehberi": {
+      "en": {
+        "title": "Renting an Apartment in Germany 2026: Complete Step-by-Step Guide",
+        "description": "Complete Germany rental guide: cold and warm rent, apartment searches, application documents, deposit limits, tenancy agreements, service charges and registration.",
+        "badge": "Housing & settling in · 2026",
+        "heading": "Renting a Home in Germany: From Apartment Search to Key Handover",
+        "meta": "Source guide updated: 4 September 2026",
+        "intro": "Finding a property is only the beginning. A successful rental also means preparing an application, understanding <strong>Kaltmiete</strong> and <strong>Warmmiete</strong>, checking the contract and deposit, and completing administrative steps after moving in.",
+        "sections": [
+          [
+            "1. Plan your budget using Warmmiete",
+            "<em>Kaltmiete</em> is the basic rent without operating costs. <em>Warmmiete</em> usually includes agreed service-charge payments, but electricity, internet and certain other expenses may be billed separately. Check exactly which expenses the contract covers. <a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Rent budget calculator (Turkish)</a>."
+          ],
+          [
+            "2. Search multiple property platforms",
+            "ImmoScout24, immowelt, WG-Gesucht and Kleinanzeigen serve different housing markets. In popular cities, new listings can attract many applicants very quickly. Create saved-search alerts and respond with a concise, relevant message. <a href='/almanya-kiralik-ev-siteleri/' lang='tr' hreflang='tr'>German apartment-search portals (Turkish)</a>."
+          ],
+          [
+            "3. Prepare your application documents",
+            "Depending on the tenancy, landlords may ask for proof of identity, income, an employment contract and evidence of payment reliability. A SCHUFA credit report is frequently requested, but no single SCHUFA document is legally mandatory for every tenancy. Only provide personal information necessary for a legitimate application. <a href='/schufa-datenkopie/' lang='tr' hreflang='tr'>SCHUFA data copy guide (Turkish)</a>."
+          ],
+          [
+            "4. Avoid paying before verifying the property",
+            "Consumer organisations warn about fake rental listings demanding an advance deposit, claiming the keys will be shipped or pressuring applicants into unusual transfers. Verify the property and the landlord or authorised representative. Do not pay simply to secure a viewing or on the basis of an unverifiable listing."
+          ],
+          [
+            "5. Check five points before signing the tenancy agreement",
+            "<ul><li>Names and details of the landlord and tenant are correct.</li><li>Apartment, rooms, basement, parking and other included spaces are defined.</li><li>Kaltmiete, operating costs, other payments and total monthly cost are clear.</li><li>Contract duration and any fixed term, minimum term, stepped rent (<em>Staffelmiete</em>) or indexed rent (<em>Indexmiete</em>) clauses are understood.</li><li>Deposit, house rules, keys and other commitments are documented.</li></ul><p><a href='/kira-sozlesmesi-mietvertrag-nelere-dikkat/' lang='tr' hreflang='tr'>Detailed Mietvertrag checklist (Turkish)</a>.</p>"
+          ],
+          [
+            "6. Know the legal maximum security deposit",
+            "Under Section 551 of the German Civil Code (BGB), the residential tenancy deposit (<em>Kaution</em>) may not exceed <strong>three months of basic rent excluding operating costs</strong>. A cash deposit can be paid in three equal monthly instalments. The first is due at the beginning of the tenancy; the remaining two are due with subsequent rent payments. <a href='/kaution-depozito-geri-alma/' lang='tr' hreflang='tr'>Deposit and refund guide (Turkish)</a>."
+          ],
+          [
+            "7. Understand the annual Nebenkosten statement",
+            "If monthly service-charge advances (<em>Betriebskostenvorauszahlungen</em>) are agreed, landlords normally must provide an annual statement. Under Section 556 BGB, it must generally be communicated no later than the end of the twelfth month after the accounting period. Administrative expenses and maintenance/repair expenses generally are not recoverable operating costs. <a href='/nebenkosten-yan-giderler-hesabi/' lang='tr' hreflang='tr'>Reviewing Nebenkosten (Turkish)</a>."
+          ],
+          [
+            "8. Complete a handover report",
+            "At handover, record meter readings, the number of keys and existing defects in a written <em>Übergabeprotokoll</em>. Take dated photographs and, where possible, have both sides acknowledge the condition. This can reduce later disputes about damage and the deposit."
+          ],
+          [
+            "9. After moving in",
+            "<ul><li>Obtain the <em>Wohnungsgeberbestätigung</em> and complete address registration (<em>Anmeldung</em>) within the applicable period.</li><li>Check whether a <em>Rundfunkbeitrag</em> account already exists for the household.</li><li>Arrange your electricity contract if it is not included.</li><li>Update your address with banks, insurers and other relevant organisations.</li></ul><p><a href='/almanya-adres-kaydi-anmeldung/' lang='tr' hreflang='tr'>Address registration guide (Turkish)</a>.</p>"
+          ],
+          [
+            "Official and reliable sources",
+            "<ul><li><a href='https://www.bmjv.de/SharedDocs/Publikationen/DE/Broschueren/Mietrecht.pdf?__blob=publicationFile&amp;v=9' target='_blank' rel='noopener'>Federal Ministry of Justice — Tenancy law (PDF)</a></li><li><a href='https://www.gesetze-im-internet.de/bgb/__551.html' target='_blank' rel='noopener'>BGB §551 — Deposit</a></li><li><a href='https://www.gesetze-im-internet.de/bgb/__556.html' target='_blank' rel='noopener'>BGB §556 — Operating costs</a></li><li><a href='https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/abzocke/fakewohnungen-im-internet-so-erkennen-sie-falsche-immobilienanzeigen-27576' target='_blank' rel='noopener'>Verbraucherzentrale — Fake property listings</a></li></ul><p>In disputes, the precise contract and circumstances matter. Consult a tenant association (<em>Mieterverein</em>) or qualified legal adviser when needed.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Wohnung mieten in Deutschland 2026: Kompletter Ratgeber",
+        "description": "Ratgeber zur Wohnungssuche, Kalt- und Warmmiete, Mietvertrag, Kaution, Nebenkostenabrechnung, Übergabeprotokoll und Anmeldung.",
+        "badge": "Wohnen & Ankommen · Ratgeber 2026",
+        "heading": "Wohnung mieten in Deutschland: Von der Suche bis zur Schlüsselübergabe",
+        "meta": "Ausgangstext aktualisiert: 4. September 2026",
+        "intro": "Mit der passenden Anzeige allein ist es nicht getan. Bereiten Sie Ihre Unterlagen vor, unterscheiden Sie <strong>Kaltmiete</strong> und <strong>Warmmiete</strong>, prüfen Sie Vertrag und Kaution und erledigen Sie nach dem Einzug die Anmeldung und weitere Formalitäten.",
+        "sections": [
+          [
+            "1. Budget anhand der Warmmiete planen",
+            "Die <em>Kaltmiete</em> ist die Grundmiete ohne Betriebskosten. Die <em>Warmmiete</em> umfasst üblicherweise die vereinbarten Nebenkostenzahlungen. Strom, Internet und weitere Posten können zusätzlich anfallen. Prüfen Sie im Mietvertrag, welche Kosten enthalten sind. <a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Mietbudget-Rechner (Türkisch)</a>."
+          ],
+          [
+            "2. Mehrere Immobilienplattformen nutzen",
+            "ImmoScout24, immowelt, WG-Gesucht und Kleinanzeigen haben unterschiedliche Schwerpunkte. In Städten mit hoher Nachfrage empfiehlt es sich, Suchaufträge einzurichten und zeitnah auf neue Angebote zu reagieren. <a href='/almanya-kiralik-ev-siteleri/' lang='tr' hreflang='tr'>Wohnungsportale im Vergleich (Türkisch)</a>."
+          ],
+          [
+            "3. Bewerbungsunterlagen frühzeitig vorbereiten",
+            "Je nach Vermieter und Objekt kommen Identitätsnachweis, Einkommensunterlagen, Arbeitsvertrag und gegebenenfalls ein Bonitätsnachweis infrage. Eine bestimmte SCHUFA-Auskunft ist nicht bei jeder Vermietung gesetzlich vorgeschrieben, wird aber häufig angefordert. Geben Sie nur erforderliche personenbezogene Daten weiter. <a href='/schufa-datenkopie/' lang='tr' hreflang='tr'>SCHUFA-Datenkopie (Türkisch)</a>."
+          ],
+          [
+            "4. Vor Besichtigung und Prüfung kein Geld überweisen",
+            "Verbraucherzentralen warnen vor gefälschten Anzeigen, Vorab-Kautionen, angeblichem Schlüsselversand und ungewöhnlichem Zahlungsdruck. Verifizieren Sie Wohnung, Eigentümer beziehungsweise Bevollmächtigte und das Mietangebot. Zahlen Sie nicht allein aufgrund einer ungeprüften Anzeige."
+          ],
+          [
+            "5. Fünf Punkte vor Unterzeichnung des Mietvertrags prüfen",
+            "<ul><li>Vollständige und korrekte Angaben zu Vermieter und Mieter.</li><li>Genau beschriebene Wohnung einschließlich Keller, Stellplatz und weiterer Flächen.</li><li>Klare Trennung von Kaltmiete, Betriebskosten und monatlicher Gesamtbelastung.</li><li>Mietdauer, mögliche Befristung, Mindestmietzeit, Staffel- und Indexmiete.</li><li>Kaution, Hausordnung, Schlüssel und sonstige Verpflichtungen.</li></ul><p><a href='/kira-sozlesmesi-mietvertrag-nelere-dikkat/' lang='tr' hreflang='tr'>Mietvertrags-Checkliste (Türkisch)</a>.</p>"
+          ],
+          [
+            "6. Gesetzliche Höchstgrenze der Kaution",
+            "Nach <strong>§551 BGB</strong> darf eine Mietsicherheit für Wohnraum höchstens <strong>drei Nettokaltmieten</strong> betragen. Eine Barkaution kann in drei gleichen monatlichen Raten gezahlt werden. Die erste Rate ist bei Mietbeginn fällig, die weiteren zusammen mit den nächsten Mietzahlungen. <a href='/kaution-depozito-geri-alma/' lang='tr' hreflang='tr'>Kautionsratgeber (Türkisch)</a>."
+          ],
+          [
+            "7. Nebenkosten und Abrechnungsfrist verstehen",
+            "Bei vereinbarten Betriebskostenvorauszahlungen ist grundsätzlich jährlich abzurechnen. Nach <strong>§556 BGB</strong> muss die Abrechnung regelmäßig spätestens zwölf Monate nach dem Ende des Abrechnungszeitraums zugehen. Verwaltungskosten und Instandhaltungs- beziehungsweise Instandsetzungskosten gehören grundsätzlich nicht zu den umlagefähigen Betriebskosten. <a href='/nebenkosten-yan-giderler-hesabi/' lang='tr' hreflang='tr'>Nebenkosten prüfen (Türkisch)</a>."
+          ],
+          [
+            "8. Übergabeprotokoll erstellen",
+            "Dokumentieren Sie bei der Schlüsselübergabe Zählerstände, Anzahl der Schlüssel und vorhandene Mängel. Ein unterschriebenes <em>Übergabeprotokoll</em> und datierte Fotos können spätere Auseinandersetzungen über den Zustand der Wohnung und die Kaution vermeiden."
+          ],
+          [
+            "9. Erledigungen nach dem Einzug",
+            "<ul><li><em>Wohnungsgeberbestätigung</em> besorgen und Anmeldung innerhalb der geltenden Frist vornehmen.</li><li>Prüfen, ob für die Wohnung bereits ein <em>Rundfunkbeitrag</em> entrichtet wird.</li><li>Gegebenenfalls eigenen Stromvertrag abschließen.</li><li>Adressänderungen an Banken, Versicherungen und weitere Stellen melden.</li></ul><p><a href='/almanya-adres-kaydi-anmeldung/' lang='tr' hreflang='tr'>Anmeldung-Ratgeber (Türkisch)</a>.</p>"
+          ],
+          [
+            "Amtliche und verlässliche Quellen",
+            "<ul><li><a href='https://www.bmjv.de/SharedDocs/Publikationen/DE/Broschueren/Mietrecht.pdf?__blob=publicationFile&amp;v=9' target='_blank' rel='noopener'>Bundesministerium der Justiz — Mietrecht (PDF)</a></li><li><a href='https://www.gesetze-im-internet.de/bgb/__551.html' target='_blank' rel='noopener'>BGB §551 — Mietsicherheit</a></li><li><a href='https://www.gesetze-im-internet.de/bgb/__556.html' target='_blank' rel='noopener'>BGB §556 — Betriebskosten</a></li><li><a href='https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/abzocke/fakewohnungen-im-internet-so-erkennen-sie-falsche-immobilienanzeigen-27576' target='_blank' rel='noopener'>Verbraucherzentrale — Fake-Wohnungen</a></li></ul><p>Bei mietrechtlichen Streitigkeiten kommt es auf den vollständigen Vertrag und den Einzelfall an. Mieterverein oder anwaltliche Beratung können hilfreich sein.</p>"
+          ]
+        ]
+      }
     }
   }
 }
