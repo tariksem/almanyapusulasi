@@ -29,6 +29,7 @@ jobs:
           node scripts/validate-audit-fixes.js
           node scripts/validate-v42-cohesion.mjs
           node scripts/validate-home-hero-layout.js
+          node scripts/validate-i18n-foundation.js
           node scripts/validate-2026-tools.js
           node scripts/validate-housing-tools.js
           node scripts/validate-nebenkosten-parser.js
