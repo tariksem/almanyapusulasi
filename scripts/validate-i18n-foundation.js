@@ -34,6 +34,7 @@ assert.ok(ui.includes('location.replace(api.home(pref)'),'Browser preference not
 const css=fs.readFileSync('assets/i18n.css','utf8');
 assert.ok(css.includes('@media(max-width:650px)'),'Mobile CSS absent');
 assert.ok(css.includes('.ap-lang-flag.is-current'),'Active flag styling missing');
+assert.ok(css.includes('.site-header .ap-lang-picker{background:transparent;border:0'),'Header language selector should have transparent background');
 assert.ok(ui.includes('header.appendChild(box)'),'Flags must be appended to the header right');
 assert.ok(!ui.includes('hero.prepend(box)'),'Flags must not appear inside the banner');
 assert.ok(css.includes('.site-header .ap-lang-header{order:10'),'Desktop header order missing');
