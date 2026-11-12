@@ -1,0 +1,19 @@
+/* V4.1 shared structure for EN/DE homepage; source layout is generated from TR. */
+html[lang="en"] a[data-tr-only].tool,html[lang="de"] a[data-tr-only].tool,
+html[lang="en"] a[data-tr-only].journey,html[lang="de"] a[data-tr-only].journey,
+html[lang="en"] a[data-tr-only].guide,html[lang="de"] a[data-tr-only].guide{position:relative}
+html[lang="en"] a[data-tr-only].tool::after,html[lang="de"] a[data-tr-only].tool::after,
+html[lang="en"] a[data-tr-only].journey::after,html[lang="de"] a[data-tr-only].journey::after,
+html[lang="en"] a[data-tr-only].guide::after,html[lang="de"] a[data-tr-only].guide::after{
+ content:"TR";position:absolute;right:6px;top:6px;padding:1px 4px;border-radius:5px;
+ font-size:9px;line-height:1.25;font-weight:800;color:#244564;background:#e9f2f8;border:1px solid #cadae8;
+}
+.ap-search-none{padding:12px;color:#435b71;font-size:14px}
+html[lang="en"] .hero .eyebrow,html[lang="de"] .hero .eyebrow{font-size:12px}
+html[lang="en"] .hero .desc,html[lang="de"] .hero .desc{max-width:760px}
+html[lang="en"] .site-header .header-inner,html[lang="de"] .site-header .header-inner{max-width:1536px}
+@media(max-width:650px){
+ html[lang="en"] .hero h1,html[lang="de"] .hero h1{font-size:clamp(26px,7vw,34px);line-height:1.13}
+ html[lang="en"] .hero .find,html[lang="de"] .hero .find{width:100%}
+ html[lang="en"] .hero .find input,html[lang="de"] .hero .find input{font-size:13px}
+}
