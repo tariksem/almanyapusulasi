@@ -8,6 +8,10 @@ const today=(process.env.NEWS_AS_OF||new Date().toISOString().slice(0,10));
 const editorialState=n=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=editorial[slug];if(!item)throw new Error('Missing editorial record: '+slug);return {...item,state:item.state==='published'&&item.expiresOn&&item.expiresOn<today?'archived':item.state};};
 
 const files=cp.execSync('git ls-files',{encoding:'utf8'}).trim().split(/\r?\n/);
+// Generated and reviewed translations are produced before discovery; include them in sitemap.
+const generatedLocales=['en','de'].flatMap(lang=>['blue-card','chancenkarte-firsat-karti'].map(slug=>lang+'/'+slug+'/index.html'));
+for(const file of generatedLocales){if(!fs.existsSync(file))throw new Error('Missing generated translated page: '+file);if(!files.includes(file))files.push(file);}
+
 const changed=new Set(cp.execSync('git diff --name-only HEAD',{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim().split(/\r?\n/));
 const escape=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const redirects=new Map(fs.readFileSync('_redirects','utf8').split(/\r?\n/).map(l=>l.trim().split(/\s+/)).filter(a=>a.length===3&&a[0].startsWith('/')&&/^30[18]$/.test(a[2])).map(a=>[a[0],a[1]]));
