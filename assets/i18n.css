@@ -20,3 +20,10 @@
 .ap-i18n-landing .ap-locale-note{margin-top:30px;background:#eaf1f7;border-left:4px solid #1f4e79;padding:17px 21px;border-radius:8px;line-height:1.6}
 @media(max-width:900px){.ap-i18n-landing .ap-locale-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.ap-i18n-landing .ap-locale-grid{grid-template-columns:1fr}.ap-i18n-landing .hero-inner{padding:14px 18px 38px}.ap-i18n-landing main{padding:24px 16px 48px}.ap-lang-picker{margin-bottom:18px}.ap-lang-picker label{font-size:12px}.site-header .ap-lang-header{margin-left:auto;margin-right:4px}}
+
+/* Override later-injected V4.2 generic hero defaults only on translated entry pages. */
+body.ap-i18n-landing.ap-unified .hero{padding:0!important;background:linear-gradient(90deg,rgba(16,42,67,.95),rgba(16,42,67,.80) 53%,rgba(16,42,67,.1)),url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Rheinpanorama_mit_Hohenzollernbr%C3%BCcke%2C_K%C3%B6lner_Dom%2C_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg') center/cover!important}
+body.ap-i18n-landing.ap-unified .hero h1{font-size:clamp(32px,4vw,54px);line-height:1.12;max-width:740px;color:#fff}
+body.ap-i18n-landing.ap-unified .hero p{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:720px;color:#f0f6fc}
+body.ap-i18n-landing.ap-unified main{display:block;max-width:1200px;margin:0 auto;padding:30px 24px 70px}
+body.ap-i18n-landing.ap-unified .hero .ap-lang-picker{margin-left:auto;margin-bottom:20px}
