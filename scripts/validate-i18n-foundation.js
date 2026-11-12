@@ -25,8 +25,14 @@ for(const [path,lang,uri] of names){
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 for(const asset of ['i18n-core.js','i18n-ui.js','i18n.css'])assert.ok(shell.includes(asset),'Shared shell missing '+asset);
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
-assert.ok(ui.includes('location.assign(api.home(target))'),'Selection not routed');
+assert.ok(ui.includes('link.href=api.home(code)'),'Flag links not routed');
+for(const code of ['tr','en','de'])assert.ok(ui.includes(code+':\'<svg'), 'Missing flag SVG '+code);
+assert.ok(ui.includes('aria-current'),'Current language not indicated');
+assert.ok(ui.includes('aria-label'),'Accessible flag names missing');
+assert.ok(!ui.includes('document.createElement("select")'),'Dropdown still present');
 assert.ok(ui.includes('location.replace(api.home(pref)'),'Browser preference not routed');
 const css=fs.readFileSync('assets/i18n.css','utf8');
 assert.ok(css.includes('@media(max-width:650px)'),'Mobile CSS absent');
+assert.ok(css.includes('.ap-lang-flag.is-current'),'Active flag styling missing');
+assert.ok(css.includes('margin-left:0;margin-right:auto'),'Banner flags should be left aligned');
 console.log('i18n foundation checks passed: language normalization, preferences, routes, SEO, shell and responsive CSS.');
