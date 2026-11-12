@@ -4,11 +4,25 @@
 .ap-lang-flag:hover{background:rgba(255,255,255,.18)}
 .ap-lang-flag.is-current{background:rgba(255,255,255,.16);border-color:#f3c763}
 .ap-lang-flag:focus-visible{outline:3px solid #f3c763;outline-offset:3px}
-.hero .hero-inner:has(>.ap-lang-picker){height:auto;min-height:328px;padding-top:15px;padding-bottom:32px}
-.ap-lang-header{margin:0 8px 0 0;flex:0 0 auto}
+.ap-lang-header{margin:0 0 0 8px;flex:0 0 auto}
 .site-header .ap-lang-picker{background:#102a43;margin-bottom:0}
 .site-header .header-inner:has(>.ap-lang-header){gap:12px}
-@media(max-width:760px){.site-header .header-inner:has(>.ap-lang-header){flex-wrap:wrap;gap:8px}.site-header .ap-lang-header{order:-1}.site-header .ap-lang-flag{width:37px;height:30px}.site-header .ap-lang-flag svg{width:28px;height:19px}}
+.site-header .site-nav{min-width:0}
+.site-header .ap-lang-header{order:10;align-self:center}
+.site-header .ap-lang-flag{width:36px;height:29px;padding:3px}
+.site-header .ap-lang-flag svg{width:27px;height:18px}
+@media(max-width:1080px){
+ .site-header .header-inner:has(>.ap-lang-header){gap:8px;flex-wrap:nowrap}
+ .site-header .site-brand{min-width:0;flex:1 1 auto}
+ .site-header .ap-lang-header{margin-left:0;order:2}
+ .site-header .mobile-menu-toggle{order:3;margin-left:5px;flex:0 0 auto}
+}
+@media(max-width:600px){
+ .site-header .ap-lang-header{gap:3px;padding:3px}
+ .site-header .ap-lang-flag{width:31px;height:27px;padding:2px}
+ .site-header .ap-lang-flag svg{width:25px;height:17px}
+ .site-header .site-brand-copy small{display:none}
+}
 .ap-i18n-landing{font:inherit;color:#102a43;background:#f6f9fc}
 .ap-i18n-landing .hero{background:linear-gradient(90deg,rgba(16,42,67,.95),rgba(16,42,67,.80) 53%,rgba(16,42,67,.1)),url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Rheinpanorama_mit_Hohenzollernbr%C3%BCcke%2C_K%C3%B6lner_Dom%2C_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg') center/cover;color:#fff;padding:0}
 .ap-i18n-landing .hero-inner{max-width:1200px;margin:0 auto;padding:20px 24px 54px}
@@ -23,11 +37,11 @@
 .ap-i18n-landing .ap-locale-card a{color:#1f4e79;text-decoration:underline;text-underline-offset:3px;font-weight:700}
 .ap-i18n-landing .ap-locale-note{margin-top:30px;background:#eaf1f7;border-left:4px solid #1f4e79;padding:17px 21px;border-radius:8px;line-height:1.6}
 @media(max-width:900px){.ap-i18n-landing .ap-locale-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.ap-i18n-landing .ap-locale-grid{grid-template-columns:1fr}.ap-i18n-landing .hero-inner{padding:14px 18px 38px}.ap-i18n-landing main{padding:24px 16px 48px}.ap-lang-picker{margin-bottom:18px}.site-header .ap-lang-header{margin:0 6px 0 0}}
+@media(max-width:650px){.ap-i18n-landing .ap-locale-grid{grid-template-columns:1fr}.ap-i18n-landing .hero-inner{padding:14px 18px 38px}.ap-i18n-landing main{padding:24px 16px 48px}.site-header .ap-lang-header{margin:0}}
 
 /* Override later-injected V4.2 generic hero defaults only on translated entry pages. */
 body.ap-i18n-landing.ap-unified .hero{padding:0!important;background:linear-gradient(90deg,rgba(16,42,67,.95),rgba(16,42,67,.80) 53%,rgba(16,42,67,.1)),url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Rheinpanorama_mit_Hohenzollernbr%C3%BCcke%2C_K%C3%B6lner_Dom%2C_Gro%C3%9F_St._Martin_und_Deutzer_Br%C3%BCcke.jpg') center/cover!important}
 body.ap-i18n-landing.ap-unified .hero h1{font-size:clamp(32px,4vw,54px);line-height:1.12;max-width:740px;color:#fff}
 body.ap-i18n-landing.ap-unified .hero p{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:720px;color:#f0f6fc}
 body.ap-i18n-landing.ap-unified main{display:block;max-width:1200px;margin:0 auto;padding:30px 24px 70px}
-body.ap-i18n-landing.ap-unified .hero .ap-lang-picker{margin-left:0;margin-right:auto;margin-bottom:20px}
+
