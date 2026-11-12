@@ -1,0 +1,10 @@
+const fs=require('node:fs');
+const assert=require('node:assert/strict');
+const html=fs.readFileSync('index.html','utf8');
+const css=fs.readFileSync('assets/home-hero-layout-fix.css','utf8');
+assert.ok(html.includes('href="/assets/home-hero-layout-fix.css"'),'Hero fix stylesheet not loaded');
+assert.ok(html.indexOf('href="/assets/home-hero-layout-fix.css"')>html.indexOf('/* Prevent fractional-pixel overflow'),'Hero fix must load after legacy inline CSS');
+assert.match(css,/body \.hero\s*\{[^}]*height:auto!important/s,'Hero must size to content');
+assert.match(css,/body \.hero \.hero-inner\s*\{[^}]*height:auto!important/s,'Inner hero must size to content');
+assert.match(css,/body \.hero \.popular\s*\{[^}]*row-gap:/s,'Wrapped search suggestions require row spacing');
+console.log('Homepage hero layout regression checks passed.');
