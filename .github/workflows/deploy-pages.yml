@@ -25,6 +25,7 @@ jobs:
         uses: actions/checkout@v6
       - name: Generate and validate discovery assets
         run: |
+          node scripts/prepare-news-photos.js --download
           node scripts/generate-discovery.js
           node scripts/validate-audit-fixes.js
           node scripts/validate-2026-tools.js
