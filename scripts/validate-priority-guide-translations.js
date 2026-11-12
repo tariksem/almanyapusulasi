@@ -1,6 +1,6 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const entries=JSON.parse(fs.readFileSync('data/priority-guide-translations.json','utf8')).items;
-const allowed=new Set(['blue-card-suresiz-oturum','kindergeld','familienversicherung','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv']);
+const allowed=new Set(['blue-card-suresiz-oturum','kindergeld','familienversicherung','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung']);
 assert.deepEqual(new Set(Object.keys(entries)),allowed);
 for(const [slug,langs] of Object.entries(entries)){
  const turkish=fs.readFileSync(slug+'/index.html','utf8');
@@ -23,4 +23,4 @@ for(const [slug,langs] of Object.entries(entries)){
   }
  }
 }
-console.log('Priority translations QA passed: 5 complete source-aligned guides in two languages.');
+console.log('Priority translations QA passed: 8 complete source-aligned guides in two languages.');

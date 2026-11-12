@@ -561,6 +561,376 @@
           ]
         ]
       }
+    },
+    "almanya-vatandaslik-sartlari": {
+      "en": {
+        "title": "German Citizenship 2026: Naturalisation Requirements",
+        "description": "German citizenship in 2026: five years' residence, B1 German, naturalisation test, residence status, income and documents.",
+        "badge": "Citizenship · 2026",
+        "heading": "German Citizenship 2026: What Do You Need to Apply?",
+        "meta": "Checked against §10 and §9 StAG · 12 November 2026",
+        "intro": "Standard entitlement-based naturalisation under <strong>§10 StAG</strong> generally requires <strong>five years of lawful habitual residence</strong>, an eligible residence status, established identity, B1 German, knowledge of German law and society, financial self-sufficiency subject to legal exceptions, and other requirements. Five years alone do not guarantee citizenship.",
+        "sections": [
+          [
+            "1. The general residence period is five years",
+            "The accelerated three-year route introduced for especially well-integrated applicants was abolished on 30 October 2025. In 2026 the usual entitlement-based route therefore begins after at least five years of lawful habitual residence. Short holidays do not automatically interrupt habitual residence, but other absences and past immigration statuses can affect the calculation."
+          ],
+          [
+            "2. An eligible residence status",
+            "Not every temporary residence permit qualifies for naturalisation under §10 StAG. Permanent residence, the EU Blue Card and certain other eligible residence permits may qualify; some study or temporary-purpose permissions do not. Check the precise legal basis stated on your <em>Aufenthaltstitel</em> before applying."
+          ],
+          [
+            "3. Verified identity and nationality",
+            "The authority needs evidence of your identity and existing citizenship. A current passport is an important document; civil-status records such as birth or marriage certificates may also be required. Clarify missing or inconsistent documents early."
+          ],
+          [
+            "4. B1 German language skills",
+            "The general requirement is at least <strong>B1 German</strong> under the Common European Framework of Reference. A recognised examination certificate is one route, but suitable German school qualifications or certain integration-course records can also demonstrate the necessary level. <a href='/vatandaslik-dil-sarti-b1/' lang='tr' hreflang='tr'>Detailed B1 evidence guide (Turkish)</a>."
+          ],
+          [
+            "5. Naturalisation test or equivalent evidence",
+            "Knowledge of Germany's legal and social order is commonly demonstrated by the <em>Einbürgerungstest</em>. The standard test contains <strong>33 questions</strong>, lasts <strong>60 minutes</strong> and requires at least <strong>17 correct answers</strong>. Certain educational qualifications may replace the test."
+          ],
+          [
+            "6. Financial self-sufficiency",
+            "Section 10 StAG generally requires the applicant to support themselves and dependent family members without benefits under SGB II or SGB XII. The law contains specific exceptions, including certain employment histories and family situations. Eligibility cannot be determined by a single universal salary threshold."
+          ],
+          [
+            "7. Criminal record and constitutional commitments",
+            "Relevant criminal convictions can prevent naturalisation. Applicants must affirm Germany's free democratic constitutional order and the statutory commitments relating to the country's historical responsibility for National Socialist injustice, the protection of Jewish life, peaceful international relations and the prohibition of aggressive war."
+          ],
+          [
+            "Naturalisation as the spouse of a German citizen",
+            "Section 9 StAG provides a separate pathway for spouses and registered partners of German citizens. Under the usual conditions, three years of lawful residence and at least two years of marriage or partnership can be relevant. Most other substantive naturalisation requirements still apply. This is distinct from the abolished general three-year fast track."
+          ],
+          [
+            "Application checklist",
+            "<ul><li>At least five years of qualifying lawful habitual residence, unless a specific exception applies</li><li>Eligible residence permit under the relevant StAG provision</li><li>Identity and nationality records</li><li>B1 language evidence or recognised alternative</li><li>Naturalisation test or equivalent educational evidence</li><li>Income, household and living-cost documentation</li></ul>"
+          ],
+          [
+            "Related guides",
+            "<ul><li><a href='/vatandaslik/' lang='tr' hreflang='tr'>Citizenship overview (Turkish)</a></li><li><a href='/vatandaslik-basvurusu-belgeler/' lang='tr' hreflang='tr'>Application documents (Turkish)</a></li><li><a href='/einbuergerungstest-hazirlik/' lang='tr' hreflang='tr'>Naturalisation test preparation (Turkish)</a></li><li><a href='/cifte-vatandaslik-turkiye-almanya/' lang='tr' hreflang='tr'>Dual Turkish–German citizenship (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/stag/__10.html' target='_blank' rel='noopener'>StAG §10 — Standard naturalisation</a></li><li><a href='https://www.gesetze-im-internet.de/stag/__9.html' target='_blank' rel='noopener'>StAG §9 — Spouses of German citizens</a></li><li><a href='https://www.einbuergerung.de/service.php' target='_blank' rel='noopener'>Federal naturalisation information portal</a></li></ul><p>Your citizenship authority (<em>Staatsangehörigkeitsbehörde</em>) determines the outcome of your individual application.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Einbürgerung 2026: Voraussetzungen für die deutsche Staatsangehörigkeit",
+        "description": "Deutsche Staatsangehörigkeit 2026: fünf Jahre Aufenthalt, B1, Einbürgerungstest, Lebensunterhalt und Aufenthaltstitel.",
+        "badge": "Einbürgerung · 2026",
+        "heading": "Deutsche Staatsangehörigkeit 2026: Was brauchen Sie für den Antrag?",
+        "meta": "Nach §§9 und 10 StAG geprüft · 12. November 2026",
+        "intro": "Die Anspruchseinbürgerung nach <strong>§10 StAG</strong> setzt grundsätzlich <strong>fünf Jahre rechtmäßigen gewöhnlichen Aufenthalt</strong>, einen geeigneten Aufenthaltstitel, geklärte Identität, B1-Deutschkenntnisse, Kenntnisse der Rechts- und Gesellschaftsordnung, gesicherten Lebensunterhalt unter Berücksichtigung gesetzlicher Ausnahmen und weitere Voraussetzungen voraus. Der Zeitablauf allein führt nicht automatisch zur Einbürgerung.",
+        "sections": [
+          [
+            "1. Regelfrist: fünf Jahre",
+            "Die 2024 eingeführte Möglichkeit der Einbürgerung nach drei Jahren bei besonderen Integrationsleistungen wurde am 30. Oktober 2025 abgeschafft. Für die reguläre Anspruchseinbürgerung gilt 2026 deshalb grundsätzlich eine Mindestfrist von fünf Jahren rechtmäßigen gewöhnlichen Aufenthalts. Einzelne Abwesenheiten oder frühere Aufenthaltsstatus können die Berechnung beeinflussen."
+          ],
+          [
+            "2. Geeigneter Aufenthaltstitel",
+            "Nicht jeder befristete Aufenthaltstitel erfüllt §10 StAG. Eine Niederlassungserlaubnis, eine Blaue Karte EU oder andere dort berücksichtigte Aufenthaltstitel können die Voraussetzung erfüllen. Manche Aufenthalte zum Studium oder vorübergehenden Zwecken sind anders geregelt. Prüfen Sie die Rechtsgrundlage Ihres aktuellen Aufenthaltstitels."
+          ],
+          [
+            "3. Geklärte Identität und Staatsangehörigkeit",
+            "Die zuständige Behörde verlangt Nachweise zu Identität und Staatsangehörigkeit. Ein gültiger Reisepass ist ein wichtiges Dokument; Geburts-, Heirats- und weitere Personenstandsurkunden können ergänzend verlangt werden. Unklare Unterlagen sollten früh geklärt werden."
+          ],
+          [
+            "4. Deutschkenntnisse auf B1-Niveau",
+            "Im Regelfall sind Deutschkenntnisse mindestens auf <strong>B1-Niveau</strong> des Gemeinsamen Europäischen Referenzrahmens erforderlich. Neben anerkannten Sprachprüfungen können bestimmte Schulabschlüsse und Integrationskursnachweise akzeptiert werden. <a href='/vatandaslik-dil-sarti-b1/' lang='tr' hreflang='tr'>Ausführlicher B1-Ratgeber (Türkisch)</a>."
+          ],
+          [
+            "5. Einbürgerungstest oder gleichwertiger Nachweis",
+            "Kenntnisse der deutschen Rechts- und Gesellschaftsordnung werden häufig durch den <em>Einbürgerungstest</em> nachgewiesen. Der Standardtest umfasst <strong>33 Fragen</strong> in <strong>60 Minuten</strong>; mindestens <strong>17 richtige Antworten</strong> sind erforderlich. Geeignete Schul- oder Ausbildungsabschlüsse können den Nachweis teilweise ersetzen."
+          ],
+          [
+            "6. Sicherung des Lebensunterhalts",
+            "§10 StAG verlangt grundsätzlich, dass Antragstellende und unterhaltsberechtigte Familienmitglieder ohne Leistungen nach SGB II oder SGB XII leben können. Gesetzliche Ausnahmen kommen in bestimmten Erwerbstätigkeits- und Familienkonstellationen in Betracht. Die Prüfung kann nicht auf eine pauschale Einkommenszahl reduziert werden."
+          ],
+          [
+            "7. Straffreiheit und Bekenntnisse",
+            "Bestimmte strafrechtliche Verurteilungen können einbürgerungshindernd sein. Zusätzlich sind Bekenntnisse zur freiheitlichen demokratischen Grundordnung und zu Deutschlands historischer Verantwortung für nationalsozialistisches Unrecht, dem Schutz jüdischen Lebens, friedlichem Zusammenleben und dem Verbot des Angriffskrieges vorgesehen."
+          ],
+          [
+            "Einbürgerung bei deutscher Ehepartnerin oder deutschem Ehepartner",
+            "Für Ehegatten und eingetragene Lebenspartner deutscher Staatsangehöriger gilt §9 StAG. Unter den jeweiligen gesetzlichen Voraussetzungen können drei Jahre rechtmäßiger Aufenthalt und zwei Jahre bestehende Ehe beziehungsweise Partnerschaft ausreichen. Die wesentlichen weiteren Anforderungen bleiben bestehen. Dies ist nicht die 2025 abgeschaffte allgemeine Dreijahresregel."
+          ],
+          [
+            "Checkliste für den Antrag",
+            "<ul><li>Im Regelfall fünf Jahre rechtmäßiger gewöhnlicher Aufenthalt</li><li>Aufenthaltstitel, der die einschlägigen gesetzlichen Anforderungen erfüllt</li><li>Nachweise zur Identität und Staatsangehörigkeit</li><li>Sprachkenntnisse B1 oder anerkannter Ersatz</li><li>Einbürgerungstest oder geeigneter alternativer Nachweis</li><li>Einkommen, Haushalts- und Unterhaltsunterlagen</li></ul>"
+          ],
+          [
+            "Verwandte Ratgeber",
+            "<ul><li><a href='/vatandaslik/' lang='tr' hreflang='tr'>Einbürgerungsübersicht (Türkisch)</a></li><li><a href='/vatandaslik-basvurusu-belgeler/' lang='tr' hreflang='tr'>Antragsunterlagen (Türkisch)</a></li><li><a href='/einbuergerungstest-hazirlik/' lang='tr' hreflang='tr'>Einbürgerungstest (Türkisch)</a></li><li><a href='/cifte-vatandaslik-turkiye-almanya/' lang='tr' hreflang='tr'>Deutsch-türkische doppelte Staatsangehörigkeit (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/stag/__10.html' target='_blank' rel='noopener'>StAG §10 — Anspruchseinbürgerung</a></li><li><a href='https://www.gesetze-im-internet.de/stag/__9.html' target='_blank' rel='noopener'>StAG §9 — Deutsche Ehepartner</a></li><li><a href='https://www.einbuergerung.de/service.php' target='_blank' rel='noopener'>Einbürgerungsportal des Bundes</a></li></ul><p>Verbindlich entscheidet die zuständige Staatsangehörigkeitsbehörde über Ihren Einzelfall.</p>"
+          ]
+        ]
+      }
+    },
+    "almanyada-ausbildung": {
+      "en": {
+        "title": "Vocational Training (Ausbildung) in Germany 2026: Requirements and Visa",
+        "description": "Ausbildung Germany 2026: B1 German, company or school-based training, visa, age rules, €959 / €1,048 / €822 funding amounts and job search.",
+        "badge": "Vocational training · 2026",
+        "heading": "Ausbildung in Germany 2026: Requirements, Visas and Finding a Position",
+        "meta": "Official Make it in Germany figures checked: 12 November 2026",
+        "intro": "Vocational training (<em>Ausbildung</em>) is a major route to a professional qualification in Germany. Both company-based (dual) and school-based programmes exist. For many applicants from non-EU countries, a confirmed training place, adequate German and proof of financial support are central to a training visa.",
+        "sections": [
+          [
+            "Is there an upper age limit for starting Ausbildung?",
+            "There is <strong>no general maximum age</strong> for starting vocational training. However, a separate visa to <em>search</em> for a vocational training place has an <strong>under-35</strong> condition. Do not confuse the rules for starting training with the rules for a training-place search visa. For some older applicants, additional financial or pension-related visa requirements may apply."
+          ],
+          [
+            "Required German proficiency",
+            "As a general rule, German at <strong>B1</strong> level is expected because instruction, workplace communication and examinations mostly take place in German. Exceptions may apply where the training provider has assessed language proficiency or a preparatory course is planned. In practice, stronger skills approaching B2 can make training easier."
+          ],
+          [
+            "Proof of funds in 2026",
+            "For <strong>school-based training</strong>, the official minimum for 2026 is generally <strong>€959 net per month</strong>. For <strong>company-based training</strong>, an allowance of at least <strong>€1,048 gross or €822 net per month</strong> may be accepted as evidence of sufficient livelihood. A shortfall can be covered by a blocked account or formal declaration of commitment under the applicable rules."
+          ],
+          [
+            "Additional work during vocational training",
+            "Under the training residence provisions of §16a AufenthG, eligible people can generally take a separate part-time job of up to <strong>20 hours per week</strong>. Any job must also be compatible with the training schedule and employment terms."
+          ],
+          [
+            "If you have not yet found a training place",
+            "The separate training-place search visa under §17 AufenthG generally requires a qualifying school-leaving certificate, <strong>B1 German</strong>, being <strong>under 35</strong> and 2026 proof of funds of <strong>€1,091 per month</strong>. This visa can allow a search in Germany for up to <strong>nine months</strong>, employment of up to 20 hours per week and limited trial work."
+          ],
+          [
+            "After completing your Ausbildung",
+            "Following successful completion of qualified vocational training in Germany, pathways may exist to seek qualified employment and switch to an appropriate skilled-worker residence permit. Under additional conditions, completing vocational training and subsequently working in qualified employment can support a faster settlement-permit route."
+          ],
+          [
+            "Where can you find apprenticeship positions?",
+            "Search the Federal Employment Agency's <em>Jobsuche</em> and official <em>Make it in Germany</em> vacancies. Use relevant occupation names, regions and start dates when filtering. If professional recognition is needed, verify the route separately. <a href='/almanya-is-arama-siteleri/' lang='tr' hreflang='tr'>Job-search sites (Turkish)</a> and <a href='/diploma-denkligi-anabin-zab/' lang='tr' hreflang='tr'>recognition guide (Turkish)</a>."
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://www.make-it-in-germany.com/en/visa-residence/types/training' target='_blank' rel='noopener'>Make it in Germany — Vocational training visa</a></li><li><a href='https://www.make-it-in-germany.com/en/study-vocational-training/training-in-germany/requirements' target='_blank' rel='noopener'>Make it in Germany — Training requirements</a></li><li><a href='https://www.gesetze-im-internet.de/aufenthg_2004/__16a.html' target='_blank' rel='noopener'>Residence Act §16a</a></li></ul><p>Training allowances vary by occupation and year. The amounts quoted above are visa-related livelihood reference values for 2026, not general wage guarantees.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Ausbildung in Deutschland 2026: Voraussetzungen, Visum und Suche",
+        "description": "Ausbildung 2026: B1-Deutsch, betriebliche und schulische Ausbildung, 959 € / 1.048 € / 822 € Lebensunterhalt, Ausbildungsplatzsuche.",
+        "badge": "Ausbildung · 2026",
+        "heading": "Ausbildung in Deutschland 2026: Voraussetzungen, Visum und Ausbildungsplatz finden",
+        "meta": "Amtliche Werte auf Make it in Germany geprüft: 12. November 2026",
+        "intro": "Eine <em>Ausbildung</em> ist ein zentraler Weg zu einem Berufsabschluss in Deutschland. Möglich sind betriebliche (duale) und schulische Ausbildungen. Für Drittstaatsangehörige sind ein konkreter Ausbildungsplatz, ausreichende Deutschkenntnisse und die Sicherung des Lebensunterhalts meist besonders wichtig.",
+        "sections": [
+          [
+            "Gibt es für die Ausbildung eine Altersgrenze?",
+            "Für den <strong>Beginn einer Ausbildung gibt es grundsätzlich keine allgemeine Höchstaltersgrenze</strong>. Anders ist dies beim besonderen Visum zur <em>Suche</em> nach einem Ausbildungsplatz: Dort gilt in der Regel die Voraussetzung, das <strong>35. Lebensjahr noch nicht vollendet</strong> zu haben. Bei bestimmten älteren Antragstellenden können zusätzliche Anforderungen an Gehalt oder Altersvorsorge relevant sein."
+          ],
+          [
+            "Deutschniveau für eine Ausbildung",
+            "In der Regel sind Deutschkenntnisse mindestens auf <strong>B1-Niveau</strong> erforderlich, da Berufsschule, Betrieb und Prüfungen überwiegend auf Deutsch stattfinden. Ausnahmen können bestehen, wenn der Ausbildungsträger die Sprachkenntnisse bereits geprüft hat oder ein vorbereitender Sprachkurs vorgesehen ist. B2 erleichtert die praktische Ausbildung häufig."
+          ],
+          [
+            "Sicherung des Lebensunterhalts 2026",
+            "Bei einer <strong>schulischen Berufsausbildung</strong> müssen für 2026 im Regelfall mindestens <strong>959 € netto monatlich</strong> verfügbar sein. Bei einer <strong>betrieblichen Ausbildung</strong> kann eine Ausbildungsvergütung von mindestens <strong>1.048 € brutto beziehungsweise 822 € netto monatlich</strong> für die Lebensunterhaltssicherung ausreichen. Fehlbeträge können gegebenenfalls mit Sperrkonto oder Verpflichtungserklärung ausgeglichen werden."
+          ],
+          [
+            "Nebenbeschäftigung während der Ausbildung",
+            "Mit einem Aufenthaltstitel nach §16a AufenthG kann grundsätzlich eine von der Ausbildung unabhängige Nebentätigkeit von bis zu <strong>20 Stunden pro Woche</strong> erlaubt sein. Arbeitsvertrag, Ausbildungszeiten und sonstige Vorschriften bleiben zu beachten."
+          ],
+          [
+            "Wenn noch kein Ausbildungsplatz gefunden wurde",
+            "Das besondere Visum zur Ausbildungsplatzsuche nach §17 AufenthG erfordert im Regelfall einen geeigneten Schulabschluss, <strong>B1-Deutsch</strong>, ein Alter von <strong>unter 35 Jahren</strong> und 2026 einen Lebensunterhaltsnachweis über <strong>1.091 € monatlich</strong>. Die Suche kann bis zu <strong>neun Monate</strong> dauern. Bis zu 20 Stunden Nebenbeschäftigung pro Woche und begrenzte Probebeschäftigungen können möglich sein."
+          ],
+          [
+            "Nach dem Abschluss der Ausbildung",
+            "Nach erfolgreichem Abschluss einer qualifizierten Berufsausbildung können Wege zur Suche nach qualifizierter Beschäftigung und zum Wechsel in einen entsprechenden Aufenthaltstitel bestehen. Unter weiteren Voraussetzungen kann eine Ausbildung in Deutschland mit anschließender qualifizierter Beschäftigung auch einen erleichterten Weg zur Niederlassungserlaubnis eröffnen."
+          ],
+          [
+            "Wo findet man Ausbildungsstellen?",
+            "Nutzen Sie insbesondere die <em>Jobsuche</em> der Bundesagentur für Arbeit und Stellen auf <em>Make it in Germany</em>. Filtern Sie nach Berufsbezeichnung, Region und Ausbildungsbeginn. Gegebenenfalls sind Anerkennungsfragen vorab zu klären. <a href='/almanya-is-arama-siteleri/' lang='tr' hreflang='tr'>Jobportale (Türkisch)</a> und <a href='/diploma-denkligi-anabin-zab/' lang='tr' hreflang='tr'>Anerkennung (Türkisch)</a>."
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://www.make-it-in-germany.com/de/visum-anerkennung/visaarten/berufsausbildung' target='_blank' rel='noopener'>Make it in Germany — Visum zur Berufsausbildung</a></li><li><a href='https://www.make-it-in-germany.com/de/ausbildung-studium/ausbildung-in-deutschland/voraussetzungen' target='_blank' rel='noopener'>Make it in Germany — Voraussetzungen</a></li><li><a href='https://www.gesetze-im-internet.de/aufenthg_2004/__16a.html' target='_blank' rel='noopener'>AufenthG §16a</a></li></ul><p>Die Ausbildungsvergütung hängt von Beruf, Branche und Ausbildungsjahr ab. Die genannten Beträge sind Lebensunterhaltsrichtwerte für das Visum im Jahr 2026.</p>"
+          ]
+        ]
+      }
+    },
+    "almanya-adres-kaydi-anmeldung": {
+      "en": {
+        "title": "Anmeldung in Germany 2026: Registering Your Address Step by Step",
+        "description": "German Anmeldung: register your address within two weeks of moving in; Wohnungsgeberbestätigung, Bürgeramt appointments, documents and Steuer-ID.",
+        "badge": "Settling in · 2026",
+        "heading": "Anmeldung in Germany: How to Register Your Address",
+        "meta": "Checked against the Federal Registration Act (BMG §§17,19) · 12 November 2026",
+        "intro": "When you move into a home in Germany, the usual rule is to register your address with the local registration authority (<em>Meldebehörde</em> or <em>Bürgeramt</em>) within <strong>two weeks of actually moving in</strong>. The <strong>Wohnungsgeberbestätigung</strong> is one of the key required documents.",
+        "sections": [
+          [
+            "1. Who needs Anmeldung?",
+            "People moving into a dwelling in Germany generally need address registration. This includes people arriving from abroad and residents changing apartments within Germany. If you move within Germany, registering the new address normally updates the old address without a separate <em>Abmeldung</em>, although specific exceptions exist."
+          ],
+          [
+            "2. When does the two-week period begin?",
+            "Under §17 of the Federal Registration Act (<em>Bundesmeldegesetz</em>), the deadline starts on the date of <strong>actual move-in (Einzug)</strong>. Signing a rental agreement or receiving the keys does not necessarily mean you have moved in. Your Wohnungsgeberbestätigung should state the real move-in date."
+          ],
+          [
+            "3. What is a Wohnungsgeberbestätigung?",
+            "Under §19 BMG, the housing provider (<em>Wohnungsgeber</em>) must confirm the actual move-in. The confirmation usually records the provider's name and address, property address, date of moving in and the residents. The provider may be the landlord, authorised property manager or another authorised person. <strong>A tenancy contract by itself is not always sufficient</strong> for Anmeldung."
+          ],
+          [
+            "If the landlord does not provide the confirmation",
+            "Notify the competent Meldebehörde promptly if the required confirmation is not issued. Registering at an address where you do not genuinely live can have serious legal consequences."
+          ],
+          [
+            "4. Documents typically required",
+            "<ul><li>Valid passport or identity document</li><li>Municipal registration form (<em>Meldeschein</em>), if required</li><li>Wohnungsgeberbestätigung</li><li>Documents for family members registering together</li><li>Marriage or birth records where needed</li><li>Power of attorney (<em>Vollmacht</em>) and supporting documents for authorised representatives</li></ul><p>Requirements vary by municipality and may include translations of foreign civil-status documents.</p>"
+          ],
+          [
+            "5. How to book an appointment",
+            "Use the online booking service of your city's Bürgeramt or Meldebehörde. Appointments may fill quickly, so check for newly released dates. Book the earliest suitable appointment and keep confirmation of your booking."
+          ],
+          [
+            "What if there is no appointment within two weeks?",
+            "The legal deadline remains two weeks. Some municipalities may take evidence of timely appointment attempts into account, but this is not an automatic statutory exemption. Keep records of booking attempts and contact the office if necessary."
+          ],
+          [
+            "6. What happens during Anmeldung?",
+            "<ol><li>The clerk verifies identification and the housing provider's confirmation.</li><li>Your address, actual move-in date and personal details are entered in the register.</li><li>Family and civil-status information may be updated where required.</li><li>You receive a <strong>Meldebestätigung</strong> as confirmation.</li></ol>"
+          ],
+          [
+            "7. Why keep the Meldebestätigung?",
+            "This certificate proves the address registration. It may be useful for bank accounts, residence permits, employers, school or Kita applications, vehicle matters and contracts. Keep it safely, including a secure digital copy."
+          ],
+          [
+            "8. Does a Steuer-ID arrive after Anmeldung?",
+            "People registering in Germany for the first time may subsequently receive their personal tax identification number (<em>Steueridentifikationsnummer</em>) by post. If you already received one, moving does not create a new Steuer-ID; the identifier generally remains unchanged for life."
+          ],
+          [
+            "9. Anmeldung with children",
+            "Special rules under §17 BMG allocate responsibility for the registration of children younger than 16. Prepare children's passports and, where necessary, custody or representation documents. Notify school, Kita, Familienkasse and insurers when the address changes."
+          ],
+          [
+            "10. Can subtenants register an address?",
+            "If you genuinely live at the address and the housing provider confirms the move-in, Anmeldung may also be possible under a subletting agreement (<em>Untermiete</em>). The housing provider can sometimes be the main tenant. A genuine subtenancy must not be confused with a fabricated residence registration."
+          ],
+          [
+            "11. Hotels, temporary accommodation and short stays",
+            "Registration requirements may differ for short stays depending on your existing German registration and the length of accommodation. Hotel guest registration is not the same as normal address registration. Ask the local municipality about prolonged temporary accommodation."
+          ],
+          [
+            "12. Who else needs your new address?",
+            "<ul><li>Bank and credit card providers</li><li>Health and other insurers</li><li>Employer</li><li>Ausländerbehörde and residence-permit matters</li><li>Vehicle registration and vehicle insurer</li><li>Familienkasse and parental-benefit offices</li><li>Internet, energy and utility contracts</li><li>Rundfunkbeitrag (broadcasting contribution)</li></ul>"
+          ],
+          [
+            "13. Does the broadcasting contribution start automatically?",
+            "Registration data may be passed to the Beitragsservice, which may then contact you. If another member of the same household already pays the broadcasting contribution, you may need to provide their account number rather than paying a second time. <a href='/rundfunkbeitrag-nedir-nasil-odenir/' lang='tr' hreflang='tr'>Rundfunkbeitrag guide (Turkish)</a>."
+          ],
+          [
+            "14. Is Anmeldung the same as a residence permit?",
+            "No. Anmeldung records your residential address with the municipality. A residence permit (<em>Aufenthaltstitel</em>) is a separate immigration-law process. Address registration alone does not confer a right to reside in Germany."
+          ],
+          [
+            "15. Quick checklist",
+            "<ol><li>Record your actual move-in date.</li><li>Obtain the Wohnungsgeberbestätigung.</li><li>Check the local Bürgeramt's documents.</li><li>Book the earliest available appointment.</li><li>Gather the family's documents.</li><li>Keep your Meldebestätigung.</li><li>Watch for your tax identification number and administrative post.</li><li>Update banks, insurers, vehicle registration and contracts.</li></ol>"
+          ],
+          [
+            "Related guides",
+            "<ul><li><a href='/yerlesim/' lang='tr' hreflang='tr'>Settling in (Turkish)</a></li><li><a href='/en/almanyada-ev-kiralama-rehberi/'>Renting an apartment in Germany</a></li><li><a href='/steuer-id-vergi-kimlik-numarasi/' lang='tr' hreflang='tr'>Steuer-ID guide (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/bmg/__17.html' target='_blank' rel='noopener'>Bundesmeldegesetz §17 — Registration</a></li><li><a href='https://www.gesetze-im-internet.de/bmg/__19.html' target='_blank' rel='noopener'>Bundesmeldegesetz §19 — Housing provider confirmation</a></li><li><a href='https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99115005104000' target='_blank' rel='noopener'>Federal service portal — Register residence</a></li></ul><p>Local administrative procedures may differ. Check your city's official Bürgeramt guidance before the appointment.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Anmeldung 2026: Wohnsitz beim Bürgeramt anmelden",
+        "description": "Anmeldung in Deutschland: Zwei-Wochen-Frist ab Einzug, Wohnungsgeberbestätigung, Termin beim Bürgeramt, Meldebestätigung und Steuer-ID.",
+        "badge": "Ankommen & Wohnen · 2026",
+        "heading": "Anmeldung in Deutschland: So melden Sie Ihren Wohnsitz an",
+        "meta": "Anhand der §§17 und 19 Bundesmeldegesetz geprüft · 12. November 2026",
+        "intro": "Wer in Deutschland eine Wohnung bezieht, muss sich grundsätzlich innerhalb von <strong>zwei Wochen nach dem tatsächlichen Einzug</strong> bei der zuständigen Meldebehörde anmelden. Dafür wird regelmäßig die <strong>Wohnungsgeberbestätigung</strong> benötigt.",
+        "sections": [
+          [
+            "1. Wer muss sich anmelden?",
+            "Wer eine Wohnung bezieht, unterliegt grundsätzlich der Meldepflicht. Dies betrifft sowohl Zuzüge aus dem Ausland als auch Umzüge innerhalb Deutschlands. Bei einem innerdeutschen Umzug wird die bisherige Anschrift im Regelfall mit der Anmeldung beziehungsweise Ummeldung am neuen Wohnort aktualisiert; es bestehen Ausnahmen."
+          ],
+          [
+            "2. Wann beginnt die Zwei-Wochen-Frist?",
+            "Nach §17 Bundesmeldegesetz beginnt die Frist mit dem <strong>tatsächlichen Einzug</strong>, nicht zwingend bereits mit der Vertragsunterzeichnung oder Schlüsselübergabe. Das Einzugsdatum in der Wohnungsgeberbestätigung muss dem tatsächlichen Einzug entsprechen."
+          ],
+          [
+            "3. Was ist die Wohnungsgeberbestätigung?",
+            "Nach §19 BMG hat der Wohnungsgeber den Einzug zu bestätigen. Das Dokument enthält üblicherweise Name und Anschrift des Wohnungsgebers, Anschrift der Wohnung, Einzugsdatum und Namen der einziehenden Personen. Die Bestätigung kann etwa durch Vermieter, Hausverwaltung oder andere Berechtigte ausgestellt werden. <strong>Ein Mietvertrag allein ersetzt die Wohnungsgeberbestätigung nicht in jedem Fall.</strong>"
+          ],
+          [
+            "Wenn die Bestätigung nicht ausgestellt wird",
+            "Teilen Sie der zuständigen Meldebehörde rechtzeitig mit, wenn die erforderliche Wohnungsgeberbestätigung nicht erteilt wird. Eine Anmeldung an einer Adresse ohne tatsächlichen Wohnsitz kann erhebliche rechtliche Folgen haben."
+          ],
+          [
+            "4. Welche Unterlagen werden meistens benötigt?",
+            "<ul><li>Gültiger Reisepass oder Personalausweis</li><li>Kommunales Meldeformular, soweit erforderlich</li><li>Wohnungsgeberbestätigung</li><li>Ausweise beziehungsweise Reisepässe mitziehender Familienmitglieder</li><li>Gegebenenfalls Geburts- und Heiratsurkunden</li><li>Bei Vertretung Vollmacht und weitere Nachweise</li></ul><p>Die konkrete Liste unterscheidet sich zwischen Kommunen; ausländische Personenstandsurkunden können zusätzliche Nachweise oder Übersetzungen erfordern.</p>"
+          ],
+          [
+            "5. Wie erhält man einen Termin?",
+            "Nutzen Sie das amtliche Online-Terminportal des Bürgeramts beziehungsweise der Meldebehörde. In größeren Städten können Termine schnell vergeben sein. Suchen Sie früh nach freien Terminen und bewahren Sie die Reservierungsbestätigung auf."
+          ],
+          [
+            "Wenn innerhalb von zwei Wochen kein Termin frei ist",
+            "Die gesetzliche Frist beträgt weiterhin zwei Wochen. Einzelne Behörden können dokumentierte rechtzeitige Terminbemühungen berücksichtigen; dies ist aber keine automatische gesetzliche Ausnahme. Buchen Sie den frühestmöglichen Termin und kontaktieren Sie bei Bedarf die Behörde."
+          ],
+          [
+            "6. Was geschieht beim Anmeldungstermin?",
+            "<ol><li>Identitätsdokumente und Wohnungsgeberbestätigung werden geprüft.</li><li>Anschrift, Einzugsdatum und persönliche Daten werden im Melderegister erfasst.</li><li>Erforderliche Familien- oder Personenstandsdaten werden ergänzt.</li><li>Im Anschluss erhalten Sie eine <strong>Meldebestätigung</strong>.</li></ol>"
+          ],
+          [
+            "7. Warum sollte man die Meldebestätigung aufbewahren?",
+            "Die Meldebestätigung weist die Registrierung der Wohnanschrift nach. Sie kann bei Banken, Aufenthaltsverfahren, Arbeitgebern, Schule/Kita, Fahrzeugangelegenheiten und Verträgen benötigt werden. Bewahren Sie auch eine gesicherte digitale Kopie auf."
+          ],
+          [
+            "8. Kommt nach der Anmeldung die Steuer-ID?",
+            "Bei erstmaliger Anmeldung in Deutschland können die Daten an die Finanzverwaltung weitergeleitet werden, sodass die persönliche <em>Steueridentifikationsnummer</em> später per Post zugestellt wird. Bei einem späteren Umzug wird keine neue Steuer-ID vergeben."
+          ],
+          [
+            "9. Anmeldung mit Kindern",
+            "Für Kinder unter 16 Jahren regelt §17 BMG die Zuständigkeit zur Anmeldung besonders. Bereiten Sie Ausweise und gegebenenfalls Sorgerechts- beziehungsweise Vertretungsnachweise vor. Nach dem Umzug können Adressänderungen bei Schule, Kita, Familienkasse und Krankenkasse erforderlich sein."
+          ],
+          [
+            "10. Anmeldung bei Untermiete",
+            "Wenn Sie tatsächlich unter der Anschrift wohnen und der Wohnungsgeber den Einzug bestätigt, kann eine Anmeldung auch bei Untermiete möglich sein. In bestimmten Fällen ist der Hauptmieter Wohnungsgeber. Eine echte Untermiete ist von einer unzulässigen Scheinanmeldung zu unterscheiden."
+          ],
+          [
+            "11. Hotel, vorübergehende Unterkunft und Kurzaufenthalt",
+            "Bei vorübergehenden Aufenthalten können abhängig von bestehender Anmeldung und Aufenthaltsdauer Sonderregeln gelten. Die Hotelmeldesystematik ersetzt nicht automatisch die Wohnsitzanmeldung. Fragen Sie bei längeren Zwischenaufenthalten die zuständige Meldebehörde."
+          ],
+          [
+            "12. Wem sollte man die neue Anschrift mitteilen?",
+            "<ul><li>Banken und Kreditkartenanbieter</li><li>Kranken- und andere Versicherungen</li><li>Arbeitgeber</li><li>Ausländerbehörde und aufenthaltsrechtliche Stellen</li><li>Kfz-Zulassung und Kfz-Versicherung</li><li>Familienkasse und Elterngeldstelle</li><li>Internet-, Strom-, Gas- und weitere Vertragspartner</li><li>Beitragsservice für Rundfunkbeitrag</li></ul>"
+          ],
+          [
+            "13. Beginnt der Rundfunkbeitrag automatisch?",
+            "Meldedaten können dem Beitragsservice übermittelt werden, sodass Sie Post erhalten. Wenn bereits eine Person im Haushalt den Rundfunkbeitrag zahlt, kann die bestehende Beitragsnummer angegeben werden, statt eine weitere Zahlung für dieselbe Wohnung einzurichten. <a href='/rundfunkbeitrag-nedir-nasil-odenir/' lang='tr' hreflang='tr'>Rundfunkbeitrag-Ratgeber (Türkisch)</a>."
+          ],
+          [
+            "14. Ist die Anmeldung ein Aufenthaltstitel?",
+            "Nein. Die Anmeldung ist die Registrierung der Wohnanschrift bei der Kommune. Ein Aufenthaltstitel ist ein eigener ausländerrechtlicher Vorgang. Durch die Anmeldung allein entsteht kein Aufenthaltsrecht."
+          ],
+          [
+            "15. Kompakte Checkliste",
+            "<ol><li>Tatsächliches Einzugsdatum notieren.</li><li>Wohnungsgeberbestätigung besorgen.</li><li>Unterlagenliste beim Bürgeramt prüfen.</li><li>Frühestmöglichen Termin buchen.</li><li>Dokumente für die Familie vorbereiten.</li><li>Meldebestätigung sicher aufbewahren.</li><li>Steuer-ID und behördliche Schreiben beachten.</li><li>Adressänderungen bei Banken, Versicherungen, Fahrzeug und Verträgen durchführen.</li></ol>"
+          ],
+          [
+            "Verwandte Ratgeber",
+            "<ul><li><a href='/yerlesim/' lang='tr' hreflang='tr'>Ankommen in Deutschland (Türkisch)</a></li><li><a href='/de/almanyada-ev-kiralama-rehberi/'>Wohnung mieten in Deutschland</a></li><li><a href='/steuer-id-vergi-kimlik-numarasi/' lang='tr' hreflang='tr'>Steuer-ID (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/bmg/__17.html' target='_blank' rel='noopener'>Bundesmeldegesetz §17 — Meldepflicht</a></li><li><a href='https://www.gesetze-im-internet.de/bmg/__19.html' target='_blank' rel='noopener'>Bundesmeldegesetz §19 — Wohnungsgeber</a></li><li><a href='https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99115005104000' target='_blank' rel='noopener'>Bundesportal — Wohnsitz anmelden</a></li></ul><p>Kommunale Verfahren können abweichen. Prüfen Sie die Vorgaben Ihrer örtlichen Meldebehörde.</p>"
+          ]
+        ]
+      }
     }
   }
 }

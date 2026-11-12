@@ -9,7 +9,7 @@ const editorialState=n=>{const slug=new URL(n.url).pathname.split('/').filter(Bo
 
 const files=cp.execSync('git ls-files',{encoding:'utf8'}).trim().split(/\r?\n/);
 // Generated and reviewed translations are produced before discovery; include them in sitemap.
-const generatedLocales=['en','de'].flatMap(lang=>['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv'].map(slug=>lang+'/'+slug+'/index.html'));
+const generatedLocales=['en','de'].flatMap(lang=>['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung'].map(slug=>lang+'/'+slug+'/index.html'));
 for(const file of generatedLocales){if(!fs.existsSync(file))throw new Error('Missing generated translated page: '+file);if(!files.includes(file))files.push(file);}
 
 const changed=new Set(cp.execSync('git diff --name-only HEAD',{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim().split(/\r?\n/));

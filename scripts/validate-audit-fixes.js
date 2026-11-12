@@ -1,7 +1,7 @@
 const fs=require('node:fs'),cp=require('node:child_process'),vm=require('node:vm'),assert=require('node:assert/strict');
 const SITE='https://almanyapusulasi.de';
 const files=cp.execSync('git ls-files',{encoding:'utf8'}).trim().split(/\r?\n/).filter(p=>p==='index.html'||p.endsWith('/index.html'));
-for(const lang of ['en','de'])for(const slug of ['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv'])files.push(lang+'/'+slug+'/index.html');
+for(const lang of ['en','de'])for(const slug of ['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung'])files.push(lang+'/'+slug+'/index.html');
 const redirects=new Set(Object.keys(JSON.parse(fs.readFileSync('scripts/redirect-map.json','utf8'))));
 const expected=new Set();let blocks=0,scripts=0;
 for(const file of files){
