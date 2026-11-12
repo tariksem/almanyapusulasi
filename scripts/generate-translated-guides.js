@@ -8,7 +8,7 @@ const pages={
       badge:"EU Blue Card · 2026 decision guide",
       h1:"EU Blue Card Germany 2026: Are you eligible?",
       intro:"Do not evaluate a Blue Card application on salary alone. Contract length, qualifications or IT experience, matching employment, professional authorisation and the correct salary threshold must all be checked.",
-      cta:"Check eligibility (Turkish tool)",alt:"Review my salary offer (Turkish guide)",
+      cta:"Check eligibility",alt:"Review my salary offer (Turkish guide)",
       quick:"The answer in 30 seconds",
       facts:["Standard annual gross salary: <strong>€50,700</strong>","Eligible reduced salary threshold: <strong>€45,934.20</strong>","Specific job offer for at least <strong>six months</strong>","Certain <strong>IT professionals</strong> can qualify without a degree","Settlement permit potentially after <strong>27 months / 21 months with B1</strong>"],
       toc:"In this guide",
@@ -27,7 +27,7 @@ const pages={
         "<ul><li><a href=\"https://www.make-it-in-germany.com/en/visa-residence/types/eu-blue-card\" target=\"_blank\" rel=\"noopener\">Make it in Germany — EU Blue Card</a></li><li><a href=\"https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html\" target=\"_blank\" rel=\"noopener\">German Residence Act §18g</a></li></ul>"
       ],
       updated:"Reviewed against official guidance on 12 November 2026. This page is general guidance; only the competent authority can issue a binding decision.",
-      turkish:"Detailed tool available in Turkish",salary:"2026 salary thresholds"
+      turkish:"Eligibility calculator",salary:"2026 salary thresholds"
     },
     de:{
       title:"Blaue Karte EU 2026: Voraussetzungen, Gehalt und Niederlassung",
@@ -35,7 +35,7 @@ const pages={
       badge:"Blaue Karte EU · Entscheidungsratgeber 2026",
       h1:"Blaue Karte EU 2026: Erfüllen Sie die Voraussetzungen?",
       intro:"Nicht allein das Gehalt entscheidet. Vertragslaufzeit, Qualifikation oder IT-Erfahrung, Bezug der Beschäftigung zur Qualifikation, Berufszulassung und die zutreffende Gehaltsgrenze müssen geprüft werden.",
-      cta:"Voraussetzungen prüfen (Rechner auf Türkisch)",alt:"Gehaltsangebot prüfen (Türkischer Ratgeber)",
+      cta:"Voraussetzungen prüfen",alt:"Gehaltsangebot prüfen (Türkischer Ratgeber)",
       quick:"Das Wichtigste in 30 Sekunden",
       facts:["Reguläre Jahresbruttogrenze: <strong>50.700 €</strong>","Ermäßigte Grenze für berechtigte Fälle: <strong>45.934,20 €</strong>","Konkretes Arbeitsangebot für mindestens <strong>sechs Monate</strong>","Bestimmte <strong>IT-Fachkräfte</strong> können sich ohne Abschluss qualifizieren","Niederlassungserlaubnis unter Umständen nach <strong>27 Monaten / mit B1 nach 21 Monaten</strong>"],
       toc:"In diesem Ratgeber",
@@ -54,14 +54,14 @@ const pages={
         "<ul><li><a href=\"https://www.make-it-in-germany.com/de/visum-aufenthalt/arten/blaue-karte-eu\" target=\"_blank\" rel=\"noopener\">Make it in Germany — Blaue Karte EU</a></li><li><a href=\"https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html\" target=\"_blank\" rel=\"noopener\">Aufenthaltsgesetz §18g</a></li></ul>"
       ],
       updated:"Am 12. November 2026 anhand amtlicher Informationen geprüft. Dieser Ratgeber dient der Orientierung; verbindlich entscheidet die zuständige Behörde.",
-      turkish:"Ausführlicher Rechner auf Türkisch",salary:"Gehaltsgrenzen 2026"
+      turkish:"Eignungsrechner",salary:"Gehaltsgrenzen 2026"
     }
   },
   "chancenkarte-firsat-karti":{
     en:{
       title:"Germany Opportunity Card 2026: Eligibility, Points and Funds",desc:"Complete Chancenkarte guide: recognised qualification or six points, €1,091 monthly funds in 2026, up to 20 hours of part-time work and trial jobs.",
       badge:"Opportunity Card · 2026 guide",h1:"Chancenkarte 2026: Germany's Opportunity Card and the six-point route",intro:"The Opportunity Card (§20a AufenthG) lets eligible non-EU nationals enter Germany to look for work without a prior qualified job offer. Two routes are available: a qualification fully recognised in Germany or the points-based route with at least six points.",
-      cta:"Calculate my points (Turkish tool)",alt:"See recognition guide (Turkish)",quick:"Key facts at a glance",
+      cta:"Calculate my points",alt:"See recognition guide (Turkish)",quick:"Key facts at a glance",
       facts:["Route 1: <strong>fully recognised qualification</strong>","Route 2: <strong>at least six points</strong>, plus basic requirements","2026 funds: usually <strong>€1,091 net per month</strong>","Part-time work: <strong>up to 20 hours per week</strong>","Initial job-search card: <strong>up to one year</strong>"],
       toc:"In this guide",
       heads:["Who is the Opportunity Card for?","Path 1: Qualification recognised in Germany","Path 2: The six-point system","Proof of funds in 2026","Working and trial jobs while job hunting","How long can you stay?","Why Anabin and ZAB matter","Official sources and important limits"],
@@ -76,12 +76,12 @@ const pages={
         "<ul><li><a href=\"https://www.make-it-in-germany.com/en/visa-residence/opportunity-card/job-search\" target=\"_blank\" rel=\"noopener\">Make it in Germany — Job-search Opportunity Card</a></li><li><a href=\"https://www.gesetze-im-internet.de/aufenthg_2004/__20a.html\" target=\"_blank\" rel=\"noopener\">Residence Act §20a</a></li></ul><p>The point threshold does not replace the minimum qualification, language and financial requirements.</p>"
       ],
       updated:"Reviewed against official information on 12 November 2026. Check changes in requirements before applying.",
-      turkish:"Points calculator available in Turkish",salary:"2026 financial requirements"
+      turkish:"Opportunity Card points calculator",salary:"2026 financial requirements"
     },
     de:{
       title:"Chancenkarte 2026: Voraussetzungen, Punkte und Finanzierung",desc:"Chancenkarte 2026: anerkannte Qualifikation oder sechs Punkte, 1.091 € monatliche Finanzierung, 20-Stunden-Nebenjob und Probearbeit.",
       badge:"Chancenkarte · Ratgeber 2026",h1:"Chancenkarte 2026: So funktionieren die zwei Wege und das Punktesystem",intro:"Die Chancenkarte nach §20a AufenthG ermöglicht berechtigten Drittstaatsangehörigen die Arbeitssuche in Deutschland auch ohne bereits vorliegendes qualifiziertes Arbeitsplatzangebot. Möglich sind der Weg über eine in Deutschland anerkannte Qualifikation oder der Weg mit mindestens sechs Punkten.",
-      cta:"Punkte berechnen (Rechner auf Türkisch)",alt:"Anerkennung prüfen (Türkischer Ratgeber)",quick:"Die wichtigsten Fakten",
+      cta:"Punkte berechnen",alt:"Anerkennung prüfen (Türkischer Ratgeber)",quick:"Die wichtigsten Fakten",
       facts:["Weg 1: <strong>vollständig anerkannte Qualifikation</strong>","Weg 2: <strong>mindestens sechs Punkte</strong> plus Grundvoraussetzungen","Lebensunterhalt 2026: grundsätzlich <strong>1.091 € netto monatlich</strong>","Nebentätigkeit: <strong>bis zu 20 Stunden pro Woche</strong>","Chancenkarte zur Arbeitssuche: <strong>bis zu ein Jahr</strong>"],
       toc:"In diesem Ratgeber",
       heads:["Für wen eignet sich die Chancenkarte?","Weg 1: In Deutschland anerkannte Qualifikation","Weg 2: Mindestens sechs Punkte","Nachweis des Lebensunterhalts 2026","Nebenjob und Probearbeit während der Suche","Wie lange ist die Chancenkarte gültig?","Welche Rolle spielen Anabin und ZAB?","Amtliche Quellen und wichtige Hinweise"],
@@ -96,7 +96,7 @@ const pages={
         "<ul><li><a href=\"https://www.make-it-in-germany.com/de/visum-aufenthalt/chancenkarte/chancenkarte-zur-jobsuche\" target=\"_blank\" rel=\"noopener\">Make it in Germany — Chancenkarte</a></li><li><a href=\"https://www.gesetze-im-internet.de/aufenthg_2004/__20a.html\" target=\"_blank\" rel=\"noopener\">AufenthG §20a</a></li></ul><p>Die sechs Punkte ersetzen nicht die Voraussetzungen für Qualifikation, Sprache und Finanzierung.</p>"
       ],
       updated:"Am 12. November 2026 anhand amtlicher Informationen überprüft. Informieren Sie sich vor Antragstellung über aktuelle Anforderungen.",
-      turkish:"Punkterechner derzeit auf Türkisch",salary:"Finanzierung 2026"
+      turkish:"Chancenkarte-Punkterechner",salary:"Finanzierung 2026"
     }
   }
 
@@ -105,12 +105,12 @@ const SITE="https://almanyapusulasi.de";
 function render(lang,slug,d){
  const path="/"+lang+"/"+slug+"/";
  const base=SITE+path;
- const tool=slug==="blue-card"?"/blue-card-uygunluk-kontrolu-2026/":"/chancenkarte-puan-hesaplayici-2026/";
+ const tool="/"+lang+"/"+(slug==="blue-card"?"blue-card-uygunluk-kontrolu-2026":"chancenkarte-puan-hesaplayici-2026")+"/";
  const salary=slug==="blue-card"?"/blue-card-maas-sarti/":"/diploma-denkligi-anabin-zab/";
  const toc=d.heads.map((h,i)=>'<a href="#section-'+(i+1)+'">'+h+'</a>').join("");
  const sections=d.heads.map((h,i)=>'<h2 id="section-'+(i+1)+'">'+h+'</h2><div>'+d.paragraphs[i]+'</div>').join("");
  const alternate='<link rel="alternate" hreflang="tr" href="'+SITE+'/'+slug+'/"><link rel="alternate" hreflang="en" href="'+SITE+'/en/'+slug+'/"><link rel="alternate" hreflang="de" href="'+SITE+'/de/'+slug+'/">';
- return '<!DOCTYPE html><html lang="'+lang+'"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>'+d.title+'</title><meta name="description" content="'+d.desc+'"><link rel="canonical" href="'+base+'">'+alternate+'<link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/v42-preview.css"><script defer src="/assets/js/analytics-consent.js"></script></head><body class="v41-preview v42-preview page-rehber"><header class="site-header"></header><main><section class="hero"><div class="container hero-grid"><div><span class="badge">'+d.badge+'</span><h1>'+d.h1+'</h1><p>'+d.intro+'</p><div class="hero-actions"><a class="btn btn-primary" href="'+tool+'" lang="tr" hreflang="tr">'+d.cta+' →</a><a class="btn btn-secondary" href="'+salary+'" lang="tr" hreflang="tr">'+d.alt+'</a></div></div><div class="trust-card"><h3>'+d.quick+'</h3><ul class="trust-list">'+d.facts.map(f=>'<li>'+f+'</li>').join('')+'</ul></div></div></section><section class="section"><div class="container"><div class="reading-body"><div class="v42-page-label">'+d.toc+'</div>'+sections+'<div class="info-box">'+d.updated+'</div><div class="info-box">'+d.turkish+': <a href="'+tool+'" lang="tr" hreflang="tr">'+d.cta+'</a></div></div><aside class="v41-toc" aria-label="'+d.toc+'"><b>'+d.toc+'</b>'+toc+'</aside></div></section></main><footer class="footer"></footer></body></html>';
+ return '<!DOCTYPE html><html lang="'+lang+'"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>'+d.title+'</title><meta name="description" content="'+d.desc+'"><link rel="canonical" href="'+base+'">'+alternate+'<link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/v42-preview.css"><script defer src="/assets/js/analytics-consent.js"></script></head><body class="v41-preview v42-preview page-rehber"><header class="site-header"></header><main><section class="hero"><div class="container hero-grid"><div><span class="badge">'+d.badge+'</span><h1>'+d.h1+'</h1><p>'+d.intro+'</p><div class="hero-actions"><a class="btn btn-primary" href="'+tool+'">'+d.cta+' →</a><a class="btn btn-secondary" href="'+salary+'" lang="tr" hreflang="tr">'+d.alt+'</a></div></div><div class="trust-card"><h3>'+d.quick+'</h3><ul class="trust-list">'+d.facts.map(f=>'<li>'+f+'</li>').join('')+'</ul></div></div></section><section class="section"><div class="container"><div class="reading-body"><div class="v42-page-label">'+d.toc+'</div>'+sections+'<div class="info-box">'+d.updated+'</div><div class="info-box">'+d.turkish+': <a href="'+tool+'">'+d.cta+'</a></div></div><aside class="v41-toc" aria-label="'+d.toc+'"><b>'+d.toc+'</b>'+toc+'</aside></div></section></main><footer class="footer"></footer></body></html>';
 }
 for(const [slug,translations] of Object.entries(pages)){
  for(const [lang,d] of Object.entries(translations)){
