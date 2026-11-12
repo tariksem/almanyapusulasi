@@ -25,6 +25,8 @@ jobs:
         run: |
           node scripts/prepare-news-photos.js --download
           node scripts/generate-translated-guides.js
+          node scripts/generate-translated-calculators.js
+          node scripts/validate-translated-calculators.js
           node --check assets/js/i18n-core.js
           node --check assets/js/i18n-ui.js
           node scripts/validate-translated-guides.js
@@ -115,7 +117,7 @@ jobs:
           mkdir -p dist
           git ls-files -z | rsync -a --from0 --files-from=- ./ dist/
           mkdir -p dist/en dist/de
-          for lang in en de; do for slug in blue-card chancenkarte-firsat-karti; do mkdir -p "dist/$lang/$slug"; cp "$lang/$slug/index.html" "dist/$lang/$slug/index.html"; done; done
+          for lang in en de; do for slug in blue-card chancenkarte-firsat-karti blue-card-uygunluk-kontrolu-2026 chancenkarte-puan-hesaplayici-2026; do mkdir -p "dist/$lang/$slug"; cp "$lang/$slug/index.html" "dist/$lang/$slug/index.html"; done; done
           rm -rf dist/.github dist/scripts dist/data
           mkdir -p dist/data
           cp data/almanya-2026-esikler.json dist/data/almanya-2026-esikler.json

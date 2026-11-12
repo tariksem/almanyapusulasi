@@ -1,0 +1,33 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const core=require('../assets/js/localized-tool-engine.js');
+assert.equal(core.BLUE_REGULAR,50700);
+assert.equal(core.BLUE_REDUCED,45934.2);
+let b=core.blueEligibility({salary:60000,duration:'yes',route:'degree',match:'yes',low:'general',regulated:'no',itexp:'yes'});
+assert.equal(b.status,'ok');assert.deepEqual(b.blockers,[]);assert.equal(b.threshold,50700);
+b=core.blueEligibility({salary:50000,duration:'yes',route:'degree',match:'yes',low:'general',regulated:'no',itexp:'yes'});
+assert.ok(b.blockers.includes('salary'));assert.equal(b.threshold,50700);
+b=core.blueEligibility({salary:50000,duration:'yes',route:'degree',match:'yes',low:'shortage',regulated:'no',itexp:'yes'});
+assert.equal(b.status,'warn');assert.equal(b.baRequired,true);
+b=core.blueEligibility({salary:46000,duration:'yes',route:'it',match:'yes',low:'general',regulated:'no',itexp:'no'});
+assert.ok(b.blockers.includes('qualification'));
+let c=core.chanceEligibility({recognized:'yes',formal:'no',baseLanguage:'no',finance:'yes'});
+assert.equal(c.status,'ok');assert.deepEqual(c.blockers,[]);
+c=core.chanceEligibility({recognized:'no',formal:'yes',baseLanguage:'yes',finance:'yes',partial:4,shortage:0,exp:2,de:0,en:0,age:0,stay:0,partner:0});
+assert.equal(c.points,6);assert.equal(c.status,'ok');
+c=core.chanceEligibility({recognized:'no',formal:'yes',baseLanguage:'no',finance:'yes',partial:4,shortage:0,exp:0,de:0,en:0,age:0,stay:0,partner:0});
+assert.ok(c.blockers.includes('baseLanguage'));assert.ok(c.blockers.includes('points'));
+const expected={blue:['salary','duration','route','match','low','regulated','itexp'],chance:['recognized','formal','baseLanguage','finance','partial','shortage','exp','de','en','age','stay','partner']};
+for(const lang of ['en','de'])for(const [tool,slug] of [['blue','blue-card-uygunluk-kontrolu-2026'],['chance','chancenkarte-puan-hesaplayici-2026']]){
+ const file=lang+'/'+slug+'/index.html';
+ const html=fs.readFileSync(file,'utf8');
+ assert.match(html,new RegExp('<html lang="'+lang+'">'));
+ assert.ok(html.includes('<form id="ap-i18n-tool-form" data-tool="'+tool+'"'),file+' form');
+ assert.ok(html.includes('src="/assets/js/localized-tool-engine.js"'),file+' engine');
+ for(const field of expected[tool])assert.ok(html.includes('id="'+field+'"'),file+' '+field);
+ const controls=[...html.matchAll(/<(?:input|select) id="([^"]+)"/g)];
+ assert.equal(controls.length,expected[tool].length,file+' field count');
+ assert.ok(html.includes('hreflang="tr"')&&html.includes('hreflang="en"')&&html.includes('hreflang="de"'),file+' SEO');
+ assert.ok(html.includes('role=')||html.includes('aria-live="polite"'),file+' result announcement');
+ assert.ok(!html.includes('Uygunluğumu analiz et'),file+' untranslated button');
+}
+console.log('Four localized calculators: input parity and scenario tests passed.');
