@@ -31,6 +31,9 @@ jobs:
           node --check assets/js/i18n-ui.js
           node scripts/validate-translated-guides.js
           node scripts/generate-discovery.js
+          node --check scripts/generate-home-parity.js
+          node scripts/generate-home-parity.js
+          node --check assets/js/local-home-search.js
           node scripts/validate-news-editorial.js
           node scripts/validate-audit-fixes.js
           node scripts/validate-v42-cohesion.mjs
@@ -116,6 +119,8 @@ jobs:
           rm -rf dist
           mkdir -p dist
           git ls-files -z | rsync -a --from0 --files-from=- ./ dist/
+          cp en/index.html dist/en/index.html
+          cp de/index.html dist/de/index.html
           mkdir -p dist/en dist/de
           for lang in en de; do for slug in blue-card chancenkarte-firsat-karti blue-card-uygunluk-kontrolu-2026 chancenkarte-puan-hesaplayici-2026; do mkdir -p "dist/$lang/$slug"; cp "$lang/$slug/index.html" "dist/$lang/$slug/index.html"; done; done
           rm -rf dist/.github dist/scripts dist/data
