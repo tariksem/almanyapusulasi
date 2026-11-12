@@ -20,6 +20,19 @@
   racismStyle.textContent='.site-nav-link[href="/almanyada-irkcilik/"]{background:#fff1f2;color:#b42318;border:1px solid #fecdd3;font-weight:850}.site-nav-link[href="/almanyada-irkcilik/"]:hover,.site-nav-link[href="/almanyada-irkcilik/"].is-active{background:#b42318!important;color:#fff!important;border-color:#b42318;box-shadow:0 6px 16px rgba(180,35,24,.18)}.mega-link[href="/almanyada-irkcilik/"]{background:#fff7f7;border-color:#fecaca}.mega-link[href="/almanyada-irkcilik/"] .mega-icon{background:#fee2e2}.mega-link[href="/almanyada-irkcilik/"] strong{color:#b42318}.mega-link[href="/almanyada-irkcilik/"]:hover,.mega-link[href="/almanyada-irkcilik/"].is-active{background:#fff1f2;border-color:#ef4444}';
   document.head.appendChild(racismStyle);
 
+  // Language support is loaded by the common shell on every page.
+  const localeCss=document.createElement("link");
+  localeCss.rel="stylesheet";localeCss.href="/assets/i18n.css";
+  document.head.appendChild(localeCss);
+  const coreScript=document.createElement("script");
+  coreScript.src="/assets/js/i18n-core.js";
+  coreScript.onload=()=>{
+    const uiScript=document.createElement("script");
+    uiScript.src="/assets/js/i18n-ui.js";
+    document.head.appendChild(uiScript);
+  };
+  document.head.appendChild(coreScript);
+
   const shareScript=document.createElement("script");
   shareScript.defer=true;
   shareScript.src="/assets/js/share.js";
@@ -312,8 +325,14 @@
     const banner=document.createElement("div");
     banner.className="cookie-banner";
     banner.setAttribute("role","region");
-    banner.setAttribute("aria-label","Çerez ve gizlilik tercihleri");
-    banner.innerHTML='<div class="cookie-banner-inner"><div><strong>Gizlilik ayarları</strong><p>Google Analytics yalnızca izninizle yüklenir. <a href="/privacy/">Gizlilik Politikası</a></p></div><div class="cookie-actions"><button class="btn btn-secondary cookie-reject">Yalnızca gerekli</button><button class="btn btn-primary cookie-accept">Analize izin ver</button></div></div>';
+    const locale=location.pathname.startsWith("/en/")?"en":location.pathname.startsWith("/de/")?"de":"tr";
+    const privacyText={
+      tr:{name:"Çerez ve gizlilik tercihleri",title:"Gizlilik ayarları",message:"Google Analytics yalnızca izninizle yüklenir.",link:"Gizlilik Politikası",reject:"Yalnızca gerekli",accept:"Analize izin ver"},
+      en:{name:"Cookie and privacy preferences",title:"Privacy settings",message:"Google Analytics is loaded only with your consent.",link:"Privacy policy (Turkish)",reject:"Necessary only",accept:"Allow analytics"},
+      de:{name:"Cookie- und Datenschutzeinstellungen",title:"Datenschutzeinstellungen",message:"Google Analytics wird nur mit Ihrer Einwilligung geladen.",link:"Datenschutzerklärung (Türkisch)",reject:"Nur notwendige",accept:"Analyse erlauben"}
+    }[locale];
+    banner.setAttribute("aria-label",privacyText.name);
+    banner.innerHTML='<div class="cookie-banner-inner"><div><strong>'+privacyText.title+'</strong><p>'+privacyText.message+' <a href="/privacy/" lang="tr">'+privacyText.link+'</a></p></div><div class="cookie-actions"><button class="btn btn-secondary cookie-reject">'+privacyText.reject+'</button><button class="btn btn-primary cookie-accept">'+privacyText.accept+'</button></div></div>';
     document.body.appendChild(banner);
     const restoreFocus=()=>{if(force){const preferences=document.querySelector(".privacy-settings-link");if(preferences)preferences.focus();}};
     banner.querySelector(".cookie-accept").onclick=()=>{saveConsent(ACCEPTED);banner.remove();loadAnalytics();restoreFocus();};
