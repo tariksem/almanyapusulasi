@@ -2,10 +2,10 @@
 .ap-lang-flag{display:flex;align-items:center;justify-content:center;width:43px;height:32px;padding:4px;border:2px solid transparent;border-radius:7px;transition:background .15s,border-color .15s;cursor:pointer;text-decoration:none}
 .ap-lang-flag svg{display:block;width:30px;height:20px;flex-shrink:0;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.32)}
 .ap-lang-flag:hover{background:rgba(255,255,255,.18)}
-.ap-lang-flag.is-current{background:rgba(255,255,255,.16);border-color:#f3c763}
+.ap-lang-flag.is-current{background:#fff8e8;border-color:#d89b2b}
 .ap-lang-flag:focus-visible{outline:3px solid #f3c763;outline-offset:3px}
 .ap-lang-header{margin:0 0 0 8px;flex:0 0 auto}
-.site-header .ap-lang-picker{background:#102a43;margin-bottom:0}
+.site-header .ap-lang-picker{background:transparent;border:0;box-shadow:none;backdrop-filter:none;margin-bottom:0;padding:4px;gap:5px}
 .site-header .header-inner:has(>.ap-lang-header){gap:12px}
 .site-header .site-nav{min-width:0}
 .site-header .ap-lang-header{order:10;align-self:center}
@@ -45,3 +45,7 @@ body.ap-i18n-landing.ap-unified .hero h1{font-size:clamp(32px,4vw,54px);line-hei
 body.ap-i18n-landing.ap-unified .hero p{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:720px;color:#f0f6fc}
 body.ap-i18n-landing.ap-unified main{display:block;max-width:1200px;margin:0 auto;padding:30px 24px 70px}
 
+
+/* White header: neutral flags; emphasis only on current language. */
+.site-header .ap-lang-flag:hover{background:#eef4f9}
+.site-header .ap-lang-flag.is-current{background:#fff8e8;border-color:#d89b2b}
