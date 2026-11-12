@@ -20,6 +20,19 @@
   racismStyle.textContent='.site-nav-link[href="/almanyada-irkcilik/"]{background:#fff1f2;color:#b42318;border:1px solid #fecdd3;font-weight:850}.site-nav-link[href="/almanyada-irkcilik/"]:hover,.site-nav-link[href="/almanyada-irkcilik/"].is-active{background:#b42318!important;color:#fff!important;border-color:#b42318;box-shadow:0 6px 16px rgba(180,35,24,.18)}.mega-link[href="/almanyada-irkcilik/"]{background:#fff7f7;border-color:#fecaca}.mega-link[href="/almanyada-irkcilik/"] .mega-icon{background:#fee2e2}.mega-link[href="/almanyada-irkcilik/"] strong{color:#b42318}.mega-link[href="/almanyada-irkcilik/"]:hover,.mega-link[href="/almanyada-irkcilik/"].is-active{background:#fff1f2;border-color:#ef4444}';
   document.head.appendChild(racismStyle);
 
+  // Language support is loaded by the common shell on every page.
+  const localeCss=document.createElement("link");
+  localeCss.rel="stylesheet";localeCss.href="/assets/i18n.css";
+  document.head.appendChild(localeCss);
+  const coreScript=document.createElement("script");
+  coreScript.src="/assets/js/i18n-core.js";
+  coreScript.onload=()=>{
+    const uiScript=document.createElement("script");
+    uiScript.src="/assets/js/i18n-ui.js";
+    document.head.appendChild(uiScript);
+  };
+  document.head.appendChild(coreScript);
+
   const shareScript=document.createElement("script");
   shareScript.defer=true;
   shareScript.src="/assets/js/share.js";
