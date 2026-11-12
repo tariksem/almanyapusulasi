@@ -1,18 +1,26 @@
-# News workflow
+# Haber yayın ve arşiv standardı (12.11.2026)
 
-News hub: `/haberler/`.
+Kaynak dosya: `data/news-editorial.json`. Her `NewsArticle` için editoryal kayıt zorunlu.
 
-## Editorial rule
-Publish only developments that materially affect Turks living in Germany or people planning to move from Turkey to Germany. Prefer official primary sources. Never copy source articles. Explain: what changed, who is affected, effective date, what to do, and which evergreen guide should be updated.
+## Durumlar
+- `published`: Güncel haber kartında, ana sayfanın son üç haberinde ve RSS'te yer alabilir.
+- `review`: İddianın veya mevzuat aşamasının yeniden resmî doğrulanması gerekir. Ana sayfa ve RSS'te yer almaz; arşivde uyarıyla korunur.
+- `archived`: Tarihsel kayıt; URL ve canonical korunur, güncel haber akışına girmez.
+- `expiresOn`: `published` olsa dahi tarih geçince otomatik arşive ayrılır. `reviewBy` editoryal takip tarihidir; *otomatik doğrulama değildir*.
 
-## Scheduled monitoring
-The daily editorial monitor should identify meaningful new developments and flag them for publication. A monitoring run must not manufacture news when nothing material changed. Publishing to the repository requires an authenticated repository update; after publication, update the hub, homepage highlights and sitemap together.
+## Yayın kontrolü
+1. Haber seçimi: Almanya'daki Türkleri etkileyen hak, maliyet veya yükümlülük değişimi.
+2. Resmî birincil kaynak, kesin tarih, yürürlük/yasa taslağı statüsü, etkilenen kişiler ve eylem maddesi zorunludur.
+3. Kanun teklifi ve yürürlükteki hukuk birbirinden açıkça ayrılır. Doğrulanamayan veya çelişkili bilgi `review` durumunda tutulur.
+4. Mevcut makale URL'si sırf tarih geçti diye silinmez veya değiştirilmez. Düzeltmeler açık ve tarihli yapılır.
+5. Gerçekten doğrulanmadıkça `dateModified` ve kontrol tarihi yapay olarak yenilenmez.
+6. Makale içeriği ve metadata eklendikten sonra `node scripts/generate-discovery.js` ve `node scripts/validate-news-editorial.js` çalıştırılır.
+7. Ana sayfa, /haberler/ arşivi, RSS ve sitemap aynı üretim betiğinden hazırlanır. Cloudflare üretim hattı her gün 05:15 UTC'de yeniden derler.
 
-## Homepage
-Keep the newest/highest-impact 2–3 stories in the homepage `Gündem` block. Every story needs a date, category, concise impact summary and link to its full article.
+## Denetim kuyruğu
+12 Kasım 2026 kontrolü: vergi/Kindergeld 2027, başvurusuz Kindergeld 2027, Krankenkasse 2027, elektrik şebeke desteği 2027, ELSTER 2027 ve Kita reformu taslakları yeniden doğrulanana kadar `review`.
+Ruhr 9–30 Ekim ulaşım duyurusu ve Eylül 2026 değişiklikleri `archived`.
+Diğerleri `published`; bu, bağımsız kaynak doğrulamasının bu çalışma kapsamında tamamen tamamlandığı anlamına gelmez. `reviewBy` tarihlerinde tekrar incelenmelidir.
 
-## Visuals
-Use locally hosted, licensed/authorized imagery. Do not hotlink third-party publisher images. If a suitable licensed image is not yet available, use the Almanya Pusulası branded fallback artwork rather than an uncertain copyrighted image.
-
-## SEO
-Use `NewsArticle` structured data on story pages, canonical URL, clear publication/modified dates, internal links to evergreen guides, and add each story to `sitemap.xml`.
+## Önemli sınır
+Günlük derleme yalnız önceden tanımlanmış `expiresOn` tarihlerini uygular; haber yazmaz, mevzuat doğrulamaz veya yeni haberleri onaysız yayımlamaz. İnsan editoryal incelemesi hâlâ gereklidir.
