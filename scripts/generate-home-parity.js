@@ -128,7 +128,7 @@ function build(lang){
  const scriptEnd=body.lastIndexOf('</script>');
  if(scriptStart<0||scriptEnd<scriptStart||!body.slice(scriptStart,scriptEnd).includes('const records='))throw Error('Original homepage search script not found');
  body=body.slice(0,scriptStart)+body.slice(scriptEnd+'</script>'.length);
- for(const slug of ['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026']){
+ for(const slug of ['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum']){
   body=body.replaceAll('href="https://almanyapusulasi.de/'+slug+'/"','href="/'+lang+'/'+slug+'/"');
   body=body.replaceAll('href="/'+slug+'/"','href="/'+lang+'/'+slug+'/"');
  }
@@ -143,7 +143,7 @@ function build(lang){
  // Related site content without an approved translation is labelled as Turkish.
  html=html.replace(/<a\b([^>]*?)href="(https:\/\/almanyapusulasi.de\/|\/)([^"\/#?]+)\/?"([^>]*)>/g,(all,before,prefix,slug,after)=>{
    if(['en','de'].includes(slug))return all;
-   if(['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026'].includes(slug))return all;
+   if(['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum'].includes(slug))return all;
    return '<a'+before+'href="'+prefix+slug+'/"'+after+' data-tr-only="1" lang="tr" hreflang="tr" title="'+fallback[lang]+'">';
  });
  fs.mkdirSync(lang,{recursive:true});

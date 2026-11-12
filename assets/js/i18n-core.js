@@ -5,7 +5,7 @@ const KEY="ap_preferred_language";
 const HOME={tr:"/",en:"/en/",de:"/de/"};
 const normalize=value=>{const code=String(value||"").toLowerCase().split(/[-_]/)[0];return SUPPORTED.includes(code)?code:null;};
 const languageFromPath=path=>/^\/en(?:\/|$)/.test(path)?"en":/^\/de(?:\/|$)/.test(path)?"de":null;
-const translatedSlugs=new Set(["blue-card","chancenkarte-firsat-karti","blue-card-uygunluk-kontrolu-2026","chancenkarte-puan-hesaplayici-2026"]);
+const translatedSlugs=new Set(["blue-card","chancenkarte-firsat-karti","blue-card-uygunluk-kontrolu-2026","chancenkarte-puan-hesaplayici-2026","kindergeld","familienversicherung","blue-card-suresiz-oturum"]);
 function equivalent(path,lang){
  const code=normalize(lang)||"tr";
  const clean=String(path||"/").replace(/^\/(en|de)(?=\/|$)/,"");

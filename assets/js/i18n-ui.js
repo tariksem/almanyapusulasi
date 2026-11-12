@@ -77,6 +77,7 @@ function localShell(){
   const [en,de,source,anchor]=item;
   const name=tr(en,de);
   if(anchor&&anchor.startsWith("/")&&api.equivalent(anchor,lang)!==home)return {name,href:api.equivalent(anchor,lang),untranslated:false};
+  if(source&&api.equivalent(source,lang)!==home)return {name,href:api.equivalent(source,lang),untranslated:false};
   if(anchor&&anchor.startsWith("#"))return {name,href:home+anchor,untranslated:false};
   return {name,href:source,untranslated:true};
  }
