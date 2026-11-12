@@ -34,28 +34,40 @@
       "note": "Genel hukuki açıklama; bireysel değerlendirme gerekir."
     },
     "vergi-kindergeld-2027": {
-      "state": "review",
+      "state": "published",
       "category": "Vergi & Aile",
-      "reviewBy": "2026-11-12",
-      "note": "2027 rakamları ve yasama aşaması resmî kaynakla yeniden doğrulanmalı."
+      "reviewBy": "2026-11-25",
+      "note": "2027 rakamları yalnız hükümet taslağında; kesin yürürlükteki oranlar değildir.",
+      "verifiedOn": "2026-11-12",
+      "legalStatus": "government_bill_not_enacted",
+      "source": "https://dip.bundestag.de/vorgang/einkommensteuerreformgesetz-2027/338787"
     },
     "kindergeld-2027-basvurusuz": {
-      "state": "review",
+      "state": "published",
       "category": "Aile & Çocuk",
-      "reviewBy": "2026-11-12",
-      "note": "Kanun, uygulama takvimi ve kapsamın güncel durumu yeniden doğrulanmalı."
+      "reviewBy": "2027-02-15",
+      "note": "Yasa 20.10.2026 yayımlandı; Mart/Kasım 2027 fiilî uygulama hedefleri kesin tarih değil.",
+      "verifiedOn": "2026-11-12",
+      "legalStatus": "promulgated_effective_2027-01-01",
+      "source": "https://dip.bundestag.de/vorgang/gesetz-zur-einf%C3%BChrung-eines-antragslosen-kindergeldes/333136"
     },
     "krankenkasse-zusatzbeitrag-2027": {
-      "state": "review",
+      "state": "published",
       "category": "Sağlık & Gelir",
-      "reviewBy": "2026-11-12",
-      "note": "2027 tahminleri ve kesin prim oranları ayrıştırılmalı."
+      "reviewBy": "2026-12-01",
+      "note": "BMG 30.10.2026: 2027 resmî ortalama Zusatzbeitrag %2,9. Kasa bazında oran değişebilir.",
+      "verifiedOn": "2026-11-12",
+      "legalStatus": "official_average_rate_announced",
+      "source": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt"
     },
     "strom-netzentgelte-2027": {
-      "state": "review",
+      "state": "published",
       "category": "Enerji",
-      "reviewBy": "2026-11-12",
-      "note": "2027–2029 desteklerinin kabul/yürürlük durumu kontrol edilmeli."
+      "reviewBy": "2026-11-13",
+      "note": "11.11.2026 komisyon kabulü; 12.11 akşam genel kurul oylaması planlı, sonucu ayrıca kontrol edilmeli.",
+      "verifiedOn": "2026-11-12",
+      "legalStatus": "committee_approved_plenary_pending",
+      "source": "https://www.bundestag.de/presse/hib/kurzmeldungen-1232794"
     },
     "ganztag-hakki-2026": {
       "state": "published",
@@ -64,10 +76,13 @@
       "note": "Hak kademeli uygulanıyor."
     },
     "elster-vergi-bescheidleri-2027": {
-      "state": "review",
+      "state": "published",
       "category": "Vergi",
-      "reviewBy": "2026-11-12",
-      "note": "Jahressteuergesetz 2026'nın nihai yasama durumuna bakılmalı."
+      "reviewBy": "2026-11-25",
+      "note": "Elektronik tebligat düzenlemesi Jahressteuergesetz 2026 taslağında; kesin yasa değil.",
+      "verifiedOn": "2026-11-12",
+      "legalStatus": "government_bill_not_enacted",
+      "source": "https://dip.bundestag.de/vorgang/jahressteuergesetz-2026/338349"
     },
     "leiharbeit-mindestlohn-eylul-2026": {
       "state": "published",
@@ -77,10 +92,13 @@
       "note": "Güncel ücret dönemi 31 Mart 2027'de bitiyor."
     },
     "kita-kalite-reformu-2026": {
-      "state": "review",
+      "state": "published",
       "category": "Aile & Eğitim",
-      "reviewBy": "2026-11-12",
-      "note": "Yasa taslağı ve eyalet uygulaması tekrar kontrol edilmeli."
+      "reviewBy": "2026-11-30",
+      "note": "19.10 resmî yasa taslağı sayfası, 2.9 kabine kararı; ülke çapında yürürlükte zorunluluk değil.",
+      "verifiedOn": "2026-11-12",
+      "legalStatus": "government_bill_not_enacted",
+      "source": "https://www.bmbfsfj.bund.de/bmbfsfj/ministerium/gesetze/gesetz-zur-verbesserung-der-startchancen-von-kindern-und-zur-qualitaetsentwicklung-in-der-kindertagesbetreuung-startchancen-und-qualitaetsentwicklungsgesetz-scqeg--291866"
     },
     "eylul-2026-yeni-kurallar": {
       "state": "archived",
