@@ -85,7 +85,6 @@ const pairs=[
 ["27 Eylül 2026","27 September 2026","27. September 2026"],["24 Eylül 2026","24 September 2026","24. September 2026"],["8 Eylül 2026","8 September 2026","8. September 2026"]
 ];
 const fallback={en:"The linked resource is currently available in Turkish.",de:"Der verlinkte Inhalt ist derzeit auf Türkisch verfügbar."};
-const escape=s=>String(s).replace(/[.*+?^$()|[\]{}]/g,"\\$&");
 const SOURCE=fs.readFileSync('index.html','utf8');
 function build(lang){
  let html=SOURCE;
