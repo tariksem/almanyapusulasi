@@ -98,3 +98,15 @@ body.ap-i18n-landing.ap-unified main{display:block;max-width:1200px;margin:0 aut
  .ap-i18n-landing .ap-local-search button{min-height:42px}
  .ap-i18n-landing .ap-local-section{margin-bottom:26px;padding-bottom:20px}
 }
+
+/* Shared localized navigation mirrors the Turkish V4.1 menu hierarchy. */
+.site-header .ap-tr-indicator{font-size:9px;color:#6a7b8a;font-weight:800;vertical-align:middle}
+.site-header .site-nav-link[lang="tr"]{gap:4px}
+html[lang="en"] .site-header .site-nav-link,html[lang="de"] .site-header .site-nav-link{font-size:12px;padding:0 9px}
+html[lang="en"] .site-header .primary-nav-links,html[lang="de"] .site-header .primary-nav-links{gap:2px}
+html[lang="en"] .site-header .header-inner,html[lang="de"] .site-header .header-inner{gap:12px}
+html[lang="en"] .site-header .site-brand-copy small,html[lang="de"] .site-header .site-brand-copy small{font-size:10px}
+@media(max-width:1080px){
+ html[lang="en"] .site-header .primary-nav-links,html[lang="de"] .site-header .primary-nav-links{display:grid}
+ html[lang="en"] .site-header .site-nav-link,html[lang="de"] .site-header .site-nav-link{font-size:13px;padding:0 11px}
+}
