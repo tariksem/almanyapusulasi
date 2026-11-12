@@ -1,6 +1,10 @@
 const fs=require('node:fs');
 const cp=require('node:child_process');
 const SITE='https://almanyapusulasi.de';
+const editorial=JSON.parse(fs.readFileSync('data/news-editorial.json','utf8')).items;
+const today=(process.env.NEWS_AS_OF||new Date().toISOString().slice(0,10));
+const editorialState=n=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=editorial[slug];if(!item)throw new Error('Missing editorial record: '+slug);return {...item,state:item.state==='published'&&item.expiresOn&&item.expiresOn<today?'archived':item.state};};
+
 const files=cp.execSync('git ls-files',{encoding:'utf8'}).trim().split(/\r?\n/);
 const changed=new Set(cp.execSync('git diff --name-only HEAD',{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim().split(/\r?\n/));
 const escape=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -51,8 +55,25 @@ for(const group of groups){
   fs.writeFileSync('sitemap-'+group+'.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+body+'\n</urlset>\n');
 }
 news.sort((a,b)=>b.date.localeCompare(a.date)||a.url.localeCompare(b.url));
-if(news.length){
-  const cards=news.slice(0,3).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi ve etkisini oku →</span></div></a>').join('');
+const activeNews=news.filter(n=>editorialState(n).state==='published');
+const archiveNews=news.filter(n=>editorialState(n).state!=='published');
+for(const n of news){
+  const e=editorialState(n);
+  const file=new URL(n.url).pathname.slice(1)+'index.html';
+  const original=fs.readFileSync(file,'utf8');
+  const clean=original.replace(/<aside data-editorial-status="true"[\s\S]*?<\/aside>/g,'');
+  let html=clean;
+  if(e.state!=='published'){
+    const label=e.state==='review'?'Güncellik kontrolü bekliyor':'Arşiv kaydı';
+    const note=e.note||'Bu haberin güncel durumunu resmî kaynaklardan kontrol edin.';
+    const banner='<aside data-editorial-status="true" role="note" style="border-left:4px solid #F57C00;padding:14px 18px;margin:20px 0;background:#fff7ee;color:#102A43"><strong>'+escape(label)+'</strong><p>'+escape(note)+'</p><p>Yayın tarihi geçmiş bir içeriğin bugün geçerli olduğu varsayılmamalıdır.</p></aside>';
+    if(!html.includes('<article class="article">'))throw new Error('Article body missing: '+file);
+    html=html.replace('<article class="article">','<article class="article">'+banner);
+  }
+  if(html!==original)fs.writeFileSync(file,html);
+}
+if(activeNews.length){
+  const cards=activeNews.slice(0,3).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi ve etkisini oku →</span></div></a>').join('');
   const home=fs.readFileSync('index.html','utf8');
   const updated=home.replace(/(<section class="section news-home">[\s\S]*?<div class="news-grid">)[\s\S]*?(<\/div><\/div><\/section>)/,(_,a,b)=>a+cards+b);
   if(updated===home&&!home.includes(cards))throw new Error('Homepage news block not found');
@@ -60,19 +81,21 @@ if(news.length){
   // News archive is generated from the same NewsArticle metadata as homepage and RSS.
   // This avoids a manually maintained featured story/list becoming stale.
   const formatNewsDate=n=>new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
-  const featured=news[0];
+  const featured=activeNews[0];
   const featuredBody='<div class="news-meta"><span class="news-tag">'+escape(featured.category)+'</span><time datetime="'+featured.date.slice(0,10)+'">'+formatNewsDate(featured)+'</time></div><h2>'+escape(featured.title)+'</h2><p>'+escape(featured.description)+'</p><a class="btn btn-primary" href="'+new URL(featured.url).pathname+'">Haberi oku →</a>';
-  const archiveCards=news.slice(1).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+formatNewsDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi oku →</span></div></a>').join('');
+  const archiveCards=activeNews.slice(1).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+formatNewsDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi oku →</span></div></a>').join('');
   const archive=fs.readFileSync('haberler/index.html','utf8');
   const featurePattern=/(<div class="news-feature"><div class="news-feature-body">)[\s\S]*?(<\/div><\/div><\/div><\/section><section class="section news-latest">)/;
   const archivePattern=/(<section class="section news-latest">[\s\S]*?<div class="news-grid">)[\s\S]*?(<\/div><\/div><\/section>)/;
   if(!featurePattern.test(archive)||!archivePattern.test(archive))throw new Error('News archive feature/list markup not found');
-  const refreshed=archive.replace(featurePattern,(_,a,b)=>a+featuredBody+b).replace(archivePattern,(_,a,b)=>a+archiveCards+b);
+  const archiveSection='<section class="section news-archive" id="arsiv"><div class="container"><div class="section-header"><span class="section-label">Haber arşivi</span><h2>Geçmiş duyurular ve yeniden doğrulama bekleyen haberler</h2><p>Süresi dolmuş haberler tarihsel kayıt olarak korunur. Kontrol bekleyenler güncel haber olarak önerilmez.</p></div><div class="news-grid">'+archiveNews.map(n=>{const e=editorialState(n);const label=e.state==='review'?'Güncellik kontrolü bekliyor':'Arşiv · Süresi doldu';return '<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(label)+'</span><time datetime="'+n.date.slice(0,10)+'">'+formatNewsDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(e.note||n.description)+'</p><span class="news-read">Arşiv kaydını oku →</span></div></a>'}).join('')+'</div></div></section>';
+  const refreshed=archive.replace(featurePattern,(_,a,b)=>a+featuredBody+b).replace(archivePattern,(_,a,b)=>a+archiveCards+b).replace(/<section class="section news-archive" id="arsiv">[\s\S]*?<\/section>/,'').replace('<section class="section"><div class="container"><div class="section-header"><span class="section-label">Haberden karara</span>',archiveSection+'<section class="section"><div class="container"><div class="section-header"><span class="section-label">Haberden karara</span>');
+  if(!refreshed.includes('id="arsiv"'))throw new Error('Archive insertion failed');
   if(!refreshed.includes('datetime="'+featured.date.slice(0,10)+'"'))throw new Error('News archive featured article was not updated');
   fs.writeFileSync('haberler/index.html',refreshed);
-  const items=news.map(n=>'<item><title>'+escape(n.title)+'</title><link>'+escape(n.url)+'</link><guid isPermaLink="true">'+escape(n.url)+'</guid><pubDate>'+new Date(n.date).toUTCString()+'</pubDate><category>'+escape(n.category)+'</category><description>'+escape(n.description)+'</description></item>').join('\n');
-  fs.writeFileSync('rss.xml','<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Almanya Pusulası — Haberler</title><link>'+SITE+'/haberler/</link><description>Almanya’daki Türkleri ilgilendiren seçilmiş gelişmeler.</description><language>tr</language><lastBuildDate>'+new Date(news[0].date).toUTCString()+'</lastBuildDate>\n'+items+'\n</channel></rss>\n');
+  const items=activeNews.map(n=>'<item><title>'+escape(n.title)+'</title><link>'+escape(n.url)+'</link><guid isPermaLink="true">'+escape(n.url)+'</guid><pubDate>'+new Date(n.date).toUTCString()+'</pubDate><category>'+escape(n.category)+'</category><description>'+escape(n.description)+'</description></item>').join('\n');
+  fs.writeFileSync('rss.xml','<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Almanya Pusulası — Haberler</title><link>'+SITE+'/haberler/</link><description>Almanya’daki Türkleri ilgilendiren seçilmiş gelişmeler.</description><language>tr</language><lastBuildDate>'+new Date(activeNews[0].date).toUTCString()+'</lastBuildDate>\n'+items+'\n</channel></rss>\n');
 }
 fs.writeFileSync('scripts/redirect-map.json',JSON.stringify(Object.fromEntries(redirects),null,2)+'\n');
-console.log('Generated '+pages.length+' unique sitemap URLs and '+news.length+' news items.');
+console.log('Generated '+pages.length+' unique sitemap URLs, '+activeNews.length+' active news, '+archiveNews.length+' archive/review items.');
 module.exports={pages,news};
