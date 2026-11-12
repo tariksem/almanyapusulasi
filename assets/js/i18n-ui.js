@@ -16,12 +16,10 @@ const labels={tr:{language:"Dil",home:"Ana Sayfa",about:"Almanya Pusulası",intr
 const d=labels[lang];
 function createPicker(){
  if(document.querySelector(".ap-lang-picker"))return;
- const hero=document.querySelector(".hero .hero-inner");
  const header=document.querySelector(".site-header .header-inner");
- const parent=hero||header;
- if(!parent)return;
+ if(!header)return;
  const box=document.createElement("nav");
- box.className="ap-lang-picker"+(hero?"":" ap-lang-header");
+ box.className="ap-lang-picker ap-lang-header";
  box.setAttribute("aria-label",d.language);
  // Inline flag SVGs render consistently on Windows, unlike flag emoji.
  const flags={
@@ -46,7 +44,8 @@ function createPicker(){
   });
   box.appendChild(link);
  }
- if(hero)hero.prepend(box);else header.prepend(box);
+ // Append after the primary nav, at the right edge of the header.
+ header.appendChild(box);
 }
 function localShell(){
  if(!pageLang)return;
