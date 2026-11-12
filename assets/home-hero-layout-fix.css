@@ -1,0 +1,29 @@
+/* Homepage: let the hero grow with search and popular-term rows.
+   Avoid the fixed 328px hero clipping into "Size en uygun yolu seçin". */
+body .hero{
+  height:auto!important;
+  min-height:328px;
+  padding:0!important;
+}
+body .hero .hero-inner{
+  height:auto!important;
+  min-height:328px;
+  padding-bottom:clamp(32px,3vw,46px);
+  box-sizing:border-box;
+}
+body .hero .popular{
+  margin-bottom:0;
+  row-gap:10px;
+}
+body main{
+  position:relative;
+  padding-top:clamp(22px,2.4vw,34px);
+}
+@media(max-width:900px){
+  body .hero{height:auto!important;min-height:0}
+  body .hero .hero-inner{min-height:0;padding-top:28px;padding-bottom:36px}
+}
+@media(max-width:600px){
+  body .hero .hero-inner{padding-top:24px;padding-bottom:30px}
+  body .hero .popular{row-gap:8px}
+}
