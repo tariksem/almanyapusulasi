@@ -12,6 +12,10 @@ for(const [lang,headline,button] of [['en','Choose the right path for you','Sear
   assert.ok(html.includes('class="'+section+'"')||html.includes('class="section '+section+'"'),section+' localized '+lang);
  }
  assert.ok(html.includes(headline),lang+' journey title');
+ assert.ok(html.includes(lang==='en'?'Make life in Germany<br>easier with a':'Gestalten Sie Ihren Alltag in Deutschland<br>einfacher'),'Localized structured hero heading missing');
+ assert.ok(!/<h1 id="hero-title">[\\s\\S]*?kolaylaştıran/.test(html),'Untranslated Turkish hero segment');
+ assert.ok(!/<p class="desc">[\\s\\S]*?güncel bilgiler/.test(html),'Untranslated hero description');
+
  assert.ok(html.includes('>'+button+'<'),lang+' search button');
  assert.ok(html.includes('id="findForm"')&&html.includes('id="searchResults"'),lang+' search controls');
  assert.ok(html.includes('/assets/js/local-home-search.js'),lang+' search logic');
