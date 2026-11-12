@@ -57,6 +57,21 @@ for(const group of groups){
 news.sort((a,b)=>b.date.localeCompare(a.date)||a.url.localeCompare(b.url));
 const activeNews=news.filter(n=>editorialState(n).state==='published');
 const archiveNews=news.filter(n=>editorialState(n).state!=='published');
+for(const n of news){
+  const e=editorialState(n);
+  const file=new URL(n.url).pathname.slice(1)+'index.html';
+  const original=fs.readFileSync(file,'utf8');
+  const clean=original.replace(/<aside data-editorial-status="true"[\s\S]*?<\/aside>/g,'');
+  let html=clean;
+  if(e.state!=='published'){
+    const label=e.state==='review'?'Güncellik kontrolü bekliyor':'Arşiv kaydı';
+    const note=e.note||'Bu haberin güncel durumunu resmî kaynaklardan kontrol edin.';
+    const banner='<aside data-editorial-status="true" role="note" style="border-left:4px solid #F57C00;padding:14px 18px;margin:20px 0;background:#fff7ee;color:#102A43"><strong>'+escape(label)+'</strong><p>'+escape(note)+'</p><p>Yayın tarihi geçmiş bir içeriğin bugün geçerli olduğu varsayılmamalıdır.</p></aside>';
+    if(!html.includes('<article class="article">'))throw new Error('Article body missing: '+file);
+    html=html.replace('<article class="article">','<article class="article">'+banner);
+  }
+  if(html!==original)fs.writeFileSync(file,html);
+}
 if(activeNews.length){
   const cards=activeNews.slice(0,3).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi ve etkisini oku →</span></div></a>').join('');
   const home=fs.readFileSync('index.html','utf8');
