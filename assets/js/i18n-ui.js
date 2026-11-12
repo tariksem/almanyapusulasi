@@ -20,23 +20,33 @@ function createPicker(){
  const header=document.querySelector(".site-header .header-inner");
  const parent=hero||header;
  if(!parent)return;
- const box=document.createElement("div");
+ const box=document.createElement("nav");
  box.className="ap-lang-picker"+(hero?"":" ap-lang-header");
- const id="ap-language-choice";
- const label=document.createElement("label");label.htmlFor=id;label.textContent=d.language;
- const select=document.createElement("select");select.id=id;select.setAttribute("aria-label",d.language);
- for(const [code,name] of [["tr","TR · Türkçe"],["en","EN · English"],["de","DE · Deutsch"]]){
-  const option=document.createElement("option");option.value=code;option.textContent=name;select.append(option);
+ box.setAttribute("aria-label",d.language);
+ // Inline flag SVGs render consistently on Windows, unlike flag emoji.
+ const flags={
+  tr:'<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="12" cy="10" r="6" fill="#fff"/><circle cx="14" cy="10" r="4.8" fill="#E30A17"/><path fill="#fff" d="m19.2 7 .8 2.3h2.4l-1.9 1.5.7 2.3-2-1.4-1.9 1.4.7-2.3-1.9-1.5h2.4z"/></svg>',
+  en:'<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#012169"/><path d="M0 0 30 20M30 0 0 20" stroke="#fff" stroke-width="5"/><path d="M0 0 30 20M30 0 0 20" stroke="#C8102E" stroke-width="2"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="7"/><path d="M15 0v20M0 10h30" stroke="#C8102E" stroke-width="3.5"/></svg>',
+  de:'<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#FFCE00"/><rect width="30" height="13.34" fill="#DD0000"/><rect width="30" height="6.67" fill="#000"/></svg>'
+ };
+ for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
+  const link=document.createElement("a");
+  link.className="ap-lang-flag"+(lang===code?" is-current":"");
+  link.href=api.home(code);
+  link.hreflang=code;
+  link.lang=code;
+  link.title=name;
+  link.setAttribute("aria-label",name);
+  if(lang===code)link.setAttribute("aria-current","page");
+  link.innerHTML=flags[code]+'<span class="sr-only">'+name+'</span>';
+  link.addEventListener("click",event=>{
+   if(!api.setPreference(localStorage,code))return;
+   // Browser handles the navigation; control remains a functioning normal link.
+   if(code===lang)event.preventDefault();
+  });
+  box.appendChild(link);
  }
- select.value=lang;
- select.addEventListener("change",()=>{
-  const target=select.value;
-  if(!api.setPreference(localStorage,target))return;
-  if(target===lang)return;
-  location.assign(api.home(target));
- });
- box.append(label,select);
- if(hero)hero.prepend(box);else header.append(box);
+ if(hero)hero.prepend(box);else header.prepend(box);
 }
 function localShell(){
  if(!pageLang)return;
