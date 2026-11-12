@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "policy": "review=do not feature or publish in RSS until checked; archived or expired=archive only; published=live",
+  "items": {
+    "db-2027-aile-bileti-tarife": {
+      "state": "published",
+      "category": "Ulaşım & Aile",
+      "reviewBy": "2026-11-20",
+      "note": "Fiyat, kontenjan ve satış koşulları değişebilir."
+    },
+    "tankrabatt-energiesteuer-ekim-2026": {
+      "state": "published",
+      "category": "Yakıt & Seyahat",
+      "expiresOn": "2026-12-31",
+      "reviewBy": "2026-12-15",
+      "note": "Geçici uygulama; 31 Aralık 2026 sonrasında arşiv."
+    },
+    "ruhr-tren-kapanmasi-ekim-2026": {
+      "state": "archived",
+      "category": "Ulaşım",
+      "expiresOn": "2026-10-30",
+      "note": "Planlanan hat kesintisi sona erdi; haber yalnız tarihsel bilgi."
+    },
+    "afd-saksonya-anhalt-secim-2026": {
+      "state": "published",
+      "category": "Toplum & Haklar",
+      "reviewBy": "2026-11-20",
+      "note": "Seçim sonucunun yeni hukuki düzenlemelerle karıştırılmaması gerekir."
+    },
+    "pflege-yabanci-calisan-sinir-disi-riski-2026": {
+      "state": "published",
+      "category": "Göç & İş",
+      "reviewBy": "2026-11-30",
+      "note": "Genel hukuki açıklama; bireysel değerlendirme gerekir."
+    },
+    "vergi-kindergeld-2027": {
+      "state": "review",
+      "category": "Vergi & Aile",
+      "reviewBy": "2026-11-12",
+      "note": "2027 rakamları ve yasama aşaması resmî kaynakla yeniden doğrulanmalı."
+    },
+    "kindergeld-2027-basvurusuz": {
+      "state": "review",
+      "category": "Aile & Çocuk",
+      "reviewBy": "2026-11-12",
+      "note": "Kanun, uygulama takvimi ve kapsamın güncel durumu yeniden doğrulanmalı."
+    },
+    "krankenkasse-zusatzbeitrag-2027": {
+      "state": "review",
+      "category": "Sağlık & Gelir",
+      "reviewBy": "2026-11-12",
+      "note": "2027 tahminleri ve kesin prim oranları ayrıştırılmalı."
+    },
+    "strom-netzentgelte-2027": {
+      "state": "review",
+      "category": "Enerji",
+      "reviewBy": "2026-11-12",
+      "note": "2027–2029 desteklerinin kabul/yürürlük durumu kontrol edilmeli."
+    },
+    "ganztag-hakki-2026": {
+      "state": "published",
+      "category": "Aile & Eğitim",
+      "reviewBy": "2026-12-01",
+      "note": "Hak kademeli uygulanıyor."
+    },
+    "elster-vergi-bescheidleri-2027": {
+      "state": "review",
+      "category": "Vergi",
+      "reviewBy": "2026-11-12",
+      "note": "Jahressteuergesetz 2026'nın nihai yasama durumuna bakılmalı."
+    },
+    "leiharbeit-mindestlohn-eylul-2026": {
+      "state": "published",
+      "category": "İş & Gelir",
+      "expiresOn": "2027-03-31",
+      "reviewBy": "2027-03-01",
+      "note": "Güncel ücret dönemi 31 Mart 2027'de bitiyor."
+    },
+    "kita-kalite-reformu-2026": {
+      "state": "review",
+      "category": "Aile & Eğitim",
+      "reviewBy": "2026-11-12",
+      "note": "Yasa taslağı ve eyalet uygulaması tekrar kontrol edilmeli."
+    },
+    "eylul-2026-yeni-kurallar": {
+      "state": "archived",
+      "category": "Günlük Yaşam",
+      "expiresOn": "2026-09-30",
+      "note": "Eylül ayı özetinin tarihsel arşivi."
+    }
+  }
+}
