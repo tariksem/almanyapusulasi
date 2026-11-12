@@ -22,6 +22,7 @@ jobs:
       - name: Generate and validate discovery assets
         run: |
           node scripts/generate-discovery.js
+          node scripts/validate-news-editorial.js
           node scripts/validate-audit-fixes.js
           node scripts/validate-v42-cohesion.mjs
           node scripts/validate-2026-tools.js
