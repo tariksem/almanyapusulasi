@@ -5,15 +5,19 @@
     "db-2027-aile-bileti-tarife": {
       "state": "published",
       "category": "Ulaşım & Aile",
-      "reviewBy": "2026-11-20",
-      "note": "Fiyat, kontenjan ve satış koşulları değişebilir."
+      "reviewBy": "2026-12-01",
+      "note": "26 Ekim 2026'dan beri satışta; kontenjana ve tren bağlantısına bağlı kalıcı DB Familienticket.",
+      "verifiedOn": "2026-11-12",
+      "source": "https://www.deutschebahn.com/de/presse/Newsblog-12829716"
     },
     "tankrabatt-energiesteuer-ekim-2026": {
       "state": "published",
       "category": "Yakıt & Seyahat",
       "expiresOn": "2026-12-31",
       "reviewBy": "2026-12-15",
-      "note": "Geçici uygulama; 31 Aralık 2026 sonrasında arşiv."
+      "note": "1 Ekim–31 Aralık 2026 için 14,04 cent/litre Energiesteuer indirimi; pompa fiyatına birebir yansıma garantisi yok.",
+      "verifiedOn": "2026-11-12",
+      "source": "https://www.bundestag.de/dokumente/textarchiv/2026/kw39-de-versicherung-aufsicht-1216898"
     },
     "ruhr-tren-kapanmasi-ekim-2026": {
       "state": "archived",
@@ -24,8 +28,10 @@
     "afd-saksonya-anhalt-secim-2026": {
       "state": "published",
       "category": "Toplum & Haklar",
-      "reviewBy": "2026-11-20",
-      "note": "Seçim sonucunun yeni hukuki düzenlemelerle karıştırılmaması gerekir."
+      "reviewBy": "2026-12-15",
+      "note": "6 Eylül 2026 seçiminde resmî ikinci oy oranı %43,8; bu, tek başına federal oturum yasasını değiştirmez.",
+      "verifiedOn": "2026-11-12",
+      "source": "https://www.bundeswahlleiterin.de/service/landtagswahlen/land-15.html"
     },
     "pflege-yabanci-calisan-sinir-disi-riski-2026": {
       "state": "published",
@@ -72,8 +78,10 @@
     "ganztag-hakki-2026": {
       "state": "published",
       "category": "Aile & Eğitim",
-      "reviewBy": "2026-12-01",
-      "note": "Hak kademeli uygulanıyor."
+      "reviewBy": "2027-01-15",
+      "note": "1 Ağustos 2026'dan itibaren birinci sınıflar için yasal Ganztag hakkı, sonraki yıllarda kademeli genişleme.",
+      "verifiedOn": "2026-11-12",
+      "source": "https://www.bundesregierung.de/breg-de/service/fragen-und-antworten/gesetzliche-neuregelungen-2448548"
     },
     "elster-vergi-bescheidleri-2027": {
       "state": "published",
@@ -89,7 +97,9 @@
       "category": "İş & Gelir",
       "expiresOn": "2027-03-31",
       "reviewBy": "2027-03-01",
-      "note": "Güncel ücret dönemi 31 Mart 2027'de bitiyor."
+      "note": "BMAS: 15,33 €/saat 1 Eylül 2026–31 Mart 2027; 1 Nisan 2027'de 15,87 €.",
+      "verifiedOn": "2026-11-12",
+      "source": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/siebte-verordnung-lohnuntergrenze-arbeitnehmerueberlassung.html"
     },
     "kita-kalite-reformu-2026": {
       "state": "published",
