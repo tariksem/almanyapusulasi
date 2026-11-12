@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '15 5 * * *' # Daily UTC refresh for time-limited news expiry
 
 permissions:
   contents: read
