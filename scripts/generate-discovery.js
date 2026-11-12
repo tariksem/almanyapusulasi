@@ -36,7 +36,7 @@ for(const file of files.filter(f=>f==='index.html'||f.endsWith('/index.html'))){
   const date=[modified,lastmods.get(canonical),changed.has(file)?new Date().toISOString().slice(0,10):null].filter(Boolean).sort().at(-1);
   pages.push({url:canonical,path,date});
   if(article){
-    news.push({url:canonical,title:article.headline,description:article.description||html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i)?.[1]||'',date:article.datePublished,category:article.articleSection||'Gündem'});
+    news.push({url:canonical,title:article.headline,description:article.description||html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i)?.[1]||'',date:article.datePublished,modified:article.dateModified||article.datePublished,category:article.articleSection||'Gündem'});
   }
 }
 pages.sort((a,b)=>a.url.localeCompare(b.url));
@@ -54,7 +54,7 @@ for(const group of groups){
   const body=pages.filter(p=>classify(p)===group).map(p=>'  <url><loc>'+escape(p.url)+'</loc>'+(p.date?'<lastmod>'+escape(p.date)+'</lastmod>':'')+'</url>').join('\n');
   fs.writeFileSync('sitemap-'+group+'.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+body+'\n</urlset>\n');
 }
-news.sort((a,b)=>b.date.localeCompare(a.date)||a.url.localeCompare(b.url));
+news.sort((a,b)=>b.modified.localeCompare(a.modified)||b.date.localeCompare(a.date)||a.url.localeCompare(b.url));
 const activeNews=news.filter(n=>editorialState(n).state==='published');
 const archiveNews=news.filter(n=>editorialState(n).state!=='published');
 for(const n of news){
@@ -73,14 +73,15 @@ for(const n of news){
   if(html!==original)fs.writeFileSync(file,html);
 }
 if(activeNews.length){
-  const cards=activeNews.slice(0,3).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi ve etkisini oku →</span></div></a>').join('');
+  const displayDate=n=>{const d=(n.modified>n.date?n.modified:n.date).slice(0,10);const fmt=new Date(d+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});return n.modified>n.date?'Güncelleme: '+fmt:fmt;};
+  const cards=activeNews.slice(0,3).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+displayDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi ve etkisini oku →</span></div></a>').join('');
   const home=fs.readFileSync('index.html','utf8');
   const updated=home.replace(/(<section class="section news-home">[\s\S]*?<div class="news-grid">)[\s\S]*?(<\/div><\/div><\/section>)/,(_,a,b)=>a+cards+b);
   if(updated===home&&!home.includes(cards))throw new Error('Homepage news block not found');
   fs.writeFileSync('index.html',updated);
   // News archive is generated from the same NewsArticle metadata as homepage and RSS.
   // This avoids a manually maintained featured story/list becoming stale.
-  const formatNewsDate=n=>new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+  const formatNewsDate=n=>displayDate(n);
   const featured=activeNews[0];
   const featuredBody='<div class="news-meta"><span class="news-tag">'+escape(featured.category)+'</span><time datetime="'+featured.date.slice(0,10)+'">'+formatNewsDate(featured)+'</time></div><h2>'+escape(featured.title)+'</h2><p>'+escape(featured.description)+'</p><a class="btn btn-primary" href="'+new URL(featured.url).pathname+'">Haberi oku →</a>';
   const archiveCards=activeNews.slice(1).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'"><div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+formatNewsDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi oku →</span></div></a>').join('');
