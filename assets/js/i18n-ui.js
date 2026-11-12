@@ -53,7 +53,7 @@ function localShell(){
  if(header){
   const homePrefix=api.home(lang);
   const navLabels=lang==="de"?[["Startseite","#start"],["Ratgeber","#guides"],["Rechner","#tools"],["Nachrichten","#news"]]:[["Home","#start"],["Guides","#guides"],["Tools","#tools"],["News","#news"]];
-  const navTarget=anchor=>/^\\/(en|de)\\/$/.test(path)?anchor:homePrefix+anchor;
+  const navTarget=anchor=>(path==="/en/"||path==="/de/")?anchor:homePrefix+anchor;
   header.innerHTML='<div class="container header-inner"><a class="site-brand" href="'+api.home(lang)+'"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>'+d.intro+'</small></span></a><nav class="ap-local-header-nav" aria-label="'+d.topics+'">'+navLabels.map(([label,anchor])=>'<a href="'+navTarget(anchor)+'">'+label+'</a>').join("")+'</nav></div>';
  }
  const footer=document.querySelector(".footer");
