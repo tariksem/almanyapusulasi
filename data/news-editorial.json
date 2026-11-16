@@ -115,6 +115,33 @@
       "category": "Günlük Yaşam",
       "expiresOn": "2026-09-30",
       "note": "Eylül ayı özetinin tarihsel arşivi."
+    },
+    "elterngeld-mutterschutz-reform-2027": {
+      "state": "review",
+      "category": "Aile & Çalışma",
+      "reviewBy": "2026-11-18",
+      "note": "13.11.2026 kabine kararı; 330–1900 € ve 4+6+4 modeli henüz yasa değil. Hedef yürürlük 01.11.2027.",
+      "verifiedOn": "2026-11-16",
+      "legalStatus": "government_bill_not_enacted",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/kabinett-reform-elterngeld-2460372"
+    },
+    "pflegeversicherung-reform-2027": {
+      "state": "review",
+      "category": "Sağlık & Aile",
+      "reviewBy": "2026-11-20",
+      "note": "30.09.2026 hükümet tasarısı; bakım sigortası ve yakın desteği reformu, katkı değişiklikleri henüz yürürlükte değil.",
+      "verifiedOn": "2026-11-16",
+      "legalStatus": "government_bill_not_enacted",
+      "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/pflegeneuordnungsgesetz-2454862"
+    },
+    "deutschlandticket-2027-fiyat": {
+      "state": "review",
+      "category": "Ulaşım",
+      "reviewBy": "2026-11-18",
+      "note": "Bundesregierung Kasım 2026 duyurusunda 01.01.2027 için 66,80 €; abonelik sağlayıcısı bildirimi ve onay gereksinimi ayrıntıları kontrol edilmeli.",
+      "verifiedOn": "2026-11-16",
+      "legalStatus": "announced_future_tariff",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-november-2026-2459132"
     }
   }
 }
