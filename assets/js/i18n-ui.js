@@ -55,7 +55,7 @@ function localShell(){
  const categories=[
   ["News","Nachrichten","/haberler/","#news"],
   ["Discrimination & Rights","Diskriminierung & Rechte","/almanyada-irkcilik/",null],
-  ["Tools","Rechner","/araclar/","#tools"],
+  ["Tools","Rechner","/araclar/","/araclar/"],
   ["Immigration & Career","Zuwanderung & Beruf","/goc-kariyer/","#guides"],
   ["Work & Income","Arbeit & Einkommen","/is-gelir/","#guides"],
   ["Settling In","Ankommen & Wohnen","/yerlesim/","#start"],
