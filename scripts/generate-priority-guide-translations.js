@@ -1,6 +1,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
-const corpus=JSON.parse(fs.readFileSync('data/priority-guide-translations.json','utf8')).items;
+const corpus={...JSON.parse(fs.readFileSync('data/priority-guide-translations.json','utf8')).items,
+ ...JSON.parse(fs.readFileSync('data/i18n-migration-translations.json','utf8')).items};
 const base='https://almanyapusulasi.de';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 for(const [slug,langs] of Object.entries(corpus)){
