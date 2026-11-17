@@ -431,6 +431,116 @@
           ]
         ]
       }
+    },
+    "kindergeld-basvuru": {
+      "en": {
+        "title": "Apply for Kindergeld in Germany 2026: Documents, Back Payments and Changes",
+        "description": "Kindergeld application at Familienkasse, six-month back-payment limit, documents and reporting changes in address, IBAN and child education.",
+        "badge": "Kindergeld · Applications and changes 2026",
+        "heading": "Kindergeld Application and Changes: What Should You Do First?",
+        "meta": "Turkish guide last reviewed 12 September 2026 · Official source: Familienkasse",
+        "intro": "Submit a new Kindergeld application to the <strong>Familienkasse</strong>. Do not delay unnecessarily: retrospective payments are generally limited to at most <strong>six months before the application is received</strong>, provided entitlement existed during those months. Once benefits begin, report relevant changes such as address, bank account, family situation or a child's education.",
+        "sections": [
+          [
+            "First distinguish a new application from an existing case",
+            "Are you applying for Kindergeld for the first time, or do you need to update a benefit already being paid? A notification about changed circumstances (<em>Veränderungsmitteilung</em>) is <strong>not</strong> a new benefit application. Follow the correct procedure for your situation."
+          ],
+          [
+            "If you are submitting a new application",
+            "<ol><li>Check the identity details of the applying parent and each child.</li><li>Gather tax identification numbers (<em>Steuer-ID</em>), address details and bank account information.</li><li>If the child is over 18, prepare school, vocational training or university documents.</li><li>Disclose any cross-border circumstances involving a parent or child accurately.</li><li>Submit through an official Familienkasse channel. Paid commercial intermediaries are not necessary.</li></ol><p><a href='/kindergeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Kindergeld preliminary eligibility tool (Turkish)</a></p>"
+          ],
+          [
+            "Where is the application submitted?",
+            "The application is handled by the <strong>Familienkasse</strong>, part of the German Federal Employment Agency (<em>Bundesagentur für Arbeit</em>). Applying directly through the official service is free. Eligible users with a BundID may be able to submit an online application without a handwritten signature, depending on the service and case."
+          ],
+          [
+            "Why does the six-month retrospective limit matter?",
+            "Even when entitlement arose earlier, payment does not automatically extend without limit into the past. In general, Kindergeld is paid for no more than <strong>six months preceding the month in which the Familienkasse receives the application</strong>, provided eligibility was met in the relevant period. Do not postpone filing while waiting indefinitely for every supporting document; check the appropriate submission requirements with Familienkasse."
+          ],
+          [
+            "What happens after you apply?",
+            "<ol><li>Monitor postal and digital notifications from Familienkasse.</li><li>Provide additional requested documents within the deadline.</li><li>When payments begin, follow the calendar associated with the last digit (<em>Endziffer</em>) of your Kindergeld number.</li><li>Notify Familienkasse promptly when circumstances affecting entitlement change.</li></ol><p><a href='/kindergeld-auszahlungstermine-2026/' lang='tr' hreflang='tr'>2026 Kindergeld payment dates (Turkish)</a></p>"
+          ],
+          [
+            "Which changes must you report for an existing case?",
+            "Familienkasse requires beneficiaries to report changes relevant to Kindergeld or Kinderzuschlag. These can include: <ul><li>Home address or contact details</li><li>Payment account or IBAN</li><li>Marital status and other family circumstances</li><li>The child's education, apprenticeship, university enrolment or employment</li><li>Moving abroad or changes in cross-border family circumstances</li><li>Relevant changes in employment or income that can affect entitlement</li></ul>"
+          ],
+          [
+            "Why can failure to report changes become expensive?",
+            "If a relevant change is not reported, Familienkasse may continue to pay benefits to which the family is no longer entitled. It can then issue a cancellation and recovery decision (<em>Aufhebungs- und Erstattungsbescheid</em>) and require repayment of overpaid Kindergeld or Kinderzuschlag. Keep evidence that your notification was submitted."
+          ],
+          [
+            "Special cases: adult children, children abroad and payment dates",
+            "<div class='grid grid-3'><div class='card'><h3>Child over 18</h3><p>School, apprenticeship, university and other continuing-eligibility requirements matter.</p><a href='/kindergeld-18-yas/' lang='tr' hreflang='tr'>Detailed guide (Turkish)</a></div><div class='card'><h3>Child in Turkey</h3><p>Cross-border eligibility and any other family benefit entitlement require a separate assessment.</p><a href='/kindergeld-turkiyedeki-cocuk-2026/' lang='tr' hreflang='tr'>Detailed guide (Turkish)</a></div><div class='card'><h3>Payment day</h3><p>Use the final digit of your Kindergeld number to find the official 2026 payment schedule.</p><a href='/kindergeld-auszahlungstermine-2026/' lang='tr' hreflang='tr'>Payment calendar (Turkish)</a></div></div>"
+          ],
+          [
+            "Common application mistakes",
+            "<ul><li>Incorrect or incomplete tax or identity numbers</li><li>Missing education proof after a child turns 18</li><li>Failing to disclose residence abroad or benefits from another country</li><li>Overlooking a request for supporting documents</li><li>Submitting late and losing eligible months due to the six-month payment restriction</li><li>Postponing notifications about address, IBAN or school changes</li></ul>"
+          ],
+          [
+            "Your next steps",
+            "<ol><li>For a new claim, check whether the case is standard or needs additional documentation.</li><li>Prepare and file through the official Familienkasse service.</li><li>If you already receive Kindergeld, report relevant changes immediately and retain evidence.</li></ol><p><a href='/en/kindergeld/'>Read the complete Kindergeld overview</a>.</p>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer' target='_blank' rel='noopener'>Familienkasse — Entitlement, amount and duration</a></li><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/kindergeld-kinderzuschlag-zurueckzahlen' target='_blank' rel='noopener'>Familienkasse — Repayment and reporting duties</a></li></ul><p>This guide provides general administrative information. Familienkasse makes the binding assessment of eligibility and documentation.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Kindergeld beantragen 2026: Unterlagen, Nachzahlung und Änderungen melden",
+        "description": "Kindergeld-Antrag bei der Familienkasse: sechs Monate rückwirkende Auszahlung, Unterlagen, Steuer-ID, Adress- und IBAN-Änderungen.",
+        "badge": "Kindergeld · Antrag und Änderungsmitteilung 2026",
+        "heading": "Kindergeld beantragen und Änderungen melden: Welche Schritte sind wichtig?",
+        "meta": "Türkischer Ausgangstext zuletzt am 12. September 2026 geprüft · Amtliche Quelle: Familienkasse",
+        "intro": "Ein neuer Kindergeldantrag wird bei der <strong>Familienkasse</strong> gestellt. Schieben Sie den Antrag nicht unnötig auf: Die rückwirkende Auszahlung ist grundsätzlich auf höchstens <strong>sechs Monate vor dem maßgeblichen Antragseingang</strong> begrenzt, sofern in den betreffenden Monaten ein Anspruch bestand. Werden bereits Leistungen bezogen, sind relevante Änderungen bei Anschrift, Bankkonto, Familie oder Ausbildung des Kindes zu melden.",
+        "sections": [
+          [
+            "Zuerst unterscheiden: Neuantrag oder bestehender Leistungsfall?",
+            "Möchten Sie erstmals Kindergeld beantragen oder Daten bei einer bereits laufenden Zahlung aktualisieren? Eine <em>Veränderungsmitteilung</em> ist <strong>kein neuer Kindergeldantrag</strong>. Wählen Sie das passende Verfahren für Ihre Situation."
+          ],
+          [
+            "Wenn Sie einen neuen Antrag stellen",
+            "<ol><li>Personalien des antragstellenden Elternteils und der Kinder prüfen.</li><li>Steueridentifikationsnummern, Anschrift und Bankverbindung vorbereiten.</li><li>Bei Kindern über 18 Jahren Schul-, Ausbildungs- oder Studiennachweise bereitstellen.</li><li>Auslandsbezüge von Eltern oder Kindern von Anfang an vollständig angeben.</li><li>Den Antrag über die amtlichen Familienkasse-Kanäle stellen. Kostenpflichtige private Vermittler sind nicht notwendig.</li></ol><p><a href='/kindergeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Kindergeld-Vorprüfung (Rechner auf Türkisch)</a></p>"
+          ],
+          [
+            "Wo stellt man den Antrag?",
+            "Zuständig ist die <strong>Familienkasse</strong> bei der Bundesagentur für Arbeit. Die direkte amtliche Antragstellung ist kostenfrei. Mit einer BundID kann ein elektronischer Antrag je nach Dienst und Sachverhalt ohne eigenhändige Unterschrift möglich sein."
+          ],
+          [
+            "Warum sind sechs Monate Rückwirkung so wichtig?",
+            "Selbst wenn ein Anspruch schon früher entstanden ist, werden Kindergeldzahlungen nicht beliebig lange rückwirkend ausgezahlt. Im Regelfall umfasst die Nachzahlung höchstens <strong>sechs Monate vor dem Monat des Antragseingangs bei der Familienkasse</strong>, wenn die Anspruchsvoraussetzungen vorlagen. Warten Sie nicht unbegrenzt auf zusätzliche Unterlagen; klären Sie das richtige Einreichungsverfahren mit der Familienkasse."
+          ],
+          [
+            "Wie geht es nach Antragstellung weiter?",
+            "<ol><li>Briefe und digitale Mitteilungen der Familienkasse beachten.</li><li>Angeforderte Nachweise innerhalb der Fristen nachreichen.</li><li>Nach Zahlungsbeginn die Termine anhand der letzten Ziffer (<em>Endziffer</em>) der Kindergeldnummer prüfen.</li><li>Änderungen, die den Anspruch beeinflussen, unverzüglich mitteilen.</li></ol><p><a href='/kindergeld-auszahlungstermine-2026/' lang='tr' hreflang='tr'>Kindergeld-Auszahlungstermine 2026 (Türkisch)</a></p>"
+          ],
+          [
+            "Welche Änderungen müssen bei laufendem Kindergeld gemeldet werden?",
+            "Die Familienkasse verlangt die Mitteilung anspruchsrelevanter Änderungen bei Kindergeld oder Kinderzuschlag. Dazu gehören unter anderem: <ul><li>Neue Anschrift oder Kontaktdaten</li><li>Anderes Auszahlungskonto oder neue IBAN</li><li>Änderungen bei Familienstand und familiären Verhältnissen</li><li>Schule, Ausbildung, Studium oder Beschäftigung des Kindes</li><li>Umzug ins Ausland oder veränderte grenzüberschreitende Situation</li><li>Anspruchsrelevante Änderungen bei Beschäftigung oder Einkommen</li></ul>"
+          ],
+          [
+            "Warum kann eine unterlassene Mitteilung teuer werden?",
+            "Werden relevante Änderungen nicht gemeldet, kann die Familienkasse weiter Leistungen auszahlen, obwohl die Voraussetzungen weggefallen sind. Zu viel gezahltes Kindergeld oder Kinderzuschlag kann durch einen <em>Aufhebungs- und Erstattungsbescheid</em> zurückgefordert werden. Bewahren Sie einen Nachweis Ihrer Veränderungsmitteilung auf."
+          ],
+          [
+            "Besondere Fälle: volljährige Kinder, Ausland und Auszahlung",
+            "<div class='grid grid-3'><div class='card'><h3>Kind über 18 Jahre</h3><p>Schule, Ausbildung, Studium und sonstige Voraussetzungen für einen fortbestehenden Anspruch prüfen.</p><a href='/kindergeld-18-yas/' lang='tr' hreflang='tr'>Ratgeber (Türkisch)</a></div><div class='card'><h3>Kind in der Türkei</h3><p>Grenzüberschreitende Ansprüche und weitere Familienleistungen gesondert prüfen.</p><a href='/kindergeld-turkiyedeki-cocuk-2026/' lang='tr' hreflang='tr'>Ratgeber (Türkisch)</a></div><div class='card'><h3>Auszahlungstag</h3><p>Über die Endziffer Ihrer Kindergeldnummer den offiziellen Zahlungsplan 2026 aufrufen.</p><a href='/kindergeld-auszahlungstermine-2026/' lang='tr' hreflang='tr'>Zahlungskalender (Türkisch)</a></div></div>"
+          ],
+          [
+            "Häufige Fehler beim Antrag",
+            "<ul><li>Steuer-ID oder Personalien fehlen oder sind falsch.</li><li>Nach dem 18. Geburtstag werden Ausbildungsnachweise nicht rechtzeitig eingereicht.</li><li>Auslandswohnsitz oder Familienleistungen anderer Staaten werden nicht vollständig angegeben.</li><li>Nachforderungen der Familienkasse werden übersehen.</li><li>Der Antrag wird zu spät gestellt und Anspruchsmonate gehen wegen der Sechs-Monats-Grenze verloren.</li><li>Änderungen von Anschrift, IBAN oder Ausbildung werden aufgeschoben.</li></ul>"
+          ],
+          [
+            "Was sollten Sie jetzt tun?",
+            "<ol><li>Bei Neuanträgen prüfen, ob zusätzliche Unterlagen oder ein besonderer Auslandsfall vorliegen.</li><li>Unterlagen vorbereiten und den Antrag amtlich einreichen.</li><li>Bei laufendem Bezug relevante Änderungen sofort mitteilen und Nachweise aufbewahren.</li></ol><p><a href='/de/kindergeld/'>Zum vollständigen Kindergeld-Ratgeber</a>.</p>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer' target='_blank' rel='noopener'>Familienkasse — Anspruch, Höhe und Dauer</a></li><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/kindergeld-kinderzuschlag-zurueckzahlen' target='_blank' rel='noopener'>Familienkasse — Rückzahlung und Mitteilungspflichten</a></li></ul><p>Dieser Ratgeber unterstützt bei Verwaltungsverfahren. Über Anspruch und Unterlagen entscheidet verbindlich die Familienkasse.</p>"
+          ]
+        ]
+      }
     }
   }
 }
