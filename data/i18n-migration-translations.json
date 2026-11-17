@@ -1099,6 +1099,68 @@
           ]
         ]
       }
+    },
+    "kindergeld-auszahlungstermine-2026": {
+      "en": {
+        "title": "Kindergeld Payment Dates 2026: September to December by Endziffer",
+        "description": "Official Kindergeld 2026 payment calendar for September, October, November and December for Endziffer 0–9, plus bank posting and Kinderzuschlag.",
+        "badge": "Kindergeld · Payment calendar · 2026",
+        "heading": "Kindergeld Payment Dates 2026: Calendar by Endziffer",
+        "meta": "Turkish source last verified 6 September 2026 against Familienkasse payment calendar",
+        "intro": "The scheduled Kindergeld payment date depends on the last digit (<strong>Endziffer</strong>) of your Kindergeld number. According to the Federal Employment Agency, Kindergeld and Kinderzuschlag are paid on the same dates. For instance, a number ending in <em>xxxFKxxxxx7</em> has Endziffer <strong>7</strong>.",
+        "sections": [
+          [
+            "Kindergeld payment dates: September–December 2026",
+            "<div style='overflow-x:auto'><table><thead><tr><th>Endziffer</th><th>September</th><th>October</th><th>November</th><th>December</th></tr></thead><tbody><tr><td>0</td><td>3 September</td><td>5 October</td><td>4 November</td><td>3 December</td></tr><tr><td>1</td><td>7 September</td><td>6 October</td><td>5 November</td><td>4 December</td></tr><tr><td>2</td><td>8 September</td><td>8 October</td><td>6 November</td><td>7 December</td></tr><tr><td>3</td><td>10 September</td><td>9 October</td><td>10 November</td><td>8 December</td></tr><tr><td>4</td><td>11 September</td><td>12 October</td><td>11 November</td><td>9 December</td></tr><tr><td>5</td><td>15 September</td><td>13 October</td><td>12 November</td><td>10 December</td></tr><tr><td>6</td><td>16 September</td><td>15 October</td><td>13 November</td><td>11 December</td></tr><tr><td>7</td><td>17 September</td><td>16 October</td><td>16 November</td><td>14 December</td></tr><tr><td>8</td><td>18 September</td><td>19 October</td><td>17 November</td><td>15 December</td></tr><tr><td>9</td><td>21 September</td><td>20 October</td><td>18 November</td><td>16 December</td></tr></tbody></table></div><p>This table reproduces the payment dates in the Turkish source, originally checked against the official 2026 Familienkasse schedule on 6 September 2026. For later changes, consult the official calendar below.</p>"
+          ],
+          [
+            "Why might the bank credit arrive later?",
+            "Familienkasse's scheduled payment date is not a guarantee that money will reach your bank at a particular hour. Bank processing times may create short differences. If a scheduled date has passed and no payment arrives, verify your Kindergeld number and bank account information."
+          ],
+          [
+            "Kindergeld and Kinderzuschlag",
+            "The Federal Employment Agency states that Kindergeld and Kinderzuschlag are paid on the same scheduled date. Eligibility for Kinderzuschlag is determined separately from basic Kindergeld."
+          ],
+          [
+            "Related guides and tools",
+            "<ul><li><a href='/en/kindergeld/'>Kindergeld 2026 overview</a></li><li><a href='/kindergeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Kindergeld calculator (Turkish)</a></li><li><a href='/kinderzuschlag/' lang='tr' hreflang='tr'>Kinderzuschlag guide (Turkish)</a></li><li><a href='/kinderzuschlag-uygunluk-kontrolu-2026/' lang='tr' hreflang='tr'>Kinderzuschlag eligibility check (Turkish)</a></li><li><a href='/kindergeld-turkiyedeki-cocuk-2026/' lang='tr' hreflang='tr'>Kindergeld for a child living in Turkey (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official source",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine' target='_blank' rel='noopener'>Bundesagentur für Arbeit — Kindergeld 2026 payment schedule</a></li></ul><p>Source verification date: 6 September 2026. Always consult the official calendar for updates.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Kindergeld Auszahlungstermine 2026: September bis Dezember nach Endziffer",
+        "description": "Kindergeld-Zahlungskalender September, Oktober, November und Dezember 2026 für die Endziffern 0–9 mit Kinderzuschlag und Banklaufzeit.",
+        "badge": "Kindergeld · Auszahlungskalender · 2026",
+        "heading": "Kindergeld Auszahlungstermine 2026 nach Endziffer",
+        "meta": "Türkischer Ausgangstext am 6. September 2026 mit Familienkasse-Kalender abgeglichen",
+        "intro": "Der planmäßige Kindergeld-Auszahlungstag richtet sich nach der letzten Ziffer der Kindergeldnummer (<strong>Endziffer</strong>). Nach Angaben der Bundesagentur für Arbeit werden Kindergeld und Kinderzuschlag am selben Termin ausgezahlt. Endet die Nummer beispielsweise auf <em>xxxFKxxxxx7</em>, ist die Endziffer <strong>7</strong>.",
+        "sections": [
+          [
+            "Kindergeld-Auszahlungstermine September–Dezember 2026",
+            "<div style='overflow-x:auto'><table><thead><tr><th>Endziffer</th><th>September</th><th>Oktober</th><th>November</th><th>Dezember</th></tr></thead><tbody><tr><td>0</td><td>3. September</td><td>5. Oktober</td><td>4. November</td><td>3. Dezember</td></tr><tr><td>1</td><td>7. September</td><td>6. Oktober</td><td>5. November</td><td>4. Dezember</td></tr><tr><td>2</td><td>8. September</td><td>8. Oktober</td><td>6. November</td><td>7. Dezember</td></tr><tr><td>3</td><td>10. September</td><td>9. Oktober</td><td>10. November</td><td>8. Dezember</td></tr><tr><td>4</td><td>11. September</td><td>12. Oktober</td><td>11. November</td><td>9. Dezember</td></tr><tr><td>5</td><td>15. September</td><td>13. Oktober</td><td>12. November</td><td>10. Dezember</td></tr><tr><td>6</td><td>16. September</td><td>15. Oktober</td><td>13. November</td><td>11. Dezember</td></tr><tr><td>7</td><td>17. September</td><td>16. Oktober</td><td>16. November</td><td>14. Dezember</td></tr><tr><td>8</td><td>18. September</td><td>19. Oktober</td><td>17. November</td><td>15. Dezember</td></tr><tr><td>9</td><td>21. September</td><td>20. Oktober</td><td>18. November</td><td>16. Dezember</td></tr></tbody></table></div><p>Die Tabelle übernimmt die Daten des türkischen Ausgangstexts, die am 6. September 2026 mit dem amtlichen Zahlungskalender der Familienkasse abgeglichen wurden. Bei Änderungen den aktuellen amtlichen Kalender beachten.</p>"
+          ],
+          [
+            "Warum kommt das Geld eventuell später auf dem Konto an?",
+            "Der Auszahlungstag der Familienkasse garantiert keine Bankgutschrift zu einer bestimmten Uhrzeit. Banklaufzeiten können zu kurzen Unterschieden führen. Wenn der Auszahlungstermin verstrichen ist, prüfen Sie zunächst Kindergeldnummer und Kontoverbindung."
+          ],
+          [
+            "Kindergeld und Kinderzuschlag",
+            "Die Bundesagentur für Arbeit nennt für Kindergeld und Kinderzuschlag dieselben planmäßigen Auszahlungstage. Die Anspruchsvoraussetzungen des Kinderzuschlags werden unabhängig vom Kindergeld geprüft."
+          ],
+          [
+            "Verwandte Ratgeber und Rechner",
+            "<ul><li><a href='/de/kindergeld/'>Kindergeld 2026 allgemein</a></li><li><a href='/kindergeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Kindergeld-Rechner (Türkisch)</a></li><li><a href='/kinderzuschlag/' lang='tr' hreflang='tr'>Kinderzuschlag-Ratgeber (Türkisch)</a></li><li><a href='/kinderzuschlag-uygunluk-kontrolu-2026/' lang='tr' hreflang='tr'>Kinderzuschlag-Check (Türkisch)</a></li><li><a href='/kindergeld-turkiyedeki-cocuk-2026/' lang='tr' hreflang='tr'>Kindergeld bei Kindern in der Türkei (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quelle",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine' target='_blank' rel='noopener'>Bundesagentur für Arbeit — Kindergeld Auszahlungstermine 2026</a></li></ul><p>Prüfdatum der Ausgangsquelle: 6. September 2026. Bei Änderungen ist der amtliche Kalender maßgeblich.</p>"
+          ]
+        ]
+      }
     }
   }
 }
