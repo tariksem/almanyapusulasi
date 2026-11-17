@@ -30,6 +30,7 @@ jobs:
           node scripts/validate-priority-guide-translations.js
           node scripts/validate-family-translation-parity.js
           node scripts/validate-family-care-translations.js
+          node scripts/validate-health-finance-translations.js
           node scripts/validate-i18n-registry.js
           node scripts/validate-translated-calculators.js
           node --check assets/js/i18n-core.js
