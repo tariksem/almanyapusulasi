@@ -817,6 +817,178 @@
           ]
         ]
       }
+    },
+    "almanyada-isten-ayrilma-kundigung-kundigungsfrist": {
+      "en": {
+        "title": "Termination and Notice Periods in Germany: Kündigung and Kündigungsfrist",
+        "description": "German dismissal and resignation: written notice under BGB §623, four-week rule, probation, employer seniority periods, three-week lawsuit deadline and jobseeker registration.",
+        "badge": "Work & income · Termination",
+        "heading": "Kündigung in Germany: Which Notice Period Applies?",
+        "meta": "Turkish source updated September 2026 · General employment-law overview",
+        "intro": "Under <strong>§622 BGB</strong>, the basic statutory notice period for employees is generally <strong>four weeks</strong>, ending on the 15th or the last day of a calendar month. Employers' notice periods may increase with service. If a probation period has been agreed, two weeks' notice may apply during a period of up to six months. Always check the collective agreement and employment contract as well.",
+        "sections": [
+          [
+            "Must termination notice be in writing?",
+            "Yes. Under <strong>§623 BGB</strong>, terminating employment by notice (<em>Kündigung</em>) or a mutual termination agreement (<em>Aufhebungsvertrag</em>) requires written form; electronic form is excluded. An email, WhatsApp message or scanned signature alone does not meet the legal requirement."
+          ],
+          [
+            "General statutory notice period for employees",
+            "The basic period is four weeks with termination taking effect on the 15th or at the end of a calendar month. A valid employment agreement may provide a longer period, while a collective agreement (<em>Tarifvertrag</em>) may provide different rules. Read your individual contract."
+          ],
+          [
+            "Employer notice periods based on service",
+            "For dismissal by the employer, §622 BGB provides longer periods as service increases. Examples include one month after two years, two months after five years and three months after eight years. These longer periods normally end at the close of a calendar month. Check the full statutory scale and the applicable contract or collective agreement."
+          ],
+          [
+            "Notice during probation (Probezeit)",
+            "If probation has actually been agreed, a two-week notice period may apply within a probation period of no more than the first six months. Starting a new job does not automatically mean that the first six months are always contractually designated as Probezeit."
+          ],
+          [
+            "Dismissed? Do not miss the three-week court deadline",
+            "If you want to challenge the validity of a dismissal, <strong>§4 Kündigungsschutzgesetz</strong> generally requires a dismissal-protection claim (<em>Kündigungsschutzklage</em>) to reach the labour court within <strong>three weeks</strong> after written notice was received. Missing this deadline can have serious consequences; seek prompt qualified advice."
+          ],
+          [
+            "Tell the Employment Agency when your job will end",
+            "When you know your employment will end, you generally must register as <strong>arbeitsuchend</strong> at least three months in advance. If you learn about the end later, the Federal Employment Agency generally requires jobseeker registration within three days. This is different from registering as <em>arbeitslos</em> when unemployment begins."
+          ],
+          [
+            "Checklist after receiving termination notice",
+            "<ul><li>Record the exact date on which written notice was received.</li><li>Compare your notice period with §622 BGB and any Tarifvertrag.</li><li>If challenging dismissal, act within the three-week court deadline.</li><li>Register promptly as a jobseeker with the Employment Agency.</li><li>Request your <a href='/en/arbeitszeugnis-nedir/'>Arbeitszeugnis employment reference</a>.</li><li>Check <a href='/arbeitslosengeld-basvuru/' lang='tr' hreflang='tr'>unemployment benefit application rules (Turkish)</a>.</li></ul>"
+          ],
+          [
+            "Official sources and important limits",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/bgb/__622.html' target='_blank' rel='noopener'>BGB §622 — Notice periods</a></li><li><a href='https://www.gesetze-im-internet.de/bgb/__623.html' target='_blank' rel='noopener'>BGB §623 — Written form</a></li><li><a href='https://www.gesetze-im-internet.de/kschg/__4.html' target='_blank' rel='noopener'>KSchG §4 — Three-week filing deadline</a></li><li><a href='https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/ihre-schritte-wenn-sie-arbeitslos-werden/wie-sie-sich-arbeitsuchend-melden' target='_blank' rel='noopener'>Bundesagentur für Arbeit — Jobseeker registration</a></li></ul><p>Dismissal law varies with personal circumstances, employer size, collective agreements and special protections. This page is not individual legal advice.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Kündigung und Kündigungsfrist: Diese Fristen gelten in Deutschland",
+        "description": "Kündigung in Deutschland: Schriftform, vier Wochen Kündigungsfrist, Probezeit, Arbeitgeberfristen, Drei-Wochen-Klagefrist und Arbeitsuchendmeldung.",
+        "badge": "Arbeit & Einkommen · Kündigung",
+        "heading": "Kündigung und Kündigungsfrist: Welche Fristen gelten?",
+        "meta": "Türkischer Ausgangstext September 2026 · Allgemeiner Überblick zum Arbeitsrecht",
+        "intro": "Nach <strong>§622 BGB</strong> beträgt die gesetzliche Grundkündigungsfrist für Arbeitnehmer grundsätzlich <strong>vier Wochen</strong> zum 15. oder zum Ende eines Kalendermonats. Bei Arbeitgeberkündigungen können die Fristen mit der Beschäftigungsdauer steigen. Innerhalb einer vereinbarten Probezeit von höchstens sechs Monaten kann eine Kündigungsfrist von zwei Wochen gelten. Beachten Sie Arbeitsvertrag und gegebenenfalls Tarifvertrag.",
+        "sections": [
+          [
+            "Ist eine Kündigung nur schriftlich wirksam?",
+            "Ja. Nach <strong>§623 BGB</strong> benötigen Kündigung und Aufhebungsvertrag zur Beendigung eines Arbeitsverhältnisses die gesetzliche Schriftform; die elektronische Form ist ausgeschlossen. Eine einfache E-Mail, WhatsApp-Nachricht oder eingescannt unterschriebene Datei reicht dafür nicht aus."
+          ],
+          [
+            "Allgemeine Kündigungsfrist für Arbeitnehmer",
+            "Die gesetzliche Grundkündigungsfrist beträgt vier Wochen zum 15. oder zum Ende eines Kalendermonats. Ein wirksamer Arbeitsvertrag kann längere Fristen vorsehen; tarifvertraglich können abweichende Regeln gelten. Prüfen Sie die konkreten Vereinbarungen."
+          ],
+          [
+            "Kündigungsfristen für Arbeitgeber nach Betriebszugehörigkeit",
+            "§622 BGB sieht bei einer Kündigung durch den Arbeitgeber gestaffelte längere Fristen vor: beispielsweise einen Monat nach zwei Jahren, zwei Monate nach fünf Jahren und drei Monate nach acht Jahren Betriebszugehörigkeit. Die Termine beziehen sich regelmäßig auf das Monatsende. Maßgeblich sind stets auch der anwendbare Arbeits- oder Tarifvertrag."
+          ],
+          [
+            "Kündigungsfrist in der Probezeit",
+            "Während einer wirksam vereinbarten Probezeit kann für höchstens die ersten sechs Monate eine Frist von zwei Wochen gelten. Die ersten sechs Beschäftigungsmonate sind nicht automatisch immer als Probezeit vereinbart."
+          ],
+          [
+            "Kündigung erhalten? Drei-Wochen-Klagefrist beachten",
+            "Soll eine Kündigung rechtlich angegriffen werden, muss eine <strong>Kündigungsschutzklage</strong> nach <strong>§4 KSchG</strong> grundsätzlich binnen <strong>drei Wochen</strong> nach Zugang der schriftlichen Kündigung beim Arbeitsgericht erhoben werden. Wird die Frist versäumt, drohen erhebliche rechtliche Folgen. Holen Sie bei Zweifeln zügig fachkundigen Rat ein."
+          ],
+          [
+            "Arbeitsuchendmeldung bei der Agentur für Arbeit",
+            "Ist das Ende des Arbeitsverhältnisses bekannt, muss man sich im Regelfall spätestens drei Monate vorher <strong>arbeitsuchend</strong> melden. Wird der Beendigungszeitpunkt erst kurzfristig bekannt, fordert die Bundesagentur für Arbeit grundsätzlich eine Meldung innerhalb von drei Tagen. Die Arbeitsuchendmeldung ersetzt nicht die <em>Arbeitslosmeldung</em> mit Beginn der Arbeitslosigkeit."
+          ],
+          [
+            "Checkliste nach einer Kündigung",
+            "<ul><li>Das genaue Zugangsdatum des Kündigungsschreibens dokumentieren.</li><li>Arbeitsvertrag, §622 BGB und gegebenenfalls Tarifvertrag hinsichtlich der Kündigungsfrist vergleichen.</li><li>Bei beabsichtigter Klage die Drei-Wochen-Frist beachten.</li><li>Arbeitsuchendmeldung nicht verzögern.</li><li>Ein <a href='/de/arbeitszeugnis-nedir/'>Arbeitszeugnis</a> anfordern.</li><li>Die <a href='/arbeitslosengeld-basvuru/' lang='tr' hreflang='tr'>Arbeitslosengeld-Antragsbedingungen (Türkisch)</a> prüfen.</li></ul>"
+          ],
+          [
+            "Amtliche Quellen und wichtige Hinweise",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/bgb/__622.html' target='_blank' rel='noopener'>BGB §622 — Kündigungsfristen</a></li><li><a href='https://www.gesetze-im-internet.de/bgb/__623.html' target='_blank' rel='noopener'>BGB §623 — Schriftform</a></li><li><a href='https://www.gesetze-im-internet.de/kschg/__4.html' target='_blank' rel='noopener'>KSchG §4 — Klagefrist</a></li><li><a href='https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/ihre-schritte-wenn-sie-arbeitslos-werden/wie-sie-sich-arbeitsuchend-melden' target='_blank' rel='noopener'>Bundesagentur für Arbeit — Arbeitsuchendmeldung</a></li></ul><p>Die Bewertung kann sich durch individuelle Umstände, Betriebsgröße, Tarifvertrag und besondere Schutzrechte ändern. Dieser Ratgeber ist keine individuelle Rechtsberatung.</p>"
+          ]
+        ]
+      }
+    },
+    "arbeitszeugnis-nedir": {
+      "en": {
+        "title": "Arbeitszeugnis in Germany: Simple and Qualified Employment References",
+        "description": "Employment references under §109 GewO: einfaches and qualifiziertes Arbeitszeugnis, acceptable wording, electronic format and document checks.",
+        "badge": "Work & income · Employment references",
+        "heading": "Arbeitszeugnis in Germany: Which Reference Should You Request?",
+        "meta": "Turkish source updated September 2026 · Approximate reading time: 6 minutes",
+        "intro": "When an employment relationship ends in Germany, employees are entitled to a written reference (<em>Zeugnis</em>) under <strong>§109 Gewerbeordnung</strong>. A simple reference documents at least the type and duration of the employment. A qualified reference adds an assessment of performance and professional conduct.",
+        "sections": [
+          [
+            "Simple versus qualified Arbeitszeugnis",
+            "<ul><li><strong>Einfaches Arbeitszeugnis:</strong> confirms the nature of the work and the duration of employment.</li><li><strong>Qualifiziertes Arbeitszeugnis:</strong> additionally evaluates job performance and conduct at work.</li></ul><p>A qualified reference is generally more informative when applying for another position.</p>"
+          ],
+          [
+            "Can an employer insert hidden negative messages?",
+            "No. Under §109 GewO, the document must be clear and understandable. It may not contain signs or formulations intended to communicate a message different from the one apparent in the wording. Instead of relying on internet lists of alleged secret codes, review the entire reference in context."
+          ],
+          [
+            "Can an Arbeitszeugnis be issued electronically?",
+            "Under the current wording of §109 GewO, an employment reference may be issued in electronic form with the employee's consent. Therefore, the blanket statement that an Arbeitszeugnis can <em>only</em> ever be produced on paper is no longer generally accurate."
+          ],
+          [
+            "What should you review in the document?",
+            "<ul><li>Are your name and employment dates accurate?</li><li>Does the job description reflect the work actually performed?</li><li>Are your job title and level of responsibility fully represented?</li><li>Are the performance and conduct assessments consistent?</li><li>Are spelling, date and formatting details correct?</li></ul>"
+          ],
+          [
+            "When should you request the reference?",
+            "Once the departure process becomes clear, do not leave the request until the last working day. Obtaining the reference early can be useful if you are already applying for another job."
+          ],
+          [
+            "Does an Arbeitszeugnis replace unemployment paperwork?",
+            "No. The Arbeitszeugnis is a career and application document. The Federal Employment Agency may require different records when processing unemployment benefits. If employment is ending, prioritise deadlines described in the <a href='/arbeitslosengeld-basvuru/' lang='tr' hreflang='tr'>unemployment benefit guide (Turkish)</a>."
+          ],
+          [
+            "Official source",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/gewo/__109.html' target='_blank' rel='noopener'>Gewerbeordnung §109 — Employment references</a></li></ul>"
+          ],
+          [
+            "Related guides and practical recommendation",
+            "<ul><li><a href='/en/almanyada-is-sozlesmesi-arbeitsvertrag/'>Employment contract (Arbeitsvertrag)</a></li><li><a href='/en/almanyada-isten-ayrilma-kundigung-kundigungsfrist/'>Termination and notice periods</a></li><li><a href='/en/almanya-is-arama-siteleri/'>Job search websites</a></li><li><a href='/is-gelir/' lang='tr' hreflang='tr'>Work & income hub (Turkish)</a></li></ul><p>Use the reference as evidence supporting your CV and previous experience, not as a replacement for the CV.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Arbeitszeugnis: Einfaches oder qualifiziertes Zeugnis anfordern",
+        "description": "Arbeitszeugnis nach §109 GewO: Unterschied zwischen einfachem und qualifiziertem Zeugnis, versteckte Botschaften und elektronische Form.",
+        "badge": "Arbeit & Einkommen · Arbeitszeugnis",
+        "heading": "Arbeitszeugnis: Welches Dokument sollten Sie beim Jobwechsel verlangen?",
+        "meta": "Türkischer Ausgangstext September 2026 · Lesezeit etwa 6 Minuten",
+        "intro": "Bei Beendigung des Arbeitsverhältnisses besteht nach <strong>§109 Gewerbeordnung</strong> ein Anspruch auf ein Zeugnis. Ein einfaches Arbeitszeugnis dokumentiert mindestens Art und Dauer der Tätigkeit. Ein qualifiziertes Arbeitszeugnis enthält zusätzlich Bewertungen von Leistung und Verhalten.",
+        "sections": [
+          [
+            "Einfaches und qualifiziertes Arbeitszeugnis",
+            "<ul><li><strong>Einfaches Arbeitszeugnis:</strong> bestätigt Art und Dauer der ausgeübten Tätigkeit.</li><li><strong>Qualifiziertes Arbeitszeugnis:</strong> beurteilt darüber hinaus die Arbeitsleistung und das Verhalten am Arbeitsplatz.</li></ul><p>Für eine neue Bewerbung ist ein qualifiziertes Zeugnis häufig aussagekräftiger.</p>"
+          ],
+          [
+            "Darf der Arbeitgeber geheime negative Botschaften verwenden?",
+            "Nein. Nach §109 GewO muss das Arbeitszeugnis klar und verständlich formuliert sein. Es darf keine Merkmale oder Formulierungen enthalten, die eine vom sichtbaren Wortlaut abweichende Aussage vermitteln sollen. Statt pauschalen Listen angeblicher Geheimcodes zu vertrauen, sollte das Zeugnis als Ganzes geprüft werden."
+          ],
+          [
+            "Ist ein elektronisches Arbeitszeugnis möglich?",
+            "Nach der geltenden Fassung von §109 GewO ist eine elektronische Ausstellung mit Einwilligung des Arbeitnehmers möglich. Die Aussage, Arbeitszeugnisse dürften grundsätzlich ausschließlich in Papierform erstellt werden, ist daher nicht mehr allgemein richtig."
+          ],
+          [
+            "Was sollten Sie im Zeugnis kontrollieren?",
+            "<ul><li>Stimmen Name und Beschäftigungszeitraum?</li><li>Beschreibt der Aufgabenbereich die tatsächlich ausgeübte Tätigkeit?</li><li>Sind Position und Verantwortungsniveau korrekt wiedergegeben?</li><li>Sind Leistungs- und Verhaltensbeurteilung in sich stimmig?</li><li>Gibt es Rechtschreib-, Datums- oder Formfehler?</li></ul>"
+          ],
+          [
+            "Wann sollte man das Zeugnis anfordern?",
+            "Sobald das Ende des Arbeitsverhältnisses absehbar ist, sollte die Zeugniserstellung nicht bis zum letzten Tag aufgeschoben werden. Ein früh angefordertes Dokument erleichtert laufende Bewerbungen."
+          ],
+          [
+            "Reicht das Arbeitszeugnis für den Arbeitslosengeldantrag?",
+            "Nein. Das Arbeitszeugnis dokumentiert Tätigkeiten und Bewertungen für die berufliche Laufbahn. Für Arbeitslosengeld benötigt die Bundesagentur für Arbeit gegebenenfalls andere Nachweise. Beachten Sie bei drohendem Beschäftigungsende zuerst die Fristen im <a href='/arbeitslosengeld-basvuru/' lang='tr' hreflang='tr'>Arbeitslosengeld-Ratgeber (Türkisch)</a>."
+          ],
+          [
+            "Amtliche Quelle",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/gewo/__109.html' target='_blank' rel='noopener'>Gewerbeordnung §109 — Zeugnis</a></li></ul>"
+          ],
+          [
+            "Verwandte Ratgeber und praktischer Hinweis",
+            "<ul><li><a href='/de/almanyada-is-sozlesmesi-arbeitsvertrag/'>Arbeitsvertrag</a></li><li><a href='/de/almanyada-isten-ayrilma-kundigung-kundigungsfrist/'>Kündigung und Kündigungsfristen</a></li><li><a href='/de/almanya-is-arama-siteleri/'>Jobsuche</a></li><li><a href='/is-gelir/' lang='tr' hreflang='tr'>Arbeit & Einkommen (Türkisch)</a></li></ul><p>Das Arbeitszeugnis ergänzt Ihren Lebenslauf und belegt bisherige Tätigkeiten; es ersetzt den Lebenslauf nicht.</p>"
+          ]
+        ]
+      }
     }
   }
 }
