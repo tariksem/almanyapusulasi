@@ -1,0 +1,222 @@
+{
+  "items": {
+    "almanyada-yazilimci-it-kariyeri": {
+      "en": {
+        "title": "IT and Software Careers in Germany 2026: Salary, Language and Visa Routes",
+        "description": "Career guide for software developers and IT specialists in Germany: vacancies, 2026 salaries, Blue Card, experience-based permits, language and job applications.",
+        "badge": "Career guide · IT & Software",
+        "heading": "Building an IT or Software Career in Germany",
+        "meta": "Turkish source: 5 September 2026 · Bitkom 2026 market data reviewed 17 November 2026",
+        "intro": "Do not base the decision only on salary tables. Assess demand for your role, practical language skills, qualifications and recognition, immigration options, gross salary and net income together. A 2026 Bitkom study reports <strong>79,000 unfilled IT positions</strong> in Germany, compared with 109,000 in 2025; this reflects a cooling market, not an end to demand.",
+        "sections": [
+          [
+            "Profile check: experience, offers, salary and working language",
+            "A competitive profile combines current, verifiable IT experience, professional communication in English or German, demonstrable portfolio or project results, a technology stack matching German vacancies, and realistic job and visa salary expectations. If experience is limited, build projects and compare requirements across live adverts. German B1/B2 can expand career options even where English is accepted."
+          ],
+          [
+            "IT salary: platform indicators, not legal thresholds",
+            "The Turkish source records approximately <strong>€51,400 annual gross median</strong> for Software Developer on StepStone and a platform range of about <strong>€44,100–€63,000</strong>. These are platform estimates taken from the source and not guaranteed current salaries, official statistics or Blue Card thresholds. Seniority, location and company change pay substantially. <a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Gross-to-net calculator (Turkish)</a>."
+          ],
+          [
+            "Different immigration routes for IT professionals",
+            "<div class='grid grid-3'><div class='card'><h3>EU Blue Card</h3><p>For qualifying employment and credentials or an eligible IT-experience route, check 2026 salary and statutory conditions.</p><a href='/en/blue-card/'>Blue Card guide</a></div><div class='card'><h3>Experience-based employment</h3><p>Some non-regulated IT roles can permit a work route without a formal academic degree if the separate experience and salary rules are satisfied.</p><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Immigration route tool (Turkish)</a></div><div class='card'><h3>Opportunity Card</h3><p>For eligible candidates without a confirmed offer, a job-search route may be relevant.</p><a href='/en/chancenkarte-firsat-karti/'>Opportunity Card guide</a></div></div>"
+          ],
+          [
+            "Is German mandatory for an IT job?",
+            "There is no single general legal German-language requirement covering all IT roles. English can be sufficient in international product, startup, data, backend and DevOps teams. German is particularly valuable in application support, SAP/ERP, internal business communication, consulting and management. B1/B2 knowledge can widen the range of employers and advancement opportunities."
+          ],
+          [
+            "Search beyond “Software Developer”",
+            "<div class='grid grid-3'><div class='card'><h3>Software</h3><p>Software Developer, Software Engineer, Backend, Frontend, Full Stack, Mobile, Embedded.</p></div><div class='card'><h3>Enterprise and support</h3><p>Application Support, SAP, Microsoft 365, Power Platform, ERP/CRM, System Engineer.</p></div><div class='card'><h3>Data and security</h3><p>Data Engineer, Data Scientist, Cloud, DevOps, Cybersecurity, Security Engineer.</p></div></div><p><a href='/en/almanya-is-arama-siteleri/'>Job boards and application strategy in Germany</a></p>"
+          ],
+          [
+            "Applying from Turkey or another country",
+            "<ol><li>Prepare a concise, results-oriented CV aligned with German expectations.</li><li>Search roles on LinkedIn, XING, StepStone and Make it in Germany using multiple job titles.</li><li>If you have a degree, review <a href='/en/diploma-denkligi-anabin-zab/'>Anabin/ZAB</a>; otherwise examine whether a qualifying experience-based IT route applies.</li><li>Check the offered annual gross salary against official immigration requirements rather than job-board medians.</li><li>Before accepting, compare estimated net income against housing costs.</li></ol><p><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Rent budget tool (Turkish)</a></p>"
+          ],
+          [
+            "Official and market sources",
+            "<ul><li><a href='https://www.bitkom.org/Presse/Presseinformation/IT-Fachkraeftemangel-in-den-letzten-drei-Jahren-halbiert' target='_blank' rel='noopener'>Bitkom, 3 September 2026 — IT labour market</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/professions-in-demand/career-it-specialists' target='_blank' rel='noopener'>Make it in Germany — IT professionals</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/it-specialist-in-germany/how-to-get-started' target='_blank' rel='noopener'>Make it in Germany — Getting started in IT</a></li><li><a href='https://www.stepstone.de/gehalt/Software-Developer.html' target='_blank' rel='noopener'>StepStone — Salary reference</a></li></ul><p>Job listings and salary estimates change frequently. Check current vacancies and the official visa requirements before making decisions.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "IT- und Software-Karriere in Deutschland 2026: Gehalt, Sprache und Visum",
+        "description": "Karriere für Softwareentwickler und IT-Fachkräfte: Stellenmarkt 2026, Gehälter, Blaue Karte EU, Berufserfahrung, Sprachkenntnisse und Bewerbungen.",
+        "badge": "Berufsratgeber · IT & Software",
+        "heading": "IT- und Software-Karriere in Deutschland aufbauen",
+        "meta": "Türkischer Ausgangstext: 5. September 2026 · Bitkom-Marktdaten 2026 geprüft am 17. November 2026",
+        "intro": "Betrachten Sie nicht nur Gehaltstabellen, sondern beurteilen Sie gemeinsam die Nachfrage nach Ihrem Berufsprofil, tatsächlich nutzbare Sprachkenntnisse, Qualifikation und Anerkennung, Einwanderungsweg, Bruttoangebot und Nettoeinkommen. Laut Bitkom fehlten im Jahr 2026 rund <strong>79.000 IT-Fachkräfte</strong> in Deutschland, nach 109.000 im Jahr 2025. Der Arbeitsmarkt ist damit weniger angespannt, Nachfrage besteht aber weiterhin.",
+        "sections": [
+          [
+            "Berufsprofil: Erfahrung, Stellenangebot, Gehalt und Arbeitssprache",
+            "Ein starkes Profil kombiniert aktuelle nachweisbare IT-Erfahrung, professionelle Kommunikation auf Deutsch oder Englisch, Portfolio und messbare Projektergebnisse, einen zu deutschen Ausschreibungen passenden Technologie-Stack sowie realistische Gehalts- und Visumerwartungen. Bei wenig Erfahrung sollten praktische Projekte aufgebaut und Stellenanforderungen verglichen werden. Deutsch auf B1/B2 kann die Auswahl an Stellen erweitern."
+          ],
+          [
+            "Gehälter: Plattformwerte sind keine gesetzlichen Grenzen",
+            "Der türkische Ausgangstext nennt für Software Developer auf StepStone ein ungefähres <strong>Jahresbruttomediangehalt von 51.400 €</strong> und eine Gehaltsspanne von etwa <strong>44.100–63.000 €</strong>. Diese Angaben sind übernommene Plattformindikatoren, keine garantierten aktuellen Gehälter, amtlichen Statistiken oder Blue-Card-Grenzen. Gehalt hängt stark von Region, Erfahrung, Unternehmen und Tätigkeit ab. <a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Brutto-Netto-Rechner (Türkisch)</a>."
+          ],
+          [
+            "Verschiedene Einwanderungswege für IT-Fachkräfte",
+            "<div class='grid grid-3'><div class='card'><h3>Blaue Karte EU</h3><p>Bei geeigneter qualifizierter Beschäftigung und passendem Abschluss oder IT-Erfahrungsweg müssen die Gehalts- und Rechtsvoraussetzungen für 2026 geprüft werden.</p><a href='/de/blue-card/'>Blue-Card-Ratgeber</a></div><div class='card'><h3>Berufserfahrungsbasierter Aufenthalt</h3><p>Für bestimmte nicht reglementierte IT-Tätigkeiten kann unter eigenen Voraussetzungen ein Arbeitsaufenthalt ohne formalen Hochschulabschluss möglich sein.</p><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Einwanderungsweg-Rechner (Türkisch)</a></div><div class='card'><h3>Chancenkarte</h3><p>Für berechtigte Personen ohne konkretes Stellenangebot kann eine Einreise zur Arbeitssuche infrage kommen.</p><a href='/de/chancenkarte-firsat-karti/'>Chancenkarte-Ratgeber</a></div></div>"
+          ],
+          [
+            "Muss man als IT-Fachkraft Deutsch können?",
+            "Es gibt keine einheitliche gesetzliche Deutschpflicht für sämtliche IT-Stellen. In internationalen Produktteams, Startups oder in Backend-, Data- und DevOps-Teams kann Englisch genügen. Für Application Support, SAP/ERP, Fachbereichskommunikation, Beratung und Führung ist Deutsch häufig besonders wichtig. B1/B2 erweitert das Spektrum potenzieller Arbeitgeber."
+          ],
+          [
+            "Nicht nur nach „Software Developer“ suchen",
+            "<div class='grid grid-3'><div class='card'><h3>Software</h3><p>Software Developer, Software Engineer, Backend, Frontend, Full Stack, Mobile, Embedded.</p></div><div class='card'><h3>Unternehmenssysteme und Support</h3><p>Application Support, SAP, Microsoft 365, Power Platform, ERP/CRM, System Engineer.</p></div><div class='card'><h3>Daten und IT-Sicherheit</h3><p>Data Engineer, Data Scientist, Cloud, DevOps, Cybersecurity, Security Engineer.</p></div></div><p><a href='/de/almanya-is-arama-siteleri/'>Stellenportale und Bewerbungsstrategie</a></p>"
+          ],
+          [
+            "Bewerbung aus der Türkei oder einem anderen Staat",
+            "<ol><li>Einen knappen, ergebnisorientierten Lebenslauf für den deutschen Markt erstellen.</li><li>Stellen über LinkedIn, XING, StepStone und Make it in Germany mit verschiedenen Berufsbezeichnungen suchen.</li><li>Bei Hochschulabschluss <a href='/de/diploma-denkligi-anabin-zab/'>Anabin/ZAB</a> prüfen, ohne Abschluss die eigenständigen IT-Erfahrungswege berücksichtigen.</li><li>Das angebotene Jahresbruttogehalt anhand der amtlichen Visumsbedingungen beurteilen, nicht anhand eines Jobportal-Mediangehalts.</li><li>Nach einem Angebot das geschätzte Nettoeinkommen mit den Mietkosten vergleichen.</li></ol><p><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Mietbudget-Rechner (Türkisch)</a></p>"
+          ],
+          [
+            "Amtliche Quellen und Marktberichte",
+            "<ul><li><a href='https://www.bitkom.org/Presse/Presseinformation/IT-Fachkraeftemangel-in-den-letzten-drei-Jahren-halbiert' target='_blank' rel='noopener'>Bitkom, 3. September 2026 — IT-Arbeitsmarkt</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/professions-in-demand/career-it-specialists' target='_blank' rel='noopener'>Make it in Germany — IT-Fachkräfte</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/it-specialist-in-germany/how-to-get-started' target='_blank' rel='noopener'>Make it in Germany — IT-Karrierestart</a></li><li><a href='https://www.stepstone.de/gehalt/Software-Developer.html' target='_blank' rel='noopener'>StepStone — Gehaltsindikator</a></li></ul><p>Stellenangebot und Gehaltsdaten verändern sich laufend. Vergleichen Sie vor der Bewerbung die aktuellen Anzeigen und amtlichen Visa-Voraussetzungen.</p>"
+          ]
+        ]
+      }
+    },
+    "almanyada-lojistik-depo-kariyeri": {
+      "en": {
+        "title": "Logistics and Warehouse Jobs in Germany 2026: Pay, Language and Visas",
+        "description": "Lagerhelfer, Kommissionierer and Fachkraft für Lagerlogistik compared: salaries, qualifications, German, training and visa options.",
+        "badge": "Career guide · Logistics 2026",
+        "heading": "Warehouse and Logistics Careers in Germany",
+        "meta": "Turkish source: 2026 career guide · Market amounts are StepStone estimates",
+        "intro": "<strong>Lagerhelfer, Kommissionierer and Fachkraft für Lagerlogistik</strong> do not represent the same qualification level. Compare each role's requirements, German skills, salary estimates and possible immigration route separately.",
+        "sections": [
+          [
+            "Three different entry levels",
+            "<div class='grid grid-3'><div class='card'><h3>Lagerhelfer</h3><p>A warehouse helper role. Formal vocational training is not required in every vacancy, but that does not make the role automatically eligible for a qualified-worker visa.</p></div><div class='card'><h3>Kommissionierer</h3><p>Order picking, packing and dispatch. Shift work, scanner/WMS experience and a forklift certificate (Staplerschein) can help.</p></div><div class='card'><h3>Fachkraft für Lagerlogistik</h3><p>A recognised three-year German vocational training occupation. An eligible foreign vocational qualification and relevant experience can provide a stronger basis for assessing qualified employment.</p></div></div>"
+          ],
+          [
+            "Market salary indicators for 2026",
+            "The Turkish source cites approximate annual gross StepStone medians of <strong>€32,500 for Fachkraft Lagerlogistik</strong> and <strong>€30,900 for Lagerhelfer</strong>. These are platform estimates, not official wage guarantees or immigration salary thresholds. Actual pay can differ by region, shifts, employer and collective agreement."
+          ],
+          [
+            "Language and search terms",
+            "German requirements vary by employer. Safety instructions, shift coordination, scanning/WMS interfaces and shipping documents make practical German valuable; B1 can increase opportunities in skilled roles. Search for <strong>Lagerhelfer, Kommissionierer, Fachkraft für Lagerlogistik, Versandmitarbeiter, Wareneingang, Logistikmitarbeiter</strong> and <strong>Staplerfahrer</strong>."
+          ],
+          [
+            "Does a warehouse vacancy establish visa eligibility?",
+            "No. A job advertisement and a residence permit for qualified employment are different matters. Helper work does not necessarily meet skilled-worker immigration requirements. If you possess a recognised vocational qualification, relevant experience and a qualifying job offer, check the skilled-worker and professionally experienced worker routes separately."
+          ],
+          [
+            "Check salary, contract and career pathway",
+            "<ul><li><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Immigration route assessment (Turkish)</a></li><li><a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Gross-to-net calculator (Turkish)</a></li><li><a href='/en/almanyada-is-sozlesmesi-arbeitsvertrag/'>Employment contract: shifts, allowances and probation</a></li><li><a href='/en/almanya-is-arama-siteleri/'>Job search channels</a></li></ul>"
+          ],
+          [
+            "Sources",
+            "<ul><li><a href='https://www.stepstone.de/gehalt/Fachkraft-Lagerlogistik.html' target='_blank' rel='noopener'>StepStone — Fachkraft Lagerlogistik</a></li><li><a href='https://www.stepstone.de/gehalt/Lagerhelfer-in.html' target='_blank' rel='noopener'>StepStone — Lagerhelfer</a></li><li><a href='https://www.make-it-in-germany.com/en/visa-residence/types/visa-professionally-experienced-workers' target='_blank' rel='noopener'>Make it in Germany — Experienced workers</a></li></ul><p>Salary estimates are not visa rules. Confirm conditions for the individual job and intended residence permit.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Lager und Logistik in Deutschland 2026: Gehalt, Sprache und Visum",
+        "description": "Lagerhelfer, Kommissionierer und Fachkraft für Lagerlogistik: Voraussetzungen, Gehaltsindikatoren, Deutsch und Arbeitsaufenthalt.",
+        "badge": "Berufsratgeber · Logistik 2026",
+        "heading": "Lager- und Logistikkarriere in Deutschland",
+        "meta": "Türkischer Ausgangstext: Berufsratgeber 2026 · Gehaltswerte sind StepStone-Indikatoren",
+        "intro": "<strong>Lagerhelfer, Kommissionierer und Fachkraft für Lagerlogistik</strong> unterscheiden sich deutlich im Qualifikationsniveau. Anforderungen, Deutschkenntnisse, Gehaltsindikatoren und Einwanderungsmöglichkeiten sollten getrennt geprüft werden.",
+        "sections": [
+          [
+            "Drei verschiedene Einstiegsniveaus",
+            "<div class='grid grid-3'><div class='card'><h3>Lagerhelfer</h3><p>Typische Hilfstätigkeit im Lager. Nicht jede Stelle setzt eine abgeschlossene Ausbildung voraus; daraus ergibt sich aber nicht automatisch ein Aufenthaltstitel für qualifizierte Beschäftigung.</p></div><div class='card'><h3>Kommissionierer</h3><p>Auftragszusammenstellung, Verpackung und Versand. Schichtbereitschaft, Scanner-/WMS-Erfahrung und Staplerschein können hilfreich sein.</p></div><div class='card'><h3>Fachkraft für Lagerlogistik</h3><p>Anerkannter dreijähriger Ausbildungsberuf in Deutschland. Eine geeignete ausländische Berufsausbildung und entsprechende Erfahrung können eine bessere Grundlage für qualifizierte Beschäftigung bieten.</p></div></div>"
+          ],
+          [
+            "Gehaltsindikatoren 2026",
+            "Der türkische Ausgangstext nennt ungefähre StepStone-Jahresbruttomediane von <strong>32.500 € für Fachkraft Lagerlogistik</strong> und <strong>30.900 € für Lagerhelfer</strong>. Dies sind Schätzungen einer Gehaltsplattform, keine amtlich garantierten Gehälter oder aufenthaltsrechtlichen Mindestwerte. Region, Schichtzulagen, Tarifvertrag und Arbeitgeber beeinflussen den Verdienst."
+          ],
+          [
+            "Deutsch und Suchbegriffe",
+            "Die Sprachanforderungen unterscheiden sich je nach Arbeitgeber. Für Sicherheitsunterweisungen, Schichtübergabe, Scanner/WMS und Versanddokumente ist praktisches Deutsch wichtig; B1 erweitert das Angebot qualifizierter Stellen. Geeignete Suchbegriffe: <strong>Lagerhelfer, Kommissionierer, Fachkraft für Lagerlogistik, Versandmitarbeiter, Wareneingang, Logistikmitarbeiter</strong> und <strong>Staplerfahrer</strong>."
+          ],
+          [
+            "Ermöglicht jede Lagerstelle automatisch ein Arbeitsvisum?",
+            "Nein. Ein Stellenangebot ist nicht gleichbedeutend mit den Anforderungen eines Aufenthaltstitels für Fachkräfte. Helfertätigkeiten erfüllen nicht zwingend die Voraussetzungen qualifizierter Beschäftigung. Bei anerkannter Berufsausbildung, einschlägiger Erfahrung und geeigneter Tätigkeit sind die Fachkräfte- oder Berufserfahrenenregelungen gesondert zu prüfen."
+          ],
+          [
+            "Gehalt, Vertrag und Karriereweg prüfen",
+            "<ul><li><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Einwanderungsweg prüfen (Türkisch)</a></li><li><a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Brutto-Netto-Rechner (Türkisch)</a></li><li><a href='/de/almanyada-is-sozlesmesi-arbeitsvertrag/'>Arbeitsvertrag: Schicht, Zuschläge und Probezeit</a></li><li><a href='/de/almanya-is-arama-siteleri/'>Stellenportale</a></li></ul>"
+          ],
+          [
+            "Quellen",
+            "<ul><li><a href='https://www.stepstone.de/gehalt/Fachkraft-Lagerlogistik.html' target='_blank' rel='noopener'>StepStone — Fachkraft Lagerlogistik</a></li><li><a href='https://www.stepstone.de/gehalt/Lagerhelfer-in.html' target='_blank' rel='noopener'>StepStone — Lagerhelfer</a></li><li><a href='https://www.make-it-in-germany.com/en/visa-residence/types/visa-professionally-experienced-workers' target='_blank' rel='noopener'>Make it in Germany — Berufserfahrene</a></li></ul><p>Gehaltsindikatoren ersetzen nicht die Prüfung der Voraussetzungen für einen konkreten Aufenthaltstitel.</p>"
+          ]
+        ]
+      }
+    },
+    "almanyada-satis-office-kariyeri": {
+      "en": {
+        "title": "Sales and Office Careers in Germany 2026: Roles, German and Visa Requirements",
+        "description": "Sachbearbeiter, Vertriebsinnendienst, Sales Support and Backoffice in Germany: job titles, language, CV, salaries and visa considerations.",
+        "badge": "Career guide · Sales & Office 2026",
+        "heading": "Sales, Administration and Backoffice Careers in Germany",
+        "meta": "Turkish source: 2026 guide · Salary figures are commercial platform estimates",
+        "intro": "Office employment is not a single occupation. Search for <strong>Vertrieb, Kundenservice, Einkauf, Auftragsbearbeitung</strong> and <strong>Sachbearbeitung</strong> separately. Appropriate German job titles, practical language ability and demonstrated systems experience make a substantial difference.",
+        "sections": [
+          [
+            "Choose the right role",
+            "<div class='grid grid-3'><div class='card'><h3>Sachbearbeiter/in</h3><p>Processes orders, data, documents or departmental workflows. Excel, ERP/SAP and written German often matter.</p></div><div class='card'><h3>Vertriebsinnendienst</h3><p>Prepares quotations and orders, communicates with customers and supports the sales team. Telephone German and sometimes English are valuable.</p></div><div class='card'><h3>Backoffice / Customer Service</h3><p>Coordinates service cases, records and internal operations. German together with English or Turkish can help in some international workplaces.</p></div></div>"
+          ],
+          [
+            "2026 salary indicators",
+            "The Turkish source cites approximate annual gross StepStone medians of <strong>€37,400 for Sachbearbeiter/in</strong> and <strong>€39,600 for Vertriebsachbearbeiter/in</strong>. These are job-platform estimates rather than official salaries or immigration eligibility thresholds; the actual figures can vary by employer, region and seniority."
+          ],
+          [
+            "Search and CV strategy",
+            "Search for <strong>Sachbearbeiter, Vertriebsinnendienst, Sales Support, Customer Service, Auftragsabwicklung, Innendienst, Backoffice</strong> and <strong>Einkaufssachbearbeiter</strong>. In your CV, demonstrate SAP/ERP, Excel, CRM, order management, quotations, customer communication, complaint handling and language competence with concrete examples. Spoken and written German typically become more important with customer interaction."
+          ],
+          [
+            "Visa reality for applicants from abroad",
+            "The existence of a sales or office vacancy does not itself grant a work visa. Non-EU applicants must examine whether the position is qualified employment and whether their education, qualifications, work experience and proposed residence pathway meet the legal requirements. Do not assume that every office role is classified as a shortage occupation."
+          ],
+          [
+            "Evaluate an actual offer",
+            "<ul><li><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Immigration pathway tool (Turkish)</a></li><li><a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Gross-to-net calculator (Turkish)</a></li><li><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Rent affordability calculator (Turkish)</a></li><li><a href='/en/almanyada-is-sozlesmesi-arbeitsvertrag/'>Employment contract guide</a></li></ul>"
+          ],
+          [
+            "Sources",
+            "<ul><li><a href='https://www.stepstone.de/gehalt/Sachbearbeiter-in.html' target='_blank' rel='noopener'>StepStone — Sachbearbeiter/in</a></li><li><a href='https://www.stepstone.de/gehalt/Vertriebsachbearbeiter-in.html' target='_blank' rel='noopener'>StepStone — Sales administrator</a></li><li><a href='https://www.make-it-in-germany.com/en/visa-residence/types/work-qualified-professionals' target='_blank' rel='noopener'>Make it in Germany — Qualified professionals</a></li></ul><p>Salary information is indicative. Visa eligibility must be evaluated separately for your specific position and circumstances.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Vertrieb, Sachbearbeitung und Backoffice 2026: Karriere in Deutschland",
+        "description": "Sachbearbeiter, Vertriebsinnendienst, Sales Support und Backoffice: Gehalt, Deutschkenntnisse, Lebenslauf und Aufenthaltswege.",
+        "badge": "Berufsratgeber · Büro & Vertrieb 2026",
+        "heading": "Karriere in Vertrieb, Sachbearbeitung und Backoffice",
+        "meta": "Türkischer Ausgangstext: Ratgeber 2026 · Gehaltswerte sind Plattformschätzungen",
+        "intro": "Bürotätigkeiten sind kein einheitlicher Beruf. Suchen Sie <strong>Vertrieb, Kundenservice, Einkauf, Auftragsbearbeitung</strong> und <strong>Sachbearbeitung</strong> mit passenden Berufsbezeichnungen. Deutschkenntnisse, praktische Systemerfahrung und ein konkretes Tätigkeitsprofil können entscheidend sein.",
+        "sections": [
+          [
+            "Die passende Tätigkeit unterscheiden",
+            "<div class='grid grid-3'><div class='card'><h3>Sachbearbeiter/in</h3><p>Bearbeitung von Bestellungen, Daten, Dokumentation und Fachbereichsprozessen. Excel, ERP/SAP und schriftliches Deutsch sind häufig wichtig.</p></div><div class='card'><h3>Vertriebsinnendienst</h3><p>Angebote, Bestellungen, Kundenkommunikation und Unterstützung des Vertriebs. Gutes Telefondeutsch und manchmal Englisch sind vorteilhaft.</p></div><div class='card'><h3>Backoffice / Customer Service</h3><p>Operativer Kundenservice, Vorgangsbearbeitung und Koordination. Deutsch mit Englisch oder Türkisch kann in manchen internationalen Unternehmen hilfreich sein.</p></div></div>"
+          ],
+          [
+            "Gehaltsindikatoren 2026",
+            "Der türkische Ausgangstext führt ungefähre StepStone-Mediane von <strong>37.400 € Jahresbrutto für Sachbearbeiter/in</strong> und <strong>39.600 € für Vertriebsachbearbeiter/in</strong> an. Dies sind Plattformschätzungen, keine amtlichen Gehälter oder gesetzlichen Mindestwerte für Aufenthaltstitel. Die tatsächlichen Gehälter hängen von Arbeitgeber, Erfahrung und Region ab."
+          ],
+          [
+            "Stellensuche und Lebenslauf",
+            "Relevante Suchbegriffe sind <strong>Sachbearbeiter, Vertriebsinnendienst, Sales Support, Customer Service, Auftragsabwicklung, Innendienst, Backoffice</strong> und <strong>Einkaufssachbearbeiter</strong>. Im Lebenslauf sollten SAP/ERP, Excel, CRM, Auftragsmanagement, Angebotserstellung, Kundenkontakt, Reklamationsbearbeitung und Sprachkenntnisse anhand konkreter Beispiele nachgewiesen werden. Mit höherem Anteil an Kundenkommunikation gewinnen schriftliche und mündliche Deutschkenntnisse an Bedeutung."
+          ],
+          [
+            "Aufenthaltsrecht für Bewerber aus Drittstaaten",
+            "Eine offene Büro- oder Vertriebsstelle führt nicht automatisch zu einem Arbeitsvisum. Entscheidend sind insbesondere die Qualifizierung der Tätigkeit, vorhandene Ausbildung, Berufserfahrung und die Voraussetzungen des betreffenden Aufenthaltstitels. Nicht jede Bürotätigkeit ist ein Engpassberuf."
+          ],
+          [
+            "Ein konkretes Angebot prüfen",
+            "<ul><li><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Einwanderungsweg-Rechner (Türkisch)</a></li><li><a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Brutto-Netto-Rechner (Türkisch)</a></li><li><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Mietbudget-Rechner (Türkisch)</a></li><li><a href='/de/almanyada-is-sozlesmesi-arbeitsvertrag/'>Arbeitsvertragsratgeber</a></li></ul>"
+          ],
+          [
+            "Quellen",
+            "<ul><li><a href='https://www.stepstone.de/gehalt/Sachbearbeiter-in.html' target='_blank' rel='noopener'>StepStone — Sachbearbeiter/in</a></li><li><a href='https://www.stepstone.de/gehalt/Vertriebsachbearbeiter-in.html' target='_blank' rel='noopener'>StepStone — Vertriebsachbearbeiter/in</a></li><li><a href='https://www.make-it-in-germany.com/en/visa-residence/types/work-qualified-professionals' target='_blank' rel='noopener'>Make it in Germany — Qualifizierte Beschäftigung</a></li></ul><p>Gehaltsangaben sind lediglich Orientierungswerte. Die aufenthaltsrechtliche Eignung der konkreten Tätigkeit ist gesondert zu prüfen.</p>"
+          ]
+        ]
+      }
+    }
+  }
+}
