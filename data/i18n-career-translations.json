@@ -1,0 +1,82 @@
+{
+  "items": {
+    "almanyada-yazilimci-it-kariyeri": {
+      "en": {
+        "title": "IT and Software Careers in Germany 2026: Salary, Language and Visa Routes",
+        "description": "Career guide for software developers and IT specialists in Germany: vacancies, 2026 salaries, Blue Card, experience-based permits, language and job applications.",
+        "badge": "Career guide · IT & Software",
+        "heading": "Building an IT or Software Career in Germany",
+        "meta": "Turkish source: 5 September 2026 · Bitkom 2026 market data reviewed 17 November 2026",
+        "intro": "Do not base the decision only on salary tables. Assess demand for your role, practical language skills, qualifications and recognition, immigration options, gross salary and net income together. A 2026 Bitkom study reports <strong>79,000 unfilled IT positions</strong> in Germany, compared with 109,000 in 2025; this reflects a cooling market, not an end to demand.",
+        "sections": [
+          [
+            "Profile check: experience, offers, salary and working language",
+            "A competitive profile combines current, verifiable IT experience, professional communication in English or German, demonstrable portfolio or project results, a technology stack matching German vacancies, and realistic job and visa salary expectations. If experience is limited, build projects and compare requirements across live adverts. German B1/B2 can expand career options even where English is accepted."
+          ],
+          [
+            "IT salary: platform indicators, not legal thresholds",
+            "The Turkish source records approximately <strong>€51,400 annual gross median</strong> for Software Developer on StepStone and a platform range of about <strong>€44,100–€63,000</strong>. These are platform estimates taken from the source and not guaranteed current salaries, official statistics or Blue Card thresholds. Seniority, location and company change pay substantially. <a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Gross-to-net calculator (Turkish)</a>."
+          ],
+          [
+            "Different immigration routes for IT professionals",
+            "<div class='grid grid-3'><div class='card'><h3>EU Blue Card</h3><p>For qualifying employment and credentials or an eligible IT-experience route, check 2026 salary and statutory conditions.</p><a href='/en/blue-card/'>Blue Card guide</a></div><div class='card'><h3>Experience-based employment</h3><p>Some non-regulated IT roles can permit a work route without a formal academic degree if the separate experience and salary rules are satisfied.</p><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Immigration route tool (Turkish)</a></div><div class='card'><h3>Opportunity Card</h3><p>For eligible candidates without a confirmed offer, a job-search route may be relevant.</p><a href='/en/chancenkarte-firsat-karti/'>Opportunity Card guide</a></div></div>"
+          ],
+          [
+            "Is German mandatory for an IT job?",
+            "There is no single general legal German-language requirement covering all IT roles. English can be sufficient in international product, startup, data, backend and DevOps teams. German is particularly valuable in application support, SAP/ERP, internal business communication, consulting and management. B1/B2 knowledge can widen the range of employers and advancement opportunities."
+          ],
+          [
+            "Search beyond “Software Developer”",
+            "<div class='grid grid-3'><div class='card'><h3>Software</h3><p>Software Developer, Software Engineer, Backend, Frontend, Full Stack, Mobile, Embedded.</p></div><div class='card'><h3>Enterprise and support</h3><p>Application Support, SAP, Microsoft 365, Power Platform, ERP/CRM, System Engineer.</p></div><div class='card'><h3>Data and security</h3><p>Data Engineer, Data Scientist, Cloud, DevOps, Cybersecurity, Security Engineer.</p></div></div><p><a href='/en/almanya-is-arama-siteleri/'>Job boards and application strategy in Germany</a></p>"
+          ],
+          [
+            "Applying from Turkey or another country",
+            "<ol><li>Prepare a concise, results-oriented CV aligned with German expectations.</li><li>Search roles on LinkedIn, XING, StepStone and Make it in Germany using multiple job titles.</li><li>If you have a degree, review <a href='/en/diploma-denkligi-anabin-zab/'>Anabin/ZAB</a>; otherwise examine whether a qualifying experience-based IT route applies.</li><li>Check the offered annual gross salary against official immigration requirements rather than job-board medians.</li><li>Before accepting, compare estimated net income against housing costs.</li></ol><p><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Rent budget tool (Turkish)</a></p>"
+          ],
+          [
+            "Official and market sources",
+            "<ul><li><a href='https://www.bitkom.org/Presse/Presseinformation/IT-Fachkraeftemangel-in-den-letzten-drei-Jahren-halbiert' target='_blank' rel='noopener'>Bitkom, 3 September 2026 — IT labour market</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/professions-in-demand/career-it-specialists' target='_blank' rel='noopener'>Make it in Germany — IT professionals</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/it-specialist-in-germany/how-to-get-started' target='_blank' rel='noopener'>Make it in Germany — Getting started in IT</a></li><li><a href='https://www.stepstone.de/gehalt/Software-Developer.html' target='_blank' rel='noopener'>StepStone — Salary reference</a></li></ul><p>Job listings and salary estimates change frequently. Check current vacancies and the official visa requirements before making decisions.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "IT- und Software-Karriere in Deutschland 2026: Gehalt, Sprache und Visum",
+        "description": "Karriere für Softwareentwickler und IT-Fachkräfte: Stellenmarkt 2026, Gehälter, Blaue Karte EU, Berufserfahrung, Sprachkenntnisse und Bewerbungen.",
+        "badge": "Berufsratgeber · IT & Software",
+        "heading": "IT- und Software-Karriere in Deutschland aufbauen",
+        "meta": "Türkischer Ausgangstext: 5. September 2026 · Bitkom-Marktdaten 2026 geprüft am 17. November 2026",
+        "intro": "Betrachten Sie nicht nur Gehaltstabellen, sondern beurteilen Sie gemeinsam die Nachfrage nach Ihrem Berufsprofil, tatsächlich nutzbare Sprachkenntnisse, Qualifikation und Anerkennung, Einwanderungsweg, Bruttoangebot und Nettoeinkommen. Laut Bitkom fehlten im Jahr 2026 rund <strong>79.000 IT-Fachkräfte</strong> in Deutschland, nach 109.000 im Jahr 2025. Der Arbeitsmarkt ist damit weniger angespannt, Nachfrage besteht aber weiterhin.",
+        "sections": [
+          [
+            "Berufsprofil: Erfahrung, Stellenangebot, Gehalt und Arbeitssprache",
+            "Ein starkes Profil kombiniert aktuelle nachweisbare IT-Erfahrung, professionelle Kommunikation auf Deutsch oder Englisch, Portfolio und messbare Projektergebnisse, einen zu deutschen Ausschreibungen passenden Technologie-Stack sowie realistische Gehalts- und Visumerwartungen. Bei wenig Erfahrung sollten praktische Projekte aufgebaut und Stellenanforderungen verglichen werden. Deutsch auf B1/B2 kann die Auswahl an Stellen erweitern."
+          ],
+          [
+            "Gehälter: Plattformwerte sind keine gesetzlichen Grenzen",
+            "Der türkische Ausgangstext nennt für Software Developer auf StepStone ein ungefähres <strong>Jahresbruttomediangehalt von 51.400 €</strong> und eine Gehaltsspanne von etwa <strong>44.100–63.000 €</strong>. Diese Angaben sind übernommene Plattformindikatoren, keine garantierten aktuellen Gehälter, amtlichen Statistiken oder Blue-Card-Grenzen. Gehalt hängt stark von Region, Erfahrung, Unternehmen und Tätigkeit ab. <a href='/brutto-netto-hesaplayici-2026/' lang='tr' hreflang='tr'>Brutto-Netto-Rechner (Türkisch)</a>."
+          ],
+          [
+            "Verschiedene Einwanderungswege für IT-Fachkräfte",
+            "<div class='grid grid-3'><div class='card'><h3>Blaue Karte EU</h3><p>Bei geeigneter qualifizierter Beschäftigung und passendem Abschluss oder IT-Erfahrungsweg müssen die Gehalts- und Rechtsvoraussetzungen für 2026 geprüft werden.</p><a href='/de/blue-card/'>Blue-Card-Ratgeber</a></div><div class='card'><h3>Berufserfahrungsbasierter Aufenthalt</h3><p>Für bestimmte nicht reglementierte IT-Tätigkeiten kann unter eigenen Voraussetzungen ein Arbeitsaufenthalt ohne formalen Hochschulabschluss möglich sein.</p><a href='/almanyaya-gelis-yolu-secim-araci/' lang='tr' hreflang='tr'>Einwanderungsweg-Rechner (Türkisch)</a></div><div class='card'><h3>Chancenkarte</h3><p>Für berechtigte Personen ohne konkretes Stellenangebot kann eine Einreise zur Arbeitssuche infrage kommen.</p><a href='/de/chancenkarte-firsat-karti/'>Chancenkarte-Ratgeber</a></div></div>"
+          ],
+          [
+            "Muss man als IT-Fachkraft Deutsch können?",
+            "Es gibt keine einheitliche gesetzliche Deutschpflicht für sämtliche IT-Stellen. In internationalen Produktteams, Startups oder in Backend-, Data- und DevOps-Teams kann Englisch genügen. Für Application Support, SAP/ERP, Fachbereichskommunikation, Beratung und Führung ist Deutsch häufig besonders wichtig. B1/B2 erweitert das Spektrum potenzieller Arbeitgeber."
+          ],
+          [
+            "Nicht nur nach „Software Developer“ suchen",
+            "<div class='grid grid-3'><div class='card'><h3>Software</h3><p>Software Developer, Software Engineer, Backend, Frontend, Full Stack, Mobile, Embedded.</p></div><div class='card'><h3>Unternehmenssysteme und Support</h3><p>Application Support, SAP, Microsoft 365, Power Platform, ERP/CRM, System Engineer.</p></div><div class='card'><h3>Daten und IT-Sicherheit</h3><p>Data Engineer, Data Scientist, Cloud, DevOps, Cybersecurity, Security Engineer.</p></div></div><p><a href='/de/almanya-is-arama-siteleri/'>Stellenportale und Bewerbungsstrategie</a></p>"
+          ],
+          [
+            "Bewerbung aus der Türkei oder einem anderen Staat",
+            "<ol><li>Einen knappen, ergebnisorientierten Lebenslauf für den deutschen Markt erstellen.</li><li>Stellen über LinkedIn, XING, StepStone und Make it in Germany mit verschiedenen Berufsbezeichnungen suchen.</li><li>Bei Hochschulabschluss <a href='/de/diploma-denkligi-anabin-zab/'>Anabin/ZAB</a> prüfen, ohne Abschluss die eigenständigen IT-Erfahrungswege berücksichtigen.</li><li>Das angebotene Jahresbruttogehalt anhand der amtlichen Visumsbedingungen beurteilen, nicht anhand eines Jobportal-Mediangehalts.</li><li>Nach einem Angebot das geschätzte Nettoeinkommen mit den Mietkosten vergleichen.</li></ol><p><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Mietbudget-Rechner (Türkisch)</a></p>"
+          ],
+          [
+            "Amtliche Quellen und Marktberichte",
+            "<ul><li><a href='https://www.bitkom.org/Presse/Presseinformation/IT-Fachkraeftemangel-in-den-letzten-drei-Jahren-halbiert' target='_blank' rel='noopener'>Bitkom, 3. September 2026 — IT-Arbeitsmarkt</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/professions-in-demand/career-it-specialists' target='_blank' rel='noopener'>Make it in Germany — IT-Fachkräfte</a></li><li><a href='https://www.make-it-in-germany.com/en/working-in-germany/it-specialist-in-germany/how-to-get-started' target='_blank' rel='noopener'>Make it in Germany — IT-Karrierestart</a></li><li><a href='https://www.stepstone.de/gehalt/Software-Developer.html' target='_blank' rel='noopener'>StepStone — Gehaltsindikator</a></li></ul><p>Stellenangebot und Gehaltsdaten verändern sich laufend. Vergleichen Sie vor der Bewerbung die aktuellen Anzeigen und amtlichen Visa-Voraussetzungen.</p>"
+          ]
+        ]
+      }
+    }
+  }
+}
