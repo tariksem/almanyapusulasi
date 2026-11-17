@@ -143,6 +143,7 @@ function build(lang){
  html=head+body;
  // Related site content without an approved translation is labelled as Turkish.
  html=html.replace(/<a\b([^>]*?)href="(https:\/\/almanyapusulasi.de\/|\/)([^"\/#?]+)\/?"([^>]*)>/g,(all,before,prefix,slug,after)=>{
+   if(slug===lang)return all;
    if(translatedSlugs.has(slug))return all;
    if(['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung','aile-birlesimi','diploma-denkligi-anabin-zab','blue-card-aile-birlesimi','vatandaslik-dil-sarti-b1'].includes(slug))return all;
    return '<a'+before+'href="'+prefix+slug+'/"'+after+' data-tr-only="1" lang="tr" hreflang="tr" title="'+fallback[lang]+'">';

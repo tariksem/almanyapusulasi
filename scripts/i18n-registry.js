@@ -1,7 +1,8 @@
 const fs=require('node:fs');
 const BASE=['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026'];
 const CATALOGS=['data/priority-guide-translations.json','data/i18n-migration-translations.json','data/i18n-career-translations.json','data/i18n-family-translations.json','data/i18n-family-care-translations.json','data/i18n-health-finance-translations.json'];
-function translatedSlugs(){
+const BULK_CATALOG='data/i18n-bulk-translations.json';
+function curatedRoutes(){
  const result=new Set(BASE);
  for(const path of CATALOGS){
   const entries=JSON.parse(fs.readFileSync(path,'utf8')).items;
@@ -12,7 +13,17 @@ function translatedSlugs(){
  }
  return [...result];
 }
-function localizedFiles(){
- return ['en','de'].flatMap(lang=>translatedSlugs().map(slug=>lang+'/'+slug+'/index.html'));
+function bulkRoutes(){
+ if(!fs.existsSync(BULK_CATALOG))return [];
+ const catalog=JSON.parse(fs.readFileSync(BULK_CATALOG,'utf8'));
+ return Object.keys(catalog.pages||{}).map(route=>{
+  if(!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(route))throw Error('Invalid bulk translation route: '+route);
+  return route;
+ });
 }
-module.exports={translatedSlugs,localizedFiles};
+function translatedRoutes(){return [...new Set([...curatedRoutes(),...bulkRoutes()])];}
+function translatedSlugs(){return translatedRoutes();}
+function localizedFiles(){
+ return ['en','de'].flatMap(lang=>translatedRoutes().map(route=>lang+'/'+route+'/index.html'));
+}
+module.exports={curatedRoutes,bulkRoutes,translatedRoutes,translatedSlugs,localizedFiles};
