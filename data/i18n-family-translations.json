@@ -104,6 +104,10 @@
         "intro": "For children born from 1 April 2025, the general income ceiling for couples and single parents is <strong>€175,000 taxable income (<em>zu versteuerndes Einkommen</em>)</strong>. Basiselterngeld ranges from <strong>€300 to €1,800 per month</strong>, and ElterngeldPlus from <strong>€150 to €900</strong>. The important budgeting question is how much household income will actually fall after childbirth.",
         "sections": [
           [
+            "Calculate your post-birth income gap first",
+            "Before deciding which benefit months to use, estimate Elterngeld, income from any post-birth employment and the rest of the household income together. <a href='/elterngeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Elterngeld and income-gap calculator (Turkish)</a>."
+          ],
+          [
             "Before choosing benefit months, make four decisions",
             "<ol><li>Estimate parental allowance and your actual post-birth household income rather than only the monthly benefit.</li><li>Coordinate your planned <a href='/en/elternzeit-almanya/'>Elternzeit</a> period with the child's months of life.</li><li>Account separately for maternity payments (<em>Mutterschaftsgeld</em>) and employer maternity top-up.</li><li>Consider how the <em>Progressionsvorbehalt</em> may affect your annual tax return.</li></ol><p><a href='/elterngeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Elterngeld and family budget calculator (Turkish interface)</a></p>"
           ],
@@ -161,6 +165,10 @@
         "meta": "Türkischer Ausgangstext geprüft am 13. September 2026 · Familienportal des Bundes",
         "intro": "Für Kinder, die ab 1. April 2025 geboren wurden, liegt die allgemeine Einkommensgrenze für Paare und Alleinerziehende bei <strong>175.000 € zu versteuerndem Einkommen</strong>. Basiselterngeld liegt monatlich bei <strong>300–1.800 €</strong>, ElterngeldPlus bei <strong>150–900 €</strong>. Für die Familienplanung ist entscheidend, wie stark das gesamte Haushaltseinkommen nach der Geburt sinkt.",
         "sections": [
+          [
+            "Zuerst die Einkommenslücke nach der Geburt berechnen",
+            "Vergleichen Sie vor der Wahl der Bezugsmonate das geschätzte Elterngeld, mögliche Erwerbseinkünfte nach der Geburt und weitere Haushaltseinkommen gemeinsam. <a href='/elterngeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Elterngeld- und Einkommenslückenrechner (Türkisch)</a>."
+          ],
           [
             "Vor der Monatsplanung vier Entscheidungen treffen",
             "<ol><li>Elterngeld und Haushaltseinkommen nach der Geburt gemeinsam berechnen, nicht nur die monatliche Leistung.</li><li>Die geplante <a href='/de/elternzeit-almanya/'>Elternzeit</a> möglichst an den Lebensmonaten des Kindes ausrichten.</li><li>Mutterschaftsgeld und Arbeitgeberzuschuss getrennt berücksichtigen.</li><li>Den steuerlichen Progressionsvorbehalt bei der Jahressteuererklärung einplanen.</li></ol><p><a href='/elterngeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Elterngeld- und Familienbudgetrechner (Türkisch)</a></p>"
@@ -258,6 +266,10 @@
             "Health insurance contributions may vary depending on whether the parent is compulsorily or voluntarily insured in GKV or insured in PKV. Do not infer that a period without wages automatically carries no insurance contributions. <a href='/en/familienversicherung/'>Family insurance guide</a>."
           ],
           [
+            "9. Elternzeit and tax",
+            "Elternzeit itself is not a payment, so the tax effects generally arise from Elterngeld, Mutterschaftsgeld or other income. Elterngeld is subject to the <strong>Progressionsvorbehalt</strong>. <a href='/steuererklaerung-kim-yapmali/' lang='tr' hreflang='tr'>Check tax-return obligations (Turkish)</a>."
+          ],
+          [
             "10. Leave and benefit planning are separate decisions",
             "<ul><li><a href='/en/elterngeld-2026/'>Basiselterngeld versus ElterngeldPlus and income rules</a></li><li><a href='/elterngeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Family income-gap calculator (Turkish)</a></li><li><a href='/mutterschutz-mutterschaftsgeld/' lang='tr' hreflang='tr'>Maternity benefits guide (Turkish)</a></li><li><a href='/kita-platz-almanya/' lang='tr' hreflang='tr'>Childcare and Kita guide (Turkish)</a></li></ul>"
           ],
@@ -310,6 +322,10 @@
           [
             "9. Krankenversicherung während Elternzeit",
             "Die Beiträge hängen davon ab, ob eine GKV-Pflichtmitgliedschaft, freiwillige GKV oder PKV besteht. Fehlendes Arbeitsentgelt bedeutet nicht automatisch Beitragsfreiheit. <a href='/de/familienversicherung/'>Familienversicherungsratgeber</a>."
+          ],
+          [
+            "9. Elternzeit und Steuern",
+            "Die Elternzeit selbst ist keine Zahlung. Steuerliche Folgen ergeben sich meist aus Elterngeld, Mutterschaftsgeld oder anderen Einkünften. Elterngeld unterliegt dem <strong>Progressionsvorbehalt</strong>. <a href='/steuererklaerung-kim-yapmali/' lang='tr' hreflang='tr'>Steuererklärungspflicht prüfen (Türkisch)</a>."
           ],
           [
             "10. Elternzeit und Elterngeld getrennt einplanen",
