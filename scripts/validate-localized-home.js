@@ -21,7 +21,7 @@ for(const [lang,headline,button] of [['en','Choose the right path for you','Sear
  assert.ok(html.includes('/assets/js/local-home-search.js'),lang+' search logic');
  assert.ok(html.includes('href="/'+lang+'/blue-card-uygunluk-kontrolu-2026/"'),lang+' Blue Card tool');
  assert.ok(html.includes('href="/'+lang+'/chancenkarte-puan-hesaplayici-2026/"'),lang+' Opportunity Card tool');
- assert.ok(html.includes('data-tr-only="1"'),lang+' untranslated link notice');
+ assert.ok(!html.includes('data-tr-only="1"'),lang+' homepage still contains Turkish-only destinations after full catalog publication');
  for(const code of ['tr','en','de'])assert.ok(html.includes('hreflang="'+code+'"'),lang+' hreflang '+code);
  assert.equal((html.match(/<h1\b/g)||[]).length,1,lang+' one H1');
 }

@@ -21,6 +21,7 @@ jobs:
           node scripts/generate-translated-guides.js
           node scripts/generate-translated-calculators.js
           node scripts/generate-priority-guide-translations.js
+          node scripts/generate-bulk-i18n.js
           node scripts/validate-priority-guide-translations.js
           node scripts/validate-family-translation-parity.js
           node scripts/validate-family-care-translations.js
@@ -31,6 +32,7 @@ jobs:
           node --check assets/js/i18n-ui.js
           node scripts/validate-translated-guides.js
           node scripts/generate-discovery.js
+          node scripts/generate-bulk-i18n.js
           node --check scripts/generate-home-parity.js
           node scripts/generate-home-parity.js
           node --check assets/js/local-home-search.js
@@ -40,6 +42,8 @@ jobs:
           node scripts/validate-home-hero-layout.js
           node scripts/validate-i18n-foundation.js
           node scripts/validate-localized-home.js
+          node scripts/validate-bulk-i18n.js
+          node scripts/generate-i18n-inventory.js
           node scripts/validate-i18n-coverage.js
           node scripts/validate-2026-tools.js
           node scripts/validate-housing-tools.js

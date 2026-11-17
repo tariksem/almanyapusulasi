@@ -9,4 +9,10 @@ for(const f of [...localizedFiles(),'en/index.html','de/index.html']){
  fs.mkdirSync(path.dirname(to),{recursive:true});
  fs.copyFileSync(f,to);
 }
-console.log('Copied '+(localizedFiles().length+2)+' localized pages into '+dest);
+for(const f of ['assets/data/bulk-i18n-en.json','assets/data/bulk-i18n-de.json']){
+ if(!fs.existsSync(f))throw Error('Missing generated runtime translation catalog: '+f);
+ const to=path.join(dest,f);
+ fs.mkdirSync(path.dirname(to),{recursive:true});
+ fs.copyFileSync(f,to);
+}
+console.log('Copied '+(localizedFiles().length+2)+' localized pages and two runtime UI catalogs into '+dest);

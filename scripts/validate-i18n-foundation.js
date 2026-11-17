@@ -1,6 +1,7 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const l=require('../assets/js/i18n-core.js');
+const {extractJsSegments}=require('./bulk-i18n-lib.js');
 const memory={value:null,getItem(){return this.value;},setItem(_key,val){this.value=val;}};
 assert.equal(l.normalize('de-CH'),'de');
 assert.equal(l.normalize('en_US'),'en');
@@ -16,6 +17,7 @@ assert.equal(l.languageFromPath('/en/chancenkarte-firsat-karti/'),'en');
 assert.equal(l.equivalent('/blue-card/','de'),'/de/blue-card/');
 assert.equal(l.equivalent('/en/blue-card/','tr'),'/blue-card/');
 assert.equal(l.equivalent('/chancenkarte-firsat-karti/','en'),'/en/chancenkarte-firsat-karti/');
+assert.equal(l.equivalent('/haberler/vergi-kindergeld-2027/','de'),'/de/haberler/vergi-kindergeld-2027/');
 assert.equal(l.equivalent('/en/unsupported-page/','de'),'/de/');
 assert.equal(l.home('en'),'/en/');
 assert.equal(l.home('de'),'/de/');
@@ -47,4 +49,8 @@ assert.ok(ui.includes('unresolved'),'Untranslated destinations must be identifie
 assert.ok(!ui.includes('hero.prepend(box)'),'Flags must not appear inside the banner');
 assert.ok(css.includes('.site-header .ap-lang-header{order:10'),'Desktop header order missing');
 assert.ok(css.includes('@media(max-width:1080px)'),'Mobile header layout absent');
+const jsSegments=extractJsSegments("const html=`<button>Hesapla</button>${items.map(x=>'<span>'+x+'</span>').join('')}`;function collect(){return {name:'İsimsiz şehir'}}");
+assert.ok(jsSegments.some(item=>item.source==='Hesapla'),'Template UI text was not extracted');
+assert.ok(jsSegments.some(item=>item.source==='İsimsiz şehir'),'Nested JavaScript UI text was not extracted');
+assert.ok(jsSegments.every(item=>!item.source.includes('function collect')),'JavaScript code was mistaken for runtime UI text');
 console.log('i18n foundation checks passed: language normalization, preferences, routes, SEO, shell and responsive CSS.');
