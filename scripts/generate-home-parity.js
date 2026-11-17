@@ -1,4 +1,5 @@
 const fs=require('node:fs');
+const translatedSlugs=new Set(require('./i18n-registry.js').translatedSlugs());
 const SITE='https://almanyapusulasi.de';
 const pairs=[
 ["ALMANYA’DA YAŞAM, ÇALIŞMA VE AİLE HAYATI","LIVING, WORKING AND FAMILY LIFE IN GERMANY","LEBEN, ARBEITEN UND FAMILIE IN DEUTSCHLAND"],
@@ -128,7 +129,7 @@ function build(lang){
  const scriptEnd=body.lastIndexOf('</script>');
  if(scriptStart<0||scriptEnd<scriptStart||!body.slice(scriptStart,scriptEnd).includes('const records='))throw Error('Original homepage search script not found');
  body=body.slice(0,scriptStart)+body.slice(scriptEnd+'</script>'.length);
- for(const slug of ['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung','aile-birlesimi','diploma-denkligi-anabin-zab','blue-card-aile-birlesimi','vatandaslik-dil-sarti-b1']){
+ for(const slug of translatedSlugs){
   body=body.replaceAll('href="https://almanyapusulasi.de/'+slug+'/"','href="/'+lang+'/'+slug+'/"');
   body=body.replaceAll('href="/'+slug+'/"','href="/'+lang+'/'+slug+'/"');
  }
@@ -142,7 +143,7 @@ function build(lang){
  html=head+body;
  // Related site content without an approved translation is labelled as Turkish.
  html=html.replace(/<a\b([^>]*?)href="(https:\/\/almanyapusulasi.de\/|\/)([^"\/#?]+)\/?"([^>]*)>/g,(all,before,prefix,slug,after)=>{
-   if(['en','de'].includes(slug))return all;
+   if(translatedSlugs.has(slug))return all;
    if(['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026','kindergeld','familienversicherung','blue-card-suresiz-oturum','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung','aile-birlesimi','diploma-denkligi-anabin-zab','blue-card-aile-birlesimi','vatandaslik-dil-sarti-b1'].includes(slug))return all;
    return '<a'+before+'href="'+prefix+slug+'/"'+after+' data-tr-only="1" lang="tr" hreflang="tr" title="'+fallback[lang]+'">';
  });
