@@ -989,6 +989,116 @@
           ]
         ]
       }
+    },
+    "kindergeld-18-yas": {
+      "en": {
+        "title": "Kindergeld After Age 18: School, Apprenticeship and University in Germany",
+        "description": "Kindergeld for adult children: first and second education, 20-hour rule, four-month transition, jobseekers under 21 and documents.",
+        "badge": "Kindergeld · Children aged 18+",
+        "heading": "Kindergeld After 18: School, Ausbildung and University",
+        "meta": "Turkish source updated in 2026 · Estimated reading time: 8 minutes",
+        "intro": "Kindergeld does not necessarily stop when a child turns 18. Under specific conditions it can continue during school, vocational training or higher education, but the benefit is <strong>not automatic</strong>. The Familienkasse needs information and supporting documents. <a href='/en/kindergeld/'>General Kindergeld guide</a>.",
+        "sections": [
+          [
+            "General upper age limit: 25",
+            "For some eligible situations, Kindergeld may continue after age 18 until the child reaches age 25. Being between 18 and 25 alone does not create entitlement; the child's actual education or other qualifying circumstances matter."
+          ],
+          [
+            "First vocational training or first degree",
+            "A child attending school or undergoing their first vocational training (<em>Ausbildung</em>) or first university programme may qualify. The Familienkasse generally requires evidence such as enrolment or training certificates."
+          ],
+          [
+            "Second degree or training: the 20-hour rule",
+            "After completion of initial vocational training or an initial degree, employment during a second course of study or training can affect eligibility. As a general rule, work of up to <strong>20 hours per week</strong> may be compatible with continued Kindergeld. This is not a blanket work-hour ceiling for everyone aged 18–25."
+          ],
+          [
+            "Minijobs and work as part of training",
+            "Special treatment may apply to minijobs and employment forming part of vocational training. Such work can be assessed differently from regular employment under the 20-hour rule. Report the actual work arrangements to Familienkasse."
+          ],
+          [
+            "Transition between courses: up to four months",
+            "A transitional gap of no more than <strong>four months</strong> between stages of education (for instance between school and an apprenticeship or university) may qualify. Notify Familienkasse of the planned next stage and provide documentation."
+          ],
+          [
+            "Unemployed child registered as jobseeker: under 21",
+            "A separate possibility exists for an unemployed child who is properly registered as seeking work with the Agentur für Arbeit or Jobcenter: benefits may continue until the child turns <strong>21</strong>. This is different from the education-related rule up to 25."
+          ],
+          [
+            "Documents and notifications",
+            "The Familienkasse may ask for a current school, Ausbildung or university certificate and details of working hours. Delayed documentation can interrupt payment or lead to recovery of overpaid benefits. <a href='/en/kindergeld-basvuru/'>Kindergeld applications and change notifications</a>."
+          ],
+          [
+            "Common mistakes",
+            "<ul><li>Ignoring Familienkasse letters after a child turns 18</li><li>Sending enrolment documents late</li><li>Not reporting employment or weekly working hours</li><li>Not reporting changes of education or training</li></ul>"
+          ],
+          [
+            "Conclusion",
+            "Kindergeld can continue after age 18, but it is not automatically payable to every young adult until 25. First education, second education, transition periods and unemployment are assessed under different rules, with supporting documents."
+          ],
+          [
+            "Related guides",
+            "<ul><li><a href='/en/kindergeld/'>Kindergeld overview</a></li><li><a href='/en/kindergeld-basvuru/'>Apply or report changes</a></li><li><a href='/kinderzuschlag/' lang='tr' hreflang='tr'>Kinderzuschlag (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official source",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren' target='_blank' rel='noopener'>Familienkasse — Kindergeld after 18</a></li></ul><p>The Familienkasse assesses the individual child's educational and employment circumstances.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Kindergeld ab 18 Jahren: Schule, Ausbildung und Studium",
+        "description": "Kindergeld für volljährige Kinder: Erstausbildung, Zweitausbildung, 20-Stunden-Regel, viermonatige Übergangszeit und Arbeitsuche bis 21.",
+        "badge": "Kindergeld · Volljährige Kinder",
+        "heading": "Kindergeld ab 18: Schule, Ausbildung und Studium",
+        "meta": "Türkischer Ausgangstext 2026 · Lesezeit etwa 8 Minuten",
+        "intro": "Kindergeld endet nicht zwingend mit dem 18. Geburtstag. Bei Schule, Berufsausbildung oder Studium kann der Anspruch unter bestimmten Voraussetzungen fortbestehen. Die Leistung läuft aber <strong>nicht automatisch und ohne Nachweise</strong> weiter. <a href='/de/kindergeld/'>Kindergeld-Hauptratgeber</a>.",
+        "sections": [
+          [
+            "Allgemeine Altersgrenze: 25",
+            "In bestimmten Fällen kann Kindergeld nach Volljährigkeit bis zur Vollendung des 25. Lebensjahres gezahlt werden. Nicht jede Person zwischen 18 und 25 hat automatisch Anspruch; entscheidend ist der konkrete Ausbildungs- oder andere Berücksichtigungstatbestand."
+          ],
+          [
+            "Erste Ausbildung oder erstes Studium",
+            "Während Schule, erster Berufsausbildung (<em>Ausbildung</em>) oder erstem Studium kann Kindergeld beansprucht werden. Die Familienkasse benötigt dafür in der Regel Schul-, Ausbildungs- oder Immatrikulationsnachweise."
+          ],
+          [
+            "Zweite Ausbildung oder zweites Studium: 20-Stunden-Regel",
+            "Nach Abschluss einer ersten Berufsausbildung oder eines Erststudiums kann Erwerbstätigkeit während einer weiteren Ausbildung den Anspruch beeinflussen. Grundsätzlich kann eine Tätigkeit von bis zu <strong>20 Wochenstunden</strong> mit Kindergeld vereinbar sein. Diese Grenze gilt nicht pauschal für alle 18- bis 25-Jährigen."
+          ],
+          [
+            "Minijobs und Beschäftigung im Rahmen einer Ausbildung",
+            "Für Minijobs und Tätigkeiten innerhalb einer Berufsausbildung gelten besondere Regeln. Sie können anders beurteilt werden als eine reguläre Erwerbstätigkeit im Rahmen der 20-Stunden-Regel. Melden Sie die tatsächlichen Beschäftigungsverhältnisse der Familienkasse."
+          ],
+          [
+            "Übergang zwischen Ausbildungsabschnitten: höchstens vier Monate",
+            "Eine Übergangszeit von höchstens <strong>vier Monaten</strong> zwischen zwei Ausbildungsabschnitten, etwa Schule und Ausbildung oder Studium, kann berücksichtigt werden. Teilen Sie der Familienkasse die geplante nächste Ausbildungsphase mit und reichen Sie Nachweise ein."
+          ],
+          [
+            "Arbeitslos und arbeitsuchend gemeldet: bis 21",
+            "Für ein arbeitsloses Kind, das bei der Agentur für Arbeit oder dem Jobcenter als arbeitsuchend gemeldet ist, kann ein eigener Berücksichtigungstatbestand bis zur Vollendung des <strong>21. Lebensjahres</strong> bestehen. Dies ist von der Ausbildungsregel bis 25 zu unterscheiden."
+          ],
+          [
+            "Nachweise und Mitteilungen",
+            "Die Familienkasse kann Schul-, Ausbildungs- oder Studienbescheinigungen und Angaben zur Wochenarbeitszeit verlangen. Verspätete Unterlagen können Zahlungen unterbrechen oder Rückforderungen auslösen. <a href='/de/kindergeld-basvuru/'>Antrag und Änderungsmitteilungen</a>."
+          ],
+          [
+            "Häufige Fehler",
+            "<ul><li>Schreiben der Familienkasse nach dem 18. Geburtstag ignorieren</li><li>Schul- oder Studienbescheinigung verspätet senden</li><li>Erwerbstätigkeit und Arbeitsstunden nicht mitteilen</li><li>Ausbildungswechsel nicht melden</li></ul>"
+          ],
+          [
+            "Fazit",
+            "Kindergeld nach 18 ist möglich, steht aber nicht jedem jungen Erwachsenen automatisch bis 25 zu. Erst- und Zweitausbildung, Übergangszeiten und Arbeitsuche unterliegen unterschiedlichen Regeln und Nachweispflichten."
+          ],
+          [
+            "Verwandte Ratgeber",
+            "<ul><li><a href='/de/kindergeld/'>Kindergeld allgemein</a></li><li><a href='/de/kindergeld-basvuru/'>Kindergeld beantragen und Änderungen melden</a></li><li><a href='/kinderzuschlag/' lang='tr' hreflang='tr'>Kinderzuschlag (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quelle",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren' target='_blank' rel='noopener'>Familienkasse — Kindergeld ab 18 Jahren</a></li></ul><p>Die Familienkasse prüft die Ausbildungs- und Beschäftigungsverhältnisse des Kindes im Einzelfall.</p>"
+          ]
+        ]
+      }
     }
   }
 }
