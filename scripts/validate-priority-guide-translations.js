@@ -1,6 +1,6 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const entries={...JSON.parse(fs.readFileSync('data/priority-guide-translations.json','utf8')).items,...JSON.parse(fs.readFileSync('data/i18n-migration-translations.json','utf8')).items};
-const allowed=new Set(['blue-card-suresiz-oturum','kindergeld','familienversicherung','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung','aile-birlesimi','diploma-denkligi-anabin-zab','blue-card-aile-birlesimi','vatandaslik-dil-sarti-b1']);
+const allowed=new Set(['blue-card-suresiz-oturum','kindergeld','familienversicherung','almanyada-ev-kiralama-rehberi','almanya-saglik-sigortasi-gkv-pkv','almanya-vatandaslik-sartlari','almanyada-ausbildung','almanya-adres-kaydi-anmeldung','aile-birlesimi','diploma-denkligi-anabin-zab','blue-card-aile-birlesimi','vatandaslik-dil-sarti-b1','kindergeld-basvuru']);
 assert.deepEqual(new Set(Object.keys(entries)),allowed);
 for(const [slug,langs] of Object.entries(entries)){
  const turkish=fs.readFileSync(slug+'/index.html','utf8');
@@ -23,4 +23,4 @@ for(const [slug,langs] of Object.entries(entries)){
   }
  }
 }
-console.log('Priority translations QA passed: 12 complete source-aligned guides in two languages.');
+console.log('Priority translations QA passed: 13 complete source-aligned guides in two languages.');
