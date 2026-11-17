@@ -30,7 +30,7 @@ async function main(){
     if(!fs.existsSync(file))throw Error('Missing article '+file);
     let html=fs.readFileSync(file,'utf8');
     // Remove only the previously injected photograph; preserve editorial content.
-    html=html.replace(/<figure data-news-photo="licensed">[\s\S]*?<\/figure>/g,'');
+    html=html.replace(/<figure\b[^>]*data-news-photo="licensed"[^>]*>[\s\S]*?<\/figure>/g,'');
     // Replace obsolete static thumbnail figures, where the article already has one.
     html=html.replace(/<figure><img src="\/assets\/news\/[^"]+"[\s\S]*?<\/figure>/,'');
     const credit='Fotoğraf: <a href="'+escape(entry.page)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.author)+'</a> · <a href="'+escape(entry.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.license)+'</a> · Wikimedia Commons · Kartta kırpılmış görünüm';
@@ -48,6 +48,8 @@ async function main(){
       if(schema['@type']==='NewsArticle'){schema.image=[pageImage];return open+JSON.stringify(schema)+close;}
       return all;
     });
+    const licensedFigures=(html.match(/<figure\b[^>]*data-news-photo="licensed"[^>]*>/g)||[]).length;
+    if(licensedFigures!==1)throw Error('Expected exactly one licensed photo in '+slug+', found '+licensedFigures);
     fs.writeFileSync(file,html);
   }
   if(fetchPhotos){for(const [slug,entry] of entries)await download(slug,entry);}
