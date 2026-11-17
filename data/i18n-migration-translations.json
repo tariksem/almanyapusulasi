@@ -1161,6 +1161,140 @@
           ]
         ]
       }
+    },
+    "kinderzuschlag": {
+      "en": {
+        "title": "Kinderzuschlag 2026: Eligibility, €297 Maximum, Income and Application",
+        "description": "Kinderzuschlag (KiZ) in Germany 2026: maximum €297 per child, €900/€600 gross-income criteria, Wohngeld, documentation and application.",
+        "badge": "Family and children · Kinderzuschlag 2026",
+        "heading": "Kinderzuschlag 2026: Check Eligibility Before Preparing Your Application",
+        "meta": "Turkish source last reviewed September 2026 · Familienkasse",
+        "intro": "<strong>Kinderzuschlag (KiZ)</strong> supplements Kindergeld for eligible families whose income covers the parents' needs but may not be sufficient for the entire household. In the 2026 Turkish source, the maximum is <strong>€297 per child per month</strong>. It is a maximum—not a guaranteed payment. The final amount depends on household income, housing costs, children's income and the relevant legal conditions.",
+        "sections": [
+          [
+            "Four initial eligibility questions",
+            "<ol><li>Does the child live in your household?</li><li>Is the child younger than 25 and unmarried/not in a registered partnership?</li><li>Do you receive Kindergeld or a comparable benefit for the child?</li><li>Is the household's minimum gross monthly income generally at least <strong>€900 for couples</strong> or <strong>€600 for single parents</strong>?</li></ol><p>If a condition is unclear, check it with Familienkasse rather than making a final eligibility assumption.</p>"
+          ],
+          [
+            "What is Kinderzuschlag?",
+            "KiZ is an additional income-dependent benefit assessed by the Familienkasse. It supports eligible families alongside Kindergeld. Official applications are free. An intermediary cannot influence the legal decision."
+          ],
+          [
+            "How to apply officially",
+            "Use Familienkasse's online application service or official forms. Prepare the relevant documents and use <a href='https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder/formulare-kinderzuschlag' target='_blank' rel='noopener'>the official Kinderzuschlag forms</a>. The Familienkasse—not Almanya Pusulası—accepts and decides your application."
+          ],
+          [
+            "1. Who is most likely to consider KiZ?",
+            "KiZ is particularly relevant to working parents or others with some income who still face pressure from the needs of a larger family. In addition to the four core conditions, the household must generally be able to cover its basic needs when income, KiZ and, where appropriate, <a href='/wohngeld/' lang='tr' hreflang='tr'>Wohngeld (Turkish)</a> are considered together."
+          ],
+          [
+            "2. Why €900 or €600 does not guarantee eligibility",
+            "The figures are minimum gross income conditions, not automatic approval thresholds. Familienkasse considers the legally relevant parental and child income, rent and housing costs, household composition and significant assets. Your gross salary alone is not enough to calculate an individual KiZ amount."
+          ],
+          [
+            "3. Why the €297 maximum can decrease",
+            "Children's relevant income, including certain maintenance payments or advance maintenance benefits (<em>Unterhaltsvorschuss</em>), can reduce the calculated supplement. The portion taken into account follows statutory rules; parental income exceeding the parents' needs can also reduce the benefit. Do not budget <strong>two children × €297 = guaranteed €594</strong>."
+          ],
+          [
+            "4. KiZ and Wohngeld are not necessarily alternatives",
+            "The calculation may consider whether your family can cover its needs using income together with KiZ and a possible housing benefit. If rent is a significant part of your monthly costs, examine Wohngeld eligibility as well. <a href='/wohngeld/' lang='tr' hreflang='tr'>Wohngeld guide (Turkish)</a>."
+          ],
+          [
+            "5. Documents to prepare",
+            "<ul><li>Income evidence for the <strong>previous six months</strong></li><li>Documents showing rent and housing expenses</li><li>Information about any maintenance payments, Unterhaltsvorschuss or other income received by the child</li><li>Asset declarations and case-specific additional forms if requested</li></ul><p>Familienkasse provides additional forms for employment, self-employment, child income and assets. The official process is free.</p>"
+          ],
+          [
+            "6. Two important timing rules",
+            "<ul><li><strong>No retrospective KiZ for prior months as a general rule:</strong> do not postpone an application on the assumption that older periods will be paid automatically.</li><li><strong>Typically a six-month approval period:</strong> after the <em>Bewilligungszeitraum</em> ends, a new application is ordinarily required if the circumstances still qualify.</li></ul>"
+          ],
+          [
+            "7. Other support connected with KiZ",
+            "Eligible KiZ families may also access education and participation benefits (<em>Bildung und Teilhabe</em>) such as school supplies, meals and school trips, depending on local processes. A fee exemption for childcare may also be possible; ask the local Jugendamt."
+          ],
+          [
+            "8. Three illustrative situations",
+            "<div class='grid grid-3'><div class='card'><h3>Couple, two children, €2,400 gross income</h3><p>The general €900 minimum is met. Actual entitlement depends on rent, relevant parental and child income, and family needs.</p></div><div class='card'><h3>Single parent, €550 gross income</h3><p>The general €600 minimum has not been met on these figures alone. Clarify which income counts.</p></div><div class='card'><h3>Child receives maintenance</h3><p>Relevant child income can reduce the KiZ amount even if other eligibility conditions are met.</p></div></div>"
+          ],
+          [
+            "9. Common mistakes",
+            "<ul><li>Confusing the €900/€600 minimum with guaranteed eligibility</li><li>Assuming €297 is automatically paid for each child</li><li>Ignoring Wohngeld</li><li>Omitting maintenance or advance-maintenance income</li><li>Applying without the prior six months' income and housing documents</li><li>Delaying an application while assuming retrospective payments</li><li>Confusing a paid third-party service with Familienkasse</li></ul>"
+          ],
+          [
+            "10. Recommended next steps",
+            "<ol><li>Identify any obvious eligibility barriers.</li><li>Use the official <a href='https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kiz-lotse' target='_blank' rel='noopener'>KiZ-Lotse</a> to estimate eligibility.</li><li>Gather six months' income evidence, housing costs and child-income documents.</li><li>Assess Wohngeld in parallel when housing costs are high.</li><li>Submit a free official Familienkasse application where appropriate.</li></ol><p><a href='/kinderzuschlag-uygunluk-kontrolu-2026/' lang='tr' hreflang='tr'>Almanya Pusulası KiZ preliminary tool (Turkish)</a></p>"
+          ],
+          [
+            "Official sources and editorial note",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer' target='_blank' rel='noopener'>Bundesagentur für Arbeit — KiZ conditions and amounts</a></li><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kiz-lotse' target='_blank' rel='noopener'>Familienkasse — KiZ-Lotse</a></li><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder/formulare-kinderzuschlag' target='_blank' rel='noopener'>Official KiZ application forms</a></li></ul><p>This is general guidance based on the Turkish source. Only Familienkasse can assess your individual claim.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Kinderzuschlag 2026: Anspruch, 297 € Höchstbetrag und Antrag",
+        "description": "Kinderzuschlag 2026: maximal 297 € je Kind, Mindestbruttoeinkommen 900 €/600 €, Wohngeld, Unterlagen und KiZ-Lotse.",
+        "badge": "Familie und Kinder · Kinderzuschlag 2026",
+        "heading": "Kinderzuschlag 2026: Erst die Voraussetzungen, dann den Antrag prüfen",
+        "meta": "Türkischer Ausgangstext zuletzt September 2026 geprüft · Familienkasse",
+        "intro": "Der <strong>Kinderzuschlag (KiZ)</strong> ergänzt das Kindergeld für Familien, deren Einkommen für den eigenen Bedarf ausreicht, jedoch nicht unbedingt für den gesamten Familienbedarf. Der türkische Ausgangstext nennt für 2026 einen Höchstbetrag von <strong>297 € monatlich je Kind</strong>. Dies ist keine automatische Zahlung. Maßgeblich sind Einkommen, Wohnkosten, Einkommen der Kinder und die gesetzlichen Voraussetzungen.",
+        "sections": [
+          [
+            "Vier erste Fragen zum Anspruch",
+            "<ol><li>Lebt das Kind in Ihrem Haushalt?</li><li>Ist das Kind unter 25 Jahre alt und weder verheiratet noch in einer eingetragenen Partnerschaft?</li><li>Erhalten Sie für das Kind Kindergeld oder eine vergleichbare Leistung?</li><li>Beträgt das monatliche Bruttoeinkommen grundsätzlich mindestens <strong>900 € bei Paaren</strong> oder <strong>600 € bei Alleinerziehenden</strong>?</li></ol><p>Bestehen Zweifel an einem Kriterium, sollte dies mit der Familienkasse geklärt werden.</p>"
+          ],
+          [
+            "Was ist der Kinderzuschlag?",
+            "Der KiZ ist eine zusätzliche einkommensabhängige Familienleistung neben dem Kindergeld, die von der Familienkasse geprüft wird. Der amtliche Antrag ist kostenfrei. Private Vermittler können die Entscheidung nicht beeinflussen."
+          ],
+          [
+            "Kinderzuschlag offiziell beantragen",
+            "Die Antragstellung erfolgt über das Onlineangebot der Familienkasse oder über die amtlichen Formulare. Nutzen Sie <a href='https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder/formulare-kinderzuschlag' target='_blank' rel='noopener'>die offiziellen Kinderzuschlag-Formulare</a>. Über den Antrag entscheidet die Familienkasse und nicht Almanya Pusulası."
+          ],
+          [
+            "1. Für wen kommt KiZ infrage?",
+            "KiZ ist besonders für arbeitende Eltern und andere Familien mit eigenem Einkommen vorgesehen, deren Gesamtbedarf dadurch noch nicht gedeckt ist. Zusätzlich zu den Grundvoraussetzungen muss der Familienbedarf grundsätzlich mit Einkommen, Kinderzuschlag und gegebenenfalls <a href='/wohngeld/' lang='tr' hreflang='tr'>Wohngeld (Türkisch)</a> gedeckt werden können."
+          ],
+          [
+            "2. Warum 900 € oder 600 € keinen Anspruch garantieren",
+            "Die Beträge beschreiben die Mindesteinkommensvoraussetzung und keine automatische Bewilligung. Bei der Prüfung berücksichtigt die Familienkasse das rechtlich anzurechnende Einkommen der Eltern und Kinder, Miete und Wohnkosten, Haushaltszusammensetzung und erhebliches Vermögen. Allein aus dem Bruttolohn lässt sich der KiZ nicht zuverlässig berechnen."
+          ],
+          [
+            "3. Warum der Höchstbetrag von 297 € sinken kann",
+            "Anzurechnendes Einkommen des Kindes, beispielsweise bestimmte Unterhaltsleistungen oder Unterhaltsvorschuss, kann den Kinderzuschlag reduzieren. Welche Teile angerechnet werden, hängt von den gesetzlichen Regeln ab. Auch Einkommen der Eltern oberhalb ihres Bedarfs kann die Höhe beeinflussen. Rechnen Sie nicht mit <strong>zwei Kindern × 297 € = garantiert 594 €</strong>."
+          ],
+          [
+            "4. KiZ und Wohngeld sind kein zwingendes Entweder-oder",
+            "Bei der Prüfung kann entscheidend sein, ob der Bedarf mit eigenem Einkommen, KiZ und gegebenenfalls Wohngeld gedeckt werden kann. Ist die Miete im Verhältnis zum Einkommen hoch, sollte die Möglichkeit von Wohngeld ebenfalls geprüft werden. <a href='/wohngeld/' lang='tr' hreflang='tr'>Wohngeld-Ratgeber (Türkisch)</a>."
+          ],
+          [
+            "5. Wichtige Antragsunterlagen",
+            "<ul><li>Einkommensbelege der <strong>letzten sechs Monate</strong></li><li>Nachweise zu Miete und Wohnkosten</li><li>Angaben zu Unterhalt, Unterhaltsvorschuss und sonstigem Einkommen der Kinder</li><li>Gegebenenfalls Vermögensangaben und fallbezogene Zusatzformulare</li></ul><p>Die Familienkasse stellt ergänzende Formulare für Erwerbstätige, Selbstständige, Einkommen der Kinder und Vermögen bereit. Das amtliche Verfahren ist kostenlos.</p>"
+          ],
+          [
+            "6. Zwei wichtige Fristen",
+            "<ul><li><strong>Grundsätzlich keine Zahlung für frühere Monate:</strong> Eine KiZ-Antragstellung sollte nicht in der Erwartung unnötig verzögert werden, dass alle früheren Monate rückwirkend ausgezahlt werden.</li><li><strong>Bewilligung üblicherweise für sechs Monate:</strong> Nach Ende des Bewilligungszeitraums ist bei fortbestehenden Voraussetzungen normalerweise ein neuer Antrag notwendig.</li></ul>"
+          ],
+          [
+            "7. Weitere Leistungen für KiZ-Familien",
+            "Mit Kinderzuschlag können Leistungen für Bildung und Teilhabe hinzukommen, etwa Schulbedarf, Mittagessen oder Klassenfahrten. Auch eine Befreiung von Kinderbetreuungskosten kann unter Voraussetzungen möglich sein; informieren Sie sich beim Jugendamt."
+          ],
+          [
+            "8. Drei Beispielsituationen",
+            "<div class='grid grid-3'><div class='card'><h3>Paar, zwei Kinder, 2.400 € brutto</h3><p>Die 900-€-Mindesteinkommensgrenze wird erreicht. Der tatsächliche Anspruch hängt von Miete, Einkommen und Familienbedarf ab.</p></div><div class='card'><h3>Alleinerziehend, 550 € brutto</h3><p>Die allgemeine Mindestgrenze von 600 € wird allein mit diesem Betrag nicht erreicht. Klären Sie, welche Einkünfte angerechnet werden.</p></div><div class='card'><h3>Kind erhält Unterhalt</h3><p>Anzurechnendes Einkommen des Kindes kann den KiZ trotz erfüllter Grundvoraussetzungen reduzieren.</p></div></div>"
+          ],
+          [
+            "9. Häufige Fehler",
+            "<ul><li>900/600 € mit einem garantierten Anspruch verwechseln</li><li>297 € als automatische Auszahlung je Kind annehmen</li><li>Wohngeld nicht berücksichtigen</li><li>Unterhalt oder Unterhaltsvorschuss nicht angeben</li><li>Einkommens- und Wohnkostenbelege der letzten sechs Monate nicht vorbereiten</li><li>Wegen vermeintlich rückwirkender Auszahlung zu spät beantragen</li><li>Kommerzielle Antragshilfe mit der Familienkasse verwechseln</li></ul>"
+          ],
+          [
+            "10. Die nächsten Schritte",
+            "<ol><li>Offensichtliche Zugangshürden prüfen.</li><li>Mit dem amtlichen <a href='https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kiz-lotse' target='_blank' rel='noopener'>KiZ-Lotsen</a> die Anspruchsaussichten prüfen.</li><li>Einkommensbelege der letzten sechs Monate sowie Wohn- und Kinderkostenunterlagen sammeln.</li><li>Bei hohen Wohnkosten Wohngeld parallel prüfen.</li><li>Bei passenden Voraussetzungen den kostenlosen Antrag bei der Familienkasse stellen.</li></ol><p><a href='/kinderzuschlag-uygunluk-kontrolu-2026/' lang='tr' hreflang='tr'>KiZ-Vorprüfungswerkzeug (Türkisch)</a></p>"
+          ],
+          [
+            "Amtliche Quellen und redaktioneller Hinweis",
+            "<ul><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer' target='_blank' rel='noopener'>Bundesagentur für Arbeit — KiZ Anspruch, Höhe und Dauer</a></li><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kiz-lotse' target='_blank' rel='noopener'>Familienkasse — KiZ-Lotse</a></li><li><a href='https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder/formulare-kinderzuschlag' target='_blank' rel='noopener'>Familienkasse — Amtliche Formulare</a></li></ul><p>Die Informationen orientieren sich am türkischen Ausgangstext. Über den individuellen Anspruch entscheidet ausschließlich die Familienkasse.</p>"
+          ]
+        ]
+      }
     }
   }
 }
