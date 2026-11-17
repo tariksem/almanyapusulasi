@@ -85,6 +85,116 @@
           ]
         ]
       }
+    },
+    "wohngeld": {
+      "en": {
+        "title": "Wohngeld 2026 in Germany: Eligibility, Rent, Income and Application",
+        "description": "Housing benefit Wohngeld in 2026: household members, eligible income, Bruttokaltmiete, Mietenstufe, benefit exclusions, application and Kinderzuschlag.",
+        "badge": "Social benefits · Eligibility guide",
+        "heading": "Wohngeld 2026: Check Eligibility and Your Real Housing Budget",
+        "meta": "Turkish source verified 6 November 2026 · Federal Housing Ministry (BMWSB)",
+        "intro": "Wohngeld can support eligible low-income households with housing costs. There is no one nationwide salary cut-off. Eligibility depends on the <strong>number of household members, relevant income, eligible rent or housing burden, and the local Mietenstufe</strong>. If accommodation costs are already taken into account in a basic income-support benefit, separate Wohngeld is generally excluded.",
+        "sections": [
+          [
+            "1. Answer four questions first",
+            "<div class='grid grid-2'><div class='card'><h3>Do you rent or own?</h3><p>Tenants may qualify for <em>Mietzuschuss</em>; owner-occupiers may qualify for <em>Lastenzuschuss</em> subject to the rules.</p></div><div class='card'><h3>Are housing costs covered by another benefit?</h3><p>Basic subsistence benefits under SGB II/SGB XII and certain BAföG/BAB situations can exclude Wohngeld.</p></div><div class='card'><h3>Is household income limited?</h3><p>There is no single fixed salary threshold for all of Germany; household size and other parameters count.</p></div><div class='card'><h3>Is rent particularly high?</h3><p>High housing costs matter, but not every euro of Warmmiete automatically enters the Wohngeld calculation.</p></div></div>"
+          ],
+          [
+            "2. Who should check eligibility?",
+            "Working low-income households, families, single parents, pensioners with modest pensions and students in certain circumstances may benefit from checking Wohngeld. Owner-occupiers are not categorically excluded; Lastenzuschuss may apply. <strong>Being employed does not by itself prevent receipt of Wohngeld.</strong>"
+          ],
+          [
+            "3. Who is generally excluded?",
+            "If an existing social benefit already pays or counts your accommodation expenses, you generally cannot receive Wohngeld for those same expenses. Students must examine eligibility carefully: not receiving BAföG alone does not prove entitlement, because the nature of the BAföG/BAB entitlement and the composition of the household can also matter."
+          ],
+          [
+            "4. What determines the calculation?",
+            "<ol><li><strong>Household size:</strong> the persons counted under Wohngeld rules.</li><li><strong>Relevant aggregate income:</strong> this is not identical to the net salary on your payslip.</li><li><strong>Eligible rent or owner burden:</strong> different methods apply to renters and owners.</li><li><strong>Mietenstufe:</strong> the municipality's rent level affects the calculation.</li></ol><p>Online tables claiming a certain salary automatically qualifies or disqualifies you are not authoritative. The federal calculator is only a preliminary estimate; the local Wohngeldbehörde decides the final amount.</p>"
+          ],
+          [
+            "5. Which rent and income figures should you prepare?",
+            "Separate <em>Nettokaltmiete</em>, cold operating costs (<em>kalte Nebenkosten</em>), heating, electricity and other fixed costs. For tenants, the official calculator asks for <strong>Bruttokaltmiete (Nettokaltmiete plus cold operating costs)</strong>, not the complete Warmmiete. Heating and hot water are not simply added to Bruttokaltmiete; the statutory heating and climate components are handled separately in Wohngeld rules. The relevant household income includes legally prescribed income components, allowances and deductions. <strong>Kindergeld and Kinderzuschlag are not counted as Wohngeld income.</strong><p><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Miet-Budget Check (Turkish)</a> · <a href='https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html' target='_blank' rel='noopener'>Official Wohngeld calculator</a></p>"
+          ],
+          [
+            "6. Wohngeld or Kinderzuschlag?",
+            "For families with children this is often a false either-or choice. Wohngeld can contribute to covering household needs in the Kinderzuschlag assessment. Check both together when evaluating family finances. <a href='/en/kinderzuschlag/'>Kinderzuschlag guide</a> and <a href='/kinderzuschlag-uygunluk-kontrolu-2026/' lang='tr' hreflang='tr'>eligibility tool (Turkish)</a>."
+          ],
+          [
+            "7. Can you reduce housing costs independently of Wohngeld?",
+            "Your legal benefit claim and savings decisions are separate. Even while an application is pending, review adjustable costs.<div class='grid grid-3'><div class='card'><h3>Total rent budget</h3><p>Assess heating, electricity, internet and other expenses beyond Warmmiete. <a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Budget tool (Turkish)</a>.</p></div><div class='card'><h3>NebenkostenCheck</h3><p>Review annual utility billing, calculation periods and explanations. <a href='/nebenkosten-abrechnung-kontrolu/' lang='tr' hreflang='tr'>Billing check (Turkish)</a>.</p></div><div class='card'><h3>Electricity</h3><p>Compare tariffs and annual total costs. <a href='/stromtarif-karsilastirma-2026/' lang='tr' hreflang='tr'>Electricity guide (Turkish)</a>.</p></div></div><p>Commercial disclosure: this Wohngeld guide does not itself present partner offers. Any affiliate links on electricity comparison pages must be separately labelled.</p>"
+          ],
+          [
+            "8. Documents for the application",
+            "<ul><li>Identity and residence details of relevant household members</li><li>Evidence of salary, pension and other relevant income</li><li>Rental agreement and current rent and housing-cost documents for tenants</li><li>Financing and operating-cost documents for owner-occupiers seeking Lastenzuschuss</li><li>Other social-benefit or education-support notices where relevant</li></ul>"
+          ],
+          [
+            "9. When should you apply?",
+            "Do not postpone an application unnecessarily if you may be eligible. The date and procedure used by your local Wohngeld office are important. Receiving a positive estimate from an online calculator is not a reason to delay submitting the application."
+          ],
+          [
+            "10. Most efficient decision sequence",
+            "<ol><li>Check whether another basic benefit already covers your housing costs.</li><li>Collect household size, income, eligible rent or housing burden and municipality information.</li><li><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Calculate your real monthly housing budget (Turkish)</a>.</li><li>Compare with the official BMWSB Wohngeld calculator.</li><li>If you have children, check <a href='/en/kinderzuschlag/'>Kinderzuschlag</a> in parallel.</li><li>Separately review adjustable recurring expenses.</li></ol>"
+          ],
+          [
+            "Official information and editorial note",
+            "<ul><li><a href='https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html' target='_blank' rel='noopener'>BMWSB — Official Wohngeld calculator</a></li><li><a href='https://www.bmwsb.bund.de/SharedDocs/faqs/DE/wohnen/wohngeld/wohngeld-faq-liste.html' target='_blank' rel='noopener'>BMWSB — Wohngeld questions and answers</a></li></ul><p>This guide provides general decision support. The local Wohngeldbehörde determines binding entitlement and payment, independently of commercial partner offers.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Wohngeld 2026: Voraussetzungen, Miete, Einkommen und Antrag",
+        "description": "Wohngeld 2026 prüfen: Haushaltsgröße, Bruttokaltmiete, Mietenstufe, Wohngeldeinkommen, Ausschlussgründe, Kinderzuschlag und Antrag.",
+        "badge": "Sozialleistungen · Anspruch prüfen",
+        "heading": "Wohngeld 2026: Anspruch und reale Wohnkosten gemeinsam prüfen",
+        "meta": "Türkischer Ausgangstext geprüft am 6. November 2026 · Bundesbauministerium BMWSB",
+        "intro": "Wohngeld kann Haushalte mit geringem Einkommen bei den Wohnkosten unterstützen. Eine bundesweit einheitliche Gehaltsgrenze gibt es nicht. Entscheidend sind <strong>Haushaltsgröße, wohngeldrechtlich relevantes Einkommen, berücksichtigungsfähige Miete oder Belastung und die örtliche Mietenstufe</strong>. Werden die Unterkunftskosten bereits durch bestimmte Grundsicherungsleistungen berücksichtigt, ist zusätzliches Wohngeld grundsätzlich ausgeschlossen.",
+        "sections": [
+          [
+            "1. Zuerst vier Fragen beantworten",
+            "<div class='grid grid-2'><div class='card'><h3>Miete oder Eigentum?</h3><p>Mietende können Mietzuschuss erhalten; selbstnutzende Eigentümer gegebenenfalls Lastenzuschuss.</p></div><div class='card'><h3>Werden Wohnkosten anderweitig übernommen?</h3><p>Bestimmte Leistungen nach SGB II/SGB XII und einzelne BAföG-/BAB-Konstellationen können Wohngeld ausschließen.</p></div><div class='card'><h3>Ist das Haushaltseinkommen begrenzt?</h3><p>Es existiert keine einzelne bundesweit allgemeingültige Gehaltsgrenze; weitere Faktoren zählen.</p></div><div class='card'><h3>Ist die Mietbelastung hoch?</h3><p>Hohe Kosten sind relevant, aber nicht die gesamte Warmmiete geht unmittelbar in den Wohngeldrechner ein.</p></div></div>"
+          ],
+          [
+            "2. Für wen lohnt sich eine Prüfung?",
+            "Erwerbstätige mit geringem Einkommen, Familien, Alleinerziehende, Personen mit kleiner Rente und Studierende in bestimmten Situationen sollten ihren Anspruch prüfen. Auch Eigentümer selbst genutzter Wohnungen sind nicht grundsätzlich ausgeschlossen. <strong>Eine Beschäftigung allein verhindert Wohngeld nicht.</strong>"
+          ],
+          [
+            "3. Wer kann grundsätzlich kein Wohngeld bekommen?",
+            "Wenn die Unterkunftskosten bereits in einer anderen Sozialleistung berücksichtigt werden, kann dafür in der Regel kein weiteres Wohngeld gezahlt werden. Bei Studierenden reicht die Aussage „Ich bekomme kein BAföG“ nicht aus: Die Art der BAföG-/BAB-Berechtigung und die Haushaltszusammensetzung können entscheidend sein."
+          ],
+          [
+            "4. Welche Faktoren bestimmen die Berechnung?",
+            "<ol><li><strong>Haushaltsgröße:</strong> die nach Wohngeldrecht berücksichtigten Personen.</li><li><strong>Maßgebliches Gesamteinkommen:</strong> nicht einfach der Nettolohn auf dem Gehaltszettel.</li><li><strong>Berücksichtigungsfähige Miete oder Belastung:</strong> unterschiedliche Berechnungsmodelle für Mieter und Eigentümer.</li><li><strong>Mietenstufe:</strong> die kommunale Mietstufe beeinflusst die Berechnung.</li></ol><p>Allgemeine Online-Tabellen, wonach man bei einem bestimmten Gehalt immer einen Anspruch hat oder nie, sind nicht verbindlich. Der amtliche Rechner liefert eine Vorprüfung; die örtliche Wohngeldbehörde trifft die Entscheidung.</p>"
+          ],
+          [
+            "5. Welche Miet- und Einkommensangaben benötigt man?",
+            "Trennen Sie <em>Nettokaltmiete</em>, kalte Nebenkosten, Heizung, Strom und weitere feste Zahlungen. Für Mietende fragt der amtliche Wohngeldrechner nach der <strong>Bruttokaltmiete (Nettokaltmiete plus kalte Betriebskosten)</strong>, nicht nach der vollständigen Warmmiete. Heizung und Warmwasser werden nicht einfach zur Bruttokaltmiete addiert; die gesetzlichen Heizkosten- und Klimakomponenten werden gesondert berücksichtigt. Das wohngeldrechtliche Gesamteinkommen ergibt sich nach eigenen Anrechnungs-, Abzugs- und Freibetragsregeln. <strong>Kindergeld und Kinderzuschlag zählen nicht zum Wohngeldeinkommen.</strong><p><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Miet-Budget Check (Türkisch)</a> · <a href='https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html' target='_blank' rel='noopener'>Amtlicher Wohngeldrechner</a></p>"
+          ],
+          [
+            "6. Kinderzuschlag oder Wohngeld?",
+            "Bei Familien mit Kindern ist das häufig eine falsche Entweder-oder-Frage. Wohngeld kann bei der Kinderzuschlag-Bewertung zur Deckung des Familienbedarfs beitragen. Prüfen Sie die Leistungen parallel. <a href='/de/kinderzuschlag/'>Kinderzuschlag-Ratgeber</a> und <a href='/kinderzuschlag-uygunluk-kontrolu-2026/' lang='tr' hreflang='tr'>KiZ-Check (Türkisch)</a>."
+          ],
+          [
+            "7. Wohnkosten auch unabhängig von Wohngeld prüfen",
+            "Wohngeldanspruch und Sparpotenzial sind unterschiedliche Entscheidungen. Auch während eines laufenden Antrags lassen sich veränderbare Kosten prüfen.<div class='grid grid-3'><div class='card'><h3>Gesamte Wohnkosten</h3><p>Heizung, Strom, Internet und weitere Ausgaben neben der Warmmiete. <a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Budget-Rechner (Türkisch)</a>.</p></div><div class='card'><h3>NebenkostenCheck</h3><p>Jährliche Abrechnung, Rechenfehler, Zeiträume und Belege. <a href='/nebenkosten-abrechnung-kontrolu/' lang='tr' hreflang='tr'>Rechner (Türkisch)</a>.</p></div><div class='card'><h3>Stromkosten</h3><p>Tarife und tatsächliche Jahreskosten vergleichen. <a href='/stromtarif-karsilastirma-2026/' lang='tr' hreflang='tr'>Stromratgeber (Türkisch)</a>.</p></div></div><p>Transparenzhinweis: Dieser Wohngeld-Ratgeber enthält selbst keine Partnerangebote. Eventuelle Affiliate-Links auf Tarifvergleichsseiten werden dort gesondert gekennzeichnet.</p>"
+          ],
+          [
+            "8. Welche Unterlagen sind für den Antrag nötig?",
+            "<ul><li>Identitäts- und Wohnsitznachweise der relevanten Haushaltsmitglieder</li><li>Einkommensnachweise zu Lohn, Rente und anderen Einnahmen</li><li>Mietvertrag sowie aktuelle Miet- und Betriebskostenbelege für Mietende</li><li>Finanzierungs- und Betriebskostenbelege für Eigentümer mit Lastenzuschussantrag</li><li>Gegebenenfalls Sozialleistungs- oder Ausbildungsförderungsbescheide</li></ul>"
+          ],
+          [
+            "9. Wann sollte Wohngeld beantragt werden?",
+            "Wenn ein Anspruch möglich erscheint, sollte die Antragstellung nicht unnötig verschoben werden. Entscheidend sind das Eingangsdatum und das Verfahren der örtlichen Wohngeldstelle. Eine positive Vorprüfung im Rechner ist kein Grund, den Antrag aufzuschieben."
+          ],
+          [
+            "10. Sinnvolle Reihenfolge der Prüfung",
+            "<ol><li>Klären, ob eine andere Grundsicherungsleistung die Wohnkosten bereits berücksichtigt.</li><li>Haushaltsgröße, Einkünfte, anrechenbare Miete/Belastung und Gemeinde erfassen.</li><li><a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Reales monatliches Wohnbudget (Türkisch)</a> berechnen.</li><li>Vorprüfung im amtlichen BMWSB-Wohngeldrechner durchführen.</li><li>Bei Kindern <a href='/de/kinderzuschlag/'>Kinderzuschlag</a> parallel prüfen.</li><li>Veränderbare laufende Ausgaben getrennt untersuchen.</li></ol>"
+          ],
+          [
+            "Amtliche Quellen und Hinweis",
+            "<ul><li><a href='https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html' target='_blank' rel='noopener'>BMWSB — Amtlicher Wohngeldrechner</a></li><li><a href='https://www.bmwsb.bund.de/SharedDocs/faqs/DE/wohnen/wohngeld/wohngeld-faq-liste.html' target='_blank' rel='noopener'>BMWSB — Fragen und Antworten zu Wohngeld</a></li></ul><p>Dieser Ratgeber ist eine allgemeine Entscheidungshilfe. Die örtliche Wohngeldbehörde entscheidet verbindlich über Anspruch und Höhe, unabhängig von kommerziellen Partnerangeboten.</p>"
+          ]
+        ]
+      }
     }
   }
 }
