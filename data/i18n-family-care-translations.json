@@ -1,0 +1,230 @@
+{
+  "items": {
+    "mutterschutz-mutterschaftsgeld": {
+      "en": {
+        "title": "Maternity Protection and Maternity Pay in Germany 2026",
+        "description": "Mutterschutz periods before and after birth, Mutterschaftsgeld up to €13 daily, employer supplement and health insurance.",
+        "badge": "Family and Children",
+        "heading": "Mutterschutz and Mutterschaftsgeld 2026: Protection Periods and Income",
+        "meta": "Turkish source last updated September 2026 · 7-minute guide",
+        "intro": "The maternity protection period generally starts <strong>six weeks before the expected date of birth</strong> and ends <strong>eight weeks after childbirth</strong>. In cases such as premature birth and other special circumstances, the postnatal period may be <strong>twelve weeks</strong>.",
+        "sections": [
+          [
+            "What does Mutterschutz protect?",
+            "Maternity protection is more than a period of leave. It is a set of employment rules designed to protect the mother's health, working conditions and income during pregnancy, childbirth and recovery."
+          ],
+          [
+            "Periods before and after childbirth",
+            "<ul><li>Before the expected birth: generally six weeks.</li><li>After childbirth: generally eight weeks.</li><li>Medically premature birth and certain other special circumstances: twelve weeks after birth.</li></ul><p>Before childbirth, the employee may continue working if she expressly wishes to do so. The rules after childbirth are more restrictive.</p>"
+          ],
+          [
+            "How much is Mutterschaftsgeld?",
+            "For qualifying employed members of statutory health insurance who are insured in their own right, the health insurer pays up to <strong>€13 per calendar day</strong>. If the relevant average net wage is higher, the employer may top up the difference through the <em>Arbeitgeberzuschuss</em>."
+          ],
+          [
+            "Is Familienversicherung sufficient?",
+            "Being covered only as a dependent through statutory <em>Familienversicherung</em> is not sufficient for the standard maternity payment from one's own Krankenkasse. Depending on employment and insurance status, a separate pathway via the <em>Bundesamt für Soziale Sicherung</em> may apply."
+          ],
+          [
+            "How does this relate to Elterngeld?",
+            "Mutterschaftsleistungen and Elterngeld must not be treated as two entirely independent full payments for the same period. When planning the first months of the child's life, account for maternity benefits in the Elterngeld calculation."
+          ],
+          [
+            "Related guides",
+            "<ul><li><a href='/en/elterngeld-2026/'>Elterngeld 2026</a></li><li><a href='/en/elternzeit-almanya/'>Parental leave</a></li><li><a href='/en/familienversicherung/'>Family health insurance</a></li><li><a href='/aile-cocuk/' lang='tr' hreflang='tr'>Family and children hub (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://familienportal.de/familienportal/familienleistungen/mutterschutz' target='_blank' rel='noopener'>Federal Family Portal — Maternity protection</a></li><li><a href='https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen' target='_blank' rel='noopener'>Federal Family Portal — Maternity payments</a></li></ul>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Mutterschutz und Mutterschaftsgeld 2026: Fristen und Leistungen",
+        "description": "Mutterschutz: sechs Wochen vor und acht oder zwölf Wochen nach der Geburt, Mutterschaftsgeld bis 13 € pro Tag und Arbeitgeberzuschuss.",
+        "badge": "Familie und Kinder",
+        "heading": "Mutterschutz und Mutterschaftsgeld 2026: Fristen und Einkommensschutz",
+        "meta": "Türkischer Ausgangstext September 2026 · Lesezeit etwa 7 Minuten",
+        "intro": "Die Mutterschutzfrist beginnt grundsätzlich <strong>sechs Wochen vor dem errechneten Geburtstermin</strong> und endet <strong>acht Wochen nach der Geburt</strong>. Bei Frühgeburten und bestimmten anderen Konstellationen beträgt die Schutzfrist nach der Geburt <strong>zwölf Wochen</strong>.",
+        "sections": [
+          [
+            "Was schützt der Mutterschutz?",
+            "Mutterschutz ist mehr als eine Freistellung. Die gesetzlichen Vorschriften schützen die Gesundheit, Arbeitsbedingungen und wirtschaftliche Absicherung der Mutter während Schwangerschaft, Geburt und der Zeit danach."
+          ],
+          [
+            "Fristen vor und nach der Entbindung",
+            "<ul><li>Vor der Geburt: grundsätzlich sechs Wochen.</li><li>Nach der Geburt: grundsätzlich acht Wochen.</li><li>Bei medizinischer Frühgeburt und einigen Sonderfällen: zwölf Wochen nach der Geburt.</li></ul><p>Vor der Geburt darf die Schwangere auf ausdrücklichen Wunsch weiterarbeiten. Nach der Geburt gelten strengere Beschäftigungsverbote.</p>"
+          ],
+          [
+            "Wie hoch ist das Mutterschaftsgeld?",
+            "Bei entsprechend versicherten beschäftigten Mitgliedern der gesetzlichen Krankenkasse beträgt das Mutterschaftsgeld der Krankenkasse höchstens <strong>13 € je Kalendertag</strong>. Übersteigt das maßgebliche durchschnittliche Nettogehalt diesen Betrag, kann der Arbeitgeber die Differenz als <em>Arbeitgeberzuschuss</em> zahlen."
+          ],
+          [
+            "Reicht eine Familienversicherung?",
+            "Wer ausschließlich beitragsfrei familienversichert ist, erfüllt allein dadurch nicht die Voraussetzungen für das reguläre Mutterschaftsgeld der eigenen Krankenkasse. Je nach Beschäftigungs- und Versicherungsstatus kann eine andere Leistung über das <em>Bundesamt für Soziale Sicherung</em> möglich sein."
+          ],
+          [
+            "Wie hängt das mit Elterngeld zusammen?",
+            "Mutterschaftsleistungen und Elterngeld sind im selben Zeitraum nicht zwei völlig unabhängige volle Zahlungen. Planen Sie die ersten Lebensmonate des Kindes unter Berücksichtigung der Mutterschaftsleistungen."
+          ],
+          [
+            "Verwandte Ratgeber",
+            "<ul><li><a href='/de/elterngeld-2026/'>Elterngeld 2026</a></li><li><a href='/de/elternzeit-almanya/'>Elternzeit</a></li><li><a href='/de/familienversicherung/'>Familienversicherung</a></li><li><a href='/aile-cocuk/' lang='tr' hreflang='tr'>Familie und Kinder (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://familienportal.de/familienportal/familienleistungen/mutterschutz' target='_blank' rel='noopener'>Familienportal — Mutterschutz</a></li><li><a href='https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen' target='_blank' rel='noopener'>Familienportal — Mutterschaftsleistungen</a></li></ul>"
+          ]
+        ]
+      }
+    },
+    "kita-platz-almanya": {
+      "en": {
+        "title": "Finding a Kita Place in Germany 2026: Legal Rights and Jugendamt",
+        "description": "Kita place and childcare in Germany: SGB VIII §24 entitlement from age one, Tagesmutter, applications, unavailable places and fees.",
+        "badge": "Family and Children",
+        "heading": "Finding a Kita Place in Germany: Your Rights and Application Steps",
+        "meta": "Turkish source last updated September 2026 · 7-minute guide",
+        "intro": "According to <strong>section 24 of Social Code Book VIII (SGB VIII)</strong>, children from their first birthday until age three are generally entitled to early-childhood support in a Kita or child day-care setting (<em>Kindertagespflege</em>). From age three until starting school, the legal entitlement continues for a day-care institution.",
+        "sections": [
+          [
+            "When does the legal entitlement start?",
+            "A general entitlement starts when the child reaches one year of age. Children under one year may also qualify when parents work, begin employment, look for work, undertake education or satisfy other specified conditions."
+          ],
+          [
+            "Kita or Tagesmutter?",
+            "For children between one and three, the entitlement may be met by a day-care centre (<em>Kita</em>) or childminder/day-care arrangement (<em>Kindertagespflege</em>). Municipalities use different application systems, for example a Jugendamt, local portal, Kita-Navigator or direct applications."
+          ],
+          [
+            "When should you apply?",
+            "A legal entitlement does not guarantee a place in a specific Kita of your choice. In large cities, applying early is practically important. Coordinate an upcoming move, the end of Elternzeit and the planned return to work."
+          ],
+          [
+            "What if no childcare place is available?",
+            "Keep copies of applications and correspondence with the Jugendamt. Ask the local Jugendamt in writing how it intends to fulfil the statutory entitlement. Because enforcement and remedies can differ by municipality and federal state, case-specific legal guidance may be appropriate."
+          ],
+          [
+            "Are childcare fees identical nationwide?",
+            "No. Kita contributions, meal charges, income-related fees and free childcare hours vary substantially between federal states and municipalities. There is no single reliable nationwide Kita fee."
+          ],
+          [
+            "Related guides",
+            "<ul><li><a href='/en/elternzeit-almanya/'>Parental leave</a></li><li><a href='/en/kinderkrankengeld-2026/'>Child sickness benefit</a></li><li><a href='/en/kindergeld/'>Kindergeld</a></li><li><a href='/aile-cocuk/' lang='tr' hreflang='tr'>Family and children hub (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/sgb_8/__24.html' target='_blank' rel='noopener'>SGB VIII §24 — Right to childcare</a></li><li><a href='https://familienportal.de/' target='_blank' rel='noopener'>Federal Family Portal</a></li></ul>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Kita-Platz finden 2026: Rechtsanspruch, Anmeldung und Jugendamt",
+        "description": "Kita-Rechtsanspruch ab einem Jahr nach SGB VIII §24, Tagespflege, Wartelisten, fehlende Betreuungsplätze und kommunale Gebühren.",
+        "badge": "Familie und Kinder",
+        "heading": "Kita-Platz in Deutschland: Anspruch und Anmeldung",
+        "meta": "Türkischer Ausgangstext September 2026 · Lesezeit etwa 7 Minuten",
+        "intro": "Nach <strong>§24 SGB VIII</strong> haben Kinder ab Vollendung des ersten bis zur Vollendung des dritten Lebensjahres grundsätzlich einen Anspruch auf frühkindliche Förderung in einer Kindertageseinrichtung oder Kindertagespflege. Vom dritten Geburtstag bis zur Einschulung besteht weiterhin ein Anspruch auf Förderung in einer Tageseinrichtung.",
+        "sections": [
+          [
+            "Wann beginnt der gesetzliche Anspruch?",
+            "Der allgemeine Anspruch beginnt mit dem ersten Geburtstag. Für Kinder unter einem Jahr kann der Anspruch unter besonderen Bedingungen entstehen, etwa wenn die Eltern berufstätig sind, eine Arbeit aufnehmen, eine Arbeit suchen oder eine Ausbildung absolvieren."
+          ],
+          [
+            "Kita oder Tagesmutter?",
+            "Zwischen dem ersten und dritten Geburtstag kann der Anspruch durch Kita oder <em>Kindertagespflege</em> erfüllt werden. Die örtliche Anmeldung kann je nach Kommune über Jugendamt, Kita-Navigator, städtisches Portal oder die Einrichtungen selbst laufen."
+          ],
+          [
+            "Wann sollte man sich anmelden?",
+            "Der Rechtsanspruch bedeutet nicht, dass in einer bestimmten Wunsch-Kita garantiert ein Platz verfügbar ist. Vor allem in großen Städten sind frühe Anmeldungen sinnvoll. Stimmen Sie Umzug, Elternzeitende und Arbeitsbeginn miteinander ab."
+          ],
+          [
+            "Was tun, wenn kein Platz angeboten wird?",
+            "Bewahren Sie Anmeldebelege und Schriftwechsel mit dem Jugendamt auf. Fragen Sie schriftlich, wie der Jugendhilfeträger den gesetzlichen Betreuungsanspruch erfüllen wird. Da Verfahren und Rechtsbehelfe je nach Bundesland und Gemeinde variieren, kann konkrete rechtliche Beratung erforderlich sein."
+          ],
+          [
+            "Sind die Kita-Kosten bundesweit gleich?",
+            "Nein. Kita-Beiträge, Essensgeld, einkommensabhängige Beiträge und gebührenfreie Betreuungsstunden unterscheiden sich erheblich nach Bundesland und Kommune. Eine allgemeingültige Kita-Gebühr für ganz Deutschland gibt es nicht."
+          ],
+          [
+            "Verwandte Ratgeber",
+            "<ul><li><a href='/de/elternzeit-almanya/'>Elternzeit</a></li><li><a href='/de/kinderkrankengeld-2026/'>Kinderkrankengeld</a></li><li><a href='/de/kindergeld/'>Kindergeld</a></li><li><a href='/aile-cocuk/' lang='tr' hreflang='tr'>Familie und Kinder (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://www.gesetze-im-internet.de/sgb_8/__24.html' target='_blank' rel='noopener'>§24 SGB VIII — Förderung in Tageseinrichtungen</a></li><li><a href='https://familienportal.de/' target='_blank' rel='noopener'>Familienportal des Bundes</a></li></ul>"
+          ]
+        ]
+      }
+    },
+    "kinderkrankengeld-2026": {
+      "en": {
+        "title": "Kinderkrankengeld 2026: How Many Days Can Parents Claim?",
+        "description": "Child sickness benefit 2026 in Germany: 15 days per child per parent, 30 for single parents, total maximums 35/70, hospital accompaniment.",
+        "badge": "Family and Children",
+        "heading": "Kinderkrankengeld 2026: Entitlement and Number of Days",
+        "meta": "Turkish source last updated September 2026 · 6-minute guide",
+        "intro": "In 2026, parents with qualifying statutory health insurance may claim Kinderkrankengeld for <strong>15 working days per child and parent</strong>. Single parents can claim <strong>30 days per child</strong>. For several children, the usual total maximum is <strong>35 working days per parent</strong> or <strong>70 days for single parents</strong>.",
+        "sections": [
+          [
+            "Who can receive Kinderkrankengeld?",
+            "In general, both the working parent and child must be covered by statutory health insurance, the child must need care and no other suitable person in the household must be able to provide it. The child's age and certain special circumstances also matter."
+          ],
+          [
+            "How many working days in 2026?",
+            "<ul><li>One child: 15 working days for each eligible parent.</li><li>Single parent: 30 working days for each eligible child.</li><li>Multiple children: generally 35 working days total per eligible parent.</li><li>Single parents with multiple children: generally 70 working days total.</li></ul>"
+          ],
+          [
+            "Accompanying a child in hospital",
+            "When a child needs an accompanying parent for medical reasons during inpatient treatment, a separate and potentially broader entitlement to Kinderkrankengeld may apply. Ask the statutory health insurer for an individual assessment."
+          ],
+          [
+            "How do you apply?",
+            "Apply through your Krankenkasse. Arrange the required medical certification of the child's illness and need for care, and inform the employer without unnecessary delay."
+          ],
+          [
+            "Related guides",
+            "<ul><li><a href='/en/familienversicherung/'>Family health insurance</a></li><li><a href='/en/elternzeit-almanya/'>Parental leave</a></li><li><a href='/en/kita-platz-almanya/'>Kita and childcare</a></li><li><a href='/aile-cocuk/' lang='tr' hreflang='tr'>Family and children hub (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://www.bundesgesundheitsministerium.de/themen/praevention/kindergesundheit/faq-kinderkrankengeld' target='_blank' rel='noopener'>Federal Ministry of Health — Kinderkrankengeld</a></li><li><a href='https://www.bundesgesundheitsministerium.de/krankengeld' target='_blank' rel='noopener'>Federal Ministry of Health — Sickness benefit</a></li></ul>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Kinderkrankengeld 2026: Anspruch und Kinderkrankentage",
+        "description": "Kinderkrankengeld 2026: 15 Tage je Elternteil und Kind, 30 Tage Alleinerziehende, Höchstgrenzen 35/70 Tage und Klinikbegleitung.",
+        "badge": "Familie und Kinder",
+        "heading": "Kinderkrankengeld 2026: Wer bekommt wie viele Tage?",
+        "meta": "Türkischer Ausgangstext September 2026 · Lesezeit etwa 6 Minuten",
+        "intro": "Im Jahr 2026 können entsprechend gesetzlich krankenversicherte Eltern grundsätzlich <strong>15 Arbeitstage Kinderkrankengeld pro Kind und Elternteil</strong> beanspruchen. Bei Alleinerziehenden sind es <strong>30 Tage je Kind</strong>. Bei mehreren Kindern gilt regelmäßig eine Gesamtobergrenze von <strong>35 Tagen pro Elternteil</strong> beziehungsweise <strong>70 Tagen bei Alleinerziehenden</strong>.",
+        "sections": [
+          [
+            "Wer hat Anspruch auf Kinderkrankengeld?",
+            "Im Regelfall müssen das berufstätige Elternteil und das Kind gesetzlich krankenversichert sein, das Kind muss Betreuung benötigen und keine andere geeignete Person im Haushalt kann die Betreuung übernehmen. Das Alter des Kindes und besondere Konstellationen sind zusätzlich zu beachten."
+          ],
+          [
+            "Wie viele Kinderkrankentage gibt es 2026?",
+            "<ul><li>Ein Kind: 15 Arbeitstage je anspruchsberechtigtem Elternteil.</li><li>Alleinerziehende: 30 Arbeitstage je Kind.</li><li>Mehrere Kinder: insgesamt in der Regel höchstens 35 Tage pro Elternteil.</li><li>Alleinerziehende mit mehreren Kindern: insgesamt höchstens 70 Arbeitstage.</li></ul>"
+          ],
+          [
+            "Begleitung eines Kindes im Krankenhaus",
+            "Bei medizinisch notwendiger Mitaufnahme oder Begleitung während eines stationären Krankenhausaufenthalts kann ein besonderer und weitergehender Kinderkrankengeldanspruch bestehen. Lassen Sie dies durch die zuständige Krankenkasse prüfen."
+          ],
+          [
+            "Wie wird Kinderkrankengeld beantragt?",
+            "Der Antrag erfolgt bei der Krankenkasse. Besorgen Sie rechtzeitig die ärztliche Bescheinigung über Erkrankung und Betreuungsbedarf und benachrichtigen Sie den Arbeitgeber."
+          ],
+          [
+            "Verwandte Ratgeber",
+            "<ul><li><a href='/de/familienversicherung/'>Familienversicherung</a></li><li><a href='/de/elternzeit-almanya/'>Elternzeit</a></li><li><a href='/de/kita-platz-almanya/'>Kita-Platz</a></li><li><a href='/aile-cocuk/' lang='tr' hreflang='tr'>Familie und Kinder (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://www.bundesgesundheitsministerium.de/themen/praevention/kindergesundheit/faq-kinderkrankengeld' target='_blank' rel='noopener'>BMG — Kinderkrankengeld</a></li><li><a href='https://www.bundesgesundheitsministerium.de/krankengeld' target='_blank' rel='noopener'>BMG — Krankengeld</a></li></ul>"
+          ]
+        ]
+      }
+    }
+  }
+}
