@@ -195,6 +195,116 @@
           ]
         ]
       }
+    },
+    "is-birakinca-saglik-sigortasi": {
+      "en": {
+        "title": "Health Insurance After Leaving a Job in Germany 2026",
+        "description": "Who pays your health insurance after unemployment? Arbeitslosengeld, basic support, Familienversicherung, voluntary GKV, PKV and premium gaps.",
+        "badge": "Health insurance · Status changes 2026",
+        "heading": "Health Insurance After Leaving Employment: Who Pays and What Continues?",
+        "meta": "Turkish source reviewed 13 September 2026 · BA, BMG and SGB V",
+        "intro": "When your employment contract ends, your obligation to maintain health insurance does <strong>not</strong> end. What happens next depends on whether you receive Arbeitslosengeld, basic-income support, start another job, qualify for Familienversicherung, remain voluntarily insured in GKV or have PKV. Waiting without contacting the relevant institutions can result in <strong>retrospective premium liabilities</strong>.",
+        "sections": [
+          [
+            "Identify your situation first",
+            "<table><thead><tr><th>After employment ends</th><th>Typical insurance pathway</th><th>First action</th></tr></thead><tbody><tr><td>Arbeitslosengeld approved</td><td>Health and long-term care cover generally continue</td><td>Check BA and Krankenkasse registration</td></tr><tr><td>Basic support approved</td><td>Existing GKV often continues; PKV premium support may apply</td><td>Check Jobcenter decision and insurance notice</td></tr><tr><td>Spouse has GKV and income conditions met</td><td>Familienversicherung may be possible</td><td>Apply to the Krankenkasse</td></tr><tr><td>New job starts immediately</td><td>New employer reports insurance status</td><td>Confirm starting date and insurer</td></tr><tr><td>No benefit or alternative cover</td><td>Voluntary GKV or PKV premiums may become payable</td><td>Ask the insurer for written status and contribution</td></tr></tbody></table>"
+          ],
+          [
+            "If you receive Arbeitslosengeld",
+            "According to the Federal Employment Agency, while you receive unemployment benefit your pension, health and long-term care insurance generally continue. People previously in GKV ordinarily remain with their insurer. Applying for benefits is <strong>not</strong> the same as receiving an approval. If you need medical care while awaiting a decision, contact your Krankenkasse. If benefit payments are interrupted, check separately whether and when contributions continue."
+          ],
+          [
+            "If a Sperrzeit applies, do not assume anything",
+            "Resigning voluntarily or other situations triggering a <em>Sperrzeit</em> may change benefit-payment and insurance timing. Neither ‘no unemployment payment means no insurance’ nor ‘the Agency always pays premiums’ is a safe general rule. Obtain your exact suspension dates from the employment agency and written insurance coverage dates from Krankenkasse."
+          ],
+          [
+            "If you receive Grundsicherungsgeld",
+            "The Turkish source states that Grundsicherungsgeld replaced Bürgergeld on <strong>1 July 2026</strong>. For eligible claimants previously insured under GKV, their existing Krankenkasse generally continues and the Jobcenter pays applicable monthly contributions. Previously voluntary GKV members may become compulsorily insured once eligible support begins. Insurance may cover the application period if the claim is approved. Loan-only or certain other support arrangements do not automatically create GKV membership. Check your particular approval and insurer notice."
+          ],
+          [
+            "If you have private health insurance (PKV)",
+            "Do not assume that receiving basic support will automatically return you to GKV. A person previously insured privately usually remains in PKV and may receive a Jobcenter contribution towards the premium. With Arbeitslosengeld, factors including age, previous insurance and new compulsory-insurance status can affect the result. The Jobcenter does not necessarily cover extra optional private premiums. Obtain the available contribution and policy options in writing."
+          ],
+          [
+            "Without benefits: voluntary GKV and contribution risk",
+            "Under <strong>SGB V §188</strong>, when compulsory insurance or family cover ends, membership often continues automatically as voluntary statutory insurance from the following day. Any valid opting-out procedure depends on proving alternative health coverage. Voluntary contributions can take account of income beyond wages, including investment and rental income. The Turkish source's BMG 2026 values are <strong>€1,318.33</strong> minimum assessment income and an illustrative <strong>€222.80 per month</strong> minimum health insurance contribution without sickness-pay entitlement using an average Zusatzbeitrag. Long-term care contributions and insurer-specific rates affect the amount actually due."
+          ],
+          [
+            "Why ‘one free month of insurance’ can be misleading",
+            "<strong>SGB V §19(2)</strong> can preserve medical-service entitlement for up to one month after the end of certain compulsory memberships if the person is not employed. Family insurance has priority. This is <strong>not</strong> a universal free grace period: if no subsequent cover is arranged, the automatic voluntary membership mechanism under §188 may cause contributions. Ask for written dates and status."
+          ],
+          [
+            "Can you use Familienversicherung?",
+            "If your spouse is insured under GKV and you meet the relevant income and status requirements, free family cover should be checked before assuming voluntary contributions. <a href='/en/familienversicherung/'>Familienversicherung conditions and income limit</a>."
+          ],
+          [
+            "Before and after the last workday: checklist",
+            "<ol><li>Determine your exact final employment and salary dates.</li><li>Meet <em>arbeitsuchend</em> and <em>arbeitslos</em> registration deadlines.</li><li>Apply promptly for Arbeitslosengeld or relevant basic support.</li><li>Notify the GKV or PKV insurer of the employment end and next plan.</li><li>Check whether Familienversicherung is possible.</li><li>Confirm old and new insurance status dates <strong>day by day in writing</strong>.</li><li>Review the first premium or contribution notice and health card arrangements.</li></ol>"
+          ],
+          [
+            "What question does this guide answer?",
+            "This guide addresses <strong>which health insurance status continues and who pays after employment ends</strong>. For a choice between statutory and private cover see the <a href='/en/almanya-saglik-sigortasi-gkv-pkv/'>GKV–PKV guide</a>; for moving between statutory insurers see <a href='/en/krankenkasse-degistirme/'>changing Krankenkasse</a>."
+          ],
+          [
+            "Official sources and conclusion",
+            "<ul><li><a href='https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/das-muessen-sie-beachten/krankheit-pflege-betreuung' target='_blank' rel='noopener'>Federal Employment Agency — Insurance during unemployment</a></li><li><a href='https://www.arbeitsagentur.de/grundsicherung/finanziell-absichern/gesundheit-versicherung' target='_blank' rel='noopener'>Federal Employment Agency — Basic support and health insurance</a></li><li><a href='https://www.bundesgesundheitsministerium.de/beitraege/seite' target='_blank' rel='noopener'>Federal Ministry of Health — 2026 contributions</a></li><li><a href='https://www.gesetze-im-internet.de/sgb_5/__19.html' target='_blank' rel='noopener'>SGB V §19 — Continuing service entitlement</a></li><li><a href='https://www.gesetze-im-internet.de/sgb_5/__188.html' target='_blank' rel='noopener'>SGB V §188 — Continued voluntary membership</a></li></ul><p>Do not leave even a single day between old and new health insurance to assumption. Confirm dates, insurance status and premiums in writing with your provider.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Krankenversicherung nach Jobende 2026: Wer zahlt die Beiträge?",
+        "description": "Krankenversicherung bei Arbeitslosigkeit: Arbeitslosengeld, Grundsicherungsgeld, Familienversicherung, freiwillige GKV, PKV und Beitragslücken.",
+        "badge": "Krankenversicherung · Statuswechsel 2026",
+        "heading": "Krankenversicherung nach dem Arbeitsverhältnis: Wer zahlt und welcher Schutz bleibt?",
+        "meta": "Türkischer Ausgangstext geprüft am 13. September 2026 · BA, BMG und SGB V",
+        "intro": "Wenn das Arbeitsverhältnis endet, entfällt die Pflicht zur Krankenversicherung <strong>nicht</strong>. Der weitere Status hängt von Arbeitslosengeld, Grundsicherungsleistungen, neuer Beschäftigung, Familienversicherung, freiwilliger GKV oder PKV ab. Wer keine Stelle informiert, riskiert <strong>rückwirkende Beitragsschulden</strong>.",
+        "sections": [
+          [
+            "Zuerst den eigenen Fall zuordnen",
+            "<table><thead><tr><th>Status nach dem Job</th><th>Typischer Versicherungsweg</th><th>Erster Schritt</th></tr></thead><tbody><tr><td>Arbeitslosengeld bewilligt</td><td>Kranken- und Pflegeversicherung laufen grundsätzlich weiter</td><td>BA- und Krankenkasse-Meldungen prüfen</td></tr><tr><td>Grundsicherungsleistung bewilligt</td><td>Bestehende GKV oft weiter; PKV-Zuschuss möglich</td><td>Jobcenter-Bescheid und Versicherungsmitteilung prüfen</td></tr><tr><td>GKV-versicherter Ehepartner, Einkommen passend</td><td>Familienversicherung möglich</td><td>Antrag bei der Krankenkasse stellen</td></tr><tr><td>Neue Beschäftigung beginnt sofort</td><td>Versicherungsmeldung des neuen Arbeitgebers</td><td>Beginn und Kasse prüfen</td></tr><tr><td>Keine Leistung oder andere Absicherung</td><td>Freiwillige GKV- oder PKV-Beiträge möglich</td><td>Schriftliche Status- und Beitragsbestätigung einholen</td></tr></tbody></table>"
+          ],
+          [
+            "Bei Arbeitslosengeldbezug",
+            "Die Bundesagentur für Arbeit informiert, dass während des Arbeitslosengeldbezugs Renten-, Kranken- und Pflegeversicherung grundsätzlich fortgeführt werden. GKV-Mitglieder bleiben in der Regel bei ihrer bisherigen Krankenkasse. Ein eingereichter Antrag ist <strong>noch keine Bewilligung</strong>. Benötigen Sie während der Bearbeitung eine Behandlung, klären Sie die Absicherung mit Ihrer Kasse. Bei Zahlungsunterbrechungen können gesonderte Statusprüfungen nötig werden."
+          ],
+          [
+            "Bei Sperrzeit keine pauschalen Annahmen treffen",
+            "Eigenkündigung oder andere Sperrzeitgründe können Leistungen und den Zeitpunkt der Absicherung beeinflussen. Weder „kein ALG bedeutet keine Versicherung“ noch „die Agentur zahlt immer die Beiträge“ ist allgemein richtig. Lassen Sie sich Sperrzeitdaten von der Agentur für Arbeit und konkrete Versicherungszeiträume von der Krankenkasse schriftlich geben."
+          ],
+          [
+            "Bei Grundsicherungsgeld",
+            "Laut türkischem Ausgangstext hat das <strong>Grundsicherungsgeld zum 1. Juli 2026</strong> das Bürgergeld ersetzt. Erwerbsfähige Berechtigte mit bisheriger GKV verbleiben im Regelfall bei ihrer Krankenkasse; das Jobcenter zahlt die maßgeblichen Beiträge. Vorher freiwillig Versicherte können mit Beginn bewilligter Leistungen pflichtversichert werden. Der Versicherungsschutz kann bei Bewilligung ab dem Antragszeitpunkt greifen. Darlehen oder bestimmte andere Leistungsformen schaffen nicht automatisch eine GKV-Mitgliedschaft. Den eigenen Bescheid prüfen."
+          ],
+          [
+            "Bei PKV nicht mit automatischer Rückkehr in die GKV rechnen",
+            "Wer private Krankenversicherung hatte, bleibt bei Grundsicherungsbezug in der Regel privat versichert und kann einen Beitrag des Jobcenters erhalten. Bei Arbeitslosengeld hängen die Möglichkeiten unter anderem von Alter, Versicherungsverlauf und neuer Versicherungspflicht ab. Zusätzliche PKV-Wahlleistungen werden nicht zwingend übernommen. Lassen Sie sich Optionen und Kosten schriftlich bestätigen."
+          ],
+          [
+            "Ohne Leistungen: automatische freiwillige GKV und Beitragsrisiko",
+            "Nach <strong>§188 SGB V</strong> setzt sich nach Ende der Pflichtversicherung oder Familienversicherung eine Mitgliedschaft häufig automatisch als freiwillige GKV ab dem Folgetag fort. Ein wirksamer Austritt erfordert den Nachweis einer anderweitigen Krankenabsicherung. Bei freiwilliger Versicherung können auch Kapital- und Mieteinkünfte beitragsrelevant sein. Der türkische Ausgangstext nennt als BMG-Werte 2026 die Mindestbemessungsgrundlage von <strong>1.318,33 €</strong> und einen beispielhaften Mindestkrankenversicherungsbeitrag von <strong>222,80 € monatlich</strong> ohne Krankengeldanspruch bei durchschnittlichem Zusatzbeitrag. Pflegeversicherung und kassenindividuelle Sätze kommen bei der tatsächlichen Berechnung hinzu."
+          ],
+          [
+            "Warum „ein Monat kostenlos versichert“ irreführend sein kann",
+            "<strong>§19 Abs. 2 SGB V</strong> kann nach Ende bestimmter Pflichtmitgliedschaften unter Voraussetzungen einen nachgehenden Leistungsanspruch von höchstens einem Monat eröffnen, wenn keine Erwerbstätigkeit besteht. Familienversicherung hat Vorrang. Das ist <strong>kein allgemeiner kostenloser Übergangsmonat</strong>: Fehlt Anschlussversicherung, kann nach §188 eine freiwillige Mitgliedschaft mit Beiträgen entstehen. Eigene Daten und Status schriftlich klären."
+          ],
+          [
+            "Ist Familienversicherung möglich?",
+            "Wenn Ihr Ehepartner GKV-Mitglied ist und Sie die Einkommens- und Statusbedingungen erfüllen, sollte die beitragsfreie Familienversicherung vor einer freiwilligen Beitragszahlung geprüft werden. <a href='/de/familienversicherung/'>Familienversicherung und Einkommensgrenzen</a>."
+          ],
+          [
+            "Checkliste vor und nach dem Beschäftigungsende",
+            "<ol><li>Letzten Arbeitstag und letzten Entgeltzeitraum festhalten.</li><li>Arbeitsuchend- und Arbeitslosmeldung fristgerecht erledigen.</li><li>Arbeitslosengeld oder Grundsicherungsleistung rechtzeitig beantragen.</li><li>GKV- oder PKV-Versicherer über Jobende und Anschlussplan informieren.</li><li>Familienversicherung prüfen.</li><li>Ende des alten und Beginn des neuen Versicherungsstatus <strong>taggenau schriftlich</strong> bestätigen lassen.</li><li>Ersten Beitragsbescheid und Gesundheitskarte prüfen.</li></ol>"
+          ],
+          [
+            "Welches Problem behandelt diese Seite?",
+            "Dieser Ratgeber erklärt, <strong>wer nach Ende des Jobs Beiträge zahlt und welcher Versicherungsstatus fortbesteht</strong>. Für die Systementscheidung GKV/PKV siehe <a href='/de/almanya-saglik-sigortasi-gkv-pkv/'>GKV–PKV-Ratgeber</a>, für einen Kassenwechsel innerhalb der GKV <a href='/de/krankenkasse-degistirme/'>Krankenkasse wechseln</a>."
+          ],
+          [
+            "Amtliche Quellen und Ergebnis",
+            "<ul><li><a href='https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/das-muessen-sie-beachten/krankheit-pflege-betreuung' target='_blank' rel='noopener'>Bundesagentur für Arbeit — Versicherung bei Arbeitslosengeld</a></li><li><a href='https://www.arbeitsagentur.de/grundsicherung/finanziell-absichern/gesundheit-versicherung' target='_blank' rel='noopener'>Bundesagentur für Arbeit — Grundsicherung und Versicherung</a></li><li><a href='https://www.bundesgesundheitsministerium.de/beitraege/seite' target='_blank' rel='noopener'>BMG — GKV-Beiträge 2026</a></li><li><a href='https://www.gesetze-im-internet.de/sgb_5/__19.html' target='_blank' rel='noopener'>SGB V §19 — Nachgehender Leistungsanspruch</a></li><li><a href='https://www.gesetze-im-internet.de/sgb_5/__188.html' target='_blank' rel='noopener'>SGB V §188 — Freiwillige Mitgliedschaft</a></li></ul><p>Zwischen altem und neuem Versicherungsschutz darf kein Tag auf einer Annahme beruhen. Versichern Sie sich schriftlich über Datum, Status und Beiträge.</p>"
+          ]
+        ]
+      }
     }
   }
 }
