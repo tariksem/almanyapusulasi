@@ -211,6 +211,116 @@
           ]
         ]
       }
+    },
+    "elternzeit-almanya": {
+      "en": {
+        "title": "Elternzeit in Germany 2026: Duration, Notice, Part-Time and Return to Work",
+        "description": "Germany parental leave 2026: up to three years per parent, seven or thirteen weeks' notice, 32-hour work limit, and coordination with Elterngeld.",
+        "badge": "Family & Children · Parental leave 2026",
+        "heading": "Elternzeit in Germany: Plan Leave and Household Income Together",
+        "meta": "Turkish source verified 13 September 2026 · Federal Family Portal",
+        "intro": "Employed parents may generally take up to <strong>three years of Elternzeit per child</strong>. Standard notice is at least <strong>seven weeks</strong> for leave starting before the child's third birthday and <strong>thirteen weeks</strong> for leave starting afterwards. For children born on or after 1 September 2021, work during parental leave is generally limited to an average of <strong>32 hours per week</strong>.",
+        "sections": [
+          [
+            "1. What is Elternzeit?",
+            "Elternzeit is an employment-law entitlement allowing parents to suspend or reduce work while retaining legal protection of the employment relationship. It is <strong>not a cash payment</strong>. <a href='/en/elterngeld-2026/'>Elterngeld</a> is a separate family allowance that can partially replace lost earnings following childbirth."
+          ],
+          [
+            "2. How long can parents take?",
+            "Each parent can generally use up to <strong>three years of parental leave per child</strong>, independently of the other parent. Some leave can be taken after the third birthday but before the eighth birthday, under the applicable statutory provisions."
+          ],
+          [
+            "3. When must the employer be notified?",
+            "<ul><li><strong>Leave beginning before the third birthday:</strong> generally at least seven weeks before the planned start.</li><li><strong>Leave beginning after the third birthday:</strong> generally at least thirteen weeks before the planned start.</li></ul><p>Special or urgent situations may be treated differently. For regular planning, observe the standard deadlines.</p>"
+          ],
+          [
+            "4. Why align parental leave with the child's months of life?",
+            "Elterngeld is calculated and paid for the child's <strong>months of life</strong>, not necessarily ordinary calendar months. Planning the Elternzeit period to align with Elterngeld periods can help avoid gaps or unwanted loss of benefits. The official Family Portal recommends coordinating both schedules."
+          ],
+          [
+            "5. Can you work during Elternzeit?",
+            "Yes. For children born from 1 September 2021, average work during Elternzeit generally must not exceed <strong>32 hours per week</strong>. Further conditions apply to a request for part-time work during parental leave, including certain employment duration and employer-size criteria. Earnings during Elterngeld receipt may also affect its amount: permission to work 32 hours does not imply unchanged benefit payments."
+          ],
+          [
+            "6. How much advance notice is required for part-time parental leave?",
+            "A request for part-time work during Elternzeit can be subject to the same general seven- or thirteen-week advance periods. Specify the intended start, number of weekly hours and preferably how those hours should be distributed."
+          ],
+          [
+            "7. Plan the return to work early",
+            "The employment relationship generally continues after Elternzeit, but the return date needs to fit childcare, working hours, shift schedules and the other parent's employment. Plan together: <ol><li>Elterngeld months and household income</li><li>Childcare availability and Kita start</li><li>Part-time or full-time return</li><li>Health insurance and fixed household expenses</li></ol>"
+          ],
+          [
+            "8. If income falls significantly, check benefits first",
+            "Elternzeit itself is generally unpaid, and Elterngeld may not fully replace lost wages. Depending on the household, additional <strong>Wohngeld</strong> or <a href='/en/kinderzuschlag/'>Kinderzuschlag</a> may be worth examining. <a href='/wohngeld/' lang='tr' hreflang='tr'>Housing benefit guide (Turkish)</a>; <a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>housing budget (Turkish)</a>."
+          ],
+          [
+            "9. Health insurance during parental leave",
+            "Health insurance contributions may vary depending on whether the parent is compulsorily or voluntarily insured in GKV or insured in PKV. Do not infer that a period without wages automatically carries no insurance contributions. <a href='/en/familienversicherung/'>Family insurance guide</a>."
+          ],
+          [
+            "10. Leave and benefit planning are separate decisions",
+            "<ul><li><a href='/en/elterngeld-2026/'>Basiselterngeld versus ElterngeldPlus and income rules</a></li><li><a href='/elterngeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Family income-gap calculator (Turkish)</a></li><li><a href='/mutterschutz-mutterschaftsgeld/' lang='tr' hreflang='tr'>Maternity benefits guide (Turkish)</a></li><li><a href='/kita-platz-almanya/' lang='tr' hreflang='tr'>Childcare and Kita guide (Turkish)</a></li></ul>"
+          ],
+          [
+            "Official sources",
+            "<ul><li><a href='https://familienportal.de/familienportal/familienleistungen/elternzeit' target='_blank' rel='noopener'>Federal Family Portal — Elternzeit</a></li><li><a href='https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wie-kann-ich-elternzeit-nehmen--124812' target='_blank' rel='noopener'>Family Portal — Taking parental leave</a></li></ul><p>For binding leave and part-time arrangements, examine the statutory deadlines and your individual employment situation.</p>"
+          ]
+        ]
+      },
+      "de": {
+        "title": "Elternzeit 2026: Dauer, Anmeldefrist, Teilzeit und Rückkehr",
+        "description": "Elternzeit in Deutschland 2026: bis zu drei Jahre pro Elternteil, sieben oder dreizehn Wochen Anmeldefrist und 32-Stunden-Grenze.",
+        "badge": "Familie & Kinder · Elternzeit 2026",
+        "heading": "Elternzeit in Deutschland: Freistellung und Haushaltseinkommen gemeinsam planen",
+        "meta": "Türkische Quelle geprüft am 13. September 2026 · Familienportal des Bundes",
+        "intro": "Beschäftigte Eltern können grundsätzlich <strong>bis zu drei Jahre Elternzeit pro Kind</strong> nehmen. Für Zeiten vor dem dritten Geburtstag gilt in der Regel eine Anmeldefrist von mindestens <strong>sieben Wochen</strong>, für Zeiten danach mindestens <strong>dreizehn Wochen</strong>. Bei Kindern, die ab 1. September 2021 geboren wurden, sind während Elternzeit im Monatsdurchschnitt bis zu <strong>32 Wochenstunden</strong> Erwerbstätigkeit möglich.",
+        "sections": [
+          [
+            "1. Was ist Elternzeit?",
+            "Elternzeit ist ein arbeitsrechtlicher Anspruch, während der Betreuung eines Kindes die Erwerbstätigkeit auszusetzen oder zu reduzieren und dabei den Schutz des Arbeitsverhältnisses zu behalten. Sie ist <strong>keine Geldleistung</strong>. <a href='/de/elterngeld-2026/'>Elterngeld</a> ist eine eigene Familienleistung zum teilweisen Ausgleich wegfallender Erwerbseinkünfte."
+          ],
+          [
+            "2. Wie lange kann Elternzeit genommen werden?",
+            "Jeder Elternteil kann für jedes Kind grundsätzlich bis zu <strong>drei Jahre Elternzeit</strong> unabhängig vom anderen Elternteil nutzen. Ein Teil kann nach dem dritten und vor dem achten Geburtstag liegen, wenn die jeweiligen gesetzlichen Regeln beachtet werden."
+          ],
+          [
+            "3. Wann muss der Arbeitgeber informiert werden?",
+            "<ul><li><strong>Elternzeit vor dem dritten Geburtstag:</strong> grundsätzlich mindestens sieben Wochen vor Beginn anmelden.</li><li><strong>Elternzeit nach dem dritten Geburtstag:</strong> grundsätzlich mindestens dreizehn Wochen vor Beginn anmelden.</li></ul><p>Für besondere dringliche Fälle können Ausnahmen gelten. In der gewöhnlichen Planung sollten die gesetzlichen Fristen eingehalten werden.</p>"
+          ],
+          [
+            "4. Warum nach Lebensmonaten des Kindes planen?",
+            "Elterngeld wird anhand der <strong>Lebensmonate des Kindes</strong> und nicht einfach nach gewöhnlichen Kalendermonaten berechnet. Eine zeitliche Abstimmung von Elterngeld und Elternzeit kann helfen, finanzielle Nachteile zu vermeiden. Das Familienportal empfiehlt ausdrücklich eine koordinierte Planung."
+          ],
+          [
+            "5. Darf während der Elternzeit gearbeitet werden?",
+            "Ja. Für Kinder ab dem Geburtsdatum 1. September 2021 gilt im Monatsdurchschnitt grundsätzlich eine Grenze von <strong>32 Wochenstunden</strong>. Bei einem Teilzeitanspruch während der Elternzeit sind zusätzliche Voraussetzungen wie Beschäftigungsdauer und Betriebsgröße zu beachten. Einkommen während des Elterngeldbezugs kann die Leistungszahlung verändern: 32 Stunden arbeiten zu dürfen heißt nicht, dass das Elterngeld gleich bleibt."
+          ],
+          [
+            "6. Fristen bei einem Teilzeitantrag",
+            "Für Teilzeit während Elternzeit sind ebenfalls grundsätzlich die sieben- beziehungsweise dreizehnwöchigen Ankündigungsfristen wichtig. Der Antrag sollte Beginn, gewünschte Wochenstunden und möglichst deren Verteilung benennen."
+          ],
+          [
+            "7. Die Rückkehr rechtzeitig organisieren",
+            "Das Arbeitsverhältnis besteht nach Elternzeit grundsätzlich fort. Die praktische Rückkehr hängt aber von Betreuung, Kita-Start, Arbeitszeiten, Schichten und den Plänen des anderen Elternteils ab. Koordinieren Sie: <ol><li>Elterngeldmonate und Haushaltsbudget</li><li>Kita-Beginn und Kinderbetreuung</li><li>Teilzeit- oder Vollzeitwiedereinstieg</li><li>Krankenversicherung und feste Haushaltskosten</li></ol>"
+          ],
+          [
+            "8. Bei einem hohen Einkommensverlust zuerst Ansprüche prüfen",
+            "Elternzeit ist grundsätzlich eine unbezahlte Freistellung, Elterngeld gleicht Verdienstausfälle nicht immer vollständig aus. Abhängig vom Haushalt können <strong>Wohngeld</strong> und <a href='/de/kinderzuschlag/'>Kinderzuschlag</a> relevant sein. <a href='/wohngeld/' lang='tr' hreflang='tr'>Wohngeld-Ratgeber (Türkisch)</a> und <a href='/warmmiete-kira-butcesi-hesaplayici/' lang='tr' hreflang='tr'>Wohnkostenbudget (Türkisch)</a>."
+          ],
+          [
+            "9. Krankenversicherung während Elternzeit",
+            "Die Beiträge hängen davon ab, ob eine GKV-Pflichtmitgliedschaft, freiwillige GKV oder PKV besteht. Fehlendes Arbeitsentgelt bedeutet nicht automatisch Beitragsfreiheit. <a href='/de/familienversicherung/'>Familienversicherungsratgeber</a>."
+          ],
+          [
+            "10. Elternzeit und Elterngeld getrennt einplanen",
+            "<ul><li><a href='/de/elterngeld-2026/'>Basiselterngeld und ElterngeldPlus</a></li><li><a href='/elterngeld-hesaplayici-2026/' lang='tr' hreflang='tr'>Familieneinkommensrechner (Türkisch)</a></li><li><a href='/mutterschutz-mutterschaftsgeld/' lang='tr' hreflang='tr'>Mutterschutz und Mutterschaftsgeld (Türkisch)</a></li><li><a href='/kita-platz-almanya/' lang='tr' hreflang='tr'>Kita-Ratgeber (Türkisch)</a></li></ul>"
+          ],
+          [
+            "Amtliche Quellen",
+            "<ul><li><a href='https://familienportal.de/familienportal/familienleistungen/elternzeit' target='_blank' rel='noopener'>Familienportal — Elternzeit</a></li><li><a href='https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wie-kann-ich-elternzeit-nehmen--124812' target='_blank' rel='noopener'>Familienportal — Elternzeit nehmen</a></li></ul><p>Für verbindliche Vereinbarungen sind die gesetzlichen Fristen und das individuelle Arbeitsverhältnis entscheidend.</p>"
+          ]
+        ]
+      }
     }
   }
 }
