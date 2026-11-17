@@ -25,13 +25,16 @@ const coverage={
   completePaths:complete,
   missingPaths:missing
 };
-for(const p of complete){
+// Check every indexed translation, including pages where the other language is missing.
+// A partially translated topic must not hide a broken indexed language URL.
+for(const p of turkish){
  const tr=p==='/'?'index.html':p.slice(1)+'index.html';
+ assert.ok(fs.existsSync(tr),'Turkish source missing for '+p);
  for(const lang of ['en','de']){
+  if(!pathSet.has('/'+lang+(p==='/'?'/':p)))continue;
   const loc=lang+(p==='/'?'/index.html':p+'index.html');
   assert.ok(fs.existsSync(loc),'Localized URL indexed without corresponding file: '+loc);
  }
- assert.ok(fs.existsSync(tr),'Turkish source missing for '+p);
 }
 const essential=['/','/blue-card/','/chancenkarte-firsat-karti/','/kindergeld/','/familienversicherung/','/blue-card-suresiz-oturum/','/almanya-saglik-sigortasi-gkv-pkv/','/almanyada-ev-kiralama-rehberi/'];
 for(const p of essential)assert.ok(complete.includes(p),'Essential EN/DE parity missing: '+p);
