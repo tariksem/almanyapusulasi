@@ -55,6 +55,7 @@ jobs:
           node scripts/validate-housing-tools.js
           node scripts/validate-nebenkosten-parser.js
           node scripts/validate-insurance-tools.js
+          node scripts/validate-academy-demo.mjs
 
       - name: Enforce production release gates before deployment
         run: |

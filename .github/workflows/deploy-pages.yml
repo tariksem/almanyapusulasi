@@ -57,6 +57,7 @@ jobs:
           node scripts/validate-housing-tools.js
           node scripts/validate-nebenkosten-parser.js
           node scripts/validate-insurance-tools.js
+          node scripts/validate-academy-demo.mjs
       - name: Validate locked brand identity
         run: node scripts/validate-brand-lock.js
       - name: Configure Pages

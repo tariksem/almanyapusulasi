@@ -49,6 +49,7 @@ jobs:
           node scripts/validate-housing-tools.js
           node scripts/validate-nebenkosten-parser.js
           node scripts/validate-insurance-tools.js
+          node scripts/validate-academy-demo.mjs
           node scripts/validate-worker.mjs
           node scripts/validate-consent.js
           node scripts/validate-commercial-consent.js
