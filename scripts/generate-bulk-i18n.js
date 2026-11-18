@@ -14,6 +14,16 @@ for(const [id,entry] of Object.entries(strings)){
   if(!entry.tr||!entry.en||!entry.de)throw new Error('Incomplete bulk translation string '+id);
 }
 
+// Validate every runtime reference before writing any generated output.
+// A missing entry must not leave a partially regenerated locale tree behind.
+const runtimeIds=new Set(pages.flatMap(([,page])=>page.runtime||[]));
+for(const id of runtimeIds){
+  const entry=strings[id];
+  if(!entry||!entry.tr||!entry.en||!entry.de){
+    throw new Error('Runtime translation missing: '+id);
+  }
+}
+
 for(const [route,page] of pages){
   if(!routes.has(route))throw new Error('Bulk route missing from publishing registry: '+route);
   const sourceFile=page.sourceFile||fileFromPath(page.path);
@@ -26,7 +36,6 @@ for(const [route,page] of pages){
   }
 }
 
-const runtimeIds=new Set(pages.flatMap(([,page])=>page.runtime||[]));
 for(const lang of ['en','de']){
   const runtime={};
   for(const id of runtimeIds){
