@@ -10,7 +10,11 @@ for(const file of files){
   if(!redirects.has(path)&&canonical===SITE+path&&!/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html))expected.add(canonical);
   for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/gi)){
     if(/application\/ld\+json/.test(m[1])){JSON.parse(m[2]);blocks++;}
-    else if(!/\bsrc=/.test(m[1])&&m[2].trim()){new vm.Script(m[2],{filename:file});scripts++;}
+    else {
+      const type=m[1].match(/\btype\s*=\s*["']([^"']+)["']/i)?.[1]||'';
+      const executable=!type||/^(?:text|application)\/(?:java|ecma)script$/i.test(type)||/^module$/i.test(type);
+      if(executable&&!/\bsrc=/.test(m[1])&&m[2].trim()){new vm.Script(m[2],{filename:file});scripts++;}
+    }
   }
   assert(!/\b(?:window\.)?gtag\(['"]event['"]/.test(html),file+': raw analytics event bypasses consent');
   for(const m of html.matchAll(/href=["'](\/[^"'#?]*)/g)){

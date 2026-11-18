@@ -11273,8 +11273,8 @@
         "d572ed4bf12c68df559f83e5",
         "f30cc9bd7ddaeaff55a8cc0f",
         "86f18d6552401c2bcc649e6d",
-        "036a5c88445d118555ef58d8",
-        "8aa8eef759ef1808be1ee31e",
+        "0ea32510d7bffaa5176b11b0",
+        "cdb1eb62e0cfffce588681bf",
         "ec674dc1e989c5434dc57f99",
         "d6487caeabd0fd387af7cff4",
         "d321b847bf52b604a1edb6e8",
@@ -78221,6 +78221,16 @@
       "tr": "Betriebskosten ve yıllık Abrechnung.",
       "en": "Betriebskosten and annual Abrechnung.",
       "de": "Betriebskosten und jährliche Abrechnung."
+    },
+    "0ea32510d7bffaa5176b11b0": {
+      "tr": "Almanya'da yaşayan herkesi ilgilendiren haberler",
+      "en": "News that matters to everyone living in Germany",
+      "de": "Nachrichten, die alle Menschen in Deutschland betreffen"
+    },
+    "cdb1eb62e0cfffce588681bf": {
+      "tr": "Almanya'da yaşayan göçmenleri, aileleri ve çalışanları etkileyen gelişmeleri resmî kaynaklarla açıklıyoruz. Eski duyurular arşivlenir; tasarılar yürürlükteki kurallardan ayrılır.",
+      "en": "We explain developments affecting migrants, families and workers living in Germany using official sources. Older notices are archived, and draft proposals are kept separate from rules currently in force.",
+      "de": "Wir erläutern anhand offizieller Quellen Entwicklungen, die in Deutschland lebende Migranten, Familien und Beschäftigte betreffen. Ältere Meldungen werden archiviert; Entwürfe werden von den geltenden Regeln getrennt dargestellt."
     }
   }
 }
