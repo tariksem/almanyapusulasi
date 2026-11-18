@@ -126,6 +126,16 @@ function localShell(){
  }
  document.querySelectorAll(".site-context-bar,.hub-return-rail").forEach(el=>el.remove());
 }
-function start(){localShell();createPicker();}
+function start(){
+ localShell();
+ createPicker();
+ // The shared site shell may rebuild the header after this script starts.
+ // Restore the language picker when its header markup is replaced.
+ const header=document.querySelector(".site-header");
+ if(header&&typeof MutationObserver!=="undefined"){
+  const observer=new MutationObserver(()=>createPicker());
+  observer.observe(header,{childList:true});
+ }
+}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 })();
