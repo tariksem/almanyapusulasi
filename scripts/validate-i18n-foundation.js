@@ -32,6 +32,9 @@ for(const [path,lang,uri] of names){
 }
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 for(const asset of ['i18n-core.js','i18n-ui.js','i18n.css'])assert.ok(shell.includes(asset),'Shared shell missing '+asset);
+// Nested localized pages must never be overwritten by the Turkish shell.
+const shellGuard=String.raw`if(/^\/(?:en|de)(?:\/|$)/.test(location.pathname))return;`;
+assert.equal(shell.split(shellGuard).length-1,5,'All five Turkish shell renderers must skip nested EN/DE pages');
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
 assert.ok(ui.includes('link.href=api.equivalent(path,code)'),'Flag links must keep the current article across locales');
 for(const code of ['tr','en','de'])assert.ok(ui.includes(code+':\'<svg'), 'Missing flag SVG '+code);
