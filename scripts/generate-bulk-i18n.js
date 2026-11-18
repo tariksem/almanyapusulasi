@@ -18,8 +18,8 @@ for(const [route,page] of pages){
   if(!routes.has(route))throw new Error('Bulk route missing from publishing registry: '+route);
   // Never let catalog metadata read outside the repository or point at localized output.
   const sourceFile=page.sourceFile||fileFromPath(page.path);
-  const normalized=path.posix.normalize(sourceFile.replace(/\\\\/g,'/'));
-  if(path.isAbsolute(sourceFile)||normalized.startsWith('../')||normalized==='..'||!normalized.endsWith('/index.html')||/^(en|de)\\//.test(normalized)){
+  const normalized=path.posix.normalize(sourceFile.split(String.fromCharCode(92)).join('/'));
+  if(path.isAbsolute(sourceFile)||normalized.startsWith('../')||normalized==='..'||!normalized.endsWith('/index.html')||normalized.startsWith('en/')||normalized.startsWith('de/')){
     throw new Error('Unsafe Turkish source file for '+route+': '+sourceFile);
   }
   if(!fs.existsSync(normalized))throw new Error('Turkish source missing for '+route+': '+normalized);
