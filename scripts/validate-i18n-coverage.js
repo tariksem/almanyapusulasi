@@ -4,6 +4,7 @@ const {curatedRoutes}=require('./i18n-registry.js');
 const groups=['priority','migration','family','finance-housing','career','commercial','tools','news'];
 const urls=groups.flatMap(g=>[...fs.readFileSync('sitemap-'+g+'.xml','utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname));
 const pathSet=new Set(urls);
+assert.equal(pathSet.size,urls.length,'Duplicate URLs across sitemaps must be removed before claiming coverage');
 const turkish=[...pathSet].filter(p=>!p.startsWith('/en/')&&!p.startsWith('/de/')).sort();
 const local=lang=>turkish.filter(p=>pathSet.has('/'+lang+(p==='/'?'/':p)));
 const en=local('en'),de=local('de');
@@ -12,6 +13,13 @@ assert.ok(fs.existsSync('i18n-bulk-verification.json'),'Bulk translations may no
 const bulkReport=JSON.parse(fs.readFileSync('i18n-bulk-verification.json','utf8'));
 assert.equal(bulkReport.status,'automated-structural-functional-language-qa-passed');
 assert.equal(bulkReport.routes,185);
+assert.ok(Array.isArray(bulkReport.verifiedPaths),'Bulk QA report must provide verifiedPaths');
+assert.equal(new Set(bulkReport.verifiedPaths).size,bulkReport.verifiedPaths.length,'Duplicate bulk QA verified paths');
+assert.equal(bulkReport.verifiedPaths.length,bulkReport.routes,'Bulk QA path count must match verified routes');
+for(const p of bulkReport.verifiedPaths){
+ assert.ok(typeof p==='string'&&p.startsWith('/')&&p.endsWith('/')&&!p.includes('..'),'Invalid verified route: '+p);
+ assert.ok(pathSet.has(p),'Verified route absent from sitemaps: '+p);
+}
 const verified=new Set(['/',...curatedRoutes().map(route=>'/'+route+'/'),...bulkReport.verifiedPaths]);
 const complete=published.filter(p=>verified.has(p));
 const missing=turkish.filter(p=>!complete.includes(p));
