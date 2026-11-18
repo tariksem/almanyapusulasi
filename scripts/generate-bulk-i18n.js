@@ -1,13 +1,23 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const {translatedRoutes}=require('./i18n-registry.js');
-const {fileFromPath,translatedHtml}=require('./bulk-i18n-lib.js');
+const {fileFromPath,translatedHtml,segmentId}=require('./bulk-i18n-lib.js');
 
 const CATALOG='data/i18n-bulk-translations.json';
 const catalog=JSON.parse(fs.readFileSync(CATALOG,'utf8'));
 const routes=new Set(translatedRoutes());
 const pages=Object.entries(catalog.pages||{});
-const strings=catalog.strings||{};
+const strings={...(catalog.strings||{})};
+// Explicit translation for updated news copy not yet in the bulk catalog.
+const newsIntro="Almanya'da yaşayan herkesi ilgilendiren haberler";
+const newsIntroId=segmentId(newsIntro);
+if(!strings[newsIntroId]){
+  strings[newsIntroId]={
+    tr:newsIntro,
+    en:"News that matters to everyone living in Germany",
+    de:"Nachrichten, die alle Menschen in Deutschland betreffen"
+  };
+}
 
 if(pages.length!==185)throw new Error('Bulk catalog must contain the 185 verified backlog routes; found '+pages.length);
 for(const [id,entry] of Object.entries(strings)){
