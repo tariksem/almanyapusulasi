@@ -30,7 +30,19 @@ function createPicker(){
  for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
   const link=document.createElement("a");
   link.className="ap-lang-flag"+(lang===code?" is-current":"");
-  link.href=api.equivalent(path,code);
+  // Prefer the page's canonical alternate URL over the static route registry.
+  // This also supports localized pages added after the registry was generated.
+  const alternate=[...document.querySelectorAll('link[rel="alternate"][hreflang]')]
+   .find(el=>el.getAttribute("hreflang")?.toLowerCase()===code);
+  let target=api.equivalent(path,code);
+  if(alternate){
+   try{
+    const url=new URL(alternate.getAttribute("href"),location.origin);
+    if(url.origin===location.origin&&/^https?:$/.test(url.protocol))
+     target=url.pathname+url.search+url.hash;
+   }catch(_){}
+  }
+  link.href=target;
   link.hreflang=code;
   link.lang=code;
   link.title=name;
@@ -114,6 +126,16 @@ function localShell(){
  }
  document.querySelectorAll(".site-context-bar,.hub-return-rail").forEach(el=>el.remove());
 }
-function start(){localShell();createPicker();}
+function start(){
+ localShell();
+ createPicker();
+ // The shared site shell may rebuild the header after this script starts.
+ // Restore the language picker when its header markup is replaced.
+ const header=document.querySelector(".site-header");
+ if(header&&typeof MutationObserver!=="undefined"){
+  const observer=new MutationObserver(()=>createPicker());
+  observer.observe(header,{childList:true});
+ }
+}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 })();

@@ -33,7 +33,10 @@ for(const [path,lang,uri] of names){
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 for(const asset of ['i18n-core.js','i18n-ui.js','i18n.css'])assert.ok(shell.includes(asset),'Shared shell missing '+asset);
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
-assert.ok(ui.includes('link.href=api.equivalent(path,code)'),'Flag links must keep the current article across locales');
+assert.ok(ui.includes('api.equivalent(path,code)'),'Fallback must retain equivalent route lookup');
+assert.ok(ui.includes('link[rel="alternate"][hreflang]'),'Flag links must use article-specific hreflang alternates');
+assert.ok(ui.includes('link.href=target'),'Flag links must navigate to the resolved localized URL');
+assert.ok(ui.includes('MutationObserver'),'Language picker must survive header re-rendering');
 for(const code of ['tr','en','de'])assert.ok(ui.includes(code+':\'<svg'), 'Missing flag SVG '+code);
 assert.ok(ui.includes('aria-current'),'Current language not indicated');
 assert.ok(ui.includes('aria-label'),'Accessible flag names missing');
