@@ -16,8 +16,14 @@ for(const [id,entry] of Object.entries(strings)){
 
 for(const [route,page] of pages){
   if(!routes.has(route))throw new Error('Bulk route missing from publishing registry: '+route);
+  // Never let catalog metadata read outside the repository or point at localized output.
   const sourceFile=page.sourceFile||fileFromPath(page.path);
-  const source=fs.readFileSync(sourceFile,'utf8');
+  const normalized=path.posix.normalize(sourceFile.replace(/\\\\/g,'/'));
+  if(path.isAbsolute(sourceFile)||normalized.startsWith('../')||normalized==='..'||!normalized.endsWith('/index.html')||/^(en|de)\\//.test(normalized)){
+    throw new Error('Unsafe Turkish source file for '+route+': '+sourceFile);
+  }
+  if(!fs.existsSync(normalized))throw new Error('Turkish source missing for '+route+': '+normalized);
+  const source=fs.readFileSync(normalized,'utf8');
   for(const lang of ['en','de']){
     const html=translatedHtml(source,{lang,translations:strings,routes});
     const output=path.join(lang,route,'index.html');
