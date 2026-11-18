@@ -17,7 +17,13 @@ for(const [id,entry] of Object.entries(strings)){
 for(const [route,page] of pages){
   if(!routes.has(route))throw new Error('Bulk route missing from publishing registry: '+route);
   const sourceFile=page.sourceFile||fileFromPath(page.path);
-  const source=fs.readFileSync(sourceFile,'utf8');
+  const normalizedSource=path.normalize(sourceFile);
+  const expectedSource=path.normalize(fileFromPath(page.path));
+  if(path.isAbsolute(sourceFile)||normalizedSource!==expectedSource||normalizedSource.startsWith('..'+path.sep)||normalizedSource.startsWith('en'+path.sep)||normalizedSource.startsWith('de'+path.sep)){
+    throw new Error('Unsafe or mismatched Turkish source path for '+route+': '+sourceFile);
+  }
+  if(!fs.existsSync(normalizedSource))throw new Error('Turkish source file missing for '+route+': '+normalizedSource);
+  const source=fs.readFileSync(normalizedSource,'utf8');
   for(const lang of ['en','de']){
     const html=translatedHtml(source,{lang,translations:strings,routes});
     const output=path.join(lang,route,'index.html');
@@ -32,6 +38,9 @@ for(const lang of ['en','de']){
   for(const id of runtimeIds){
     const entry=strings[id];
     if(!entry||!entry[lang])throw new Error('Runtime translation missing: '+id+' '+lang);
+    if(Object.hasOwn(runtime,entry.tr)&&runtime[entry.tr]!==entry[lang]){
+      throw new Error('Conflicting '+lang+' runtime translations for source: '+entry.tr);
+    }
     runtime[entry.tr]=entry[lang];
   }
   const output='assets/data/bulk-i18n-'+lang+'.json';
