@@ -32,6 +32,9 @@ for(const lang of ['en','de']){
   for(const id of runtimeIds){
     const entry=strings[id];
     if(!entry||!entry[lang])throw new Error('Runtime translation missing: '+id+' '+lang);
+    if(Object.prototype.hasOwnProperty.call(runtime,entry.tr)&&runtime[entry.tr]!==entry[lang]){
+      throw new Error('Conflicting runtime translation for '+lang+' source string '+JSON.stringify(entry.tr)+' at '+id);
+    }
     runtime[entry.tr]=entry[lang];
   }
   const output='assets/data/bulk-i18n-'+lang+'.json';
