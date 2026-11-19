@@ -27,18 +27,6 @@ jobs:
           node scripts/generate-translated-guides.js
           node scripts/generate-translated-calculators.js
           node scripts/generate-priority-guide-translations.js
-          node - <<'NODE'
-          const fs=require('node:fs');
-          const assert=require('node:assert/strict');
-          const code=fs.readFileSync('scripts/bulk-i18n-lib.js','utf8');
-          const match=code.match(/const date=text\.match\((\/\^\(\?:[\s\S]*?\$\/)\);/);
-          assert.ok(match,'News date parser missing');
-          const pattern=Function('return '+match[1])();
-          for(const sample of ['Eylül 2026','12 Kasım 2026','1 Ocak 2027','31 Aralık 2026']){
-            assert.ok(pattern.test(sample),'News date parser does not match: '+sample);
-          }
-          console.log('Turkish news date parser regression passed');
-          NODE
           node scripts/validate-news-date-translations.js
           node scripts/generate-bulk-i18n.js
           node scripts/validate-priority-guide-translations.js
@@ -184,6 +172,9 @@ jobs:
       - name: Normalize legacy site headers in production bundle
         run: node scripts/normalize-site-headers.mjs dist
 
+      - name: Verify and stamp production news bundle
+        run: node scripts/verify-news-release.mjs bundle
+
       - name: Verify flagship growth pages in production bundle
         run: |
           python - <<'PY'
@@ -259,6 +250,9 @@ jobs:
           test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing GitHub secret: CLOUDFLARE_API_TOKEN"; exit 1; }
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing GitHub secret: CLOUDFLARE_ACCOUNT_ID"; exit 1; }
           npx --yes wrangler@4 deploy --config wrangler.jsonc
+
+      - name: Verify deployed commit and live news language isolation
+        run: node scripts/verify-news-release.mjs live
 
       - name: Verify social card production URLs
         run: |
