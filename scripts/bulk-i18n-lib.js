@@ -293,30 +293,39 @@ function addAttribute(tag,name,value){
   return tag.replace(/\s*\/$/, ' '+name+'="'+escapeAttribute(value,'"')+'"/').replace(/>$/, ' '+name+'="'+escapeAttribute(value,'"')+'">');
 }
 
+const TURKISH_MONTHS=Object.freeze({
+  'Ocak':['January','Januar'],'Şubat':['February','Februar'],
+  'Mart':['March','März'],'Nisan':['April','April'],
+  'Mayıs':['May','Mai'],'Haziran':['June','Juni'],
+  'Temmuz':['July','Juli'],'Ağustos':['August','August'],
+  'Eylül':['September','September'],'Ekim':['October','Oktober'],
+  'Kasım':['November','November'],'Aralık':['December','Dezember']
+});
+
+/**
+ * Resolve a reviewed catalog translation or a strictly formatted calendar date.
+ * News archive dates are regenerated on every deployment, so date strings must
+ * not require new immutable catalog IDs. All other text remains catalog-gated.
+ */
+function translationEntry(value,translations){
+  const text=normalize(value);
+  const catalogEntry=translations[segmentId(text)];
+  if(catalogEntry)return catalogEntry;
+  const date=text.match(/^(Güncelleme:\s*)?(?:(\d{1,2})\s+)?(Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık)\s+(20\d{2})$/u);
+  if(!date)return null;
+  const [,prefix,day,turkishMonth,year]=date;
+  const [englishMonth,germanMonth]=TURKISH_MONTHS[turkishMonth];
+  const english=(prefix?'Updated: ':'')+(day?englishMonth+' '+day+', '+year:englishMonth+' '+year);
+  const german=(prefix?'Aktualisiert: ':'')+(day?day+'. '+germanMonth+' '+year:germanMonth+' '+year);
+  return {tr:text,en:english,de:german};
+}
+
 function translatedHtml(source,{lang,translations,routes}){
   const translate=value=>{
     const text=normalize(value);
     if(!shouldTranslate(text))return text;
-    const entry=translations[segmentId(text)];
-    if(!entry||!entry[lang]){
-      // News archive dates are regenerated from article metadata during deployment.
-      // Translate their Turkish month names deterministically rather than requiring
-      // a new catalog entry every time a publication date changes.
-      const months={
-        'Ocak':['January','Januar'],'Şubat':['February','Februar'],
-        'Mart':['March','März'],'Nisan':['April','April'],
-        'Mayıs':['May','Mai'],'Haziran':['June','Juni'],
-        'Temmuz':['July','Juli'],'Ağustos':['August','August'],
-        'Eylül':['September','September'],'Ekim':['October','Oktober'],
-        'Kasım':['November','November'],'Aralık':['December','Dezember']
-      };
-      const date=text.match(/^(?:(\d{1,2}) )?(Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık) (20\d{2})$/);
-      if(date){
-        const month=months[date[2]][lang==='en'?0:1];
-        return lang==='en'?(date[1]?month+' '+date[1]+', '+date[3]:month+' '+date[3]):(date[1]?date[1]+'. '+month+' '+date[3]:month+' '+date[3]);
-      }
-      throw new Error('Missing '+lang+' translation for: '+text.slice(0,120));
-    }
+    const entry=translationEntry(text,translations);
+    if(!entry||!entry[lang])throw new Error('Missing '+lang+' translation for: '+text.slice(0,120));
     return entry[lang];
   };
   let html=processJsonLd(source,{translate,lang});
@@ -370,5 +379,5 @@ function numericTokens(value){
 module.exports={
   SITE,GROUPS,decodeEntities,escapeHtml,normalize,segmentId,shouldTranslate,looksTurkish,
   sourcePaths,routeFromPath,fileFromPath,attrValue,extractStaticSegments,extractJsSegments,referencedRuntimeSegments,
-  translatedHtml,numericTokens,localizeHref
+  translatedHtml,translationEntry,numericTokens,localizeHref
 };

@@ -3,7 +3,7 @@ const crypto=require('node:crypto');
 const fs=require('node:fs');
 const {
   SITE,sourcePaths,routeFromPath,fileFromPath,extractStaticSegments,referencedRuntimeSegments,
-  segmentId,numericTokens,attrValue
+  segmentId,translationEntry,numericTokens,attrValue
 }=require('./bulk-i18n-lib.js');
 const {curatedRoutes,translatedRoutes}=require('./i18n-registry.js');
 
@@ -51,9 +51,12 @@ for(const route of actual){
     const currentIds=extracted.map(item=>item.id);
     assert.equal(new Set(currentIds).size,currentIds.length,
       'News archive contains duplicated translatable source segments');
-    const missing=currentIds.filter(id=>!strings[id]||!strings[id].en||!strings[id].de);
+    const missing=extracted.filter(item=>{
+      const entry=translationEntry(item.source,strings);
+      return !entry||!entry.en||!entry.de;
+    }).map(item=>({id:item.id,text:item.source}));
     assert.deepEqual(missing,[],
-      'Generated news archive has text missing from the EN/DE translation catalog');
+      'Generated news archive has text missing from EN/DE translations (calendar dates are generated automatically)');
     const added=currentIds.filter(id=>!page.segments.includes(id));
     const removed=page.segments.filter(id=>!currentIds.includes(id));
     if(added.length||removed.length)
@@ -62,10 +65,10 @@ for(const route of actual){
     assert.deepEqual(sorted(new Set(page.segments)),sorted(new Set(extracted.map(item=>item.id))),route+' source text changed; rebuild and re-verify the translation catalog');
   }
   assert.deepEqual(sorted(new Set(page.runtime||[])),sorted(new Set(runtime.map(item=>item.id))),route+' runtime UI text changed; rebuild catalog');
-  staticCount+=page.segments.length;runtimeCount+=(page.runtime||[]).length;
+  staticCount+=extracted.length;runtimeCount+=runtime.length;
 
   for(const item of [...extracted,...runtime]){
-    const entry=strings[item.id];
+    const entry=translationEntry(item.source,strings);
     assert.ok(entry,route+' missing catalog entry '+item.id);
     assert.equal(segmentId(entry.tr),item.id,route+' catalog source hash mismatch');
     for(const lang of ['en','de']){
