@@ -88,9 +88,15 @@ const pairs=[
 // Human-reviewed dynamic news summaries travel with the editorial articles,
 // not with the frozen homepage text-replacement list.
 const newsEditions=JSON.parse(fs.readFileSync('data/news-languages.json','utf8')).items;
-for(const edition of Object.values(newsEditions))
- for(const field of ['title','description','category'])
-  pairs.push([edition.tr[field],edition.en[field],edition.de[field]]);
+for(const edition of Object.values(newsEditions)){
+ for(const field of ['title','description','category']){
+  const localized=[edition.tr[field],edition.en[field],edition.de[field]];
+  pairs.push(localized);
+  // The news generator escapes ampersands in category labels.
+  if(localized.some(value=>value.includes('&')))
+   pairs.push(localized.map(value=>value.replaceAll('&','&amp;')));
+ }
+}
 const {translationEntry}=require('./bulk-i18n-lib.js');
 const fallback={en:"The linked resource is currently available in Turkish.",de:"Der verlinkte Inhalt ist derzeit auf Türkisch verfügbar."};
 const SOURCE=fs.readFileSync('index.html','utf8');
