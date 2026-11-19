@@ -37,6 +37,8 @@ const suspiciousTurkish=value=>[...String(value).matchAll(/\b(?:ve|veya|için|de
 const sourceLikelyTurkish=value=>/[çğıİşÇĞŞ]/.test(String(value))||suspiciousTurkish(value)>0;
 const digits=value=>(String(value).match(/\d+/g)||[]).sort();
 
+// Only the news archive and explicitly source-reviewed corrections are dynamic.
+const revisedNews=new Set(Object.keys(JSON.parse(fs.readFileSync('data/news-languages.json','utf8')).revisions||{}).map(slug=>'haberler/'+slug));
 const verified=[];
 let staticCount=0,runtimeCount=0;
 for(const route of actual){
@@ -45,7 +47,7 @@ for(const route of actual){
   const source=fs.readFileSync(sourceFile,'utf8');
   const extracted=extractStaticSegments(source);
   const runtime=referencedRuntimeSegments(source);
-  if(route==='haberler'){
+  if(route==='haberler'||revisedNews.has(route)){
     // The archive is built from time-sensitive editorial data on each deployment.
     // Validate every CURRENT extracted segment against a verified translation below;
     // an older catalog inventory is not a stable source-of-truth for this route.
@@ -57,7 +59,7 @@ for(const route of actual){
       return !entry||!entry.en||!entry.de;
     }).map(item=>({id:item.id,text:item.source}));
     assert.deepEqual(missing,[],
-      'Generated news archive has text missing from EN/DE translations (calendar dates are generated automatically)');
+      route+' has text missing from reviewed EN/DE translations');
     const added=currentIds.filter(id=>!page.segments.includes(id));
     const removed=page.segments.filter(id=>!currentIds.includes(id));
     if(added.length||removed.length)
