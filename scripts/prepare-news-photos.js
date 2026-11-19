@@ -25,16 +25,22 @@ async function download(slug,entry) {
 async function main(){
   const entries=Object.entries(photos);
   for(const [slug,entry] of entries){
-    if(!entry.author||!entry.page||entry.license!=='CC BY-SA 4.0'||!entry.image.startsWith('/assets/news/photos/'))throw Error('Incomplete credit: '+slug);
-    const file='haberler/'+slug+'/index.html';
+    if(!entry.author||!entry.page||!['CC BY-SA 4.0','CC0 1.0'].includes(entry.license)||!entry.image.startsWith('/assets/news/photos/'))throw Error('Incomplete credit: '+slug);
+    // Existing guide-translated news receives the Turkish photograph only.
+    // Curated news editions are authored independently in three languages.
+    for(const lang of (entry.altI18n?['tr','en','de']:['tr'])){
+    const file=(lang==='tr'?'':lang+'/')+'haberler/'+slug+'/index.html';
     if(!fs.existsSync(file))throw Error('Missing article '+file);
     let html=fs.readFileSync(file,'utf8');
     // Remove only the previously injected photograph; preserve editorial content.
     html=html.replace(/<figure\b[^>]*data-news-photo="licensed"[^>]*>[\s\S]*?<\/figure>/g,'');
     // Replace obsolete static thumbnail figures, where the article already has one.
     html=html.replace(/<figure><img src="\/assets\/news\/[^"]+"[\s\S]*?<\/figure>/,'');
-    const credit='Fotoğraf: <a href="'+escape(entry.page)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.author)+'</a> · <a href="'+escape(entry.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.license)+'</a> · Wikimedia Commons · Kartta kırpılmış görünüm';
-    const figure='<figure data-news-photo="licensed" style="margin:20px 0 26px"><img src="'+escape(entry.image)+'" alt="'+escape(entry.alt)+'" loading="lazy" decoding="async" width="1200" height="675" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px"><figcaption style="font-size:.8rem;color:#516578;margin-top:8px">'+credit+'</figcaption></figure>';
+    const creditLabel=lang==='en'?'Photo: ':lang==='de'?'Foto: ':'Fotoğraf: ';
+    const cropLabel=lang==='en'?' · Illustrative photo, cropped in preview':lang==='de'?' · Symbolfoto, in der Vorschau beschnitten':' · Kartta kırpılmış görünüm';
+    const credit=creditLabel+'<a href="'+escape(entry.page)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.author)+'</a> · <a href="'+escape(entry.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'+escape(entry.license)+'</a> · Wikimedia Commons'+cropLabel;
+    const alt=lang==='tr'?entry.alt:entry.altI18n[lang];
+    const figure='<figure data-news-photo="licensed" style="margin:20px 0 26px"><img src="'+escape(entry.image)+'" alt="'+escape(alt)+'" loading="lazy" decoding="async" width="1200" height="675" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px"><figcaption style="font-size:.8rem;color:#516578;margin-top:8px">'+credit+'</figcaption></figure>';
     if(!html.includes('<article class="article">'))throw Error('Missing article root: '+slug);
     const meta=html.match(/<div class="article-meta">[\s\S]*?<\/div>/);
     if(meta)html=html.replace(meta[0],meta[0]+figure);
@@ -51,6 +57,7 @@ async function main(){
     const licensedFigures=(html.match(/<figure\b[^>]*data-news-photo="licensed"[^>]*>/g)||[]).length;
     if(licensedFigures!==1)throw Error('Expected exactly one licensed photo in '+slug+', found '+licensedFigures);
     fs.writeFileSync(file,html);
+    }
   }
   if(fetchPhotos){for(const [slug,entry] of entries)await download(slug,entry);}
   console.log('Prepared '+entries.length+' credited real-photo news articles.');
