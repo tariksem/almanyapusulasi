@@ -55,4 +55,20 @@ for(const [slug,story] of Object.entries(data.items)){
     assert.ok(html.includes(story[lang].status),path+' legal-status banner');
   }
 }
+for(const [slug,patches] of Object.entries(data.revisions||{})){
+  const original=fs.readFileSync('haberler/'+slug+'/index.html','utf8');
+  assert.equal(editorial[slug].verifiedOn,data.verifiedOn,slug+' correction not verified');
+  assert.equal(editorial[slug].state,'published',slug+' corrected source not published');
+  for(const item of patches){
+    const translated=translationEntry(item.tr,{});
+    assert.ok(translated&&translated.en===item.en&&translated.de===item.de,slug+' corrected claim missing translation');
+    assert.ok(original.includes(item.tr),slug+' corrected claim no longer in source: '+item.tr);
+    for(const lang of ['en','de']){
+      const a=digits(item.tr),b=digits(item[lang]);
+      for(const d of new Set(a))
+        assert.ok(b.filter(x=>x===d).length>=a.filter(x=>x===d).length,
+         slug+' '+lang+' lost numeric fact '+d+' in a legal-status correction');
+    }
+  }
+}
 console.log('Verified five official-source news editions in TR/EN/DE: 15 full pages, 15 translated headlines/summaries/categories, legal-status labels, dates and action steps.');
