@@ -23,6 +23,7 @@ for(const [slug,story] of Object.entries(data.items)){
   const status=editorial[slug];
   assert.ok(status&&status.state==='published',slug+' must have published editorial record');
   assert.equal(status.source,story.source,slug+' official source mismatch');
+  assert.equal(status.sourceDate,story.sourceDate,slug+' official event date mismatch');
   assert.equal(status.verifiedOn,data.verifiedOn);
   assert.equal(status.legalStatus,story.legalStatus);
   assert.ok(status.reviewBy>=data.verifiedOn,slug+' review date expired');
