@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-11-19",
+  "description": "Human-edited, official-source news metadata and EN/DE counterparts. New stories must not be published without a source and legal status.",
+  "items": {
+    "arbeitsrechtspaket-2026-befristung": {
+      "published": "2026-11-18",
+      "sourceDate": "2026-11-18",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/arbeitsrechtspaket-kabinett-2461564",
+      "legalStatus": "government_bill_not_enacted",
+      "reviewBy": "2026-12-03",
+      "tr": {
+        "title": "Süreli iş sözleşmesi 4 yıla mı çıkıyor? Henüz değil",
+        "description": "Hükümet 18 Kasım'da tasarıyı onayladı. Gerekçesiz süreli iş sözleşmelerinde 2 yıllık sınırın 4 yıla çıkarılması öneriliyor; henüz yasa değil.",
+        "category": "İş & Gelir",
+        "status": "Hükümet tasarısı · Henüz yürürlükte değil",
+        "lead": "İş sözleşmeniz belirli bir tarihte bitiyorsa bu haber sizi ilgilendiriyor. Hükümet bir değişiklik istiyor ama bugünden itibaren yeni kural uygulanmıyor.",
+        "what": "Bugün gerekçe gösterilmeden yapılan belirli süreli iş sözleşmelerinde genel sınır 2 yıl ve en fazla 3 uzatma. 18 Kasım'da kabul edilen hükümet tasarısı, sınırı 4 yıla ve uzatma sayısını 6'ya çıkarmayı öneriyor. Teklif, 31 Aralık 2030'a kadar yapılacak işe alımlarla sınırlı olacak şekilde planlandı.",
+        "who": "Özellikle yeni işe başlayacaklar, geçici süreli sözleşmeyle çalışanlar ve işverenler. Her sözleşme bu kurala girmez; bazı sözleşmelerin ayrı hukuki gerekçeleri vardır.",
+        "example": "Örneğin işveren size gerekçesiz 3 yıllık süreli bir sözleşme teklif ederse, yalnızca bu hükümet açıklamasına bakarak teklifi bugün yasal kabul etmeyin. Mevcut kurallar geçerlidir.",
+        "steps": [
+          "Mevcut sözleşmenizin bitiş tarihini ve uzatma koşullarını kontrol edin.",
+          "İşvereniniz yeni kuralın yürürlükte olduğunu söylerse kanunun yayımlanma ve yürürlük tarihini sorun.",
+          "Sözleşmeniz veya fesih konusunda somut bir sorun varsa iş hukuku konusunda uzman destek alın."
+        ],
+        "note": "18 Kasım 2026 itibarıyla bu yalnızca kabinece kabul edilmiş bir kanun tasarısıdır. Meclis sürecinde değişebilir.",
+        "sourceTitle": "Bundesregierung · 18 Kasım 2026 iş hukuku tasarısı"
+      },
+      "en": {
+        "title": "Fixed-term jobs: Can contracts last four years? Not yet",
+        "description": "Germany's cabinet approved a proposal on 18 November to extend certain fixed-term contracts from two to four years. The rule is not in force.",
+        "category": "Work & Income",
+        "status": "Government bill · Not in force",
+        "lead": "If your employment contract has an end date, this proposal may matter to you. The government wants a change, but nothing changes automatically today.",
+        "what": "Under the general current rule, a fixed-term contract without an objective reason can usually last up to two years, with up to three extensions. The cabinet's proposal would allow up to four years and six extensions for relevant hires through 31 December 2030.",
+        "who": "People starting a new job, employees on fixed-term contracts and employers. Different legal rules may apply where there is a valid objective reason for the contract.",
+        "example": "For example, if an employer offers you a three-year fixed-term contract without a reason, do not assume that this proposal already makes it lawful.",
+        "steps": [
+          "Check the expiry date and extension clauses in your existing contract.",
+          "If an employer says the new rule already applies, ask for the enacted law and effective date.",
+          "Seek qualified employment-law advice if you face a specific contract or dismissal problem."
+        ],
+        "note": "As of 18 November 2026, this is a cabinet-approved draft law. Parliament may change it.",
+        "sourceTitle": "Federal Government · Employment law package, 18 November 2026"
+      },
+      "de": {
+        "title": "Befristete Jobs: Vier Jahre statt zwei? Noch nicht",
+        "description": "Das Kabinett hat am 18. November einen Gesetzentwurf beschlossen: Sachgrundlose Befristungen sollen statt zwei bis zu vier Jahre möglich sein. Noch kein geltendes Recht.",
+        "category": "Arbeit & Einkommen",
+        "status": "Gesetzentwurf der Regierung · Noch nicht in Kraft",
+        "lead": "Wenn Ihr Arbeitsvertrag ein Enddatum hat, könnte diese Änderung Sie betreffen. Bislang hat sich das geltende Recht aber nicht geändert.",
+        "what": "Derzeit ist eine sachgrundlose Befristung im Regelfall bis zu zwei Jahren mit höchstens drei Verlängerungen möglich. Der Regierungsentwurf sieht bis zu vier Jahre und sechs Verlängerungen vor. Die geplante Regelung soll Einstellungen bis zum 31. Dezember 2030 betreffen.",
+        "who": "Menschen auf Jobsuche, befristet Beschäftigte und Arbeitgeber. Bei Befristungen mit Sachgrund können andere gesetzliche Voraussetzungen gelten.",
+        "example": "Bietet ein Unternehmen heute einen sachgrundlos auf drei Jahre befristeten Vertrag an, macht allein der Regierungsentwurf diesen Vertrag noch nicht zulässig.",
+        "steps": [
+          "Prüfen Sie das Enddatum und die Verlängerungsbedingungen Ihres Vertrags.",
+          "Fragen Sie bei Hinweisen auf angeblich neue Regeln nach dem verkündeten Gesetz und seinem Inkrafttreten.",
+          "Holen Sie bei einem konkreten Vertrags- oder Kündigungsproblem arbeitsrechtlichen Rat ein."
+        ],
+        "note": "Stand 18. November 2026: vom Kabinett beschlossener Gesetzentwurf, kein geltendes Gesetz. Im Parlament sind Änderungen möglich.",
+        "sourceTitle": "Bundesregierung · Arbeitsrechtspaket vom 18. November 2026"
+      }
+    },
+    "rentenbericht-2026-beitrag-2027": {
+      "published": "2026-11-18",
+      "sourceDate": "2026-11-18",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/rentenversicherungsbericht-2026-2461526",
+      "legalStatus": "official_model_report",
+      "reviewBy": "2027-01-15",
+      "tr": {
+        "title": "Emeklilik primi 2027: %18,6 oranı korunuyor",
+        "description": "18 Kasım 2026 emeklilik raporuna göre 2027 prim oranı %18,6. Rapordaki 2040 emekli maaşı artışları kesin vaat değil, model hesabı.",
+        "category": "Emeklilik",
+        "status": "Resmî rapor · Model hesapları",
+        "lead": "2027'de emeklilik sigortası primi için açıklanan oran %18,6. Bu bilgi, hükümetin 18 Kasım'da kabul ettiği yıllık emeklilik raporunda yer alıyor.",
+        "what": "Rapora göre 2027'de toplam yasal emeklilik sigortası prim oranı %18,6 seviyesinde kalıyor. Rapor ayrıca 2040'a kadar emekli aylıklarında toplam yaklaşık %46,2 artış hesaplıyor. Ancak bu, herkese garanti edilen maaş zammı değildir.",
+        "who": "Almanya'da sigortalı çalışanlar, emeklilik planlaması yapanlar ve mevcut emekliler.",
+        "example": "Bugün 1.500 € emekli maaşı alan bir kişinin parasının rapordaki yüzde kadar kesin artacağını düşünmeyin. Rapor çok yıllı varsayımlara dayanan bir hesaplamadır.",
+        "steps": [
+          "2027 bordronuzu incelerken yalnız prim oranına değil prime esas kazanç sınırına da bakın.",
+          "Kişisel emeklilik durumunuzu Deutsche Rentenversicherung'un yıllık Renteninformation belgesiyle kontrol edin.",
+          "Uzun dönem model sonuçlarını bugünden kesin ödeme sözü olarak değerlendirmeyin."
+        ],
+        "note": "Rentenversicherungsbericht 2026, geçerli kurallara ve varsayımlara dayanan resmî model hesapları içerir. Bireysel emekli maaşını kesinleştirmez.",
+        "sourceTitle": "Bundesregierung · Rentenversicherungsbericht 2026, 18 Kasım"
+      },
+      "en": {
+        "title": "German pension contributions: 18.6% in 2027",
+        "description": "The 18 November pension report keeps the 2027 statutory pension contribution rate at 18.6%. Long-term pension increases are model calculations, not guarantees.",
+        "category": "Pensions",
+        "status": "Official report · Model calculations",
+        "lead": "Germany's annual pension report indicates that the statutory pension insurance contribution rate will remain 18.6% in 2027.",
+        "what": "The government report states that the contribution rate remains at 18.6% in 2027. It also models a total increase of around 46.2% in pensions by 2040. This is a projection based on assumptions, not a guaranteed personal increase.",
+        "who": "Employees paying into the German pension system, people planning retirement and current pensioners.",
+        "example": "If you receive a pension today, do not assume that the percentage in the report is a guaranteed increase to your own monthly payment.",
+        "steps": [
+          "Check the contribution rate and earnings ceiling on your 2027 payslip.",
+          "Consult your personal Renteninformation from Deutsche Rentenversicherung.",
+          "Treat long-term model results as scenarios, not a firm promise of future payments."
+        ],
+        "note": "The 2026 government pension report uses model calculations based on assumptions and existing or proposed measures. It does not fix individual pensions.",
+        "sourceTitle": "Federal Government · Pension Insurance Report 2026, 18 November"
+      },
+      "de": {
+        "title": "Rentenbeitrag 2027 bleibt bei 18,6 Prozent",
+        "description": "Der Rentenversicherungsbericht vom 18. November nennt für 2027 einen Beitragssatz von 18,6 Prozent. Modellrechnungen bis 2040 sind keine Rentengarantie.",
+        "category": "Rente",
+        "status": "Offizieller Bericht · Modellrechnungen",
+        "lead": "Der gesetzliche Rentenversicherungsbeitrag soll 2027 unverändert bei 18,6 Prozent liegen. Das geht aus dem Rentenversicherungsbericht 2026 hervor.",
+        "what": "Der Bericht nennt für 2027 einen Beitragssatz von 18,6 Prozent. Bis 2040 ergibt die Modellrechnung einen Rentenanstieg von insgesamt rund 46,2 Prozent. Das ist keine Garantie für die persönliche Rente.",
+        "who": "Beschäftigte mit Rentenversicherungsbeiträgen, Menschen vor dem Ruhestand und Rentnerinnen und Rentner.",
+        "example": "Wer heute eine monatliche Rente bekommt, kann den im Bericht genannten langfristigen Prozentsatz nicht als fest zugesagte individuelle Erhöhung verstehen.",
+        "steps": [
+          "Prüfen Sie auf Ihrer Abrechnung 2027 den Beitragssatz und die Beitragsbemessungsgrenze.",
+          "Nutzen Sie Ihre persönliche Renteninformation der Deutschen Rentenversicherung.",
+          "Lesen Sie langfristige Modellrechnungen nicht als verbindliche Rentenzusage."
+        ],
+        "note": "Der Regierungsbericht enthält Modellrechnungen mit Annahmen. Eine individuelle Rentenhöhe wird damit nicht zugesagt.",
+        "sourceTitle": "Bundesregierung · Rentenversicherungsbericht 2026 vom 18. November"
+      }
+    },
+    "elterngeld-reform-2027-entwurf": {
+      "published": "2026-11-13",
+      "sourceDate": "2026-11-13",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/kabinett-reform-elterngeld-2460372",
+      "legalStatus": "government_bill_not_enacted",
+      "reviewBy": "2026-12-15",
+      "tr": {
+        "title": "Elterngeld 2027: 330–1.900 € planı, ama henüz yasa değil",
+        "description": "Hükümet 13 Kasım'da Elterngeld reformunu tasarı olarak kabul etti. Asgari 330 €, azami 1.900 € ve yeni ebeveyn paylaşımı planlanıyor.",
+        "category": "Aile & Çocuk",
+        "status": "Hükümet tasarısı · Henüz yürürlükte değil",
+        "lead": "Bebek bekleyen aileler için önemli bir plan var. Elterngeld tutarları ve anne-babanın izin aylarını paylaşma şekli değişebilir. Ancak yeni rakamlar bugün geçerli değil.",
+        "what": "Hükümet tasarısı Basiselterngeld için asgari tutarı 300 €'dan 330 €'ya, azami tutarı 1.800 €'dan 1.900 €'ya çıkarmayı öneriyor. Toplam 14 ay korunacak; 4 ay anneye, 4 ay babaya ayrılması ve 6 ayın paylaşılması planlanıyor. Tek ebeveynli aileler için 14 ay hakkı korunacak.",
+        "who": "Çocuk bekleyen veya gelecekte çocuk sahibi olmayı planlayan aileler; özellikle ebeveynlerin ikisinin de çocuk bakımına katılmak istediği haneler.",
+        "example": "Bugün çocuk doğdu diye otomatik olarak 330 € alt sınır uygulanacağını düşünmeyin. Değişiklik için yasanın tamamlanması gerekiyor.",
+        "steps": [
+          "Bugünkü başvurular için yürürlükteki Elterngeld şartlarını esas alın.",
+          "Ebeveyn iznini planlarken bunun henüz tasarı olduğunu dikkate alın.",
+          "Yasanın yayımlanmasını ve doğum tarihine göre geçiş kurallarını bekleyin."
+        ],
+        "note": "Hükümet yeni kuralların 1 Kasım 2027'de başlamasını hedefliyor. Bu tarih ve tutarlar yasama sürecinde değişebilir.",
+        "sourceTitle": "Bundesregierung · Elterngeld ve Mutterschutz reformu, 13 Kasım"
+      },
+      "en": {
+        "title": "Parental allowance 2027: €330–€1,900 proposal, not law yet",
+        "description": "A government proposal announced on 13 November would raise minimum and maximum parental allowance and change how parents divide months. It is not law yet.",
+        "category": "Family & Children",
+        "status": "Government bill · Not in force",
+        "lead": "Families planning a baby may see changes to Elterngeld, Germany's parental allowance. Proposed new payment limits do not apply yet.",
+        "what": "The proposed minimum Basiselterngeld would rise from €300 to €330 and the maximum from €1,800 to €1,900. The total 14 months would remain, with four months reserved for each parent and six months to share. Single parents would retain up to 14 months.",
+        "who": "Expectant parents and people planning a family, especially households wishing to divide childcare between both parents.",
+        "example": "A child born today does not automatically qualify for the proposed €330 minimum. The new law must first be enacted.",
+        "steps": [
+          "Use the current Elterngeld rules for applications being made now.",
+          "When planning leave, remember that the proposed changes are not yet binding.",
+          "Wait for the enacted law and transitional rules based on your child's birth date."
+        ],
+        "note": "The government aims for 1 November 2027. Both the planned start and the amounts may change during legislation.",
+        "sourceTitle": "Federal Government · Parental allowance reform, 13 November"
+      },
+      "de": {
+        "title": "Elterngeld 2027: 330 bis 1.900 Euro geplant – noch kein Gesetz",
+        "description": "Die Bundesregierung hat am 13. November eine Elterngeld-Reform beschlossen. Mindest- und Höchstbetrag sowie die Aufteilung der Monate sollen sich ändern.",
+        "category": "Familie & Kinder",
+        "status": "Gesetzentwurf der Regierung · Noch nicht in Kraft",
+        "lead": "Für Familien mit Kinderwunsch gibt es einen neuen Elterngeld-Entwurf. Die geplanten höheren Beträge gelten aber noch nicht.",
+        "what": "Der Mindestbetrag beim Basiselterngeld soll von 300 auf 330 Euro und der Höchstbetrag von 1.800 auf 1.900 Euro steigen. Insgesamt bleiben bis zu 14 Monate. Vier Monate sollen jeweils einem Elternteil vorbehalten sein; sechs Monate sollen aufgeteilt werden können. Alleinerziehende behalten bis zu 14 Monate.",
+        "who": "Werdende Eltern und Familien in Planung, insbesondere Eltern, die sich die Betreuung partnerschaftlich teilen möchten.",
+        "example": "Ein heute geborenes Kind führt nicht automatisch zum geplanten Mindestbetrag von 330 Euro. Dafür braucht es ein geltendes Gesetz.",
+        "steps": [
+          "Beantragen Sie aktuelles Elterngeld nach den derzeit geltenden Regeln.",
+          "Berücksichtigen Sie bei der Elternzeitplanung, dass die Reform noch ein Entwurf ist.",
+          "Warten Sie auf das verkündete Gesetz und die Übergangsregeln nach Geburtsdatum."
+        ],
+        "note": "Die Bundesregierung strebt den 1. November 2027 als Beginn an. Termin und Beträge können sich im Gesetzgebungsverfahren ändern.",
+        "sourceTitle": "Bundesregierung · Elterngeld- und Mutterschutzreform, 13. November"
+      }
+    },
+    "deutschlandticket-2027-preis": {
+      "published": "2026-11-05",
+      "sourceDate": "2026-11-05",
+      "source": "https://www.bundesregierung.de/breg-de/service/newsletter-und-abos/newsletter-verbraucherschutz/deutschlandticket-2134074",
+      "legalStatus": "future_tariff_announced",
+      "reviewBy": "2026-12-10",
+      "tr": {
+        "title": "Deutschlandticket 2027: Aylık 66,80 € olacak",
+        "description": "1 Ocak 2027'de Deutschlandticket fiyatı 63 € yerine 66,80 € olacak. Aboneliğinizde otomatik artış veya onay gerekip gerekmediğini kontrol edin.",
+        "category": "Ulaşım",
+        "status": "Açıklanan yeni tarife · 1 Ocak 2027",
+        "lead": "Otobüs ve bölgesel trenlerde kullanılan Deutschlandticket'ın aylık ücreti 1 Ocak 2027'de 63 €'dan 66,80 €'ya çıkacak.",
+        "what": "Yeni aylık fiyat 66,80 €. Birçok abonelikte ücret kendiliğinden güncellenecek. Bazı ulaşım şirketleri ise aboneden fiyat değişikliğini onaylamasını isteyecek ve bunun için size ulaşacak.",
+        "who": "Deutschlandticket aboneleri, işe veya okula toplu taşımayla gidenler, işvereninden Jobticket alanlar.",
+        "example": "Bugün 63 € ödüyorsanız yeni aylık fiyat 3,80 € daha yüksek olacak. Bir yıl boyunca aynı aboneliği kullanırsanız fark toplam 45,60 € olur.",
+        "steps": [
+          "Abonelik uygulamanızdaki veya e-postanızdaki yeni fiyat bildirimini kontrol edin.",
+          "Ulaşım şirketiniz onay istiyorsa son tarihi kaçırmayın.",
+          "Artık ihtiyacınız yoksa aboneliğin iptal koşullarına ve son tarihine bakın."
+        ],
+        "note": "Deutschlandticket, genel olarak ICE, IC ve EC gibi uzun mesafe trenlerinde geçmez. İş veya öğrenci indirimleri yerel koşullara bağlı olabilir.",
+        "sourceTitle": "Bundesregierung · Deutschlandticket soru ve cevapları, 5 Kasım"
+      },
+      "en": {
+        "title": "Deutschlandticket will cost €66.80 per month in 2027",
+        "description": "The Deutschlandticket price rises from €63 to €66.80 on 1 January 2027. Check whether your transport provider requires you to approve the new price.",
+        "category": "Transport",
+        "status": "Announced tariff · From 1 January 2027",
+        "lead": "The monthly Germany-wide local transport pass will cost €66.80 instead of €63 from 1 January 2027.",
+        "what": "The new monthly fare is €66.80. Many subscriptions will update automatically, but some providers need the subscriber to approve the change and will contact customers.",
+        "who": "Deutschlandticket subscribers, people commuting to work or study, and employees using an employer-supported Jobticket.",
+        "example": "If you currently pay €63, the new monthly cost is €3.80 higher. Over twelve months that is €45.60 more.",
+        "steps": [
+          "Check your ticket app and email for the new fare notice.",
+          "If your provider requests approval, do not miss its deadline.",
+          "If you no longer need the pass, review your subscription's cancellation conditions."
+        ],
+        "note": "The ticket generally does not cover long-distance ICE, IC or EC services. Local discounts and Jobticket terms may vary.",
+        "sourceTitle": "Federal Government · Deutschlandticket FAQ, 5 November"
+      },
+      "de": {
+        "title": "Deutschlandticket kostet 2027 monatlich 66,80 Euro",
+        "description": "Zum 1. Januar 2027 steigt der Deutschlandticket-Preis von 63 auf 66,80 Euro. Prüfen Sie, ob Ihr Anbieter eine Zustimmung zur Preisanpassung benötigt.",
+        "category": "Verkehr",
+        "status": "Angekündigter Tarif · Ab 1. Januar 2027",
+        "lead": "Ab dem 1. Januar 2027 steigt der monatliche Preis des Deutschlandtickets von 63 auf 66,80 Euro.",
+        "what": "Der neue Monatspreis beträgt 66,80 Euro. Viele laufende Abos werden automatisch angepasst. Einige Verkehrsunternehmen benötigen dafür jedoch die Zustimmung der Abonnentinnen und Abonnenten und melden sich direkt.",
+        "who": "Alle mit Deutschlandticket-Abo, Pendlerinnen und Pendler, Studierende und Beschäftigte mit Jobticket.",
+        "example": "Statt 63 Euro sind monatlich 3,80 Euro mehr fällig. Wer das Ticket zwölf Monate nutzt, zahlt insgesamt 45,60 Euro mehr.",
+        "steps": [
+          "Prüfen Sie die Mitteilungen in der Ticket-App und in Ihren E-Mails.",
+          "Wenn Ihr Anbieter eine Zustimmung verlangt, beachten Sie die Frist.",
+          "Wenn Sie das Ticket nicht mehr brauchen, prüfen Sie die Kündigungsbedingungen."
+        ],
+        "note": "Im ICE, IC und EC gilt das Deutschlandticket normalerweise nicht. Örtliche Vergünstigungen und Jobticket-Regeln können abweichen.",
+        "sourceTitle": "Bundesregierung · Deutschlandticket FAQ vom 5. November"
+      }
+    },
+    "sozialversicherung-grenzen-2027": {
+      "published": "2026-10-07",
+      "sourceDate": "2026-10-07",
+      "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/beitragsbemessungsgrenzen-2027-2454638",
+      "legalStatus": "cabinet_ordinance_bundesrat_pending",
+      "reviewBy": "2026-11-23",
+      "tr": {
+        "title": "2027 sosyal sigorta sınırları: Yüksek maaşlılar dikkat",
+        "description": "Hükümet 2027 için sağlık sigortası prim tavanını ayda 6.375 €, zorunlu sigorta gelir sınırını 7.012,50 € olarak önerdi. Bundesrat onayı bekleniyor.",
+        "category": "Sağlık & Gelir",
+        "status": "Hükümet yönetmeliği · Bundesrat onayı bekleniyor",
+        "lead": "2027'de yüksek maaşı olanların sigorta hesabı değişebilir. Ancak bunun herkesin maaşından aynı miktarda daha fazla prim kesileceği anlamına gelmediğini bilmek önemli.",
+        "what": "Kabinenin önerdiği 2027 değerleri: Sağlık ve bakım sigortasında prime esas aylık kazanç tavanı 6.375 € (2026: 5.812,50 €). GKV zorunlu sigorta için yıllık gelir sınırı 84.150 € (aylık 7.012,50 €). Genel emeklilik sigortası prim tavanı aylık 8.850 €.",
+        "who": "Özellikle yüksek brüt maaşla çalışanlar ve GKV ile PKV arasındaki seçenekleri değerlendirenler. Daha düşük maaşı olan herkes yalnızca bu tavan artışı nedeniyle aynı ölçüde etkilenmez.",
+        "example": "Örneğin brüt maaşı 7.000 € olan bir çalışanın, GKV için prime tabi maaş tavanı değişirse kesintisi etkilenebilir. Kesin net maaş etkisi kişisel sigorta ve prim oranlarına bağlıdır.",
+        "steps": [
+          "Şimdilik bu rakamların Bundesrat onayını beklediğini unutmayın.",
+          "2027 ilk maaş bordronuzda prime esas brüt tutarı ve sigorta oranını kontrol edin.",
+          "PKV seçeneğini sadece bir gelir sınırına bakarak değil, uzun vadeli maliyetleri de düşünerek değerlendirin."
+        ],
+        "note": "19 Kasım 2026 kontrolünde hükümet kaynağı Bundesrat'ın nihai onayının gerektiğini belirtiyor. Bu tutarları kesin yürürlükteki hukuk gibi sunmuyoruz.",
+        "sourceTitle": "Bundesregierung · 2027 sosyal sigorta hesaplama sınırları"
+      },
+      "en": {
+        "title": "German social insurance ceilings: What changes in 2027?",
+        "description": "The cabinet proposes a €6,375 monthly health contribution ceiling and a €7,012.50 monthly insurance threshold for 2027. Bundesrat approval is still pending.",
+        "category": "Health & Income",
+        "status": "Cabinet ordinance · Bundesrat approval pending",
+        "lead": "High earners may see a change in how their social insurance contributions are calculated in 2027. It does not mean everyone will pay the same additional amount.",
+        "what": "The proposed 2027 monthly ceiling for health and long-term care contributions is €6,375 (2026: €5,812.50). The annual threshold for compulsory statutory health insurance is €84,150 (€7,012.50 monthly). The general pension contribution ceiling would be €8,850 monthly.",
+        "who": "Especially employees with higher gross salaries and those considering statutory versus private health insurance. Workers below the affected ceilings are not all affected in the same way.",
+        "example": "Someone earning €7,000 gross per month may see a different health-insurance contribution if the ceiling changes. The exact net impact depends on individual insurance and contribution rates.",
+        "steps": [
+          "Remember that final Bundesrat approval is still required.",
+          "Review the contribution base and insurance rates on your first 2027 payslip.",
+          "Do not choose private insurance on the basis of a single salary threshold; consider long-term costs."
+        ],
+        "note": "As checked on 19 November 2026, the government states that Bundesrat approval is still required. The amounts are not presented as final law.",
+        "sourceTitle": "Federal Government · Social insurance thresholds for 2027"
+      },
+      "de": {
+        "title": "Sozialversicherungsgrenzen 2027: Was gilt für Gutverdiener?",
+        "description": "Die Regierung sieht 2027 eine GKV-Beitragsbemessungsgrenze von monatlich 6.375 Euro und eine Versicherungspflichtgrenze von 7.012,50 Euro vor. Der Bundesrat muss noch zustimmen.",
+        "category": "Gesundheit & Einkommen",
+        "status": "Kabinettsverordnung · Bundesrat-Zustimmung ausstehend",
+        "lead": "Für höhere Gehälter könnten sich 2027 die Beitragsgrenzen ändern. Das bedeutet nicht, dass alle Versicherten denselben Mehrbeitrag zahlen.",
+        "what": "Die geplante monatliche Beitragsbemessungsgrenze für Kranken- und Pflegeversicherung liegt 2027 bei 6.375 Euro (2026: 5.812,50 Euro). Die Versicherungspflichtgrenze der GKV soll bei 84.150 Euro jährlich bzw. 7.012,50 Euro monatlich liegen. In der allgemeinen Rentenversicherung sind 8.850 Euro monatlich vorgesehen.",
+        "who": "Vor allem Beschäftigte mit höherem Bruttogehalt und Menschen, die GKV und PKV vergleichen. Wer unter den relevanten Grenzen verdient, ist nicht zwangsläufig in gleicher Weise betroffen.",
+        "example": "Bei 7.000 Euro Monatsbrutto kann sich die Bemessungsgrundlage für die GKV ändern. Die konkrete Nettowirkung hängt von Kasse und Beitragssätzen ab.",
+        "steps": [
+          "Beachten Sie, dass die abschließende Zustimmung des Bundesrates noch aussteht.",
+          "Kontrollieren Sie auf der ersten Gehaltsabrechnung 2027 die Bemessungsgrundlage und Beitragssätze.",
+          "Entscheiden Sie über eine PKV nicht allein aufgrund der Einkommensgrenze."
+        ],
+        "note": "Stand 19. November 2026: Nach Angaben der Bundesregierung ist die Zustimmung des Bundesrates erforderlich. Die Werte werden nicht als bereits geltendes Recht dargestellt.",
+        "sourceTitle": "Bundesregierung · Sozialversicherungsrechengrößen 2027"
+      }
+    }
+  }
+}
