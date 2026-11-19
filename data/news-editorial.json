@@ -115,6 +115,61 @@
       "category": "Günlük Yaşam",
       "expiresOn": "2026-09-30",
       "note": "Eylül ayı özetinin tarihsel arşivi."
+    },
+    "arbeitsrechtspaket-2026-befristung": {
+      "state": "published",
+      "category": "İş & Gelir",
+      "sourceDate": "2026-11-18",
+      "reviewBy": "2026-12-03",
+      "verifiedOn": "2026-11-19",
+      "legalStatus": "government_bill_not_enacted",
+      "priority": 9,
+      "note": "18 Kasım 2026 itibarıyla bu yalnızca kabinece kabul edilmiş bir kanun tasarısıdır. Meclis sürecinde değişebilir.",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/arbeitsrechtspaket-kabinett-2461564"
+    },
+    "rentenbericht-2026-beitrag-2027": {
+      "state": "published",
+      "category": "Emeklilik",
+      "sourceDate": "2026-11-18",
+      "reviewBy": "2027-01-15",
+      "verifiedOn": "2026-11-19",
+      "legalStatus": "official_model_report",
+      "priority": 8,
+      "note": "Rentenversicherungsbericht 2026, geçerli kurallara ve varsayımlara dayanan resmî model hesapları içerir. Bireysel emekli maaşını kesinleştirmez.",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/rentenversicherungsbericht-2026-2461526"
+    },
+    "elterngeld-reform-2027-entwurf": {
+      "state": "published",
+      "category": "Aile & Çocuk",
+      "sourceDate": "2026-11-13",
+      "reviewBy": "2026-12-15",
+      "verifiedOn": "2026-11-19",
+      "legalStatus": "government_bill_not_enacted",
+      "priority": 9,
+      "note": "Hükümet yeni kuralların 1 Kasım 2027'de başlamasını hedefliyor. Bu tarih ve tutarlar yasama sürecinde değişebilir.",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/kabinett-reform-elterngeld-2460372"
+    },
+    "deutschlandticket-2027-preis": {
+      "state": "published",
+      "category": "Ulaşım",
+      "sourceDate": "2026-11-05",
+      "reviewBy": "2026-12-10",
+      "verifiedOn": "2026-11-19",
+      "legalStatus": "future_tariff_announced",
+      "priority": 9,
+      "note": "Deutschlandticket, genel olarak ICE, IC ve EC gibi uzun mesafe trenlerinde geçmez. İş veya öğrenci indirimleri yerel koşullara bağlı olabilir.",
+      "source": "https://www.bundesregierung.de/breg-de/service/newsletter-und-abos/newsletter-verbraucherschutz/deutschlandticket-2134074"
+    },
+    "sozialversicherung-grenzen-2027": {
+      "state": "published",
+      "category": "Sağlık & Gelir",
+      "sourceDate": "2026-10-07",
+      "reviewBy": "2026-11-23",
+      "verifiedOn": "2026-11-19",
+      "legalStatus": "cabinet_ordinance_bundesrat_pending",
+      "priority": 8,
+      "note": "19 Kasım 2026 kontrolünde hükümet kaynağı Bundesrat'ın nihai onayının gerektiğini belirtiyor. Bu tutarları kesin yürürlükteki hukuk gibi sunmuyoruz.",
+      "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/beitragsbemessungsgrenzen-2027-2454638"
     }
   }
 }
