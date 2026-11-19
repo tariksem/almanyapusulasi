@@ -1,11 +1,21 @@
 const fs=require('node:fs');
 const assert=require('node:assert/strict');
 const {segmentId,translationEntry}=require('./bulk-i18n-lib.js');
+const {metaDescription}=require('./news-meta.js');
 const data=JSON.parse(fs.readFileSync('data/news-languages.json','utf8'));
 const editorial=JSON.parse(fs.readFileSync('data/news-editorial.json','utf8')).items;
 const SITE='https://almanyapusulasi.de';
 const digits=s=>(String(s).match(/\d+/g)||[]).sort();
 
+// Regression: a double-quoted description must preserve internal Turkish apostrophes.
+const electricityHtml=fs.readFileSync('haberler/strom-netzentgelte-2027/index.html','utf8');
+assert.equal(metaDescription(electricityHtml),
+  data.revisions['strom-netzentgelte-2027'][0].tr,
+  'Turkish apostrophe must not truncate the reviewed source summary');
+assert.equal(metaDescription(`<meta name="description" content="Kasım'da karar açıklandı">`),
+  "Kasım'da karar açıklandı");
+assert.equal(metaDescription(`<meta content='Quoted "text" inside description' name='description'>`),
+  'Quoted "text" inside description');
 assert.equal(Object.keys(data.items).length,5,'Expected the five reviewed news editions');
 const officialDomains=new Set(['www.bundesregierung.de','www.bundestag.de','www.bmas.de','www.bundesgesundheitsministerium.de']);
 for(const [slug,story] of Object.entries(data.items)){
