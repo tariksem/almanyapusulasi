@@ -85,6 +85,13 @@ const pairs=[
 ["6 Kasım 2026","6 November 2026","6. November 2026"],["5 Kasım 2026","5 November 2026","5. November 2026"],["4 Kasım 2026","4 November 2026","4. November 2026"],
 ["27 Eylül 2026","27 September 2026","27. September 2026"],["24 Eylül 2026","24 September 2026","24. September 2026"],["8 Eylül 2026","8 September 2026","8. September 2026"]
 ];
+// Human-reviewed dynamic news summaries travel with the editorial articles,
+// not with the frozen homepage text-replacement list.
+const newsEditions=JSON.parse(fs.readFileSync('data/news-languages.json','utf8')).items;
+for(const edition of Object.values(newsEditions))
+ for(const field of ['title','description','category'])
+  pairs.push([edition.tr[field],edition.en[field],edition.de[field]]);
+const {translationEntry}=require('./bulk-i18n-lib.js');
 const fallback={en:"The linked resource is currently available in Turkish.",de:"Der verlinkte Inhalt ist derzeit auf Türkisch verfügbar."};
 const SOURCE=fs.readFileSync('index.html','utf8');
 function build(lang){
@@ -123,6 +130,12 @@ function build(lang){
    const needle='>'+tr+'<';
    body=body.split(needle).join('>'+value+'<');
  }
+ // Date strings are generated from NewsArticle metadata and must be translated
+ // with the same resolver used by the archive generator and its QA.
+ body=body.replace(/(<time\\b[^>]*>)([^<]+)(<\\/time>)/g,(full,open,text,close)=>{
+   const translation=translationEntry(text,{});
+   return open+(translation&&translation[lang]?translation[lang]:text)+close;
+ });
  body=body.replace(/placeholder="Ne arıyorsunuz\?[^"]*"/,'placeholder="'+(lang==="en"?"Search: Blue Card, Kindergeld, rent, insurance...":"Suche: Blaue Karte, Kindergeld, Miete, Versicherung...")+'"');
  body=body.replace(/aria-label="Site içinde ara"/g,'aria-label="'+(lang==="en"?"Search this site":"Website durchsuchen")+'"');
  const scriptStart=body.lastIndexOf('<script>');
