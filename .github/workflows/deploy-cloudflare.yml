@@ -40,6 +40,7 @@ jobs:
           node scripts/validate-translated-guides.js
           node scripts/validate-news-editions.js
           node scripts/generate-discovery.js
+          node scripts/validate-news-photos.js
           node - <<'NODE'
           const fs=require('node:fs');
           const archive=fs.readFileSync('haberler/index.html','utf8');
