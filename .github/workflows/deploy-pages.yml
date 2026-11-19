@@ -41,6 +41,7 @@ jobs:
           node scripts/validate-translated-guides.js
           node scripts/validate-news-editions.js
           node scripts/generate-discovery.js
+          node scripts/validate-news-photos.js
           node scripts/generate-bulk-i18n.js
           node --check scripts/generate-home-parity.js
           node scripts/generate-home-parity.js

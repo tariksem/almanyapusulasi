@@ -142,6 +142,14 @@ function build(lang){
    const translation=translationEntry(text,{});
    return open+(translation&&translation[lang]?translation[lang]:text)+close;
  });
+ // Photo captions are curated independently of the static guide strings.
+ // Keep homepage card alt text in the selected language.
+ const photoEntries=JSON.parse(fs.readFileSync('data/news-photos.json','utf8')).items;
+ const escAlt=value=>String(value).replaceAll('&','&amp;').replaceAll('"','&quot;');
+ for(const photo of Object.values(photoEntries)){
+   if(!photo.altI18n)continue;
+   body=body.replaceAll('alt="'+escAlt(photo.alt)+'"','alt="'+escAlt(photo.altI18n[lang])+'"');
+ }
  body=body.replace(/placeholder="Ne arıyorsunuz\?[^"]*"/,'placeholder="'+(lang==="en"?"Search: Blue Card, Kindergeld, rent, insurance...":"Suche: Blaue Karte, Kindergeld, Miete, Versicherung...")+'"');
  body=body.replace(/aria-label="Site içinde ara"/g,'aria-label="'+(lang==="en"?"Search this site":"Website durchsuchen")+'"');
  const scriptStart=body.lastIndexOf('<script>');

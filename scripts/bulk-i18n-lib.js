@@ -342,6 +342,23 @@ if(fs.existsSync(newsFile)){
   }
 }
 
+
+const photoFile=require('node:path').join(__dirname,'../data/news-photos.json');
+if(fs.existsSync(photoFile)){
+  const photoCatalog=JSON.parse(fs.readFileSync(photoFile,'utf8')).items||{};
+  for(const [slug,photo] of Object.entries(photoCatalog)){
+    if(!photo.altI18n)continue;
+    const entry={tr:photo.alt,en:photo.altI18n.en,de:photo.altI18n.de};
+    if(!entry.tr||!entry.en||!entry.de)
+      throw new Error('Missing localized photo alt: '+slug);
+    const id=segmentId(entry.tr);
+    const previous=NEWS_TRANSLATIONS.get(id);
+    if(previous&&(previous.en!==entry.en||previous.de!==entry.de))
+      throw new Error('Conflicting news photo translation: '+slug);
+    NEWS_TRANSLATIONS.set(id,entry);
+  }
+}
+
 function translationEntry(value,translations){
   const text=normalize(value);
   const catalogEntry=translations[segmentId(text)]||NEWS_TRANSLATIONS.get(segmentId(text));

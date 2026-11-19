@@ -89,6 +89,71 @@
       "page": "https://commons.wikimedia.org/wiki/File:Deutscher_Bundestag.jpg",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "image": "/assets/news/photos/afd-saksonya-anhalt-secim-2026.jpg"
+    },
+    "arbeitsrechtspaket-2026-befristung": {
+      "file": "Businesswoman working at table (Unsplash).jpg",
+      "author": "rawpixel.com",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "alt": "Ofiste bilgisayarıyla çalışan kadın; iş sözleşmeleri haberi için temsili fotoğrafı",
+      "page": "https://commons.wikimedia.org/wiki/File:Businesswoman_working_at_table_(Unsplash).jpg",
+      "image": "/assets/news/photos/arbeitsrechtspaket-2026-befristung.jpg",
+      "altI18n": {
+        "en": "Woman working on a laptop in an office; illustrative photograph for fixed-term contracts",
+        "de": "Frau bei der Arbeit am Laptop; Symbolfoto zu befristeten Arbeitsverträgen"
+      }
+    },
+    "rentenbericht-2026-beitrag-2027": {
+      "file": "Rest on seaside bench (Unsplash).jpg",
+      "author": "Nathália Bariani",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "alt": "Deniz kenarında bankta dinlenen yaşlı çift; emeklilik haberi için temsili fotoğrafı",
+      "page": "https://commons.wikimedia.org/wiki/File:Rest_on_seaside_bench_(Unsplash).jpg",
+      "image": "/assets/news/photos/rentenbericht-2026-beitrag-2027.jpg",
+      "altI18n": {
+        "en": "Older couple relaxing on a seaside bench; illustrative photograph about pensions",
+        "de": "Älteres Paar auf einer Bank am Meer; Symbolfoto zum Thema Rente"
+      }
+    },
+    "elterngeld-reform-2027-entwurf": {
+      "file": "Parents and their baby.jpg",
+      "author": "sheldonl",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "alt": "Bebekleriyle birlikte bir aile; Elterngeld reformu haberi için temsili fotoğrafı",
+      "page": "https://commons.wikimedia.org/wiki/File:Parents_and_their_baby.jpg",
+      "image": "/assets/news/photos/elterngeld-reform-2027-entwurf.jpg",
+      "altI18n": {
+        "en": "Parents with their baby; illustrative photograph about parental allowance",
+        "de": "Eltern mit ihrem Baby; Symbolfoto zum Elterngeld"
+      }
+    },
+    "deutschlandticket-2027-preis": {
+      "file": "20250428 Deutschland TCS Train Charter Services RE13 Ersatzverkehr GFF Gesellschaft für Fahrzeugtechnik Zugkreuzung Düsseldorf Bilk.jpg",
+      "author": "Bvcmz248.5",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "alt": "Düsseldorf-Bilk'te iki bölgesel tren; Deutschlandticket haberi için temsili fotoğrafı",
+      "page": "https://commons.wikimedia.org/wiki/File:20250428_Deutschland_TCS_Train_Charter_Services_RE13_Ersatzverkehr_GFF_Gesellschaft_f%C3%BCr_Fahrzeugtechnik_Zugkreuzung_D%C3%BCsseldorf_Bilk.jpg",
+      "image": "/assets/news/photos/deutschlandticket-2027-preis.jpg",
+      "altI18n": {
+        "en": "Two regional trains at Düsseldorf-Bilk; illustrative photograph about the Deutschlandticket",
+        "de": "Zwei Regionalzüge in Düsseldorf-Bilk; Symbolfoto zum Deutschlandticket"
+      }
+    },
+    "sozialversicherung-grenzen-2027": {
+      "file": "50 Eurobanknoten in der Hand aufgefaechert.JPG",
+      "author": "Usien",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "alt": "Elde tutulan 50 avroluk banknotlar; sosyal sigorta primleri haberi için temsili fotoğrafı",
+      "page": "https://commons.wikimedia.org/wiki/File:50_Eurobanknoten_in_der_Hand_aufgefaechert.JPG",
+      "image": "/assets/news/photos/sozialversicherung-grenzen-2027.jpg",
+      "altI18n": {
+        "en": "50-euro banknotes held in a hand; illustrative photograph about social insurance contributions",
+        "de": "50-Euro-Banknoten in einer Hand; Symbolfoto zu Sozialversicherungsbeiträgen"
+      }
     }
   }
 }
