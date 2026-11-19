@@ -81,7 +81,7 @@ for(const n of news){
   if(html!==original)fs.writeFileSync(file,html);
 }
 if(activeNews.length){
-  const displayDate=n=>{const d=(n.modified>n.date?n.modified:n.date).slice(0,10);const fmt=new Date(d+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});return n.modified>n.date?'Güncelleme: '+fmt:fmt;};
+  const displayDate=n=>new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
   const cards=activeNews.slice(0,3).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'">'+photoCard(n)+'<div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+displayDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi ve etkisini oku →</span></div></a>').join('');
   const home=fs.readFileSync('index.html','utf8');
   const updated=home.replace(/(<section class="section news-home">[\s\S]*?<div class="news-grid">)[\s\S]*?(<\/div><\/div><\/section>)/,(_,a,b)=>a+cards+b);
