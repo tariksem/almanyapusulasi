@@ -39,6 +39,7 @@ jobs:
           }
           console.log('Turkish news date parser regression passed');
           NODE
+          node scripts/validate-news-date-translations.js
           node scripts/generate-bulk-i18n.js
           node scripts/validate-priority-guide-translations.js
           node scripts/validate-family-translation-parity.js
