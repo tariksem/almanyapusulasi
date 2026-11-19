@@ -11,6 +11,12 @@ function curatedRoutes(){
    result.add(slug);
   }
  }
+ const news=JSON.parse(fs.readFileSync('data/news-languages.json','utf8')).items;
+ for(const [slug,edition] of Object.entries(news)){
+  if(!/^[a-z0-9-]+$/.test(slug)||!edition.tr||!edition.en||!edition.de)
+   throw new Error('Incomplete multilingual news: '+slug);
+  result.add('haberler/'+slug);
+ }
  return [...result];
 }
 function bulkRoutes(){
