@@ -298,7 +298,25 @@ function translatedHtml(source,{lang,translations,routes}){
     const text=normalize(value);
     if(!shouldTranslate(text))return text;
     const entry=translations[segmentId(text)];
-    if(!entry||!entry[lang])throw new Error('Missing '+lang+' translation for: '+text.slice(0,120));
+    if(!entry||!entry[lang]){
+      // News archive dates are regenerated from article metadata during deployment.
+      // Translate their Turkish month names deterministically rather than requiring
+      // a new catalog entry every time a publication date changes.
+      const months={
+        'Ocak':['January','Januar'],'Şubat':['February','Februar'],
+        'Mart':['March','März'],'Nisan':['April','April'],
+        'Mayıs':['May','Mai'],'Haziran':['June','Juni'],
+        'Temmuz':['July','Juli'],'Ağustos':['August','August'],
+        'Eylül':['September','September'],'Ekim':['October','Oktober'],
+        'Kasım':['November','November'],'Aralık':['December','Dezember']
+      };
+      const date=text.match(/^(?:(\\d{1,2}) )?(Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık) (20\\d{2})$/);
+      if(date){
+        const month=months[date[2]][lang==='en'?0:1];
+        return lang==='en'?(date[1]?month+' '+date[1]+', '+date[3]:month+' '+date[3]):(date[1]?date[1]+'. '+month+' '+date[3]:month+' '+date[3]);
+      }
+      throw new Error('Missing '+lang+' translation for: '+text.slice(0,120));
+    }
     return entry[lang];
   };
   let html=processJsonLd(source,{translate,lang});
