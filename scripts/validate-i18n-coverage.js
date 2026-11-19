@@ -4,6 +4,13 @@ const {curatedRoutes}=require('./i18n-registry.js');
 const groups=['priority','migration','family','finance-housing','career','commercial','tools','news'];
 const urls=groups.flatMap(g=>[...fs.readFileSync('sitemap-'+g+'.xml','utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname));
 const pathSet=new Set(urls);
+// A localized sitemap URL without a Turkish source is not a verified translation.
+// Catch stale news/category URLs and broken language-switch destinations early.
+const orphanLocalized=urls.filter(p=>p.startsWith('/en/')||p.startsWith('/de/')).filter(p=>{
+ const source=p.replace(/^\/(en|de)(?=\/)/,'');
+ return !pathSet.has(source);
+});
+assert.deepEqual(orphanLocalized,[], 'Localized sitemap URLs without a Turkish source: '+orphanLocalized.join(', '));
 const turkish=[...pathSet].filter(p=>!p.startsWith('/en/')&&!p.startsWith('/de/')).sort();
 const local=lang=>turkish.filter(p=>pathSet.has('/'+lang+(p==='/'?'/':p)));
 const en=local('en'),de=local('de');
