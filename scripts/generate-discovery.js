@@ -1,5 +1,6 @@
 const fs=require('node:fs');
 const cp=require('node:child_process');
+const {metaDescription}=require('./news-meta.js');
 const SITE='https://almanyapusulasi.de';
 const editorial=JSON.parse(fs.readFileSync('data/news-editorial.json','utf8')).items;
 const photoRegistry=JSON.parse(fs.readFileSync('data/news-photos.json','utf8')).items;
@@ -42,7 +43,7 @@ for(const file of files.filter(f=>f==='index.html'||f.endsWith('/index.html'))){
   const date=[modified,lastmods.get(canonical),changed.has(file)?new Date().toISOString().slice(0,10):null].filter(Boolean).sort().at(-1);
   pages.push({url:canonical,path,date});
   if(article&&path.startsWith('/haberler/')){
-    news.push({url:canonical,title:article.headline,description:article.description||html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i)?.[1]||'',date:article.datePublished,modified:article.dateModified||article.datePublished,category:article.articleSection||'Gündem'});
+    news.push({url:canonical,title:article.headline,description:article.description||metaDescription(html)||'',date:article.datePublished,modified:article.dateModified||article.datePublished,category:article.articleSection||'Gündem'});
   }
 }
 pages.sort((a,b)=>a.url.localeCompare(b.url));
