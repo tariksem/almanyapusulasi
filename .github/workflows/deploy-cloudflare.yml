@@ -38,6 +38,19 @@ jobs:
           node --check assets/js/i18n-ui.js
           node scripts/validate-translated-guides.js
           node scripts/generate-discovery.js
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const archive=fs.readFileSync('haberler/index.html','utf8');
+          const home=fs.readFileSync('index.html','utf8');
+          for(const [name,html] of [['news archive',archive],['homepage',home]]){
+            const cards=[...html.matchAll(/<a class="news-card" href="([^"]+)"/g)].map(x=>x[1]);
+            const wrong=cards.filter(href=>!href.startsWith('/haberler/'));
+            if(wrong.length)throw Error(name+' contains foreign-language news links: '+wrong.join(', '));
+            if(new Set(cards).size!==cards.length)throw Error(name+' contains duplicated news cards');
+            if(!cards.length)throw Error(name+' contains no news cards');
+            console.log(name+': '+cards.length+' unique Turkish news links');
+          }
+          NODE
           node scripts/generate-bulk-i18n.js
           node --check scripts/generate-home-parity.js
           node scripts/generate-home-parity.js
