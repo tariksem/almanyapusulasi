@@ -30,6 +30,22 @@ for(const [path,lang,uri] of names){
  for(const [l,u] of [['tr','/'],['en','/en/'],['de','/de/']])
    assert.ok(html.includes('hreflang="'+l+'" href="https://almanyapusulasi.de'+u+'"'),path+' '+l+' hreflang');
 }
+// Every indexed localized page must declare its actual language and canonical URL.
+// The homepage-only checks above do not detect wrong-language article metadata.
+const sitemapGroups=['priority','migration','family','finance-housing','career','commercial','tools','news'];
+const indexedPaths=new Set(sitemapGroups.flatMap(group=>[...fs.readFileSync('sitemap-'+group+'.xml','utf8').matchAll(/<loc>([^<]+)<\\/loc>/g)].map(match=>new URL(match[1]).pathname)));
+for(const uri of indexedPaths){
+ const match=uri.match(/^\\/(en|de)\\/(.*)$/);
+ if(!match)continue;
+ const [,locale,slug]=match;
+ const file=locale+'/'+slug+'index.html';
+ assert.ok(fs.existsSync(file),'Indexed localized page is missing: '+file);
+ const html=fs.readFileSync(file,'utf8');
+ assert.match(html,/<html\\b[^>]*\\blang=["'](?:en|de)["']/i,'Missing locale declaration: '+file);
+ const declared=html.match(/<html\\b[^>]*\\blang=["']([^"']+)["']/i);
+ assert.equal(declared[1],locale,'Wrong document language: '+file);
+ assert.ok(html.includes('rel="canonical" href="https://almanyapusulasi.de'+uri+'"'),'Incorrect canonical URL: '+file);
+}
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 for(const asset of ['i18n-core.js','i18n-ui.js','i18n.css'])assert.ok(shell.includes(asset),'Shared shell missing '+asset);
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
