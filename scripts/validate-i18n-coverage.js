@@ -7,7 +7,10 @@ const pathSet=new Set(urls);
 const turkish=[...pathSet].filter(p=>!p.startsWith('/en/')&&!p.startsWith('/de/')).sort();
 const local=lang=>turkish.filter(p=>pathSet.has('/'+lang+(p==='/'?'/':p)));
 const en=local('en'),de=local('de');
-const published=turkish.filter(p=>en.includes(p)&&de.includes(p));
+const enSet=new Set(en),deSet=new Set(de);
+const missingEnglish=turkish.filter(p=>!enSet.has(p));
+const missingGerman=turkish.filter(p=>!deSet.has(p));
+const published=turkish.filter(p=>enSet.has(p)&&deSet.has(p));
 assert.ok(fs.existsSync('i18n-bulk-verification.json'),'Bulk translations may not count as complete before QA');
 const bulkReport=JSON.parse(fs.readFileSync('i18n-bulk-verification.json','utf8'));
 assert.equal(bulkReport.status,'automated-structural-functional-language-qa-passed');
@@ -20,6 +23,10 @@ const coverage={
   turkishPages:turkish.length,
   englishPages:en.length,
   germanPages:de.length,
+  missingEnglishPaths:missingEnglish,
+  missingGermanPaths:missingGerman,
+  englishOnlyPaths:turkish.filter(p=>enSet.has(p)&&!deSet.has(p)),
+  germanOnlyPaths:turkish.filter(p=>deSet.has(p)&&!enSet.has(p)),
   completeTopics:complete.length,
   remainingTopics:missing.length,
   publishedButUnverified:published.filter(p=>!verified.has(p)),
@@ -38,4 +45,5 @@ const essential=['/','/blue-card/','/chancenkarte-firsat-karti/','/kindergeld/',
 for(const p of essential)assert.ok(complete.includes(p),'Essential EN/DE parity missing: '+p);
 fs.writeFileSync('i18n-coverage.json',JSON.stringify(coverage,null,2)+'\n');
 console.log('i18n coverage: '+complete.length+'/'+turkish.length+' Turkish source URLs have both EN and DE editions; '+missing.length+' still need translation.');
+console.log('Missing EN URLs: '+missingEnglish.length+'; missing DE URLs: '+missingGerman.length+'; published but not verified: '+coverage.publishedButUnverified.length);
 console.log('Remaining pages sample: '+missing.slice(0,20).join(', '));
