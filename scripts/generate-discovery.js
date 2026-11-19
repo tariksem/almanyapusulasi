@@ -1,9 +1,10 @@
 const fs=require('node:fs');
 const cp=require('node:child_process');
+const {metaDescription}=require('./news-meta.js');
 const SITE='https://almanyapusulasi.de';
 const editorial=JSON.parse(fs.readFileSync('data/news-editorial.json','utf8')).items;
 const photoRegistry=JSON.parse(fs.readFileSync('data/news-photos.json','utf8')).items;
-const photoCard=(n)=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=photoRegistry[slug];if(!item)return '';return '<div class="news-card-photo"><img src="'+escape(item.image)+'" alt="'+escape(item.alt)+'" loading="lazy" decoding="async" width="1200" height="675"></div>';};
+const photoCard=(n)=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=photoRegistry[slug];if(!item)return '<div class="news-card-photo ap-news-topic-art" aria-hidden="true"><span>'+escape(n.category||'Almanya')+'</span></div>';return '<div class="news-card-photo"><img src="'+escape(item.image)+'" alt="'+escape(item.alt)+'" loading="lazy" decoding="async" width="1200" height="675"></div>';};
 const today=(process.env.NEWS_AS_OF||new Date().toISOString().slice(0,10));
 const editorialState=n=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=editorial[slug];if(!item)throw new Error('Missing editorial record: '+slug);return {...item,state:item.state==='published'&&item.expiresOn&&item.expiresOn<today?'archived':item.state};};
 
@@ -42,7 +43,7 @@ for(const file of files.filter(f=>f==='index.html'||f.endsWith('/index.html'))){
   const date=[modified,lastmods.get(canonical),changed.has(file)?new Date().toISOString().slice(0,10):null].filter(Boolean).sort().at(-1);
   pages.push({url:canonical,path,date});
   if(article&&path.startsWith('/haberler/')){
-    news.push({url:canonical,title:article.headline,description:article.description||html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i)?.[1]||'',date:article.datePublished,modified:article.dateModified||article.datePublished,category:article.articleSection||'Gündem'});
+    news.push({url:canonical,title:article.headline,description:article.description||metaDescription(html)||'',date:article.datePublished,modified:article.dateModified||article.datePublished,category:article.articleSection||'Gündem'});
   }
 }
 pages.sort((a,b)=>a.url.localeCompare(b.url));
@@ -60,7 +61,9 @@ for(const group of groups){
   const body=pages.filter(p=>classify(p)===group).map(p=>'  <url><loc>'+escape(p.url)+'</loc>'+(p.date?'<lastmod>'+escape(p.date)+'</lastmod>':'')+'</url>').join('\n');
   fs.writeFileSync('sitemap-'+group+'.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+body+'\n</urlset>\n');
 }
-news.sort((a,b)=>b.modified.localeCompare(a.modified)||b.date.localeCompare(a.date)||a.url.localeCompare(b.url));
+// The news hub promises publication-date order; editing old articles must not
+// make September stories appear newer than genuinely new November reporting.
+news.sort((a,b)=>b.date.localeCompare(a.date)||b.modified.localeCompare(a.modified)||a.url.localeCompare(b.url));
 const activeNews=news.filter(n=>{const e=editorialState(n);return e.state==='published'&&(!e.reviewBy||e.reviewBy>=today);});
 const archiveNews=news.filter(n=>!activeNews.includes(n));
 for(const n of news){
@@ -79,7 +82,7 @@ for(const n of news){
   if(html!==original)fs.writeFileSync(file,html);
 }
 if(activeNews.length){
-  const displayDate=n=>{const d=(n.modified>n.date?n.modified:n.date).slice(0,10);const fmt=new Date(d+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});return n.modified>n.date?'Güncelleme: '+fmt:fmt;};
+  const displayDate=n=>new Date(n.date.slice(0,10)+'T12:00:00Z').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
   const cards=activeNews.slice(0,3).map(n=>'<a class="news-card" href="'+new URL(n.url).pathname+'">'+photoCard(n)+'<div class="news-card-body"><div class="news-meta"><span class="news-tag">'+escape(n.category)+'</span><time datetime="'+n.date.slice(0,10)+'">'+displayDate(n)+'</time></div><h3>'+escape(n.title)+'</h3><p>'+escape(n.description)+'</p><span class="news-read">Haberi ve etkisini oku →</span></div></a>').join('');
   const home=fs.readFileSync('index.html','utf8');
   const updated=home.replace(/(<section class="section news-home">[\s\S]*?<div class="news-grid">)[\s\S]*?(<\/div><\/div><\/section>)/,(_,a,b)=>a+cards+b);

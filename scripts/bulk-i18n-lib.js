@@ -307,9 +307,44 @@ const TURKISH_MONTHS=Object.freeze({
  * News archive dates are regenerated on every deployment, so date strings must
  * not require new immutable catalog IDs. All other text remains catalog-gated.
  */
+// Short news titles, categories and summaries are editorially translated in
+// data/news-languages.json. They change with the news cycle and do not belong
+// in the frozen 185-route guide translation catalog.
+const NEWS_TRANSLATIONS=new Map();
+const newsFile=require('node:path').join(__dirname,'../data/news-languages.json');
+if(fs.existsSync(newsFile)){
+  const newsCatalog=JSON.parse(fs.readFileSync(newsFile,'utf8'));
+  const editions=newsCatalog.items||{};
+  for(const [slug,article] of Object.entries(editions)){
+    for(const field of ['title','description','category']){
+      const entry={tr:article.tr?.[field],en:article.en?.[field],de:article.de?.[field]};
+      if(!entry.tr||!entry.en||!entry.de)
+        throw new Error('Incomplete news '+field+' translation: '+slug);
+      const id=segmentId(entry.tr);
+      const previous=NEWS_TRANSLATIONS.get(id);
+      if(previous&&(previous.en!==entry.en||previous.de!==entry.de))
+        throw new Error('Conflicting news translation: '+entry.tr);
+      NEWS_TRANSLATIONS.set(id,entry);
+    }
+  }
+  // Source-corrected existing news articles retain reviewable translations
+  // for every changed claim and do not contaminate the frozen guide catalog.
+  for(const [slug,entries] of Object.entries(newsCatalog.revisions||{})){
+    for(const entry of entries){
+      if(!entry.tr||!entry.en||!entry.de)
+        throw new Error('Incomplete official-status translation: '+slug);
+      const id=segmentId(entry.tr);
+      const previous=NEWS_TRANSLATIONS.get(id);
+      if(previous&&(previous.en!==entry.en||previous.de!==entry.de))
+        throw new Error('Conflicting official-status translation: '+entry.tr);
+      NEWS_TRANSLATIONS.set(id,entry);
+    }
+  }
+}
+
 function translationEntry(value,translations){
   const text=normalize(value);
-  const catalogEntry=translations[segmentId(text)];
+  const catalogEntry=translations[segmentId(text)]||NEWS_TRANSLATIONS.get(segmentId(text));
   if(catalogEntry)return catalogEntry;
   const date=text.match(/^(Güncelleme:\s*)?(?:(\d{1,2})\s+)?(Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık)\s+(20\d{2})$/u);
   if(!date)return null;
