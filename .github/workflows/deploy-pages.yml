@@ -39,6 +39,7 @@ jobs:
           node --check assets/js/i18n-core.js
           node --check assets/js/i18n-ui.js
           node scripts/validate-translated-guides.js
+          node scripts/validate-news-editions.js
           node scripts/generate-discovery.js
           node scripts/generate-bulk-i18n.js
           node --check scripts/generate-home-parity.js
