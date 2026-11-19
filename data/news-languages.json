@@ -293,5 +293,71 @@
         "sourceTitle": "Bundesregierung · Sozialversicherungsrechengrößen 2027"
       }
     }
+  },
+  "revisions": {
+    "strom-netzentgelte-2027": [
+      {
+        "tr": "Almanya 2027 elektrik faturaları: Bundestag 12 Kasım'da 2027–2029 için yıllık 5,525 milyar € şebeke desteğini kabul etti; Bundesrat incelemesi bekleniyor.",
+        "en": "Germany's 2027 electricity bills: On 12 November the Bundestag approved €5.525 billion in annual grid support for 2027–2029; Bundesrat review is pending.",
+        "de": "Stromrechnungen 2027: Der Bundestag stimmte am 12. November jährlich 5,525 Milliarden Euro Netzentgelt-Zuschuss für 2027–2029 zu; der Bundesrat muss sich noch damit befassen."
+      },
+      {
+        "tr": "2027–2029 elektrik şebeke desteği: Bundestag kabul etti",
+        "en": "Electricity grid subsidy 2027–2029: Bundestag approves bill",
+        "de": "Netzentgelt-Zuschuss 2027–2029: Bundestag stimmt zu"
+      },
+      {
+        "tr": "19 Kasım 2026 itibarıyla:",
+        "en": "As of 19 November 2026:",
+        "de": "Stand 19. November 2026:"
+      },
+      {
+        "tr": "Bundestag, 12 Kasım 2026'da 2027–2029 döneminin her yılı için 5,525 milyar € şebeke desteği öngören tasarıyı kabul etti. Bundesrat incelemesi ve yürürlük aşamaları tamamlanmadan düzenleme kesin yürürlükte kabul edilmemelidir.",
+        "en": "On 12 November 2026 the Bundestag approved the bill providing €5.525 billion in annual electricity grid support for 2027–2029. The Bundesrat stage and entry into force still need to be completed.",
+        "de": "Am 12. November 2026 nahm der Bundestag den Entwurf für jährlich 5,525 Milliarden Euro Netzentgelt-Zuschuss 2027–2029 an. Das Bundesratsverfahren und das Inkrafttreten stehen noch aus."
+      },
+      {
+        "tr": "Bundestag kararı 12 Kasım 2026 tarihlidir. Bundesrat aşaması ve Bundesgesetzblatt yayımı ayrıca izlenecektir; bu tutarı hanelerin faturasında kesin indirim gibi göstermiyoruz.",
+        "en": "The Bundestag decision is dated 12 November 2026. The Bundesrat process and publication in the Federal Law Gazette must be checked; household savings are not guaranteed.",
+        "de": "Der Bundestagsbeschluss stammt vom 12. November 2026. Bundesratsverfahren und Verkündung müssen noch geprüft werden; konkrete Ersparnisse für Haushalte sind nicht garantiert."
+      },
+      {
+        "tr": "İlk yayın: 6 Eylül 2026 · Resmî durum kontrolü: 19 Kasım 2026",
+        "en": "First published: 6 September 2026 · Official status checked: 19 November 2026",
+        "de": "Erstveröffentlichung: 6. September 2026 · Amtlicher Stand geprüft: 19. November 2026"
+      },
+      {
+        "tr": "Bundestag — 12 Kasım genel kurul kararı",
+        "en": "Bundestag — Plenary decision of 12 November",
+        "de": "Bundestag — Plenarbeschluss vom 12. November"
+      }
+    ],
+    "elster-vergi-bescheidleri-2027": [
+      {
+        "tr": "2027 ELSTER elektronik tebligatı: Bundestag kabul etti",
+        "en": "2027 ELSTER electronic notices: Bundestag approves bill",
+        "de": "ELSTER-Bescheide ab 2027: Bundestag stimmt Gesetzentwurf zu"
+      },
+      {
+        "tr": "19 Kasım 2026 itibarıyla:",
+        "en": "As of 19 November 2026:",
+        "de": "Stand 19. November 2026:"
+      },
+      {
+        "tr": "Jahressteuergesetz 2026, 12 Kasım 2026 tarihinde Bundestag tarafından kabul edildi. Bu, kanunun hemen yürürlüğe girdiği anlamına gelmez. Bundesrat aşaması ve yayımlanma süreci izlenmelidir. 2027 için elektronik tebligat planı nihai metne bağlıdır.",
+        "en": "The Bundestag passed the 2026 Annual Tax Act bill on 12 November 2026. This does not mean it is already in force. The Bundesrat stage and official promulgation must be checked. Electronic notices planned for 2027 depend on the final law.",
+        "de": "Der Bundestag hat das Jahressteuergesetz 2026 am 12. November 2026 beschlossen. Es ist damit nicht automatisch in Kraft. Das Bundesratsverfahren und die Verkündung sind zu prüfen. Die elektronischen Bescheide ab 2027 hängen vom endgültigen Gesetz ab."
+      },
+      {
+        "tr": "İlk yayın: 12 Ağustos 2026 · Resmî durum kontrolü: 19 Kasım 2026",
+        "en": "First published: 12 August 2026 · Official status checked: 19 November 2026",
+        "de": "Erstveröffentlichung: 12. August 2026 · Amtlicher Stand geprüft: 19. November 2026"
+      },
+      {
+        "tr": "Bundestag — Jahressteuergesetz 2026, 12 Kasım kabulü",
+        "en": "Bundestag — Annual Tax Act 2026 approved on 12 November",
+        "de": "Bundestag — Jahressteuergesetz 2026 am 12. November beschlossen"
+      }
+    ]
   }
 }
