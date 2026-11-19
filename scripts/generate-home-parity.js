@@ -132,7 +132,7 @@ function build(lang){
  }
  // Date strings are generated from NewsArticle metadata and must be translated
  // with the same resolver used by the archive generator and its QA.
- body=body.replace(/(<time\\b[^>]*>)([^<]+)(<\\/time>)/g,(full,open,text,close)=>{
+ body=body.replace(/(<time\b[^>]*>)([^<]+)(<\/time>)/g,(full,open,text,close)=>{
    const translation=translationEntry(text,{});
    return open+(translation&&translation[lang]?translation[lang]:text)+close;
  });
