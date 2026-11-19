@@ -3,7 +3,7 @@ const cp=require('node:child_process');
 const SITE='https://almanyapusulasi.de';
 const editorial=JSON.parse(fs.readFileSync('data/news-editorial.json','utf8')).items;
 const photoRegistry=JSON.parse(fs.readFileSync('data/news-photos.json','utf8')).items;
-const photoCard=(n)=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=photoRegistry[slug];if(!item)return '';return '<div class="news-card-photo"><img src="'+escape(item.image)+'" alt="'+escape(item.alt)+'" loading="lazy" decoding="async" width="1200" height="675"></div>';};
+const photoCard=(n)=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=photoRegistry[slug];if(!item)return '<div class="news-card-photo ap-news-topic-art" aria-hidden="true"><span>'+escape(n.category||'Almanya')+'</span></div>';return '<div class="news-card-photo"><img src="'+escape(item.image)+'" alt="'+escape(item.alt)+'" loading="lazy" decoding="async" width="1200" height="675"></div>';};
 const today=(process.env.NEWS_AS_OF||new Date().toISOString().slice(0,10));
 const editorialState=n=>{const slug=new URL(n.url).pathname.split('/').filter(Boolean).at(-1);const item=editorial[slug];if(!item)throw new Error('Missing editorial record: '+slug);return {...item,state:item.state==='published'&&item.expiresOn&&item.expiresOn<today?'archived':item.state};};
 
