@@ -17,7 +17,8 @@ const expected=sourcePaths().filter(path=>path!=='/'&&!curated.has(routeFromPath
 const actual=Object.keys(pages).sort();
 assert.deepEqual(actual,expected,'Bulk catalog must exactly cover the source inventory left after curated translations');
 assert.equal(actual.length,185,'The verified backlog changed; review inventory instead of silently changing the denominator');
-assert.equal(publishedRouteSet.size,227,'Every non-home Turkish route must publish exactly once');
+assert.equal(publishedRouteSet.size,curatedRoutes().length+actual.length,
+  'Every curated and bulk route must be unique and publish exactly once');
 
 const sorted=value=>[...value].sort();
 const ids=html=>[...html.matchAll(/\sid\s*=\s*["']([^"']+)["']/gi)].map(match=>match[1]).sort();
