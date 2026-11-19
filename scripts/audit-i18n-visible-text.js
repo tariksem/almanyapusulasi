@@ -26,7 +26,9 @@ for (const url of sources) {
     const html=fs.readFileSync(localized,'utf8');
     const text=visible(html);
     if (tr.length>=200 && tr===text) findings.push({url,lang,reason:'identical-visible-text'});
-    if (!new RegExp('<html\\b[^>]*\\blang=["\\']'+lang+'(?:-[^"\\']+)?["\\']','i').test(html))
+    const htmlTag = html.match(/<html\b[^>]*>/i)?.[0] || '';
+    const langAttribute = htmlTag.match(/\blang\s*=\s*["']([^"']+)["']/i)?.[1] || '';
+    if (langAttribute.toLowerCase().split('-')[0] !== lang)
       findings.push({url,lang,reason:'incorrect-html-lang'});
   }
 }
