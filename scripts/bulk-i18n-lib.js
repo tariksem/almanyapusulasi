@@ -310,7 +310,7 @@ function translatedHtml(source,{lang,translations,routes}){
         'Eylül':['September','September'],'Ekim':['October','Oktober'],
         'Kasım':['November','November'],'Aralık':['December','Dezember']
       };
-      const date=text.match(/^(?:(\\d{1,2}) )?(Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık) (20\\d{2})$/);
+      const date=text.match(/^(?:(\d{1,2}) )?(Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık) (20\d{2})$/);
       if(date){
         const month=months[date[2]][lang==='en'?0:1];
         return lang==='en'?(date[1]?month+' '+date[1]+', '+date[3]:month+' '+date[3]):(date[1]?date[1]+'. '+month+' '+date[3]:month+' '+date[3]);
