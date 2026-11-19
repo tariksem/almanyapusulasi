@@ -30,7 +30,18 @@ function createPicker(){
  for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
   const link=document.createElement("a");
   link.className="ap-lang-flag"+(lang===code?" is-current":"");
-  link.href=api.equivalent(path,code);
+  // Prefer the page's published alternate; a route fallback may point to the homepage.
+  const alternate=[...document.querySelectorAll('link[rel="alternate"][hreflang]')]
+    .find(node=>node.hreflang.toLowerCase()===code);
+  let target=api.equivalent(path,code);
+  if(alternate){
+    try{
+      const candidate=new URL(alternate.href,location.origin);
+      if(candidate.origin===location.origin&&candidate.pathname.startsWith('/'))
+        target=candidate.pathname;
+    }catch(_error){/* Invalid alternate: keep registry fallback. */}
+  }
+  link.href=target+location.search+location.hash;
   link.hreflang=code;
   link.lang=code;
   link.title=name;
