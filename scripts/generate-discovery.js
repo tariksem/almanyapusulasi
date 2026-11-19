@@ -41,7 +41,7 @@ for(const file of files.filter(f=>f==='index.html'||f.endsWith('/index.html'))){
   const modified=nodes.map(s=>s.dateModified||s.datePublished).filter(Boolean).sort().at(-1)?.slice(0,10);
   const date=[modified,lastmods.get(canonical),changed.has(file)?new Date().toISOString().slice(0,10):null].filter(Boolean).sort().at(-1);
   pages.push({url:canonical,path,date});
-  if(article){
+  if(article&&path.startsWith('/haberler/')){
     news.push({url:canonical,title:article.headline,description:article.description||html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i)?.[1]||'',date:article.datePublished,modified:article.dateModified||article.datePublished,category:article.articleSection||'Gündem'});
   }
 }
@@ -61,8 +61,8 @@ for(const group of groups){
   fs.writeFileSync('sitemap-'+group+'.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+body+'\n</urlset>\n');
 }
 news.sort((a,b)=>b.modified.localeCompare(a.modified)||b.date.localeCompare(a.date)||a.url.localeCompare(b.url));
-const activeNews=news.filter(n=>editorialState(n).state==='published');
-const archiveNews=news.filter(n=>editorialState(n).state!=='published');
+const activeNews=news.filter(n=>{const e=editorialState(n);return e.state==='published'&&(!e.reviewBy||e.reviewBy>=today);});
+const archiveNews=news.filter(n=>!activeNews.includes(n));
 for(const n of news){
   const e=editorialState(n);
   const file=new URL(n.url).pathname.slice(1)+'index.html';
@@ -100,7 +100,7 @@ if(activeNews.length){
   let refreshed=hasFeature?archive.replace(featurePattern,(_,a,b)=>a+featuredBody+b):archive;
   refreshed=refreshed.replace(archivePattern,(_,a,b)=>a+archiveCards+b).replace(/<section class="section news-archive" id="arsiv">[\s\S]*?<\/section>/,'').replace('<section class="section"><div class="container"><div class="section-header"><span class="section-label">Haberden karara</span>',archiveSection+'<section class="section"><div class="container"><div class="section-header"><span class="section-label">Haberden karara</span>');
   if(!refreshed.includes('id="arsiv"'))throw new Error('Archive insertion failed');
-  if(!refreshed.includes('datetime="'+featured.date.slice(0,10)+'"'))throw new Error('News archive featured article was not updated');
+  if(!refreshed.includes('href="'+new URL(featured.url).pathname+'"'))throw new Error('News archive latest article missing');
   fs.writeFileSync('haberler/index.html',refreshed);
   const items=activeNews.map(n=>'<item><title>'+escape(n.title)+'</title><link>'+escape(n.url)+'</link><guid isPermaLink="true">'+escape(n.url)+'</guid><pubDate>'+new Date(n.date).toUTCString()+'</pubDate><category>'+escape(n.category)+'</category><description>'+escape(n.description)+'</description></item>').join('\n');
   fs.writeFileSync('rss.xml','<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Almanya Pusulası — Haberler</title><link>'+SITE+'/haberler/</link><description>Almanya’daki Türkleri ilgilendiren seçilmiş gelişmeler.</description><language>tr</language><lastBuildDate>'+new Date(activeNews[0].date).toUTCString()+'</lastBuildDate>\n'+items+'\n</channel></rss>\n');
