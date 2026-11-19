@@ -1,0 +1,462 @@
+{
+  "version": 1,
+  "updated": "2026-11-19",
+  "items": [
+    {
+      "id": "cop-ayirma",
+      "cat": "cop",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "coz",
+      "word": "Mülltrennung",
+      "source": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/richtiger-muelltrennung-ressourcen-schonen-umwelt",
+      "tr": [
+        "Bu çöp nereye atılır? Rengi değil, türü önemli",
+        "Önce eşyanın ambalaj olup olmadığına bakın, sonra yerel toplama sistemini kontrol edin.",
+        [
+          "Kâğıt ve kartonu temiz ve kuruysa kâğıt toplama sistemine ayırın.",
+          "Boş hafif ambalajları yerel sarı toplama sistemine, depozitosuz cam ambalajı cam konteynerine götürün.",
+          "Pil, elektronik ve boya kalıntılarını özel toplama noktasına verin."
+        ],
+        "Her plastik eşya sarı kutuya girmez. Belediyeler arasında toplama farklılıkları olabilir."
+      ],
+      "en": [
+        "Which bin? Think packaging, not just colour",
+        "First check whether an item is packaging, then confirm the local collection system.",
+        [
+          "Put clean, dry paper and cardboard into paper recycling.",
+          "Use local yellow collection for empty lightweight packaging; sort non-returnable glass packaging into glass containers.",
+          "Take batteries, electronics and leftover paint to designated collection points."
+        ],
+        "The yellow bin is not for every plastic item. Municipal collection rules vary."
+      ],
+      "de": [
+        "Wohin mit dem Müll? Nicht nur die Farbe zählt",
+        "Erst prüfen, ob es eine Verpackung ist, dann die örtliche Sammlung beachten.",
+        [
+          "Sauberes, trockenes Papier und Pappe ins Altpapier geben.",
+          "Leere Leichtverpackungen in die gelbe Sammlung, Altglas ohne Pfand in die Glascontainer geben.",
+          "Batterien, Elektrogeräte und Farbreste zur passenden Sammelstelle bringen."
+        ],
+        "Nicht jeder Kunststoffgegenstand gehört in die gelbe Sammlung. Örtliche Regeln unterscheiden sich."
+      ]
+    },
+    {
+      "id": "abfallkalender",
+      "cat": "cop",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "coz",
+      "word": "Abfuhrkalender",
+      "source": "https://awm.stadt-muenster.de/verwertung-entsorgung/online-entsorgungskalender",
+      "tr": [
+        "Çöp kutusu hangi gün çıkarılır?",
+        "Toplama gününü tahmin etmeyin; sokak ve ev numarasıyla resmî takvimi açın.",
+        [
+          "Şehrinizin Entsorgungsbetrieb veya Abfallkalender sayfasını bulun.",
+          "Sokağı, ev numarasını ve atık türünü seçin.",
+          "Resmî takvimin tatil değişikliklerini ve hatırlatıcılarını kontrol edin."
+        ],
+        "Adres olmadan kesin toplama günü söylemek doğru değildir."
+      ],
+      "en": [
+        "When should you put the bins out?",
+        "Don't guess; find the official collection calendar for your street and house.",
+        [
+          "Find the official municipal Abfuhrkalender or waste service.",
+          "Choose your street, house number and waste type.",
+          "Check public holiday changes and reminder options."
+        ],
+        "A specific collection day cannot be confirmed without an address."
+      ],
+      "de": [
+        "Wann muss die Tonne raus?",
+        "Den offiziellen Abfuhrkalender für Straße und Hausnummer nutzen.",
+        [
+          "Abfuhrkalender der Kommune oder des Entsorgers suchen.",
+          "Straße, Hausnummer und Abfallart auswählen.",
+          "Feiertagsänderungen und Erinnerungsoptionen prüfen."
+        ],
+        "Ohne konkrete Adresse lassen sich keine sicheren Abfuhrtage nennen."
+      ]
+    },
+    {
+      "id": "sperrmuell",
+      "cat": "cop",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "coz",
+      "word": "Sperrmüll / Wertstoffhof",
+      "source": "https://www.umweltbundesamt.de/themen/abfaelle-im-haushalt",
+      "tr": [
+        "Eski kanepe, pil, telefon: hangisi nereye?",
+        "Büyük mobilya, pil ve elektronik için ayrı toplama yolları vardır.",
+        [
+          "Büyük eşya için belediyenin Sperrmüll hizmetini kontrol edin.",
+          "Pil ve elektronik eşyaları uygun geri alma noktalarına verin.",
+          "Wertstoffhof'a gitmeden önce randevu, miktar ve olası ücret koşullarını öğrenin."
+        ],
+        "Büyük eşyayı izinsiz kaldırıma bırakmayın."
+      ],
+      "en": [
+        "Old sofa, battery or phone: where does it go?",
+        "Bulky furniture, batteries and electronics have different collection routes.",
+        [
+          "Check municipal Sperrmüll services for bulky furniture.",
+          "Take batteries and electronic devices to authorised return points.",
+          "Check booking, quantity and fee rules before visiting a recycling centre."
+        ],
+        "Don't leave bulky waste on the pavement without checking local rules."
+      ],
+      "de": [
+        "Sofa, Batterie und Handy entsorgen",
+        "Sperrgut, Batterien und Elektrogeräte nutzen unterschiedliche Sammelwege.",
+        [
+          "Kommunalen Sperrmüllservice für große Möbel prüfen.",
+          "Batterien und Elektrogeräte an geeigneten Rücknahmestellen abgeben.",
+          "Anmeldung, Mengen- und Gebührenregeln vor dem Wertstoffhof-Besuch prüfen."
+        ],
+        "Sperrmüll nicht ohne Erlaubnis auf den Gehweg stellen."
+      ]
+    },
+    {
+      "id": "pfand",
+      "cat": "tasarruf",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "kolay",
+      "word": "Pfandautomat",
+      "source": "https://www.verbraucherzentrale.de/wissen/umwelt-haushalt/abfall/mehrweg-oder-einweg-wichtige-unterschiede-beim-pfand-11504",
+      "tr": [
+        "Şişeden neden para geri alıyorsunuz? Pfand sistemi",
+        "Tek kullanımlık Pfand genellikle 25 cent; Mehrweg şişelerde sıklıkla 8 veya 15 centtir.",
+        [
+          "Şişede Einweg/Mehrweg ve Pfand işaretini kontrol edin.",
+          "Boş ambalajı uygun iade makinesine bırakın ve fişini alın.",
+          "Pfandbon'u kasada kullanın veya koşullara göre iade isteyin."
+        ],
+        "Her şişe depozitolu değildir; iade koşulları ambalaja ve mağazaya göre değişebilir."
+      ],
+      "en": [
+        "Pfand: why your bottle is worth money",
+        "Single-use deposits are usually 25 cents; reusable bottles often carry 8 or 15 cents.",
+        [
+          "Check the Einweg/Mehrweg label and deposit markings.",
+          "Return the empty container at a suitable machine and collect the receipt.",
+          "Redeem the receipt at the till or request the applicable refund."
+        ],
+        "Not all bottles have a deposit; return rules depend on the type of container."
+      ],
+      "de": [
+        "Pfand: So kommt das Geld zurück",
+        "Einwegpfand beträgt meist 25 Cent, Mehrwegpfand häufig 8 oder 15 Cent.",
+        [
+          "Einweg-/Mehrwegkennzeichnung und Pfandangaben prüfen.",
+          "Leeres Gebinde am passenden Automaten zurückgeben.",
+          "Pfandbon an der Kasse einlösen oder Erstattung verlangen."
+        ],
+        "Nicht jede Flasche ist pfandpflichtig. Rücknahmeregeln unterscheiden sich."
+      ]
+    },
+    {
+      "id": "komsuluk",
+      "cat": "ev",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "kolay",
+      "word": "Hausordnung / Ruhezeiten",
+      "source": "https://www.make-it-in-germany.com/en/arriving-living/getting-started/leisure",
+      "tr": [
+        "Alman komşuyla iyi geçinmenin üç küçük kuralı",
+        "Apartman kurallarını bilmek, günlük sürtüşmelerin çoğunu önleyebilir.",
+        [
+          "Ev sahibinden veya yönetimden Hausordnung'u isteyin.",
+          "Gürültülü bir iş yapacaksanız komşulara kısa haber verin.",
+          "Sorun yaşanırsa önce sakin ve somut bir konuşma deneyin."
+        ],
+        "Sessizlik saatleri için tüm Almanya'da her durumda geçerli tek çizelge yoktur; yerel kuralları öğrenin."
+      ],
+      "en": [
+        "Getting along with neighbours: three small habits",
+        "Knowing the building's house rules can prevent many everyday conflicts.",
+        [
+          "Ask for the Hausordnung and shared-space rules.",
+          "Give neighbours notice before planned noisy activity.",
+          "Start with a calm, specific conversation if something goes wrong."
+        ],
+        "There is no single nationwide timetable for every noise rule; check local requirements."
+      ],
+      "de": [
+        "Gute Nachbarschaft beginnt mit kleinen Dingen",
+        "Die Hausordnung zu kennen hilft, unnötigen Streit zu vermeiden.",
+        [
+          "Hausordnung und Gemeinschaftsregeln einsehen.",
+          "Lärmintensive Arbeiten nach Möglichkeit vorher ankündigen.",
+          "Probleme erst ruhig und konkret ansprechen."
+        ],
+        "Nicht alle Ruhezeiten sind bundesweit einheitlich; örtliche Regelungen beachten."
+      ]
+    },
+    {
+      "id": "paket",
+      "cat": "ev",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "coz",
+      "word": "Nachbar / Abholstation",
+      "source": null,
+      "tr": [
+        "Paketim komşuya bırakılmış. Şimdi ne olacak?",
+        "Takip ekranı ve teslim notu genellikle ilk iki ipucudur.",
+        [
+          "Kargo takip sayfasından teslim bilgisini inceleyin.",
+          "Komşu adı veya teslim noktasını bildiriden kontrol edin.",
+          "Bulunmazsa kargo şirketine ve göndericiye haber verin."
+        ],
+        "Teslim edildi yazması paketin sizin elinize geçtiği anlamına gelmeyebilir."
+      ],
+      "en": [
+        "Parcel delivered to a neighbour?",
+        "Tracking information and a delivery note are the first clues.",
+        [
+          "Check the carrier's tracking record.",
+          "Look for a neighbour's name or collection point on the notice.",
+          "If missing, contact the carrier and the sender."
+        ],
+        "A 'delivered' status does not always mean you received it personally."
+      ],
+      "de": [
+        "Paket beim Nachbarn? So findest du es",
+        "Sendungsverfolgung und Benachrichtigung liefern erste Hinweise.",
+        [
+          "Sendungsverfolgung prüfen.",
+          "Empfänger oder Abholstation auf der Benachrichtigung suchen.",
+          "Bei fehlender Sendung Paketdienst und Absender kontaktieren."
+        ],
+        "„Zugestellt“ bedeutet nicht zwingend persönlich erhalten."
+      ]
+    },
+    {
+      "id": "arkadas",
+      "cat": "sosyal",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "kesfet",
+      "word": "Verein / Ehrenamt",
+      "source": "https://www.make-it-in-germany.com/en/arriving-living/getting-started/leisure",
+      "tr": [
+        "Almanya'da arkadaş edinmek için gerçekçi başlangıç",
+        "Bir defa tanışmaktan çok, aynı insanlarla düzenli buluşmak işe yarar.",
+        [
+          "İlginize göre Verein, VHS kursu veya gönüllü çalışma seçin.",
+          "Bir sonraki buluşma tarihini sorun ve devamlılık sağlayın.",
+          "Kısa, açık bir davette bulunun: 'Nächste Woche wieder?'"
+        ],
+        "İlk gün yakın arkadaşlık beklemeyin; ortak ilgi ve düzenli temas önemlidir."
+      ],
+      "en": [
+        "Making friends: start with regular encounters",
+        "Shared activities you attend repeatedly can make connecting easier.",
+        [
+          "Try a club, VHS course or volunteering group.",
+          "Ask when the next meeting is and go again.",
+          "Suggest a simple follow-up: 'Nächste Woche wieder?'"
+        ],
+        "Friendships take time; don't expect instant closeness."
+      ],
+      "de": [
+        "Neue Freunde finden: regelmäßig statt einmalig",
+        "Gemeinsame Aktivitäten mit wiederholten Treffen erleichtern den Kontakt.",
+        [
+          "Verein, VHS-Kurs oder Ehrenamt ausprobieren.",
+          "Beim ersten Besuch nach dem nächsten Termin fragen.",
+          "Mit „Nächste Woche wieder?“ ein Wiedersehen vorschlagen."
+        ],
+        "Freundschaften brauchen Zeit und gegenseitiges Interesse."
+      ]
+    },
+    {
+      "id": "wg",
+      "cat": "bekar",
+      "personas": "bekar ogrenci yeni",
+      "mode": "coz",
+      "word": "WG / Untermietvertrag",
+      "source": "https://www.polizei-beratung.de/aktuelles/detailansicht/vorsicht-vor-betrug-bei-der-wohnungssuche/",
+      "tr": [
+        "WG odası tutmadan önce soracağınız sorular",
+        "Fiyattan önce sözleşmeye ve birlikte yaşamın gerçek giderlerine bakın.",
+        [
+          "Warmmiete, elektrik, internet ve depozito kapsamını sorun.",
+          "Ana kiracı/alt kiracı ilişkisini ve sözleşmeyi doğrulayın.",
+          "Temizlik, misafir, sigara ve sessizlik alışkanlıklarını konuşun."
+        ],
+        "Görmediğiniz oda için ön ödeme yapmayın."
+      ],
+      "en": [
+        "Before renting a WG room, ask these questions",
+        "Rent is only one part of shared-flat life; clarify terms and expectations.",
+        [
+          "Ask what rent includes: utilities, internet and electricity.",
+          "Check the main lease, sublease and deposit conditions.",
+          "Discuss cleaning, visitors, smoking and quiet times."
+        ],
+        "Don't pay in advance for a room you have not seen."
+      ],
+      "de": [
+        "WG-Zimmer: Diese Fragen vorher stellen",
+        "Miete, Vertrag und Zusammenleben gemeinsam betrachten.",
+        [
+          "Warmmiete, Strom, Internet und Kaution klären.",
+          "Hauptmietvertrag, Untermiete und Vertragspartner prüfen.",
+          "Putzen, Besuch, Rauchen und Ruhezeiten besprechen."
+        ],
+        "Für unbesichtigte Zimmer nicht im Voraus zahlen."
+      ]
+    },
+    {
+      "id": "mietbetrug",
+      "cat": "ev",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "coz",
+      "word": "Wohnungsbetrug",
+      "source": "https://www.polizei-beratung.de/aktuelles/detailansicht/vorsicht-vor-betrug-bei-der-wohnungssuche/",
+      "tr": [
+        "Ev ilanındaki yedi kırmızı bayrak",
+        "Çok ucuz ilan, acil ödeme isteği ve 'anahtarı kargolarım' vaadi riskli olabilir.",
+        [
+          "İlan fotoğrafı, adres ve ilan sahibinin kimliğini karşılaştırın.",
+          "Daireyi görmeden veya güvenli süreç olmadan ödeme göndermeyin.",
+          "Şüphede yazışmaları saklayın; platforma ve polise bildirin."
+        ],
+        "Ünlü bir ilan sitesinde yer alması, ilanı otomatik güvenilir yapmaz."
+      ],
+      "en": [
+        "Seven red flags in rental listings",
+        "Low prices, urgent payments and 'keys by courier' can indicate fraud.",
+        [
+          "Check the listing photos, address and advertiser.",
+          "Don't pay for a flat you have not viewed and verified.",
+          "Keep messages and report suspicious activity to the platform and police."
+        ],
+        "A major listing site is not a guarantee of authenticity."
+      ],
+      "de": [
+        "Mietbetrug: Sieben Warnsignale",
+        "Ungewöhnlich niedrige Preise, Zeitdruck und Schlüsselversand können verdächtig sein.",
+        [
+          "Bilder, Adresse und Anbieter vergleichen.",
+          "Vor Besichtigung und seriöser Prüfung keine Vorkasse zahlen.",
+          "Nachrichten sichern und Verdacht melden."
+        ],
+        "Eine Anzeige auf einem bekannten Portal ist nicht automatisch echt."
+      ]
+    },
+    {
+      "id": "aile-haftasonu",
+      "cat": "aile",
+      "personas": "aile yeni",
+      "mode": "kesfet",
+      "word": "Familienbüro / Stadtbibliothek",
+      "source": "https://www.make-it-in-germany.com/en/arriving-living/getting-started/leisure",
+      "tr": [
+        "Çocuklarla düşük bütçeli hafta sonu",
+        "Şehir kütüphanesi, parklar ve belediye etkinlik takvimiyle başlayın.",
+        [
+          "Familienbüro, Stadtbibliothek ve şehir etkinlik takvimini açın.",
+          "Açık hava etkinliği ve kötü hava için ikinci seçenek belirleyin.",
+          "Giriş, yaş ve rezervasyon koşullarını önceden doğrulayın."
+        ],
+        "Her şehirde aynı etkinlikler ücretsiz değildir."
+      ],
+      "en": [
+        "Low-cost weekends with children",
+        "Start with the library, parks and your city event calendar.",
+        [
+          "Check the Familienbüro, library and municipal events listings.",
+          "Plan an outdoor idea and a bad-weather alternative.",
+          "Verify prices, age limits and booking conditions."
+        ],
+        "Free options differ by place and date."
+      ],
+      "de": [
+        "Günstiges Wochenende mit Kindern",
+        "Stadtbibliothek, Parks und städtische Termine liefern gute Ideen.",
+        [
+          "Familienbüro, Bibliothek und Veranstaltungskalender ansehen.",
+          "Draußen-Aktivität und Schlechtwetter-Alternative planen.",
+          "Eintritt, Alter und Reservierung prüfen."
+        ],
+        "Nicht jedes Angebot ist überall kostenlos."
+      ]
+    },
+    {
+      "id": "ogrenci",
+      "cat": "ogrenci",
+      "personas": "ogrenci yeni",
+      "mode": "kolay",
+      "word": "Immatrikulation / Mensa",
+      "source": "https://www.make-it-in-germany.com/en/arriving-living/getting-started",
+      "tr": [
+        "Öğrenciler için Almanya'da ilk 30 gün",
+        "Kayıt, sigorta, ev ve kampüs hayatını tek listeye indirin.",
+        [
+          "Üniversite kayıt ve oryantasyon takvimini kontrol edin.",
+          "Adres, banka ve sağlık sigortası işlemlerini kişisel durumunuza göre planlayın.",
+          "Mensa, kütüphane, Studierendenwerk ve Hochschulsport seçeneklerine bakın."
+        ],
+        "Semesterticket kapsamı ve dönemler kuruma göre farklıdır."
+      ],
+      "en": [
+        "Your first 30 days as a student",
+        "Turn registration, housing, insurance and campus life into a checklist.",
+        [
+          "Review enrolment deadlines and orientation dates.",
+          "Plan address registration, banking and health coverage.",
+          "Find the Mensa, library, student services and university sports."
+        ],
+        "Semester-ticket validity differs between institutions."
+      ],
+      "de": [
+        "Die ersten 30 Tage als Student:in",
+        "Anmeldung, Versicherung, Wohnen und Campusleben übersichtlich planen.",
+        [
+          "Immatrikulationsfristen und Einführungen prüfen.",
+          "Anmeldung, Bankkonto und Krankenversicherung klären.",
+          "Mensa, Bibliothek, Studierendenwerk und Hochschulsport erkunden."
+        ],
+        "Semesterticket und Geltungsbereich unterscheiden sich je Hochschule."
+      ]
+    },
+    {
+      "id": "sonntag",
+      "cat": "kultur",
+      "personas": "aile bekar ogrenci yeni",
+      "mode": "kesfet",
+      "word": "Sonntagsruhe",
+      "source": "https://www.make-it-in-germany.com/en/arriving-living/getting-started/leisure",
+      "tr": [
+        "Pazar günü Almanya'da gerçekten her yer kapalı mı?",
+        "Çoğu sıradan mağaza kapalıdır; bazı işletmelerde istisnalar olabilir.",
+        [
+          "Temel market alışverişinizi cumartesiye kadar planlayın.",
+          "Fırın, istasyon dükkânı, restoran ve nöbetçi eczanenin saatini ayrıca kontrol edin.",
+          "Özel alışveriş pazarlarını yerel resmî duyurulardan doğrulayın."
+        ],
+        "Açılış kuralları eyalet, şehir ve işletme türüne göre değişebilir."
+      ],
+      "en": [
+        "Is everything closed on Sunday?",
+        "Most ordinary retailers close; some services have exceptions.",
+        [
+          "Plan everyday shopping before Sunday.",
+          "Check bakeries, station shops, restaurants and on-duty pharmacies separately.",
+          "Verify special shopping Sundays with local official sources."
+        ],
+        "Opening rules depend on the state, location and business type."
+      ],
+      "de": [
+        "Ist am Sonntag wirklich alles geschlossen?",
+        "Viele Geschäfte bleiben geschlossen, für manche Angebote gelten Ausnahmen.",
+        [
+          "Den normalen Einkauf bis Samstag erledigen.",
+          "Öffnungszeiten von Bäckereien, Bahnhofsläden, Gastronomie und Notdienst prüfen.",
+          "Verkaufsoffene Sonntage nur über offizielle Hinweise bestätigen."
+        ],
+        "Regeln unterscheiden sich je Bundesland, Ort und Geschäft."
+      ]
+    }
+  ]
+}
