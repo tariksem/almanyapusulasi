@@ -60,7 +60,9 @@ for(const group of groups){
   const body=pages.filter(p=>classify(p)===group).map(p=>'  <url><loc>'+escape(p.url)+'</loc>'+(p.date?'<lastmod>'+escape(p.date)+'</lastmod>':'')+'</url>').join('\n');
   fs.writeFileSync('sitemap-'+group+'.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+body+'\n</urlset>\n');
 }
-news.sort((a,b)=>b.modified.localeCompare(a.modified)||b.date.localeCompare(a.date)||a.url.localeCompare(b.url));
+// The news hub promises publication-date order; editing old articles must not
+// make September stories appear newer than genuinely new November reporting.
+news.sort((a,b)=>b.date.localeCompare(a.date)||b.modified.localeCompare(a.modified)||a.url.localeCompare(b.url));
 const activeNews=news.filter(n=>{const e=editorialState(n);return e.state==='published'&&(!e.reviewBy||e.reviewBy>=today);});
 const archiveNews=news.filter(n=>!activeNews.includes(n));
 for(const n of news){
