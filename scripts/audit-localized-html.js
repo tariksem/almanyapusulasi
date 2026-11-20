@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 'use strict';
-// Run after localized pages have been generated: node scripts/audit-localized-html.js
-// This is a structural audit, NOT a certificate of translation accuracy.
+// Post-generation structural audit; does not certify translation accuracy.
 const fs = require('node:fs');
 const path = require('node:path');
 const groups = ['priority','migration','family','finance-housing','career','commercial','tools','news'];
 const failures = [];
 const results = {checked:0,missing:0,wrongLang:0,wrongCanonical:0,missingHreflang:0};
 const unique = new Set();
-  const match = tag.match(new RegExp(String.raw`\b${name}\s*=\s*["']([^"']*)["']`, 'i'));
+function attr(tag, name) {
+  const match = tag.match(new RegExp('\\b'+name+'\\s*=\\s*["\\x27]([^"\\x27]*)["\\x27]', 'i'));
   return match ? match[1] : '';
-  return match ? match[1] : '';
-};
+}
 for (const group of groups) {
   const sitemap = 'sitemap-'+group+'.xml';
   if (!fs.existsSync(sitemap)) { failures.push('Missing sitemap: '+sitemap); continue; }
@@ -24,7 +23,9 @@ for (const group of groups) {
     if (unique.has(url.href)) { failures.push('Duplicate localized URL: '+url.href); continue; }
     unique.add(url.href);
     const lang = url.pathname.split('/')[1];
-    const file = path.join(lang,decodeURIComponent(url.pathname.slice(lang.length+2)),'index.html');
+    const relative = decodeURIComponent(url.pathname.slice(lang.length+2));
+    if (relative.split('/').includes('..')) { failures.push('Unsafe sitemap path: '+url.href); continue; }
+    const file = path.join(lang,relative,'index.html');
     results.checked++;
     if (!fs.existsSync(file)) { results.missing++; failures.push('Missing generated page: '+file); continue; }
     const html = fs.readFileSync(file,'utf8');
