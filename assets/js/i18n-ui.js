@@ -30,7 +30,7 @@ function createPicker(){
  for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
   const link=document.createElement("a");
   link.className="ap-lang-flag"+(lang===code?" is-current":"");
-  link.href=api.equivalent(path,code);
+  link.href=api.equivalent(path+location.search+location.hash,code);
   link.hreflang=code;
   link.lang=code;
   link.title=name;
