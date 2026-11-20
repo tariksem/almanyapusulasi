@@ -10,7 +10,7 @@ const results = {checked:0,missing:0,wrongLang:0,wrongCanonical:0,missingHreflan
 const unique = new Set();
 const attr = (tag, name) => {
   const match = tag.match(new RegExp('\\b'+name+'\\s*=\\s*(?:"([^"]*)"|\\'([^\\']*)\\')','i'));
-  return match ? (match[1] ?? match[2]) : '';
+  return match ? match[1] : '';
 };
 for (const group of groups) {
   const sitemap = 'sitemap-'+group+'.xml';
