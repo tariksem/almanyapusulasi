@@ -31,6 +31,10 @@ for(const p of published){
  for(const lang of ['en','de']){
   const loc=lang+(p==='/'?'/index.html':p+'index.html');
   assert.ok(fs.existsSync(loc),'Localized URL indexed without corresponding file: '+loc);
+  const html=fs.readFileSync(loc,'utf8');
+  const documentLang=html.match(/<html\b[^>]*\blang\s*=\s*["']([^"']+)["']/i);
+  assert.ok(documentLang,'Localized page missing HTML language attribute: '+loc);
+  assert.equal(documentLang[1].toLowerCase().split('-')[0],lang,'Localized page has wrong HTML language: '+loc);
  }
  assert.ok(fs.existsSync(tr),'Turkish source missing for '+p);
 }
