@@ -8,8 +8,8 @@ const groups = ['priority','migration','family','finance-housing','career','comm
 const failures = [];
 const results = {checked:0,missing:0,wrongLang:0,wrongCanonical:0,missingHreflang:0};
 const unique = new Set();
-const attr = (tag, name) => {
-  const match = tag.match(new RegExp('\\b'+name+'\\s*=\\s*(?:"([^"]*)"|\\'([^\\']*)\\')','i'));
+  const match = tag.match(new RegExp(String.raw`\b${name}\s*=\s*["']([^"']*)["']`, 'i'));
+  return match ? match[1] : '';
   return match ? match[1] : '';
 };
 for (const group of groups) {
