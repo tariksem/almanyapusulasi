@@ -24,7 +24,7 @@ for (const group of groups) {
     unique.add(url.href);
     const lang = url.pathname.split('/')[1];
     const relative = decodeURIComponent(url.pathname.slice(lang.length+2));
-    if (relative.split('/').includes('..')) { failures.push('Unsafe sitemap path: '+url.href); continue; }
+    if (!relative || relative.split('/').some(segment => segment === '..' || segment === '.' || segment.includes('\\\\')) || url.search || url.hash) { failures.push('Unsafe sitemap path: '+url.href); continue; }
     const file = path.join(lang,relative,'index.html');
     results.checked++;
     if (!fs.existsSync(file)) { results.missing++; failures.push('Missing generated page: '+file); continue; }
@@ -38,7 +38,7 @@ for (const group of groups) {
     if (!canonical || attr(canonical,'href').replace(/\/$/,'') !== url.href.replace(/\/$/,'')) {
       results.wrongCanonical++; failures.push('Missing or mismatched canonical: '+file);
     }
-    const alternate = links.some(tag=>attr(tag,'rel').toLowerCase().split(/\s+/).includes('alternate') && attr(tag,'hreflang').toLowerCase()===lang);
+    const alternate = links.some(tag=>attr(tag,'rel').toLowerCase().split(/\s+/).includes('alternate') && attr(tag,'hreflang').toLowerCase()===lang && attr(tag,'href').replace(/\/$/,'')===url.href.replace(/\/$/,''));
     if (!alternate) { results.missingHreflang++; failures.push('Missing self hreflang: '+file); }
   }
 }
