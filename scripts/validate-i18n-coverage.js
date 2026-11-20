@@ -4,9 +4,13 @@ const {curatedRoutes}=require('./i18n-registry.js');
 const groups=['priority','migration','family','finance-housing','career','commercial','tools','news'];
 const urls=groups.flatMap(g=>[...fs.readFileSync('sitemap-'+g+'.xml','utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname));
 const pathSet=new Set(urls);
+assert.equal(pathSet.size,urls.length,'Duplicate sitemap URLs detected');
 const turkish=[...pathSet].filter(p=>!p.startsWith('/en/')&&!p.startsWith('/de/')).sort();
 const local=lang=>turkish.filter(p=>pathSet.has('/'+lang+(p==='/'?'/':p)));
 const en=local('en'),de=local('de');
+const missingEnglish=turkish.filter(p=>!en.includes(p));
+const missingGerman=turkish.filter(p=>!de.includes(p));
+const singleLanguageOnly=turkish.filter(p=>en.includes(p)!==de.includes(p));
 const published=turkish.filter(p=>en.includes(p)&&de.includes(p));
 assert.ok(fs.existsSync('i18n-bulk-verification.json'),'Bulk translations may not count as complete before QA');
 const bulkReport=JSON.parse(fs.readFileSync('i18n-bulk-verification.json','utf8'));
@@ -22,6 +26,9 @@ const coverage={
   germanPages:de.length,
   completeTopics:complete.length,
   remainingTopics:missing.length,
+  missingEnglishPaths:missingEnglish,
+  missingGermanPaths:missingGerman,
+  singleLanguageOnlyPaths:singleLanguageOnly,
   publishedButUnverified:published.filter(p=>!verified.has(p)),
   completePaths:complete,
   missingPaths:missing
