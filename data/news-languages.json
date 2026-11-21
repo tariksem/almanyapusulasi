@@ -237,59 +237,59 @@
     },
     "sozialversicherung-grenzen-2027": {
       "published": "2026-10-12",
-      "sourceDate": "2026-10-12",
-      "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/beitragsbemessungsgrenzen-2027-2454638",
-      "legalStatus": "cabinet_ordinance_bundesrat_pending",
-      "reviewBy": "2026-11-23",
+      "sourceDate": "2026-11-20",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/beitragsbemessungsgrenzen-2027-2454638",
+      "legalStatus": "bundesrat_approved_promulgation_unverified",
+      "reviewBy": "2026-12-01",
       "tr": {
         "title": "2027 sosyal sigorta sınırları: Yüksek maaşlılar dikkat",
-        "description": "Hükümet 2027 için sağlık sigortası prim tavanını ayda 6.375 €, zorunlu sigorta gelir sınırını 7.012,50 € olarak önerdi. Bundesrat onayı bekleniyor.",
+        "description": "Bundesrat 20 Kasım 2026'da 2027 sosyal sigorta sınırlarını onayladı: sağlık sigortası prim tavanı aylık 6.375 €, zorunlu sigorta gelir sınırı 7.012,50 €.",
         "category": "Sağlık & Gelir",
-        "status": "Hükümet yönetmeliği · Bundesrat onayı bekleniyor",
+        "status": "Bundesrat onayı: 20 Kasım 2026 · Planlanan yürürlük: 1 Ocak 2027",
         "lead": "2027'de yüksek maaşı olanların sigorta hesabı değişebilir. Ancak bunun herkesin maaşından aynı miktarda daha fazla prim kesileceği anlamına gelmediğini bilmek önemli.",
-        "what": "Kabinenin önerdiği 2027 değerleri: Sağlık ve bakım sigortasında prime esas aylık kazanç tavanı 6.375 € (2026: 5.812,50 €). GKV zorunlu sigorta için yıllık gelir sınırı 84.150 € (aylık 7.012,50 €). Genel emeklilik sigortası prim tavanı aylık 8.850 €.",
+        "what": "Bundesrat tarafından onaylanan 2027 değerleri: Sağlık ve bakım sigortasında prime esas aylık kazanç tavanı 6.375 € (2026: 5.812,50 €). GKV zorunlu sigorta için yıllık gelir sınırı 84.150 € (aylık 7.012,50 €). Genel emeklilik sigortası prim tavanı aylık 8.850 €.",
         "who": "Özellikle yüksek brüt maaşla çalışanlar ve GKV ile PKV arasındaki seçenekleri değerlendirenler. Daha düşük maaşı olan herkes yalnızca bu tavan artışı nedeniyle aynı ölçüde etkilenmez.",
         "example": "Örneğin brüt maaşı 7.000 € olan bir çalışanın, GKV için prime tabi maaş tavanı değişirse kesintisi etkilenebilir. Kesin net maaş etkisi kişisel sigorta ve prim oranlarına bağlıdır.",
         "steps": [
-          "Şimdilik bu rakamların Bundesrat onayını beklediğini unutmayın.",
+          "Bundesrat onayı tamamlandı; 1 Ocak 2027 uygulaması öncesinde resmî yayımlanma durumunu kontrol edin.",
           "2027 ilk maaş bordronuzda prime esas brüt tutarı ve sigorta oranını kontrol edin.",
           "PKV seçeneğini sadece bir gelir sınırına bakarak değil, uzun vadeli maliyetleri de düşünerek değerlendirin."
         ],
-        "note": "19 Kasım 2026 kontrolünde hükümet kaynağı Bundesrat'ın nihai onayının gerektiğini belirtiyor. Bu tutarları kesin yürürlükteki hukuk gibi sunmuyoruz.",
+        "note": "Bundesrat yönetmeliği 20 Kasım 2026'da onayladı. Yeni sınırların 1 Ocak 2027'den itibaren uygulanması öngörülüyor. Bundesgesetzblatt'taki resmî yayımlanma ayrıca kontrol edilmelidir; 2026 bordrolarında mevcut sınırlar geçerlidir.",
         "sourceTitle": "Bundesregierung · 2027 sosyal sigorta hesaplama sınırları"
       },
       "en": {
         "title": "German social insurance ceilings: What changes in 2027?",
-        "description": "The cabinet proposes a €6,375 monthly health contribution ceiling and a €7,012.50 monthly insurance threshold for 2027. Bundesrat approval is still pending.",
+        "description": "The Bundesrat approved the 2027 social insurance thresholds on 20 November 2026: €6,375 monthly health contribution ceiling and €7,012.50 insurance threshold.",
         "category": "Health & Income",
-        "status": "Cabinet ordinance · Bundesrat approval pending",
+        "status": "Bundesrat approved: 20 November 2026 · Scheduled from 1 January 2027",
         "lead": "High earners may see a change in how their social insurance contributions are calculated in 2027. It does not mean everyone will pay the same additional amount.",
-        "what": "The proposed 2027 monthly ceiling for health and long-term care contributions is €6,375 (2026: €5,812.50). The annual threshold for compulsory statutory health insurance is €84,150 (€7,012.50 monthly). The general pension contribution ceiling would be €8,850 monthly.",
+        "what": "The approved 2027 monthly ceiling for health and long-term care contributions is €6,375 (2026: €5,812.50). The annual threshold for compulsory statutory health insurance is €84,150 (€7,012.50 monthly). The general pension contribution ceiling is €8,850 monthly.",
         "who": "Especially employees with higher gross salaries and those considering statutory versus private health insurance. Workers below the affected ceilings are not all affected in the same way.",
         "example": "Someone earning €7,000 gross per month may see a different health-insurance contribution if the ceiling changes. The exact net impact depends on individual insurance and contribution rates.",
         "steps": [
-          "Remember that final Bundesrat approval is still required.",
+          "Bundesrat approval is complete; check official promulgation before the planned 1 January 2027 start.",
           "Review the contribution base and insurance rates on your first 2027 payslip.",
           "Do not choose private insurance on the basis of a single salary threshold; consider long-term costs."
         ],
-        "note": "As checked on 19 November 2026, the government states that Bundesrat approval is still required. The amounts are not presented as final law.",
+        "note": "The Bundesrat approved the ordinance on 20 November 2026. The new thresholds are scheduled to apply from 1 January 2027. Publication in the Federal Law Gazette should be checked separately; 2026 thresholds continue to apply during 2026.",
         "sourceTitle": "Federal Government · Social insurance thresholds for 2027"
       },
       "de": {
         "title": "Sozialversicherungsgrenzen 2027: Was gilt für Gutverdiener?",
-        "description": "Die Regierung sieht 2027 eine GKV-Beitragsbemessungsgrenze von monatlich 6.375 Euro und eine Versicherungspflichtgrenze von 7.012,50 Euro vor. Der Bundesrat muss noch zustimmen.",
+        "description": "Der Bundesrat hat am 20. November 2026 die Sozialversicherungsrechengrößen 2027 gebilligt: GKV-Beitragsbemessungsgrenze 6.375 Euro und Versicherungspflichtgrenze 7.012,50 Euro monatlich.",
         "category": "Gesundheit & Einkommen",
-        "status": "Kabinettsverordnung · Bundesrat-Zustimmung ausstehend",
+        "status": "Bundesrat-Zustimmung: 20. November 2026 · Vorgesehen ab 1. Januar 2027",
         "lead": "Für höhere Gehälter könnten sich 2027 die Beitragsgrenzen ändern. Das bedeutet nicht, dass alle Versicherten denselben Mehrbeitrag zahlen.",
-        "what": "Die geplante monatliche Beitragsbemessungsgrenze für Kranken- und Pflegeversicherung liegt 2027 bei 6.375 Euro (2026: 5.812,50 Euro). Die Versicherungspflichtgrenze der GKV soll bei 84.150 Euro jährlich bzw. 7.012,50 Euro monatlich liegen. In der allgemeinen Rentenversicherung sind 8.850 Euro monatlich vorgesehen.",
+        "what": "Die gebilligte monatliche Beitragsbemessungsgrenze für Kranken- und Pflegeversicherung liegt 2027 bei 6.375 Euro (2026: 5.812,50 Euro). Die Versicherungspflichtgrenze der GKV liegt bei 84.150 Euro jährlich bzw. 7.012,50 Euro monatlich. In der allgemeinen Rentenversicherung liegt die Grenze bei 8.850 Euro monatlich.",
         "who": "Vor allem Beschäftigte mit höherem Bruttogehalt und Menschen, die GKV und PKV vergleichen. Wer unter den relevanten Grenzen verdient, ist nicht zwangsläufig in gleicher Weise betroffen.",
         "example": "Bei 7.000 Euro Monatsbrutto kann sich die Bemessungsgrundlage für die GKV ändern. Die konkrete Nettowirkung hängt von Kasse und Beitragssätzen ab.",
         "steps": [
-          "Beachten Sie, dass die abschließende Zustimmung des Bundesrates noch aussteht.",
+          "Der Bundesrat hat zugestimmt; prüfen Sie die amtliche Verkündung vor dem vorgesehenen Start am 1. Januar 2027.",
           "Kontrollieren Sie auf der ersten Gehaltsabrechnung 2027 die Bemessungsgrundlage und Beitragssätze.",
           "Entscheiden Sie über eine PKV nicht allein aufgrund der Einkommensgrenze."
         ],
-        "note": "Stand 19. November 2026: Nach Angaben der Bundesregierung ist die Zustimmung des Bundesrates erforderlich. Die Werte werden nicht als bereits geltendes Recht dargestellt.",
+        "note": "Der Bundesrat hat der Verordnung am 20. November 2026 zugestimmt. Die neuen Grenzen sollen ab 1. Januar 2027 gelten. Die Verkündung im Bundesgesetzblatt ist gesondert zu prüfen; 2026 gelten weiterhin die bisherigen Grenzen.",
         "sourceTitle": "Bundesregierung · Sozialversicherungsrechengrößen 2027"
       }
     }
