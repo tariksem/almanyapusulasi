@@ -46,6 +46,8 @@ jobs:
           node scripts/validate-bulk-i18n.js
           node scripts/generate-i18n-inventory.js
           node scripts/validate-i18n-coverage.js
+          node --check scripts/audit-localized-html.js
+          node scripts/audit-localized-html.js
           node scripts/validate-2026-tools.js
           node scripts/validate-housing-tools.js
           node scripts/validate-nebenkosten-parser.js
