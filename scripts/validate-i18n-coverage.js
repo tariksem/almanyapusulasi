@@ -25,6 +25,9 @@ assert.equal(bulkReport.routes,185);
 const verified=new Set(['/',...curatedRoutes().map(route=>'/'+route+'/'),...bulkReport.verifiedPaths]);
 const complete=published.filter(p=>verified.has(p));
 const missing=turkish.filter(p=>!complete.includes(p));
+const unpublishedPaths=turkish.filter(p=>!enSet.has(p)||!deSet.has(p));
+const publishedButUnverifiedPaths=published.filter(p=>!verified.has(p));
+const verificationOnlyPaths=[...verified].filter(p=>!pathSet.has(p)).sort();
 const coverage={
   date:new Date().toISOString().slice(0,10),
   turkishPages:turkish.length,
@@ -37,7 +40,10 @@ const coverage={
   singleLanguagePaths,
   orphanLocalizedPaths,
   duplicatePaths,
-  publishedButUnverified:published.filter(p=>!verified.has(p)),
+  publishedButUnverified:publishedButUnverifiedPaths,
+  unpublishedPaths,
+  verificationOnlyPaths,
+  qualityGateStatus:'independent-content-functional-seo-design-and-deployment-review-pending',
   completePaths:complete,
   missingPaths:missing
 };
@@ -54,4 +60,5 @@ for(const p of essential)assert.ok(complete.includes(p),'Essential EN/DE parity 
 fs.writeFileSync('i18n-coverage.json',JSON.stringify(coverage,null,2)+'\n');
 console.log('i18n coverage: '+complete.length+'/'+turkish.length+' Turkish source URLs have both EN and DE editions; '+missing.length+' still need translation.');
 console.log('Missing EN: '+missingEnglishPaths.length+'; missing DE: '+missingGermanPaths.length+'; single-language: '+singleLanguagePaths.length+'.');
+console.log('Unpublished: '+unpublishedPaths.length+'; published but unverified: '+publishedButUnverifiedPaths.length+'; verification paths absent from sitemap: '+verificationOnlyPaths.length+'.');
 console.log('Remaining pages sample: '+missing.slice(0,20).join(', '));
