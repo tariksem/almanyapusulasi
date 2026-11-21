@@ -7,6 +7,8 @@ const groups = ['priority','migration','family','finance-housing','career','comm
 const failures = [];
 const results = {checked:0,missing:0,wrongLang:0,wrongCanonical:0,missingHreflang:0};
 const unique = new Set();
+const expectedOrigin = 'https://almanyapusulasi.de';
+let localizedCount = 0;
 function attr(tag, name) {
   const match = tag.match(new RegExp('\\b'+name+'\\s*=\\s*["\\x27]([^"\\x27]*)["\\x27]', 'i'));
   return match ? match[1] : '';
@@ -20,6 +22,10 @@ for (const group of groups) {
     try { url = new URL(m[1].replace(/&amp;/g,'&')); }
     catch { failures.push('Invalid sitemap URL: '+m[1]); continue; }
     if (!/^\/(en|de)\//.test(url.pathname)) continue;
+    localizedCount++;
+    if (url.origin !== expectedOrigin || url.username || url.password) {
+      failures.push('Unexpected localized sitemap origin: '+url.href); continue;
+    }
     if (unique.has(url.href)) { failures.push('Duplicate localized URL: '+url.href); continue; }
     unique.add(url.href);
     const lang = url.pathname.split('/')[1];
@@ -29,6 +35,11 @@ for (const group of groups) {
     // A language homepage legitimately maps to en/index.html or de/index.html.
     // Reject traversal, encoded separators, NULs and absolute paths before filesystem access.
     const segments = relative.split('/').filter(Boolean);
+    // Decoding once must not introduce an encoded path separator or dot segment.
+    // Reject encoded slashes/backslashes and nested percent encodings rather than normalizing them.
+    if (/%(?:2f|5c|2e|25)/i.test(url.pathname)) {
+      failures.push('Encoded path control character: '+url.href); continue;
+    }
     if (url.search || url.hash || relative.includes('\\\\') || relative.includes('\\0') ||
         segments.some(segment => segment === '.' || segment === '..' || segment.includes('\\\\')) ||
         segments.some(segment => segment.includes('/'))) {
@@ -51,5 +62,6 @@ for (const group of groups) {
     if (!alternate) { results.missingHreflang++; failures.push('Missing self hreflang: '+file); }
   }
 }
-console.log(JSON.stringify({...results,failures},null,2));
+if (!localizedCount) failures.push('No localized EN/DE URLs found in sitemap groups');
+console.log(JSON.stringify({...results,localizedCount,failures},null,2));
 if (failures.length) process.exitCode = 1;
