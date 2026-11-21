@@ -23,9 +23,18 @@ for (const group of groups) {
     if (unique.has(url.href)) { failures.push('Duplicate localized URL: '+url.href); continue; }
     unique.add(url.href);
     const lang = url.pathname.split('/')[1];
-    const relative = decodeURIComponent(url.pathname.slice(lang.length+2));
-    if (!relative || relative.split('/').some(segment => segment === '..' || segment === '.' || segment.includes('\\\\')) || url.search || url.hash) { failures.push('Unsafe sitemap path: '+url.href); continue; }
-    const file = path.join(lang,relative,'index.html');
+    let relative;
+    try { relative = decodeURIComponent(url.pathname.slice(lang.length+2)); }
+    catch { failures.push('Invalid percent-encoding in sitemap path: '+url.href); continue; }
+    // A language homepage legitimately maps to en/index.html or de/index.html.
+    // Reject traversal, encoded separators, NULs and absolute paths before filesystem access.
+    const segments = relative.split('/').filter(Boolean);
+    if (url.search || url.hash || relative.includes('\\\\') || relative.includes('\\0') ||
+        segments.some(segment => segment === '.' || segment === '..' || segment.includes('\\\\')) ||
+        segments.some(segment => segment.includes('/'))) {
+      failures.push('Unsafe sitemap path: '+url.href); continue;
+    }
+    const file = path.join(lang,...segments,'index.html');
     results.checked++;
     if (!fs.existsSync(file)) { results.missing++; failures.push('Missing generated page: '+file); continue; }
     const html = fs.readFileSync(file,'utf8');
