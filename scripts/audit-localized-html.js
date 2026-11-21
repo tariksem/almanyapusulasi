@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const groups = ['priority','migration','family','finance-housing','career','commercial','tools','news'];
 const failures = [];
-const results = {checked:0,missing:0,wrongLang:0,wrongCanonical:0,missingHreflang:0};
+const results = {checked:0,byLanguage:{en:0,de:0},missing:0,wrongLang:0,wrongCanonical:0,missingHreflang:0};
 const unique = new Set();
 const expectedOrigin = 'https://almanyapusulasi.de';
 let localizedCount = 0;
@@ -47,6 +47,7 @@ for (const group of groups) {
     }
     const file = path.join(lang,...segments,'index.html');
     results.checked++;
+    results.byLanguage[lang]++;
     if (!fs.existsSync(file)) { results.missing++; failures.push('Missing generated page: '+file); continue; }
     const html = fs.readFileSync(file,'utf8');
     const htmlTag = html.match(/<html\b[^>]*>/i)?.[0] || '';
@@ -63,5 +64,8 @@ for (const group of groups) {
   }
 }
 if (!localizedCount) failures.push('No localized EN/DE URLs found in sitemap groups');
+for (const lang of ['en','de']) {
+  if (!results.byLanguage[lang]) failures.push('No '+lang.toUpperCase()+' pages were audited');
+}
 console.log(JSON.stringify({...results,localizedCount,failures},null,2));
 if (failures.length) process.exitCode = 1;
