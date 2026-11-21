@@ -40,8 +40,8 @@ for (const group of groups) {
     if (/%(?:2f|5c|2e|25)/i.test(url.pathname)) {
       failures.push('Encoded path control character: '+url.href); continue;
     }
-    if (url.search || url.hash || relative.includes('\\\\') || relative.includes('\\0') ||
-        segments.some(segment => segment === '.' || segment === '..' || segment.includes('\\\\')) ||
+    if (url.search || url.hash || /[\\\\\x00-\x1f\x7f]/.test(relative) ||
+        segments.some(segment => segment === '.' || segment === '..' || /[\\\\\x00-\x1f\x7f]/.test(segment)) ||
         segments.some(segment => segment.includes('/'))) {
       failures.push('Unsafe sitemap path: '+url.href); continue;
     }
