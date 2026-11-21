@@ -44,6 +44,15 @@ const coverage={
   unpublishedPaths,
   verificationOnlyPaths,
   qualityGateStatus:'independent-content-functional-seo-design-and-deployment-review-pending',
+  qualityGates:{
+    editorialTranslationReviewed:false,
+    newsAndCategoriesReviewed:false,
+    formsSearchAndCalculatorsReviewed:false,
+    languageSwitchingReviewed:false,
+    seoReviewed:false,
+    v41DesignAndLogoReviewed:false,
+    productionDeploymentVerified:false
+  },
   completePaths:complete,
   missingPaths:missing
 };
