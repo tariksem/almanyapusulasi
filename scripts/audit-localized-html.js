@@ -18,8 +18,14 @@ for (const group of groups) {
   if (!fs.existsSync(sitemap)) { failures.push('Missing sitemap: '+sitemap); continue; }
   const xml = fs.readFileSync(sitemap,'utf8');
   for (const m of xml.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)) {
+    // Inspect raw URL path before URL() silently normalizes traversal segments.
+    const rawLocation = m[1].trim().replace(/&amp;/g,'&');
+    const rawPath = rawLocation.match(/^https?:\/\/[^/?#]+([^?#]*)/i)?.[1] || '';
+    if (/(?:^|\/)(?:\.{1,2}|%2e(?:%2e|\.)?|\.%2e)(?:\/|$)/i.test(rawPath)) {
+      failures.push('Unsafe unnormalized sitemap path: '+rawLocation); continue;
+    }
     let url;
-    try { url = new URL(m[1].replace(/&amp;/g,'&')); }
+    try { url = new URL(rawLocation); }
     catch { failures.push('Invalid sitemap URL: '+m[1]); continue; }
     if (!/^\/(en|de)\//.test(url.pathname)) continue;
     localizedCount++;
