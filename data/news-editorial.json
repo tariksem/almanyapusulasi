@@ -165,13 +165,13 @@
     "sozialversicherung-grenzen-2027": {
       "state": "published",
       "category": "Sağlık & Gelir",
-      "sourceDate": "2026-10-12",
-      "reviewBy": "2026-11-23",
-      "verifiedOn": "2026-11-19",
-      "legalStatus": "cabinet_ordinance_bundesrat_pending",
-      "priority": 8,
-      "note": "19 Kasım 2026 kontrolünde hükümet kaynağı Bundesrat'ın nihai onayının gerektiğini belirtiyor. Bu tutarları kesin yürürlükteki hukuk gibi sunmuyoruz.",
-      "source": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/beitragsbemessungsgrenzen-2027-2454638"
+      "sourceDate": "2026-11-20",
+      "reviewBy": "2026-12-01",
+      "verifiedOn": "2026-11-21",
+      "legalStatus": "bundesrat_approved_promulgation_unverified",
+      "priority": 9,
+      "note": "Bundesrat 20 Kasım 2026'da 2027 sosyal sigorta hesaplama sınırlarını onayladı. 1 Ocak 2027 için öngörülüyor; Bundesgesetzblatt yayımı ayrıca kontrol edilmeli.",
+      "source": "https://www.bundesregierung.de/breg-de/aktuelles/beitragsbemessungsgrenzen-2027-2454638"
     }
   }
 }
