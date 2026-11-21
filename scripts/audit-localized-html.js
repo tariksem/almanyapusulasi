@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const groups = ['priority','migration','family','finance-housing','career','commercial','tools','news'];
 const failures = [];
-const results = {checked:0,byLanguage:{en:0,de:0},missing:0,wrongLang:0,wrongCanonical:0,missingHreflang:0};
+const results = {checked:0,byLanguage:{en:0,de:0},missing:0,wrongLang:0,wrongCanonical:0,missingHreflang:0,blockedIndexing:0};
 const unique = new Set();
 const expectedOrigin = 'https://almanyapusulasi.de';
 let localizedCount = 0;
@@ -55,6 +55,14 @@ for (const group of groups) {
       results.wrongLang++; failures.push('Incorrect html lang: '+file);
     }
     const links = [...html.matchAll(/<link\b[^>]*>/gi)].map(m=>m[0]);
+    // Sitemap pages must not carry explicit noindex directives.
+    const robots = [...html.matchAll(/<meta\\b[^>]*>/gi)]
+      .map(m => m[0])
+      .filter(tag => ['robots', 'googlebot'].includes(attr(tag, 'name').toLowerCase()));
+    if (robots.some(tag => /(?:^|[,\\s])(?:noindex|none)(?:$|[,\\s])/i.test(attr(tag, 'content')))) {
+      results.blockedIndexing++;
+      failures.push('Localized sitemap page blocks indexing: '+file);
+    }
     const canonical = links.find(tag=>attr(tag,'rel').toLowerCase().split(/\s+/).includes('canonical'));
     if (!canonical || attr(canonical,'href').replace(/\/$/,'') !== url.href.replace(/\/$/,'')) {
       results.wrongCanonical++; failures.push('Missing or mismatched canonical: '+file);
