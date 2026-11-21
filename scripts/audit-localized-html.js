@@ -59,7 +59,7 @@ for (const group of groups) {
     const robots = [...html.matchAll(/<meta\b[^>]*>/gi)]
       .map(m => m[0])
       .filter(tag => ['robots', 'googlebot'].includes(attr(tag, 'name').toLowerCase()));
-    if (robots.some(tag => /(?:^|[,\\s])(?:noindex|none)(?:$|[,\\s])/i.test(attr(tag, 'content')))) {
+    if (robots.some(tag => /(?:^|[,\s])(?:noindex|none)(?=$|[,\s])/i.test(attr(tag, 'content')))) {
       results.blockedIndexing++;
       failures.push('Localized sitemap page blocks indexing: '+file);
     }
