@@ -56,7 +56,7 @@ for (const group of groups) {
     }
     const links = [...html.matchAll(/<link\b[^>]*>/gi)].map(m=>m[0]);
     // Sitemap pages must not carry explicit noindex directives.
-    const robots = [...html.matchAll(/<meta\\b[^>]*>/gi)]
+    const robots = [...html.matchAll(/<meta\b[^>]*>/gi)]
       .map(m => m[0])
       .filter(tag => ['robots', 'googlebot'].includes(attr(tag, 'name').toLowerCase()));
     if (robots.some(tag => /(?:^|[,\\s])(?:noindex|none)(?:$|[,\\s])/i.test(attr(tag, 'content')))) {
