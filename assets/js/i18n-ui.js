@@ -99,12 +99,19 @@ function localShell(){
  }
  const footer=document.querySelector(".footer");
  if(footer){
+  // Never route an untranslated resource to the localized homepage.
+  // Preserve the original Turkish destination and disclose the fallback.
+  const resource=source=>{
+   const localized=api.equivalent(source,lang);
+   return localized===home?{href:source,untranslated:true}:{href:localized,untranslated:false};
+  };
+  const localLink=href=>({href,untranslated:false});
   const columns=[
-   [[tr("Discover","Entdecken"),null],[tr("Guides","Ratgeber"),home+"#guides"],[tr("Tools","Rechner"),home+"#tools"],[tr("News","Nachrichten"),home+"#news"],[tr("Blue Card","Blaue Karte"),"/"+lang+"/blue-card/"],[tr("Opportunity Card","Chancenkarte"),"/"+lang+"/chancenkarte-firsat-karti/"]],
-   [[tr("Resources","Ressourcen"),null],[tr("Health insurance","Krankenversicherung"),api.equivalent("/saglik-sigortasi/",lang)],[tr("Family benefits","Familienleistungen"),api.equivalent("/aile-cocuk/",lang)],[tr("Tax","Steuern"),api.equivalent("/vergi/",lang)]],
-   [[tr("Information","Informationen"),null],[tr("About","Über uns"),api.equivalent("/about/",lang)],[tr("Contact","Kontakt"),api.equivalent("/contact/",lang)],[tr("Privacy","Datenschutz"),api.equivalent("/privacy/",lang)],["Impressum",api.equivalent("/impressum/",lang)]]
+   [[tr("Discover","Entdecken"),null],[tr("Guides","Ratgeber"),localLink(home+"#guides")],[tr("Tools","Rechner"),localLink(home+"#tools")],[tr("News","Nachrichten"),localLink(home+"#news")],[tr("Blue Card","Blaue Karte"),resource("/blue-card/")],[tr("Opportunity Card","Chancenkarte"),resource("/chancenkarte-firsat-karti/")]],
+   [[tr("Resources","Ressourcen"),null],[tr("Health insurance","Krankenversicherung"),resource("/saglik-sigortasi/")],[tr("Family benefits","Familienleistungen"),resource("/aile-cocuk/")],[tr("Tax","Steuern"),resource("/vergi/")]],
+   [[tr("Information","Informationen"),null],[tr("About","Über uns"),resource("/about/")],[tr("Contact","Kontakt"),resource("/contact/")],[tr("Privacy policy","Datenschutzerklärung"),resource("/privacy/")],[tr("Legal notice","Impressum"),resource("/impressum/")]]
   ];
-  const renderColumn=items=>'<div><strong class="footer-title">'+items[0][0]+'</strong>'+items.slice(1).map(([label,href])=>'<a href="'+href+'"'+(href.startsWith("/")&&!href.startsWith("/"+lang+"/")?attr({untranslated:true}):"")+'>'+label+'</a>').join("")+'</div>';
+  const renderColumn=items=>'<div><strong class="footer-title">'+items[0][0]+'</strong>'+items.slice(1).map(([label,target])=>{const link=typeof target==="string"?localLink(target):target;return '<a href="'+link.href+'"'+(link.untranslated?attr(link):"")+'>'+label+(link.untranslated?' <small class="ap-tr-indicator">TR</small>':"")+'</a>';}).join("")+'</div>';
   footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="'+home+'" class="footer-brand-name">Almanya Pusulası</a><p>'+d.intro+'</p></div>'+columns.map(renderColumn).join("")+'</div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>'+d.intro+'</span></div>';
   if(path==="/en/"||path==="/de/"){
    const credit=document.createElement("div");credit.className="ap-photo-credit";
