@@ -22,6 +22,13 @@ assert.ok(fs.existsSync('i18n-bulk-verification.json'),'Bulk translations may no
 const bulkReport=JSON.parse(fs.readFileSync('i18n-bulk-verification.json','utf8'));
 assert.equal(bulkReport.status,'automated-structural-functional-language-qa-passed');
 assert.equal(bulkReport.routes,185);
+assert.ok(Array.isArray(bulkReport.verifiedPaths),'Bulk verification must supply an array of verifiedPaths');
+for(const p of bulkReport.verifiedPaths){
+ assert.equal(typeof p,'string','Verified route must be a string');
+ assert.match(p,/^\/(?:[a-z0-9-]+\/)*$/,'Verified route must be a canonical Turkish path: '+p);
+ assert.ok(!p.startsWith('/en/')&&!p.startsWith('/de/'),'Localized route cannot masquerade as Turkish verification: '+p);
+}
+assert.equal(new Set(bulkReport.verifiedPaths).size,bulkReport.verifiedPaths.length,'Duplicate verified routes in bulk report');
 const verified=new Set(['/',...curatedRoutes().map(route=>'/'+route+'/'),...bulkReport.verifiedPaths]);
 const complete=published.filter(p=>verified.has(p));
 const missing=turkish.filter(p=>!complete.includes(p));
