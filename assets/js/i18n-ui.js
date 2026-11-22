@@ -99,10 +99,11 @@ function localShell(){
  }
  const footer=document.querySelector(".footer");
  if(footer){
-  const columns=[
+  const footerDestination=source=>{const translated=api.equivalent(source,lang);return translated===home?source:translated;};
+ const columns=[
    [[tr("Discover","Entdecken"),null],[tr("Guides","Ratgeber"),home+"#guides"],[tr("Tools","Rechner"),home+"#tools"],[tr("News","Nachrichten"),home+"#news"],[tr("Blue Card","Blaue Karte"),"/"+lang+"/blue-card/"],[tr("Opportunity Card","Chancenkarte"),"/"+lang+"/chancenkarte-firsat-karti/"]],
-   [[tr("Resources","Ressourcen"),null],[tr("Health insurance","Krankenversicherung"),api.equivalent("/saglik-sigortasi/",lang)],[tr("Family benefits","Familienleistungen"),api.equivalent("/aile-cocuk/",lang)],[tr("Tax","Steuern"),api.equivalent("/vergi/",lang)]],
-   [[tr("Information","Informationen"),null],[tr("About","Über uns"),api.equivalent("/about/",lang)],[tr("Contact","Kontakt"),api.equivalent("/contact/",lang)],[tr("Privacy","Datenschutz"),api.equivalent("/privacy/",lang)],["Impressum",api.equivalent("/impressum/",lang)]]
+   [[tr("Resources","Ressourcen"),null],[tr("Health insurance","Krankenversicherung"),footerDestination("/saglik-sigortasi/")],[tr("Family benefits","Familienleistungen"),footerDestination("/aile-cocuk/")],[tr("Tax","Steuern"),footerDestination("/vergi/")]],
+   [[tr("Information","Informationen"),null],[tr("About","Über uns"),footerDestination("/about/")],[tr("Contact","Kontakt"),footerDestination("/contact/")],[tr("Privacy","Datenschutz"),footerDestination("/privacy/")],["Impressum",footerDestination("/impressum/")]]
   ];
   const renderColumn=items=>'<div><strong class="footer-title">'+items[0][0]+'</strong>'+items.slice(1).map(([label,href])=>'<a href="'+href+'"'+(href.startsWith("/")&&!href.startsWith("/"+lang+"/")?attr({untranslated:true}):"")+'>'+label+'</a>').join("")+'</div>';
   footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="'+home+'" class="footer-brand-name">Almanya Pusulası</a><p>'+d.intro+'</p></div>'+columns.map(renderColumn).join("")+'</div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>'+d.intro+'</span></div>';

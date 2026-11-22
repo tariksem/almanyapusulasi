@@ -50,6 +50,8 @@ assert.ok(css.includes('.site-header .ap-lang-picker{background:transparent;bord
 assert.ok(ui.includes('header.appendChild(box)'),'Flags must be appended to the header right');
 for(const part of ['primary-nav-links','nav-mega','ap-secondary-nav','footer-grid','mobile-menu-toggle','aria-expanded','ap-tr-indicator'])assert.ok(ui.includes(part),'Translated shell missing '+part);
 assert.ok(ui.includes('unresolved'),'Untranslated destinations must be identified');
+assert.ok(ui.includes('translated===home?source:translated'),'Missing footer translations must link to the Turkish source, not the localized homepage');
+for(const source of ['/about/','/contact/','/privacy/','/impressum/','/saglik-sigortasi/','/aile-cocuk/','/vergi/'])assert.ok(ui.includes('footerDestination("'+source+'")'),'Footer route must use translation-aware fallback: '+source);
 assert.ok(!ui.includes('hero.prepend(box)'),'Flags must not appear inside the banner');
 assert.ok(css.includes('.site-header .ap-lang-header{order:10'),'Desktop header order missing');
 assert.ok(css.includes('@media(max-width:1080px)'),'Mobile header layout absent');
