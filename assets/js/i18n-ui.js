@@ -30,7 +30,12 @@ function createPicker(){
  for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
   const link=document.createElement("a");
   link.className="ap-lang-flag"+(lang===code?" is-current":"");
-  link.href=api.equivalent(path,code);
+  // Prefer the page-declared alternate; preserve navigation context on language changes.
+  const alternate=[...document.querySelectorAll('link[rel="alternate"][hreflang]')].find(el=>el.hreflang.toLowerCase()===code);
+  const alternateUrl=alternate&&new URL(alternate.href,location.href);
+  const sameOrigin=alternateUrl&&alternateUrl.origin===location.origin;
+  const destination=sameOrigin?alternateUrl.pathname:api.equivalent(path,code);
+  link.href=destination+location.search+location.hash;
   link.hreflang=code;
   link.lang=code;
   link.title=name;
