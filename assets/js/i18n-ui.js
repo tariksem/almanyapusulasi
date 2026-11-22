@@ -14,6 +14,16 @@ const lang=pageLang||"tr";
 document.documentElement.lang=lang;
 const labels={tr:{language:"Dil",home:"Ana Sayfa",about:"Almanya Pusulası",intro:"Karar araçları ve resmî kaynaklı rehberler",credit:"Banner fotoğrafı",topics:"Konular",guides:"Rehberler",privacy:"Gizlilik",contact:"İletişim"},en:{language:"Language",home:"Home",about:"Almanya Pusulası",intro:"Practical guidance based on official information",credit:"Banner photo",topics:"Topics",guides:"Guides",privacy:"Privacy",contact:"Contact"},de:{language:"Sprache",home:"Startseite",about:"Almanya Pusulası",intro:"Verständliche Ratgeber auf Grundlage offizieller Informationen",credit:"Bannerfoto",topics:"Themen",guides:"Ratgeber",privacy:"Datenschutz",contact:"Kontakt"}};
 const d=labels[lang];
+function languageTarget(code){
+ const fallback=api.equivalent(path+location.search+location.hash,code);
+ const alternate=[...document.querySelectorAll("link[rel~=alternate][hreflang]")].find(link=>link.hreflang.toLowerCase()===code);
+ if(!alternate)return fallback;
+ try{
+  const url=new URL(alternate.href,location.href);
+  if(url.origin!==location.origin||!url.pathname.startsWith(code==="tr"?"/":"/"+code+"/"))return fallback;
+  return url.pathname+location.search+location.hash;
+ }catch(_){return fallback;}
+}
 function createPicker(){
  if(document.querySelector(".ap-lang-picker"))return;
  const header=document.querySelector(".site-header .header-inner");
@@ -30,7 +40,7 @@ function createPicker(){
  for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
   const link=document.createElement("a");
   link.className="ap-lang-flag"+(lang===code?" is-current":"");
-  link.href=api.equivalent(path,code);
+  link.href=languageTarget(code);
   link.hreflang=code;
   link.lang=code;
   link.title=name;
