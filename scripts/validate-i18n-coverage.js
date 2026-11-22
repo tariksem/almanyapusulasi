@@ -4,7 +4,8 @@ const {curatedRoutes}=require('./i18n-registry.js');
 const groups=['priority','migration','family','finance-housing','career','commercial','tools','news'];
 const urls=groups.flatMap(g=>[...fs.readFileSync('sitemap-'+g+'.xml','utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname));
 const pathSet=new Set(urls);
-const duplicatePaths=urls.filter((p,i)=>urls.indexOf(p)!==i);
+const seenPaths=new Set();
+const duplicatePaths=urls.filter(p=>seenPaths.has(p)||!seenPaths.add(p));
 assert.deepEqual(duplicatePaths,[],'Duplicate sitemap paths: '+[...new Set(duplicatePaths)].join(', '));
 const localizedPaths=[...pathSet].filter(p=>p.startsWith('/en/')||p.startsWith('/de/'));
 const sourceForLocalized=p=>p.replace(/^\/(en|de)(?=\/)/,'')||'/';
@@ -17,7 +18,7 @@ const enSet=new Set(en),deSet=new Set(de);
 const missingEnglishPaths=turkish.filter(p=>!enSet.has(p));
 const missingGermanPaths=turkish.filter(p=>!deSet.has(p));
 const singleLanguagePaths=turkish.filter(p=>enSet.has(p)!==deSet.has(p));
-const published=turkish.filter(p=>en.includes(p)&&de.includes(p));
+const published=turkish.filter(p=>enSet.has(p)&&deSet.has(p));
 assert.ok(fs.existsSync('i18n-bulk-verification.json'),'Bulk translations may not count as complete before QA');
 const bulkReport=JSON.parse(fs.readFileSync('i18n-bulk-verification.json','utf8'));
 assert.equal(bulkReport.status,'automated-structural-functional-language-qa-passed');
@@ -31,7 +32,8 @@ for(const p of bulkReport.verifiedPaths){
 assert.equal(new Set(bulkReport.verifiedPaths).size,bulkReport.verifiedPaths.length,'Duplicate verified routes in bulk report');
 const verified=new Set(['/',...curatedRoutes().map(route=>'/'+route+'/'),...bulkReport.verifiedPaths]);
 const complete=published.filter(p=>verified.has(p));
-const missing=turkish.filter(p=>!complete.includes(p));
+const completeSet=new Set(complete);
+const missing=turkish.filter(p=>!completeSet.has(p));
 const unpublishedPaths=turkish.filter(p=>!enSet.has(p)||!deSet.has(p));
 const publishedButUnverifiedPaths=published.filter(p=>!verified.has(p));
 const verificationOnlyPaths=[...verified].filter(p=>!pathSet.has(p)).sort();
@@ -72,7 +74,7 @@ for(const p of published){
  assert.ok(fs.existsSync(tr),'Turkish source missing for '+p);
 }
 const essential=['/','/blue-card/','/chancenkarte-firsat-karti/','/kindergeld/','/familienversicherung/','/blue-card-suresiz-oturum/','/almanya-saglik-sigortasi-gkv-pkv/','/almanyada-ev-kiralama-rehberi/'];
-for(const p of essential)assert.ok(complete.includes(p),'Essential EN/DE parity missing: '+p);
+for(const p of essential)assert.ok(completeSet.has(p),'Essential EN/DE parity missing: '+p);
 fs.writeFileSync('i18n-coverage.json',JSON.stringify(coverage,null,2)+'\n');
 console.log('i18n coverage: '+complete.length+'/'+turkish.length+' Turkish source URLs have both EN and DE editions; '+missing.length+' still need translation.');
 console.log('Missing EN: '+missingEnglishPaths.length+'; missing DE: '+missingGermanPaths.length+'; single-language: '+singleLanguagePaths.length+'.');
