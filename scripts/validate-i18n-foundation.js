@@ -37,7 +37,11 @@ for(const [path,lang,uri] of names){
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 for(const asset of ['i18n-core.js','i18n-ui.js','i18n.css'])assert.ok(shell.includes(asset),'Shared shell missing '+asset);
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
-assert.ok(ui.includes('link.href=api.equivalent(path,code)'),'Flag links must keep the current article across locales');
+assert.ok(ui.includes('link.href=languageTarget(code)'),'Flag links must use the page language target');
+assert.ok(ui.includes('link[rel~=alternate][hreflang]'),'Picker must consider canonical hreflang alternates');
+assert.ok(ui.includes('url.origin!==location.origin'),'External hreflang must not control navigation');
+assert.ok(ui.includes('url.pathname+location.search+location.hash'),'Language navigation must preserve query and fragment');
+assert.ok(ui.includes('api.equivalent(path+location.search+location.hash,code)'),'Fallback must preserve navigation context');
 for(const code of ['tr','en','de'])assert.ok(ui.includes(code+':\'<svg'), 'Missing flag SVG '+code);
 assert.ok(ui.includes('aria-current'),'Current language not indicated');
 assert.ok(ui.includes('aria-label'),'Accessible flag names missing');
