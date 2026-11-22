@@ -37,6 +37,11 @@ const missing=turkish.filter(p=>!completeSet.has(p));
 const unpublishedPaths=turkish.filter(p=>!enSet.has(p)||!deSet.has(p));
 const publishedButUnverifiedPaths=published.filter(p=>!verified.has(p));
 const verificationOnlyPaths=[...verified].filter(p=>!pathSet.has(p)).sort();
+// Structural publication and editorial equivalence are distinct acceptance criteria.
+// Expose every claimed verified path missing from the source sitemap, without
+// silently treating its EN/DE editions as independently reviewed translations.
+const invalidVerificationClaims=bulkReport.verifiedPaths.filter(p=>!pathSet.has(p)).sort();
+const unreviewedPublishedPaths=[...published];
 const coverage={
   date:new Date().toISOString().slice(0,10),
   turkishPages:turkish.length,
@@ -52,6 +57,9 @@ const coverage={
   publishedButUnverified:publishedButUnverifiedPaths,
   unpublishedPaths,
   verificationOnlyPaths,
+  invalidVerificationClaims,
+  unreviewedPublishedPaths,
+  editorialReviewEvidence:'not-provided',
   qualityGateStatus:'independent-content-functional-seo-design-and-deployment-review-pending',
   qualityGates:{
     editorialTranslationReviewed:false,
