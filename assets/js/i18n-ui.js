@@ -37,7 +37,7 @@ function createPicker(){
   if(alternate){
     try{
       const target=new URL(alternate.getAttribute('href'),location.href);
-      if(target.origin===location.origin&&/^\\/(?:en\\/|de\\/)?/.test(target.pathname)){
+      if(target.origin===location.origin && target.pathname.startsWith("/") && !target.pathname.startsWith("//") && (code==="tr" ? !/^\/(?:en|de)(?:\/|$)/.test(target.pathname) : target.pathname.startsWith("/"+code+"/"))){
         destination=target.pathname;
       }
     }catch(_error){/* Invalid alternate: use the registered route. */}
