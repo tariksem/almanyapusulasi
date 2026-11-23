@@ -43,7 +43,15 @@ const coverage={
   englishPages:en.length,
   germanPages:de.length,
   completeTopics:complete.length,
+  // Structural route coverage is not a claim of editorial or runtime equivalence.
+  publishedInBothLanguages:published.length,
+  verifiedRouteInventoryCount:complete.length,
+  editoriallyVerifiedTopics:0,
+  fullEquivalenceVerified:false,
   remainingTopics:missing.length,
+  missingEnglishCount:missingEnglishPaths.length,
+  missingGermanCount:missingGermanPaths.length,
+  singleLanguageCount:singleLanguagePaths.length,
   missingEnglishPaths,
   missingGermanPaths,
   singleLanguagePaths,
@@ -53,6 +61,7 @@ const coverage={
   unpublishedPaths,
   verificationOnlyPaths,
   qualityGateStatus:'independent-content-functional-seo-design-and-deployment-review-pending',
+  coverageMeaning:'Automated URL publication and structural inventory only; not human-verified EN/DE translation quality',
   qualityGates:{
     editorialTranslationReviewed:false,
     newsAndCategoriesReviewed:false,
@@ -76,7 +85,7 @@ for(const p of published){
 const essential=['/','/blue-card/','/chancenkarte-firsat-karti/','/kindergeld/','/familienversicherung/','/blue-card-suresiz-oturum/','/almanya-saglik-sigortasi-gkv-pkv/','/almanyada-ev-kiralama-rehberi/'];
 for(const p of essential)assert.ok(completeSet.has(p),'Essential EN/DE parity missing: '+p);
 fs.writeFileSync('i18n-coverage.json',JSON.stringify(coverage,null,2)+'\n');
-console.log('i18n coverage: '+complete.length+'/'+turkish.length+' Turkish source URLs have both EN and DE editions; '+missing.length+' still need translation.');
+console.log('i18n structural coverage: '+complete.length+'/'+turkish.length+' Turkish source URLs have both EN and DE editions in the verified route inventory; '+missing.length+' lack structural coverage. Editorial and functional parity remain unverified.');
 console.log('Missing EN: '+missingEnglishPaths.length+'; missing DE: '+missingGermanPaths.length+'; single-language: '+singleLanguagePaths.length+'.');
 console.log('Unpublished: '+unpublishedPaths.length+'; published but unverified: '+publishedButUnverifiedPaths.length+'; verification paths absent from sitemap: '+verificationOnlyPaths.length+'.');
 console.log('Remaining pages sample: '+missing.slice(0,20).join(', '));
