@@ -40,6 +40,8 @@ const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
 assert.ok(ui.includes("document.querySelectorAll('link[rel=\"alternate\"][hreflang]')"),'Language picker must inspect published hreflang alternatives');
 assert.ok(ui.includes("target.origin===location.origin"),'Language picker must reject external alternate origins');
 assert.ok(ui.includes('destination+location.search+location.hash'),'Language picker must preserve query and fragment');
+assert.ok(ui.includes('target.pathname.startsWith("/"+code+"/")'),'Alternate must match the requested locale');
+assert.ok(ui.includes('!target.pathname.startsWith("//")'),'Protocol-relative alternate must be rejected');
 assert.ok(ui.includes('api.equivalent(path,code)'),'Language picker must retain registered-route fallback');
 for(const code of ['tr','en','de'])assert.ok(ui.includes(code+':\'<svg'), 'Missing flag SVG '+code);
 assert.ok(ui.includes('aria-current'),'Current language not indicated');
