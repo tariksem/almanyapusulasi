@@ -30,7 +30,19 @@ function createPicker(){
  for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
   const link=document.createElement("a");
   link.className="ap-lang-flag"+(lang===code?" is-current":"");
-  link.href=api.equivalent(path,code);
+  // Prefer the page's published SEO alternate, not an unrelated locale homepage.
+  const alternate=[...document.querySelectorAll('link[rel="alternate"][hreflang]')]
+    .find(node=>node.getAttribute('hreflang')===code);
+  let destination=api.equivalent(path,code);
+  if(alternate){
+    try{
+      const target=new URL(alternate.getAttribute('href'),location.href);
+      if(target.origin===location.origin && target.pathname.startsWith("/") && !target.pathname.startsWith("//") && (code==="tr" ? !/^\/(?:en|de)(?:\/|$)/.test(target.pathname) : target.pathname.startsWith("/"+code+"/"))){
+        destination=target.pathname;
+      }
+    }catch(_error){/* Invalid alternate: use the registered route. */}
+  }
+  link.href=destination+location.search+location.hash;
   link.hreflang=code;
   link.lang=code;
   link.title=name;
