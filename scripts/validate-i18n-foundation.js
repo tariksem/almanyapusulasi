@@ -39,6 +39,9 @@ for(const asset of ['i18n-core.js','i18n-ui.js','i18n.css'])assert.ok(shell.incl
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
 assert.ok(ui.includes('link.href=api.equivalent(path,code)'),'Flag links must keep the current article across locales');
 for(const code of ['tr','en','de'])assert.ok(ui.includes(code+':\'<svg'), 'Missing flag SVG '+code);
+assert.ok(ui.includes("path+location.search+location.hash"),'Language picker must preserve query and anchor');
+assert.ok(ui.includes('url.origin===location.origin'),'Language picker must reject cross-origin hreflang');
+assert.ok(ui.includes('document.querySelectorAll(\'link[rel="alternate"][hreflang]\')'),'Language picker must inspect document alternates');
 assert.ok(ui.includes('aria-current'),'Current language not indicated');
 assert.ok(ui.includes('aria-label'),'Accessible flag names missing');
 assert.ok(!ui.includes('document.createElement("select")'),'Dropdown still present');
