@@ -104,7 +104,7 @@ function localShell(){
    [[tr("Resources","Ressourcen"),null],[tr("Health insurance","Krankenversicherung"),api.equivalent("/saglik-sigortasi/",lang)],[tr("Family benefits","Familienleistungen"),api.equivalent("/aile-cocuk/",lang)],[tr("Tax","Steuern"),api.equivalent("/vergi/",lang)]],
    [[tr("Information","Informationen"),null],[tr("About","Über uns"),api.equivalent("/about/",lang)],[tr("Contact","Kontakt"),api.equivalent("/contact/",lang)],[tr("Privacy","Datenschutz"),api.equivalent("/privacy/",lang)],["Impressum",api.equivalent("/impressum/",lang)]]
   ];
-  const renderColumn=items=>'<div><strong class="footer-title">'+items[0][0]+'</strong>'+items.slice(1).map(([label,href])=>'<a href="'+href+'"'+(href.startsWith("/")&&!href.startsWith("/"+lang+"/")?attr({untranslated:true}):"")+'>'+label+'</a>').join("")+'</div>';
+  const renderColumn=items=>'<div><strong class="footer-title">'+items[0][0]+'</strong>'+items.slice(1).map(([label,href])=>{const untranslated=href.startsWith("/")&&!href.startsWith("/"+lang+"/");return '<a href="'+href+'"'+(untranslated?attr({untranslated:true}):"")+'>'+label+(untranslated?' <small class="ap-tr-indicator">TR</small>':"")+"</a>";}).join("")+"</div>";
   footer.innerHTML='<div class="container footer-grid"><div class="footer-brand"><a href="'+home+'" class="footer-brand-name">Almanya Pusulası</a><p>'+d.intro+'</p></div>'+columns.map(renderColumn).join("")+'</div><div class="container footer-bottom"><span>© 2026 Almanya Pusulası</span><span>'+d.intro+'</span></div>';
   if(path==="/en/"||path==="/de/"){
    const credit=document.createElement("div");credit.className="ap-photo-credit";
