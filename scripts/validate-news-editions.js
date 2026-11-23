@@ -51,6 +51,15 @@ for(const [slug,story] of Object.entries(data.items)){
       assert.ok(typeof value==='string'&&value.trim(),slug+' missing '+lang+' '+field);
       if(story.tr[field].trim().length>=40)
         assert.notEqual(value.trim(),story.tr[field].trim(),slug+' untranslated '+lang+' '+field);
+      // Preserve every numeric source fact in the translated editorial body.
+      // Repeated values matter: dropping one occurrence can change the claim.
+      if(['lead','what','who','example','note'].includes(field)){
+        const sourceDigits=digits(story.tr[field]);
+        const localizedDigits=digits(value);
+        for(const number of new Set(sourceDigits))
+          assert.ok(localizedDigits.filter(d=>d===number).length>=sourceDigits.filter(d=>d===number).length,
+            slug+' '+lang+' lost numeric fact '+number+' in body '+field);
+      }
     }
   }
   assert.ok(Array.isArray(story.tr.steps)&&story.tr.steps.length===3,slug+' missing source steps');
