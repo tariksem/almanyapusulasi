@@ -30,7 +30,18 @@ function createPicker(){
  for(const [code,name] of [["tr","Türkçe"],["en","English"],["de","Deutsch"]]){
   const link=document.createElement("a");
   link.className="ap-lang-flag"+(lang===code?" is-current":"");
-  link.href=api.equivalent(path,code);
+  // Prefer this document's explicit alternate URL; never trust a cross-origin alternate.
+  const alternate=Array.from(document.querySelectorAll('link[rel="alternate"][hreflang]')).find(node=>node.hreflang.toLowerCase()===code);
+  let destination=api.equivalent(path+location.search+location.hash,code);
+  if(alternate){
+   try{
+    const url=new URL(alternate.href,location.origin);
+    if(url.origin===location.origin&&url.pathname.startsWith("/")){
+     destination=url.pathname+(location.search||url.search)+(location.hash||url.hash);
+    }
+   }catch(_error){/* Keep the registered route fallback. */}
+  }
+  link.href=destination;
   link.hreflang=code;
   link.lang=code;
   link.title=name;
