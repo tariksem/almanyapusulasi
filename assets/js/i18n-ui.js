@@ -115,6 +115,31 @@ function localShell(){
  }
  document.querySelectorAll(".site-context-bar,.hub-return-rail").forEach(el=>el.remove());
 }
-function start(){localShell();createPicker();}
+function enrichTurkishNavigation(){
+ if(lang!=="tr")return;
+ const header=document.querySelector(".site-header");
+ if(!header)return;
+ const target="/almanyada-yasam/";
+ const primary=header.querySelector(".primary-nav-links");
+ const mega=header.querySelector(".nav-mega-grid");
+ const secondary=header.querySelector(".ap-secondary-links");
+ const footer=header.parentElement.querySelector(".footer")||document.querySelector(".footer");
+ const label="Almanya’da Yaşam";
+ if(primary&&!primary.querySelector('a[href="'+target+'"]')){
+  const a=document.createElement("a");a.className="site-nav-link"+(path.startsWith(target)?" is-active":"");a.href=target;a.textContent=label;primary.appendChild(a);
+ }
+ if(mega&&!mega.querySelector('a[href="'+target+'"]')){
+  const a=document.createElement("a");a.className="mega-link"+(path.startsWith(target)?" is-active":"");a.href=target;
+  const span=document.createElement("span"),strong=document.createElement("strong");strong.textContent=label;span.appendChild(strong);a.appendChild(span);mega.appendChild(a);
+ }
+ if(secondary&&!secondary.querySelector('a[href="'+target+'"]')){
+  const a=document.createElement("a");a.href=target;a.textContent=label;secondary.appendChild(a);
+ }
+ if(footer&&!footer.querySelector('a[href="'+target+'"]')){
+  const column=footer.querySelector(".footer-grid > div:nth-child(2)");
+  if(column){const a=document.createElement("a");a.href=target;a.textContent=label;column.appendChild(a)}
+ }
+}
+function start(){localShell();enrichTurkishNavigation();createPicker();}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 })();
