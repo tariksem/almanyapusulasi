@@ -21,3 +21,21 @@
 .ency-related-links{display:flex;flex-wrap:wrap;gap:10px}.ency-related-links a{display:inline-block;background:#edf4f9;color:#1f4e79;padding:9px 12px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px}
 .ency-back{display:inline-block;margin-top:30px;color:#1f4e79;font-weight:800;text-decoration:underline}
 @media(max-width:850px){.ency-article-layout{grid-template-columns:1fr;gap:18px}.ency-toc{position:static;max-height:none}.ency-glossary div{grid-template-columns:1fr;gap:4px}}
+
+
+/* Practical answer layers: readable scenarios, legal cautions and FAQ */
+.ency-article .ency-practical,.ency-article .ency-faq,.ency-article .ency-evidence{scroll-margin-top:110px}
+.ency-article .ency-practical{background:#f7fafc;border:1px solid #dce7ee;border-radius:14px;margin:22px 0;padding:23px}
+.ency-practical h3{font-size:18px;color:#102a43;line-height:1.4;margin:14px 0 12px}
+.ency-steps{counter-reset:practical;list-style:none;margin:12px 0 0;padding:0}
+.ency-steps li{position:relative;padding:12px 0 12px 47px;border-bottom:1px solid #e2eaf0;min-height:45px}
+.ency-steps li:last-child{border-bottom:0}
+.ency-steps li:before{counter-increment:practical;content:counter(practical);position:absolute;left:0;top:14px;display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#e2eff7;color:#102a43;font-weight:800}
+.ency-steps p{margin:0;font-size:15.5px;line-height:1.75}
+.ency-faq details{border:1px solid #dce6ee;border-radius:10px;margin:10px 0;background:#fff;overflow:hidden}
+.ency-faq summary{padding:15px 18px;font-weight:750;color:#102a43;cursor:pointer;line-height:1.45}
+.ency-faq details[open] summary{background:#eef5fa}
+.ency-faq details p{padding:10px 18px 18px;margin:0;line-height:1.7}
+.ency-evidence{border-left:3px solid #2e7d32;padding-left:18px!important}
+.ency-evidence a{overflow-wrap:anywhere}
+@media(max-width:600px){.ency-article .ency-practical{padding:17px}.ency-steps li{padding-left:40px}.ency-steps li:before{width:27px;height:27px}}

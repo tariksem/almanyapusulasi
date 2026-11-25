@@ -42,6 +42,19 @@ for(const slug of chapters){
   assert.ok(fs.readFileSync(routes[lang],'utf8').includes('href="'+route+'"'),routes[lang]+' does not link to article '+slug);
  }
 }
+// Source-referenced practical layers for the first four everyday-life topics.
+const expandedChapters=['kiralik-ev-bulma','cop-ayristirma-takvimi','kita-ve-okul','adres-kaydi-anmeldung'];
+for(const slug of expandedChapters){
+ for(const lang of ['tr','en','de']){
+  const file=(lang==='tr'?'':lang+'/')+'almanyada-yasam/'+slug+'/index.html';
+  const source=fs.readFileSync(file,'utf8');
+  for(const token of ['id="practical"','id="faq"','class="ency-steps"','class="ency-evidence"','href="#practical"','href="#faq"']){
+   assert.ok(source.includes(token),file+' missing practical content '+token);
+  }
+  assert.ok((source.match(/<details><summary>/g)||[]).length>=2,file+' requires at least two common questions');
+  assert.ok((source.match(/<li><p>/g)||[]).length>=4,file+' requires at least four practical steps');
+ }
+}
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
 const registry=fs.readFileSync('scripts/i18n-registry.js','utf8');
