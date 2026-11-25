@@ -59,6 +59,7 @@ function localShell(){
   ["Immigration & Career","Zuwanderung & Beruf","/goc-kariyer/","#guides"],
   ["Work & Income","Arbeit & Einkommen","/is-gelir/","#guides"],
   ["Settling In","Ankommen & Wohnen","/yerlesim/","#start"],
+  ["Living in Germany","Alltag in Deutschland","/almanyada-yasam/",null],
   ["Citizenship","Einbürgerung","/vatandaslik/",null],
   ["Family & Children","Familie & Kinder","/aile-cocuk/",null],
   ["Finance","Finanzen","/finans/",null],
