@@ -23,7 +23,7 @@ for(const [lang,path] of Object.entries(routes)){
  for(const other of Object.keys(paths)) assert.equal(api.equivalent(paths[lang],other),paths[other],lang+' -> '+other+' language switch');
 }
 // Each article is a standalone, source-backed page in three languages.
-const chapters=['cop-ayristirma-takvimi','kiralik-ev-bulma','komsuluk-ve-sessizlik','arkadas-edinmek','kita-ve-okul','doktor-ve-acil','ogrenci-yasami-ve-butce','adres-kaydi-anmeldung','rundfunkbeitrag','telefon-internet-sozlesmeleri'];
+const chapters=['cop-ayristirma-takvimi','kiralik-ev-bulma','komsuluk-ve-sessizlik','arkadas-edinmek','kita-ve-okul','doktor-ve-acil','ogrenci-yasami-ve-butce','adres-kaydi-anmeldung','rundfunkbeitrag','telefon-internet-sozlesmeleri','rundfunkbeitrag'];
 for(const slug of chapters){
  const relatedPaths={tr:'/almanyada-yasam/'+slug+'/',en:'/en/almanyada-yasam/'+slug+'/',de:'/de/almanyada-yasam/'+slug+'/'};
  for(const [lang,route] of Object.entries(relatedPaths)){
