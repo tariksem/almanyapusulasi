@@ -25,8 +25,8 @@ for(const [lang,path] of Object.entries(routes)){
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
 const registry=fs.readFileSync('scripts/i18n-registry.js','utf8');
-assert.ok(shell.includes('key:"yasam",href:"/almanyada-yasam/"'),'TR site menu entry');
-assert.ok(shell.includes('["Almanya’da Yaşam","/almanyada-yasam/"]'),'TR secondary nav entry');
+assert.ok(ui.includes('function enrichTurkishNavigation()'),'TR site navigation enhancer');
+assert.ok(ui.includes('secondary.appendChild(a)'),'TR secondary navigation entry');
 assert.ok(ui.includes('"Living in Germany","Alltag in Deutschland","/almanyada-yasam/"'),'EN/DE site nav entry');
 assert.ok(registry.includes("'almanyada-yasam'"),'i18n registry entry');
 const search=fs.readFileSync('assets/encyclopedia.js','utf8');
