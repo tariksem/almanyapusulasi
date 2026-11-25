@@ -43,7 +43,7 @@ for(const slug of chapters){
  }
 }
 // Source-referenced practical layers for the first four everyday-life topics.
-const expandedChapters=['kiralik-ev-bulma','cop-ayristirma-takvimi','kita-ve-okul','adres-kaydi-anmeldung'];
+const expandedChapters=['kiralik-ev-bulma','cop-ayristirma-takvimi','kita-ve-okul','adres-kaydi-anmeldung','doktor-ve-acil','komsuluk-ve-sessizlik','arkadas-edinmek','ogrenci-yasami-ve-butce','telefon-internet-sozlesmeleri'];
 for(const slug of expandedChapters){
  for(const lang of ['tr','en','de']){
   const file=(lang==='tr'?'':lang+'/')+'almanyada-yasam/'+slug+'/index.html';
