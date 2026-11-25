@@ -45,6 +45,35 @@ for(const [slug,story] of Object.entries(data.items)){
           slug+' '+lang+' lost numeric fact '+number+' in '+field);
     }
   }
+  // Verify complete editorial bodies, not just translated metadata and route existence.
+  // Keep source facts untouched; fail closed if a new edition omits a section.
+  for(const field of ['status','lead','what','who','example','note','sourceTitle']){
+    assert.ok(typeof story.tr[field]==='string'&&story.tr[field].trim(),slug+' missing Turkish '+field);
+    for(const lang of ['en','de']){
+      const value=story[lang][field];
+      assert.ok(typeof value==='string'&&value.trim(),slug+' missing '+lang+' '+field);
+      if(story.tr[field].trim().length>=40)
+        assert.notEqual(value.trim(),story.tr[field].trim(),slug+' untranslated '+lang+' '+field);
+      // Preserve every numeric source fact in the translated editorial body.
+      // Repeated values matter: dropping one occurrence can change the claim.
+      if(['lead','what','who','example','note'].includes(field)){
+        const sourceDigits=digits(story.tr[field]);
+        const localizedDigits=digits(value);
+        for(const number of new Set(sourceDigits))
+          assert.ok(localizedDigits.filter(d=>d===number).length>=sourceDigits.filter(d=>d===number).length,
+            slug+' '+lang+' lost numeric fact '+number+' in body '+field);
+      }
+    }
+  }
+  assert.ok(Array.isArray(story.tr.steps)&&story.tr.steps.length===3,slug+' missing source steps');
+  for(const lang of ['en','de']){
+    assert.ok(Array.isArray(story[lang].steps),slug+' missing '+lang+' steps');
+    assert.equal(story[lang].steps.length,story.tr.steps.length,slug+' '+lang+' step count differs');
+    story[lang].steps.forEach((step,i)=>{
+      assert.ok(typeof step==='string'&&step.trim(),slug+' empty '+lang+' step '+i);
+      assert.notEqual(step.trim(),story.tr.steps[i].trim(),slug+' untranslated '+lang+' step '+i);
+    });
+  }
   for(const lang of ['tr','en','de']){
     const path=(lang==='tr'?'':lang+'/')+'haberler/'+slug+'/index.html';
     const html=fs.readFileSync(path,'utf8');
