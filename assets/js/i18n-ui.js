@@ -89,7 +89,7 @@ function localShell(){
  const header=document.querySelector(".site-header");
  if(header){
   header.innerHTML='<div class="container header-inner"><a class="site-brand" href="'+home+'"><img class="site-brand-logo" src="/assets/brand/almanya-pusulasi-logo-64.png" alt=""><span class="site-brand-copy"><strong>Almanya Pusulası</strong><small>'+d.intro+'</small></span></a><button type="button" class="mobile-menu-toggle" aria-label="'+tr("Open menu","Menü öffnen")+'" aria-expanded="false" aria-controls="ap-site-nav"><span></span><span></span><span></span></button><nav class="site-nav" id="ap-site-nav" aria-label="'+d.topics+'"><div class="primary-nav-links">'+mainNav+'</div><details class="nav-more"><summary>'+tr("All Guides","Alle Ratgeber")+' <span>⌄</span></summary><div class="nav-mega"><div class="nav-mega-grid">'+mega+'</div></div></details></nav></div>';
-  const secondary=categories.slice(0,6).concat([categories[7],categories[8]]).map(item=>{const t=resolved(item);return '<a href="'+t.href+'"'+attr(t)+'>'+t.name+'</a>';}).join("");
+  const secondary=categories.slice(0,6).concat([categories[6],categories[7],categories[8]]).map(item=>{const t=resolved(item);return '<a href="'+t.href+'"'+attr(t)+'>'+t.name+'</a>';}).join("");
   header.insertAdjacentHTML("beforeend",'<nav class="ap-secondary-nav" aria-label="'+tr("Topic categories","Themenkategorien")+'"><div class="container ap-secondary-links">'+secondary+'</div></nav>');
   const toggle=header.querySelector(".mobile-menu-toggle");
   const nav=header.querySelector(".site-nav");
@@ -101,7 +101,7 @@ function localShell(){
  const footer=document.querySelector(".footer");
  if(footer){
   const columns=[
-   [[tr("Discover","Entdecken"),null],[tr("Guides","Ratgeber"),home+"#guides"],[tr("Tools","Rechner"),home+"#tools"],[tr("News","Nachrichten"),home+"#news"],[tr("Blue Card","Blaue Karte"),"/"+lang+"/blue-card/"],[tr("Opportunity Card","Chancenkarte"),"/"+lang+"/chancenkarte-firsat-karti/"]],
+   [[tr("Discover","Entdecken"),null],[tr("Guides","Ratgeber"),home+"#guides"],[tr("Everyday life","Alltag"),api.equivalent("/almanyada-yasam/",lang)],[tr("Tools","Rechner"),home+"#tools"],[tr("News","Nachrichten"),home+"#news"],[tr("Blue Card","Blaue Karte"),"/"+lang+"/blue-card/"],[tr("Opportunity Card","Chancenkarte"),"/"+lang+"/chancenkarte-firsat-karti/"]],
    [[tr("Resources","Ressourcen"),null],[tr("Health insurance","Krankenversicherung"),api.equivalent("/saglik-sigortasi/",lang)],[tr("Family benefits","Familienleistungen"),api.equivalent("/aile-cocuk/",lang)],[tr("Tax","Steuern"),api.equivalent("/vergi/",lang)]],
    [[tr("Information","Informationen"),null],[tr("About","Über uns"),api.equivalent("/about/",lang)],[tr("Contact","Kontakt"),api.equivalent("/contact/",lang)],[tr("Privacy","Datenschutz"),api.equivalent("/privacy/",lang)],["Impressum",api.equivalent("/impressum/",lang)]]
   ];
