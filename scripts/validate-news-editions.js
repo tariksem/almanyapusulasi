@@ -24,7 +24,10 @@ for(const [slug,story] of Object.entries(data.items)){
   assert.ok(status&&status.state==='published',slug+' must have published editorial record');
   assert.equal(status.source,story.source,slug+' official source mismatch');
   assert.equal(status.sourceDate,story.sourceDate,slug+' official event date mismatch');
-  assert.equal(status.verifiedOn,data.verifiedOn);
+  // Individual editions can be re-verified after the original batch date.
+  // Reject stale verification, but do not require unrelated articles to share one date.
+  assert.ok(status.verifiedOn>=data.verifiedOn,slug+' verification predates the reviewed batch');
+  assert.ok(status.verifiedOn>=story.sourceDate,slug+' verification precedes official source date');
   assert.equal(status.legalStatus,story.legalStatus);
   assert.ok(status.reviewBy>=data.verifiedOn,slug+' review date expired');
   assert.ok(officialDomains.has(new URL(story.source).hostname),slug+' lacks official primary source');
@@ -59,7 +62,7 @@ for(const [slug,story] of Object.entries(data.items)){
     assert.equal(article.headline,story[lang].title);
     assert.equal(article.description,story[lang].description);
     assert.equal(article.datePublished,story.published);
-    assert.equal(article.dateModified,data.verifiedOn);
+    assert.equal(article.dateModified,status.verifiedOn,path+' article modification date must match its editorial verification');
     assert.equal((html.match(/<h1\b/g)||[]).length,1,path+' h1');
     assert.equal((html.match(/<h2\b/g)||[]).length,5,path+' sections');
     assert.equal((html.match(/<li>/g)||[]).length,3,path+' action steps');
