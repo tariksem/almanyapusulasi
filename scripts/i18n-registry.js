@@ -1,5 +1,5 @@
 const fs=require('node:fs');
-const BASE=['blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026'];
+const BASE=['almanyada-yasam','blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026'];
 const CATALOGS=['data/priority-guide-translations.json','data/i18n-migration-translations.json','data/i18n-career-translations.json','data/i18n-family-translations.json','data/i18n-family-care-translations.json','data/i18n-health-finance-translations.json'];
 const BULK_CATALOG='data/i18n-bulk-translations.json';
 function curatedRoutes(){

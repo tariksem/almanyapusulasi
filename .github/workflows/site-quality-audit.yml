@@ -42,6 +42,7 @@ jobs:
           node scripts/validate-v42-cohesion.mjs
           node scripts/validate-home-hero-layout.js
           node scripts/validate-i18n-foundation.js
+          node scripts/validate-living-encyclopedia.js
           node scripts/validate-localized-home.js
           node scripts/validate-bulk-i18n.js
           node scripts/generate-i18n-inventory.js
