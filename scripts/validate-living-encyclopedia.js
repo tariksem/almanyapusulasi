@@ -13,7 +13,7 @@ for(const [lang,path] of Object.entries(routes)){
   assert.ok(s.includes('hreflang="'+other+'" href="https://almanyapusulasi.de'+uri+'"'),path+' alternate '+other);
   assert.ok(s.includes('href="'+uri+'"'),path+' accessible language link '+other);
  }
- assert.equal((s.match(/class="ency-card(?:\\s|\")/g)||[]).length,10,path+' article count');
+ assert.equal((s.match(/class="ency-card /g)||[]).length,10,path+' article count');
  for(const id of items)assert.ok(s.includes('id="'+id+'"'),path+' item '+id);
  for(const cat of ['home','social','family','student','new'])assert.ok(s.includes('data-filter="'+cat+'"'),path+' category '+cat);
  for(const asset of ['/assets/style.css','/assets/encyclopedia.css','/assets/encyclopedia.js','/assets/js/analytics-consent.js'])assert.ok(s.includes(asset),path+' asset '+asset);
