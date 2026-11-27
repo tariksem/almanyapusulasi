@@ -23,7 +23,7 @@ for(const [lang,path] of Object.entries(routes)){
  for(const other of Object.keys(paths)) assert.equal(api.equivalent(paths[lang],other),paths[other],lang+' -> '+other+' language switch');
 }
 // Each article is a standalone, source-backed page in three languages.
-const chapters=['cop-ayristirma-takvimi','kiralik-ev-bulma','komsuluk-ve-sessizlik','arkadas-edinmek','kita-ve-okul','doktor-ve-acil','ogrenci-yasami-ve-butce','adres-kaydi-anmeldung','rundfunkbeitrag','telefon-internet-sozlesmeleri','rundfunkbeitrag'];
+const chapters=['cop-ayristirma-takvimi','kiralik-ev-bulma','komsuluk-ve-sessizlik','arkadas-edinmek','kita-ve-okul','doktor-ve-acil','ogrenci-yasami-ve-butce','adres-kaydi-anmeldung','rundfunkbeitrag','telefon-internet-sozlesmeleri'];
 for(const slug of chapters){
  const relatedPaths={tr:'/almanyada-yasam/'+slug+'/',en:'/en/almanyada-yasam/'+slug+'/',de:'/de/almanyada-yasam/'+slug+'/'};
  for(const [lang,route] of Object.entries(relatedPaths)){
@@ -31,6 +31,8 @@ for(const slug of chapters){
   assert.ok(fs.existsSync(file),'Missing encyclopedia article '+file);
   const html=fs.readFileSync(file,'utf8');
   assert.ok(html.includes('<html lang="'+lang+'">'),file+' language');
+  assert.ok(html.includes('<body class="life-article">'),file+' magazine skin');
+  assert.ok(html.includes('class="life-article-stamp"'),file+' magazine label');
   assert.ok(html.includes('rel="canonical" href="https://almanyapusulasi.de'+route+'"'),file+' canonical');
   for(const [code,target] of Object.entries(relatedPaths)){
    assert.ok(html.includes('hreflang="'+code+'" href="https://almanyapusulasi.de'+target+'"'),file+' alternate '+code);
@@ -43,7 +45,7 @@ for(const slug of chapters){
  }
 }
 // Source-referenced practical layers for the first four everyday-life topics.
-const expandedChapters=['kiralik-ev-bulma','cop-ayristirma-takvimi','kita-ve-okul','adres-kaydi-anmeldung','doktor-ve-acil','komsuluk-ve-sessizlik','arkadas-edinmek','ogrenci-yasami-ve-butce','telefon-internet-sozlesmeleri'];
+const expandedChapters=['kiralik-ev-bulma','cop-ayristirma-takvimi','kita-ve-okul','adres-kaydi-anmeldung','doktor-ve-acil','komsuluk-ve-sessizlik','arkadas-edinmek','ogrenci-yasami-ve-butce','telefon-internet-sozlesmeleri','rundfunkbeitrag'];
 for(const slug of expandedChapters){
  for(const lang of ['tr','en','de']){
   const file=(lang==='tr'?'':lang+'/')+'almanyada-yasam/'+slug+'/index.html';
@@ -79,4 +81,4 @@ assert.ok(ui.includes('"Living in Germany","Alltag in Deutschland","/almanyada-y
 assert.ok(registry.includes("'almanyada-yasam'"),'i18n registry entry');
 const search=fs.readFileSync('assets/encyclopedia.js','utf8');
 for(const token of ['data-filter','aria-pressed','ency-query','ency-empty','normalize('])assert.ok(search.includes(token),'Search/filter functionality: '+token);
-console.log('Encyclopedia checks passed: 10 subject summaries + 30 detailed guides, 3 locales, 120 explanatory sections, 90 checklist items, canonical/hreflang, links and shared navigation.');
+console.log('Life magazine checks passed: 3 playful illustrated hubs, 30 themed guides, 10 original artworks per locale, 3-question quiz, category search and language routes.');
