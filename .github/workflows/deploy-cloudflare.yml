@@ -268,9 +268,9 @@ jobs:
           from urllib.error import HTTPError, URLError
 
           checks = {
-              'tr': ('https://almanyapusulasi.de/almanyada-yasam/', 'Almanya’da Yaşam Ansiklopedisi'),
-              'en': ('https://almanyapusulasi.de/en/almanyada-yasam/', 'Living in Germany Encyclopedia'),
-              'de': ('https://almanyapusulasi.de/de/almanyada-yasam/', 'Alltagslexikon Deutschland'),
+              'tr': ('https://almanyapusulasi.de/almanyada-yasam/', "Almanya'da Hayat"),
+              'en': ('https://almanyapusulasi.de/en/almanyada-yasam/', 'Life in Germany'),
+              'de': ('https://almanyapusulasi.de/de/almanyada-yasam/', 'Leben in Deutschland'),
           }
           problems = []
           for lang, (url, expected) in checks.items():
@@ -281,7 +281,7 @@ jobs:
                           body = response.read().decode('utf-8', errors='replace')
                           status = response.status
                           destination = response.geturl()
-                      if status == 200 and expected in body and 'id="ency-results"' in body:
+                      if status == 200 and expected in body and 'id="ency-results"' in body and 'id="life-quiz-form"' in body and 'class="life-card-illustration"' in body:
                           print(f'PASS {lang}: HTTP {status} {destination}; encyclopedia content confirmed')
                           break
                       raise RuntimeError(f'HTTP {status}, final={destination}, correct-title={expected in body}, encyclopedia-grid={"id=ency-results" in body}')
