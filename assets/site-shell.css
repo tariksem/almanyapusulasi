@@ -98,3 +98,55 @@
 .ap-photo-credit{margin:18px auto 0;padding-top:13px;border-top:1px solid rgba(255,255,255,.09);font-size:11px;line-height:1.6;color:#9db3c5}
 .ap-photo-credit .container{width:min(100% - 38px,1200px);max-width:1200px;margin:auto}
 .ap-photo-credit a{font-size:11px;color:#cbdbe8;text-decoration:underline;text-underline-offset:2px}
+
+
+/* Almanya'da Hayat — the playful sibling's editorial nav sticker.
+   Scoped to the life route only; all other site navigation stays corporate. */
+.site-header .primary-nav-links a.ap-life-nav{
+  --life-ink:#262343;
+  display:inline-flex;align-items:center;gap:8px;
+  position:relative;min-height:44px;padding:8px 14px;
+  border:2px solid var(--life-ink);border-radius:11px;
+  background:#ffe06a;color:var(--life-ink)!important;
+  box-shadow:3px 4px 0 var(--life-ink);
+  font-weight:850;line-height:1.15;text-align:center;
+  text-decoration:none;transform:rotate(-1.5deg);
+  transition:transform .17s ease,box-shadow .17s ease,background-color .17s ease;
+}
+.site-header .primary-nav-links a.ap-life-nav::after{
+  content:"✦";font-size:17px;font-weight:900;color:#6b3bd2;
+  flex-shrink:0;
+}
+.site-header .primary-nav-links a.ap-life-nav:hover,
+.site-header .primary-nav-links a.ap-life-nav.is-active{
+  background:#ffe06a;transform:rotate(0deg) translateY(-2px);
+  box-shadow:4px 5px 0 #262343;
+}
+.site-header .primary-nav-links a.ap-life-nav:focus-visible,
+.site-header .ap-secondary-links a.ap-life-secondary:focus-visible,
+.site-header .nav-mega a.ap-life-mega:focus-visible{
+  outline:3px solid #ff719b;outline-offset:3px;
+}
+.site-header .ap-secondary-links a.ap-life-secondary{
+  color:#6b3bd2;font-weight:850;
+  border-bottom:3px solid #ff719b;
+}
+.site-header .ap-secondary-links a.ap-life-secondary:hover,
+.site-header .ap-secondary-links a.ap-life-secondary[aria-current="page"]{
+  color:#262343;border-bottom-color:#6b3bd2;
+}
+.site-header .nav-mega a.ap-life-mega{
+  border:1px solid #d5c1f7;background:#f6efff;
+}
+.site-header .nav-mega a.ap-life-mega strong{color:#5d32b7}
+.site-header .nav-mega a.ap-life-mega:hover{border-color:#6b3bd2;background:#eee3ff}
+@media(max-width:1080px){
+  .site-header .primary-nav-links a.ap-life-nav{
+    transform:none;box-shadow:2px 3px 0 #262343;
+    justify-content:space-between;text-align:left;min-height:45px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header .primary-nav-links a.ap-life-nav{transition:none!important;transform:none!important}
+  .site-header .primary-nav-links a.ap-life-nav:hover{transform:none!important}
+}

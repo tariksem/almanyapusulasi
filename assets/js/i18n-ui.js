@@ -115,31 +115,69 @@ function localShell(){
  }
  document.querySelectorAll(".site-context-bar,.hub-return-rail").forEach(el=>el.remove());
 }
-function enrichTurkishNavigation(){
- if(lang!=="tr")return;
+function enhanceLifeNavigation(){
  const header=document.querySelector(".site-header");
  if(!header)return;
- const target="/almanyada-yasam/";
+ const source="/almanyada-yasam/";
+ const href=lang==="tr"?source:api.equivalent(source,lang);
+ const label=lang==="en"?"Life in Germany":lang==="de"?"Leben in Deutschland":"Almanya’da Hayat";
  const primary=header.querySelector(".primary-nav-links");
  const mega=header.querySelector(".nav-mega-grid");
  const secondary=header.querySelector(".ap-secondary-links");
- const footer=header.parentElement.querySelector(".footer")||document.querySelector(".footer");
- const label="Almanya’da Yaşam";
- if(primary&&!primary.querySelector('a[href="'+target+'"]')){
-  const a=document.createElement("a");a.className="site-nav-link"+(path.startsWith(target)?" is-active":"");a.href=target;a.textContent=label;primary.appendChild(a);
+ const footer=document.querySelector(".footer");
+ const match=a=>a.getAttribute("href")===href||a.getAttribute("href")===source;
+ function upsert(container,kind){
+  if(!container)return;
+  let a=[...container.querySelectorAll("a[href]")].find(match);
+  if(!a){
+   a=document.createElement("a");
+   a.href=href;
+   a.textContent=label;
+   if(kind==="primary")a.className="site-nav-link";
+   else if(kind==="mega"){
+    a.className="mega-link";
+    const span=document.createElement("span");
+    const strong=document.createElement("strong");
+    strong.textContent=label;
+    span.appendChild(strong);
+    a.replaceChildren(span);
+   }
+   container.appendChild(a);
+  }
+  a.href=href;
+  a.classList.add(kind==="primary"?"ap-life-nav":kind==="secondary"?"ap-life-secondary":"ap-life-mega");
+  const strong=a.querySelector("strong");
+  if(strong)strong.textContent=label;
+  else if(kind==="mega"){
+   const span=document.createElement("span");
+   const title=document.createElement("strong");
+   title.textContent=label;
+   span.appendChild(title);
+   a.replaceChildren(span);
+  }else a.textContent=label;
+  if(path===href||path.startsWith(href)){
+   a.classList.add("is-active");
+   a.setAttribute("aria-current","page");
+  }
  }
- if(mega&&!mega.querySelector('a[href="'+target+'"]')){
-  const a=document.createElement("a");a.className="mega-link"+(path.startsWith(target)?" is-active":"");a.href=target;
-  const span=document.createElement("span"),strong=document.createElement("strong");strong.textContent=label;span.appendChild(strong);a.appendChild(span);mega.appendChild(a);
- }
- if(secondary&&!secondary.querySelector('a[href="'+target+'"]')){
-  const a=document.createElement("a");a.href=target;a.textContent=label;secondary.appendChild(a);
- }
- if(footer&&!footer.querySelector('a[href="'+target+'"]')){
-  const column=footer.querySelector(".footer-grid > div:nth-child(2)");
-  if(column){const a=document.createElement("a");a.href=target;a.textContent=label;column.appendChild(a)}
+ upsert(primary,"primary");
+ upsert(mega,"mega");
+ upsert(secondary,"secondary");
+ if(footer){
+  for(const a of footer.querySelectorAll('a[href="'+source+'"],a[href="'+href+'"]')){
+   a.textContent=label;
+   a.href=href;
+  }
+  if(lang==="tr"&&!footer.querySelector('a[href="'+href+'"]')){
+   const column=footer.querySelector(".footer-grid > div:nth-child(2)");
+   if(column){
+    const a=document.createElement("a");
+    a.href=href;a.textContent=label;
+    column.appendChild(a);
+   }
+  }
  }
 }
-function start(){localShell();enrichTurkishNavigation();createPicker();}
+function start(){localShell();enhanceLifeNavigation();createPicker();}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 })();
