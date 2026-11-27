@@ -39,3 +39,152 @@
 .ency-evidence{border-left:3px solid #2e7d32;padding-left:18px!important}
 .ency-evidence a{overflow-wrap:anywhere}
 @media(max-width:600px){.ency-article .ency-practical{padding:17px}.ency-steps li{padding-left:40px}.ency-steps li:before{width:27px;height:27px}}
+
+
+/* LIFE MAGAZINE — distinct playful sibling of the Almanya Pusulasi brand.
+   Core logo, language links and serious long-form guides are unchanged. */
+.life-magazine{--life-ink:#262343;--life-purple:#6b3bd2;--life-pink:#ff719b;--life-orange:#f18a31;--life-sun:#ffe06a;--life-mint:#8bded0;--life-lilac:#d3c4ff;--life-cream:#fffbf3;--life-line:#2d294a;background:var(--life-cream);color:var(--life-ink)}
+.life-magazine .site-header{position:relative;z-index:5;background:#fff!important;border-bottom:3px solid var(--life-ink)!important}
+.life-magazine .site-header .logo{color:#102a43!important}
+.life-magazine .site-header .ency-lang a{border:2px solid #ddd7f2;color:#292346;border-radius:20px;transition:background .2s}
+.life-magazine .site-header .ency-lang a[aria-current]{background:var(--life-ink);color:#fff;border-color:var(--life-ink)}
+.life-magazine main{overflow:hidden}
+.life-hero{position:relative;background:#ffdd73;isolation:isolate;border-bottom:3px solid var(--life-ink)}
+.life-hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#9b73401f 1.5px,transparent 1.5px);background-size:22px 22px;z-index:-1}
+.life-hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:12px;padding-top:70px;padding-bottom:75px}
+.life-hero-copy{position:relative;z-index:2}
+.life-parent-link{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.01em;color:var(--life-ink);text-decoration:none;padding:10px 0}
+.life-overline{display:table!important;width:auto!important;font-size:12px!important;font-weight:900;letter-spacing:.12em!important;color:#fff!important;background:var(--life-purple);padding:11px 15px!important;border-radius:6px;transform:rotate(-2deg);margin:25px 0 23px!important;box-shadow:4px 4px 0 var(--life-ink)}
+.life-magazine .life-hero h1{font-size:clamp(44px,5.5vw,81px);line-height:1.015;letter-spacing:-.06em;max-width:680px;color:var(--life-ink);font-weight:950;margin:0 0 27px}
+.life-magazine .life-hero h1 em{font-style:normal;color:var(--life-purple);text-decoration:underline;text-decoration-color:#ff7394;text-decoration-thickness:7px;text-underline-offset:8px}
+.life-lede{font-size:clamp(17px,1.8vw,22px)!important;line-height:1.6;color:#42385c!important;max-width:570px;margin-bottom:25px!important}
+.life-hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.life-btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;border:2px solid var(--life-ink);border-radius:100px;padding:14px 21px;font:inherit;font-weight:900;font-size:15px;text-decoration:none;cursor:pointer;line-height:1.3;min-height:51px;transition:transform .16s,box-shadow .16s,background .16s}
+.life-btn:hover{transform:translateY(-3px);box-shadow:4px 5px 0 #2623437a}
+.life-btn-dark{background:var(--life-ink);color:#fff!important}
+.life-btn-outline{background:#fffaf0;color:var(--life-ink)}
+.life-btn-quiet{border-color:transparent;background:transparent;color:var(--life-ink)}
+.life-hero-visual{position:relative;min-width:0;align-self:stretch;display:flex;align-items:center;justify-content:center}
+.life-city-svg{width:100%;max-width:650px;overflow:visible;filter:drop-shadow(0 10px 0 #eab84d66);transform:rotate(2deg)}
+.life-sticker{position:absolute;z-index:1;display:grid;place-items:center;transform:rotate(-9deg);border:3px solid var(--life-ink);box-shadow:6px 6px 0 #262343;line-height:1.15;text-align:center;font-weight:900;letter-spacing:.03em}
+.life-sticker-one{background:#e2caff;border-radius:50%;width:145px;height:145px;left:-9%;top:5%;font-size:18px}
+.life-sticker-one strong{display:block;color:#6b3bd2}
+.life-sticker-two{background:#ff7997;border-radius:12px;right:-1%;bottom:10%;width:165px;height:92px;transform:rotate(9deg);font-size:14px}
+.life-hero-ribbon{display:flex;justify-content:space-around;gap:20px;overflow:hidden;padding:14px 15px;background:#282445;color:#fff;white-space:nowrap;font-size:12px;font-weight:900;letter-spacing:.1em}
+.life-hero-ribbon span{flex:none}
+.life-section-kicker{display:inline-block;font-weight:900;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#6942bd;background:#eee6ff;padding:10px 15px;border-radius:5px;margin-bottom:20px;transform:rotate(-1.5deg)}
+.life-featured{padding-top:79px;padding-bottom:86px}
+.life-feature-story{display:grid;grid-template-columns:43% 57%;border:3px solid var(--life-ink);border-radius:28px;overflow:hidden;background:#fff;color:inherit;text-decoration:none;box-shadow:11px 12px 0 #262343;transition:transform .16s,box-shadow .16s}
+.life-feature-story:hover{transform:translate(-3px,-3px);box-shadow:14px 15px 0 #262343}
+.life-feature-visual{position:relative;min-height:340px;overflow:hidden;background:radial-gradient(circle at 25% 35%,#ffc3d5 0 19%,transparent 19%),radial-gradient(circle at 78% 79%,#f69ebc 0 26%,transparent 26%),#edc3f5}
+.life-feature-visual:before{content:"";position:absolute;width:170px;height:210px;background:#fff1b7;border:7px solid #2d294a;top:20%;left:28%;border-radius:82px 82px 20px 20px;transform:rotate(-7deg);box-shadow:10px 12px 0 #ff8bac}
+.life-feature-visual:after{content:"";position:absolute;width:60px;height:90px;background:#9bdacf;border:6px solid #2d294a;top:36%;left:45%;border-radius:30px}
+.life-feature-moon{position:absolute;top:11%;right:15%;font-size:70px;color:#ed9d1c;transform:rotate(15deg);z-index:2}
+.life-feature-drill{position:absolute;left:8%;bottom:9%;font-size:110px;transform:rotate(-27deg);z-index:3;filter:drop-shadow(4px 5px 0 #26234333)}
+.life-feature-speech{position:absolute;right:5%;bottom:22%;background:#fff;border:4px solid var(--life-ink);border-radius:50%;width:120px;height:85px;display:grid;place-items:center;font-size:21px;font-weight:950;transform:rotate(12deg);z-index:3;box-shadow:5px 5px 0 #252343}
+.life-feature-text{padding:clamp(27px,4vw,70px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.life-pill{background:#c9f0e2;border-radius:100px;color:var(--life-ink);padding:8px 14px;font-size:11px;font-weight:900;letter-spacing:.08em}
+.life-feature-text h2{color:var(--life-ink);font-size:clamp(27px,3.8vw,53px);letter-spacing:-.04em;line-height:1.07;font-weight:950;margin:20px 0}
+.life-feature-text p{color:#514963;font-size:18px;line-height:1.65}
+.life-feature-link{display:inline-block;margin-top:12px;border-bottom:4px solid #ff719b;padding-bottom:6px;font-weight:900;color:var(--life-purple)}
+.life-play-break{background:#b3ede3;border-top:3px solid var(--life-ink);border-bottom:3px solid var(--life-ink);padding:85px 0}
+.life-play-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(25px,6vw,90px);align-items:start}
+.life-play-layout h2{font-size:clamp(34px,4vw,59px);letter-spacing:-.05em;line-height:1.06;font-weight:950;color:var(--life-ink);margin:5px 0 18px}
+.life-play-layout p{color:#3f4b52;font-size:18px;line-height:1.65}
+.life-play-doodle{font-size:54px;color:#7e41ad;letter-spacing:.18em;line-height:1.8;transform:rotate(-10deg)}
+.life-quiz-card{background:#fffefa;border:3px solid var(--life-ink);border-radius:24px;padding:clamp(21px,3vw,42px);box-shadow:10px 11px 0 #262343}
+.life-question{padding:0 0 18px;margin:0 0 20px;border:0;border-bottom:1px dashed #c9c4d6}
+.life-question legend{font-weight:850;font-size:16px;line-height:1.45;color:var(--life-ink);margin-bottom:13px;width:100%}
+.life-question-number{display:inline-grid;place-items:center;margin-right:8px;width:33px;height:33px;border-radius:50%;background:#ffe27b;font-weight:900}
+.life-options{display:grid;gap:8px}
+.life-option{display:block;cursor:pointer}
+.life-option input{position:absolute;opacity:0;width:1px;height:1px}
+.life-option span{display:block;border:2px solid #e1dce8;border-radius:12px;padding:11px 15px;font-size:14px;font-weight:680;transition:border-color .15s,background .15s}
+.life-option input:checked+span{border-color:#6b3bd2;background:#efe5ff}
+.life-option input:focus-visible+span{outline:3px solid #fd719c;outline-offset:3px}
+.life-quiz-card .life-btn{margin:5px 7px 0 0}
+.life-quiz-result{margin-top:20px;background:#fff2ba;border:2px solid var(--life-ink);padding:19px;border-radius:16px;color:var(--life-ink);font-size:16px;line-height:1.5}
+.life-quiz-result[hidden]{display:none}
+.life-discover{padding-top:92px;padding-bottom:92px}
+.life-discover-heading{display:flex;justify-content:space-between;align-items:end;gap:34px;margin-bottom:30px}
+.life-discover-heading h2{font-size:clamp(33px,4.2vw,59px);font-weight:950;letter-spacing:-.045em;line-height:1.06;color:var(--life-ink);margin:0 0 12px}
+.life-discover-heading p{color:#615770;max-width:530px;font-size:17px;line-height:1.6;margin:0}
+.life-discover .ency-search{margin:0;width:min(380px,100%);flex-shrink:0}
+.life-discover .ency-search label{font-size:13px;color:var(--life-ink);margin-bottom:8px}
+.life-discover .ency-search input{border:2px solid var(--life-ink);border-radius:100px;background:#fff;font-size:16px;padding:16px 21px;box-shadow:4px 5px 0 #d9c4fb;width:100%}
+.life-discover .ency-filters{margin-bottom:30px;gap:10px}
+.life-discover .ency-filters button{border:2px solid #262343;border-radius:100px;background:#fff;padding:11px 17px;font-size:14px;color:var(--life-ink);font-weight:850;box-shadow:3px 4px 0 #e5dcff}
+.life-discover .ency-filters button:hover{background:#fff1ba}
+.life-discover .ency-filters button.selected{background:#262343;color:#fff;box-shadow:none}
+.life-discover .ency-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.life-discover .ency-card{border:3px solid var(--life-ink);border-radius:22px;box-shadow:7px 8px 0 var(--life-ink);overflow:hidden;padding:0;transition:transform .16s,box-shadow .16s;background:#fff}
+.life-discover .ency-card:hover{transform:translate(-3px,-3px);box-shadow:10px 11px 0 var(--life-ink)}
+.life-card-link{display:flex;flex-direction:column;height:100%;text-decoration:none;color:inherit}
+.life-card-art{height:184px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#b9eddf}
+.life-card:nth-child(5n+1) .life-card-art{background:#ffc2cb}
+.life-card:nth-child(5n+2) .life-card-art{background:#d9c5ff}
+.life-card:nth-child(5n+3) .life-card-art{background:#ffe38a}
+.life-card:nth-child(5n+4) .life-card-art{background:#b7e9ef}
+.life-card:nth-child(5n+5) .life-card-art{background:#c8ebb1}
+.life-blob{position:absolute;width:150px;height:145px;border-radius:44% 56% 59% 41%;opacity:.48;background:#fff;transform:rotate(30deg)}
+.life-blob-a{top:-68px;left:-32px}.life-blob-b{bottom:-85px;right:-25px;transform:rotate(-18deg);background:#fffcf2}
+.life-card-emoji{position:relative;z-index:1;font-size:94px;line-height:1;filter:drop-shadow(5px 7px 0 #26234327);transform:rotate(-9deg);transition:transform .2s}
+.life-card:hover .life-card-emoji{transform:rotate(9deg) scale(1.13)}
+.life-number{position:absolute;right:17px;top:12px;z-index:2;font-weight:950;font-size:15px;background:#fff;border:2px solid var(--life-ink);border-radius:100px;width:42px;height:42px;display:grid;place-items:center;transform:rotate(11deg)}
+.life-card-body{padding:25px 24px 23px;display:flex;flex-direction:column;flex:1}
+.life-card .eyebrow{font-size:11px;font-weight:900;color:#6b3bd2;letter-spacing:.08em;text-transform:uppercase}
+.life-card h2{font-size:clamp(20px,1.75vw,25px);font-weight:900;line-height:1.22;color:var(--life-ink);margin:14px 0 12px;letter-spacing:-.025em}
+.life-card p{font-size:14.5px;color:#5b5268;line-height:1.6;margin:0 0 20px}
+.life-card-more{margin-top:auto;border-top:2px solid #f1eaf2;padding-top:17px;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:900;color:#6b3bd2}
+.life-card-more span{font-size:24px}
+.life-card[hidden]{display:none}
+.life-trust-note{display:flex;gap:18px;align-items:start;border:2px dashed #9b87bf;background:#f4ecff;border-radius:18px;padding:24px;margin-top:50px}
+.life-trust-badge{background:#c6a9ff;color:#262343;border:2px solid #262343;display:grid;place-items:center;border-radius:50%;font-size:23px;font-weight:900;width:48px;height:48px;flex-shrink:0}
+.life-trust-note h3{margin:0 0 8px;color:#262343;font-size:19px;font-weight:900}
+.life-trust-note p{font-size:14px;line-height:1.6;color:#514766;margin:6px 0}
+.life-trust-note a{color:#5d2ec4;text-decoration:underline}
+.life-magazine .footer{background:#272345;color:#fff}
+.life-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-top:25px;padding-bottom:25px;font-size:13px}
+.life-footer p{margin:0}.life-footer a{color:#ffdc6b}
+.life-magazine a:focus-visible,.life-magazine button:focus-visible,.life-magazine input:focus-visible{outline:3px solid #ed5d8a;outline-offset:4px}
+.life-magazine button,.life-magazine a,.life-magazine input{touch-action:manipulation}
+@media(max-width:1050px){.life-hero-grid{grid-template-columns:1fr 1fr}.life-discover .ency-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.life-sticker-one{left:-3%;width:110px;height:110px;font-size:15px}.life-sticker-two{right:-2%;bottom:8%;width:130px;font-size:12px}}
+@media(max-width:760px){.life-hero-grid{grid-template-columns:1fr;padding-top:35px;padding-bottom:40px}.life-hero-visual{min-height:270px;max-width:500px;margin:auto}.life-city-svg{max-height:380px}.life-sticker-one{left:3%;top:2%}.life-sticker-two{right:1%;bottom:0}.life-magazine .life-hero h1{font-size:clamp(43px,8vw,68px)}.life-featured{padding-top:50px;padding-bottom:70px}.life-feature-story{grid-template-columns:1fr}.life-feature-visual{min-height:250px}.life-feature-text{padding:28px}.life-play-break{padding:55px 0}.life-play-layout{grid-template-columns:1fr;gap:25px}.life-play-doodle{display:none}.life-discover-heading{flex-direction:column;align-items:stretch}.life-discover .ency-search{width:100%}.life-discover{padding-top:65px;padding-bottom:60px}.life-hero-ribbon{justify-content:flex-start}.life-magazine .site-header .header-inner{gap:10px}}
+@media(max-width:520px){.life-discover .ency-grid{grid-template-columns:1fr;gap:23px}.life-feature-visual{min-height:220px}.life-feature-drill{font-size:75px}.life-feature-speech{right:6%;width:95px;height:67px;font-size:17px}.life-hero-actions{flex-direction:column;align-items:stretch}.life-hero-actions .life-btn{width:100%}.life-overline{font-size:10px!important}.life-hero-visual{min-height:235px}.life-sticker-one{height:92px;width:92px;font-size:13px}.life-sticker-two{height:67px;width:111px;font-size:10px}.life-quiz-card{padding:20px}.life-card-art{height:165px}.life-footer{flex-direction:column;align-items:start}}
+@media(prefers-reduced-motion:reduce){.life-magazine *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+/* Each magazine tile has a unique, original, responsive vector illustration. */
+.life-card-illustration{position:relative;z-index:1;display:block;width:min(100%,290px);height:174px;filter:drop-shadow(3px 6px 0 #2926451b);transform:rotate(-5deg);transition:transform .22s ease}
+.life-card:hover .life-card-illustration{transform:rotate(3deg) scale(1.05)}
+@media(max-width:520px){.life-card-illustration{height:157px}}
+
+
+/* Deeper guides keep their trusted reference substance but join the same lively family. */
+.life-article{--life-ink:#262343;--life-purple:#6b3bd2;--life-pink:#ff719b;background:#fffbf3;color:var(--life-ink)}
+.life-article .site-header{background:#fff!important;border-bottom:3px solid #262343!important}
+.life-article .ency-hero{position:relative;background:radial-gradient(circle at 85% 13%,#ffc8d4 0 11%,transparent 11%),radial-gradient(circle at 78% 79%,#b4e8df 0 14%,transparent 14%),linear-gradient(112deg,#ffe28a,#ffb5c5)!important;color:var(--life-ink)!important;padding:48px 0 53px;border-bottom:3px solid #262343;overflow:hidden}
+.life-article .ency-hero:after{content:"✳";position:absolute;right:9%;top:24%;font-size:clamp(90px,18vw,220px);line-height:1;transform:rotate(21deg);opacity:.2;color:#8b53d7;pointer-events:none}
+.life-article .ency-hero h1{max-width:850px;font-size:clamp(34px,4.7vw,62px)!important;font-weight:950;letter-spacing:-.05em;line-height:1.04;color:var(--life-ink)!important;margin:20px 0!important;position:relative;z-index:1}
+.life-article .ency-hero p{color:#473b59!important;max-width:700px;font-size:clamp(16px,1.8vw,20px)}
+.life-article .ency-hero .kicker{color:#6b3bd2!important;font-size:12px!important;font-weight:900!important}
+.life-article .ency-hero .breadcrumbs{color:#392c4e;font-weight:850;font-size:14px;text-decoration:none}
+.life-article-stamp{display:inline-block;background:#fff;border:2px solid #262343;border-radius:8px;box-shadow:4px 4px 0 #262343;padding:9px 14px;transform:rotate(-2deg);font-size:11px;letter-spacing:.1em;font-weight:900;color:#6b3bd2}
+.life-article .ency-article{border:3px solid #262343;border-radius:18px;box-shadow:8px 9px 0 #262343;background:#fff}
+.life-article .ency-article h2{color:#262343}
+.life-article .ency-article-layout{gap:36px}
+.life-article .ency-toc{border:2px solid #262343;background:#f1e8ff;border-radius:15px;box-shadow:5px 5px 0 #262343}
+.life-article .ency-toc a{color:#5434a5}
+.life-article .ency-toc a:hover{background:#e2d4fb}
+.life-article .ency-article .ency-practical{background:#f9f2ff;border:2px solid #d6befc;border-radius:15px}
+.life-article .ency-steps li:before{background:#ffdf75;color:#262343;border:2px solid #262343}
+.life-article .ency-faq details{border:2px solid #e8dafa}
+.life-article .ency-faq details[open] summary{background:#ffe9ac}
+.life-article .ency-checklist input{accent-color:#6b3bd2}
+.life-article .ency-checklist li{border:2px solid #e7dbea;background:#fffbf5}
+.life-article .ency-related-links a{background:#dff5e8;color:#40307b;border:1px solid #b5e9d8}
+.life-article .ency-back{color:#6b3bd2;display:inline-block;font-size:16px}
+.life-article .ency-advisory{background:#fff6d4;border-color:#ff7394}
+.life-article .footer{background:#262343;color:#fff}
+.life-article a:focus-visible,.life-article button:focus-visible,.life-article input:focus-visible{outline:3px solid #ed5d8a;outline-offset:3px}
+@media(max-width:850px){.life-article .ency-hero{padding:34px 0 42px}.life-article .ency-article{padding:21px}.life-article .ency-article-layout{gap:22px}}
