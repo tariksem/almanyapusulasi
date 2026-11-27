@@ -158,3 +158,33 @@
 .life-card-illustration{position:relative;z-index:1;display:block;width:min(100%,290px);height:174px;filter:drop-shadow(3px 6px 0 #2926451b);transform:rotate(-5deg);transition:transform .22s ease}
 .life-card:hover .life-card-illustration{transform:rotate(3deg) scale(1.05)}
 @media(max-width:520px){.life-card-illustration{height:157px}}
+
+
+/* Deeper guides keep their trusted reference substance but join the same lively family. */
+.life-article{--life-ink:#262343;--life-purple:#6b3bd2;--life-pink:#ff719b;background:#fffbf3;color:var(--life-ink)}
+.life-article .site-header{background:#fff!important;border-bottom:3px solid #262343!important}
+.life-article .ency-hero{position:relative;background:radial-gradient(circle at 85% 13%,#ffc8d4 0 11%,transparent 11%),radial-gradient(circle at 78% 79%,#b4e8df 0 14%,transparent 14%),linear-gradient(112deg,#ffe28a,#ffb5c5)!important;color:var(--life-ink)!important;padding:48px 0 53px;border-bottom:3px solid #262343;overflow:hidden}
+.life-article .ency-hero:after{content:"✳";position:absolute;right:9%;top:24%;font-size:clamp(90px,18vw,220px);line-height:1;transform:rotate(21deg);opacity:.2;color:#8b53d7;pointer-events:none}
+.life-article .ency-hero h1{max-width:850px;font-size:clamp(34px,4.7vw,62px)!important;font-weight:950;letter-spacing:-.05em;line-height:1.04;color:var(--life-ink)!important;margin:20px 0!important;position:relative;z-index:1}
+.life-article .ency-hero p{color:#473b59!important;max-width:700px;font-size:clamp(16px,1.8vw,20px)}
+.life-article .ency-hero .kicker{color:#6b3bd2!important;font-size:12px!important;font-weight:900!important}
+.life-article .ency-hero .breadcrumbs{color:#392c4e;font-weight:850;font-size:14px;text-decoration:none}
+.life-article-stamp{display:inline-block;background:#fff;border:2px solid #262343;border-radius:8px;box-shadow:4px 4px 0 #262343;padding:9px 14px;transform:rotate(-2deg);font-size:11px;letter-spacing:.1em;font-weight:900;color:#6b3bd2}
+.life-article .ency-article{border:3px solid #262343;border-radius:18px;box-shadow:8px 9px 0 #262343;background:#fff}
+.life-article .ency-article h2{color:#262343}
+.life-article .ency-article-layout{gap:36px}
+.life-article .ency-toc{border:2px solid #262343;background:#f1e8ff;border-radius:15px;box-shadow:5px 5px 0 #262343}
+.life-article .ency-toc a{color:#5434a5}
+.life-article .ency-toc a:hover{background:#e2d4fb}
+.life-article .ency-article .ency-practical{background:#f9f2ff;border:2px solid #d6befc;border-radius:15px}
+.life-article .ency-steps li:before{background:#ffdf75;color:#262343;border:2px solid #262343}
+.life-article .ency-faq details{border:2px solid #e8dafa}
+.life-article .ency-faq details[open] summary{background:#ffe9ac}
+.life-article .ency-checklist input{accent-color:#6b3bd2}
+.life-article .ency-checklist li{border:2px solid #e7dbea;background:#fffbf5}
+.life-article .ency-related-links a{background:#dff5e8;color:#40307b;border:1px solid #b5e9d8}
+.life-article .ency-back{color:#6b3bd2;display:inline-block;font-size:16px}
+.life-article .ency-advisory{background:#fff6d4;border-color:#ff7394}
+.life-article .footer{background:#262343;color:#fff}
+.life-article a:focus-visible,.life-article button:focus-visible,.life-article input:focus-visible{outline:3px solid #ed5d8a;outline-offset:3px}
+@media(max-width:850px){.life-article .ency-hero{padding:34px 0 42px}.life-article .ency-article{padding:21px}.life-article .ency-article-layout{gap:22px}}
