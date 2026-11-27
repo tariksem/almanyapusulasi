@@ -13,7 +13,7 @@ for(const [lang,path] of Object.entries(routes)){
   assert.ok(s.includes('hreflang="'+other+'" href="https://almanyapusulasi.de'+uri+'"'),path+' alternate '+other);
   assert.ok(s.includes('href="'+uri+'"'),path+' accessible language link '+other);
  }
- assert.equal((s.match(/class="ency-card"/g)||[]).length,10,path+' article count');
+ assert.equal((s.match(/class="ency-card(?:\\s|\")/g)||[]).length,10,path+' article count');
  for(const id of items)assert.ok(s.includes('id="'+id+'"'),path+' item '+id);
  for(const cat of ['home','social','family','student','new'])assert.ok(s.includes('data-filter="'+cat+'"'),path+' category '+cat);
  for(const asset of ['/assets/style.css','/assets/encyclopedia.css','/assets/encyclopedia.js','/assets/js/analytics-consent.js'])assert.ok(s.includes(asset),path+' asset '+asset);
@@ -55,6 +55,21 @@ for(const slug of expandedChapters){
   assert.ok((source.match(/<li><p>/g)||[]).length>=4,file+' requires at least four practical steps');
  }
 }
+// Magazine home must remain playful, illustrated, accessible and fully localized.
+for(const [lang,path] of Object.entries(routes)){
+ const html=fs.readFileSync(path,'utf8');
+ assert.ok(html.includes('<body class="life-magazine">'),path+' requires magazine theme');
+ assert.ok(html.includes('class="life-hero"'),path+' magazine hero');
+ assert.ok(html.includes('class="life-feature-story"'),path+' featured story');
+ assert.ok(html.includes('id="life-random-hero"'),path+' surprise interaction');
+ assert.ok(html.includes('id="life-quiz-form"'),path+' quiz form');
+ assert.equal((html.match(/class="life-question"/g)||[]).length,3,path+' three localized quiz questions');
+ assert.equal((html.match(/class="life-card-illustration"/g)||[]).length,10,path+' ten original illustrations');
+ assert.equal((html.match(/class="life-card-link"/g)||[]).length,10,path+' ten clickable stories');
+ assert.ok(!html.includes('life-card-emoji'),path+' cannot use generic emoji icon tiles');
+}
+const magazineJs=fs.readFileSync('assets/encyclopedia.js','utf8');
+for(const token of ['life-random-hero','life-quiz-form','life-quiz-result','aria-pressed','normalize('])assert.ok(magazineJs.includes(token),'Magazine interaction missing: '+token);
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
 const registry=fs.readFileSync('scripts/i18n-registry.js','utf8');
