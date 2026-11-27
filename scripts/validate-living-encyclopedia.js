@@ -75,9 +75,13 @@ for(const token of ['life-random-hero','life-quiz-form','life-quiz-result','aria
 const shell=fs.readFileSync('assets/js/analytics-consent.js','utf8');
 const ui=fs.readFileSync('assets/js/i18n-ui.js','utf8');
 const registry=fs.readFileSync('scripts/i18n-registry.js','utf8');
-assert.ok(ui.includes('function enrichTurkishNavigation()'),'TR site navigation enhancer');
-assert.ok(ui.includes('secondary.appendChild(a)'),'TR secondary navigation entry');
-assert.ok(ui.includes('"Living in Germany","Alltag in Deutschland","/almanyada-yasam/"'),'EN/DE site nav entry');
+assert.ok(ui.includes('function enhanceLifeNavigation()'),'three-language Life navigation enhancer');
+assert.ok(ui.includes('upsert(primary,"primary")'),'Life menu sticker must appear in top navigation');
+assert.ok(ui.includes('upsert(secondary,"secondary")'),'Life menu must appear in secondary navigation');
+assert.ok(ui.includes('upsert(mega,"mega")'),'Life category must appear in all guides');
+for(const label of ['Almanya’da Hayat','Life in Germany','Leben in Deutschland'])assert.ok(ui.includes(label),'Missing localized life menu: '+label);
+const shellCss=fs.readFileSync('assets/site-shell.css','utf8');
+for(const token of ['.ap-life-nav','.ap-life-secondary','.ap-life-mega','#ffe06a','#262343','#ff719b','prefers-reduced-motion'])assert.ok(shellCss.includes(token),'Missing approved Magazine V1 navigation styling: '+token);
 assert.ok(registry.includes("'almanyada-yasam'"),'i18n registry entry');
 const search=fs.readFileSync('assets/encyclopedia.js','utf8');
 for(const token of ['data-filter','aria-pressed','ency-query','ency-empty','normalize('])assert.ok(search.includes(token),'Search/filter functionality: '+token);
