@@ -101,7 +101,7 @@ const {translationEntry}=require('./bulk-i18n-lib.js');
 const fallback={en:"The linked resource is currently available in Turkish.",de:"Der verlinkte Inhalt ist derzeit auf Türkisch verfügbar."};
 const SOURCE=fs.readFileSync('index.html','utf8');
 function build(lang){
- let html=SOURCE;
+ let html=SOURCE.replace(/<section\b[^>]*\bdata-home-locale="tr"[^>]*>[\s\S]*?<\/section>\s*/g,'');
  const tr='/';
  const src='https://almanyapusulasi.de/';
  html=html.replace('<html lang="tr">','<html lang="'+lang+'">');

@@ -119,6 +119,11 @@ main {gap:23px;grid-template-columns:minmax(0,1fr) 350px;padding:22px 22px 12px 
 .tool .name{font-size:12px;font-weight:710;line-height:1.26;color:#223d58;letter-spacing:-.01em}
 .tool .badge{top:8px;right:8px;border-radius:6px;background:#fff3d5;color:#906a1a;border:1px solid #f3dfae;font-size:9px;padding:2px 6px}
 .tool.all svg{color:#2a5d83}
+.daily-german{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:24px;padding:19px 21px;border:1px solid #e2e8f0;border-left:4px solid #d89b2b;border-radius:13px;background:#fff}
+.daily-german h2{margin:0 0 4px;font-size:19px;color:#102a43}
+.daily-german p{margin:0;color:#5f6b7a;font-size:14px}
+.daily-german .daily-german-link{display:inline-flex;align-items:center;min-height:44px;padding:8px 13px;border-radius:8px;background:#1f4e79;color:#fff;font-weight:700;font-size:14px;text-decoration:none}
+.daily-german .daily-german-link:hover{background:#102a43}
 .guides-sec {margin-top:30px}
 .guides-sec .sect-head{padding-left:0}
 .guides-sec .sect-head .label>svg{width:20px;height:20px;color:#476c8b!important}
@@ -293,6 +298,10 @@ header .logo .brand-title{font-size:25px;letter-spacing:-.055em;line-height:1;fo
 <a class="tool" href="https://almanyapusulasi.de/araba-toplam-maliyet-hesaplayici/"><svg class="i toolico"><use href="#ic-car"/></svg><span class="name">Auto-Kosten<br>Check</span></a>
 <a class="tool all" href="https://almanyapusulasi.de/araclar/"><svg class="i toolico"><use href="#ic-chevron"/></svg><span class="name">Tüm araçlar<br>(12)</span></a>
 </div></section>
+<section class="section daily-german" data-home-locale="tr" aria-labelledby="daily-german-title">
+  <div><h2 id="daily-german-title">Almanya’da Günlük Almanca</h2><p>Doktor, alışveriş, ev arama ve ulaşım gibi 12 günlük durumda A1–B1 dinleme pratiği yapın.</p></div>
+  <a class="daily-german-link" href="/gunluk-almanca/">Günlük Almanca derslerini aç</a>
+</section>
 <section class="section guides-sec"><div class="sect-head"><div class="label"><svg class="i" style="color:#e4a113"><use href="#ic-book"/></svg><h2>Öne Çıkan Rehberler</h2></div><a class="more" href="https://almanyapusulasi.de/site-haritasi/">Tüm rehberler →</a></div><div class="guides">
 <a class="guide" href="https://almanyapusulasi.de/blue-card-uygunluk-kontrolu-2026/"><div class="image blue"></div><div class="body">Blue Card’tan süresiz oturuma (§ 9a) 21 veya 27 ayda geçiş<span class="arrow"><svg class="i tiny" aria-hidden="true"><use href="#ic-chevron"/></svg></span></div></a>
 <a class="guide" href="https://almanyapusulasi.de/chancenkarte-puan-hesaplayici-2026/"><div class="image chance"></div><div class="body">Chancenkarte: Kimler başvurabilir, puan hesabı nasıl?<span class="arrow"><svg class="i tiny" aria-hidden="true"><use href="#ic-chevron"/></svg></span></div></a>
@@ -313,6 +322,7 @@ header .logo .brand-title{font-size:25px;letter-spacing:-.055em;line-height:1;fo
 <script>
 (function(){
 const records=[
+{title:'Almanya’da Günlük Almanca',type:'Alıştırma',url:'/gunluk-almanca/',tags:'almanca günlük gunluk dinleme kurs doktor alışveriş randevu a1 a2 b1'},
 {title:'Blue Card uygunluk kontrolü',type:'Hesaplayıcı',url:'/blue-card-uygunluk-kontrolu-2026/',tags:'mavi kart oturum calisma vize eu bluecard'},
 {title:'Chancenkarte puan hesabı',type:'Hesaplayıcı',url:'/chancenkarte-puan-hesaplayici-2026/',tags:'fırsat kartı is bulma puan is arama almanya'},
 {title:'Brutto–Netto maaş hesaplayıcı',type:'Hesaplayıcı',url:'/brutto-netto-hesaplayici-2026/',tags:'maas brutto netto vergi ücret'},

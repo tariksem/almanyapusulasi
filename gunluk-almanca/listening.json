@@ -1,0 +1,62 @@
+{
+  "telefon": {
+    "audio": "/almanca-akademisi-demo/audio_new/A1-U03-COMM.mp3",
+    "seconds": 28.7,
+    "transcript": "Lea: Guten Tag, hier ist Lea. Spreche ich mit Frau Yılmaz?\nMina: Ja, guten Tag!\nLea: Wir haben Ihre Telefonnummer nicht richtig. Ist sie null eins sieben sechs, drei zwei vier, fünf acht neun?\nMina: Fast. Die letzten drei Zahlen sind fünf acht sieben.\nLea: Also null eins sieben sechs, drei zwei vier, fünf acht sieben?\nMina: Ja, genau. Vielen Dank!"
+  },
+  "randevu": {
+    "audio": "/almanca-akademisi-demo/audio_new/A1-U07-COMM.mp3",
+    "seconds": 23.9,
+    "transcript": "Ben: Guten Morgen. Ich möchte einen Termin machen.\nMitarbeiterin: Gerne. Haben Sie am Dienstag um neun Uhr Zeit?\nBen: Am Dienstag arbeite ich. Geht Mittwoch?\nMitarbeiterin: Am Mittwoch ist um zehn Uhr noch ein Termin frei.\nBen: Ja, Mittwoch um zehn Uhr passt.\nMitarbeiterin: Gut. Bitte kommen Sie zehn Minuten früher."
+  },
+  "pazar": {
+    "audio": "/almanca-akademisi-demo/audio_new/A1-U09-COMM.mp3",
+    "seconds": 24.31,
+    "transcript": "Nora: Guten Tag! Was kostet ein Kilo Äpfel?\nVerkäufer: Zwei Euro fünfzig. Die Birnen kosten drei Euro.\nNora: Dann nehme ich ein Kilo Äpfel und zwei Bananen.\nVerkäufer: Gern. Möchten Sie noch etwas?\nNora: Nein, danke. Kann ich mit Karte bezahlen?\nVerkäufer: Leider nicht. Nur bar.\nNora: Gut, ich habe Bargeld dabei."
+  },
+  "yol-tarifi": {
+    "audio": "/almanca-akademisi-demo/audio_new/A1-U11-COMM.mp3",
+    "seconds": 18.98,
+    "transcript": "Gast: Entschuldigung, wo ist der Bahnhof?\nFrau: Gehen Sie hier geradeaus bis zur Ampel.\nGast: Und dann?\nFrau: An der Ampel links. Nach dem Park sehen Sie den Bahnhof auf der rechten Seite.\nGast: Ist es weit?\nFrau: Nein, ungefähr fünf Minuten zu Fuß.\nGast: Vielen Dank!\nFrau: Bitte schön!"
+  },
+  "doktor": {
+    "audio": "/almanca-akademisi-demo/audio_new/A2-U02-COMM.mp3",
+    "seconds": 35.09,
+    "transcript": "Ärztin: Guten Morgen, Frau Kaya. Was führt Sie zu mir?\nSelin: Ich habe seit drei Tagen Halsschmerzen und huste besonders nachts.\nÄrztin: Haben Sie Fieber oder bekommen Sie schlecht Luft?\nSelin: Fieber habe ich nicht. Aber ich schlafe wegen des Hustens kaum.\nÄrztin: Ich untersuche Sie jetzt. Bitte sagen Sie mir auch, welche Medikamente Sie nehmen.\nSelin: Nur gelegentlich eine Tablette gegen Kopfschmerzen.\nÄrztin: Gut. Danach besprechen wir gemeinsam, was sinnvoll ist."
+  },
+  "ev-arama": {
+    "audio": "/almanca-akademisi-demo/audio_new/A2-U03-COMM.mp3",
+    "seconds": 31.63,
+    "transcript": "Vermieterin: Willkommen. Die Wohnung hat zwei Zimmer und einen Balkon.\nAhmet: Die Küche gefällt mir. Sind die Heizkosten in der Miete enthalten?\nVermieterin: In der monatlichen Vorauszahlung sind Heizkosten vorgesehen. Die Abrechnung kommt einmal im Jahr.\nAhmet: Verstehe. Ab wann wäre die Wohnung frei?\nVermieterin: Ab dem ersten März. Die Besichtigung ist heute, aber Sie können mir Ihre Unterlagen bis Freitag schicken.\nAhmet: Danke, ich prüfe alles und melde mich rechtzeitig."
+  },
+  "urun-degisimi": {
+    "audio": "/almanca-akademisi-demo/audio_new/A2-U04-COMM.mp3",
+    "seconds": 34.06,
+    "transcript": "Kundin: Guten Tag. Ich habe diese Jacke gestern gekauft, aber der Reißverschluss ist kaputt.\nVerkäufer: Das tut mir leid. Haben Sie den Kassenbon dabei?\nKundin: Ja, hier. Ich hätte gern dieselbe Jacke in Ordnung.\nVerkäufer: Wir haben die Größe leider nicht mehr auf Lager. Ich kann prüfen, ob eine andere Filiale sie hat.\nKundin: Das wäre nett. Wenn nicht, möchte ich wissen, welche anderen Möglichkeiten es gibt.\nVerkäufer: Natürlich. Wir schauen uns den Fall gemeinsam an."
+  },
+  "belediye-randevusu": {
+    "audio": "/almanca-akademisi-demo/audio_new/A2-U06-COMM.mp3",
+    "seconds": 30.29,
+    "transcript": "Mitarbeiter: Bürgerbüro, guten Tag.\nRana: Guten Tag. Ich habe nächste Woche einen Termin. Muss ich etwas mitbringen?\nMitarbeiter: Bitte sehen Sie zuerst in Ihrer Terminbestätigung nach. Dort stehen die Unterlagen für Ihren Vorgang.\nRana: Ich habe die E-Mail noch nicht geöffnet. Kann ich sie auch ausdrucken?\nMitarbeiter: Ja, das können Sie. Wenn etwas unklar ist, melden Sie sich vor dem Termin bei uns.\nRana: Vielen Dank, dann lese ich die E-Mail heute Abend."
+  },
+  "apartman": {
+    "audio": "/gunluk-almanca/apartman.mp3",
+    "seconds": 68.63,
+    "transcript": "Verwalterin: Vielen Dank, dass Sie heute gekommen sind. In den letzten Wochen haben sich mehrere Bewohner über laute Gespräche im Treppenhaus beschwert.\nBewohner: Ich verstehe die Beschwerden, aber manchmal kommen Gäste am Wochenende erst spät. Man kann ja nicht jedes Gespräch verbieten.\nVerwalterin: Natürlich nicht. Es geht nicht um ein vollständiges Verbot, sondern darum, abends Rücksicht zu nehmen und die Haustür leise zu schließen.\nBewohner: Das halte ich für sinnvoll. Allerdings wissen neue Bewohner vielleicht gar nicht, welche Ruhezeiten in unserer Hausordnung stehen.\nVerwalterin: Dann sollten wir die Hausordnung noch einmal an alle Wohnungen verteilen. Zusätzlich könnte im Eingangsbereich ein freundlicher Hinweis hängen.\nBewohner: Bitte ohne Drohungen. Eine klare Erklärung wirkt oft besser als ein Zettel, auf dem nur Strafen stehen.\nVerwalterin: Einverstanden. Wir formulieren einen kurzen Hinweis und fragen nächste Woche nach, ob sich die Situation verbessert hat.\nBewohner: Gut. So behandeln wir das Problem gemeinsam, statt einzelne Personen sofort zu beschuldigen."
+  },
+  "banka": {
+    "audio": "/almanca-akademisi-demo/audio_v14/B1-U09-COMM.mp3",
+    "seconds": 68.3,
+    "transcript": "Kunde: Ich habe gestern mein neues Konto eröffnet. Beim Lesen der Unterlagen ist mir aufgefallen, dass zwei verschiedene Gebühren genannt werden.\nBankmitarbeiterin: Welche Gebühren meinen Sie? Vielleicht ist eine davon nur für eine zusätzliche Leistung vorgesehen.\nKunde: Im Preisverzeichnis steht eine monatliche Kontogebühr. Auf einer anderen Seite finde ich noch Kosten für eine bestimmte Kartenart.\nBankmitarbeiterin: Das kann vorkommen. Die Kontoführung und eine zusätzliche Karte sind manchmal getrennt bepreist. Wir sollten aber Ihre konkreten Vertragsbedingungen ansehen.\nKunde: Genau darum geht es mir. Ich möchte wissen, welche Leistungen ich wirklich brauche und was am Ende pro Jahr anfällt.\nBankmitarbeiterin: Dann vergleichen wir zuerst die Grundgebühr und danach die möglichen Zusatzkosten. Ich markiere Ihnen die relevanten Stellen im Vertrag.\nKunde: Könnte ich die Übersicht mit nach Hause nehmen? Ich möchte nichts sofort unterschreiben, was ich noch nicht ganz verstanden habe.\nBankmitarbeiterin: Natürlich. Sie können sich Zeit nehmen und bei weiteren Fragen noch einmal einen Termin vereinbaren."
+  },
+  "belge-teslimi": {
+    "audio": "/almanca-akademisi-demo/audio_v14/B1-U10-COMM.mp3",
+    "seconds": 65.78,
+    "transcript": "Sachbearbeiterin: Guten Tag. Ich sehe, dass Sie einen Termin zur Besprechung Ihres Antrags haben. Haben Sie die Einladung dabei?\nAntragsteller: Ja, hier. Ich habe auch meinen Pass, meinen aktuellen Aufenthaltstitel und die Unterlagen zu meiner Arbeit mitgebracht.\nSachbearbeiterin: Vielen Dank. Für die Prüfung fehlen uns nach der aktuellen Liste noch zwei Nachweise. Ich erkläre Ihnen gern, welche das sind.\nAntragsteller: Das wäre hilfreich. Ich möchte vermeiden, dass ich etwas Falsches einreiche oder dieselben Dokumente mehrmals schicke.\nSachbearbeiterin: Bitte achten Sie auf die genaue Bezeichnung in der schriftlichen Aufforderung. Die Anforderungen können je nach Verfahren unterschiedlich sein.\nAntragsteller: Gibt es eine Frist, bis wann ich die Dokumente nachreichen soll? Das steht auf meinem Schreiben nicht deutlich.\nSachbearbeiterin: Ich prüfe den Eintrag und gebe Ihnen die Frist schriftlich. Damit können Sie die fehlenden Unterlagen gezielt vorbereiten.\nAntragsteller: Vielen Dank. Dann habe ich einen verlässlichen nächsten Schritt und muss nicht raten."
+  },
+  "tren-aktarmasi": {
+    "audio": "/almanca-akademisi-demo/audio_new/B1-U12-COMM.mp3",
+    "seconds": 58.37,
+    "transcript": "Durchsage: Achtung am Gleis vier: Der Regionalzug nach Köln verspätet sich um ungefähr zwanzig Minuten. Grund ist eine Störung an einem vorausfahrenden Zug.\nReisender: Entschuldigung, ich muss in Köln einen Anschluss erreichen. Weiß man schon, ob der wartet?\nService: Das kann ich Ihnen leider nicht versprechen. Prüfen Sie bitte die aktuelle Verbindung in der Reiseauskunft.\nReisender: Kann ich eventuell eine frühere Verbindung über Bonn nehmen?\nReisender: Wenn ich den Anschluss nicht erreiche, muss ich meinen Termin verschieben. Deshalb möchte ich wissen, welche Verbindung im Moment wirklich möglich ist.\nService: Ich verstehe. Die Anzeige wird laufend aktualisiert. Ich kann Ihnen die nächste Verbindung zeigen, aber die tatsächliche Abfahrt kann sich noch ändern.\nService: Es gibt eine Alternative über Bonn. Sie fährt von Gleis zwei ab. Bitte prüfen Sie vor der Abfahrt noch einmal die Anzeige.\nReisender: Danke, dann vergleiche ich beide Möglichkeiten."
+  }
+}

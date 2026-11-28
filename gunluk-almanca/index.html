@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Almanya’da Günlük Almanca · A1–B1 | Almanya Pusulası</title>
+  <meta name="description" content="Almanya’da günlük hayat için 12 ücretsiz A1–B1 Almanca dinleme ve kısa yanıt alıştırması. Doktor, ev, alışveriş, belediye ve tren gibi durumları çalışın.">
+  <link rel="canonical" href="https://almanyapusulasi.de/gunluk-almanca/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Almanya’da Günlük Almanca">
+  <meta property="og:description" content="Bir durum seç, Almanca konuşmayı dinle ve kısa bir yanıtla pratik yap.">
+  <meta property="og:url" content="https://almanyapusulasi.de/gunluk-almanca/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="course.css">
+  <script type="module" src="course.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+  <header class="course-header">
+    <div class="course-container header-inner">
+      <a class="brand-link" href="/" aria-label="Almanya Pusulası ana sayfası">
+        <img src="/assets/brand/almanya-pusulasi-logo-64.png" width="42" height="42" alt="">
+        <strong>Almanya Pusulası</strong>
+      </a>
+      <a class="home-link" href="/">Ana sayfa</a>
+    </div>
+  </header>
+  <main id="icerik">
+    <section class="hero">
+      <div class="course-container hero-inner">
+        <p class="course-meta">A1–B1 · 12 dinleme alıştırması</p>
+        <h1>Almanya’da Günlük Almanca</h1>
+        <p>Doktorda şikâyetini anlat, mağazada değişim iste, istasyonda yol sor. Bir durum seç, konuşmayı dinle ve kısa bir Almanca yanıtla pratik yap.</p>
+      </div>
+    </section>
+    <div class="course-container course-layout">
+      <nav class="lesson-nav" aria-label="Günlük hayat dersleri">
+        <details id="lesson-menu" open>
+          <summary>Durum seç <span>12 ders</span></summary>
+          <div class="lesson-links">
+            <h2>A1</h2>
+            <ul>
+              <li><a href="#telefon">Telefonda numara doğrulama</a></li>
+              <li><a href="#randevu">Randevu alma</a></li>
+              <li><a href="#pazar">Pazarda ödeme</a></li>
+              <li><a href="#yol-tarifi">İstasyona yol tarifi</a></li>
+            </ul>
+            <h2>A2</h2>
+            <ul>
+              <li><a href="#doktor">Doktorda şikâyet anlatma</a></li>
+              <li><a href="#ev-arama">Ev ararken ısınma gideri</a></li>
+              <li><a href="#urun-degisimi">Mağazada ürün değiştirme</a></li>
+              <li><a href="#belediye-randevusu">Belediye randevusuna hazırlık</a></li>
+            </ul>
+            <h2>B1</h2>
+            <ul>
+              <li><a href="#apartman">Komşudan nazikçe rica etme</a></li>
+              <li><a href="#banka">Bankada yıllık masrafı sorma</a></li>
+              <li><a href="#belge-teslimi">Eksik belge için süre sorma</a></li>
+              <li><a href="#tren-aktarmasi">Geciken trende aktarma</a></li>
+            </ul>
+          </div>
+        </details>
+      </nav>
+      <section class="lesson-panel" aria-labelledby="lesson-title">
+        <p id="course-load" role="status">Ders yükleniyor…</p>
+        <p id="course-error" role="alert" hidden></p>
+        <div id="lesson-content" hidden>
+          <p id="lesson-meta" class="lesson-meta"></p>
+          <h2 id="lesson-title" tabindex="-1"></h2>
+          <div class="listen-panel">
+            <h3>Konuşmayı dinle</h3>
+            <audio id="lesson-audio" controls preload="none" aria-label="Almanca konuşma kaydı"></audio>
+            <p id="audio-error" role="status" hidden>Ses yüklenemedi. Bağlantını kontrol edip bu dersi tekrar açabilirsin.</p>
+            <div class="listen-tools">
+              <label for="audio-speed">Ses hızı</label>
+              <select id="audio-speed">
+                <option value="0.8">0,8×</option>
+                <option value="1" selected>1×</option>
+                <option value="1.15">1,15×</option>
+              </select>
+            </div>
+            <details id="transcript-panel">
+              <summary>Konuşma metni</summary>
+              <p id="lesson-transcript" class="transcript" lang="de"></p>
+            </details>
+          </div>
+          <form id="reply-form">
+            <h3>Sıra sende</h3>
+            <p id="lesson-task"></p>
+            <label for="reply">Almanca yanıtın</label>
+            <textarea id="reply" rows="3" maxlength="600" lang="de" aria-describedby="lesson-task reply-help"></textarea>
+            <p id="reply-help" class="field-help">Kısa ve anlaşılır bir yanıt yeterli. İstersen önce sesli söyle.</p>
+            <button type="submit">Yanıtı gözden geçir</button>
+          </form>
+          <div id="reply-feedback" role="status" aria-live="polite">
+            <p id="feedback-summary"></p>
+            <ul id="feedback-tips"></ul>
+          </div>
+          <details id="example-panel">
+            <summary>Örnek yanıtı gör</summary>
+            <p id="example-answer" class="example-answer" lang="de"></p>
+            <p class="field-help">Konuşmadan ilgili bölüm</p>
+            <blockquote id="example-evidence" lang="de"></blockquote>
+          </details>
+          <div class="lesson-actions">
+            <button id="choose-lesson" type="button" class="secondary">Durum seç</button>
+            <a id="next-lesson" class="next-lesson" href="#randevu">Sonraki ders</a>
+          </div>
+        </div>
+        <noscript>Ders seçmek ve kısa yanıt alıştırmasını kullanmak için JavaScript’i aç.</noscript>
+      </section>
+    </div>
+  </main>
+  <footer class="course-footer">
+    <div class="course-container">
+      <p>Konuşmalar Almanca yapay sesle seslendirilmiştir. Geri bildirim belirli ifadelere dayalı alıştırma ipuçları verir. Yazdığın yanıtlar tarayıcında kalır.</p>
+      <a href="/">Almanya Pusulası</a> <span aria-hidden="true">·</span> <a href="/privacy/">Gizlilik</a>
+    </div>
+  </footer>
+</body>
+</html>

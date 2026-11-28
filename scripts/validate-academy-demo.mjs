@@ -4,6 +4,7 @@ import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { feedbackCases, feedbackEdgeCases } from './academy-feedback-cases.mjs';
+import './validate-daily-german.mjs';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const demoRoot = path.join(repositoryRoot, 'almanca-akademisi-demo');
