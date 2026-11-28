@@ -2,7 +2,7 @@
 
 const data = JSON.parse(document.getElementById('source').textContent);
 const lessons = data.scenarios;
-const storagePrefix = 'AP-V16-'; // V16 notlarının V17.1'de taşınabilmesi için korunur.
+const storagePrefix = 'AP-V16-'; // V16 notlarının V17.2'de taşınabilmesi için korunur.
 const $ = (id) => document.getElementById(id);
 const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (character) => ({
   '&': '&amp;',
@@ -164,7 +164,7 @@ function exportProgress() {
 
   const payload = {
     exported_at: new Date().toISOString(),
-    application: 'Almanya Pusulası Akademi Dinleme V17.1',
+    application: 'Almanya Pusulası Akademi Dinleme V17.2',
     scoring_notice: 'Açık uçlu yanıtlar öz değerlendirmedir; otomatik dil notu değildir.',
     saved,
   };

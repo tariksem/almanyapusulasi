@@ -1,11 +1,11 @@
-# Almanya Pusulası Akademi — Dinleme V17.1 / İç kalite denetimi
+# Almanya Pusulası Akademi — Dinleme V17.2 / İç kalite denetimi
 
-Denetim tarihi: 18 Kasım 2026
+Denetim tarihi: 28 Kasım 2026
 
 ## Korunan kapsam
 
 - **90/90 özgün iletişim senaryosu** ve seviye dağılımı korundu: A1 12, A2 12, B1 15, B2 15, C1 18, C2 18.
-- **450/450 MP3** değişmeden korundu: `audio/` 360, `audio_new/` 24, `audio_v14/` 66.
+- **450/450 MP3 yolu** korundu: `audio/` 360, `audio_new/` 24, `audio_v14/` 66. Dosyaların ses içeriği V17.2'de tamamen yenilendi.
 - **282 nesnel soru** korundu: 90 konuşmacı, 90 sıralama ve 102 anlama/çıkarım sorusu.
 - **90/90 Almanca model yanıt** ve 5 puanlık yönlendirilmiş öz değerlendirme rubriği korundu.
 
@@ -20,6 +20,14 @@ Denetim tarihi: 18 Kasım 2026
 - Canlı demo katmanında resmî kurumsal logo, `noindex` demo metadatası, ana siteye dönüş bağlantısı ve cihazın Almanca konuşma motorunu kullanan isteğe bağlı tarayıcı okuması eklendi.
 - Açık uçlu yanıtlara, yalnızca model yanıttaki anahtar kavramlar ile transkript kanıtlarının örtüşmesini gösteren şeffaf bir **otomatik ön değerlendirme** eklendi. Bu sonuç dilbilgisi, telaffuz veya CEFR yeterlilik notu değildir; öz değerlendirme ve model yanıt korunmuştur.
 
+## V17.2 nöral ses yenilemesi
+
+- Eski 450 eSpeak kaydının tamamı aynı dosya adları ve yolları korunarak Almanca nöral yapay sesle yeniden üretildi.
+- 360 temel derste `de-DE-TanjaNeural` ve `de-DE-ChristophNeural` anlatıcıları dönüşümlü kullanıldı.
+- 90 iletişim senaryosundaki 876 konuşma sırası ayrı üretildi; konuşmacı adı/rolüne göre kadın veya erkek ses atandı, aynı cinsiyetli konuşmacılarda Almanya, Avusturya ve İsviçre Almancası nöral sesleriyle ayrım sağlandı.
+- Seviye hızları A1'de daha yavaş başlayıp C2'de doğal ileri düzey hıza çıkacak biçimde uygulandı. Konuşma başı/sonu sessizlikleri otomatik temizlenip kontrollü dönüş aralığı eklendi.
+- Tüm dosyalar 24 kHz, 96 kbit/s, mono MP3 olarak üretildi. Eski manifestteki eSpeak karmalarından hiçbiri yeni manifestte yeniden kullanılmadı.
+
 ## Tekrarlanabilir yapısal ve dosya testleri
 
 `node qa-v17.mjs` sonucu başarılıdır:
@@ -31,6 +39,7 @@ Denetim tarihi: 18 Kasım 2026
 - 90/90 model yanıt, transkript kanıtı ve toplam 5 puanlık öz rubrik.
 - 360 temel ders + 90 senaryo için **450 benzersiz ses referansı**.
 - Diskte 450 MP3, manifestte 450 kayıt; dosya başlıkları ve **450/450 SHA-256** değeri eşleşiyor.
+- 450 MP3'ün tamamı baştan sona kod çözme testinden geçti; sıfır veya iki saniyeden kısa kayıt bulunmadı.
 - `index.html` içindeki gömülü veri dış JSON ile aynı; zorunlu arayüz kimlikleri benzersiz; bağımsız ve gömülü JavaScript sözdizimleri geçerli ve aynı.
 
 ## Tarayıcı uçtan uca testi
@@ -46,11 +55,11 @@ Yerel HTTP sunucusu üzerinden Chromium tabanlı uygulama içi tarayıcıda aşa
 - `audio_v14/A1-U01-COMM.mp3`, `audio_new/A1-U03-COMM.mp3`, `audio_v14/B2-U02-COMM.mp3` ve `audio/A1-U01-D01.mp3` dosyalarının tarayıcı tarafından hatasız yüklenmesi; temel ders MP3'ünün gerçek oynatmada süre ilerletmesi.
 - Test edilen sayfalarda tarayıcı konsolu uyarı veya hata üretmedi.
 
-Not: 450 dosyanın tamamı hash, dosya başlığı ve yol bakımından doğrulandı; tarayıcıda gerçek oynatma üç ses klasörünü temsil eden örneklerle yapıldı. Bu, 450 kaydın insan tarafından baştan sona dinlendiği anlamına gelmez.
+Not: 450 dosyanın tamamı hash, dosya başlığı, yol ve tam ses akışı çözümleme bakımından doğrulandı; tarayıcıda gerçek oynatma üç ses klasörünü temsil eden örneklerle yapıldı. Bu, 450 kaydın insan tarafından baştan sona dinlendiği anlamına gelmez.
 
 ## Açık kalan kalite sınırları
 
-- **450 MP3 hâlâ eSpeak tabanlı sentetik sestir.** Doğal insan/nöral çok konuşmacılı kayıt, gerçek aksan çeşitliliği ve C2 prozodisinin insan denetimi tamamlanmadı.
+- **450 MP3 nöral sentetik sestir; doğal insan kaydı değildir.** Çok konuşmacılı ayrım ve Almanca bölgesel ses çeşitliliği vardır, fakat C2 ironi/prozodi yorumu insan dinleme testiyle doğrulanmamıştır.
 - İsteğe bağlı tarayıcı okumasının sesi işletim sistemi ve tarayıcıya bağlıdır; bu özellik 450 MP3'ün yerini alan sabit bir ses arşivi değildir.
 - Özellikle ironi, ton ve örtük tutum gerektiren C2 görevlerinde sentetik ses kesin prozodi kanıtı sayılmaz.
 - Açık uçlu cevapların otomatik ön değerlendirmesi anahtar kavram ve kanıt örtüşmesiyle sınırlıdır. Dilbilgisi ve anlamın tamamını güvenilir biçimde puanlamaz; arayüz kısa model yanıt ve **öz değerlendirme** rubriğini de sunar.
@@ -62,4 +71,4 @@ Not: 450 dosyanın tamamı hash, dosya başlığı ve yol bakımından doğrulan
 - Canlı öğrenci pilotu ve bağımsız Almanca öğretmeni kalibrasyonu yapılmayacaktır; bunlar yayın engeli olarak değerlendirilmez.
 - İç kalite, semantik kanıt, dosya bütünlüğü, otomatik puanlama davranışı ve tarayıcı akışlarının sorumluluğu proje içi QA kapsamındadır.
 
-**Sonuç:** V17.1'in kapsamı, ses dosyası bütünlüğü, 78 yeni sorunun semantik kanıtları, çevrimdışı arayüz ve canlı demo katmanı doğrulandı. Paket, sentetik ses ve yaklaşık açık uçlu ön değerlendirme sınırları görünür tutularak **demo yayınına uygundur**; resmî sınav veya doğal insan sesi ürünü olarak sunulamaz.
+**Sonuç:** V17.2'nin kapsamı, 450 nöral ses dosyası, 78 yeni sorunun semantik kanıtları, çevrimdışı arayüz ve canlı demo katmanı doğrulandı. Paket, yapay ses ve yaklaşık açık uçlu ön değerlendirme sınırları görünür tutularak **demo yayınına uygundur**; resmî sınav veya doğal insan sesi ürünü olarak sunulamaz.

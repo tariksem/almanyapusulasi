@@ -59,7 +59,7 @@
   if (hero) {
     const badge = document.createElement('span');
     badge.className = 'demo-badge';
-    badge.textContent = 'CANLI DEMO · V17.1';
+    badge.textContent = 'CANLI DEMO · V17.2';
     hero.prepend(badge);
     const title = hero.querySelector('h1');
     if (title) title.textContent = 'Almanca Dinleme Akademisi';
@@ -68,7 +68,7 @@
   const audioBar = document.querySelector('.audio-bar');
   const audioNote = audioBar?.querySelector('small');
   if (audioNote) {
-    audioNote.textContent = 'Arşivdeki 450 MP3 sentetik eSpeak kaydıdır. Tarayıcı sesi seçeneği cihazınızdaki Almanca sesi kullanır; insan kaydı değildir.';
+    audioNote.textContent = 'Arşivdeki 450 MP3 Almanca nöral yapay sesle üretilmiş sentetik kayıttır; insan kaydı değildir. Tarayıcı sesi seçeneği cihazınızdaki Almanca sesi kullanır.';
   }
 
   const voiceActions = document.createElement('div');
@@ -228,7 +228,7 @@
 
   const footer = document.querySelector('footer');
   if (footer) {
-    footer.innerHTML = '<div class="limitations"><strong>Şeffaflık:</strong> 450 MP3 eSpeak tabanlı sentetik kayıttır. Tarayıcı sesi cihaz bağımlı yapay sestir. Açık uçlu ön puan resmî veya güvenilir bir dil yeterlilik notu değildir.</div>'
+    footer.innerHTML = '<div class="limitations"><strong>Şeffaflık:</strong> 450 MP3 Almanca nöral yapay sesle üretilmiş sentetik kayıttır; insan kaydı değildir. Tarayıcı sesi cihaz bağımlı yapay sestir. Açık uçlu ön puan resmî veya güvenilir bir dil yeterlilik notu değildir.</div>'
       + '<p><a href="/">Almanya Pusulası ana sayfası</a> · Demo verileri yalnızca bu tarayıcıda saklanır.</p>';
   }
 })();
