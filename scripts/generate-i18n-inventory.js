@@ -1,8 +1,9 @@
 const fs=require('node:fs');
 const {GROUPS,sourcePaths,routeFromPath,fileFromPath}=require('./bulk-i18n-lib.js');
-const {curatedRoutes,bulkRoutes}=require('./i18n-registry.js');
+const {curatedRoutes,bulkRoutes,turkishOnlyRoutes}=require('./i18n-registry.js');
 
 const curated=new Set(curatedRoutes()),bulk=new Set(bulkRoutes());
+const turkishOnly=new Set(turkishOnlyRoutes);
 const groupByPath=new Map();
 for(const group of GROUPS){
   const xml=fs.readFileSync('sitemap-'+group+'.xml','utf8');
@@ -16,7 +17,7 @@ const pages=sourcePaths().map(pathname=>{
   const route=routeFromPath(pathname);
   const file=fileFromPath(pathname);
   const html=fs.readFileSync(file,'utf8');
-  const status=pathname==='/'?'localized-home':curated.has(route)?'curated-reviewed':bulk.has(route)?'bulk-qa':'missing';
+  const status=pathname==='/'?'localized-home':turkishOnly.has(route)?'turkish-only':curated.has(route)?'curated-reviewed':bulk.has(route)?'bulk-qa':'missing';
   return {
     path:pathname,file,group:groupByPath.get(pathname),status,
     forms:(html.match(/<form\b/gi)||[]).length,

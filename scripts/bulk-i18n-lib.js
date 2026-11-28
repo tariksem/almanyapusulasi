@@ -31,7 +31,7 @@ function looksTurkish(value){
   return /[çğıöşüÇĞİÖŞÜ]/.test(text)||/\b(?:ve|veya|için|ile|değil|olan|olarak|gerekli|hesapla|kontrol|sonuç|seçin|başvuru|rehber|aç|kapat|devam|geri|önce|sonra|aylık|yıllık|gelir|gider|maaş|vergi|sigorta|kira|çocuk|aile|iş|araç|tutar|uygun|bilgi|kaynak|göster|görüntüle|hakkında|gizlilik|iletişim|haberler|araçlar)\b/i.test(text);
 }
 
-function sourcePaths(){
+function sourcePaths({translationsOnly=false}={}){
   const paths=new Set();
   for(const group of GROUPS){
     const xml=fs.readFileSync('sitemap-'+group+'.xml','utf8');
@@ -40,7 +40,8 @@ function sourcePaths(){
       if(!pathname.startsWith('/en/')&&!pathname.startsWith('/de/'))paths.add(pathname);
     }
   }
-  return [...paths].sort();
+  const turkishOnly=new Set(require('./i18n-registry.js').turkishOnlyRoutes.map(route=>'/'+route+'/'));
+  return [...paths].filter(pathname=>!translationsOnly||!turkishOnly.has(pathname)).sort();
 }
 
 const routeFromPath=pathname=>pathname.replace(/^\/+|\/+$/g,'');

@@ -12,7 +12,7 @@ const inventoryOnly=process.argv.includes('--inventory-only');
 
 const previous=fs.existsSync(OUTPUT)?JSON.parse(fs.readFileSync(OUTPUT,'utf8')):{strings:{},pages:{}};
 const curated=new Set(curatedRoutes());
-const paths=sourcePaths().filter(path=>path!=='/'&&!curated.has(routeFromPath(path)));
+const paths=sourcePaths({translationsOnly:true}).filter(path=>path!=='/'&&!curated.has(routeFromPath(path)));
 const strings={};
 const pages={};
 const runtimeIds=new Set();

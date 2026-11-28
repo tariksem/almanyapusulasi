@@ -5,7 +5,7 @@ const {
   SITE,sourcePaths,routeFromPath,fileFromPath,extractStaticSegments,referencedRuntimeSegments,
   segmentId,translationEntry,numericTokens,attrValue
 }=require('./bulk-i18n-lib.js');
-const {curatedRoutes,translatedRoutes}=require('./i18n-registry.js');
+const {curatedRoutes,translatedRoutes,turkishOnlyRoutes}=require('./i18n-registry.js');
 
 const catalog=JSON.parse(fs.readFileSync('data/i18n-bulk-translations.json','utf8'));
 const pages=catalog.pages||{};
@@ -13,7 +13,12 @@ const strings=catalog.strings||{};
 const curated=new Set(curatedRoutes());
 const publishedRoutes=translatedRoutes();
 const publishedRouteSet=new Set(publishedRoutes);
-const expected=sourcePaths().filter(path=>path!=='/'&&!curated.has(routeFromPath(path))).map(routeFromPath).sort();
+const sourceInventory=new Set(sourcePaths().map(routeFromPath));
+for(const route of turkishOnlyRoutes){
+  assert.ok(sourceInventory.has(route),'Turkish-only route is missing from the Turkish sitemap: '+route);
+  assert.ok(!publishedRouteSet.has(route),'Turkish-only route appears in the translation catalog: '+route);
+}
+const expected=sourcePaths({translationsOnly:true}).filter(path=>path!=='/'&&!curated.has(routeFromPath(path))).map(routeFromPath).sort();
 const actual=Object.keys(pages).sort();
 assert.deepEqual(actual,expected,'Bulk catalog must exactly cover the source inventory left after curated translations');
 assert.equal(actual.length,185,'The verified backlog changed; review inventory instead of silently changing the denominator');

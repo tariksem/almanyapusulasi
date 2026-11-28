@@ -2,6 +2,9 @@ const fs=require('node:fs');
 const BASE=['almanyada-yasam','almanyada-yasam/cop-ayristirma-takvimi','almanyada-yasam/kiralik-ev-bulma','almanyada-yasam/komsuluk-ve-sessizlik','almanyada-yasam/arkadas-edinmek','almanyada-yasam/kita-ve-okul','almanyada-yasam/doktor-ve-acil','almanyada-yasam/ogrenci-yasami-ve-butce','almanyada-yasam/adres-kaydi-anmeldung','almanyada-yasam/rundfunkbeitrag','almanyada-yasam/telefon-internet-sozlesmeleri','blue-card','chancenkarte-firsat-karti','blue-card-uygunluk-kontrolu-2026','chancenkarte-puan-hesaplayici-2026'];
 const CATALOGS=['data/priority-guide-translations.json','data/i18n-migration-translations.json','data/i18n-career-translations.json','data/i18n-family-translations.json','data/i18n-family-care-translations.json','data/i18n-health-finance-translations.json'];
 const BULK_CATALOG='data/i18n-bulk-translations.json';
+// The first everyday German edition uses Turkish instructions and appears
+// on the Turkish homepage.
+const turkishOnlyRoutes=Object.freeze(['gunluk-almanca']);
 function curatedRoutes(){
  const result=new Set(BASE);
  for(const path of CATALOGS){
@@ -32,4 +35,4 @@ function translatedSlugs(){return translatedRoutes();}
 function localizedFiles(){
  return ['en','de'].flatMap(lang=>translatedRoutes().map(route=>lang+'/'+route+'/index.html'));
 }
-module.exports={curatedRoutes,bulkRoutes,translatedRoutes,translatedSlugs,localizedFiles};
+module.exports={curatedRoutes,bulkRoutes,translatedRoutes,translatedSlugs,localizedFiles,turkishOnlyRoutes};
