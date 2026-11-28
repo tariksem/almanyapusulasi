@@ -50,6 +50,9 @@ body { margin: 0; background: var(--background); color: var(--text); line-height
 .lesson-meta, .field-help { color: var(--muted); font-size: .88rem; margin: 0 0 5px; }
 .listen-panel { padding: 15px; border: 1px solid var(--border); border-radius: 14px; background: var(--background); }
 .lesson-panel audio { width: 100%; max-width: 100%; display: block; margin-block: 9px; }
+#audio-status { margin: 8px 0; }
+#audio-status:empty { margin: 0; }
+.audio-recovery { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .listen-tools { display: flex; align-items: center; gap: 7px; margin-block: 10px; }
 .lesson-panel :is(select, textarea) { color: var(--text); font: inherit; border: 1px solid var(--muted); border-radius: 7px; background: var(--surface); }
 .listen-tools select { padding: 5px 8px; }

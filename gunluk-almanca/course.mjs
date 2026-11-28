@@ -2,7 +2,8 @@ import { lessons, reviewAnswer } from './lessons.mjs';
 
 const element = (id) => document.getElementById(id);
 const audio = element('lesson-audio');
-const audioError = element('audio-error');
+const audioStatus = element('audio-status');
+const audioRecovery = element('audio-recovery');
 const form = element('reply-form');
 const reply = element('reply');
 const menu = element('lesson-menu');
@@ -55,8 +56,11 @@ function showLesson(lesson, focusTitle) {
     reply.value = savedDraft(lesson.id);
     clearFeedback();
 
-    audioError.hidden = true;
-    audio.src = recording.audio;
+    const audioUrl = new URL(recording.audio, location.href);
+    audioUrl.searchParams.set('v', 'audio2');
+    showAudioError(false);
+    element('audio-direct').href = audioUrl.href;
+    audio.src = audioUrl.href;
     audio.load();
     for (const link of lessonLinks) {
       if (link.hash === '#' + lesson.id) link.setAttribute('aria-current', 'location');
@@ -67,7 +71,7 @@ function showLesson(lesson, focusTitle) {
     next.hidden = !nextLesson;
     if (nextLesson) next.href = '#' + nextLesson.id;
   } else if (audio.error && focusTitle) {
-    audioError.hidden = true;
+    showAudioError(false);
     audio.load();
   }
 
@@ -121,13 +125,25 @@ function setPlaybackSpeed() {
   audio.playbackRate = Number(element('audio-speed').value);
 }
 
+function showAudioError(visible) {
+  audioStatus.textContent = visible ? 'Ses yüklenemedi. Yeniden deneyebilir veya ses dosyasını açabilirsin.' : '';
+  audioRecovery.hidden = !visible;
+}
+
 element('audio-speed').addEventListener('change', setPlaybackSpeed);
+element('audio-retry').addEventListener('click', () => {
+  showAudioError(false);
+  audio.load();
+  audio.play().catch(() => {
+    if (audio.error) showAudioError(true);
+  });
+});
 audio.addEventListener('loadedmetadata', () => {
-  audioError.hidden = true;
+  showAudioError(false);
   setPlaybackSpeed();
 });
 audio.addEventListener('error', () => {
-  audioError.hidden = false;
+  if (audio.error) showAudioError(true);
 });
 
 reply.addEventListener('input', () => {

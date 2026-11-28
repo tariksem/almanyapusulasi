@@ -66,4 +66,54 @@ const jsAsset=await worker.fetch(new Request('https://almanyapusulasi.de/assets/
 assert.equal(jsAsset.headers.get('Cache-Control'),'public, max-age=604800','Non-HTML caching must remain unchanged');
 const missing=await worker.fetch(new Request('https://almanyapusulasi.de/missing/'),{ASSETS:{fetch:async()=>new Response('Not found',{status:404})}});
 assert.equal(missing.status,404);
-console.log('PASS worker: HTTPS/apex, query preservation, legacy redirects, asset normalization, headers and 404.');
+const audioBytes=Uint8Array.of(0x49,0x44,0x33,0x04,0x00,0x01);
+const audioEnv={ASSETS:{fetch:async request=>new Response(
+  request.method==='HEAD'?null:audioBytes,
+  {headers:{'Content-Type':'audio/mpeg','Content-Length':String(audioBytes.length),ETag:'"audio"'}}
+)}};
+const audioRequest=(headers,method='GET',path='/gunluk-almanca/apartman.mp3')=>
+  worker.fetch(new Request('https://almanyapusulasi.de'+path,{headers,method}),audioEnv);
+for(const path of [
+  '/gunluk-almanca/apartman.mp3',
+  '/almanca-akademisi-demo/audio/lesson.mp3',
+  '/almanca-akademisi-demo/audio_new/lesson.mp3',
+  '/almanca-akademisi-demo/audio_v14/lesson.mp3'
+]){
+  const probe=await audioRequest({Range:'bytes=0-1'},'GET',path);
+  assert.equal(probe.status,206);
+  assert.equal(probe.headers.get('Accept-Ranges'),'bytes');
+  assert.equal(probe.headers.get('Content-Range'),'bytes 0-1/6');
+  assert.equal(probe.headers.get('Content-Length'),'2');
+  assert.equal(probe.headers.get('Content-Type'),'audio/mpeg');
+  assert.equal(probe.headers.get('ETag'),'"audio"');
+  assert.deepEqual(new Uint8Array(await probe.arrayBuffer()),audioBytes.slice(0,2));
+}
+for(const range of ['bytes=4-','bytes=-2','bytes=4-20']){
+  const partial=await audioRequest({Range:range,'If-Range':'"audio"'});
+  assert.equal(partial.status,206);
+  assert.equal(partial.headers.get('Content-Range'),'bytes 4-5/6');
+  assert.deepEqual(new Uint8Array(await partial.arrayBuffer()),audioBytes.slice(4));
+}
+for(const range of ['bytes=6-','bytes=-0']){
+  const unsatisfied=await audioRequest({Range:range});
+  assert.equal(unsatisfied.status,416);
+  assert.equal(unsatisfied.headers.get('Content-Range'),'bytes */6');
+  assert.equal((await unsatisfied.arrayBuffer()).byteLength,0);
+}
+for(const headers of [
+  {},{Range:'bytes=4-2'},{Range:'bytes=0-1,4-5'},{Range:'bytes=0-1','If-Range':'"old"'}
+]){
+  const full=await audioRequest(headers);
+  assert.equal(full.status,200);
+  assert.equal(full.headers.get('Accept-Ranges'),'bytes');
+  assert.equal(full.headers.get('Content-Range'),null);
+  assert.deepEqual(new Uint8Array(await full.arrayBuffer()),audioBytes);
+}
+const audioHead=await audioRequest({Range:'bytes=0-1'},'HEAD');
+assert.equal(audioHead.status,200);
+assert.equal(audioHead.headers.get('Content-Length'),'6');
+assert.equal((await audioHead.arrayBuffer()).byteLength,0);
+const unrelatedAudio=await audioRequest({Range:'bytes=0-1'},'GET','/assets/other.mp3');
+assert.equal(unrelatedAudio.status,200);
+assert.equal(unrelatedAudio.headers.get('Accept-Ranges'),null);
+console.log('PASS worker: HTTPS/apex, query preservation, legacy redirects, asset normalization, headers, 404 and lesson audio ranges.');

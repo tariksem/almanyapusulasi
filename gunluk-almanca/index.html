@@ -12,9 +12,9 @@
   <meta property="og:url" content="https://almanyapusulasi.de/gunluk-almanca/">
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="course.css">
+  <link rel="stylesheet" href="course.css?v=audio2">
   <script defer src="/assets/js/analytics-consent.js"></script>
-  <script type="module" src="course.mjs"></script>
+  <script type="module" src="course.mjs?v=audio2"></script>
 </head>
 <body>
   <header class="site-header"></header>
@@ -64,7 +64,11 @@
           <div class="listen-panel">
             <h3>Konuşmayı dinle</h3>
             <audio id="lesson-audio" controls preload="none" aria-label="Almanca konuşma kaydı"></audio>
-            <p id="audio-error" role="status" hidden>Ses yüklenemedi. Bağlantını kontrol edip bu dersi tekrar açabilirsin.</p>
+            <p id="audio-status" role="status"></p>
+            <div id="audio-recovery" class="audio-recovery" hidden>
+              <button id="audio-retry" class="secondary" type="button">Yeniden dene</button>
+              <a id="audio-direct" target="_blank" rel="noopener">Ses dosyasını aç (yeni sekme)</a>
+            </div>
             <div class="listen-tools">
               <label for="audio-speed">Ses hızı</label>
               <select id="audio-speed">

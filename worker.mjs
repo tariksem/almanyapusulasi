@@ -1,6 +1,7 @@
 import redirects from './scripts/redirect-map.json' with {type:'json'};
 
 const PRIMARY='https://almanyapusulasi.de';
+const LESSON_AUDIO_PATH=/^\/(?:gunluk-almanca\/apartman\.mp3|almanca-akademisi-demo\/(?:audio|audio_new|audio_v14)\/[^/]+\.mp3)$/;
 const EMBED_PATHS=new Set([
   '/almanya-emeklilik-hesaplayici-2026/',
   '/chancenkarte-puan-hesaplayici-2026/',
@@ -71,6 +72,44 @@ function secure(response,url){
   if(url.protocol==='https:')out.headers.set('Strict-Transport-Security','max-age=2592000');
   return out;
 }
+
+async function lessonAudio(request,asset){
+  if(asset.status!==200||asset.headers.has('Content-Encoding')||
+    asset.headers.get('Content-Type')?.split(';')[0].trim().toLowerCase()!=='audio/mpeg'){
+    return asset;
+  }
+
+  const headers=new Headers(asset.headers);
+  headers.set('Accept-Ranges','bytes');
+  const full=()=>new Response(asset.body,{status:200,headers});
+  if(request.method!=='GET')return full();
+
+  // Static assets can return the complete file even when the player asks for a range.
+  const range=/^bytes=(\d*)-(\d*)$/i.exec(request.headers.get('Range')?.trim()||'');
+  if(!range||(!range[1]&&!range[2]))return full();
+  const validator=request.headers.get('If-Range');
+  const etag=headers.get('ETag');
+  if(validator&&(!etag||etag.startsWith('W/')||validator!==etag))return full();
+
+  const first=range[1]?Number(range[1]):null;
+  const last=range[2]?Number(range[2]):null;
+  if(first!==null&&last!==null&&last<first)return full();
+
+  const bytes=new Uint8Array(await asset.arrayBuffer());
+  const total=bytes.length;
+  const start=first??Math.max(0,total-last);
+  const end=first===null?total-1:Math.min(last??total-1,total-1);
+  if(start>end||start>=total){
+    headers.set('Content-Range','bytes */'+total);
+    headers.set('Content-Length','0');
+    return new Response(null,{status:416,headers});
+  }
+
+  headers.set('Content-Range','bytes '+start+'-'+end+'/'+total);
+  headers.set('Content-Length',String(end-start+1));
+  return new Response(bytes.subarray(start,end+1),{status:206,headers});
+}
+
 export default {
   async fetch(request,env){
     const url=new URL(request.url);
@@ -88,6 +127,7 @@ export default {
     if(['GET','HEAD'].includes(request.method)&&response.status===307&&response.headers.has('Location')){
       return secure(new Response(null,{status:308,headers:response.headers}),url);
     }
+    if(LESSON_AUDIO_PATH.test(url.pathname))return secure(await lessonAudio(request,response),url);
     return secure(response,url);
   }
 };
