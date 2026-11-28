@@ -62,7 +62,7 @@ Not: 450 dosyanın tamamı hash, dosya başlığı, yol ve tam ses akışı çö
 - **450 MP3 nöral sentetik sestir; doğal insan kaydı değildir.** Çok konuşmacılı ayrım ve Almanca bölgesel ses çeşitliliği vardır, fakat C2 ironi/prozodi yorumu insan dinleme testiyle doğrulanmamıştır.
 - İsteğe bağlı tarayıcı okumasının sesi işletim sistemi ve tarayıcıya bağlıdır; bu özellik 450 MP3'ün yerini alan sabit bir ses arşivi değildir.
 - Özellikle ironi, ton ve örtük tutum gerektiren C2 görevlerinde sentetik ses kesin prozodi kanıtı sayılmaz.
-- İş Paketi 4'te açık uçlu ön puan kaldırıldı. Güncel demoda model yanıt, transkript kanıtları ve öz değerlendirme ile birlikte altı senaryoda ifadeye özgü otomatik ipuçları sunuluyor.
+- İş Paketi 4'te açık uçlu ön puan kaldırıldı. Güncel demoda model yanıt, transkript kanıtları ve öz değerlendirme ile birlikte 18 senaryoda ifadeye özgü otomatik ipuçları sunuluyor.
 - Model yanıtlar referans çekirdek yanıtlardır; C1/C2 resmî sınavındaki uzun sözlü veya yazılı performansa eşdeğer değildir.
 - İçerik ve yanıtlar resmî CEFR, telc veya Goethe sınavı değildir.
 
@@ -77,4 +77,4 @@ Not: 450 dosyanın tamamı hash, dosya başlığı, yol ve tam ses akışı çö
 
 Eski sistem, A1–C2 arasındaki altı deneme senaryosunda anahtar kelimeleri kullanan yanlış yanıta, doğru anlamı başka sözcüklerle veren yanıttan daha yüksek puan verdi. Yeni akış otomatik sayısal puan yerine olası ipuçları, kontrol noktaları ve konuşmayla karşılaştırılması gereken ifadeleri gösterir.
 
-Her seviyeden bir senaryo üç yanıtla sınandı. Bunlar doğru anlamı farklı sözcüklerle veren, kısmi ve yanıltıcı yanıtlardır. Boş yanıt, alıntı, anahtar kelime listesi ve olumsuzlama da test edildi. Diğer 84 senaryoda aynı düğme yönlendirmeli öz değerlendirmeyi açar. Kural kapsamı altı senaryodaki sınırlı ifade kalıplarıdır.
+Geri bildirim altı seviyenin her birinde üçer senaryoyu kapsıyor. 18 senaryoda toplam 54 farklı yanıt ve 18 model yanıt sınandı. Ek 12 sınır durumu arasında konuşmacı değişimi, alıntılar, olumsuzlamalar, sayı düzeltmeleri ve koşullu ifadeler var. Diğer 72 senaryoda aynı düğme yönlendirmeli öz değerlendirmeyi açar. Göreve özgü ipuçları belirli Almanca ifade kalıplarına dayanır.

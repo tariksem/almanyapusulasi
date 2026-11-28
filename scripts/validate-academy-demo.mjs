@@ -3,7 +3,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { feedbackCases } from './academy-feedback-cases.mjs';
+import { feedbackCases, feedbackEdgeCases } from './academy-feedback-cases.mjs';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const demoRoot = path.join(repositoryRoot, 'almanca-akademisi-demo');
@@ -31,7 +31,7 @@ const enhancements = fs.readFileSync(path.join(demoRoot, 'demo-enhancements.js')
 check(html.includes('<meta name="robots" content="noindex,follow">'), 'Demo noindex etiketi yok');
 check(html.includes('https://almanyapusulasi.de/almanca-akademisi-demo/'), 'Demo canonical adresi yok');
 check(
-  /<script src="open-answer-feedback\.js"><\/script><script src="demo-enhancements\.js(?:\?[^"]+)?"><\/script>/.test(html),
+  /<script src="open-answer-feedback\.js(?:\?[^"]+)?"><\/script><script src="demo-enhancements\.js(?:\?[^"]+)?"><\/script>/.test(html),
   'Açık uçlu geri bildirim betikleri doğru sırayla yüklenmiyor'
 );
 check(enhancements.includes('/assets/brand/almanya-pusulasi-logo.png'), 'Kanonik logo yolu kullanılmıyor');
@@ -59,7 +59,11 @@ const { reviewAnswer, lessonIds } = vm.runInNewContext(`${feedbackScript}\nacade
 const { scenarios } = JSON.parse(fs.readFileSync(path.join(demoRoot, 'dinleme-v17-kalite.json'), 'utf8'));
 
 check(lessonIds.length === feedbackCases.length, 'Her ayrıntılı geri bildirim senaryosu için test gerekli');
-for (const { id, paraphrase, partial, misleading } of feedbackCases) {
+check(new Set(feedbackCases.map(({ id }) => id)).size === feedbackCases.length, 'Test senaryoları benzersiz olmalı');
+for (const level of ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']) {
+  check(lessonIds.filter((id) => id.startsWith(level + '-')).length === 3, level + ': üç senaryo bekleniyor');
+}
+for (const { id, paraphrase, partial, misleading, conflictPoint } of feedbackCases) {
   const lesson = scenarios.find((scenario) => scenario.id === id);
   check(Boolean(lesson), `${id}: test senaryosu bulunamadı`);
   const fullReview = reviewAnswer(id, paraphrase);
@@ -68,8 +72,11 @@ for (const { id, paraphrase, partial, misleading } of feedbackCases) {
   const partialStatuses = reviewAnswer(id, partial).points.map(({ status }) => status);
   check(partialStatuses.includes('possible') && partialStatuses.includes('review') && !partialStatuses.includes('compare'),
     `${id}: eksik yanıta uygun kontrol noktası verilmiyor`);
-  check(reviewAnswer(id, misleading).points.some(({ status }) => status === 'compare'),
-    `${id}: yanıltıcı cevap için olası çelişki işaretlenmedi`);
+  const misleadingPoints = reviewAnswer(id, misleading).points;
+  const detectedConflict = conflictPoint === undefined
+    ? misleadingPoints.some(({ status }) => status === 'compare')
+    : misleadingPoints[conflictPoint]?.status === 'compare';
+  check(detectedConflict, `${id}: yanıltıcı cevap için beklenen olası çelişki işaretlenmedi`);
   if (lesson) {
     check(reviewAnswer(id, lesson.reflection.model_answer_de).points.every(({ status }) => status !== 'compare'),
       `${id}: model yanıt çelişki olarak işaretlendi`);
@@ -86,7 +93,12 @@ check(reviewAnswer('C2-U02-COMM', list).points.every(({ status }) => status === 
 const negated = 'Die Studie beweist nicht, dass sich der Zugang verbessert hat.';
 check(reviewAnswer('C1-U01-COMM', negated).points.every(({ status }) => status !== 'compare'),
   'Erişim iddiasını reddeden yanıt çelişki olarak işaretlendi');
-for (const { id } of scenarios.filter(({ id }) => !lessonIds.includes(id))) {
+for (const { id, answer, expected } of feedbackEdgeCases) {
+  const actual = reviewAnswer(id, answer).points.map(({ status }) => status);
+  check(actual.join(',') === expected.join(','), `${id}: sınır durumu için beklenen ${expected.join(', ')}, bulunan ${actual.join(', ')}`);
+}
+const guidedScenarios = scenarios.filter(({ id }) => !lessonIds.includes(id));
+for (const { id } of guidedScenarios) {
   const feedback = reviewAnswer(id, 'Hier ist mein Antwortversuch.');
   check(feedback.kind === 'guided' && feedback.points.length === 3 && feedback.points.every(({ status }) => status === 'review'),
     `${id}: öz değerlendirme yönlendirmesi eksik`);
@@ -110,4 +122,4 @@ if (failures.length) {
 console.log('Akademi demo QA BAŞARILI');
 console.log('- 90 senaryo, 450 MP3, 282 nesnel soru ve 90 model yanıt doğrulandı');
 console.log('- Kanonik logo, noindex/canonical, 360 temel ders varsayılanı ve tarayıcı sesi doğrulandı');
-console.log('- A1–C2 için 18 farklı yanıt, 6 model yanıt, 4 sınır durumu ve 84 öz değerlendirme akışı doğrulandı');
+console.log(`- A1–C2 için ${feedbackCases.length * 3} test yanıtı, ${feedbackCases.length} model yanıt, ${feedbackEdgeCases.length + 4} sınır durumu ve ${guidedScenarios.length} öz değerlendirme akışı doğrulandı`);

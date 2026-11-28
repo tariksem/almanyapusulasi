@@ -8,4 +8,4 @@
 - Ses: Mevcut 450 dosya adı ve yolu korunarak içerikleri Almanca nöral yapay sesle yenilendi. Temel dersler tek anlatıcı, 90 diyalog konuşmacıya göre ayrılan çoklu ses kullanır. İnsan kaydı değildir.
 - Canlı öğrenci ve bağımsız Almanca öğretmeni testleri kullanıcı kararıyla kapsam dışıdır; iç kalite ve tarayıcı QA sorumluluğu proje kapsamındadır.
 - İş Paketi 3, V17.2 dinleme demosu olarak yayımlandı.
-- İş Paketi 4'ün ilk adımında açık uçlu ön puan kaldırıldı. A1–C2 arasında birer senaryoda göreve özgü otomatik ipuçları, diğer 84 senaryoda yönlendirmeli öz değerlendirme sunuluyor.
+- İş Paketi 4 kapsamında A1–C2 düzeylerinin her birinde üç senaryo göreve özgü ipuçları sunuyor. Diğer 72 senaryoda yönlendirmeli öz değerlendirme var.
