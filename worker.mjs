@@ -61,6 +61,7 @@ function secure(response,url){
     "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https:",
+    ...(url.pathname==='/gunluk-almanca/'?["media-src 'self' blob:"]:[]),
     "font-src 'self' data:",
     "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://raw.githubusercontent.com https://oet.bamf.de https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://tessdata.projectnaptha.com",
     "frame-src 'self' blob: https://*.check24.net https://*.partner-versicherung.de",

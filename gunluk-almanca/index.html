@@ -12,9 +12,9 @@
   <meta property="og:url" content="https://almanyapusulasi.de/gunluk-almanca/">
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="course.css?v=audio2">
+  <link rel="stylesheet" href="course.css?v=audio3">
   <script defer src="/assets/js/analytics-consent.js"></script>
-  <script type="module" src="course.mjs?v=audio2"></script>
+  <script type="module" src="course.mjs?v=audio3"></script>
 </head>
 <body>
   <header class="site-header"></header>
@@ -63,12 +63,9 @@
           <h2 id="lesson-title" tabindex="-1"></h2>
           <div class="listen-panel">
             <h3>Konuşmayı dinle</h3>
-            <audio id="lesson-audio" controls preload="none" aria-label="Almanca konuşma kaydı"></audio>
+            <audio id="lesson-audio" controls preload="metadata" aria-label="Almanca konuşma kaydı" hidden></audio>
             <p id="audio-status" role="status"></p>
-            <div id="audio-recovery" class="audio-recovery" hidden>
-              <button id="audio-retry" class="secondary" type="button">Yeniden dene</button>
-              <a id="audio-direct" target="_blank" rel="noopener">Ses dosyasını aç (yeni sekme)</a>
-            </div>
+            <button id="audio-retry" class="secondary" type="button" hidden>Yeniden dene</button>
             <div class="listen-tools">
               <label for="audio-speed">Ses hızı</label>
               <select id="audio-speed">
@@ -76,6 +73,7 @@
                 <option value="1" selected>1×</option>
                 <option value="1.15">1,15×</option>
               </select>
+              <a id="audio-download" download>MP3’ü indir</a>
             </div>
             <details id="transcript-panel">
               <summary>Konuşma metni</summary>
