@@ -33,8 +33,11 @@
     .demo-badge{display:inline-flex;align-items:center;background:#D89B2B;color:#102A43;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800;margin-bottom:10px}
     .voice-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:11px}
     .auto-review{border:1px solid #b9cad8;background:#f6f8fb;border-radius:10px;padding:12px;margin:10px 0;font-size:13px}
-    .auto-review strong{color:#102A43}
+    .auto-review h4{color:#102A43;font-size:14px;margin:0}
+    .auto-review p{margin:7px 0 0}
     .auto-review ul{margin:7px 0 0;padding-left:20px}
+    .auto-review li+li{margin-top:8px}
+    .auto-review li strong{display:block;color:#102A43}
     .limitations{border-top:1px solid #e2e8f0;margin-top:14px;padding-top:12px}
     @media(max-width:560px){header .brand-copy small{display:none}}
   `;
@@ -138,89 +141,71 @@
   autoButton.type = 'button';
   autoButton.className = 'secondary';
   autoButton.id = 'autoReview';
-  autoButton.textContent = 'Yanıtı ön değerlendir';
+  autoButton.textContent = 'Yanıtı gözden geçir';
+  autoButton.setAttribute('aria-controls', 'autoReviewResult');
+  autoButton.setAttribute('aria-expanded', 'false');
   taskActions?.prepend(autoButton);
 
   const review = document.createElement('div');
   review.id = 'autoReviewResult';
   review.className = 'auto-review hidden';
+  review.setAttribute('role', 'status');
   review.setAttribute('aria-live', 'polite');
   taskActions?.after(review);
 
-  const stopWords = new Set([
-    'aber', 'alle', 'auch', 'dass', 'denn', 'der', 'die', 'das', 'eine', 'einen', 'einer', 'eines', 'für',
-    'haben', 'hat', 'ihre', 'ihren', 'ihrer', 'ist', 'kann', 'mit', 'nicht', 'oder', 'sich', 'sind', 'sein',
-    'seine', 'seiner', 'über', 'und', 'vom', 'von', 'wenn', 'werden', 'wird', 'wie', 'weil', 'welche', 'zur',
-    'zum', 'diese', 'dieser', 'dieses', 'mehr', 'noch', 'sehr', 'dann', 'daher', 'durch', 'beim', 'ihm', 'ihn'
-  ]);
-
-  const words = (text) => String(text || '')
-    .toLocaleLowerCase('de-DE')
-    .normalize('NFC')
-    .replace(/[^a-zäöüß]+/gi, ' ')
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
-
-  const significant = (text) => [...new Set(words(text).filter((word) => word.length >= 4 && !stopWords.has(word)))];
-  const overlapRatio = (answerSet, reference) => {
-    const referenceWords = significant(reference);
-    if (!referenceWords.length) return 0;
-    return referenceWords.filter((word) => answerSet.has(word)).length / referenceWords.length;
+  const reviewLabels = {
+    possible: 'Yanıtında olası bir ipucu var',
+    review: 'Bu noktayı kontrol et',
+    compare: 'Olası çelişkiyi konuşmayla karşılaştır',
   };
 
-  const minimumWords = { A1: 10, A2: 14, B1: 24, B2: 32, C1: 42, C2: 48 };
+  const addReviewText = (parent, tag, text) => {
+    const element = document.createElement(tag);
+    element.textContent = text;
+    parent.append(element);
+    return element;
+  };
+
+  const clearReview = () => {
+    review.classList.add('hidden');
+    review.replaceChildren();
+    autoButton.setAttribute('aria-expanded', 'false');
+  };
 
   autoButton.addEventListener('click', () => {
-    const response = byId('written')?.value.trim() || '';
-    const lesson = chosen;
-    if (!lesson) return;
+    if (!chosen) return;
+    const response = byId('written')?.value || '';
+    const feedback = academyAnswerFeedback.reviewAnswer(chosen.id, response);
+
+    review.replaceChildren();
+    addReviewText(review, 'h4', 'Yanıtını geliştir');
+    if (feedback.kind === 'empty') {
+      addReviewText(review, 'p', 'Başlamak için Almanca yanıtını yaz.');
+    } else {
+      if (feedback.kind === 'tailored') {
+        addReviewText(review, 'p', 'İpuçları sınırlı ifade kalıplarına dayanır. Yanıtının konuşmayla örtüşüp örtüşmediğini örnek ve transkript üzerinden kontrol et.');
+      }
+      const list = document.createElement('ul');
+      for (const point of feedback.points) {
+        const item = document.createElement('li');
+        if (feedback.kind === 'tailored') addReviewText(item, 'strong', reviewLabels[point.status]);
+        addReviewText(item, 'span', point.hint);
+        list.append(item);
+      }
+      review.append(list);
+      addReviewText(review, 'p', 'Karşılaştırmak için “Model yanıtı / kanıtı göster” düğmesini kullan.');
+    }
     review.classList.remove('hidden');
-    if (words(response).length < 4) {
-      review.innerHTML = '<strong>Ön değerlendirme: 0/5</strong><p>Değerlendirme için Almanca yanıtınızı biraz daha geliştirin.</p>'
-        + '<p class="small">Bu puan yalnızca kelime ve kanıt örtüşmesine dayalıdır; dilbilgisi, doğruluk veya CEFR seviyesi ölçmez.</p>';
-      return;
-    }
-
-    const answerWords = new Set(significant(response));
-    const modelCoverage = overlapRatio(answerWords, lesson.reflection.model_answer_de);
-    const evidenceHits = lesson.reflection.evidence_de.filter((item) => {
-      const referenceWords = significant(item);
-      const matches = referenceWords.filter((word) => answerWords.has(word)).length;
-      return matches >= 2 || (referenceWords.length > 0 && matches / referenceWords.length >= 0.18);
-    }).length;
-    const contentScore = modelCoverage >= 0.32 || evidenceHits >= 2 ? 2 : (modelCoverage >= 0.16 || evidenceHits >= 1 ? 1 : 0);
-    const evidenceScore = Math.min(2, evidenceHits);
-    const responseWords = words(response).length;
-    const sentenceCount = response.split(/[.!?]+/).filter((part) => part.trim().length > 2).length;
-    const clarityScore = responseWords >= minimumWords[lesson.level] && sentenceCount >= 2 ? 1 : 0;
-    const total = contentScore + evidenceScore + clarityScore;
-
-    const details = [
-      `Kernaussage / içerik örtüşmesi: ${contentScore}/2`,
-      `Transkript kanıtı işaretleri: ${evidenceScore}/2`,
-      `Uzunluk ve cümle yapısı eşiği: ${clarityScore}/1`
-    ];
-    review.innerHTML = `<strong>Otomatik ön değerlendirme: ${total}/5</strong>`
-      + `<ul>${details.map((item) => `<li>${item}</li>`).join('')}</ul>`
-      + '<p class="small">Bu sonuç yalnızca kelime ve kanıt örtüşmesine dayalı taslak geri bildirimdir. Dilbilgisi, anlamın tümü, telaffuz veya CEFR düzeyi değerlendirmesi değildir; model yanıtla birlikte kontrol edin.</p>';
-    try {
-      localStorage.setItem(`AP-V16-${lesson.id}-auto-preview`, JSON.stringify({
-        score: total,
-        total: 5,
-        method: 'transparent_lexical_evidence_preview',
-        at: new Date().toISOString()
-      }));
-    } catch {
-      // Yerel depolama kapalıysa ön değerlendirme yine ekranda gösterilir.
-    }
+    autoButton.setAttribute('aria-expanded', 'true');
   });
 
-  byId('lesson')?.addEventListener('change', () => review.classList.add('hidden'));
+  byId('written')?.addEventListener('input', clearReview);
+  byId('lesson')?.addEventListener('change', clearReview);
+  byId('levels')?.addEventListener('click', clearReview);
 
   const notice = document.querySelector('aside .notice');
   if (notice) {
-    notice.textContent = 'Bu demo resmî CEFR, telc veya Goethe sınavı değildir. Nesnel sorular cevap anahtarıyla puanlanır; açık uçlu ön değerlendirme yalnızca içerik ve kanıt işaretlerini yaklaşık olarak kontrol eder.';
+    notice.textContent = 'Nesnel sorular cevap anahtarıyla puanlanır. Yazılı yanıtlarını örnek yanıt ve transkript kanıtlarıyla karşılaştırabilirsin. Bu demo resmî CEFR, telc veya Goethe sınavı değildir.';
   }
 
   const qualityNotes = document.querySelector('aside h3');
@@ -228,7 +213,7 @@
 
   const footer = document.querySelector('footer');
   if (footer) {
-    footer.innerHTML = '<div class="limitations"><strong>Şeffaflık:</strong> 450 MP3 Almanca nöral yapay sesle üretilmiş sentetik kayıttır; insan kaydı değildir. Tarayıcı sesi cihaz bağımlı yapay sestir. Açık uçlu ön puan resmî veya güvenilir bir dil yeterlilik notu değildir.</div>'
+    footer.innerHTML = '<div class="limitations">450 MP3 Almanca nöral yapay sesle üretilmiştir. Tarayıcı sesinin kalitesi cihazına göre değişebilir. Yazılı yanıt ipuçları öz değerlendirme içindir.</div>'
       + '<p><a href="/">Almanya Pusulası ana sayfası</a> · Demo verileri yalnızca bu tarayıcıda saklanır.</p>';
   }
 })();

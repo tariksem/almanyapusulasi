@@ -1355,7 +1355,7 @@
           "answer_index": 2,
           "evidence_de": "Ich habe mein Buch zu Hause vergessen. Kannst du mir deins ausleihen?",
           "explanation_tr": "Doğru seçenek, konuşmadaki gerekçeyi veya sonucu diğer seçeneklerden daha isabetli aktarır.",
-          "explanation_de": "Tom erzählt von Kochen und Filmabend bei seiner Schwester. Selin hat aufgeräumt, ist spazieren gegangen und hat gelesen. Sie will Tom ihr Buch morgen im Kurs leihen.",
+          "explanation_de": "Tom hat sein Buch zu Hause vergessen und bittet Selin, ihm ihres auszuleihen. Deshalb bringt sie ihr Buch am nächsten Tag zum Kurs mit.",
           "difficulty_tag": "comprehension",
           "origin": "V17 / scenario-specific curated + evidence checked",
           "evidence_anchor": "Kannst du mir deins ausleihen",
@@ -1369,10 +1369,10 @@
       "reflection": {
         "id": "A2-U01-COMM-V17-OPEN",
         "prompt_de": "Erkläre deine Antwort mit zwei bis drei deutschen Sätzen und einem Beispiel aus dem Gespräch. Warum will Selin ihr Buch morgen mitbringen?",
-        "model_answer_de": "Tom erzählt von Kochen und Filmabend bei seiner Schwester. Selin hat aufgeräumt, ist spazieren gegangen und hat gelesen. Sie will Tom ihr Buch morgen im Kurs leihen.",
+        "model_answer_de": "Tom hat sein Buch zu Hause vergessen und bittet Selin, ihm ihres auszuleihen. Deshalb bringt Selin ihr Buch am nächsten Tag mit und leiht es Tom im Kurs.",
         "evidence_de": [
           "Ich habe mein Buch zu Hause vergessen. Kannst du mir deins ausleihen?",
-          "Erst haben wir Gemüse gekauft. Dann haben wir eine Suppe gemacht und einen Film gesehen."
+          "Natürlich. Ich bringe es morgen zum Kurs mit."
         ],
         "rubric": [
           {

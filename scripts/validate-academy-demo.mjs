@@ -3,6 +3,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { feedbackCases } from './academy-feedback-cases.mjs';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const demoRoot = path.join(repositoryRoot, 'almanca-akademisi-demo');
@@ -14,6 +15,7 @@ const check = (condition, message) => {
 const requiredFiles = [
   'index.html',
   'demo-enhancements.js',
+  'open-answer-feedback.js',
   'V15_TUM_DERSLER_ONIZLEME.html',
   'dinleme-v15-kaynak.json',
   'dinleme-v17-kalite.json',
@@ -28,9 +30,12 @@ const basePreview = fs.readFileSync(path.join(demoRoot, 'V15_TUM_DERSLER_ONIZLEM
 const enhancements = fs.readFileSync(path.join(demoRoot, 'demo-enhancements.js'), 'utf8');
 check(html.includes('<meta name="robots" content="noindex,follow">'), 'Demo noindex etiketi yok');
 check(html.includes('https://almanyapusulasi.de/almanca-akademisi-demo/'), 'Demo canonical adresi yok');
-check(html.includes('src="demo-enhancements.js"'), 'Demo geliştirme betiği yüklenmiyor');
+check(
+  /<script src="open-answer-feedback\.js"><\/script><script src="demo-enhancements\.js(?:\?[^"]+)?"><\/script>/.test(html),
+  'Açık uçlu geri bildirim betikleri doğru sırayla yüklenmiyor'
+);
 check(enhancements.includes('/assets/brand/almanya-pusulasi-logo.png'), 'Kanonik logo yolu kullanılmıyor');
-check(enhancements.includes('Yanıtı ön değerlendir'), 'Açık uçlu ön değerlendirme eksik');
+check(enhancements.includes('Yanıtı gözden geçir'), 'Açık uçlu geri bildirim eksik');
 check(enhancements.includes('Tarayıcı sesiyle oku'), 'Tarayıcı sesi seçeneği eksik');
 check(enhancements.includes('resmî') && enhancements.includes('CEFR'), 'Puanlama sınırı açıklanmıyor');
 check(basePreview.includes('<option value="base" selected>360 temel dinleme</option>'), '360 temel ders sayfası temel dinlemeyi varsayılan açmıyor');
@@ -49,6 +54,45 @@ const mp3Files = ['audio', 'audio_new', 'audio_v14'].flatMap((directory) =>
 );
 check(mp3Files.length === 450, `Demo MP3 sayısı ${mp3Files.length}; 450 olmalı`);
 
+const feedbackScript = fs.readFileSync(path.join(demoRoot, 'open-answer-feedback.js'), 'utf8');
+const { reviewAnswer, lessonIds } = vm.runInNewContext(`${feedbackScript}\nacademyAnswerFeedback;`);
+const { scenarios } = JSON.parse(fs.readFileSync(path.join(demoRoot, 'dinleme-v17-kalite.json'), 'utf8'));
+
+check(lessonIds.length === feedbackCases.length, 'Her ayrıntılı geri bildirim senaryosu için test gerekli');
+for (const { id, paraphrase, partial, misleading } of feedbackCases) {
+  const lesson = scenarios.find((scenario) => scenario.id === id);
+  check(Boolean(lesson), `${id}: test senaryosu bulunamadı`);
+  const fullReview = reviewAnswer(id, paraphrase);
+  check(fullReview.kind === 'tailored' && fullReview.points.every(({ status }) => status === 'possible'),
+    `${id}: doğru farklı ifade için beklenen ipuçları bulunamadı`);
+  const partialStatuses = reviewAnswer(id, partial).points.map(({ status }) => status);
+  check(partialStatuses.includes('possible') && partialStatuses.includes('review') && !partialStatuses.includes('compare'),
+    `${id}: eksik yanıta uygun kontrol noktası verilmiyor`);
+  check(reviewAnswer(id, misleading).points.some(({ status }) => status === 'compare'),
+    `${id}: yanıltıcı cevap için olası çelişki işaretlenmedi`);
+  if (lesson) {
+    check(reviewAnswer(id, lesson.reflection.model_answer_de).points.every(({ status }) => status !== 'compare'),
+      `${id}: model yanıt çelişki olarak işaretlendi`);
+  }
+}
+
+check(reviewAnswer(lessonIds[0], ' 123 ... ').kind === 'empty', 'Boş yanıt için yazma yönlendirmesi yok');
+const quote = 'Sie sagt: „Die Erinnerungen erleichtern die Vorbereitung.“';
+check(reviewAnswer('C2-U02-COMM', quote).points.every(({ status }) => status === 'review'),
+  'Alıntı, öğrencinin görüşü olarak yorumlandı');
+const list = 'Ironie. Spott. Vorbereitung. Benachrichtigungen.';
+check(reviewAnswer('C2-U02-COMM', list).points.every(({ status }) => status === 'review'),
+  'Anahtar kelime yığını içerik ipucu olarak kabul edildi');
+const negated = 'Die Studie beweist nicht, dass sich der Zugang verbessert hat.';
+check(reviewAnswer('C1-U01-COMM', negated).points.every(({ status }) => status !== 'compare'),
+  'Erişim iddiasını reddeden yanıt çelişki olarak işaretlendi');
+for (const { id } of scenarios.filter(({ id }) => !lessonIds.includes(id))) {
+  const feedback = reviewAnswer(id, 'Hier ist mein Antwortversuch.');
+  check(feedback.kind === 'guided' && feedback.points.length === 3 && feedback.points.every(({ status }) => status === 'review'),
+    `${id}: öz değerlendirme yönlendirmesi eksik`);
+}
+check(!enhancements.includes('-auto-preview'), 'Yeni bir otomatik açık uçlu puan kaydediliyor');
+
 const packageQa = spawnSync(process.execPath, [path.join(demoRoot, 'qa-v17.mjs')], {
   cwd: demoRoot,
   encoding: 'utf8',
@@ -65,4 +109,5 @@ if (failures.length) {
 
 console.log('Akademi demo QA BAŞARILI');
 console.log('- 90 senaryo, 450 MP3, 282 nesnel soru ve 90 model yanıt doğrulandı');
-console.log('- Kanonik logo, noindex/canonical, 360 temel ders varsayılanı, tarayıcı sesi ve açık uçlu ön değerlendirme doğrulandı');
+console.log('- Kanonik logo, noindex/canonical, 360 temel ders varsayılanı ve tarayıcı sesi doğrulandı');
+console.log('- A1–C2 için 18 farklı yanıt, 6 model yanıt, 4 sınır durumu ve 84 öz değerlendirme akışı doğrulandı');
